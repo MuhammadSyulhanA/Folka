@@ -1,0 +1,461 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		69C55000291A0C5A00E1CEF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C54FFF291A0C5A00E1CEF7 /* AppDelegate.swift */; };
+		69C55002291A0C5A00E1CEF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C55001291A0C5A00E1CEF7 /* SceneDelegate.swift */; };
+		69C55004291A0C5A00E1CEF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C55003291A0C5A00E1CEF7 /* ViewController.swift */; };
+		69C55007291A0C5A00E1CEF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69C55005291A0C5A00E1CEF7 /* Main.storyboard */; };
+		69C55009291A0C5D00E1CEF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C55008291A0C5D00E1CEF7 /* Assets.xcassets */; };
+		69C5500C291A0C5D00E1CEF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69C5500A291A0C5D00E1CEF7 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		69C54FFC291A0C5A00E1CEF7 /* Folka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Folka.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		69C54FFF291A0C5A00E1CEF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		69C55001291A0C5A00E1CEF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		69C55003291A0C5A00E1CEF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		69C55006291A0C5A00E1CEF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		69C55008291A0C5D00E1CEF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		69C5500B291A0C5D00E1CEF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		69C5500D291A0C5D00E1CEF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69C55016291A0D0200E1CEF7 /* DocsModel.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsModel.md; sourceTree = "<group>"; };
+		69C55017291A0D5400E1CEF7 /* DocsView.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsView.md; sourceTree = "<group>"; };
+		69C55018291A0D8500E1CEF7 /* DocsController.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsController.md; sourceTree = "<group>"; };
+		69C55020291A0E9900E1CEF7 /* DocsOnboard.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsOnboard.md; sourceTree = "<group>"; };
+		69C55021291A0EF500E1CEF7 /* DocsLaunch.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsLaunch.md; sourceTree = "<group>"; };
+		69C55022291A0F1B00E1CEF7 /* DocsHome.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsHome.md; sourceTree = "<group>"; };
+		69C55023291A0F4400E1CEF7 /* DocsDetail.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsDetail.md; sourceTree = "<group>"; };
+		69C55024291A0F7F00E1CEF7 /* DocsScene.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsScene.md; sourceTree = "<group>"; };
+		69C55027291A0FCD00E1CEF7 /* DocsSceneDet.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsSceneDet.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		69C54FF9291A0C5A00E1CEF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		69C54FF3291A0C5A00E1CEF7 = {
+			isa = PBXGroup;
+			children = (
+				69C54FFE291A0C5A00E1CEF7 /* Folka */,
+				69C54FFD291A0C5A00E1CEF7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		69C54FFD291A0C5A00E1CEF7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				69C54FFC291A0C5A00E1CEF7 /* Folka.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		69C54FFE291A0C5A00E1CEF7 /* Folka */ = {
+			isa = PBXGroup;
+			children = (
+				69C55015291A0CCC00E1CEF7 /* Controller */,
+				69C55014291A0CC700E1CEF7 /* View */,
+				69C55013291A0CC100E1CEF7 /* Model */,
+				69C54FFF291A0C5A00E1CEF7 /* AppDelegate.swift */,
+				69C55001291A0C5A00E1CEF7 /* SceneDelegate.swift */,
+				69C55003291A0C5A00E1CEF7 /* ViewController.swift */,
+				69C55005291A0C5A00E1CEF7 /* Main.storyboard */,
+				69C55008291A0C5D00E1CEF7 /* Assets.xcassets */,
+				69C5500A291A0C5D00E1CEF7 /* LaunchScreen.storyboard */,
+				69C5500D291A0C5D00E1CEF7 /* Info.plist */,
+			);
+			path = Folka;
+			sourceTree = "<group>";
+		};
+		69C55013291A0CC100E1CEF7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				69C55016291A0D0200E1CEF7 /* DocsModel.md */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		69C55014291A0CC700E1CEF7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				69C5501F291A0E7D00E1CEF7 /* DetailSceneStory */,
+				69C5501D291A0E5E00E1CEF7 /* DetailPage */,
+				69C5501C291A0E5600E1CEF7 /* HomePage */,
+				69C5501B291A0E3200E1CEF7 /* LaunchScreen */,
+				69C5501A291A0E1100E1CEF7 /* Onboarding */,
+				69C55017291A0D5400E1CEF7 /* DocsView.md */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		69C55015291A0CCC00E1CEF7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				69C55018291A0D8500E1CEF7 /* DocsController.md */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		69C5501A291A0E1100E1CEF7 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				69C55020291A0E9900E1CEF7 /* DocsOnboard.md */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		69C5501B291A0E3200E1CEF7 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				69C55021291A0EF500E1CEF7 /* DocsLaunch.md */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		69C5501C291A0E5600E1CEF7 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				69C55022291A0F1B00E1CEF7 /* DocsHome.md */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		69C5501D291A0E5E00E1CEF7 /* DetailPage */ = {
+			isa = PBXGroup;
+			children = (
+				69C55023291A0F4400E1CEF7 /* DocsDetail.md */,
+			);
+			path = DetailPage;
+			sourceTree = "<group>";
+		};
+		69C5501F291A0E7D00E1CEF7 /* DetailSceneStory */ = {
+			isa = PBXGroup;
+			children = (
+				69C55025291A0F9400E1CEF7 /* MalinKundang */,
+				69C55024291A0F7F00E1CEF7 /* DocsScene.md */,
+			);
+			path = DetailSceneStory;
+			sourceTree = "<group>";
+		};
+		69C55025291A0F9400E1CEF7 /* MalinKundang */ = {
+			isa = PBXGroup;
+			children = (
+				69C55026291A0FB600E1CEF7 /* Scene1 */,
+			);
+			path = MalinKundang;
+			sourceTree = "<group>";
+		};
+		69C55026291A0FB600E1CEF7 /* Scene1 */ = {
+			isa = PBXGroup;
+			children = (
+				69C55027291A0FCD00E1CEF7 /* DocsSceneDet.md */,
+			);
+			path = Scene1;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		69C54FFB291A0C5A00E1CEF7 /* Folka */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69C55010291A0C5D00E1CEF7 /* Build configuration list for PBXNativeTarget "Folka" */;
+			buildPhases = (
+				69C54FF8291A0C5A00E1CEF7 /* Sources */,
+				69C54FF9291A0C5A00E1CEF7 /* Frameworks */,
+				69C54FFA291A0C5A00E1CEF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Folka;
+			productName = Folka;
+			productReference = 69C54FFC291A0C5A00E1CEF7 /* Folka.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		69C54FF4291A0C5A00E1CEF7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					69C54FFB291A0C5A00E1CEF7 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+				};
+			};
+			buildConfigurationList = 69C54FF7291A0C5A00E1CEF7 /* Build configuration list for PBXProject "Folka" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 69C54FF3291A0C5A00E1CEF7;
+			productRefGroup = 69C54FFD291A0C5A00E1CEF7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				69C54FFB291A0C5A00E1CEF7 /* Folka */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		69C54FFA291A0C5A00E1CEF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69C5500C291A0C5D00E1CEF7 /* LaunchScreen.storyboard in Resources */,
+				69C55009291A0C5D00E1CEF7 /* Assets.xcassets in Resources */,
+				69C55007291A0C5A00E1CEF7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		69C54FF8291A0C5A00E1CEF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69C55004291A0C5A00E1CEF7 /* ViewController.swift in Sources */,
+				69C55000291A0C5A00E1CEF7 /* AppDelegate.swift in Sources */,
+				69C55002291A0C5A00E1CEF7 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		69C55005291A0C5A00E1CEF7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69C55006291A0C5A00E1CEF7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		69C5500A291A0C5D00E1CEF7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69C5500B291A0C5D00E1CEF7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		69C5500E291A0C5D00E1CEF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		69C5500F291A0C5D00E1CEF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		69C55011291A0C5D00E1CEF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B3WXM85Q9P;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Folka/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = id.infinitelearning.Folka;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		69C55012291A0C5D00E1CEF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B3WXM85Q9P;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Folka/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = id.infinitelearning.Folka;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		69C54FF7291A0C5A00E1CEF7 /* Build configuration list for PBXProject "Folka" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69C5500E291A0C5D00E1CEF7 /* Debug */,
+				69C5500F291A0C5D00E1CEF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69C55010291A0C5D00E1CEF7 /* Build configuration list for PBXNativeTarget "Folka" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69C55011291A0C5D00E1CEF7 /* Debug */,
+				69C55012291A0C5D00E1CEF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 69C54FF4291A0C5A00E1CEF7 /* Project object */;
+}
