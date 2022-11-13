@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="McLaren-Regular.ttf">
+            <string>McLaren-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomePage_ViewController" customModule="Folka" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="3aS-Qx-0op" id="fmE-Q6-GYs"/>
+                <outlet property="labelTitle" destination="wHG-hd-TQr" id="RGq-MR-6DY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="aSz-Cm-v9h">
+                    <rect key="frame" x="10" y="18" width="824" height="65"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="46q-pv-Meg">
+                            <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="65" id="ngt-gv-7Eq"/>
+                                <constraint firstAttribute="width" constant="65" id="rkY-bo-OlL"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Halo Sadewa, mau baca buku apa hari ini? " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHG-hd-TQr">
+                            <rect key="frame" x="83" y="0.0" width="741" height="65"/>
+                            <fontDescription key="fontDescription" name="McLaren-Regular" family="McLaren" pointSize="25"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <rect key="contentStretch" x="0.25" y="0.0" width="1" height="1"/>
+                </stackView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3aS-Qx-0op">
+                    <rect key="frame" x="0.0" y="83" width="844" height="287"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BcD-Uh-DFY">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <constraints>
+                <constraint firstItem="aSz-Cm-v9h" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="18" id="MBd-EL-ykR"/>
+                <constraint firstItem="3aS-Qx-0op" firstAttribute="top" secondItem="aSz-Cm-v9h" secondAttribute="bottom" id="W4p-0a-Vhi"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aSz-Cm-v9h" secondAttribute="trailing" constant="10" id="ZzY-9c-QVO"/>
+                <constraint firstAttribute="trailing" secondItem="3aS-Qx-0op" secondAttribute="trailing" id="eSj-s9-hHJ"/>
+                <constraint firstItem="3aS-Qx-0op" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tMS-N7-0OD"/>
+                <constraint firstItem="aSz-Cm-v9h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="wXg-jl-DgX"/>
+                <constraint firstAttribute="bottom" secondItem="3aS-Qx-0op" secondAttribute="bottom" constant="20" id="zTD-ws-WBt"/>
+            </constraints>
+            <point key="canvasLocation" x="9.9526066350710902" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Profile" width="59" height="60"/>
+    </resources>
+</document>
