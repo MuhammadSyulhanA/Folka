@@ -13,6 +13,7 @@
 		69C55007291A0C5A00E1CEF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69C55005291A0C5A00E1CEF7 /* Main.storyboard */; };
 		69C55009291A0C5D00E1CEF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C55008291A0C5D00E1CEF7 /* Assets.xcassets */; };
 		69C5500C291A0C5D00E1CEF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69C5500A291A0C5D00E1CEF7 /* LaunchScreen.storyboard */; };
+
 		A01411C2291D6B7F007EDA8E /* HomePage_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01411C0291D6B7F007EDA8E /* HomePage_ViewController.swift */; };
 		A01411C3291D6B7F007EDA8E /* HomePage_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01411C1291D6B7F007EDA8E /* HomePage_ViewController.xib */; };
 		A01411C5291D6C1A007EDA8E /* ModelDataCaraousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01411C4291D6C1A007EDA8E /* ModelDataCaraousel.swift */; };
@@ -46,6 +47,7 @@
 		69C55023291A0F4400E1CEF7 /* DocsDetail.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsDetail.md; sourceTree = "<group>"; };
 		69C55024291A0F7F00E1CEF7 /* DocsScene.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsScene.md; sourceTree = "<group>"; };
 		69C55027291A0FCD00E1CEF7 /* DocsSceneDet.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsSceneDet.md; sourceTree = "<group>"; };
+
 		A01411C0291D6B7F007EDA8E /* HomePage_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage_ViewController.swift; sourceTree = "<group>"; };
 		A01411C1291D6B7F007EDA8E /* HomePage_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePage_ViewController.xib; sourceTree = "<group>"; };
 		A01411C4291D6C1A007EDA8E /* ModelDataCaraousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDataCaraousel.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				A08B5DCD29200F1A0021FBAF /* DetailPage_ViewController.swift in Sources */,
 				A04B9FCC291E0DF10022168A /* HomePage_CollectionViewCell.swift in Sources */,
 				69C55002291A0C5A00E1CEF7 /* SceneDelegate.swift in Sources */,
+				A084443F291D4F20005A0F79 /* Home_ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
