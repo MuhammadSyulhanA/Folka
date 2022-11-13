@@ -41,6 +41,7 @@ class MalinKundang_Games1: SKScene {
         // MARK: Default background white
         self.backgroundColor = SKColor.white
         
+
         background.size = CGSize(width: 2040, height: 1120)
         background.position = CGPoint(x: size.width/2, y: size.height/2)
         background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -98,9 +99,52 @@ class MalinKundang_Games1: SKScene {
     
     func moveSprite(sprite: SKSpriteNode, velocity: CGPoint) {
         let amountToMove = CGPoint(x: velocity.x * CGFloat(dt), y: velocity.y * CGFloat(dt))
-        print("Amount to move: \(amountToMove)")
+//        print("Amount to move: \(amountToMove)")
         sprite.position = CGPoint(x: sprite.position.x + amountToMove.x, y: sprite.position.y + amountToMove.y)
     }
+  
+  func swimmingFish(){
+    let randomFishYPositionGenerator = GKRandomDistribution(lowestValue: 50, highestValue: Int(self.frame.size.width))
+    
+//    blueFish.size = CGSize(width: 150, height: 150)
+//    blueFish.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+    blueFish.zPosition = 0
+//    blueFish.position = CGPoint(x: size.width/2.3, y: size.height/1.4)
+    
+    let yPosition = CGFloat(randomFishYPositionGenerator.nextInt())
+    let rightToLeft = arc4random() % 2 == 0
+//    let xPosition = rightToLeft ? self.frame.size.width/2.3
+    let xPosition = rightToLeft ? self.frame.size.width + blueFish.size.width / 2 : -blueFish.size.width / 2
+   
+
+    print("\(randomFishYPositionGenerator)")
+    print("\(xPosition)")
+    blueFish.position = CGPoint(x: xPosition, y: yPosition)
+
+    if rightToLeft{
+      blueFish.xScale = -1
+    }
+
+//    self.addChild(blueFish)
+
+//    blueFish.run(SKAction.repeatForever(SKAction.animate(with: , timePerFrame: 0.05, resize: false, restore: true)))
+
+    var distanceToCover = self.frame.size.width + blueFish.size.width
+    if rightToLeft{
+      distanceToCover *= -1
+    }
+
+    let time = TimeInterval(abs(distanceToCover/70))
+
+    let moveAction = SKAction.moveBy(x: distanceToCover, y: 0, duration: time)
+
+    let removeAction = SKAction.run{
+      self.blueFish.removeAllActions()
+      self.blueFish.removeFromParent()
+    }
+    let allActions = SKAction.sequence([moveAction, removeAction])
+    blueFish.run(allActions)
+  }
     
     override func update(_ currentTime: TimeInterval) {
         if lastUpdateTime > 0 {
@@ -111,5 +155,6 @@ class MalinKundang_Games1: SKScene {
         lastUpdateTime = currentTime
         print("\(dt*1000) milliseconds since last update")
         moveSprite(sprite: redFish, velocity: CGPoint(x: fishMovePointPerSec, y: 0))
+        swimmingFish()
     }
 }
