@@ -16,6 +16,7 @@ class DetailPage_ViewController: UIViewController {
   @IBOutlet weak var buttonBack: UIButton!
   var customButtonBack: UIImage!
   var customButtonMulaiBaca: UIImage!
+    
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -43,6 +44,11 @@ class DetailPage_ViewController: UIViewController {
     view.addSubview(imageView)
     self.view.sendSubviewToBack(imageView)
   }
-  
+    @IBAction func nextPage(_ sender: Any) {
+        let nextMainController = MalinKundang_ViewController()
+//        self.navigationController?.pushViewController(nextMainController, animated: true)
+        present(nextMainController, animated: true, completion: nil)
+    }
+    
 }
 

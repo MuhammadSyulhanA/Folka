@@ -20,23 +20,33 @@ class MalinKundang_Games1: SKScene {
     
     let redFish = SKSpriteNode(imageNamed: "redFish")
     var redFishAnimation: SKAction?
-
-    let blueFish = SKSpriteNode(imageNamed: "blueFish")
+    
+    //    let blueFish = SKSpriteNode(imageNamed: "blueFish")
     var blueFishAnimation: SKAction?
-
+    
     let zebraFish = SKSpriteNode(imageNamed: "zebraFish")
     var zebraFishAnimation: SKAction?
     
     let seaweed = SKSpriteNode(imageNamed: "seaweed")
     let seaweed1 = SKSpriteNode(imageNamed: "seaweed")
     let seaweed2 = SKSpriteNode(imageNamed: "seaweed")
-
+    
     let apple = SKSpriteNode(imageNamed: "apple")
     var appleAnimation: SKAction?
     
     let bottle = SKSpriteNode(imageNamed: "bottle")
     var bottleAnimation: SKAction?
-
+    
+    let hook = SKSpriteNode(imageNamed: "fishingHook")
+    var hookAnimation: SKAction?
+    
+//    private lazy var gamePad: GamePad = {
+//      return GamePad(
+//        actionButtonBegan:  playerNode.actionButtonBegan,
+//        actionButtonEnded: playerNode.actionButtonEnded
+//      )
+//    }()
+    
     override func didMove(to view: SKView) {
         // MARK: Default background white
         self.backgroundColor = SKColor.white
@@ -53,11 +63,11 @@ class MalinKundang_Games1: SKScene {
         redFish.zPosition = 0
         addChild(redFish)
         
-        blueFish.size = CGSize(width: 150, height: 150)
-        blueFish.position = CGPoint(x: size.width/2.3, y: size.height/1.4)
-        blueFish.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        blueFish.zPosition = 0
-        addChild(blueFish)
+        //        blueFish.size = CGSize(width: 150, height: 150)
+        //        blueFish.position = CGPoint(x: size.width/2.3, y: size.height/1.4)
+        //        blueFish.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        //        blueFish.zPosition = 0
+        //        addChild(blueFish)
         
         zebraFish.size = CGSize(width: 150, height: 150)
         zebraFish.position = CGPoint(x: size.width/4.3, y: size.height/1.9)
@@ -94,12 +104,121 @@ class MalinKundang_Games1: SKScene {
         seaweed2.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         seaweed2.zPosition = 1
         addChild(seaweed2)
+        
+        hook.size = CGSize(width: 50, height: 800)
+        hook.name = "hook"
+        hook.position = CGPoint(x: size.width/2.0, y: size.height/1.5)
+        hook.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        hook.zPosition = 1
+        addChild(hook)
+        
+        swimmingFish()
+    }
+    
+    func moveHookToPosition(hookPosition: CGPoint){
+        //        hook.position = hookPosition
+        // moving horizontally
+        hook.position.x = hookPosition.x
+//        hook.position.y = hookPosition.y
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        let touch = touches.first as UITouch?
+//        if atPoint((touch?.location(in: self))!).name == hook.name {
+            for t in touches {
+                var pos : CGPoint = t.location(in: self)
+                moveHookToPosition(hookPosition: pos)
+            }
+//        }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        let touch = touches.first as UITouch?
+//        if atPoint((touch?.location(in: self))!).name == hook.name {
+            for t in touches {
+                var pos : CGPoint = t.location(in: self)
+                moveHookToPosition(hookPosition: pos)
+            }
+//        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches {
+            var pos : CGPoint = t.location(in: self)
+        }
     }
     
     func moveSprite(sprite: SKSpriteNode, velocity: CGPoint) {
         let amountToMove = CGPoint(x: velocity.x * CGFloat(dt), y: velocity.y * CGFloat(dt))
-        print("Amount to move: \(amountToMove)")
+        //        print("Amount to move: \(amountToMove)")
         sprite.position = CGPoint(x: sprite.position.x + amountToMove.x, y: sprite.position.y + amountToMove.y)
+    }
+    
+    func swimmingFish(){
+        let blueFish = SKSpriteNode(imageNamed: "blueFish")
+        blueFish.size = CGSize(width: 150, height: 150)
+        
+        let redFish = SKSpriteNode(imageNamed: "redFish")
+        redFish.size = CGSize(width: 150, height: 150)
+        //    blueFish.zPosition = 0
+        //    addChild(blueFish)
+        
+        let randomFishYPositionGenerator = GKRandomDistribution(lowestValue: 50, highestValue: Int(self.frame.size.width))
+        let randomFishRedYPositionGenerator = GKRandomDistribution(lowestValue: 50, highestValue: Int(self.frame.size.width))
+        
+        let yPosition = CGFloat(randomFishYPositionGenerator.nextInt())
+        let rightToLeft = arc4random() % 2 == 0
+        let xPosition = rightToLeft ? self.frame.size.width + blueFish.size.width / 2 : -blueFish.size.width / 2
+        
+        let yyPosition = CGFloat(randomFishRedYPositionGenerator.nextInt())
+//        let rightToLeft = arc4random() % 2 == 0
+        let xxPosition = rightToLeft ? self.frame.size.width + redFish.size.width / 2 : -redFish.size.width / 2
+        
+        blueFish.position = CGPoint(x: xPosition, y: yPosition)
+        redFish.position = CGPoint(x: xxPosition, y: yyPosition)
+        
+        if rightToLeft{
+            blueFish.xScale = -1
+            redFish.xScale = -1
+        }
+        
+        self.addChild(blueFish)
+        self.addChild(redFish)
+        
+        //    blueFish.run(SKAction.repeatForever(SKAction.animate(with:  , timePerFrame: 0.05, resize: false, restore: true)))
+        
+        var distanceToCover = self.frame.size.width + blueFish.size.width
+        var distanceToCoverr = self.frame.size.width + redFish.size.width
+        
+        if rightToLeft{
+            distanceToCover *= -1
+            distanceToCoverr *= -1
+        }
+        
+        let time = TimeInterval(abs(distanceToCover / 140))
+        let time2 = TimeInterval(abs(distanceToCoverr / 120))
+        
+        let moveAction = SKAction.moveBy(x: distanceToCover, y: 0, duration: time)
+        let moveAction2 = SKAction.moveBy(x: distanceToCoverr, y: 0, duration: time2)
+        
+        let removeAction = SKAction.run{
+            blueFish.removeAllActions();
+            blueFish.removeFromParent();
+        }
+        let removeAction2 = SKAction.run{
+            redFish.removeAllActions();
+            redFish.removeFromParent();
+        }
+        
+        let allActions = SKAction.sequence([moveAction, removeAction])
+        let allActions2 = SKAction.sequence([moveAction2, removeAction2])
+        
+        let spawnForever = SKAction.repeatForever(allActions)
+        let spawnForever2 = SKAction.repeatForever(allActions2)
+        
+        blueFish.run(spawnForever)
+        redFish.run(spawnForever2)
+        
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -108,8 +227,8 @@ class MalinKundang_Games1: SKScene {
         } else {
             dt = 0
         }
+        
         lastUpdateTime = currentTime
-        print("\(dt*1000) milliseconds since last update")
-        moveSprite(sprite: redFish, velocity: CGPoint(x: fishMovePointPerSec, y: 0))
+        //        swimmingFish()
     }
 }
