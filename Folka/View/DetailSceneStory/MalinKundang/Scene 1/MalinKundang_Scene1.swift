@@ -33,8 +33,14 @@ class MalinKundang_Scene1: SKScene {
     let tree = SKSpriteNode(imageNamed: "tree1")
     var treeAnimation: SKAction?
     
+    let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
+    let buttonSound = SKSpriteNode(imageNamed: "buttonSound")
+
     let buttonNext = SKSpriteNode(imageNamed: "buttonNext")
     var buttonNextAction: SKAction?
+    
+    let textLayout = SKSpriteNode(imageNamed: "textLayout")
+    var textStory = SKLabelNode(fontNamed: "McLaren")
     
     override func didMove(to view: SKView) {
         // MARK: Default background white
@@ -62,15 +68,15 @@ class MalinKundang_Scene1: SKScene {
         addChild(sea)
         
         malin.name = "malin"
-        malin.size = CGSize(width: 300, height: 400)
-        malin.position = CGPoint(x: size.width/1.7, y: size.height/3.1)
+        malin.size = CGSize(width: 300, height: 380)
+        malin.position = CGPoint(x: size.width/1.7, y: size.height/2.2)
         malin.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         malin.zPosition = 2
         addChild(malin)
         
         ibuMalin.name = "ibuMalin"
         ibuMalin.size = CGSize(width: 450, height: 600)
-        ibuMalin.position = CGPoint(x: size.width/3.0, y: size.height/2.5)
+        ibuMalin.position = CGPoint(x: size.width/3.0, y: size.height/1.9)
         ibuMalin.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         ibuMalin.zPosition = 2
         addChild(ibuMalin)
@@ -90,7 +96,7 @@ class MalinKundang_Scene1: SKScene {
         addChild(house1)
         
         sandCastle.size = CGSize(width: 300, height: 350)
-        sandCastle.position = CGPoint(x: size.width/2.0, y: size.height/3.7)
+        sandCastle.position = CGPoint(x: size.width/2.0, y: size.height/2.4)
         sandCastle.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         sandCastle.zPosition = 2
         addChild(sandCastle)
@@ -103,12 +109,42 @@ class MalinKundang_Scene1: SKScene {
         tree.zRotation = CGFloat.pi / -23
         addChild(tree)
         
+        buttonHome.name = "buttonHome"
+        buttonHome.size = CGSize(width: 130, height: 130)
+        buttonHome.position = CGPoint(x: size.width/10.5, y: size.height/1.35)
+        buttonHome.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        buttonHome.zPosition = +4
+        addChild(buttonHome)
+        
+        buttonSound.name = "buttonSound"
+        buttonSound.size = CGSize(width: 130, height: 130)
+        buttonSound.position = CGPoint(x: size.width/1.1, y: size.height/1.35)
+        buttonSound.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        buttonSound.zPosition = +4
+        addChild(buttonSound)
+        
         buttonNext.name = "buttonNext"
         buttonNext.size = CGSize(width: 150, height: 150)
         buttonNext.position = CGPoint(x: size.width/1.1, y: size.height/3.2)
         buttonNext.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         buttonNext.zPosition = +4
         addChild(buttonNext)
+        
+        textLayout.size = CGSize(width: 1400, height: 230)
+        textLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
+        textLayout.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        textLayout.zPosition = +4
+        addChild(textLayout)
+        
+        textStory.text = "Dahulu kala hiduplah seorang ibu bernama Mande Rubayah dan anak laki-lakinya, Malin Kundang. Mande Rubayah menghidupi Malin seorang diri hingga menjadi anak yang gagah dan tampan."
+        textStory.fontColor = SKColor.white
+        textStory.fontSize = 32
+        textStory.lineBreakMode = NSLineBreakMode.byWordWrapping
+        textStory.numberOfLines = 0
+        textStory.preferredMaxLayoutWidth = 1300
+        textStory.position = CGPoint(x: size.width/2, y: size.height/4.25)
+        textStory.zPosition = +4.5
+        addChild(textStory)
         
     }
     

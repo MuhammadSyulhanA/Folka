@@ -33,6 +33,12 @@ class MalinKundang_Scene2: SKScene {
     let buttonPrevious = SKSpriteNode(imageNamed: "buttonPrevious")
     var buttonPreviousAction: SKAction?
     
+    let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
+    let buttonSound = SKSpriteNode(imageNamed: "buttonSound")
+    
+    let textLayout = SKSpriteNode(imageNamed: "textLayout")
+    var textStory = SKLabelNode(fontNamed: "McLaren")
+    
     override func didMove(to view: SKView) {
         // MARK: Default background white
         let rect = CGRect(x: 0, y: 0, width: 100, height: 0)
@@ -60,7 +66,7 @@ class MalinKundang_Scene2: SKScene {
         
         malin.name = "malin"
         malin.size = CGSize(width: 500, height: 600)
-        malin.position = CGPoint(x: size.width/1.3, y: size.height/2.2)
+        malin.position = CGPoint(x: size.width/1.3, y: size.height/2.1)
         malin.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         malin.zPosition = 2
         addChild(malin)
@@ -100,6 +106,36 @@ class MalinKundang_Scene2: SKScene {
         buttonPrevious.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         buttonPrevious.zPosition = +4
         addChild(buttonPrevious)
+        
+        buttonHome.name = "buttonHome"
+        buttonHome.size = CGSize(width: 130, height: 130)
+        buttonHome.position = CGPoint(x: size.width/10.5, y: size.height/1.35)
+        buttonHome.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        buttonHome.zPosition = +4
+        addChild(buttonHome)
+        
+        buttonSound.name = "buttonSound"
+        buttonSound.size = CGSize(width: 130, height: 130)
+        buttonSound.position = CGPoint(x: size.width/1.1, y: size.height/1.35)
+        buttonSound.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        buttonSound.zPosition = +4
+        addChild(buttonSound)
+        
+        textLayout.size = CGSize(width: 1400, height: 230)
+        textLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
+        textLayout.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        textLayout.zPosition = +4
+        addChild(textLayout)
+        
+        textStory.text = "Malin pun menjadi anak yang berbakti, ia juga sangat suka memancing ditepi laut untuk dimakan bersama ibunya."
+        textStory.fontColor = SKColor.white
+        textStory.fontSize = 32
+        textStory.lineBreakMode = NSLineBreakMode.byWordWrapping
+        textStory.numberOfLines = 0
+        textStory.preferredMaxLayoutWidth = 1300
+        textStory.position = CGPoint(x: size.width/2, y: size.height/4.0)
+        textStory.zPosition = +4.5
+        addChild(textStory)
         
     }
     
