@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		698EB8D02921E24E008C18BA /* GamePadSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698EB8C92921E24E008C18BA /* GamePadSpace.swift */; };
+		698EB8D12921E24E008C18BA /* GamePadRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698EB8CA2921E24E008C18BA /* GamePadRight.swift */; };
+		698EB8D22921E24E008C18BA /* GamePadBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698EB8CB2921E24E008C18BA /* GamePadBase.swift */; };
+		698EB8D32921E24E008C18BA /* GamePadDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698EB8CC2921E24E008C18BA /* GamePadDown.swift */; };
+		698EB8D42921E24E008C18BA /* GamePad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698EB8CD2921E24E008C18BA /* GamePad.swift */; };
+		698EB8D52921E24E008C18BA /* GamePadUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698EB8CE2921E24E008C18BA /* GamePadUp.swift */; };
+		698EB8D62921E24E008C18BA /* GamePadleft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698EB8CF2921E24E008C18BA /* GamePadleft.swift */; };
+		698EB8D82921E2BD008C18BA /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698EB8D72921E2BD008C18BA /* Controller.swift */; };
 		69C55000291A0C5A00E1CEF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C54FFF291A0C5A00E1CEF7 /* AppDelegate.swift */; };
 		69C55002291A0C5A00E1CEF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C55001291A0C5A00E1CEF7 /* SceneDelegate.swift */; };
 		69C55004291A0C5A00E1CEF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C55003291A0C5A00E1CEF7 /* ViewController.swift */; };
@@ -33,6 +41,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		698EB8C92921E24E008C18BA /* GamePadSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePadSpace.swift; sourceTree = "<group>"; };
+		698EB8CA2921E24E008C18BA /* GamePadRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePadRight.swift; sourceTree = "<group>"; };
+		698EB8CB2921E24E008C18BA /* GamePadBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePadBase.swift; sourceTree = "<group>"; };
+		698EB8CC2921E24E008C18BA /* GamePadDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePadDown.swift; sourceTree = "<group>"; };
+		698EB8CD2921E24E008C18BA /* GamePad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePad.swift; sourceTree = "<group>"; };
+		698EB8CE2921E24E008C18BA /* GamePadUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePadUp.swift; sourceTree = "<group>"; };
+		698EB8CF2921E24E008C18BA /* GamePadleft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePadleft.swift; sourceTree = "<group>"; };
+		698EB8D72921E2BD008C18BA /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		69C54FFC291A0C5A00E1CEF7 /* Folka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Folka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C54FFF291A0C5A00E1CEF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69C55001291A0C5A00E1CEF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +96,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		698EB8C82921E24E008C18BA /* GamePad */ = {
+			isa = PBXGroup;
+			children = (
+				698EB8D72921E2BD008C18BA /* Controller.swift */,
+				698EB8C92921E24E008C18BA /* GamePadSpace.swift */,
+				698EB8CA2921E24E008C18BA /* GamePadRight.swift */,
+				698EB8CB2921E24E008C18BA /* GamePadBase.swift */,
+				698EB8CC2921E24E008C18BA /* GamePadDown.swift */,
+				698EB8CD2921E24E008C18BA /* GamePad.swift */,
+				698EB8CE2921E24E008C18BA /* GamePadUp.swift */,
+				698EB8CF2921E24E008C18BA /* GamePadleft.swift */,
+			);
+			path = GamePad;
+			sourceTree = "<group>";
+		};
 		69C54FF3291A0C5A00E1CEF7 = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +248,7 @@
 		988867672921066D0094AAAF /* Games 1 */ = {
 			isa = PBXGroup;
 			children = (
+				698EB8C82921E24E008C18BA /* GamePad */,
 				98886768292107240094AAAF /* MalinKundang_Games1.swift */,
 			);
 			path = "Games 1";
@@ -318,19 +350,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				698EB8D02921E24E008C18BA /* GamePadSpace.swift in Sources */,
 				98886769292107240094AAAF /* MalinKundang_Games1.swift in Sources */,
+				698EB8D62921E24E008C18BA /* GamePadleft.swift in Sources */,
 				A01411C2291D6B7F007EDA8E /* HomePage_ViewController.swift in Sources */,
 				A047FAB2291E191E0057F0A4 /* CustomLayout.swift in Sources */,
 				A08B5DC9291FD06C0021FBAF /* ProfileOnboard_ViewController.swift in Sources */,
+				698EB8D82921E2BD008C18BA /* Controller.swift in Sources */,
 				69C55004291A0C5A00E1CEF7 /* ViewController.swift in Sources */,
+				698EB8D22921E24E008C18BA /* GamePadBase.swift in Sources */,
+				698EB8D12921E24E008C18BA /* GamePadRight.swift in Sources */,
 				988867662920FEA00094AAAF /* MalinKundang_Scene2.swift in Sources */,
+				698EB8D52921E24E008C18BA /* GamePadUp.swift in Sources */,
 				A01411C5291D6C1A007EDA8E /* ModelDataCaraousel.swift in Sources */,
 				988867622920FD770094AAAF /* MalinKundang_ViewController.swift in Sources */,
 				69C55000291A0C5A00E1CEF7 /* AppDelegate.swift in Sources */,
 				988867642920FDD40094AAAF /* MalinKundang_Scene1.swift in Sources */,
+				698EB8D42921E24E008C18BA /* GamePad.swift in Sources */,
 				A08B5DCD29200F1A0021FBAF /* DetailPage_ViewController.swift in Sources */,
 				A04B9FCC291E0DF10022168A /* HomePage_CollectionViewCell.swift in Sources */,
 				69C55002291A0C5A00E1CEF7 /* SceneDelegate.swift in Sources */,
+				698EB8D32921E24E008C18BA /* GamePadDown.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

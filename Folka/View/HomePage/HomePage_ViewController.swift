@@ -18,7 +18,7 @@ class HomePage_ViewController: UIViewController, UICollectionViewDelegate, UICol
   
   let dataHomePage: [HomePage] = [
     HomePage(imageCover: "CoverMalinKundang", title: "TimunMas"),
-    HomePage(imageCover: "CoverMalinKundang", title: "MalinKundang"),
+    HomePage(imageCover: "CoverMalinKundangFix", title: "MalinKundang"),
     HomePage(imageCover: "CoverMalinKundang", title: "Sangkuriang")
   ]
   
