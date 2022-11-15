@@ -10,22 +10,22 @@ import GameplayKit
 
 class MalinKundang_Scene2: SKScene {
     
-    let skyBackground = SKSpriteNode(imageNamed: "skyBackground")
-    let groundBackground = SKSpriteNode(imageNamed: "groundBackground")
+    let backgroundSky = SKSpriteNode(imageNamed: "skyBackground")
+    let backgroundGround = SKSpriteNode(imageNamed: "groundBackground")
     
-    let sea = SKSpriteNode(imageNamed: "sea")
+    let nonCharacterSea = SKSpriteNode(imageNamed: "sea")
     
-    let malin = SKSpriteNode(imageNamed: "malinScene2_1")
-    var malinAnimation: SKAction?
+    let nonCharacterHouse = SKSpriteNode(imageNamed: "house1")
+    var animationHouse: SKAction?
     
-    let house = SKSpriteNode(imageNamed: "house1")
-    var houseAnimation: SKAction?
+    let nonCharacterHouse1 = SKSpriteNode(imageNamed: "house1")
+    var animationHouse1: SKAction?
     
-    let house1 = SKSpriteNode(imageNamed: "house1")
-    var house1Animation: SKAction?
+    let nonCharacterTree = SKSpriteNode(imageNamed: "tree1")
+    var animationTree: SKAction?
     
-    let tree = SKSpriteNode(imageNamed: "tree1")
-    var treeAnimation: SKAction?
+    let characterMalin = SKSpriteNode(imageNamed: "malinScene2_1")
+    var animationMalin: SKAction?
     
     let buttonNext = SKSpriteNode(imageNamed: "buttonNext")
     var buttonNextAction: SKAction?
@@ -36,8 +36,8 @@ class MalinKundang_Scene2: SKScene {
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
     let buttonSound = SKSpriteNode(imageNamed: "buttonSound")
     
-    let textLayout = SKSpriteNode(imageNamed: "textLayout")
-    var textStory = SKLabelNode(fontNamed: "McLaren")
+    let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
+    var labelTextStory = SKLabelNode(fontNamed: "McLaren")
     
     override func didMove(to view: SKView) {
         // MARK: Default background white
@@ -45,53 +45,53 @@ class MalinKundang_Scene2: SKScene {
         let path = CGPath(rect: rect, transform: nil)
         self.backgroundColor = SKColor.white
         
-        skyBackground.size = CGSize(width: 2040, height: 1120)
-        skyBackground.position = CGPoint(x: size.width/2, y: size.height/2)
-        skyBackground.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        skyBackground.zPosition = 1
-        addChild(skyBackground)
+        backgroundSky.size = CGSize(width: 2040, height: 1120)
+        backgroundSky.position = CGPoint(x: size.width/2, y: size.height/2)
+        backgroundSky.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        backgroundSky.zPosition = 1
+        addChild(backgroundSky)
         
-        groundBackground.size = CGSize(width: 2040, height: 1120)
-        groundBackground.position = CGPoint(x: size.width/2, y: size.height/2)
-        groundBackground.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        groundBackground.zPosition = -1
-        addChild(groundBackground)
+        backgroundGround.size = CGSize(width: 2040, height: 1120)
+        backgroundGround.position = CGPoint(x: size.width/2, y: size.height/2)
+        backgroundGround.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        backgroundGround.zPosition = -1
+        addChild(backgroundGround)
         
-        sea.size = CGSize(width: 2040, height: 1120)
-        sea.position = CGPoint(x: size.width/1.9, y: size.height/2)
-        sea.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        sea.zPosition = 0
-        sea.run(SKAction.repeatForever(SKAction.follow(path, asOffset: true, orientToPath: false, duration: 4.0)))
-        addChild(sea)
+        nonCharacterSea.size = CGSize(width: 2040, height: 1120)
+        nonCharacterSea.position = CGPoint(x: size.width/1.9, y: size.height/2)
+        nonCharacterSea.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterSea.zPosition = 0
+        nonCharacterSea.run(SKAction.repeatForever(SKAction.follow(path, asOffset: true, orientToPath: false, duration: 4.0)))
+        addChild(nonCharacterSea)
         
-        malin.name = "malin"
-        malin.size = CGSize(width: 500, height: 600)
-        malin.position = CGPoint(x: size.width/1.3, y: size.height/2.1)
-        malin.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        malin.zPosition = 2
-        addChild(malin)
+        characterMalin.name = "malin"
+        characterMalin.size = CGSize(width: 500, height: 600)
+        characterMalin.position = CGPoint(x: size.width/1.3, y: size.height/2.1)
+        characterMalin.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        characterMalin.zPosition = 2
+        addChild(characterMalin)
         
-        house.name = "house"
-        house.size = CGSize(width: 400, height: 500)
-        house.position = CGPoint(x: size.width/4.8, y: size.height/1.6)
-        house.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        house.zPosition = 3
-        addChild(house)
+        nonCharacterHouse.name = "house"
+        nonCharacterHouse.size = CGSize(width: 400, height: 500)
+        nonCharacterHouse.position = CGPoint(x: size.width/4.8, y: size.height/1.6)
+        nonCharacterHouse.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterHouse.zPosition = 3
+        addChild(nonCharacterHouse)
         
-        house1.name = "house1"
-        house1.size = CGSize(width: 400, height: 500)
-        house1.position = CGPoint(x: size.width/4.8, y: size.height/1.6)
-        house1.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        house1.zPosition = 3.5
-        addChild(house1)
+        nonCharacterHouse1.name = "house1"
+        nonCharacterHouse1.size = CGSize(width: 400, height: 500)
+        nonCharacterHouse1.position = CGPoint(x: size.width/4.8, y: size.height/1.6)
+        nonCharacterHouse1.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterHouse1.zPosition = 3.5
+        addChild(nonCharacterHouse1)
         
-        tree.name = "tree"
-        tree.size = CGSize(width: 550, height: 980)
-        tree.position = CGPoint(x: size.width/11.0, y: size.height/2.3)
-        tree.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        tree.zPosition = 2
-        tree.zRotation = CGFloat.pi / -23
-        addChild(tree)
+        nonCharacterTree.name = "tree"
+        nonCharacterTree.size = CGSize(width: 550, height: 980)
+        nonCharacterTree.position = CGPoint(x: size.width/11.0, y: size.height/2.3)
+        nonCharacterTree.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterTree.zPosition = 2
+        nonCharacterTree.zRotation = CGFloat.pi / -23
+        addChild(nonCharacterTree)
         
         buttonNext.name = "buttonNext"
         buttonNext.size = CGSize(width: 150, height: 150)
@@ -121,21 +121,21 @@ class MalinKundang_Scene2: SKScene {
         buttonSound.zPosition = +4
         addChild(buttonSound)
         
-        textLayout.size = CGSize(width: 1400, height: 230)
-        textLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
-        textLayout.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        textLayout.zPosition = +4
-        addChild(textLayout)
+        nonCharacterTextLayout.size = CGSize(width: 1400, height: 230)
+        nonCharacterTextLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
+        nonCharacterTextLayout.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterTextLayout.zPosition = +4
+        addChild(nonCharacterTextLayout)
         
-        textStory.text = "Malin pun menjadi anak yang berbakti, ia juga sangat suka memancing ditepi laut untuk dimakan bersama ibunya."
-        textStory.fontColor = SKColor.white
-        textStory.fontSize = 32
-        textStory.lineBreakMode = NSLineBreakMode.byWordWrapping
-        textStory.numberOfLines = 0
-        textStory.preferredMaxLayoutWidth = 1300
-        textStory.position = CGPoint(x: size.width/2, y: size.height/4.0)
-        textStory.zPosition = +4.5
-        addChild(textStory)
+        labelTextStory.text = "Malin pun menjadi anak yang berbakti, ia juga sangat suka memancing ditepi laut untuk dimakan bersama ibunya."
+        labelTextStory.fontColor = SKColor.white
+        labelTextStory.fontSize = 32
+        labelTextStory.lineBreakMode = NSLineBreakMode.byWordWrapping
+        labelTextStory.numberOfLines = 0
+        labelTextStory.preferredMaxLayoutWidth = 1300
+        labelTextStory.position = CGPoint(x: size.width/2, y: size.height/4.0)
+        labelTextStory.zPosition = +4.5
+        addChild(labelTextStory)
         
     }
     
@@ -160,10 +160,10 @@ class MalinKundang_Scene2: SKScene {
             textures4.append(SKTexture(imageNamed: "house\(index)"))
         }
         
-        malinAnimation = SKAction.animate(with: textures, timePerFrame: 0.3)
-        treeAnimation = SKAction.animate(with: textures2, timePerFrame: 0.5)
-        houseAnimation = SKAction.animate(with: textures3, timePerFrame: 0.5)
-        house1Animation = SKAction.animate(with: textures4, timePerFrame: 0.5)
+        animationMalin = SKAction.animate(with: textures, timePerFrame: 0.3)
+        animationTree = SKAction.animate(with: textures2, timePerFrame: 0.5)
+        animationHouse = SKAction.animate(with: textures3, timePerFrame: 0.5)
+        animationHouse1 = SKAction.animate(with: textures4, timePerFrame: 0.5)
         buttonNextAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
         buttonPreviousAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
 
@@ -196,52 +196,52 @@ class MalinKundang_Scene2: SKScene {
     }
     
     func startMalinAnimation() {
-        if malin.action(forKey: "Malin Scene1") == nil {
-            malin.run(SKAction.repeatForever(malinAnimation!), withKey: "Malin Scene1")
+        if characterMalin.action(forKey: "Malin Scene1") == nil {
+            characterMalin.run(SKAction.repeatForever(animationMalin!), withKey: "Malin Scene1")
         }
     }
     
     func stopMalinAnimation() {
-        malin.removeAction(forKey: "Malin Scene1")
+        characterMalin.removeAction(forKey: "Malin Scene1")
     }
     
     func startTreeAnimation() {
-        if tree.action(forKey: "Tree") == nil {
-            tree.run(SKAction.repeatForever(treeAnimation!), withKey: "Tree")
+        if nonCharacterTree.action(forKey: "Tree") == nil {
+            nonCharacterTree.run(SKAction.repeatForever(animationTree!), withKey: "Tree")
         }
     }
     
     func stopTreeAnimation() {
-        tree.removeAction(forKey: "Tree")
+        nonCharacterTree.removeAction(forKey: "Tree")
     }
     
     func startHouseAnimation() {
-        if house.action(forKey: "House") == nil {
-            house.run(SKAction.repeatForever(houseAnimation!), withKey: "House")
+        if nonCharacterHouse.action(forKey: "House") == nil {
+            nonCharacterHouse.run(SKAction.repeatForever(animationHouse!), withKey: "House")
         }
     }
     
     func stopHouseAnimation() {
-        house.removeAction(forKey: "House")
+        nonCharacterHouse.removeAction(forKey: "House")
     }
     
     func startHouse1Animation() {
-        if house1.action(forKey: "House1") == nil {
-            house1.run(SKAction.repeatForever(house1Animation!), withKey: "House1")
+        if nonCharacterHouse1.action(forKey: "House1") == nil {
+            nonCharacterHouse1.run(SKAction.repeatForever(animationHouse1!), withKey: "House1")
         }
     }
     
     func stopHouse1Animation() {
-        house1.removeAction(forKey: "House1")
+        nonCharacterHouse1.removeAction(forKey: "House1")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         let touch = touches.first as UITouch?
         print(atPoint((touch?.location(in: self))!))
-        if atPoint((touch?.location(in: self))!).name == malin.name {
+        if atPoint((touch?.location(in: self))!).name == characterMalin.name {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
-                if !self.malin.hasActions(){
+                if !self.characterMalin.hasActions(){
                     if node.name == "malin" {
                         startMalinAnimation()
                     }
@@ -252,9 +252,9 @@ class MalinKundang_Scene2: SKScene {
                     }
                 }
             }
-        }else if atPoint((touch?.location(in: self))!).name == tree.name {
+        }else if atPoint((touch?.location(in: self))!).name == nonCharacterTree.name {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
-                if !self.tree.hasActions(){
+                if !self.nonCharacterTree.hasActions(){
                     if node.name == "tree" {
                         startTreeAnimation()
                     }
@@ -264,9 +264,9 @@ class MalinKundang_Scene2: SKScene {
                     }
                 }
             }
-        }else if atPoint((touch?.location(in: self))!).name == house.name {
+        }else if atPoint((touch?.location(in: self))!).name == nonCharacterHouse.name {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
-                if !self.house.hasActions(){
+                if !self.nonCharacterHouse.hasActions(){
                     if node.name == "house" {
                         startHouseAnimation()
                     }
@@ -276,9 +276,9 @@ class MalinKundang_Scene2: SKScene {
                     }
                 }
             }
-        }else if atPoint((touch?.location(in: self))!).name == house1.name {
+        }else if atPoint((touch?.location(in: self))!).name == nonCharacterHouse1.name {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
-                if !self.house1.hasActions(){
+                if !self.nonCharacterHouse1.hasActions(){
                     if node.name == "house1" {
                         startHouse1Animation()
                     }
