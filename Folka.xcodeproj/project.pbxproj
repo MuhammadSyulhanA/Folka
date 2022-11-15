@@ -39,6 +39,8 @@
 		A08B5DCA291FD06C0021FBAF /* ProfileOnboard_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08B5DC8291FD06C0021FBAF /* ProfileOnboard_ViewController.xib */; };
 		A08B5DCD29200F1A0021FBAF /* DetailPage_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08B5DCB29200F1A0021FBAF /* DetailPage_ViewController.swift */; };
 		A08B5DCE29200F1A0021FBAF /* DetailPage_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08B5DCC29200F1A0021FBAF /* DetailPage_ViewController.xib */; };
+		A097D67E2923EB8C0066EBDA /* SettingsScreen_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A097D67C2923EB8C0066EBDA /* SettingsScreen_ViewController.swift */; };
+		A097D67F2923EB8C0066EBDA /* SettingsScreen_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A097D67D2923EB8C0066EBDA /* SettingsScreen_ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +87,8 @@
 		A08B5DC8291FD06C0021FBAF /* ProfileOnboard_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileOnboard_ViewController.xib; sourceTree = "<group>"; };
 		A08B5DCB29200F1A0021FBAF /* DetailPage_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage_ViewController.swift; sourceTree = "<group>"; };
 		A08B5DCC29200F1A0021FBAF /* DetailPage_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPage_ViewController.xib; sourceTree = "<group>"; };
+		A097D67C2923EB8C0066EBDA /* SettingsScreen_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen_ViewController.swift; sourceTree = "<group>"; };
+		A097D67D2923EB8C0066EBDA /* SettingsScreen_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsScreen_ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,7 @@
 		69C55014291A0CC700E1CEF7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A097D67B2923EAF80066EBDA /* SettingsScreen */,
 				69C5501F291A0E7D00E1CEF7 /* DetailSceneStory */,
 				69C5501D291A0E5E00E1CEF7 /* DetailPage */,
 				69C5501C291A0E5600E1CEF7 /* HomePage */,
@@ -275,6 +280,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		A097D67B2923EAF80066EBDA /* SettingsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A097D67C2923EB8C0066EBDA /* SettingsScreen_ViewController.swift */,
+				A097D67D2923EB8C0066EBDA /* SettingsScreen_ViewController.xib */,
+			);
+			path = SettingsScreen;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -338,6 +352,7 @@
 				A01411C3291D6B7F007EDA8E /* HomePage_ViewController.xib in Resources */,
 				69C5500C291A0C5D00E1CEF7 /* LaunchScreen.storyboard in Resources */,
 				A01411CD291DFF94007EDA8E /* FONTLOG.txt in Resources */,
+				A097D67F2923EB8C0066EBDA /* SettingsScreen_ViewController.xib in Resources */,
 				A04B9FCD291E0DF10022168A /* HomePage_CollectionViewCell.xib in Resources */,
 				69C55009291A0C5D00E1CEF7 /* Assets.xcassets in Resources */,
 				69C55007291A0C5A00E1CEF7 /* Main.storyboard in Resources */,
@@ -364,6 +379,7 @@
 				698EB8D22921E24E008C18BA /* GamePadBase.swift in Sources */,
 				698EB8D12921E24E008C18BA /* GamePadRight.swift in Sources */,
 				988867662920FEA00094AAAF /* MalinKundang_Scene2.swift in Sources */,
+				A097D67E2923EB8C0066EBDA /* SettingsScreen_ViewController.swift in Sources */,
 				698EB8D52921E24E008C18BA /* GamePadUp.swift in Sources */,
 				A01411C5291D6C1A007EDA8E /* ModelDataCaraousel.swift in Sources */,
 				988867622920FD770094AAAF /* MalinKundang_ViewController.swift in Sources */,
