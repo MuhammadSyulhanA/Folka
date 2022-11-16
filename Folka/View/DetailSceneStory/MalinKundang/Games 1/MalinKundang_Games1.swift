@@ -126,17 +126,17 @@ class MalinKundang_Games1: SKScene {
     
     func swimmingFish() {
         let blueFish = SKSpriteNode(imageNamed: "blueFish")
-        blueFish.position = CGPoint(x: size.width + blueFish.size.width/2, y: CGFloat.random(min: CGRectGetMinY(playableRect) + blueFish.size.height/2, max: CGRectGetMaxY(playableRect) - blueFish.size.height/2))
+        blueFish.position = CGPoint(x: size.width + blueFish.size.width/2, y: CGFloat.random(min: playableRect.minY + blueFish.size.height/2, max: playableRect.maxY - blueFish.size.height/2))
         blueFish.size = CGSize(width: 150, height: 150)
         addChild(blueFish)
         
         let zebraFish = SKSpriteNode(imageNamed: "zebraFish")
-        zebraFish.position = CGPoint(x: size.width + zebraFish.size.width/2, y: CGFloat.random(min: CGRectGetMinY(playableRect) + zebraFish.size.height/2, max: CGRectGetMaxY(playableRect) - zebraFish.size.height/2))
+        zebraFish.position = CGPoint(x: size.width + zebraFish.size.width/2, y: CGFloat.random(min: playableRect.minY + zebraFish.size.height/2, max: playableRect.maxY - zebraFish.size.height/2))
         zebraFish.size = CGSize(width: 150, height: 150)
         addChild(zebraFish)
         
         let redFish = SKSpriteNode(imageNamed: "redFish")
-        redFish.position = CGPoint(x: -100 + redFish.size.width/2, y: CGFloat.random(min: CGRectGetMinY(playableRect) + redFish.size.height/2, max: CGRectGetMaxY(playableRect) - redFish.size.height/2))
+        redFish.position = CGPoint(x: -100 + redFish.size.width/2, y: CGFloat.random(min: playableRect.minY + redFish.size.height/2, max: playableRect.maxY - redFish.size.height/2))
         redFish.size = CGSize(width: 180, height: 150)
         addChild(redFish)
         
