@@ -179,7 +179,7 @@ class MalinKundang_Scene2: SKScene {
         if buttonNext.action(forKey: "Button Next") == nil {
             buttonNext.run(SKAction.repeatForever(buttonNextAction!), withKey: "Button Next")
             let reveal = SKTransition.reveal(with: .left, duration: 1)
-            let newScene = MalinKundang_Games1(size: CGSize(width: 2048, height: 1536))
+            let newScene = MalinKundang_Tutorial_Games1(size: CGSize(width: 2048, height: 1536))
             newScene.scaleMode = .aspectFill
             scene?.view!.presentScene(newScene, transition: reveal)
         }
