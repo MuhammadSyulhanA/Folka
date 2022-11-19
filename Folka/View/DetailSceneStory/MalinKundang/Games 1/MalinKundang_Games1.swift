@@ -21,26 +21,23 @@ class MalinKundang_Games1: SKScene {
     let fishMovePointPerSec: CGFloat = 480.0
     var velocity = CGPoint.zero
     
-    let background = SKSpriteNode(imageNamed: "backgroundSea")
+    let backgroundSea = SKSpriteNode(imageNamed: "backgroundSea")
+    let backgroundOpacity = SKSpriteNode(imageNamed: "opacityBackground")
     
-    let redFish = SKSpriteNode(imageNamed: "redFish")
-    var redFishAnimation: SKAction?
+    let popUpCongrats = SKSpriteNode(imageNamed: "congratsPopUp")
+    let popUpFailed = SKSpriteNode(imageNamed: "failedPopUp")
+    let popUpExit = SKSpriteNode(imageNamed: "exitPopUp")
+
+    let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
+    let buttonNextStory = SKSpriteNode(imageNamed: "buttonLanjutkanCerita")
+    let buttonReplayGame = SKSpriteNode(imageNamed: "buttonMainLagi")
+    let buttonTryAgain = SKSpriteNode(imageNamed: "buttonCobaLagi")
+    let buttonYes = SKSpriteNode(imageNamed: "buttonYa")
+    let buttonNo = SKSpriteNode(imageNamed: "buttonTidak")
     
-    //    let blueFish = SKSpriteNode(imageNamed: "blueFish")
-    var blueFishAnimation: SKAction?
-    
-    let zebraFish = SKSpriteNode(imageNamed: "zebraFish")
-    var zebraFishAnimation: SKAction?
-    
-    let seaweed = SKSpriteNode(imageNamed: "seaweed")
-    let seaweed1 = SKSpriteNode(imageNamed: "seaweed")
-    let seaweed2 = SKSpriteNode(imageNamed: "seaweed")
-    
-    let apple = SKSpriteNode(imageNamed: "apple")
-    var appleAnimation: SKAction?
-    
-    let bottle = SKSpriteNode(imageNamed: "bottle")
-    var bottleAnimation: SKAction?
+    let nonCharacterSeaweed = SKSpriteNode(imageNamed: "seaweed")
+    let nonCharacterSeaweed1 = SKSpriteNode(imageNamed: "seaweed")
+    let nonCharacterSeaweed2 = SKSpriteNode(imageNamed: "seaweed")
     
     let nonCharacterRope = SKSpriteNode(imageNamed: "fishingRope")
     let nonCharacterHook = SKSpriteNode(imageNamed: "fishingHook")
@@ -81,29 +78,37 @@ class MalinKundang_Games1: SKScene {
         // MARK: Default background white
         self.backgroundColor = SKColor.white
         
-        background.size = CGSize(width: 2040, height: 1120)
-        background.position = CGPoint(x: size.width/2, y: size.height/2)
-        background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        background.zPosition = -1
-        addChild(background)
+        backgroundSea.size = CGSize(width: 2050, height: 1120)
+        backgroundSea.position = CGPoint(x: size.width/2, y: size.height/2)
+        backgroundSea.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        backgroundSea.zPosition = -1
+        addChild(backgroundSea)
         
-        seaweed.size = CGSize(width: 300, height: 300)
-        seaweed.position = CGPoint(x: size.width/4.2, y: size.height/2.95)
-        seaweed.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        seaweed.zPosition = 1
-        addChild(seaweed)
+        //MARK: Background opacity selalu muncul setiap muncul pop up
+        backgroundOpacity.size = CGSize(width: 2050, height: 1120)
+        backgroundOpacity.position = CGPoint(x: size.width/2, y: size.height/2)
+        backgroundOpacity.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        backgroundOpacity.zPosition = 2
+        backgroundOpacity.isHidden = true
+        addChild(backgroundOpacity)
         
-        seaweed1.size = CGSize(width: 300, height: 300)
-        seaweed1.position = CGPoint(x: size.width/1.75, y: size.height/3.1)
-        seaweed1.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        seaweed1.zPosition = 1
-        addChild(seaweed1)
+        nonCharacterSeaweed.size = CGSize(width: 300, height: 300)
+        nonCharacterSeaweed.position = CGPoint(x: size.width/4.2, y: size.height/2.95)
+        nonCharacterSeaweed.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterSeaweed.zPosition = 1
+        addChild(nonCharacterSeaweed)
         
-        seaweed2.size = CGSize(width: 300, height: 300)
-        seaweed2.position = CGPoint(x: size.width/1.08, y: size.height/2.97)
-        seaweed2.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        seaweed2.zPosition = 1
-        addChild(seaweed2)
+        nonCharacterSeaweed1.size = CGSize(width: 300, height: 300)
+        nonCharacterSeaweed1.position = CGPoint(x: size.width/1.75, y: size.height/3.1)
+        nonCharacterSeaweed1.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterSeaweed1.zPosition = 1
+        addChild(nonCharacterSeaweed1)
+        
+        nonCharacterSeaweed2.size = CGSize(width: 300, height: 300)
+        nonCharacterSeaweed2.position = CGPoint(x: size.width/1.08, y: size.height/2.97)
+        nonCharacterSeaweed2.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterSeaweed2.zPosition = 1
+        addChild(nonCharacterSeaweed2)
         
         nonCharacterHook.size = CGSize(width: 40, height: 40)
         nonCharacterHook.name = "hook"
@@ -126,7 +131,7 @@ class MalinKundang_Games1: SKScene {
         labelTextStory.numberOfLines = 0
         labelTextStory.preferredMaxLayoutWidth = 1300
         labelTextStory.position = CGPoint(x: size.width/2, y: size.height/4.25)
-        labelTextStory.zPosition = +4.5
+        labelTextStory.zPosition = 1.5
         addChild(labelTextStory)
         
         labelTimer.text = "START!"
@@ -136,8 +141,82 @@ class MalinKundang_Games1: SKScene {
         labelTimer.numberOfLines = 0
         labelTimer.preferredMaxLayoutWidth = 1300
         labelTimer.position = CGPoint(x: size.width/2, y: size.height/3.0)
-        labelTimer.zPosition = +4.5
+        labelTimer.zPosition = 1.5
         addChild(labelTimer)
+        
+        buttonHome.size = CGSize(width: 150, height: 150)
+        buttonHome.name = "buttonHome"
+        buttonHome.position = CGPoint(x: size.width/17.0, y: size.height/1.38)
+        buttonHome.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        buttonHome.zPosition = 1.5
+        addChild(buttonHome)
+        
+        //MARK: PopUp ketika user berhasil mancing 10 ikan
+        popUpCongrats.size = CGSize(width: 1250, height: 850)
+        popUpCongrats.name = "congrats"
+        popUpCongrats.position = CGPoint(x: size.width/2.0, y: size.height/2.0)
+        popUpCongrats.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        popUpCongrats.zPosition = 2.5
+        popUpCongrats.isHidden = true
+        addChild(popUpCongrats)
+        
+        buttonNextStory.size = CGSize(width: 550, height: 110)
+        buttonNextStory.name = "nextStory"
+        buttonNextStory.position = CGPoint(x: size.width/2.0, y: size.height/2.6)
+        buttonNextStory.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        buttonNextStory.zPosition = 3.0
+        buttonNextStory.isHidden = true
+        addChild(buttonNextStory)
+        
+        buttonReplayGame.size = CGSize(width: 550, height: 110)
+        buttonReplayGame.name = "replayGame"
+        buttonReplayGame.position = CGPoint(x: size.width/2.0, y: size.height/3.3)
+        buttonReplayGame.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        buttonReplayGame.zPosition = 3.0
+        buttonReplayGame.isHidden = true
+        addChild(buttonReplayGame)
+        
+        //MARK: PopUp ketika user gagal mancing 10 ikan
+        popUpFailed.size = CGSize(width: 1250, height: 850)
+        popUpFailed.name = "failed"
+        popUpFailed.position = CGPoint(x: size.width/2.0, y: size.height/2.0)
+        popUpFailed.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        popUpFailed.zPosition = 2.5
+        popUpFailed.isHidden = true
+        addChild(popUpFailed)
+        
+        buttonTryAgain.size = CGSize(width: 550, height: 110)
+        buttonTryAgain.name = "tryAgain"
+        buttonTryAgain.position = CGPoint(x: size.width/2.0, y: size.height/3.3)
+        buttonTryAgain.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        buttonTryAgain.zPosition = 3.0
+        buttonTryAgain.isHidden = true
+        addChild(buttonTryAgain)
+        
+        //MARK: PopUp ketika home button diklik
+        popUpExit.size = CGSize(width: 800, height: 550)
+        popUpExit.name = "exit"
+        popUpExit.position = CGPoint(x: size.width/2.0, y: size.height/2.0)
+        popUpExit.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        popUpExit.zPosition = 2.5
+        popUpExit.isHidden = true
+        addChild(popUpExit)
+        
+        buttonYes.size = CGSize(width: 350, height: 110)
+        buttonYes.name = "buttonYes"
+        buttonYes.position = CGPoint(x: size.width/2.0, y: size.height/2.0)
+        buttonYes.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        buttonYes.zPosition = 3.0
+        buttonYes.isHidden = true
+        addChild(buttonYes)
+        
+        buttonNo.size = CGSize(width: 350, height: 110)
+        buttonNo.name = "buttonNo"
+        buttonNo.position = CGPoint(x: size.width/2.0, y: size.height/2.4)
+        buttonNo.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        buttonNo.zPosition = 3.0
+        buttonNo.isHidden = true
+        addChild(buttonNo)
         
         print(nonCharacterHook.position.y)
         print(size.height/1.2)
