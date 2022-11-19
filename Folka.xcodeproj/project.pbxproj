@@ -33,6 +33,7 @@
 		A01411CC291DFF94007EDA8E /* McLaren-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A01411C9291DFF94007EDA8E /* McLaren-Regular.ttf */; };
 		A01411CD291DFF94007EDA8E /* FONTLOG.txt in Resources */ = {isa = PBXBuildFile; fileRef = A01411CA291DFF94007EDA8E /* FONTLOG.txt */; };
 		A01411CE291DFF94007EDA8E /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = A01411CB291DFF94007EDA8E /* OFL.txt */; };
+		A018EA09292773BF00FE7451 /* MalinKundang_Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018EA08292773BF00FE7451 /* MalinKundang_Puzzle.swift */; };
 		A047FAB2291E191E0057F0A4 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A047FAB1291E191E0057F0A4 /* CustomLayout.swift */; };
 		A04B9FCC291E0DF10022168A /* HomePage_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B9FCA291E0DF10022168A /* HomePage_CollectionViewCell.swift */; };
 		A04B9FCD291E0DF10022168A /* HomePage_CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04B9FCB291E0DF10022168A /* HomePage_CollectionViewCell.xib */; };
@@ -82,6 +83,7 @@
 		A01411C9291DFF94007EDA8E /* McLaren-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "McLaren-Regular.ttf"; sourceTree = "<group>"; };
 		A01411CA291DFF94007EDA8E /* FONTLOG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FONTLOG.txt; sourceTree = "<group>"; };
 		A01411CB291DFF94007EDA8E /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		A018EA08292773BF00FE7451 /* MalinKundang_Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Puzzle.swift; sourceTree = "<group>"; };
 		A047FAB1291E191E0057F0A4 /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
 		A04B9FCA291E0DF10022168A /* HomePage_CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage_CollectionViewCell.swift; sourceTree = "<group>"; };
 		A04B9FCB291E0DF10022168A /* HomePage_CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePage_CollectionViewCell.xib; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 		69C55025291A0F9400E1CEF7 /* MalinKundang */ = {
 			isa = PBXGroup;
 			children = (
+				A018EA032927694000FE7451 /* Games 2 */,
 				988867612920FD770094AAAF /* MalinKundang_ViewController.swift */,
 				69C55027291A0FCD00E1CEF7 /* DocsSceneDet.md */,
 				69C55026291A0FB600E1CEF7 /* Scene 1 */,
@@ -281,6 +284,14 @@
 				A01411CB291DFF94007EDA8E /* OFL.txt */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A018EA032927694000FE7451 /* Games 2 */ = {
+			isa = PBXGroup;
+			children = (
+				A018EA08292773BF00FE7451 /* MalinKundang_Puzzle.swift */,
+			);
+			path = "Games 2";
 			sourceTree = "<group>";
 		};
 		A097D67B2923EAF80066EBDA /* SettingsScreen */ = {
@@ -386,6 +397,7 @@
 				A097D67E2923EB8C0066EBDA /* SettingsScreen_ViewController.swift in Sources */,
 				698EB8D52921E24E008C18BA /* GamePadUp.swift in Sources */,
 				A01411C5291D6C1A007EDA8E /* ModelDataCaraousel.swift in Sources */,
+				A018EA09292773BF00FE7451 /* MalinKundang_Puzzle.swift in Sources */,
 				988867622920FD770094AAAF /* MalinKundang_ViewController.swift in Sources */,
 				69C55000291A0C5A00E1CEF7 /* AppDelegate.swift in Sources */,
 				988867642920FDD40094AAAF /* MalinKundang_Scene1.swift in Sources */,

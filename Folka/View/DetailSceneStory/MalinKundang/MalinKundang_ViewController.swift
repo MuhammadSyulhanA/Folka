@@ -1,6 +1,6 @@
 //
 //  MalinKundang_ViewController.swift
-//  Folka
+//  Folk
 //
 //  Created by Ferry Julian on 13/11/22.
 //
