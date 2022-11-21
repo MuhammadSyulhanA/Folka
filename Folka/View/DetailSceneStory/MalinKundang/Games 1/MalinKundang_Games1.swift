@@ -29,24 +29,33 @@ class MalinKundang_Games1: SKScene {
     let popUpExit = SKSpriteNode(imageNamed: "exitPopUp")
 
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
+    var buttonHomeAction: SKAction?
     let buttonNextStory = SKSpriteNode(imageNamed: "buttonLanjutkanCerita")
+    var buttonNextStoryAction: SKAction?
     let buttonReplayGame = SKSpriteNode(imageNamed: "buttonMainLagi")
+    var buttonReplayAction: SKAction?
     let buttonTryAgain = SKSpriteNode(imageNamed: "buttonCobaLagi")
+    var buttonTryAgainAction: SKAction?
     let buttonYes = SKSpriteNode(imageNamed: "buttonYa")
+    var buttonYesAction: SKAction?
     let buttonNo = SKSpriteNode(imageNamed: "buttonTidak")
+    var buttonNoAction: SKAction?
     
     let nonCharacterSeaweed = SKSpriteNode(imageNamed: "seaweed")
     let nonCharacterSeaweed1 = SKSpriteNode(imageNamed: "seaweed")
     let nonCharacterSeaweed2 = SKSpriteNode(imageNamed: "seaweed")
     
-    let nonCharacterRope = SKSpriteNode(imageNamed: "fishingRope")
+    let nonCharacterBoardTimer = SKSpriteNode(imageNamed: "boardTimer")
+    let nonCharacterBoardFish = SKSpriteNode(imageNamed: "boardFish")
+    
+    let nonCharacterRope = SKSpriteNode(imageNamed: "longRope")
     let nonCharacterHook = SKSpriteNode(imageNamed: "fishingHook")
     var hookAnimation: SKAction?
     let moveHookPointPerSec: CGFloat = 480.0
     var lastTouchLocation: CGPoint?
     
     // score
-    var labelTextStory = SKLabelNode(fontNamed: "McLaren")
+    var labelFish = SKLabelNode(fontNamed: "McLaren")
     
     // timer
     var labelTimer = SKLabelNode(fontNamed: "McLaren")
@@ -59,6 +68,13 @@ class MalinKundang_Games1: SKScene {
         let playableHeight = size.width / maxAspectRatio
         let playableMargin = (size.height - playableHeight)/2.0
         playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: playableHeight)
+        
+        buttonHomeAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
+        buttonNoAction = SKAction.resize(toWidth: 350, height: 110, duration: 2.0)
+        buttonYesAction = SKAction.resize(toWidth: 350, height: 110, duration: 2.0)
+        buttonTryAgainAction = SKAction.resize(toWidth: 550, height: 110, duration: 2.0)
+        buttonReplayAction = SKAction.resize(toWidth: 550, height: 110, duration: 2.0)
+        buttonNextStoryAction = SKAction.resize(toWidth: 550, height: 110, duration: 2.0)
         
         super.init(size: size)
     }
@@ -110,29 +126,41 @@ class MalinKundang_Games1: SKScene {
         nonCharacterSeaweed2.zPosition = 1
         addChild(nonCharacterSeaweed2)
         
+        nonCharacterBoardTimer.size = CGSize(width: 192, height: 100)
+        nonCharacterBoardTimer.position = CGPoint(x: size.width/2.0, y: size.height/1.38)
+        nonCharacterBoardTimer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterBoardTimer.zPosition = 1
+        addChild(nonCharacterBoardTimer)
+        
+        nonCharacterBoardFish.size = CGSize(width: 192, height: 100)
+        nonCharacterBoardFish.position = CGPoint(x: size.width/1.08, y: size.height/1.38)
+        nonCharacterBoardFish.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterBoardFish.zPosition = 1
+        addChild(nonCharacterBoardFish)
+        
         nonCharacterHook.size = CGSize(width: 40, height: 40)
         nonCharacterHook.name = "hook"
         nonCharacterHook.position = CGPoint(x: size.width/2.0, y: size.height/1.5)
         nonCharacterHook.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        nonCharacterHook.zPosition = 1
+        nonCharacterHook.zPosition = 2
         addChild(nonCharacterHook)
         
-        nonCharacterRope.size = CGSize(width: 10, height: 480)
+        nonCharacterRope.size = CGSize(width: 10, height: 958)
         nonCharacterRope.name = "rope"
-        nonCharacterRope.position = CGPoint(x: size.width/2.0 - 10.0, y: nonCharacterHook.position.y + ((size.height/1.2) - nonCharacterHook.position.y))
+        nonCharacterRope.position = CGPoint(x: size.width/2.0 - 10.0, y: nonCharacterHook.position.y + ((size.height/1.03) - nonCharacterHook.position.y))
         nonCharacterRope.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         nonCharacterRope.zPosition = 1
         addChild(nonCharacterRope)
         
-        labelTextStory.text = "\(totalFishCatched)"
-        labelTextStory.fontColor = SKColor.white
-        labelTextStory.fontSize = 32
-        labelTextStory.lineBreakMode = NSLineBreakMode.byWordWrapping
-        labelTextStory.numberOfLines = 0
-        labelTextStory.preferredMaxLayoutWidth = 1300
-        labelTextStory.position = CGPoint(x: size.width/2, y: size.height/4.25)
-        labelTextStory.zPosition = 1.5
-        addChild(labelTextStory)
+        labelFish.text = "x \(totalFishCatched)"
+        labelFish.fontColor = SKColor.white
+        labelFish.fontSize = 32
+        labelFish.lineBreakMode = NSLineBreakMode.byWordWrapping
+        labelFish.numberOfLines = 0
+        labelFish.preferredMaxLayoutWidth = 1300
+        labelFish.position = CGPoint(x: size.width/1.06, y: size.height/1.41)
+        labelFish.zPosition = 1.5
+        addChild(labelFish)
         
         labelTimer.text = "START!"
         labelTimer.fontColor = SKColor.white
@@ -140,7 +168,7 @@ class MalinKundang_Games1: SKScene {
         labelTimer.lineBreakMode = NSLineBreakMode.byWordWrapping
         labelTimer.numberOfLines = 0
         labelTimer.preferredMaxLayoutWidth = 1300
-        labelTimer.position = CGPoint(x: size.width/2, y: size.height/3.0)
+        labelTimer.position = CGPoint(x: size.width/2.0, y: size.height/1.4)
         labelTimer.zPosition = 1.5
         addChild(labelTimer)
         
@@ -253,7 +281,12 @@ class MalinKundang_Games1: SKScene {
 //             Show popup with delay
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
 //                self.showPopUpGameOver()
-                self.labelTimer.text = "CONGRATSSS!"
+//                self.labelTimer.text = "CONGRATSSS!"
+                if (self.totalFishCatched >= 10) {
+                    self.gameOverWin()
+                } else {
+                    self.gameOverLose()
+                }
             }
         }
     }
@@ -262,15 +295,16 @@ class MalinKundang_Games1: SKScene {
         let offset = CGPoint(x: location.x - nonCharacterHook.position.x, y: location.y - nonCharacterHook.position.y)
         let length = sqrt(Double(offset.x * offset.x + offset.y * offset.y))
         let direction = CGPoint(x: offset.x / CGFloat(length), y: offset.y / CGFloat(length))
-        
+
         velocity = CGPoint(x: direction.x * moveHookPointPerSec, y: direction.y * moveHookPointPerSec)
+        
+//        nonCharacterHook.position = location
     }
     
     func moveSprite(sprite: SKSpriteNode, sprite2: SKSpriteNode, velocity: CGPoint) {
         let amountToMove = CGPoint(x: velocity.x * CGFloat(dt), y: velocity.y * CGFloat(dt))
-//        print("Amount to move: \(amountToMove)")
         sprite.position = CGPoint(x: sprite.position.x + amountToMove.x, y: sprite.position.y + amountToMove.y)
-        sprite2.position = CGPoint(x: sprite.position.x + amountToMove.x - sprite2.size.width, y: sprite.position.y + amountToMove.y + (sprite.size.height * 6))
+        sprite2.position = CGPoint(x: sprite.position.x + amountToMove.x - sprite2.size.width, y: sprite.position.y + amountToMove.y + (sprite.size.height * 12))
     }
     
     func swimmingFish() {
@@ -410,21 +444,157 @@ class MalinKundang_Games1: SKScene {
         //        isBottleCatched.toggle()
     }
     
+    func gameOverLose(){
+        backgroundOpacity.isHidden = false
+        popUpFailed.isHidden = false
+        buttonTryAgain.isHidden = false
+    }
+    
+    func gameOverWin(){
+        backgroundOpacity.isHidden = false
+        popUpCongrats.isHidden = false
+        buttonNextStory.isHidden = false
+        buttonReplayGame.isHidden = false
+    }
+    
+    func backToHome(){
+        backgroundOpacity.isHidden = false
+        popUpExit.isHidden = false
+        buttonYes.isHidden = false
+        buttonNo.isHidden = false
+    }
+    
+    func backToGame(){
+        backgroundOpacity.isHidden = true
+        popUpExit.isHidden = true
+        buttonYes.isHidden = true
+        buttonNo.isHidden = true
+    }
+    
+    func buttonNextStoryScene() {
+        if buttonNextStory.action(forKey: "Button Next") == nil {
+            buttonNextStory.run(SKAction.repeatForever(buttonNextStoryAction!), withKey: "Button Next")
+            let reveal = SKTransition.reveal(with: .left, duration: 1)
+            let newScene = MalinKundang_Scene2(size: CGSize(width: 2048, height: 1536))
+            newScene.scaleMode = .aspectFill
+            scene?.view!.presentScene(newScene, transition: reveal)
+        }
+    }
+    
+    func buttonBackToHome() {
+        if buttonYes.action(forKey: "Button Yes") == nil {
+            buttonYes.run(SKAction.repeatForever(buttonYesAction!), withKey: "Button Yes")
+            let reveal = SKTransition.reveal(with: .left, duration: 1)
+            let newScene = MalinKundang_Scene1(size: CGSize(width: 2048, height: 1536))
+            newScene.scaleMode = .aspectFill
+            scene?.view!.presentScene(newScene, transition: reveal)
+        }
+    }
+    
+    func buttonPlayTryAgain() {
+        if buttonTryAgain.action(forKey: "Button Try") == nil {
+            buttonTryAgain.run(SKAction.repeatForever(buttonTryAgainAction!), withKey: "Button Try")
+            let reveal = SKTransition.reveal(with: .left, duration: 1)
+            let newScene = MalinKundang_Games1(size: CGSize(width: 2048, height: 1536))
+            newScene.scaleMode = .aspectFill
+            scene?.view!.presentScene(newScene, transition: reveal)
+        }
+    }
+    
+    func buttonbackToHomeScene() {
+        if buttonHome.action(forKey: "Button Home") == nil {
+            buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
+            backToHome()
+        } else {
+            backToHome()
+        }
+    }
+    
+    func buttonbackToGame() {
+        if buttonNo.action(forKey: "Button No") == nil {
+            buttonNo.run(SKAction.repeatForever(buttonNoAction!), withKey: "Button No")
+            backToGame()
+        } else {
+            backToGame()
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else {
             return
         }
-        
+
         let touchLocation = touch.location(in: self)
         lastTouchLocation = touchLocation
         moveHook(location: touchLocation)
+        
+        if atPoint((touch.location(in: self))).name == buttonNextStory.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if !self.buttonNextStory.hasActions(){
+                    if node.name == "nextStory" {
+                        buttonNextStoryScene()
+                    }
+                }
+            }
+        }
+        
+        if atPoint((touch.location(in: self))).name == buttonHome.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+//                if !self.buttonHome.hasActions(){
+                    if node.name == "buttonHome" {
+                        buttonbackToHomeScene()
+                    }
+//                }
+            }
+        }
+        
+        if atPoint((touch.location(in: self))).name == buttonNo.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+//                if !self.buttonNo.hasActions(){
+                    if node.name == "buttonNo" {
+                        buttonbackToGame()
+                    }
+//                }
+            }
+        }
+        
+        if atPoint((touch.location(in: self))).name == buttonYes.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if !self.buttonYes.hasActions(){
+                    if node.name == "buttonYes" {
+                        buttonBackToHome()
+                    }
+                }
+            }
+        }
+        
+        if atPoint((touch.location(in: self))).name == buttonTryAgain.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+//                if !self.buttonNo.hasActions(){
+                    if node.name == "tryAgain" {
+                        buttonPlayTryAgain()
+                    }
+//                }
+            }
+        }
+        
+        if atPoint((touch.location(in: self))).name == buttonReplayGame.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+//                if !self.buttonNo.hasActions(){
+                    if node.name == "replayGame" {
+                        buttonPlayTryAgain()
+                    }
+//                }
+            }
+        }
+    
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else {
             return
         }
-        
+
         let touchLocation = touch.location(in: self)
         lastTouchLocation = touchLocation
         moveHook(location: touchLocation)
@@ -437,8 +607,7 @@ class MalinKundang_Games1: SKScene {
             dt = 0
         }
         lastUpdateTime = currentTime
-        //        print("\(dt*1000) milliseconds since last update")
-        //
+        
         if let lastTouchLocation = lastTouchLocation {
             let diff = lastTouchLocation - nonCharacterHook.position
             if (diff.length() <= moveHookPointPerSec * CGFloat(dt)) {
@@ -449,7 +618,7 @@ class MalinKundang_Games1: SKScene {
             }
         }
         
-        labelTextStory.text = "\(totalFishCatched)"
+        labelFish.text = "x \(totalFishCatched)"
     }
     
     override func didEvaluateActions() {
