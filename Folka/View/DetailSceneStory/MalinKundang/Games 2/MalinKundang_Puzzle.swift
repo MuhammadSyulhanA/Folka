@@ -310,13 +310,6 @@ class MalinKundang_Puzzle: SKScene{
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    //    for touch in touches {
-    //      let location = touch.location(in: self)
-    //      if puzzleKecilBadanKapal.contains(location){
-    //        puzzleKecilBadanKapal.position = location
-    //        puzzleKecilBadanKapal.size = CGSize(width: 350, height: 70)
-    //      }
-    //    }
   }
   
   override func update(_ currentTime: TimeInterval) {

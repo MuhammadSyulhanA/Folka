@@ -43,6 +43,7 @@
 		A08B5DCE29200F1A0021FBAF /* DetailPage_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08B5DCC29200F1A0021FBAF /* DetailPage_ViewController.xib */; };
 		A097D67E2923EB8C0066EBDA /* SettingsScreen_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A097D67C2923EB8C0066EBDA /* SettingsScreen_ViewController.swift */; };
 		A097D67F2923EB8C0066EBDA /* SettingsScreen_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A097D67D2923EB8C0066EBDA /* SettingsScreen_ViewController.xib */; };
+		A0C353BA292A67D30082A071 /* MalinKundang_Puzzle2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C353B9292A67D30082A071 /* MalinKundang_Puzzle2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		A08B5DCC29200F1A0021FBAF /* DetailPage_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPage_ViewController.xib; sourceTree = "<group>"; };
 		A097D67C2923EB8C0066EBDA /* SettingsScreen_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen_ViewController.swift; sourceTree = "<group>"; };
 		A097D67D2923EB8C0066EBDA /* SettingsScreen_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsScreen_ViewController.xib; sourceTree = "<group>"; };
+		A0C353B9292A67D30082A071 /* MalinKundang_Puzzle2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Puzzle2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				A018EA08292773BF00FE7451 /* MalinKundang_Puzzle.swift */,
+				A0C353B9292A67D30082A071 /* MalinKundang_Puzzle2.swift */,
 			);
 			path = "Games 2";
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				988867622920FD770094AAAF /* MalinKundang_ViewController.swift in Sources */,
 				69C55000291A0C5A00E1CEF7 /* AppDelegate.swift in Sources */,
 				988867642920FDD40094AAAF /* MalinKundang_Scene1.swift in Sources */,
+				A0C353BA292A67D30082A071 /* MalinKundang_Puzzle2.swift in Sources */,
 				698EB8D42921E24E008C18BA /* GamePad.swift in Sources */,
 				A08B5DCD29200F1A0021FBAF /* DetailPage_ViewController.swift in Sources */,
 				A04B9FCC291E0DF10022168A /* HomePage_CollectionViewCell.swift in Sources */,
