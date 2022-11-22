@@ -11,7 +11,7 @@ import GameplayKit
 class MalinKundang_Scene6: SKScene {
   
   //MARK: Library sesuaikan dengan framework
-  let backgroundScene6 = SKSpriteNode(imageNamed: "backgroundScene6")
+  let backgroundScene6 = SKSpriteNode(imageNamed: "scene6")
   let kayuScene6 = SKSpriteNode(imageNamed: "kayuscene6")
   let characterMalin = SKSpriteNode(imageNamed: "malinScene1_1")
   var animationMalin: SKAction?
