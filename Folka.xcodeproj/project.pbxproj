@@ -21,6 +21,7 @@
 		69C55007291A0C5A00E1CEF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69C55005291A0C5A00E1CEF7 /* Main.storyboard */; };
 		69C55009291A0C5D00E1CEF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C55008291A0C5D00E1CEF7 /* Assets.xcassets */; };
 		69C5500C291A0C5D00E1CEF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69C5500A291A0C5D00E1CEF7 /* LaunchScreen.storyboard */; };
+		69D14816292C60DE0067D1D9 /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D14815292C60DE0067D1D9 /* CustomScrollView.swift */; };
 		988867622920FD770094AAAF /* MalinKundang_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988867612920FD770094AAAF /* MalinKundang_ViewController.swift */; };
 		988867642920FDD40094AAAF /* MalinKundang_Scene1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988867632920FDD40094AAAF /* MalinKundang_Scene1.swift */; };
 		988867662920FEA00094AAAF /* MalinKundang_Scene2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988867652920FEA00094AAAF /* MalinKundang_Scene2.swift */; };
@@ -71,6 +72,7 @@
 		69C55023291A0F4400E1CEF7 /* DocsDetail.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsDetail.md; sourceTree = "<group>"; };
 		69C55024291A0F7F00E1CEF7 /* DocsScene.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsScene.md; sourceTree = "<group>"; };
 		69C55027291A0FCD00E1CEF7 /* DocsSceneDet.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsSceneDet.md; sourceTree = "<group>"; };
+		69D14815292C60DE0067D1D9 /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		988867612920FD770094AAAF /* MalinKundang_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_ViewController.swift; sourceTree = "<group>"; };
 		988867632920FDD40094AAAF /* MalinKundang_Scene1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene1.swift; sourceTree = "<group>"; };
 		988867652920FEA00094AAAF /* MalinKundang_Scene2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene2.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				A018EA08292773BF00FE7451 /* MalinKundang_Puzzle.swift */,
+				69D14815292C60DE0067D1D9 /* CustomScrollView.swift */,
 			);
 			path = "Games 2";
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				98886769292107240094AAAF /* MalinKundang_Games1.swift in Sources */,
 				698EB8D62921E24E008C18BA /* GamePadleft.swift in Sources */,
 				A01411C2291D6B7F007EDA8E /* HomePage_ViewController.swift in Sources */,
+				69D14816292C60DE0067D1D9 /* CustomScrollView.swift in Sources */,
 				A047FAB2291E191E0057F0A4 /* CustomLayout.swift in Sources */,
 				A08B5DC9291FD06C0021FBAF /* ProfileOnboard_ViewController.swift in Sources */,
 				98F8DED82928981E00F8D70E /* MalinKundang_Tutorial_Games1.swift in Sources */,
