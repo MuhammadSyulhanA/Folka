@@ -210,7 +210,6 @@ class MalinKundang_Puzzle: SKScene{
         moveableNode.addChild(puzzleKecilGarisKapal)
         moveableNode.addChild(pelampung2)
         moveableNode.addChild(pelampung3)
-        
     }
     
     
