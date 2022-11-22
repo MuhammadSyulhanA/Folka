@@ -11,6 +11,7 @@ import GameplayKit
 import SpriteKit
 
 class MalinKundang_Puzzle: SKScene{
+    
     var scrollView: CustomScrollView!
     let moveableNode = SKNode()
     
