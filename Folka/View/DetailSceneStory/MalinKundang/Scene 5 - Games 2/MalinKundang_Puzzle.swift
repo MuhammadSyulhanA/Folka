@@ -12,8 +12,6 @@ import SpriteKit
 
 class MalinKundang_Puzzle: SKScene{
     
-    var scrollView: CustomScrollView!
-    let moveableNode = SKNode()
     
     let background = SKSpriteNode(imageNamed: "BackgroundPuzzle")
     let kayuPuzzle = SKSpriteNode(imageNamed: "KayuPuzzle")
@@ -29,8 +27,6 @@ class MalinKundang_Puzzle: SKScene{
     let puzzleKecilGarisKapal = SKSpriteNode(imageNamed: "PuzzleKecil_GarisKapal")
     let puzzleKecilJendelaKapal = SKSpriteNode(imageNamed: "PuzzleKecil_JendelaKapal")
     let puzzleKecilPelampung = SKSpriteNode(imageNamed: "PuzzleKecil_Pelampung")
-    let pelampung2 = SKSpriteNode(imageNamed: "PuzzleKecil_Pelampung")
-    let pelampung3 = SKSpriteNode(imageNamed: "PuzzleKecil_Pelampung")
     
     //MARK: PUZZLE BESAR
     let puzzleBesarBadanKapal = SKSpriteNode(imageNamed: "PuzzleBesar_BadanKapal")
@@ -78,7 +74,7 @@ class MalinKundang_Puzzle: SKScene{
         buttonTanya.zPosition = 2
         addChild(buttonTanya)
         
-        kayuPuzzle.scale(to: CGSize(width: 750, height: 880))
+        kayuPuzzle.scale(to: CGSize(width: 750, height: 1500))
         kayuPuzzle.position = CGPoint(x: size.width/1.03, y: size.height/2)
         kayuPuzzle.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         kayuPuzzle.zPosition = 2
@@ -89,61 +85,50 @@ class MalinKundang_Puzzle: SKScene{
         puzzleKecilBadanKapal.position = CGPoint(x: size.width/1.11, y: size.height/1.4)
         puzzleKecilBadanKapal.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         puzzleKecilBadanKapal.zPosition = 3
-//        addChild(puzzleKecilBadanKapal)
+        addChild(puzzleKecilBadanKapal)
         
         puzzleKecilPelampung.name = "puzzleKecilPelampung"
         puzzleKecilPelampung.scale(to: CGSize(width: 230, height: 100))
         puzzleKecilPelampung.position = CGPoint(x: size.width/1.1, y: size.height/1.60)
         puzzleKecilPelampung.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         puzzleKecilPelampung.zPosition = 3
-//        addChild(puzzleKecilPelampung)
+        addChild(puzzleKecilPelampung)
         
         puzzleKecilBadanAtasKapal2.name = "puzzleKecilBadanAtasKapal2"
         puzzleKecilBadanAtasKapal2.scale(to: CGSize(width: 230, height: 90))
         puzzleKecilBadanAtasKapal2.position = CGPoint(x: size.width/1.1, y: size.height/1.85)
         puzzleKecilBadanAtasKapal2.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         puzzleKecilBadanAtasKapal2.zPosition = 3
-//        addChild(puzzleKecilBadanAtasKapal2)
+        addChild(puzzleKecilBadanAtasKapal2)
         
         puzzleKecilBadanAtasKapal1.name = "puzzleKecilBadanAtasKapal1"
         puzzleKecilBadanAtasKapal1.scale(to: CGSize(width: 230, height: 100))
         puzzleKecilBadanAtasKapal1.position = CGPoint(x: size.width/1.1, y: size.height/2.15)
         puzzleKecilBadanAtasKapal1.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         puzzleKecilBadanAtasKapal1.zPosition = 3
-//        addChild(puzzleKecilBadanAtasKapal1)
+        addChild(puzzleKecilBadanAtasKapal1)
         
         puzzleKecilAtapKapal.name = "puzzleKecilAtapKapal"
         puzzleKecilAtapKapal.scale(to: CGSize(width: 230, height: 60))
         puzzleKecilAtapKapal.position = CGPoint(x: size.width/1.1, y: size.height/2.55)
         puzzleKecilAtapKapal.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         puzzleKecilAtapKapal.zPosition = 3
-//        addChild(puzzleKecilAtapKapal)
+        addChild(puzzleKecilAtapKapal)
         
         puzzleKecilJendelaKapal.name = "puzzleKecilJendelaKapal"
         puzzleKecilJendelaKapal.scale(to: CGSize(width: 230, height: 100))
         puzzleKecilJendelaKapal.position = CGPoint(x: size.width/1.1, y: size.height/3.00)
         puzzleKecilJendelaKapal.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         puzzleKecilJendelaKapal.zPosition = 3
-//        addChild(puzzleKecilJendelaKapal)
+        addChild(puzzleKecilJendelaKapal)
         
         puzzleKecilGarisKapal.name = "puzzleKecilGarisKapal"
         puzzleKecilGarisKapal.scale(to: CGSize(width: 350, height: 70))
-        puzzleKecilGarisKapal.position = CGPoint(x: size.width/1.1, y: size.height/3.60)
+        puzzleKecilGarisKapal.position = CGPoint(x: size.width/1.1, y: size.height/3.7)
         puzzleKecilGarisKapal.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         puzzleKecilGarisKapal.zPosition = 3
-//        addChild(puzzleKecilGarisKapal)
+        addChild(puzzleKecilGarisKapal)
         
-        pelampung2.name = "pelampung2"
-        pelampung2.scale(to: CGSize(width: 230, height: 100))
-        pelampung2.position = CGPoint(x: size.width/1.1, y: size.height/4.2)
-        pelampung2.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        pelampung2.zPosition = 3
-        
-        pelampung3.name = "pelampung3"
-        pelampung3.scale(to: CGSize(width: 230, height: 100))
-        pelampung3.position = CGPoint(x: size.width/1.1, y: size.height/4.6)
-        pelampung3.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        pelampung3.zPosition = 3
         
         //MARK: POSISI PUZZLE BESAR
         puzzleBesarBadanKapal.scale(to: CGSize(width: 1213, height: 391))
@@ -195,21 +180,6 @@ class MalinKundang_Puzzle: SKScene{
         puzzleBesarJendelaKapal.alpha = 0
         addChild(puzzleBesarJendelaKapal)
         
-        scrollView = CustomScrollView(frame: CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height / 1.5), scene: self, moveableNode: moveableNode, scrollDirection: .vertical)
-        scrollView.contentSize = CGSize(width: self.frame.size.width, height: self.frame.size.height * 1.5)
-        view.addSubview(scrollView)
-
-        addChild(moveableNode)
-        
-        moveableNode.addChild(puzzleKecilBadanKapal)
-        moveableNode.addChild(puzzleKecilPelampung)
-        moveableNode.addChild(puzzleKecilBadanAtasKapal2)
-        moveableNode.addChild(puzzleKecilBadanAtasKapal1)
-        moveableNode.addChild(puzzleKecilAtapKapal)
-        moveableNode.addChild(puzzleKecilJendelaKapal)
-        moveableNode.addChild(puzzleKecilGarisKapal)
-        moveableNode.addChild(pelampung2)
-        moveableNode.addChild(pelampung3)
     }
     
     
@@ -277,8 +247,8 @@ class MalinKundang_Puzzle: SKScene{
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if puzzleKecilBadanKapal.frame.intersects(puzzleBesarBadanKapal.frame){
-            puzzleKecilBadanKapal.position = CGPoint(x: size.width/2.25, y: size.height/2.7)
-            puzzleKecilBadanKapal.isUserInteractionEnabled = false
+            puzzleKecilBadanKapal.position = CGPoint(x: size.width/2.3, y: size.height/2.7)
+            puzzleKecilBadanKapal.isUserInteractionEnabled = true
             puzzleKecilBadanKapal.zPosition = 2
         } else{
             self.puzzleKecilBadanKapal.scale(to: CGSize(width: 320, height: 100))
@@ -295,7 +265,7 @@ class MalinKundang_Puzzle: SKScene{
         }
         
         if puzzleKecilBadanAtasKapal2.frame.intersects(puzzleBesarBadanAtasKapal2.frame){
-            puzzleKecilBadanAtasKapal2.position = CGPoint(x: size.width/1.65, y: size.height/1.98)
+            puzzleKecilBadanAtasKapal2.position = CGPoint(x: size.width/1.66, y: size.height/1.98)
             puzzleKecilBadanAtasKapal2.isUserInteractionEnabled = true
         }else{
             puzzleKecilBadanAtasKapal2.position = CGPoint(x: size.width/1.1, y: size.height/1.85)
@@ -328,7 +298,7 @@ class MalinKundang_Puzzle: SKScene{
         }
         
         if puzzleKecilGarisKapal.frame.intersects(puzzleBesarGarisKapal.frame){
-            puzzleKecilGarisKapal.position = CGPoint(x: size.width/2.3, y: size.height/2.08)
+            puzzleKecilGarisKapal.position = CGPoint(x: size.width/2.32, y: size.height/2.04)
             puzzleKecilGarisKapal.isUserInteractionEnabled = true
             puzzleKecilGarisKapal.zPosition = 3
         } else{

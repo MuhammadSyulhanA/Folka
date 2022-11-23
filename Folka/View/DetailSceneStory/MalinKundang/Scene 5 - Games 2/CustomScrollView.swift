@@ -50,6 +50,7 @@ class CustomScrollView: UIScrollView {
         indicatorStyle = .white
         isScrollEnabled = true
         isUserInteractionEnabled = true
+        showsVerticalScrollIndicator = false
         //canCancelContentTouches = false
         //self.minimumZoomScale = 1
         //self.maximumZoomScale = 3
@@ -163,13 +164,13 @@ extension CustomScrollView {
 
 // MARK: - Delegates
 extension CustomScrollView: UIScrollViewDelegate {
-    
+
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
+
         if scrollDirection == .horizontal {
             moveableNode.position.x = scrollView.contentOffset.x
         } else {
-            moveableNode.position.y = scrollView.contentOffset.y
+          moveableNode.position.y = scrollView.contentOffset.y 
         }
     }
 }
