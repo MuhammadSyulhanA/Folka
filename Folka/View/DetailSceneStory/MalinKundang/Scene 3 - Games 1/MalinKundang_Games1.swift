@@ -309,17 +309,12 @@ class MalinKundang_Games1: SKScene {
     
     func swimmingFish() {
         //        if (!isBlueCatched) {
-        let blueFish = SKSpriteNode(imageNamed: "blueFish")
-        blueFish.name = "blueFish"
-        blueFish.position = CGPoint(x: size.width + blueFish.size.width/2, y: CGFloat.random(min: playableRect.minY + blueFish.size.height/2, max: playableRect.maxY - blueFish.size.height/2))
-        blueFish.size = CGSize(width: 150, height: 150)
-        addChild(blueFish)
-        
-        let actionMove = SKAction.moveTo(x: -blueFish.size.width/2, duration: 4.0)
-        let actionRemove = SKAction.removeFromParent()
-        
-        blueFish.run(SKAction.sequence([actionMove, actionRemove]))
-        //        }
+        let purpleFish = SKSpriteNode(imageNamed: "purpleFish")
+        purpleFish.name = "purpleFish"
+        purpleFish.position = CGPoint(x: size.width + purpleFish.size.width/2, y: CGFloat.random(min: playableRect.minY + purpleFish.size.height/2, max: playableRect.maxY - purpleFish.size.height/2))
+        purpleFish.size = CGSize(width: 150, height: 150)
+        addChild(purpleFish)
+                
         let zebraFish = SKSpriteNode(imageNamed: "zebraFish")
         zebraFish.name = "zebraFish"
         zebraFish.position = CGPoint(x: size.width + zebraFish.size.width/2, y: CGFloat.random(min: playableRect.minY + zebraFish.size.height/2, max: playableRect.maxY - zebraFish.size.height/2))
@@ -332,13 +327,16 @@ class MalinKundang_Games1: SKScene {
         redFish.size = CGSize(width: 180, height: 150)
         addChild(redFish)
         
+        let actionMove = SKAction.moveTo(x: -purpleFish.size.width/2, duration: 4.0)
+        let actionRemove = SKAction.removeFromParent()
+        
         let actionMoveZebraFish = SKAction.moveTo(x: -zebraFish.size.width/2, duration: 4.0)
         let actionRemoveZebraFish = SKAction.removeFromParent()
         
         let actionMoveRedFish = SKAction.moveTo(x: 2200, duration: 4.0)
         let actionRemoveRedFish = SKAction.removeFromParent()
         
-        
+        purpleFish.run(SKAction.sequence([actionMove, actionRemove]))
         zebraFish.run(SKAction.sequence([actionMoveZebraFish, actionRemoveZebraFish]))
         redFish.run(SKAction.sequence([actionMoveRedFish, actionRemoveRedFish]))
         
@@ -369,16 +367,15 @@ class MalinKundang_Games1: SKScene {
     }
     
     func checkCollisions() {
-        var hitBlueFish: [SKSpriteNode] = []
-        enumerateChildNodes(withName: "blueFish") { node, _ in
-            let blueFish = node  as! SKSpriteNode
-            if blueFish.frame.intersects(self.nonCharacterHook.frame) {
-                hitBlueFish.append(blueFish)
+        var hitPurpleFish: [SKSpriteNode] = []
+        enumerateChildNodes(withName: "purpleFish") { node, _ in
+            let purpleFish = node  as! SKSpriteNode
+            if purpleFish.frame.intersects(self.nonCharacterHook.frame) {
+                hitPurpleFish.append(purpleFish)
             }
         }
-        for blueFish in hitBlueFish {
-//            print("hit fish")
-            hookHitBlueFish(blueFish: blueFish)
+        for purpleFish in hitPurpleFish {
+            hookHitPurpleFish(purpleFish: purpleFish)
         }
         
         var hitRedFish: [SKSpriteNode] = []
@@ -389,7 +386,6 @@ class MalinKundang_Games1: SKScene {
             }
         }
         for redFish in hitRedFish {
-//            print("hit fish")
             hookHitRedFish(redFish: redFish)
         }
         
@@ -418,8 +414,8 @@ class MalinKundang_Games1: SKScene {
         }
     }
     
-    func hookHitBlueFish(blueFish: SKSpriteNode) {
-        blueFish.removeFromParent()
+    func hookHitPurpleFish(purpleFish: SKSpriteNode) {
+        purpleFish.removeFromParent()
         totalFishCatched += 1
         print(totalFishCatched)
         //        isBlueCatched.toggle()
@@ -475,7 +471,7 @@ class MalinKundang_Games1: SKScene {
         if buttonNextStory.action(forKey: "Button Next") == nil {
             buttonNextStory.run(SKAction.repeatForever(buttonNextStoryAction!), withKey: "Button Next")
             let reveal = SKTransition.reveal(with: .left, duration: 1)
-            let newScene = MalinKundang_Scene2(size: CGSize(width: 2048, height: 1536))
+            let newScene = MalinKundang_Scene4(size: CGSize(width: 2050, height: 1536))
             newScene.scaleMode = .aspectFill
             scene?.view!.presentScene(newScene, transition: reveal)
         }
@@ -485,7 +481,7 @@ class MalinKundang_Games1: SKScene {
         if buttonYes.action(forKey: "Button Yes") == nil {
             buttonYes.run(SKAction.repeatForever(buttonYesAction!), withKey: "Button Yes")
             let reveal = SKTransition.reveal(with: .left, duration: 1)
-            let newScene = MalinKundang_Scene1(size: CGSize(width: 2048, height: 1536))
+            let newScene = MalinKundang_Scene1(size: CGSize(width: 2050, height: 1536))
             newScene.scaleMode = .aspectFill
             scene?.view!.presentScene(newScene, transition: reveal)
         }

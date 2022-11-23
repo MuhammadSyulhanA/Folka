@@ -39,7 +39,7 @@ class MalinKundang_Scene4: SKScene {
     var buttonPreviousAction: SKAction?
     
     let textLayout = SKSpriteNode(imageNamed: "textLayout")
-    var textStory = SKLabelNode(fontNamed: "McLaren-Regular.ttf")
+    var textStory = SKLabelNode(fontNamed: "McLaren")
     var dataIntro: [Dialogue] = []
     var state = 0
     
@@ -49,8 +49,8 @@ class MalinKundang_Scene4: SKScene {
         let path = CGPath(rect: rect, transform: nil)
         
         let data1 = Dialogue(imageName: characterMalinSad, textDialogue: "Setelah dewasa, Malin memutuskan untuk pergi berlayar untuk mencari uang.")
-        let data2 = Dialogue(imageName: characterMalinSay, textDialogue: "Ibu, aku pamit ya. Doakan aku agar bisa mendapat banyak uang.")
-        let data3 = Dialogue(imageName: characterIbuMalinSay, textDialogue: "Hati-hati ya nak. Jaga diri baik-baik.")
+        let data2 = Dialogue(imageName: characterMalinSay, textDialogue: "“Ibu, aku pamit ya. Doakan aku agar bisa mendapat banyak uang.”")
+        let data3 = Dialogue(imageName: characterIbuMalinSay, textDialogue: "“Hati-hati ya nak! Jaga diri mu baik-baik di negeri orang nanti..”")
         
         dataIntro = [data1, data2, data3]
         
@@ -127,11 +127,11 @@ class MalinKundang_Scene4: SKScene {
         
         textStory.text = dataIntro[0].textDialogue
         textStory.fontColor = SKColor.white
-        textStory.fontSize = 50
+        textStory.fontSize = 42
         textStory.lineBreakMode = NSLineBreakMode.byWordWrapping
         textStory.numberOfLines = 0
-        textStory.preferredMaxLayoutWidth = 1250
-        textStory.position = CGPoint(x: size.width/2, y: size.height/4.0)
+        textStory.preferredMaxLayoutWidth = 1235
+        textStory.position = CGPoint(x: size.width/2, y: size.height/4.2)
         textStory.zPosition = 3.5
         addChild(textStory)
         

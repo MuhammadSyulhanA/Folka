@@ -45,19 +45,19 @@ class MalinKundang_Scene2: SKScene {
         let path = CGPath(rect: rect, transform: nil)
         self.backgroundColor = SKColor.white
         
-        backgroundSky.size = CGSize(width: 2040, height: 1120)
+        backgroundSky.size = CGSize(width: 2050, height: 1120)
         backgroundSky.position = CGPoint(x: size.width/2, y: size.height/2)
         backgroundSky.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         backgroundSky.zPosition = 1
         addChild(backgroundSky)
         
-        backgroundGround.size = CGSize(width: 2040, height: 1120)
+        backgroundGround.size = CGSize(width: 2050, height: 1120)
         backgroundGround.position = CGPoint(x: size.width/2, y: size.height/2)
         backgroundGround.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         backgroundGround.zPosition = -1
         addChild(backgroundGround)
         
-        nonCharacterSea.size = CGSize(width: 2040, height: 1120)
+        nonCharacterSea.size = CGSize(width: 2050, height: 1120)
         nonCharacterSea.position = CGPoint(x: size.width/1.9, y: size.height/2)
         nonCharacterSea.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         nonCharacterSea.zPosition = 0
@@ -72,51 +72,44 @@ class MalinKundang_Scene2: SKScene {
         addChild(characterMalin)
         
         nonCharacterHouse.name = "house"
-        nonCharacterHouse.size = CGSize(width: 400, height: 500)
+        nonCharacterHouse.size = CGSize(width: 300, height: 250)
         nonCharacterHouse.position = CGPoint(x: size.width/4.8, y: size.height/1.6)
         nonCharacterHouse.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         nonCharacterHouse.zPosition = 3
         addChild(nonCharacterHouse)
         
-        nonCharacterHouse1.name = "house1"
-        nonCharacterHouse1.size = CGSize(width: 400, height: 500)
-        nonCharacterHouse1.position = CGPoint(x: size.width/4.8, y: size.height/1.6)
-        nonCharacterHouse1.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        nonCharacterHouse1.zPosition = 3.5
-        addChild(nonCharacterHouse1)
-        
         nonCharacterTree.name = "tree"
-        nonCharacterTree.size = CGSize(width: 550, height: 980)
-        nonCharacterTree.position = CGPoint(x: size.width/11.0, y: size.height/2.3)
+        nonCharacterTree.size = CGSize(width: 450, height: 700)
+        nonCharacterTree.position = CGPoint(x: size.width/13.0, y: size.height/2.6)
         nonCharacterTree.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        nonCharacterTree.zPosition = 2
+        nonCharacterTree.zPosition = 3.5
         nonCharacterTree.zRotation = CGFloat.pi / -23
         addChild(nonCharacterTree)
         
         buttonNext.name = "buttonNext"
-        buttonNext.size = CGSize(width: 150, height: 150)
-        buttonNext.position = CGPoint(x: size.width/1.1, y: size.height/3.2)
+        buttonNext.size = CGSize(width: 170, height: 170)
+        buttonNext.position = CGPoint(x: size.width/1.07, y: size.height/3.5)
         buttonNext.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        buttonNext.zPosition = +4
+        buttonNext.zPosition = 4
         addChild(buttonNext)
         
         buttonPrevious.name = "buttonPrevious"
-        buttonPrevious.size = CGSize(width: 150, height: 150)
-        buttonPrevious.position = CGPoint(x: size.width/10.5, y: size.height/3.2)
+        buttonPrevious.size = CGSize(width: 170, height: 170)
+        buttonPrevious.position = CGPoint(x: size.width/17.0, y: size.height/3.5)
         buttonPrevious.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        buttonPrevious.zPosition = +4
+        buttonPrevious.zPosition = 4
         addChild(buttonPrevious)
         
         buttonHome.name = "buttonHome"
-        buttonHome.size = CGSize(width: 130, height: 130)
-        buttonHome.position = CGPoint(x: size.width/10.5, y: size.height/1.35)
+        buttonHome.size = CGSize(width: 170, height: 170)
+        buttonHome.position = CGPoint(x: size.width/17.0, y: size.height/1.38)
         buttonHome.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         buttonHome.zPosition = +4
         addChild(buttonHome)
         
         buttonSound.name = "buttonSound"
-        buttonSound.size = CGSize(width: 130, height: 130)
-        buttonSound.position = CGPoint(x: size.width/1.1, y: size.height/1.35)
+        buttonSound.size = CGSize(width: 170, height: 170)
+        buttonSound.position = CGPoint(x: size.width/1.07, y: size.height/1.38)
         buttonSound.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         buttonSound.zPosition = +4
         addChild(buttonSound)
@@ -129,11 +122,11 @@ class MalinKundang_Scene2: SKScene {
         
         labelTextStory.text = "Malin pun menjadi anak yang berbakti, ia juga sangat suka memancing ditepi laut untuk dimakan bersama ibunya."
         labelTextStory.fontColor = SKColor.white
-        labelTextStory.fontSize = 32
+        labelTextStory.fontSize = 42
         labelTextStory.lineBreakMode = NSLineBreakMode.byWordWrapping
         labelTextStory.numberOfLines = 0
         labelTextStory.preferredMaxLayoutWidth = 1300
-        labelTextStory.position = CGPoint(x: size.width/2, y: size.height/4.0)
+        labelTextStory.position = CGPoint(x: size.width/2, y: size.height/4.25)
         labelTextStory.zPosition = +4.5
         addChild(labelTextStory)
         

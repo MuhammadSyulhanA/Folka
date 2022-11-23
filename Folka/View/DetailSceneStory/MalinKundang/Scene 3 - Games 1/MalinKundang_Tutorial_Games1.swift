@@ -21,7 +21,7 @@ class MalinKundang_Tutorial_Games1: SKScene {
     override func didMove(to view: SKView) {
         self.backgroundColor = SKColor.white
         
-        backgroundTutorial.size = CGSize(width: 2050, height: 1120)
+        backgroundTutorial.size = CGSize(width: 2050, height: 1050)
         backgroundTutorial.position = CGPoint(x: size.width/2, y: size.height/2)
         backgroundTutorial.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         backgroundTutorial.zPosition = -1
@@ -34,7 +34,7 @@ class MalinKundang_Tutorial_Games1: SKScene {
         addChild(nonCharacterPopUp)
         
         buttonFishing.name = "buttonNext"
-        buttonFishing.size = CGSize(width: 550, height: 130)
+        buttonFishing.size = CGSize(width: 580, height: 130)
         buttonFishing.position = CGPoint(x: size.width/2, y: size.height/3.4)
         buttonFishing.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         buttonFishing.zPosition = 1
