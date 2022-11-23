@@ -51,6 +51,7 @@ class CustomScrollView: UIScrollView {
         isScrollEnabled = true
         isUserInteractionEnabled = true
         showsVerticalScrollIndicator = false
+        showsHorizontalScrollIndicator = false
         //canCancelContentTouches = false
         //self.minimumZoomScale = 1
         //self.maximumZoomScale = 3
