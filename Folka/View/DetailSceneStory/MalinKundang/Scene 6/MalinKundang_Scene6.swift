@@ -24,11 +24,12 @@ class MalinKundang_Scene6: SKScene {
     
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
     let buttonSound = SKSpriteNode(imageNamed: "buttonSound")
+    
     let buttonNext = SKSpriteNode(imageNamed: "buttonNext")
     var buttonNextAction: SKAction?
     
-    //  let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
-    var labelTextStory = SKLabelNode(fontNamed: "McLaren")
+    let buttonPrevious = SKSpriteNode(imageNamed: "buttonPrevious")
+    var buttonPreviousAction: SKAction?
     
     override func didMove(to view: SKView) {
         
@@ -55,48 +56,40 @@ class MalinKundang_Scene6: SKScene {
         characterIbuMalin.zPosition = 2
         addChild(characterIbuMalin)
         
-        buttonHome.name = "buttonHome"
-        buttonHome.size = CGSize(width: 130, height: 130)
-        buttonHome.position = CGPoint(x: size.width/10.5, y: size.height/1.35)
-        buttonHome.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        buttonHome.zPosition = +4
-        addChild(buttonHome)
-        
-        buttonSound.name = "buttonSound"
-        buttonSound.size = CGSize(width: 130, height: 130)
-        buttonSound.position = CGPoint(x: size.width/1.1, y: size.height/1.35)
-        buttonSound.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        buttonSound.zPosition = +4
-        addChild(buttonSound)
-        
         kayuScene6.size = CGSize(width: 1100, height: 270)
         kayuScene6.position = CGPoint(x: size.width/2.2, y: size.height/3.6)
         kayuScene6.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        kayuScene6.zPosition = +4
+        kayuScene6.zPosition = 3
         addChild(kayuScene6)
         
         buttonNext.name = "buttonNext"
-        buttonNext.size = CGSize(width: 150, height: 150)
-        buttonNext.position = CGPoint(x: size.width/1.1, y: size.height/3.2)
+        buttonNext.size = CGSize(width: 170, height: 170)
+        buttonNext.position = CGPoint(x: size.width/1.07, y: size.height/3.5)
         buttonNext.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        buttonNext.zPosition = +4
+        buttonNext.zPosition = 4
         addChild(buttonNext)
-        //
-        //    nonCharacterTextLayout.size = CGSize(width: 1400, height: 230)
-        //    nonCharacterTextLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
-        //    nonCharacterTextLayout.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        //    nonCharacterTextLayout.zPosition = +4
-        //    addChild(nonCharacterTextLayout)
-        //
-        //    labelTextStory.text = "Dahulu kala hiduplah seorang ibu bernama Mande Rubayah dan anak laki-lakinya, Malin Kundang. Mande Rubayah menghidupi Malin seorang diri hingga menjadi anak yang gagah dan tampan."
-        //    labelTextStory.fontColor = SKColor.white
-        //    labelTextStory.fontSize = 32
-        //    labelTextStory.lineBreakMode = NSLineBreakMode.byWordWrapping
-        //    labelTextStory.numberOfLines = 0
-        //    labelTextStory.preferredMaxLayoutWidth = 1300
-        //    labelTextStory.position = CGPoint(x: size.width/2, y: size.height/4.25)
-        //    labelTextStory.zPosition = +4.5
-        //    addChild(labelTextStory)
+        
+        buttonPrevious.name = "buttonPrevious"
+        buttonPrevious.size = CGSize(width: 170, height: 170)
+        buttonPrevious.position = CGPoint(x: size.width/17.0, y: size.height/3.5)
+        buttonPrevious.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        buttonPrevious.zPosition = 4
+        addChild(buttonPrevious)
+        
+        buttonHome.name = "buttonHome"
+        buttonHome.size = CGSize(width: 170, height: 170)
+        buttonHome.position = CGPoint(x: size.width/17.0, y: size.height/1.38)
+        buttonHome.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        buttonHome.zPosition = 4
+        addChild(buttonHome)
+        
+        buttonSound.name = "buttonSound"
+        buttonSound.size = CGSize(width: 170, height: 170)
+        buttonSound.position = CGPoint(x: size.width/1.07, y: size.height/1.38)
+        buttonSound.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        buttonSound.zPosition = 4
+        addChild(buttonSound)
+
     }
     
     //MARK: SOURCE CODE ASSET GERAK
@@ -109,6 +102,7 @@ class MalinKundang_Scene6: SKScene {
         
         animationIbuMalin = SKAction.animate(with: textures1, timePerFrame: 0.3)
         buttonNextAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
+        buttonPreviousAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
         
         super.init(size: size)
     }
@@ -121,9 +115,19 @@ class MalinKundang_Scene6: SKScene {
         if buttonNext.action(forKey: "Button Next") == nil {
             buttonNext.run(SKAction.repeatForever(buttonNextAction!), withKey: "Button Next")
             let reveal = SKTransition.reveal(with: .left, duration: 1)
-            let newScene = MalinKundang_Scene2(size: CGSize(width: 2048, height: 1536))
+            let newScene = MalinKundang_Scene7(size: CGSize(width: 2048, height: 1536))
             newScene.scaleMode = .aspectFill
             scene?.view!.presentScene(newScene, transition: reveal)
+        }
+    }
+    
+    func buttonPreviousScene() {
+        if buttonPrevious.action(forKey: "Button Previous") == nil {
+            buttonPrevious.run(SKAction.repeatForever(buttonPreviousAction!), withKey: "Button Previous")
+            let reveal = SKTransition.reveal(with: .right, duration: 1)
+            let prevScene = MalinKundang_Puzzle2(size: CGSize(width: 2048, height: 1536))
+            prevScene.scaleMode = .aspectFill
+            scene?.view!.presentScene(prevScene, transition: reveal)
         }
     }
     
@@ -151,6 +155,24 @@ class MalinKundang_Scene6: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first as UITouch?
         kapalScene6.run(SKAction.moveTo(x: 2800, duration: 5.0))
+        
+        if atPoint((touch?.location(in: self))!).name == buttonNext.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if !self.buttonNext.hasActions(){
+                    if node.name == "buttonNext" {
+                        buttonNextScene()
+                    }
+                }
+            }
+        }else if atPoint((touch?.location(in: self))!).name == buttonPrevious.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if !self.buttonPrevious.hasActions(){
+                    if node.name == "buttonPrevious" {
+                        buttonPreviousScene()
+                    }
+                }
+            }
+        }
     }
     
     override func update(_ currentTime: TimeInterval) {

@@ -245,9 +245,9 @@ class MalinKundang_Games1: SKScene {
         buttonNo.zPosition = 3.0
         buttonNo.isHidden = true
         addChild(buttonNo)
-        
-        print(nonCharacterHook.position.y)
-        print(size.height/1.2)
+//
+//        print(nonCharacterHook.position.y)
+//        print(size.height/1.2)
         
         run(SKAction.repeatForever(SKAction.sequence([SKAction.run(swimmingFish), SKAction.wait(forDuration: 4.0)])))
         run(SKAction.repeatForever(SKAction.sequence([SKAction.run(swimmingTrash), SKAction.wait(forDuration: 10.0)])))

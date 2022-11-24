@@ -30,6 +30,7 @@
 		98F8DED82928981E00F8D70E /* MalinKundang_Tutorial_Games1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8DED72928981E00F8D70E /* MalinKundang_Tutorial_Games1.swift */; };
 		98F8DEDD292C7BDF00F8D70E /* MalinKundang_Scene4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8DEDC292C7BDF00F8D70E /* MalinKundang_Scene4.swift */; };
 		98F8DEE2292DD77400F8D70E /* MalinKundang_Scene7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8DEE1292DD77400F8D70E /* MalinKundang_Scene7.swift */; };
+		98F8DEE5292E8D3600F8D70E /* MalinKundang_Scene8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8DEE4292E8D3600F8D70E /* MalinKundang_Scene8.swift */; };
 		A0072D96292BCD4F00D32023 /* MalinKundang_Scene6.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0072D95292BCD4E00D32023 /* MalinKundang_Scene6.swift */; };
 		A01411C2291D6B7F007EDA8E /* HomePage_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01411C0291D6B7F007EDA8E /* HomePage_ViewController.swift */; };
 		A01411C3291D6B7F007EDA8E /* HomePage_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01411C1291D6B7F007EDA8E /* HomePage_ViewController.xib */; };
@@ -85,6 +86,7 @@
 		98F8DED72928981E00F8D70E /* MalinKundang_Tutorial_Games1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Tutorial_Games1.swift; sourceTree = "<group>"; };
 		98F8DEDC292C7BDF00F8D70E /* MalinKundang_Scene4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene4.swift; sourceTree = "<group>"; };
 		98F8DEE1292DD77400F8D70E /* MalinKundang_Scene7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene7.swift; sourceTree = "<group>"; };
+		98F8DEE4292E8D3600F8D70E /* MalinKundang_Scene8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene8.swift; sourceTree = "<group>"; };
 		A0072D95292BCD4E00D32023 /* MalinKundang_Scene6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene6.swift; sourceTree = "<group>"; };
 		A01411C0291D6B7F007EDA8E /* HomePage_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage_ViewController.swift; sourceTree = "<group>"; };
 		A01411C1291D6B7F007EDA8E /* HomePage_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePage_ViewController.xib; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 		69C55025291A0F9400E1CEF7 /* MalinKundang */ = {
 			isa = PBXGroup;
 			children = (
+				98F8DEE3292E8D1700F8D70E /* Scene 8 */,
 				98F8DEDE292DCB8A00F8D70E /* Scene 7 */,
 				A0072D94292BBAA800D32023 /* Scene 6 */,
 				A018EA032927694000FE7451 /* Scene 5 - Games 2 */,
@@ -303,6 +306,14 @@
 				98F8DEE1292DD77400F8D70E /* MalinKundang_Scene7.swift */,
 			);
 			path = "Scene 7";
+			sourceTree = "<group>";
+		};
+		98F8DEE3292E8D1700F8D70E /* Scene 8 */ = {
+			isa = PBXGroup;
+			children = (
+				98F8DEE4292E8D3600F8D70E /* MalinKundang_Scene8.swift */,
+			);
+			path = "Scene 8";
 			sourceTree = "<group>";
 		};
 		A0072D94292BBAA800D32023 /* Scene 6 */ = {
@@ -431,6 +442,7 @@
 				A08B5DC9291FD06C0021FBAF /* ProfileOnboard_ViewController.swift in Sources */,
 				98F8DED82928981E00F8D70E /* MalinKundang_Tutorial_Games1.swift in Sources */,
 				698EB8D82921E2BD008C18BA /* Controller.swift in Sources */,
+				98F8DEE5292E8D3600F8D70E /* MalinKundang_Scene8.swift in Sources */,
 				69C55004291A0C5A00E1CEF7 /* ViewController.swift in Sources */,
 				698EB8D22921E24E008C18BA /* GamePadBase.swift in Sources */,
 				698EB8D12921E24E008C18BA /* GamePadRight.swift in Sources */,
@@ -597,7 +609,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AL5KA4YBF7;
+				DEVELOPMENT_TEAM = 497V89NCL4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Folka/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -625,7 +637,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AL5KA4YBF7;
+				DEVELOPMENT_TEAM = 497V89NCL4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Folka/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
