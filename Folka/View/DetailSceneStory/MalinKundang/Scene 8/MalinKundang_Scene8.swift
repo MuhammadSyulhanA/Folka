@@ -9,6 +9,8 @@ import SpriteKit
 import GameplayKit
 
 class MalinKundang_Scene8: SKScene {
+    let playableRect: CGRect
+
     let backgroundMarried = SKSpriteNode(imageNamed: "backgroundMarried")
     
     let nonCharacterFlowers = SKSpriteNode(imageNamed: "marriedFlowers")
@@ -24,6 +26,19 @@ class MalinKundang_Scene8: SKScene {
     
     let textLayout = SKSpriteNode(imageNamed: "textLayout")
     var labelTextStory = SKLabelNode(fontNamed: "McLaren")
+    
+    override init(size: CGSize) {
+        let maxAspectRatio:CGFloat = 10.0/3.0
+        let playableHeight = size.width / maxAspectRatio
+        let playableMargin = (size.height - playableHeight)/2.0
+        playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: playableHeight)
+        
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func didMove(to view: SKView) {
         self.backgroundColor = SKColor.white
@@ -83,5 +98,22 @@ class MalinKundang_Scene8: SKScene {
         labelTextStory.position = CGPoint(x: size.width/2, y: size.height/4.25)
         labelTextStory.zPosition = 2.5
         addChild(labelTextStory)
+        
+        run(SKAction.repeatForever(SKAction.sequence([SKAction.run(flowersPetalsRainy), SKAction.wait(forDuration: 1.0)])))
+
+    }
+    
+    func flowersPetalsRainy() {
+        let nonCharacterFlowersPetals = SKSpriteNode(imageNamed: "flowersPetals")
+        nonCharacterFlowersPetals.name = "petals"
+        nonCharacterFlowersPetals.position = CGPoint(x: CGFloat.random(min: playableRect.minX - nonCharacterFlowersPetals.size.height/2, max: playableRect.maxX + nonCharacterFlowersPetals.size.height/2), y: size.height + nonCharacterFlowersPetals.size.height/2)
+        nonCharacterFlowersPetals.size = CGSize(width: 70, height: 100)
+        nonCharacterFlowersPetals.zPosition = 1.5
+        addChild(nonCharacterFlowersPetals)
+        
+        let actionRainyFlowersPetals = SKAction.moveTo(y: -nonCharacterFlowersPetals.size.width/2, duration: 8.0)
+        let actionRemoveFlowersPetals = SKAction.removeFromParent()
+        
+        nonCharacterFlowersPetals.run(SKAction.sequence([actionRainyFlowersPetals, actionRemoveFlowersPetals]))
     }
 }
