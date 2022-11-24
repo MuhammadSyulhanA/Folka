@@ -38,6 +38,9 @@ class MalinKundang_Scene4: SKScene {
     let buttonPrevious = SKSpriteNode(imageNamed: "buttonPrevious")
     var buttonPreviousAction: SKAction?
     
+    let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
+    let buttonSound = SKSpriteNode(imageNamed: "buttonSound")
+    
     let textLayout = SKSpriteNode(imageNamed: "textLayout")
     var textStory = SKLabelNode(fontNamed: "McLaren")
     var dataIntro: [Dialogue] = []
@@ -114,10 +117,24 @@ class MalinKundang_Scene4: SKScene {
         
         buttonPrevious.name = "buttonPrevious"
         buttonPrevious.size = CGSize(width: 170, height: 170)
-        buttonPrevious.position = CGPoint(x: size.width/13.5, y: size.height/3.5)
+        buttonPrevious.position = CGPoint(x: size.width/17.0, y: size.height/3.5)
         buttonPrevious.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         buttonPrevious.zPosition = 4
         addChild(buttonPrevious)
+        
+        buttonHome.name = "buttonHome"
+        buttonHome.size = CGSize(width: 170, height: 170)
+        buttonHome.position = CGPoint(x: size.width/17.0, y: size.height/1.38)
+        buttonHome.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        buttonHome.zPosition = +4
+        addChild(buttonHome)
+        
+        buttonSound.name = "buttonSound"
+        buttonSound.size = CGSize(width: 170, height: 170)
+        buttonSound.position = CGPoint(x: size.width/1.07, y: size.height/1.38)
+        buttonSound.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        buttonSound.zPosition = +4
+        addChild(buttonSound)
         
         textLayout.size = CGSize(width: 1300, height: 200)
         textLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
@@ -140,7 +157,7 @@ class MalinKundang_Scene4: SKScene {
     
     override init(size: CGSize){
         buttonNextAction = SKAction.scale(to: 1.0, duration: 2.0)
-        
+        buttonPreviousAction = SKAction.scale(to: 1.0, duration: 2.0)
         
         super.init(size: size)
     }
@@ -153,6 +170,7 @@ class MalinKundang_Scene4: SKScene {
         if buttonNext.action(forKey: "Button Next") == nil {
             buttonNext.run(SKAction.repeatForever(buttonNextAction!), withKey: "Button Next")
             state += 1
+            print(state)
             if state < dataIntro.count{
                 characterMalinSay = dataIntro[state].imageName
                 characterMalinSay.isHidden = false
@@ -160,7 +178,8 @@ class MalinKundang_Scene4: SKScene {
             }
         } else {
             state += 1
-            if state == 2 {
+            print(state)
+            if state < dataIntro.count {
                 characterIbuMalinSay = dataIntro[state].imageName
                 characterIbuMalinSay.isHidden = false
                 characterMalinSay.isHidden = true
@@ -175,6 +194,39 @@ class MalinKundang_Scene4: SKScene {
         }
     }
     
+    func buttonPreviousScene () {
+        if buttonPrevious.action(forKey: "Previous Next") == nil {
+            buttonPrevious.run(SKAction.repeatForever(buttonPreviousAction!), withKey: "Button Previous")
+            state -= 1
+            print(state)
+            if state < 0 {
+                let reveal = SKTransition.reveal(with: .left, duration: 1)
+                let newScene = MalinKundang_Tutorial_Games1(size: CGSize(width: 2048, height: 1536))
+                newScene.scaleMode = .aspectFill
+                scene?.view!.presentScene(newScene, transition: reveal)
+            }
+            else {
+                characterMalinSay = dataIntro[state].imageName
+                characterMalinSay.isHidden = false
+                textStory.text = dataIntro[state].textDialogue
+            }
+        } else {
+            state -= 1
+            print(state)
+            if state < 0 {
+                let reveal = SKTransition.reveal(with: .left, duration: 1)
+                let newScene = MalinKundang_Tutorial_Games1(size: CGSize(width: 2048, height: 1536))
+                newScene.scaleMode = .aspectFill
+                scene?.view!.presentScene(newScene, transition: reveal)
+            }
+            else {
+                characterMalinSay = dataIntro[state].imageName
+                characterMalinSay.isHidden = false
+                textStory.text = dataIntro[state].textDialogue
+            }
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         let touch = touches.first as UITouch?
@@ -182,6 +234,13 @@ class MalinKundang_Scene4: SKScene {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if node.name == "buttonNext" {
                     buttonNextScene()
+                }
+            }
+        }
+        if atPoint((touch?.location(in: self))!).name == buttonPrevious.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if node.name == "buttonPrevious" {
+                    buttonPreviousScene()
                 }
             }
         }
