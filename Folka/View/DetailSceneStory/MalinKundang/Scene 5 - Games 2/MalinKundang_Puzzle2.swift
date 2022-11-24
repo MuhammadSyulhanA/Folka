@@ -61,8 +61,8 @@ class MalinKundang_Puzzle2: SKScene{
   override func didMove(to view: SKView) {
     
     
-    let gambar = [
-      puzzleKecilPelampung, puzzleBesarBulatKapal, puzzleKecilBenderaKapal, puzzleKecilGarisKapal
+    var arrayPuzzleKecil: [SKSpriteNode] = [
+      puzzleKecilPelampung, puzzleBesarBulatKapal, puzzleKecilBenderaKapal, puzzleKecilGarisKapal, puzzleKecilGarisMerahKapal
     ]
     
     self.backgroundColor = SKColor.white
@@ -106,6 +106,7 @@ class MalinKundang_Puzzle2: SKScene{
     puzzleKecilBulatKapal.scale(to: CGSize(width: 320, height: 100))
     puzzleKecilBulatKapal.position = CGPoint(x: size.width/1.11, y: size.height/1.4)
     puzzleKecilBulatKapal.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+    puzzleKecilBulatKapal.isHidden = false
     puzzleKecilBulatKapal.zPosition = 3
     //    addChild(puzzleKecilBulatKapal)
     
@@ -156,6 +157,7 @@ class MalinKundang_Puzzle2: SKScene{
     puzzleKecilPelampung.position = CGPoint(x: size.width/1.1, y: size.height/4)
     puzzleKecilPelampung.anchorPoint = CGPoint(x: 0.5, y: 1)
     puzzleKecilPelampung.zPosition = 5
+    puzzleKecilPelampung.isHidden = false
     //    addChild(puzzleKecilPelampung)
     
     puzzleKecilJendelaBanyakKapal.name = "puzzleKecilJendelaBanyakKapal"
@@ -248,7 +250,8 @@ class MalinKundang_Puzzle2: SKScene{
     
     scrollView.contentSize = CGSize(width: self.frame.size.width, height: self.frame.size.height * 1.5)
     
-    scrollView.backgroundColor = UIColor.blue
+//    scrollView.backgroundColor = UIColor.blue
+    
     
     view.addSubview(scrollView)
 
@@ -265,6 +268,14 @@ class MalinKundang_Puzzle2: SKScene{
     moveableNode.addChild(puzzleKecilJendelaKapalAtas)
     moveableNode.addChild(puzzleKecilBadanKapalBawah)
     
+    if puzzleKecilPelampung.position.y >= scrollView.frame.maxY{
+      puzzleKecilPelampung.isHidden = true
+    } else if puzzleKecilPelampung.position.y <= scrollView.frame.maxY{
+      puzzleKecilPelampung.isHidden = false
+    }
+    
+    print("\(scrollView.frame.size)")
+    print("\(kayuPuzzle.frame.size)")
     
   }
   
