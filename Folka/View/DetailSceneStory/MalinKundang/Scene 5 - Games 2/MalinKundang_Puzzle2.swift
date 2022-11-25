@@ -268,11 +268,7 @@ class MalinKundang_Puzzle2: SKScene{
     moveableNode.addChild(puzzleKecilJendelaKapalAtas)
     moveableNode.addChild(puzzleKecilBadanKapalBawah)
     
-    if puzzleKecilPelampung.position.y >= scrollView.frame.maxY{
-      puzzleKecilPelampung.isHidden = true
-    } else if puzzleKecilPelampung.position.y <= scrollView.frame.maxY{
-      puzzleKecilPelampung.isHidden = false
-    }
+    
     
     print("\(scrollView.frame.size)")
     print("\(kayuPuzzle.frame.size)")
@@ -432,53 +428,13 @@ class MalinKundang_Puzzle2: SKScene{
   }
   
   override func update(_ currentTime: TimeInterval) {
+      
+      if puzzleKecilPelampung.position.y >= scrollView.frame.maxY{
+        puzzleKecilPelampung.isHidden = true
+      } else if puzzleKecilPelampung.position.y <= scrollView.frame.maxY{
+        puzzleKecilPelampung.isHidden = false
+      }
     //    camera?.position = kayuPuzzle.position
   }
   
-}
-
-class ScrollScene : SKScene {
-    // Layer Vars
-    let scrollLayer = SKNode()
-
-    // General Vars
-    var originalPosY = CGFloat(0)
-
-
-    // ================================================================================================
-    // MARK: Initializers
-    // ================================================================================================
-    override init() {
-        super.init()
-    }
-
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-
-    // ================================================================================================
-    // MARK: Public Functions
-    // ================================================================================================
-    func scrollBy(contentOffset: CGFloat) {
-        scrollLayer.position.y = originalPosY + contentOffset
-    }
-
-
-    func viewDidTapPoint(viewPoint: CGPoint, contentOffset: CGFloat) {
-        let nodes = getNodesTouchedFromView(point: viewPoint, contentOffset: contentOffset)
-    }
-
-
-    func getScrollHeight() -> CGFloat {
-        return scrollLayer.calculateAccumulatedFrame().height
-    }
-
-
-    fileprivate func getNodesTouchedFromView(point: CGPoint, contentOffset: CGFloat) -> [SKNode] {
-        var scenePoint = convertPoint(fromView: point)
-        scenePoint.y += contentOffset
-        return scrollLayer.nodes(at: scenePoint)
-    }
 }
