@@ -13,6 +13,10 @@ class MalinKundang_Scene8: SKScene {
 
     let backgroundMarried = SKSpriteNode(imageNamed: "backgroundMarried")
     
+    let characterMalin = SKSpriteNode(imageNamed: "malinScene8")
+    
+    let characterMalinWife = SKSpriteNode(imageNamed: "istriMalinScene8")
+    
     let nonCharacterFlowers = SKSpriteNode(imageNamed: "marriedFlowers")
     
     let buttonNext = SKSpriteNode(imageNamed: "buttonNext")
@@ -32,6 +36,9 @@ class MalinKundang_Scene8: SKScene {
         let playableHeight = size.width / maxAspectRatio
         let playableMargin = (size.height - playableHeight)/2.0
         playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: playableHeight)
+        
+        buttonNextAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
+        buttonPreviousAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
         
         super.init(size: size)
     }
@@ -55,38 +62,52 @@ class MalinKundang_Scene8: SKScene {
         nonCharacterFlowers.zPosition = 1
         addChild(nonCharacterFlowers)
         
+        characterMalinWife.name = "malinWife"
+        characterMalinWife.size = CGSize(width: 700, height: 800)
+        characterMalinWife.position = CGPoint(x: size.width/1.55, y: size.height/2.3)
+        characterMalinWife.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        characterMalinWife.zPosition = 2
+        addChild(characterMalinWife)
+        
+        characterMalin.name = "malin"
+        characterMalin.size = CGSize(width: 800, height: 1300)
+        characterMalin.position = CGPoint(x: size.width/3.0, y: size.height/2.95)
+        characterMalin.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        characterMalin.zPosition = 2
+        addChild(characterMalin)
+        
         buttonNext.name = "buttonNext"
         buttonNext.size = CGSize(width: 170, height: 170)
         buttonNext.position = CGPoint(x: size.width/1.07, y: size.height/3.5)
         buttonNext.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        buttonNext.zPosition = 2
+        buttonNext.zPosition = 2.5
         addChild(buttonNext)
         
         buttonPrevious.name = "buttonPrevious"
         buttonPrevious.size = CGSize(width: 170, height: 170)
         buttonPrevious.position = CGPoint(x: size.width/17.0, y: size.height/3.5)
         buttonPrevious.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        buttonPrevious.zPosition = 2
+        buttonPrevious.zPosition = 2.5
         addChild(buttonPrevious)
         
         buttonHome.name = "buttonHome"
         buttonHome.size = CGSize(width: 170, height: 170)
         buttonHome.position = CGPoint(x: size.width/17.0, y: size.height/1.38)
         buttonHome.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        buttonHome.zPosition = 2
+        buttonHome.zPosition = 2.5
         addChild(buttonHome)
         
         buttonSound.name = "buttonSound"
         buttonSound.size = CGSize(width: 170, height: 170)
         buttonSound.position = CGPoint(x: size.width/1.07, y: size.height/1.38)
         buttonSound.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        buttonSound.zPosition = 2
+        buttonSound.zPosition = 2.5
         addChild(buttonSound)
         
         textLayout.size = CGSize(width: 1300, height: 200)
         textLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
         textLayout.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        textLayout.zPosition = 2
+        textLayout.zPosition = 2.5
         addChild(textLayout)
         
         labelTextStory.text = "Di sana ia menjadi pedagang kaya dan menikahi gadis cantik anak saudagar di desa itu."
@@ -96,7 +117,7 @@ class MalinKundang_Scene8: SKScene {
         labelTextStory.numberOfLines = 0
         labelTextStory.preferredMaxLayoutWidth = 1250
         labelTextStory.position = CGPoint(x: size.width/2, y: size.height/4.25)
-        labelTextStory.zPosition = 2.5
+        labelTextStory.zPosition = 2.75
         addChild(labelTextStory)
         
         run(SKAction.repeatForever(SKAction.sequence([SKAction.run(flowersPetalsRainy), SKAction.wait(forDuration: 1.0)])))
@@ -115,5 +136,46 @@ class MalinKundang_Scene8: SKScene {
         let actionRemoveFlowersPetals = SKAction.removeFromParent()
         
         nonCharacterFlowersPetals.run(SKAction.sequence([actionRainyFlowersPetals, actionRemoveFlowersPetals]))
+    }
+    
+    func buttonNextScene() {
+        if buttonNext.action(forKey: "Button Next") == nil {
+            buttonNext.run(SKAction.repeatForever(buttonNextAction!), withKey: "Button Next")
+            let reveal = SKTransition.reveal(with: .left, duration: 1)
+            let newScene = MalinKundang_Scene9(size: CGSize(width: 2048, height: 1536))
+            newScene.scaleMode = .aspectFill
+            scene?.view!.presentScene(newScene, transition: reveal)
+        }
+    }
+    
+    func buttonPreviousScene() {
+        if buttonPrevious.action(forKey: "Button Previous") == nil {
+            buttonPrevious.run(SKAction.repeatForever(buttonPreviousAction!), withKey: "Button Previous")
+            let reveal = SKTransition.reveal(with: .right, duration: 1)
+            let prevScene = MalinKundang_Scene7(size: CGSize(width: 2048, height: 1536))
+            prevScene.scaleMode = .aspectFill
+            scene?.view!.presentScene(prevScene, transition: reveal)
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first as UITouch?
+        if atPoint((touch?.location(in: self))!).name == buttonNext.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if !self.buttonNext.hasActions(){
+                    if node.name == "buttonNext" {
+                        buttonNextScene()
+                    }
+                }
+            }
+        }else if atPoint((touch?.location(in: self))!).name == buttonPrevious.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if !self.buttonPrevious.hasActions(){
+                    if node.name == "buttonPrevious" {
+                        buttonPreviousScene()
+                    }
+                }
+            }
+        }
     }
 }

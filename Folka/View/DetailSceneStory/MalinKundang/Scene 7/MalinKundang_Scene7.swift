@@ -228,7 +228,6 @@ class MalinKundang_Scene7: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first as UITouch?
-        print(atPoint((touch?.location(in: self))!))
         if atPoint((touch?.location(in: self))!).name == characterMalin.name {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if !self.characterMalin.hasActions(){

@@ -25,7 +25,7 @@ class MalinKundang_Scene4: SKScene {
     
     var characterMalinSay = SKSpriteNode(imageNamed: "malinScene4_2")
     var characterMalinSayAnimation: SKAction?
-    
+        
     let characterIbuMalinSad = SKSpriteNode(imageNamed: "ibuMalinScene4_1")
     var characterIbuMalinSadAnimation: SKAction?
     
@@ -171,29 +171,20 @@ class MalinKundang_Scene4: SKScene {
             buttonNext.run(SKAction.repeatForever(buttonNextAction!), withKey: "Button Next")
             state += 1
             print(state)
-            if state == 1 {
+            if state < dataIntro.count{
                 characterMalinSay = dataIntro[state].imageName
-                textStory.text = dataIntro[state].textDialogue
                 characterMalinSay.isHidden = false
-                print("test")
-            } else if state == 2 {
-                characterIbuMalinSay.isHidden = false
-                characterMalinSay.isHidden = true
+                textStory.text = dataIntro[state].textDialogue
             }
-            
         } else {
             state += 1
             print(state)
-            if state == 2 {
+            if state < dataIntro.count {
+                characterIbuMalinSay = dataIntro[state].imageName
                 characterIbuMalinSay.isHidden = false
                 characterMalinSay.isHidden = true
-            } else if state == 1{
-                print("testing")
-                characterMalinSay.isHidden = false
+                textStory.text = dataIntro[state].textDialogue
             }
-            characterIbuMalinSay = dataIntro[state].imageName
-            textStory.text = dataIntro[state].textDialogue
-            
             else if state == 3 {
                 let reveal = SKTransition.reveal(with: .left, duration: 1)
                 let newScene = MalinKundang_Puzzle(size: CGSize(width: 2048, height: 1536))
@@ -234,13 +225,8 @@ class MalinKundang_Scene4: SKScene {
                 scene?.view!.presentScene(newScene, transition: reveal)
             }
             else {
-                if state == 1 {
-                    characterMalinSay.isHidden = false
-                    characterIbuMalinSay.isHidden = true
-                } else if state == 0 {
-                    characterMalinSay.isHidden = true
-                }
                 characterMalinSay = dataIntro[state].imageName
+                characterMalinSay.isHidden = false
                 textStory.text = dataIntro[state].textDialogue
             }
         }
