@@ -25,7 +25,7 @@ class MalinKundang_Scene4: SKScene {
     
     var characterMalinSay = SKSpriteNode(imageNamed: "malinScene4_2")
     var characterMalinSayAnimation: SKAction?
-    
+        
     let characterIbuMalinSad = SKSpriteNode(imageNamed: "ibuMalinScene4_1")
     var characterIbuMalinSadAnimation: SKAction?
     
@@ -39,6 +39,8 @@ class MalinKundang_Scene4: SKScene {
     var buttonPreviousAction: SKAction?
     
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
+    var buttonHomeAction: SKAction?
+
     let buttonSound = SKSpriteNode(imageNamed: "buttonSound")
     
     let textLayout = SKSpriteNode(imageNamed: "textLayout")
@@ -158,6 +160,7 @@ class MalinKundang_Scene4: SKScene {
     override init(size: CGSize){
         buttonNextAction = SKAction.scale(to: 1.0, duration: 2.0)
         buttonPreviousAction = SKAction.scale(to: 1.0, duration: 2.0)
+        buttonHomeAction = SKAction.scale(to: 1.0, duration: 2.0)
         
         super.init(size: size)
     }
@@ -171,30 +174,21 @@ class MalinKundang_Scene4: SKScene {
             buttonNext.run(SKAction.repeatForever(buttonNextAction!), withKey: "Button Next")
             state += 1
             print(state)
-            if state == 1 {
+            if state < dataIntro.count{
                 characterMalinSay = dataIntro[state].imageName
-                textStory.text = dataIntro[state].textDialogue
                 characterMalinSay.isHidden = false
-                print("test")
-            } else if state == 2 {
-                characterIbuMalinSay.isHidden = false
-                characterMalinSay.isHidden = true
+                textStory.text = dataIntro[state].textDialogue
             }
-            
         } else {
             state += 1
             print(state)
-            if state == 2 {
+            if state < dataIntro.count {
+                characterIbuMalinSay = dataIntro[state].imageName
                 characterIbuMalinSay.isHidden = false
                 characterMalinSay.isHidden = true
-            } else if state == 1{
-                print("testing")
-                characterMalinSay.isHidden = false
+                textStory.text = dataIntro[state].textDialogue
             }
-            characterIbuMalinSay = dataIntro[state].imageName
-            textStory.text = dataIntro[state].textDialogue
-            
-            if state == 3 {
+            else if state == 3 {
                 let reveal = SKTransition.reveal(with: .left, duration: 1)
                 let newScene = MalinKundang_Puzzle(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
@@ -234,15 +228,19 @@ class MalinKundang_Scene4: SKScene {
                 scene?.view!.presentScene(newScene, transition: reveal)
             }
             else {
-                if state == 1 {
-                    characterMalinSay.isHidden = false
-                    characterIbuMalinSay.isHidden = true
-                } else if state == 0 {
-                    characterMalinSay.isHidden = true
-                }
                 characterMalinSay = dataIntro[state].imageName
+                characterMalinSay.isHidden = false
                 textStory.text = dataIntro[state].textDialogue
             }
+        }
+    }
+    
+    func buttonHomeScene() {
+        if buttonHome.action(forKey: "Button Home") == nil {
+            buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
+            let prevScene = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
+            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+            
         }
     }
     
@@ -260,6 +258,13 @@ class MalinKundang_Scene4: SKScene {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if node.name == "buttonPrevious" {
                     buttonPreviousScene()
+                }
+            }
+        }
+        else if atPoint((touch?.location(in: self))!).name == buttonHome.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if node.name == "buttonHome" {
+                    buttonHomeScene()
                 }
             }
         }

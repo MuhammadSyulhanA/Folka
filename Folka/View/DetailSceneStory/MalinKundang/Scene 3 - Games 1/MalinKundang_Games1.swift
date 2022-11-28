@@ -350,6 +350,7 @@ class MalinKundang_Games1: SKScene {
         addChild(bottleTrash)
         
         let appleTrash = SKSpriteNode(imageNamed: "apple")
+        appleTrash.name = "apple"
         appleTrash.position = CGPoint(x: -100 + appleTrash.size.width/2, y: CGFloat.random(min: playableRect.minY + appleTrash.size.height/2, max: playableRect.maxY - appleTrash.size.height/2))
         appleTrash.size = CGSize(width: 140, height: 150)
         addChild(appleTrash)
@@ -409,8 +410,20 @@ class MalinKundang_Games1: SKScene {
             }
         }
         for bottle in hitBottleTrash {
-//            print("hit bottle")
+            print("hit bottle")
             hookHitBottle(bottle: bottle)
+        }
+        
+        var hitAppleTrash: [SKSpriteNode] = []
+        enumerateChildNodes(withName: "apple") { node, _ in
+            let apple = node  as! SKSpriteNode
+            if apple.frame.intersects(self.nonCharacterHook.frame) {
+                hitAppleTrash.append(apple)
+            }
+        }
+        for apple in hitAppleTrash {
+            print("hit apple")
+            hookHitApple(apple: apple)
         }
     }
     
@@ -437,6 +450,11 @@ class MalinKundang_Games1: SKScene {
     
     func hookHitBottle(bottle: SKSpriteNode) {
         bottle.removeFromParent()
+        //        isBottleCatched.toggle()
+    }
+    
+    func hookHitApple(apple: SKSpriteNode) {
+        apple.removeFromParent()
         //        isBottleCatched.toggle()
     }
     
@@ -480,10 +498,8 @@ class MalinKundang_Games1: SKScene {
     func buttonBackToHome() {
         if buttonYes.action(forKey: "Button Yes") == nil {
             buttonYes.run(SKAction.repeatForever(buttonYesAction!), withKey: "Button Yes")
-            let reveal = SKTransition.reveal(with: .left, duration: 1)
-            let newScene = MalinKundang_Scene1(size: CGSize(width: 2050, height: 1536))
-            newScene.scaleMode = .aspectFill
-            scene?.view!.presentScene(newScene, transition: reveal)
+            let prevScene = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
+            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
         }
     }
     

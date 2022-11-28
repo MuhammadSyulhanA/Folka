@@ -1,23 +1,21 @@
 //
-//  MalinKundang_Scene8.swift
+//  MalinKundang_Scene12.swift
 //  Folka
 //
-//  Created by Ferry Julian on 24/11/22.
+//  Created by Ferry Julian on 26/11/22.
 //
 
 import SpriteKit
 import GameplayKit
 
-class MalinKundang_Scene8: SKScene {
+class MalinKundang_Scene12: SKScene {
     let playableRect: CGRect
 
-    let backgroundMarried = SKSpriteNode(imageNamed: "backgroundMarried")
+    let backgroundSky = SKSpriteNode(imageNamed: "backgroundPuzzle")
+    let backgroundSea = SKSpriteNode(imageNamed: "backgroundOpenSea")
     
-    let characterMalin = SKSpriteNode(imageNamed: "malinScene8")
-    
-    let characterMalinWife = SKSpriteNode(imageNamed: "istriMalinScene8")
-    
-    let nonCharacterFlowers = SKSpriteNode(imageNamed: "marriedFlowers")
+    let nonCharacterBoat1 = SKSpriteNode(imageNamed: "kapalScene12_1")
+    var animationBoat1: SKAction!
     
     let buttonNext = SKSpriteNode(imageNamed: "buttonNext")
     var buttonNextAction: SKAction?
@@ -30,7 +28,6 @@ class MalinKundang_Scene8: SKScene {
 
     let buttonSound = SKSpriteNode(imageNamed: "buttonSound")
     
-    let textLayout = SKSpriteNode(imageNamed: "textLayout")
     var labelTextStory = SKLabelNode(fontNamed: "McLaren")
     
     override init(size: CGSize) {
@@ -51,33 +48,28 @@ class MalinKundang_Scene8: SKScene {
     }
     
     override func didMove(to view: SKView) {
+        let rect = CGRect(x: 0, y: 0, width: 100, height: 30)
+        let path = CGPath(rect: rect, transform: nil)
         self.backgroundColor = SKColor.white
         
-        backgroundMarried.size = CGSize(width: 2060, height: 1120)
-        backgroundMarried.position = CGPoint(x: size.width/2, y: size.height/2)
-        backgroundMarried.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        backgroundMarried.zPosition = 0
-        addChild(backgroundMarried)
+        backgroundSky.size = CGSize(width: 2050, height: 1120)
+        backgroundSky.position = CGPoint(x: size.width/2, y: size.height/2)
+        backgroundSky.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        backgroundSky.zPosition = 0
+        addChild(backgroundSky)
         
-        nonCharacterFlowers.size = CGSize(width: 2060, height: 400)
-        nonCharacterFlowers.position = CGPoint(x: size.width/2.0, y: size.height/1.5)
-        nonCharacterFlowers.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        nonCharacterFlowers.zPosition = 1
-        addChild(nonCharacterFlowers)
+        backgroundSea.size = CGSize(width: 2050, height: 1120)
+        backgroundSea.position = CGPoint(x: size.width/2, y: size.height/2)
+        backgroundSea.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        backgroundSea.zPosition = 1
+        addChild(backgroundSea)
         
-        characterMalinWife.name = "malinWife"
-        characterMalinWife.size = CGSize(width: 700, height: 800)
-        characterMalinWife.position = CGPoint(x: size.width/1.55, y: size.height/2.3)
-        characterMalinWife.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        characterMalinWife.zPosition = 2
-        addChild(characterMalinWife)
-        
-        characterMalin.name = "malin"
-        characterMalin.size = CGSize(width: 800, height: 1300)
-        characterMalin.position = CGPoint(x: size.width/3.0, y: size.height/2.95)
-        characterMalin.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        characterMalin.zPosition = 2
-        addChild(characterMalin)
+        nonCharacterBoat1.size = CGSize(width: 1000, height: 600)
+        nonCharacterBoat1.position = CGPoint(x: size.width/2, y: size.height/2.2)
+        nonCharacterBoat1.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterBoat1.zPosition = 1.75
+        nonCharacterBoat1.run(SKAction.repeatForever(SKAction.follow(path, asOffset: true, orientToPath: false, duration: 4.0)))
+        addChild(nonCharacterBoat1)
         
         buttonNext.name = "buttonNext"
         buttonNext.size = CGSize(width: 170, height: 170)
@@ -107,38 +99,57 @@ class MalinKundang_Scene8: SKScene {
         buttonSound.zPosition = 2.5
         addChild(buttonSound)
         
-        textLayout.size = CGSize(width: 1300, height: 200)
-        textLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
-        textLayout.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        textLayout.zPosition = 2.5
-        addChild(textLayout)
-        
-        labelTextStory.text = "Di sana ia menjadi pedagang kaya dan menikahi gadis cantik anak saudagar di desa itu."
-        labelTextStory.fontColor = SKColor.white
-        labelTextStory.fontSize = 42
-        labelTextStory.lineBreakMode = NSLineBreakMode.byWordWrapping
-        labelTextStory.numberOfLines = 0
-        labelTextStory.preferredMaxLayoutWidth = 1250
-        labelTextStory.position = CGPoint(x: size.width/2, y: size.height/4.25)
-        labelTextStory.zPosition = 2.75
-        addChild(labelTextStory)
-        
-        run(SKAction.repeatForever(SKAction.sequence([SKAction.run(flowersPetalsRainy), SKAction.wait(forDuration: 1.0)])))
+//
+        run(SKAction.repeatForever(SKAction.sequence([SKAction.run(moveCloud), SKAction.wait(forDuration: 7.5)])))
 
     }
     
-    func flowersPetalsRainy() {
-        let nonCharacterFlowersPetals = SKSpriteNode(imageNamed: "flowersPetals")
-        nonCharacterFlowersPetals.name = "petals"
-        nonCharacterFlowersPetals.position = CGPoint(x: CGFloat.random(min: playableRect.minX - nonCharacterFlowersPetals.size.height/2, max: playableRect.maxX + nonCharacterFlowersPetals.size.height/2), y: size.height + nonCharacterFlowersPetals.size.height/2)
-        nonCharacterFlowersPetals.size = CGSize(width: 70, height: 100)
-        nonCharacterFlowersPetals.zPosition = 1.5
-        addChild(nonCharacterFlowersPetals)
+    func moveCloud() {
+        let nonCharacterCloud1 = SKSpriteNode(imageNamed: "cloud1")
+        nonCharacterCloud1.name = "cloud1"
+        nonCharacterCloud1.position = CGPoint(x: size.width/0.9, y: size.height/1.7)
+        nonCharacterCloud1.size = CGSize(width: 1000, height: 200)
+        nonCharacterCloud1.zPosition = 1.5
+        addChild(nonCharacterCloud1)
         
-        let actionRainyFlowersPetals = SKAction.moveTo(y: -nonCharacterFlowersPetals.size.width/2, duration: 8.0)
-        let actionRemoveFlowersPetals = SKAction.removeFromParent()
+        let nonCharacterCloud2 = SKSpriteNode(imageNamed: "cloud2")
+        nonCharacterCloud2.name = "cloud2"
+        nonCharacterCloud2.position = CGPoint(x: size.width/0.7, y: size.height/1.35)
+        nonCharacterCloud2.size = CGSize(width: 400, height: 100)
+        nonCharacterCloud2.zPosition = 1.5
+        addChild(nonCharacterCloud2)
         
-        nonCharacterFlowersPetals.run(SKAction.sequence([actionRainyFlowersPetals, actionRemoveFlowersPetals]))
+        let nonCharacterCloud3 = SKSpriteNode(imageNamed: "cloud3")
+        nonCharacterCloud3.name = "cloud3"
+        nonCharacterCloud3.position = CGPoint(x: size.width/0.5, y: size.height/1.4)
+        nonCharacterCloud3.size = CGSize(width: 400, height: 100)
+        nonCharacterCloud3.zPosition = 1.5
+        addChild(nonCharacterCloud3)
+        
+        let nonCharacterCloud4 = SKSpriteNode(imageNamed: "cloud4")
+        nonCharacterCloud4.name = "cloud4"
+        nonCharacterCloud4.position = CGPoint(x: size.width/0.4, y: size.height/1.6)
+        nonCharacterCloud4.size = CGSize(width: 1000, height: 200)
+        nonCharacterCloud4.zPosition = 1.5
+        addChild(nonCharacterCloud4)
+        
+        let actionMoveCloud1 = SKAction.moveTo(x: -nonCharacterCloud1.size.width/2, duration: 6.0)
+        let actionRemoveCloud1 = SKAction.removeFromParent()
+        
+        let actionMoveCloud2 = SKAction.moveTo(x: -nonCharacterCloud2.size.width/2, duration: 6.0)
+        let actionRemoveCloud2 = SKAction.removeFromParent()
+        
+        let actionMoveCloud3 = SKAction.moveTo(x: -nonCharacterCloud3.size.width/2, duration: 7.0)
+        let actionRemoveCloud3 = SKAction.removeFromParent()
+        
+        let actionMoveCloud4 = SKAction.moveTo(x: -nonCharacterCloud4.size.width/2, duration: 8.0)
+        let actionRemoveCloud4 = SKAction.removeFromParent()
+        
+        nonCharacterCloud1.run(SKAction.sequence([actionMoveCloud1, actionRemoveCloud1]))
+        nonCharacterCloud2.run(SKAction.sequence([actionMoveCloud2, actionRemoveCloud2]))
+        nonCharacterCloud3.run(SKAction.sequence([actionMoveCloud3, actionRemoveCloud3]))
+        nonCharacterCloud4.run(SKAction.sequence([actionMoveCloud4, actionRemoveCloud4]))
+        
     }
     
     func buttonNextScene() {

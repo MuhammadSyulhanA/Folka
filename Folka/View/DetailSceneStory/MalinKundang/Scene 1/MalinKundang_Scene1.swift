@@ -35,6 +35,8 @@ class MalinKundang_Scene1: SKScene {
     var animationTree: SKAction?
     
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
+    var buttonHomeAction: SKAction?
+
     let buttonSound = SKSpriteNode(imageNamed: "buttonSound")
     
     let buttonNext = SKSpriteNode(imageNamed: "buttonNext")
@@ -177,6 +179,7 @@ class MalinKundang_Scene1: SKScene {
         animationTree = SKAction.animate(with: textures2, timePerFrame: 0.5)
         animationHouse = SKAction.animate(with: textures3, timePerFrame: 0.5)
         buttonNextAction = SKAction.scale(to: 1.0, duration: 2.0)
+        buttonHomeAction = SKAction.scale(to: 1.0, duration: 2.0)
         
         super.init(size: size)
     }
@@ -200,6 +203,15 @@ class MalinKundang_Scene1: SKScene {
                 newScene.scaleMode = .aspectFill
                 scene?.view!.presentScene(newScene, transition: reveal)
             }
+        }
+    }
+    
+    func buttonHomeScene() {
+        if buttonHome.action(forKey: "Button Home") == nil {
+            buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
+            let prevScene = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
+            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+            
         }
     }
     
@@ -300,6 +312,13 @@ class MalinKundang_Scene1: SKScene {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if node.name == "buttonNext" {
                     buttonNextScene()
+                }
+            }
+        }
+        else if atPoint((touch?.location(in: self))!).name == buttonHome.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if node.name == "buttonHome" {
+                    buttonHomeScene()
                 }
             }
         }

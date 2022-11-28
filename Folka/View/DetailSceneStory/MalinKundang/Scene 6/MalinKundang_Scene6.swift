@@ -23,6 +23,8 @@ class MalinKundang_Scene6: SKScene {
     var animationIbuMalin: SKAction?
     
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
+    var buttonHomeAction: SKAction?
+
     let buttonSound = SKSpriteNode(imageNamed: "buttonSound")
     
     let buttonNext = SKSpriteNode(imageNamed: "buttonNext")
@@ -103,6 +105,7 @@ class MalinKundang_Scene6: SKScene {
         animationIbuMalin = SKAction.animate(with: textures1, timePerFrame: 0.3)
         buttonNextAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
         buttonPreviousAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
+        buttonHomeAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
         
         super.init(size: size)
     }
@@ -128,6 +131,15 @@ class MalinKundang_Scene6: SKScene {
             let prevScene = MalinKundang_Puzzle2(size: CGSize(width: 2048, height: 1536))
             prevScene.scaleMode = .aspectFill
             scene?.view!.presentScene(prevScene, transition: reveal)
+        }
+    }
+    
+    func buttonHomeScene() {
+        if buttonHome.action(forKey: "Button Home") == nil {
+            buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
+            let prevScene = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
+            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+            
         }
     }
     
@@ -170,6 +182,12 @@ class MalinKundang_Scene6: SKScene {
                     if node.name == "buttonPrevious" {
                         buttonPreviousScene()
                     }
+                }
+            }
+        }else if atPoint((touch?.location(in: self))!).name == buttonHome.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if node.name == "buttonHome" {
+                    buttonHomeScene()
                 }
             }
         }
