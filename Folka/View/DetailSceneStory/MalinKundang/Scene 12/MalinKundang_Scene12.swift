@@ -24,6 +24,8 @@ class MalinKundang_Scene12: SKScene {
     var buttonPreviousAction: SKAction?
     
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
+    var buttonHomeAction: SKAction?
+
     let buttonSound = SKSpriteNode(imageNamed: "buttonSound")
     
     var labelTextStory = SKLabelNode(fontNamed: "McLaren")
@@ -33,6 +35,10 @@ class MalinKundang_Scene12: SKScene {
         let playableHeight = size.width / maxAspectRatio
         let playableMargin = (size.height - playableHeight)/2.0
         playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: playableHeight)
+        
+        buttonNextAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
+        buttonPreviousAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
+        buttonHomeAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
         
         super.init(size: size)
     }
@@ -166,6 +172,15 @@ class MalinKundang_Scene12: SKScene {
         }
     }
     
+    func buttonHomeScene() {
+        if buttonHome.action(forKey: "Button Home") == nil {
+            buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
+            let prevScene = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
+            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+            
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first as UITouch?
         if atPoint((touch?.location(in: self))!).name == buttonNext.name {
@@ -182,6 +197,12 @@ class MalinKundang_Scene12: SKScene {
                     if node.name == "buttonPrevious" {
                         buttonPreviousScene()
                     }
+                }
+            }
+        }else if atPoint((touch?.location(in: self))!).name == buttonHome.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if node.name == "buttonHome" {
+                    buttonHomeScene()
                 }
             }
         }

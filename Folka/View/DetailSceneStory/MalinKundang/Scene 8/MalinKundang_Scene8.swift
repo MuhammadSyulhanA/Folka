@@ -26,6 +26,8 @@ class MalinKundang_Scene8: SKScene {
     var buttonPreviousAction: SKAction?
     
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
+    var buttonHomeAction: SKAction?
+
     let buttonSound = SKSpriteNode(imageNamed: "buttonSound")
     
     let textLayout = SKSpriteNode(imageNamed: "textLayout")
@@ -39,6 +41,7 @@ class MalinKundang_Scene8: SKScene {
         
         buttonNextAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
         buttonPreviousAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
+        buttonHomeAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
         
         super.init(size: size)
     }
@@ -158,6 +161,15 @@ class MalinKundang_Scene8: SKScene {
         }
     }
     
+    func buttonHomeScene() {
+        if buttonHome.action(forKey: "Button Home") == nil {
+            buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
+            let prevScene = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
+            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+            
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first as UITouch?
         if atPoint((touch?.location(in: self))!).name == buttonNext.name {
@@ -174,6 +186,12 @@ class MalinKundang_Scene8: SKScene {
                     if node.name == "buttonPrevious" {
                         buttonPreviousScene()
                     }
+                }
+            }
+        }else if atPoint((touch?.location(in: self))!).name == buttonHome.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if node.name == "buttonHome" {
+                    buttonHomeScene()
                 }
             }
         }

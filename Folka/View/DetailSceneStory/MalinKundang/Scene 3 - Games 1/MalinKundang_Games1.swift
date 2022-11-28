@@ -498,10 +498,8 @@ class MalinKundang_Games1: SKScene {
     func buttonBackToHome() {
         if buttonYes.action(forKey: "Button Yes") == nil {
             buttonYes.run(SKAction.repeatForever(buttonYesAction!), withKey: "Button Yes")
-            let reveal = SKTransition.reveal(with: .left, duration: 1)
-            let newScene = MalinKundang_Scene1(size: CGSize(width: 2050, height: 1536))
-            newScene.scaleMode = .aspectFill
-            scene?.view!.presentScene(newScene, transition: reveal)
+            let prevScene = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
+            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
         }
     }
     

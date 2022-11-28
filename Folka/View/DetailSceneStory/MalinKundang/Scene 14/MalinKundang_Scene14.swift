@@ -41,6 +41,8 @@ class MalinKundang_Scene14: SKScene {
     var buttonPreviousAction: SKAction?
     
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
+    var buttonHomeAction: SKAction?
+
     let buttonSound = SKSpriteNode(imageNamed: "buttonSound")
     
     let textLayout = SKSpriteNode(imageNamed: "textLayout")
@@ -55,6 +57,9 @@ class MalinKundang_Scene14: SKScene {
         }
         
         animationTree = SKAction.animate(with: texturesTree, timePerFrame: 0.5)
+        buttonNextAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
+        buttonPreviousAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
+        buttonHomeAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
         
         super.init(size: size)
     }
@@ -162,6 +167,61 @@ class MalinKundang_Scene14: SKScene {
     func startTreeAnimation() {
         if nonCharacterTree.action(forKey: "Tree Animation") == nil {
             nonCharacterTree.run(SKAction.repeatForever(animationTree!), withKey: "Tree Animation")
+        }
+    }
+    
+    func buttonNextScene() {
+        if buttonNext.action(forKey: "Button Next") == nil {
+            buttonNext.run(SKAction.repeatForever(buttonNextAction!), withKey: "Button Next")
+            let reveal = SKTransition.reveal(with: .left, duration: 1)
+            let newScene = MalinKundang_Tutorial_Games1(size: CGSize(width: 2048, height: 1536))
+            newScene.scaleMode = .aspectFill
+            scene?.view!.presentScene(newScene, transition: reveal)
+        }
+    }
+    
+    func buttonPreviousScene() {
+        if buttonPrevious.action(forKey: "Button Previous") == nil {
+            buttonPrevious.run(SKAction.repeatForever(buttonPreviousAction!), withKey: "Button Previous")
+            let reveal = SKTransition.reveal(with: .right, duration: 1)
+            let prevScene = MalinKundang_Scene1(size: CGSize(width: 2048, height: 1536))
+            prevScene.scaleMode = .aspectFill
+            scene?.view!.presentScene(prevScene, transition: reveal)
+        }
+    }
+    
+    func buttonHomeScene() {
+        if buttonHome.action(forKey: "Button Home") == nil {
+            buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
+            let prevScene = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
+            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+            
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        let touch = touches.first as UITouch?
+        if atPoint((touch?.location(in: self))!).name == buttonNext.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if node.name == "buttonNext" {
+                    buttonNextScene()
+                }
+            }
+        }
+        if atPoint((touch?.location(in: self))!).name == buttonPrevious.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if node.name == "buttonPrevious" {
+                    buttonPreviousScene()
+                }
+            }
+        }
+        else if atPoint((touch?.location(in: self))!).name == buttonHome.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if node.name == "buttonHome" {
+                    buttonHomeScene()
+                }
+            }
         }
     }
     

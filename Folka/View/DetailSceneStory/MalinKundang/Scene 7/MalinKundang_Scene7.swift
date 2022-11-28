@@ -38,6 +38,8 @@ class MalinKundang_Scene7: SKScene {
     var buttonPreviousAction: SKAction?
     
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
+    var buttonHomeAction: SKAction?
+
     let buttonSound = SKSpriteNode(imageNamed: "buttonSound")
     
     let textLayout = SKSpriteNode(imageNamed: "textLayout")
@@ -168,12 +170,22 @@ class MalinKundang_Scene7: SKScene {
         animationHome = SKAction.animate(with: texturesHomeMalin, timePerFrame: 0.5)
         buttonNextAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
         buttonPreviousAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
+        buttonHomeAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
         
         super.init(size: size)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func buttonHomeScene() {
+        if buttonHome.action(forKey: "Button Home") == nil {
+            buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
+            let prevScene = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
+            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+            
+        }
     }
     
     func buttonNextScene() {
@@ -279,6 +291,12 @@ class MalinKundang_Scene7: SKScene {
                     if node.name == "buttonPrevious" {
                         buttonPreviousScene()
                     }
+                }
+            }
+        }else if atPoint((touch?.location(in: self))!).name == buttonHome.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if node.name == "buttonHome" {
+                    buttonHomeScene()
                 }
             }
         }
