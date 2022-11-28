@@ -194,7 +194,7 @@ class MalinKundang_Scene4: SKScene {
             characterIbuMalinSay = dataIntro[state].imageName
             textStory.text = dataIntro[state].textDialogue
             
-            else if state == 3 {
+            if state == 3 {
                 let reveal = SKTransition.reveal(with: .left, duration: 1)
                 let newScene = MalinKundang_Puzzle(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
