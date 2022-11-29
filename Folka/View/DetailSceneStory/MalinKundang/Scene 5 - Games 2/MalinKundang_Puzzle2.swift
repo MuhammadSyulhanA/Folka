@@ -14,13 +14,12 @@ class MalinKundang_Puzzle2: SKScene{
   var scrollView: CustomScrollView!
   let moveableNode = SKNode()
   
-  
   //  var scrollGround: UIView!
   
   let background = SKSpriteNode(imageNamed: "backgroundPuzzle")
   let kayuPuzzle = SKSpriteNode(imageNamed: "kayuPuzzle")
   let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
-  let buttonTanya = SKSpriteNode(imageNamed: "ButtonTanya")
+  let buttonTanya = SKSpriteNode(imageNamed: "buttonTanya")
   let outlineKapal = SKSpriteNode(imageNamed: "outlineKapalPuzzleDua")
   
   //MARK: PUZZLE KECIL

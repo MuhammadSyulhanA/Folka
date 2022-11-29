@@ -37,23 +37,23 @@
 		98F8DEED2931384800F8D70E /* MalinKundang_Scene12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8DEEC2931384800F8D70E /* MalinKundang_Scene12.swift */; };
 		98F8DEF12932202000F8D70E /* MalinKundang_Scene14.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8DEF02932202000F8D70E /* MalinKundang_Scene14.swift */; };
 		A0072D96292BCD4F00D32023 /* MalinKundang_Scene6.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0072D95292BCD4E00D32023 /* MalinKundang_Scene6.swift */; };
-		A01411C2291D6B7F007EDA8E /* HomePage_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01411C0291D6B7F007EDA8E /* HomePage_ViewController.swift */; };
-		A01411C3291D6B7F007EDA8E /* HomePage_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01411C1291D6B7F007EDA8E /* HomePage_ViewController.xib */; };
-		A01411C5291D6C1A007EDA8E /* ModelDataCaraousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01411C4291D6C1A007EDA8E /* ModelDataCaraousel.swift */; };
 		A01411CC291DFF94007EDA8E /* McLaren-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A01411C9291DFF94007EDA8E /* McLaren-Regular.ttf */; };
 		A01411CD291DFF94007EDA8E /* FONTLOG.txt in Resources */ = {isa = PBXBuildFile; fileRef = A01411CA291DFF94007EDA8E /* FONTLOG.txt */; };
 		A01411CE291DFF94007EDA8E /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = A01411CB291DFF94007EDA8E /* OFL.txt */; };
 		A018EA09292773BF00FE7451 /* MalinKundang_Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018EA08292773BF00FE7451 /* MalinKundang_Puzzle.swift */; };
-		A047FAB2291E191E0057F0A4 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A047FAB1291E191E0057F0A4 /* CustomLayout.swift */; };
-		A04B9FCC291E0DF10022168A /* HomePage_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B9FCA291E0DF10022168A /* HomePage_CollectionViewCell.swift */; };
-		A04B9FCD291E0DF10022168A /* HomePage_CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A04B9FCB291E0DF10022168A /* HomePage_CollectionViewCell.xib */; };
 		A08B5DC9291FD06C0021FBAF /* ProfileOnboard_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08B5DC7291FD06C0021FBAF /* ProfileOnboard_ViewController.swift */; };
 		A08B5DCA291FD06C0021FBAF /* ProfileOnboard_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08B5DC8291FD06C0021FBAF /* ProfileOnboard_ViewController.xib */; };
-		A08B5DCD29200F1A0021FBAF /* DetailPage_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08B5DCB29200F1A0021FBAF /* DetailPage_ViewController.swift */; };
-		A08B5DCE29200F1A0021FBAF /* DetailPage_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08B5DCC29200F1A0021FBAF /* DetailPage_ViewController.xib */; };
-		A097D67E2923EB8C0066EBDA /* SettingsScreen_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A097D67C2923EB8C0066EBDA /* SettingsScreen_ViewController.swift */; };
-		A097D67F2923EB8C0066EBDA /* SettingsScreen_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A097D67D2923EB8C0066EBDA /* SettingsScreen_ViewController.xib */; };
+		A0B202702935B1DD00BD275E /* HomePage_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B2026A2935B1DD00BD275E /* HomePage_ViewController.xib */; };
+		A0B202712935B1DD00BD275E /* HomePage_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2026B2935B1DD00BD275E /* HomePage_CollectionViewCell.swift */; };
+		A0B202722935B1DD00BD275E /* HomePage_CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B2026C2935B1DD00BD275E /* HomePage_CollectionViewCell.xib */; };
+		A0B202732935B1DD00BD275E /* HomePage_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2026D2935B1DD00BD275E /* HomePage_ViewController.swift */; };
+		A0B202742935B1DD00BD275E /* ModelDataCaraousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2026E2935B1DD00BD275E /* ModelDataCaraousel.swift */; };
+		A0B202752935B1DD00BD275E /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2026F2935B1DD00BD275E /* CustomLayout.swift */; };
 		A0C353BA292A67D30082A071 /* MalinKundang_Puzzle2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C353B9292A67D30082A071 /* MalinKundang_Puzzle2.swift */; };
+		A0FC93262935B37B008502E4 /* DetailPage_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC93242935B37B008502E4 /* DetailPage_ViewController.swift */; };
+		A0FC93272935B37B008502E4 /* DetailPage_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0FC93252935B37B008502E4 /* DetailPage_ViewController.xib */; };
+		A0FC932A2935B4A1008502E4 /* SettingsScreen_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0FC93282935B4A1008502E4 /* SettingsScreen_ViewController.xib */; };
+		A0FC932B2935B4A1008502E4 /* SettingsScreen_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC93292935B4A1008502E4 /* SettingsScreen_ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,23 +98,23 @@
 		98F8DEEC2931384800F8D70E /* MalinKundang_Scene12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene12.swift; sourceTree = "<group>"; };
 		98F8DEF02932202000F8D70E /* MalinKundang_Scene14.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene14.swift; sourceTree = "<group>"; };
 		A0072D95292BCD4E00D32023 /* MalinKundang_Scene6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene6.swift; sourceTree = "<group>"; };
-		A01411C0291D6B7F007EDA8E /* HomePage_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage_ViewController.swift; sourceTree = "<group>"; };
-		A01411C1291D6B7F007EDA8E /* HomePage_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePage_ViewController.xib; sourceTree = "<group>"; };
-		A01411C4291D6C1A007EDA8E /* ModelDataCaraousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDataCaraousel.swift; sourceTree = "<group>"; };
 		A01411C9291DFF94007EDA8E /* McLaren-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "McLaren-Regular.ttf"; sourceTree = "<group>"; };
 		A01411CA291DFF94007EDA8E /* FONTLOG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FONTLOG.txt; sourceTree = "<group>"; };
 		A01411CB291DFF94007EDA8E /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		A018EA08292773BF00FE7451 /* MalinKundang_Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Puzzle.swift; sourceTree = "<group>"; };
-		A047FAB1291E191E0057F0A4 /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
-		A04B9FCA291E0DF10022168A /* HomePage_CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage_CollectionViewCell.swift; sourceTree = "<group>"; };
-		A04B9FCB291E0DF10022168A /* HomePage_CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePage_CollectionViewCell.xib; sourceTree = "<group>"; };
 		A08B5DC7291FD06C0021FBAF /* ProfileOnboard_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOnboard_ViewController.swift; sourceTree = "<group>"; };
 		A08B5DC8291FD06C0021FBAF /* ProfileOnboard_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileOnboard_ViewController.xib; sourceTree = "<group>"; };
-		A08B5DCB29200F1A0021FBAF /* DetailPage_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage_ViewController.swift; sourceTree = "<group>"; };
-		A08B5DCC29200F1A0021FBAF /* DetailPage_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPage_ViewController.xib; sourceTree = "<group>"; };
-		A097D67C2923EB8C0066EBDA /* SettingsScreen_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen_ViewController.swift; sourceTree = "<group>"; };
-		A097D67D2923EB8C0066EBDA /* SettingsScreen_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsScreen_ViewController.xib; sourceTree = "<group>"; };
+		A0B2026A2935B1DD00BD275E /* HomePage_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomePage_ViewController.xib; path = ../../../../../Folka/Folka/View/HomePage/HomePage_ViewController.xib; sourceTree = "<group>"; };
+		A0B2026B2935B1DD00BD275E /* HomePage_CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePage_CollectionViewCell.swift; path = ../../../../../Folka/Folka/View/HomePage/HomePage_CollectionViewCell.swift; sourceTree = "<group>"; };
+		A0B2026C2935B1DD00BD275E /* HomePage_CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomePage_CollectionViewCell.xib; path = ../../../../../Folka/Folka/View/HomePage/HomePage_CollectionViewCell.xib; sourceTree = "<group>"; };
+		A0B2026D2935B1DD00BD275E /* HomePage_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePage_ViewController.swift; path = ../../../../../Folka/Folka/View/HomePage/HomePage_ViewController.swift; sourceTree = "<group>"; };
+		A0B2026E2935B1DD00BD275E /* ModelDataCaraousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelDataCaraousel.swift; path = ../../../../../Folka/Folka/View/HomePage/ModelDataCaraousel.swift; sourceTree = "<group>"; };
+		A0B2026F2935B1DD00BD275E /* CustomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomLayout.swift; path = ../../../../../Folka/Folka/View/HomePage/CustomLayout.swift; sourceTree = "<group>"; };
 		A0C353B9292A67D30082A071 /* MalinKundang_Puzzle2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Puzzle2.swift; sourceTree = "<group>"; };
+		A0FC93242935B37B008502E4 /* DetailPage_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailPage_ViewController.swift; path = ../../../../../Folka/Folka/View/DetailPage/DetailPage_ViewController.swift; sourceTree = "<group>"; };
+		A0FC93252935B37B008502E4 /* DetailPage_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailPage_ViewController.xib; path = ../../../../../Folka/Folka/View/DetailPage/DetailPage_ViewController.xib; sourceTree = "<group>"; };
+		A0FC93282935B4A1008502E4 /* SettingsScreen_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsScreen_ViewController.xib; path = ../../../../../Folka/Folka/View/SettingsScreen/SettingsScreen_ViewController.xib; sourceTree = "<group>"; };
+		A0FC93292935B4A1008502E4 /* SettingsScreen_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsScreen_ViewController.swift; path = ../../../../../Folka/Folka/View/SettingsScreen/SettingsScreen_ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,13 +229,13 @@
 		69C5501C291A0E5600E1CEF7 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				A0B2026F2935B1DD00BD275E /* CustomLayout.swift */,
+				A0B2026B2935B1DD00BD275E /* HomePage_CollectionViewCell.swift */,
+				A0B2026C2935B1DD00BD275E /* HomePage_CollectionViewCell.xib */,
+				A0B2026D2935B1DD00BD275E /* HomePage_ViewController.swift */,
+				A0B2026A2935B1DD00BD275E /* HomePage_ViewController.xib */,
+				A0B2026E2935B1DD00BD275E /* ModelDataCaraousel.swift */,
 				69C55022291A0F1B00E1CEF7 /* DocsHome.md */,
-				A01411C0291D6B7F007EDA8E /* HomePage_ViewController.swift */,
-				A01411C1291D6B7F007EDA8E /* HomePage_ViewController.xib */,
-				A01411C4291D6C1A007EDA8E /* ModelDataCaraousel.swift */,
-				A04B9FCA291E0DF10022168A /* HomePage_CollectionViewCell.swift */,
-				A04B9FCB291E0DF10022168A /* HomePage_CollectionViewCell.xib */,
-				A047FAB1291E191E0057F0A4 /* CustomLayout.swift */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -243,9 +243,9 @@
 		69C5501D291A0E5E00E1CEF7 /* DetailPage */ = {
 			isa = PBXGroup;
 			children = (
+				A0FC93242935B37B008502E4 /* DetailPage_ViewController.swift */,
+				A0FC93252935B37B008502E4 /* DetailPage_ViewController.xib */,
 				69C55023291A0F4400E1CEF7 /* DocsDetail.md */,
-				A08B5DCB29200F1A0021FBAF /* DetailPage_ViewController.swift */,
-				A08B5DCC29200F1A0021FBAF /* DetailPage_ViewController.xib */,
 			);
 			path = DetailPage;
 			sourceTree = "<group>";
@@ -418,8 +418,8 @@
 		A097D67B2923EAF80066EBDA /* SettingsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A097D67C2923EB8C0066EBDA /* SettingsScreen_ViewController.swift */,
-				A097D67D2923EB8C0066EBDA /* SettingsScreen_ViewController.xib */,
+				A0FC93292935B4A1008502E4 /* SettingsScreen_ViewController.swift */,
+				A0FC93282935B4A1008502E4 /* SettingsScreen_ViewController.xib */,
 			);
 			path = SettingsScreen;
 			sourceTree = "<group>";
@@ -484,14 +484,14 @@
 			files = (
 				A01411CE291DFF94007EDA8E /* OFL.txt in Resources */,
 				A08B5DCA291FD06C0021FBAF /* ProfileOnboard_ViewController.xib in Resources */,
-				A01411C3291D6B7F007EDA8E /* HomePage_ViewController.xib in Resources */,
 				69C5500C291A0C5D00E1CEF7 /* LaunchScreen.storyboard in Resources */,
+				A0B202702935B1DD00BD275E /* HomePage_ViewController.xib in Resources */,
 				A01411CD291DFF94007EDA8E /* FONTLOG.txt in Resources */,
-				A097D67F2923EB8C0066EBDA /* SettingsScreen_ViewController.xib in Resources */,
-				A04B9FCD291E0DF10022168A /* HomePage_CollectionViewCell.xib in Resources */,
+				A0B202722935B1DD00BD275E /* HomePage_CollectionViewCell.xib in Resources */,
+				A0FC932A2935B4A1008502E4 /* SettingsScreen_ViewController.xib in Resources */,
 				69C55009291A0C5D00E1CEF7 /* Assets.xcassets in Resources */,
+				A0FC93272935B37B008502E4 /* DetailPage_ViewController.xib in Resources */,
 				69C55007291A0C5A00E1CEF7 /* Main.storyboard in Resources */,
-				A08B5DCE29200F1A0021FBAF /* DetailPage_ViewController.xib in Resources */,
 				A01411CC291DFF94007EDA8E /* McLaren-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,25 +504,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				698EB8D02921E24E008C18BA /* GamePadSpace.swift in Sources */,
+				A0FC932B2935B4A1008502E4 /* SettingsScreen_ViewController.swift in Sources */,
 				98886769292107240094AAAF /* MalinKundang_Games1.swift in Sources */,
 				69D14818292C84BD0067D1D9 /* CustomScrollView.swift in Sources */,
 				698EB8D62921E24E008C18BA /* GamePadleft.swift in Sources */,
-				A01411C2291D6B7F007EDA8E /* HomePage_ViewController.swift in Sources */,
 				98F8DEE2292DD77400F8D70E /* MalinKundang_Scene7.swift in Sources */,
-				A047FAB2291E191E0057F0A4 /* CustomLayout.swift in Sources */,
+				A0B202752935B1DD00BD275E /* CustomLayout.swift in Sources */,
 				A08B5DC9291FD06C0021FBAF /* ProfileOnboard_ViewController.swift in Sources */,
 				98F8DED82928981E00F8D70E /* MalinKundang_Tutorial_Games1.swift in Sources */,
 				69D6B1A92934654A002CF007 /* MalinKundang_Scene11.swift in Sources */,
 				698EB8D82921E2BD008C18BA /* Controller.swift in Sources */,
 				98F8DEE5292E8D3600F8D70E /* MalinKundang_Scene8.swift in Sources */,
+				A0B202732935B1DD00BD275E /* HomePage_ViewController.swift in Sources */,
+				A0FC93262935B37B008502E4 /* DetailPage_ViewController.swift in Sources */,
 				69C55004291A0C5A00E1CEF7 /* ViewController.swift in Sources */,
 				698EB8D22921E24E008C18BA /* GamePadBase.swift in Sources */,
 				698EB8D12921E24E008C18BA /* GamePadRight.swift in Sources */,
 				98F8DEED2931384800F8D70E /* MalinKundang_Scene12.swift in Sources */,
 				988867662920FEA00094AAAF /* MalinKundang_Scene2.swift in Sources */,
-				A097D67E2923EB8C0066EBDA /* SettingsScreen_ViewController.swift in Sources */,
 				698EB8D52921E24E008C18BA /* GamePadUp.swift in Sources */,
-				A01411C5291D6C1A007EDA8E /* ModelDataCaraousel.swift in Sources */,
 				A018EA09292773BF00FE7451 /* MalinKundang_Puzzle.swift in Sources */,
 				98F8DEE8292FA1C200F8D70E /* MalinKundang_Scene9.swift in Sources */,
 				A0072D96292BCD4F00D32023 /* MalinKundang_Scene6.swift in Sources */,
@@ -532,11 +532,11 @@
 				988867642920FDD40094AAAF /* MalinKundang_Scene1.swift in Sources */,
 				A0C353BA292A67D30082A071 /* MalinKundang_Puzzle2.swift in Sources */,
 				698EB8D42921E24E008C18BA /* GamePad.swift in Sources */,
-				A08B5DCD29200F1A0021FBAF /* DetailPage_ViewController.swift in Sources */,
-				A04B9FCC291E0DF10022168A /* HomePage_CollectionViewCell.swift in Sources */,
 				98F8DECF292295D200F8D70E /* CoordinateGames.swift in Sources */,
+				A0B202712935B1DD00BD275E /* HomePage_CollectionViewCell.swift in Sources */,
 				98F8DEF12932202000F8D70E /* MalinKundang_Scene14.swift in Sources */,
 				69C55002291A0C5A00E1CEF7 /* SceneDelegate.swift in Sources */,
+				A0B202742935B1DD00BD275E /* ModelDataCaraousel.swift in Sources */,
 				98F8DEDD292C7BDF00F8D70E /* MalinKundang_Scene4.swift in Sources */,
 				698EB8D32921E24E008C18BA /* GamePadDown.swift in Sources */,
 			);
