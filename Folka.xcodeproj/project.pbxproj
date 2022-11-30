@@ -54,8 +54,6 @@
 		A0B202742935B1DD00BD275E /* ModelDataCaraousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2026E2935B1DD00BD275E /* ModelDataCaraousel.swift */; };
 		A0B202752935B1DD00BD275E /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2026F2935B1DD00BD275E /* CustomLayout.swift */; };
 		A0C353BA292A67D30082A071 /* MalinKundang_Puzzle2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C353B9292A67D30082A071 /* MalinKundang_Puzzle2.swift */; };
-		A0FC93262935B37B008502E4 /* DetailPage_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC93242935B37B008502E4 /* DetailPage_ViewController.swift */; };
-		A0FC93272935B37B008502E4 /* DetailPage_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0FC93252935B37B008502E4 /* DetailPage_ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,8 +115,6 @@
 		A0B2026E2935B1DD00BD275E /* ModelDataCaraousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelDataCaraousel.swift; path = ../../../../../Folka/Folka/View/HomePage/ModelDataCaraousel.swift; sourceTree = "<group>"; };
 		A0B2026F2935B1DD00BD275E /* CustomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomLayout.swift; path = ../../../../../Folka/Folka/View/HomePage/CustomLayout.swift; sourceTree = "<group>"; };
 		A0C353B9292A67D30082A071 /* MalinKundang_Puzzle2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Puzzle2.swift; sourceTree = "<group>"; };
-		A0FC93242935B37B008502E4 /* DetailPage_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailPage_ViewController.swift; path = ../../../../../Folka/Folka/View/DetailPage/DetailPage_ViewController.swift; sourceTree = "<group>"; };
-		A0FC93252935B37B008502E4 /* DetailPage_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailPage_ViewController.xib; path = ../../../../../Folka/Folka/View/DetailPage/DetailPage_ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,8 +243,6 @@
 		69C5501D291A0E5E00E1CEF7 /* DetailPage */ = {
 			isa = PBXGroup;
 			children = (
-				A0FC93242935B37B008502E4 /* DetailPage_ViewController.swift */,
-				A0FC93252935B37B008502E4 /* DetailPage_ViewController.xib */,
 				69C55023291A0F4400E1CEF7 /* DocsDetail.md */,
 			);
 			path = DetailPage;
@@ -488,7 +482,6 @@
 				A01C55BA2937247600261695 /* SettingsScreen_ViewController.xib in Resources */,
 				A0B202722935B1DD00BD275E /* HomePage_CollectionViewCell.xib in Resources */,
 				69C55009291A0C5D00E1CEF7 /* Assets.xcassets in Resources */,
-				A0FC93272935B37B008502E4 /* DetailPage_ViewController.xib in Resources */,
 				69C55007291A0C5A00E1CEF7 /* Main.storyboard in Resources */,
 				A01C55C02937253000261695 /* ScenePilihGame_ViewController.xib in Resources */,
 				A01411CC291DFF94007EDA8E /* McLaren-Regular.ttf in Resources */,
@@ -516,7 +509,6 @@
 				698EB8D82921E2BD008C18BA /* Controller.swift in Sources */,
 				98F8DEE5292E8D3600F8D70E /* MalinKundang_Scene8.swift in Sources */,
 				A0B202732935B1DD00BD275E /* HomePage_ViewController.swift in Sources */,
-				A0FC93262935B37B008502E4 /* DetailPage_ViewController.swift in Sources */,
 				69C55004291A0C5A00E1CEF7 /* ViewController.swift in Sources */,
 				698EB8D22921E24E008C18BA /* GamePadBase.swift in Sources */,
 				698EB8D12921E24E008C18BA /* GamePadRight.swift in Sources */,
