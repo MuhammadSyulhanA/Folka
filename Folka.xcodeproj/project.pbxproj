@@ -47,12 +47,6 @@
 		A01C55C02937253000261695 /* ScenePilihGame_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C55BF2937253000261695 /* ScenePilihGame_ViewController.xib */; };
 		A08B5DC9291FD06C0021FBAF /* ProfileOnboard_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08B5DC7291FD06C0021FBAF /* ProfileOnboard_ViewController.swift */; };
 		A08B5DCA291FD06C0021FBAF /* ProfileOnboard_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08B5DC8291FD06C0021FBAF /* ProfileOnboard_ViewController.xib */; };
-		A0B202702935B1DD00BD275E /* HomePage_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B2026A2935B1DD00BD275E /* HomePage_ViewController.xib */; };
-		A0B202712935B1DD00BD275E /* HomePage_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2026B2935B1DD00BD275E /* HomePage_CollectionViewCell.swift */; };
-		A0B202722935B1DD00BD275E /* HomePage_CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B2026C2935B1DD00BD275E /* HomePage_CollectionViewCell.xib */; };
-		A0B202732935B1DD00BD275E /* HomePage_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2026D2935B1DD00BD275E /* HomePage_ViewController.swift */; };
-		A0B202742935B1DD00BD275E /* ModelDataCaraousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2026E2935B1DD00BD275E /* ModelDataCaraousel.swift */; };
-		A0B202752935B1DD00BD275E /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2026F2935B1DD00BD275E /* CustomLayout.swift */; };
 		A0C353BA292A67D30082A071 /* MalinKundang_Puzzle2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C353B9292A67D30082A071 /* MalinKundang_Puzzle2.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,12 +102,6 @@
 		A01C55BF2937253000261695 /* ScenePilihGame_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScenePilihGame_ViewController.xib; sourceTree = "<group>"; };
 		A08B5DC7291FD06C0021FBAF /* ProfileOnboard_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOnboard_ViewController.swift; sourceTree = "<group>"; };
 		A08B5DC8291FD06C0021FBAF /* ProfileOnboard_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileOnboard_ViewController.xib; sourceTree = "<group>"; };
-		A0B2026A2935B1DD00BD275E /* HomePage_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomePage_ViewController.xib; path = ../../../../../Folka/Folka/View/HomePage/HomePage_ViewController.xib; sourceTree = "<group>"; };
-		A0B2026B2935B1DD00BD275E /* HomePage_CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePage_CollectionViewCell.swift; path = ../../../../../Folka/Folka/View/HomePage/HomePage_CollectionViewCell.swift; sourceTree = "<group>"; };
-		A0B2026C2935B1DD00BD275E /* HomePage_CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomePage_CollectionViewCell.xib; path = ../../../../../Folka/Folka/View/HomePage/HomePage_CollectionViewCell.xib; sourceTree = "<group>"; };
-		A0B2026D2935B1DD00BD275E /* HomePage_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePage_ViewController.swift; path = ../../../../../Folka/Folka/View/HomePage/HomePage_ViewController.swift; sourceTree = "<group>"; };
-		A0B2026E2935B1DD00BD275E /* ModelDataCaraousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelDataCaraousel.swift; path = ../../../../../Folka/Folka/View/HomePage/ModelDataCaraousel.swift; sourceTree = "<group>"; };
-		A0B2026F2935B1DD00BD275E /* CustomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomLayout.swift; path = ../../../../../Folka/Folka/View/HomePage/CustomLayout.swift; sourceTree = "<group>"; };
 		A0C353B9292A67D30082A071 /* MalinKundang_Puzzle2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Puzzle2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -229,12 +217,6 @@
 		69C5501C291A0E5600E1CEF7 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
-				A0B2026F2935B1DD00BD275E /* CustomLayout.swift */,
-				A0B2026B2935B1DD00BD275E /* HomePage_CollectionViewCell.swift */,
-				A0B2026C2935B1DD00BD275E /* HomePage_CollectionViewCell.xib */,
-				A0B2026D2935B1DD00BD275E /* HomePage_ViewController.swift */,
-				A0B2026A2935B1DD00BD275E /* HomePage_ViewController.xib */,
-				A0B2026E2935B1DD00BD275E /* ModelDataCaraousel.swift */,
 				69C55022291A0F1B00E1CEF7 /* DocsHome.md */,
 			);
 			path = HomePage;
@@ -477,10 +459,8 @@
 				A01411CE291DFF94007EDA8E /* OFL.txt in Resources */,
 				A08B5DCA291FD06C0021FBAF /* ProfileOnboard_ViewController.xib in Resources */,
 				69C5500C291A0C5D00E1CEF7 /* LaunchScreen.storyboard in Resources */,
-				A0B202702935B1DD00BD275E /* HomePage_ViewController.xib in Resources */,
 				A01411CD291DFF94007EDA8E /* FONTLOG.txt in Resources */,
 				A01C55BA2937247600261695 /* SettingsScreen_ViewController.xib in Resources */,
-				A0B202722935B1DD00BD275E /* HomePage_CollectionViewCell.xib in Resources */,
 				69C55009291A0C5D00E1CEF7 /* Assets.xcassets in Resources */,
 				69C55007291A0C5A00E1CEF7 /* Main.storyboard in Resources */,
 				A01C55C02937253000261695 /* ScenePilihGame_ViewController.xib in Resources */,
@@ -502,13 +482,11 @@
 				98F8DEE2292DD77400F8D70E /* MalinKundang_Scene7.swift in Sources */,
 				A01C55B52937240700261695 /* SettingsScreen_ViewController.swift in Sources */,
 				A01C55BD2937251500261695 /* ScenePilihGame_ViewController.swift in Sources */,
-				A0B202752935B1DD00BD275E /* CustomLayout.swift in Sources */,
 				A08B5DC9291FD06C0021FBAF /* ProfileOnboard_ViewController.swift in Sources */,
 				98F8DED82928981E00F8D70E /* MalinKundang_Tutorial_Games1.swift in Sources */,
 				69D6B1A92934654A002CF007 /* MalinKundang_Scene11.swift in Sources */,
 				698EB8D82921E2BD008C18BA /* Controller.swift in Sources */,
 				98F8DEE5292E8D3600F8D70E /* MalinKundang_Scene8.swift in Sources */,
-				A0B202732935B1DD00BD275E /* HomePage_ViewController.swift in Sources */,
 				69C55004291A0C5A00E1CEF7 /* ViewController.swift in Sources */,
 				698EB8D22921E24E008C18BA /* GamePadBase.swift in Sources */,
 				698EB8D12921E24E008C18BA /* GamePadRight.swift in Sources */,
@@ -525,10 +503,8 @@
 				A0C353BA292A67D30082A071 /* MalinKundang_Puzzle2.swift in Sources */,
 				698EB8D42921E24E008C18BA /* GamePad.swift in Sources */,
 				98F8DECF292295D200F8D70E /* CoordinateGames.swift in Sources */,
-				A0B202712935B1DD00BD275E /* HomePage_CollectionViewCell.swift in Sources */,
 				98F8DEF12932202000F8D70E /* MalinKundang_Scene14.swift in Sources */,
 				69C55002291A0C5A00E1CEF7 /* SceneDelegate.swift in Sources */,
-				A0B202742935B1DD00BD275E /* ModelDataCaraousel.swift in Sources */,
 				98F8DEDD292C7BDF00F8D70E /* MalinKundang_Scene4.swift in Sources */,
 				698EB8D32921E24E008C18BA /* GamePadDown.swift in Sources */,
 			);
