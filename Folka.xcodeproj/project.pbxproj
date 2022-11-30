@@ -41,6 +41,8 @@
 		A01411CD291DFF94007EDA8E /* FONTLOG.txt in Resources */ = {isa = PBXBuildFile; fileRef = A01411CA291DFF94007EDA8E /* FONTLOG.txt */; };
 		A01411CE291DFF94007EDA8E /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = A01411CB291DFF94007EDA8E /* OFL.txt */; };
 		A018EA09292773BF00FE7451 /* MalinKundang_Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018EA08292773BF00FE7451 /* MalinKundang_Puzzle.swift */; };
+		A01C55B52937240700261695 /* SettingsScreen_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C55B32937240700261695 /* SettingsScreen_ViewController.swift */; };
+		A01C55BA2937247600261695 /* SettingsScreen_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C55B92937247500261695 /* SettingsScreen_ViewController.xib */; };
 		A08B5DC9291FD06C0021FBAF /* ProfileOnboard_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08B5DC7291FD06C0021FBAF /* ProfileOnboard_ViewController.swift */; };
 		A08B5DCA291FD06C0021FBAF /* ProfileOnboard_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08B5DC8291FD06C0021FBAF /* ProfileOnboard_ViewController.xib */; };
 		A0B202702935B1DD00BD275E /* HomePage_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B2026A2935B1DD00BD275E /* HomePage_ViewController.xib */; };
@@ -100,6 +102,8 @@
 		A01411CA291DFF94007EDA8E /* FONTLOG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FONTLOG.txt; sourceTree = "<group>"; };
 		A01411CB291DFF94007EDA8E /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		A018EA08292773BF00FE7451 /* MalinKundang_Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Puzzle.swift; sourceTree = "<group>"; };
+		A01C55B32937240700261695 /* SettingsScreen_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen_ViewController.swift; sourceTree = "<group>"; };
+		A01C55B92937247500261695 /* SettingsScreen_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsScreen_ViewController.xib; sourceTree = "<group>"; };
 		A08B5DC7291FD06C0021FBAF /* ProfileOnboard_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOnboard_ViewController.swift; sourceTree = "<group>"; };
 		A08B5DC8291FD06C0021FBAF /* ProfileOnboard_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileOnboard_ViewController.xib; sourceTree = "<group>"; };
 		A0B2026A2935B1DD00BD275E /* HomePage_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomePage_ViewController.xib; path = ../../../../../Folka/Folka/View/HomePage/HomePage_ViewController.xib; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 		69C55014291A0CC700E1CEF7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A01C55AC2937236400261695 /* Settings Screen */,
 				69C5501F291A0E7D00E1CEF7 /* DetailSceneStory */,
 				69C5501D291A0E5E00E1CEF7 /* DetailPage */,
 				69C5501C291A0E5600E1CEF7 /* HomePage */,
@@ -402,6 +407,15 @@
 			path = "Scene 5 - Games 2";
 			sourceTree = "<group>";
 		};
+		A01C55AC2937236400261695 /* Settings Screen */ = {
+			isa = PBXGroup;
+			children = (
+				A01C55B32937240700261695 /* SettingsScreen_ViewController.swift */,
+				A01C55B92937247500261695 /* SettingsScreen_ViewController.xib */,
+			);
+			path = "Settings Screen";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -465,6 +479,7 @@
 				69C5500C291A0C5D00E1CEF7 /* LaunchScreen.storyboard in Resources */,
 				A0B202702935B1DD00BD275E /* HomePage_ViewController.xib in Resources */,
 				A01411CD291DFF94007EDA8E /* FONTLOG.txt in Resources */,
+				A01C55BA2937247600261695 /* SettingsScreen_ViewController.xib in Resources */,
 				A0B202722935B1DD00BD275E /* HomePage_CollectionViewCell.xib in Resources */,
 				69C55009291A0C5D00E1CEF7 /* Assets.xcassets in Resources */,
 				A0FC93272935B37B008502E4 /* DetailPage_ViewController.xib in Resources */,
@@ -485,6 +500,7 @@
 				69D14818292C84BD0067D1D9 /* CustomScrollView.swift in Sources */,
 				698EB8D62921E24E008C18BA /* GamePadleft.swift in Sources */,
 				98F8DEE2292DD77400F8D70E /* MalinKundang_Scene7.swift in Sources */,
+				A01C55B52937240700261695 /* SettingsScreen_ViewController.swift in Sources */,
 				A0B202752935B1DD00BD275E /* CustomLayout.swift in Sources */,
 				A08B5DC9291FD06C0021FBAF /* ProfileOnboard_ViewController.swift in Sources */,
 				98F8DED82928981E00F8D70E /* MalinKundang_Tutorial_Games1.swift in Sources */,
