@@ -14,12 +14,25 @@ class MalinKundang_Puzzle2: SKScene{
   var scrollView: CustomScrollView!
   let moveableNode = SKNode()
   
+  let popUpPuzzle = SKSpriteNode(imageNamed: "popUpPuzzleDua")
+  let popUpSuksesKapal = SKSpriteNode(imageNamed: "popUpSuksesKapalDua")
+  let backgroundOpacity = SKSpriteNode(imageNamed: "opacityBackground")
+  let buttonTutup = SKSpriteNode(imageNamed: "buttonTutup")
+  let buttonTutupAction: SKAction?
+  let buttonNextStory = SKSpriteNode(imageNamed: "buttonLanjutkanCerita")
+  var buttonNextStoryAction: SKAction?
+  let buttonReplayGame = SKSpriteNode(imageNamed: "buttonMainLagi")
+  var buttonReplayAction: SKAction?
+  
+  
   //  var scrollGround: UIView!
   
   let background = SKSpriteNode(imageNamed: "backgroundPuzzle")
   let kayuPuzzle = SKSpriteNode(imageNamed: "kayuPuzzle")
   let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
+  let buttonHomeAction: SKAction?
   let buttonTanya = SKSpriteNode(imageNamed: "buttonTanya")
+  let buttonTanyaAction: SKAction?
   let outlineKapal = SKSpriteNode(imageNamed: "outlineKapalPuzzleDua")
   
   //MARK: PUZZLE KECIL
@@ -59,6 +72,12 @@ class MalinKundang_Puzzle2: SKScene{
   let puzzleBesarPelampung = SKSpriteNode(imageNamed: "pelampungKapalDua")
   
   override init(size: CGSize){
+    buttonTutupAction = SKAction.resize(toWidth: 550, height: 130, duration: 2.0)
+    buttonTanyaAction = SKAction.resize(toWidth: 120, height: 130, duration: 2.0)
+    buttonHomeAction = SKAction.resize(toWidth: 120, height: 130, duration: 2.0)
+    buttonReplayAction = SKAction.resize(toWidth: 550, height: 110, duration: 2.0)
+    buttonNextStoryAction = SKAction.resize(toWidth: 550, height: 110, duration: 2.0)
+    
     super.init(size: size)
     
   }
@@ -495,7 +514,7 @@ class MalinKundang_Puzzle2: SKScene{
         puzzleKecilBulatKapal2.position = CGPoint(x: size.width/2.9, y: size.height/2.7)
         puzzleKecilBulatKapal2.isUserInteractionEnabled = true
         puzzleKecilBulatKapal2.isHidden = false
-//        puzzleKecilBulatKapal.isHidden = true
+        //        puzzleKecilBulatKapal.isHidden = true
       } else{
         puzzleKecilBulatKapal2.isHidden = false
         puzzleKecilBulatKapal2.scale(to: CGSize(width: 346, height: 107))
@@ -506,7 +525,7 @@ class MalinKundang_Puzzle2: SKScene{
         puzzleKecilAtapKapal2.position = CGPoint(x: size.width/1.76, y: size.height/1.46)
         puzzleKecilAtapKapal2.isUserInteractionEnabled = true
         puzzleKecilAtapKapal2.isHidden = false
-//        puzzleKecilAtapKapal2.isHidden = true
+        //        puzzleKecilAtapKapal2.isHidden = true
       } else{
         puzzleKecilAtapKapal2.isHidden = false
         puzzleKecilAtapKapal2.scale(to: CGSize(width: 346, height: 106))
@@ -616,7 +635,7 @@ class MalinKundang_Puzzle2: SKScene{
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     CustomScrollView.disable()
     for touch in touches {
-//      CustomScrollView.disable()
+      //      CustomScrollView.disable()
       let location = touch.location(in: self)
       if atPoint((touch.location(in: self))).name == puzzleKecilBulatKapal.name {
         if puzzleKecilBulatKapal2.position != puzzleBesarBulatKapal.position{
