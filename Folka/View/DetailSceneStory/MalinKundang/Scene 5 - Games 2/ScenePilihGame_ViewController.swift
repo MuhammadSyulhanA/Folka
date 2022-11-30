@@ -74,7 +74,7 @@ class ScenePilihGame_ViewController: UIViewController {
     let background = UIImage(named: "backgroundPuzzle")
     var imageView : UIImageView!
     imageView = UIImageView(frame: view.bounds)
-    imageView.contentMode =  UIView.ContentMode.scaleAspectFill
+    imageView.contentMode =  UIView.ContentMode.scaleToFill
     imageView.clipsToBounds = true
     imageView.image = background
     imageView.center = view.center

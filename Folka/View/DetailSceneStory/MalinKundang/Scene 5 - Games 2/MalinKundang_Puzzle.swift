@@ -459,8 +459,8 @@ class MalinKundang_Puzzle: SKScene{
   }
   
   func buttonHomeAksi(){
-    let prevScene = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
-    self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+    let nextDetailPage = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
+    self.view!.window?.rootViewController?.present(nextDetailPage, animated: true, completion: nil)
   }
   
   func buttonNextStoryScene() {

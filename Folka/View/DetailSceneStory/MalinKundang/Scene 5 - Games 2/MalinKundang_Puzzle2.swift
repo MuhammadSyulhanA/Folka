@@ -97,6 +97,54 @@ class MalinKundang_Puzzle2: SKScene{
     
     self.backgroundColor = SKColor.white
     
+    backgroundOpacity.size = CGSize(width: 2050, height: 1120)
+    backgroundOpacity.position = CGPoint(x: size.width/2, y: size.height/2)
+    backgroundOpacity.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+    backgroundOpacity.zPosition = 4
+    backgroundOpacity.isHidden = false
+    addChild(backgroundOpacity)
+    
+    popUpPuzzle.size = CGSize(width: 1450, height: 850)
+    popUpPuzzle.name = "failed"
+    popUpPuzzle.position = CGPoint(x: size.width/2.0, y: size.height/2.0)
+    popUpPuzzle.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+    popUpPuzzle.zPosition = 5
+    popUpPuzzle.isHidden = false
+    addChild(popUpPuzzle)
+    
+    popUpSuksesKapal.size = CGSize(width: 1450, height: 850)
+    popUpSuksesKapal.name = "failed"
+    popUpSuksesKapal.position = CGPoint(x: size.width/2.0, y: size.height/2.0)
+    popUpSuksesKapal.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+    popUpSuksesKapal.zPosition = 5
+    popUpSuksesKapal.isHidden = true
+    addChild(popUpSuksesKapal)
+    
+    buttonNextStory.size = CGSize(width: 580, height: 130)
+    buttonNextStory.name = "nextStory"
+    buttonNextStory.position = CGPoint(x: size.width/1.5, y: size.height/2.9)
+    buttonNextStory.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+    buttonNextStory.zPosition = 6
+    buttonNextStory.isHidden = true
+    addChild(buttonNextStory)
+    
+    buttonReplayGame.size = CGSize(width: 580, height: 130)
+    buttonReplayGame.name = "replayGame"
+    buttonReplayGame.position = CGPoint(x: size.width/2.9, y: size.height/2.9)
+    buttonReplayGame.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+    buttonReplayGame.zPosition = 6
+    buttonReplayGame.isHidden = true
+    addChild(buttonReplayGame)
+    
+    buttonTutup.size = CGSize(width: 580, height: 130)
+    buttonTutup.name = "buttonTutup"
+    buttonTutup.position = CGPoint(x: size.width/2, y: size.height/3.4)
+    buttonTutup.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+    buttonTutup.zPosition = 6
+    buttonTutup.isHidden = false
+    addChild( buttonTutup)
+    
+    
     //MARK: POSISI PUZZLE KECIL PERTAMA
     background.size = CGSize(width: 2040, height: 1120)
     background.position = CGPoint(x: size.width/2, y: size.height/2)
@@ -114,12 +162,14 @@ class MalinKundang_Puzzle2: SKScene{
     buttonHome.position = CGPoint(x: size.width/16, y: size.height/1.35)
     buttonHome.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     buttonHome.zPosition = 0
+    buttonHome.name = "buttonHome"
     addChild(buttonHome)
     
     buttonTanya.size = CGSize(width: 120, height: 120)
     buttonTanya.position = CGPoint(x: size.width/16, y: size.height/1.55)
     buttonTanya.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     buttonTanya.zPosition = 2
+    buttonTanya.name = "buttonTanya"
     addChild(buttonTanya)
     
     kayuPuzzle.scale(to: CGSize(width: 390, height: 1000))
@@ -636,19 +686,62 @@ class MalinKundang_Puzzle2: SKScene{
     CustomScrollView.disable()
     for touch in touches {
       //      CustomScrollView.disable()
-      let location = touch.location(in: self)
-      if atPoint((touch.location(in: self))).name == puzzleKecilBulatKapal.name {
+      let touch = touches.first as UITouch?
+      print(atPoint((touch?.location(in: self))!))
+      if atPoint((touch?.location(in: self))!).name == buttonTutup.name {
+        enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+          if node.name == "buttonTutup" {
+            buttonTutupSceneAksi()
+          }
+        }
+      }
+      
+      if atPoint((touch?.location(in: self))!).name == buttonTanya.name {
+        enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+          if node.name == "buttonTanya" {
+            buttonTanyaAksi()
+            print("tanya")
+          }
+        }
+      }
+      
+      if atPoint((touch?.location(in: self))!).name == buttonHome.name {
+        enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+          if node.name == "buttonHome" {
+            buttonHomeAksi()
+          }
+        }
+      }
+      
+      if atPoint((touch?.location(in: self))!).name == buttonReplayGame.name {
+        enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+          if node.name == "replayGame" {
+            buttonBackToGame()
+          }
+        }
+      }
+      
+      if atPoint((touch?.location(in: self))!).name == buttonNextStory.name {
+        enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+          if node.name == "nextStory" {
+            buttonNextStoryScene()
+          }
+        }
+      }
+      
+      
+      if atPoint((touch?.location(in: self))!).name == puzzleKecilBulatKapal.name {
         if puzzleKecilBulatKapal2.position != puzzleBesarBulatKapal.position{
           puzzleKecilBulatKapal2.isHidden = false
-          puzzleKecilBulatKapal2.position = location
+          //          puzzleKecilBulatKapal2.position = location
           puzzleKecilBulatKapal2.zPosition = 3
           puzzleKecilBulatKapal2.scale(to: CGSize(width: 578, height: 177))
         }
       }
       
-      if atPoint((touch.location(in: self))).name == puzzleKecilAtapKapal.name {
+      if atPoint((touch?.location(in: self))!).name == puzzleKecilAtapKapal.name {
         if puzzleKecilAtapKapal2.position != puzzleBesarAtapKapal.position{
-          puzzleKecilAtapKapal2.position = location
+          //          puzzleKecilAtapKapal2.position = location
           puzzleKecilAtapKapal2.zPosition = 3
           puzzleKecilAtapKapal2.scale(to: CGSize(width: 401, height: 73))
         }
@@ -694,6 +787,46 @@ class MalinKundang_Puzzle2: SKScene{
     //      puzzleKecilBadanKapalBawah2.scale(to: CGSize(width: 1200, height: 420))
     //    }
   }
+  
+  func buttonTutupSceneAksi() {
+    popUpPuzzle.isHidden = true
+    buttonTutup.isHidden = true
+    backgroundOpacity.isHidden = true
+  }
+  
+  func buttonBackToGame() {
+    let prevScene = ScenePilihGame_ViewController(nibName: "ScenePilihGame_ViewController", bundle: nil)
+    self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+  }
+  
+  func gameFinish(){
+    backgroundOpacity.isHidden = false
+    popUpSuksesKapal.isHidden = false
+    buttonNextStory.isHidden = false
+    buttonReplayGame.isHidden = false
+  }
+  
+  func buttonTanyaAksi(){
+    popUpPuzzle.isHidden = false
+    buttonTutup.isHidden = false
+    backgroundOpacity.isHidden = false
+  }
+  
+  func buttonHomeAksi(){
+    let nextDetailPage = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
+    self.view!.window?.rootViewController?.present(nextDetailPage, animated: true, completion: nil)
+  }
+  
+  func buttonNextStoryScene() {
+    if buttonNextStory.action(forKey: "Button Next") == nil {
+      buttonNextStory.run(SKAction.repeatForever(buttonNextStoryAction!), withKey: "Button Next")
+      let reveal = SKTransition.reveal(with: .left, duration: 1)
+      let newScene = MalinKundang_Scene6(size: CGSize(width: 2050, height: 1536))
+      newScene.scaleMode = .aspectFill
+      scene?.view!.presentScene(newScene, transition: reveal)
+    }
+  }
+  
   
   override func update(_ currentTime: TimeInterval) {
   }
