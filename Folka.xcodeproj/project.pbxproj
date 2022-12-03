@@ -25,6 +25,7 @@
 		69D6B1A729346502002CF007 /* MalinKundang_Scene10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D6B1A629346502002CF007 /* MalinKundang_Scene10.swift */; };
 		69D6B1A92934654A002CF007 /* MalinKundang_Scene11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D6B1A82934654A002CF007 /* MalinKundang_Scene11.swift */; };
 		69EADE882938E346000A31A3 /* MalinKundang_Scene13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EADE872938E346000A31A3 /* MalinKundang_Scene13.swift */; };
+		69EADE8D293BA3FE000A31A3 /* soundClick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 69EADE8C293BA3FE000A31A3 /* soundClick.wav */; };
 		988867622920FD770094AAAF /* MalinKundang_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988867612920FD770094AAAF /* MalinKundang_ViewController.swift */; };
 		988867642920FDD40094AAAF /* MalinKundang_Scene1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988867632920FDD40094AAAF /* MalinKundang_Scene1.swift */; };
 		988867662920FEA00094AAAF /* MalinKundang_Scene2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988867652920FEA00094AAAF /* MalinKundang_Scene2.swift */; };
@@ -97,6 +98,7 @@
 		69D6B1A629346502002CF007 /* MalinKundang_Scene10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene10.swift; sourceTree = "<group>"; };
 		69D6B1A82934654A002CF007 /* MalinKundang_Scene11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene11.swift; sourceTree = "<group>"; };
 		69EADE872938E346000A31A3 /* MalinKundang_Scene13.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene13.swift; sourceTree = "<group>"; };
+		69EADE8C293BA3FE000A31A3 /* soundClick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = soundClick.wav; sourceTree = "<group>"; };
 		988867612920FD770094AAAF /* MalinKundang_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_ViewController.swift; sourceTree = "<group>"; };
 		988867632920FDD40094AAAF /* MalinKundang_Scene1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene1.swift; sourceTree = "<group>"; };
 		988867652920FEA00094AAAF /* MalinKundang_Scene2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene2.swift; sourceTree = "<group>"; };
@@ -185,7 +187,7 @@
 		69C54FFE291A0C5A00E1CEF7 /* Folka */ = {
 			isa = PBXGroup;
 			children = (
-				A01411CF291DFFC7007EDA8E /* Fonts */,
+				69EADE89293BA382000A31A3 /* AssetNonImage */,
 				69C55015291A0CCC00E1CEF7 /* Controller */,
 				69C55014291A0CC700E1CEF7 /* View */,
 				69C55013291A0CC100E1CEF7 /* Model */,
@@ -327,6 +329,31 @@
 				69EADE872938E346000A31A3 /* MalinKundang_Scene13.swift */,
 			);
 			path = "Scene 13 - Games 3";
+			sourceTree = "<group>";
+		};
+		69EADE89293BA382000A31A3 /* AssetNonImage */ = {
+			isa = PBXGroup;
+			children = (
+				69EADE8A293BA399000A31A3 /* Sound */,
+				A01411CF291DFFC7007EDA8E /* Fonts */,
+			);
+			path = AssetNonImage;
+			sourceTree = "<group>";
+		};
+		69EADE8A293BA399000A31A3 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				69EADE8B293BA3D7000A31A3 /* Effect */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		69EADE8B293BA3D7000A31A3 /* Effect */ = {
+			isa = PBXGroup;
+			children = (
+				69EADE8C293BA3FE000A31A3 /* soundClick.wav */,
+			);
+			path = Effect;
 			sourceTree = "<group>";
 		};
 		988867672921066D0094AAAF /* Scene 3 - Games 1 */ = {
@@ -591,6 +618,7 @@
 				A0202801293790D7004694CD /* DetailPageViewController.xib in Resources */,
 				A01411CC291DFF94007EDA8E /* McLaren-Regular.ttf in Resources */,
 				A0FB0ECD293AFF58007C21A0 /* EndingStoryViewController.xib in Resources */,
+				69EADE8D293BA3FE000A31A3 /* soundClick.wav in Resources */,
 				A0FB0EC9293AFF45007C21A0 /* ChoiceEndingViewController.xib in Resources */,
 				A02774F42939FD40005F1ADF /* OnboardingCollectionViewCell.xib in Resources */,
 			);

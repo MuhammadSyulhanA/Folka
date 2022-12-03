@@ -185,7 +185,7 @@ class MalinKundang_Scene13: SKScene {
         //kapal
         kapalLabirin.name = "kapalLabirin"
         kapalLabirin.size = CGSize(width: 126, height: 78)
-        kapalLabirin.position = CGPoint(x: size.width/5.5, y: size.height/1.69)
+        kapalLabirin.position = CGPoint(x: size.width/7.0, y: size.height/1.69)
         kapalLabirin.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         kapalLabirin.zPosition = 2
         addChild(kapalLabirin)
@@ -193,7 +193,7 @@ class MalinKundang_Scene13: SKScene {
         //pulau
         pulauFinish.name = "pulauFinish"
         pulauFinish.size = CGSize(width: 156, height: 120)
-        pulauFinish.position = CGPoint(x: size.width/1.07, y: size.height/1.69)
+        pulauFinish.position = CGPoint(x: size.width/1.12, y: size.height/1.69)
         pulauFinish.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         pulauFinish.zPosition = 2
         addChild(pulauFinish)
@@ -237,21 +237,21 @@ class MalinKundang_Scene13: SKScene {
         
         //1
         horizonPanjang1Atas.size = CGSize(width: 1400, height: 20)
-        horizonPanjang1Atas.position = CGPoint(x: size.width/1.8, y: size.height/1.37)
+        horizonPanjang1Atas.position = CGPoint(x: size.width/1.93, y: size.height/1.37)
         horizonPanjang1Atas.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         horizonPanjang1Atas.zPosition = 2
         addChild(horizonPanjang1Atas)
         
         //2
         verticalPanjang3LuarDalam1.size = CGSize(width: 20, height: 150)
-        verticalPanjang3LuarDalam1.position = CGPoint(x: size.width/4.55, y: size.height/1.46)
+        verticalPanjang3LuarDalam1.position = CGPoint(x: size.width/5.5, y: size.height/1.46)
         verticalPanjang3LuarDalam1.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         verticalPanjang3LuarDalam1.zPosition = 2
         addChild(verticalPanjang3LuarDalam1)
         
         //3
         verticalPanjang3LuarDalam2.size = CGSize(width: 20, height: 150)
-        verticalPanjang3LuarDalam2.position = CGPoint(x: size.width/1.12, y: size.height/1.46)
+        verticalPanjang3LuarDalam2.position = CGPoint(x: size.width/1.17, y: size.height/1.46)
         verticalPanjang3LuarDalam2.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         verticalPanjang3LuarDalam2.zPosition = 2
         addChild(verticalPanjang3LuarDalam2)
