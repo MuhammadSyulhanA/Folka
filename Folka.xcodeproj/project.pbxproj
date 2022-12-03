@@ -24,6 +24,7 @@
 		69D14818292C84BD0067D1D9 /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D14817292C84BD0067D1D9 /* CustomScrollView.swift */; };
 		69D6B1A729346502002CF007 /* MalinKundang_Scene10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D6B1A629346502002CF007 /* MalinKundang_Scene10.swift */; };
 		69D6B1A92934654A002CF007 /* MalinKundang_Scene11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D6B1A82934654A002CF007 /* MalinKundang_Scene11.swift */; };
+		69EADE882938E346000A31A3 /* MalinKundang_Scene13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EADE872938E346000A31A3 /* MalinKundang_Scene13.swift */; };
 		988867622920FD770094AAAF /* MalinKundang_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988867612920FD770094AAAF /* MalinKundang_ViewController.swift */; };
 		988867642920FDD40094AAAF /* MalinKundang_Scene1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988867632920FDD40094AAAF /* MalinKundang_Scene1.swift */; };
 		988867662920FEA00094AAAF /* MalinKundang_Scene2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988867652920FEA00094AAAF /* MalinKundang_Scene2.swift */; };
@@ -79,6 +80,7 @@
 		69D14817292C84BD0067D1D9 /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		69D6B1A629346502002CF007 /* MalinKundang_Scene10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene10.swift; sourceTree = "<group>"; };
 		69D6B1A82934654A002CF007 /* MalinKundang_Scene11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene11.swift; sourceTree = "<group>"; };
+		69EADE872938E346000A31A3 /* MalinKundang_Scene13.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene13.swift; sourceTree = "<group>"; };
 		988867612920FD770094AAAF /* MalinKundang_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_ViewController.swift; sourceTree = "<group>"; };
 		988867632920FDD40094AAAF /* MalinKundang_Scene1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene1.swift; sourceTree = "<group>"; };
 		988867652920FEA00094AAAF /* MalinKundang_Scene2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene2.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 		69C55025291A0F9400E1CEF7 /* MalinKundang */ = {
 			isa = PBXGroup;
 			children = (
+				69EADE842938E2D3000A31A3 /* Scene 13 - Games 3 */,
 				98F8DEEF29321FC600F8D70E /* Scene 14 */,
 				98F8DEEB2931321E00F8D70E /* Scene 12 */,
 				98F8DEEA2931321300F8D70E /* Scene 11 */,
@@ -274,6 +277,14 @@
 			children = (
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		69EADE842938E2D3000A31A3 /* Scene 13 - Games 3 */ = {
+			isa = PBXGroup;
+			children = (
+				69EADE872938E346000A31A3 /* MalinKundang_Scene13.swift */,
+			);
+			path = "Scene 13 - Games 3";
 			sourceTree = "<group>";
 		};
 		988867672921066D0094AAAF /* Scene 3 - Games 1 */ = {
@@ -475,6 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69EADE882938E346000A31A3 /* MalinKundang_Scene13.swift in Sources */,
 				698EB8D02921E24E008C18BA /* GamePadSpace.swift in Sources */,
 				98886769292107240094AAAF /* MalinKundang_Games1.swift in Sources */,
 				69D14818292C84BD0067D1D9 /* CustomScrollView.swift in Sources */,
