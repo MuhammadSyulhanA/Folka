@@ -220,9 +220,9 @@ class MalinKundang_Scene17: SKScene {
             state += 1
             if state == 2 {
                 let reveal = SKTransition.reveal(with: .left, duration: 1)
-//                let newScene = MalinKundang_Scene18(size: CGSize(width: 2050, height: 1536))
-//                newScene.scaleMode = .aspectFill
-//                scene?.view!.presentScene(newScene, transition: reveal)
+                let newScene = MalinKundang_Scene18(size: CGSize(width: 2050, height: 1536))
+                newScene.scaleMode = .aspectFill
+                scene?.view!.presentScene(newScene, transition: reveal)
             }
         }
     }
