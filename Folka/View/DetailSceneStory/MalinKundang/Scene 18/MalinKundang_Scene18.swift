@@ -22,9 +22,7 @@ class MalinKundang_Scene18: SKScene {
     
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
     var buttonHomeAction: SKAction?
-    
-    let buttonSound = SKSpriteNode(imageNamed: "buttonSound")
-    
+        
     let buttonNext = SKSpriteNode(imageNamed: "buttonNext")
     var buttonNextAction: SKAction?
     
@@ -33,6 +31,8 @@ class MalinKundang_Scene18: SKScene {
     
     let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
     var labelTextStory = SKLabelNode(fontNamed: "McLaren")
+    
+    var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
 
     override func didMove(to view: SKView) {
         let rect = CGRect(x: 0, y: 0, width: 100, height: 0)
@@ -68,32 +68,25 @@ class MalinKundang_Scene18: SKScene {
         addChild(nonCharacterCoconut)
         
         buttonNext.name = "buttonNext"
-        buttonNext.size = CGSize(width: 170, height: 170)
+        buttonNext.size = CGSize(width: 150, height: 150)
         buttonNext.position = CGPoint(x: size.width/1.07, y: size.height/3.5)
         buttonNext.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         buttonNext.zPosition = 4
         addChild(buttonNext)
         
         buttonPrevious.name = "buttonPrevious"
-        buttonPrevious.size = CGSize(width: 170, height: 170)
+        buttonPrevious.size = CGSize(width: 150, height: 150)
         buttonPrevious.position = CGPoint(x: size.width/17.0, y: size.height/3.5)
         buttonPrevious.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         buttonPrevious.zPosition = 4
         addChild(buttonPrevious)
         
         buttonHome.name = "buttonHome"
-        buttonHome.size = CGSize(width: 170, height: 170)
+        buttonHome.size = CGSize(width: 150, height: 150)
         buttonHome.position = CGPoint(x: size.width/17.0, y: size.height/1.38)
         buttonHome.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         buttonHome.zPosition = +4
         addChild(buttonHome)
-        
-        buttonSound.name = "buttonSound"
-        buttonSound.size = CGSize(width: 170, height: 170)
-        buttonSound.position = CGPoint(x: size.width/1.07, y: size.height/1.38)
-        buttonSound.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        buttonSound.zPosition = +4
-        addChild(buttonSound)
         
         nonCharacterTextLayout.size = CGSize(width: 1300, height: 200)
         nonCharacterTextLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
@@ -114,10 +107,14 @@ class MalinKundang_Scene18: SKScene {
     }
     
     override init(size: CGSize){
+        let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
+        let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
+        
+        buttonNextAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        buttonPreviousAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        buttonHomeAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        
         animationTree = SKAction.scale(to: 1.0, duration: 2.0)
-        buttonNextAction = SKAction.scale(to: 1.0, duration: 2.0)
-        buttonPreviousAction = SKAction.scale(to: 1.0, duration: 2.0)
-        buttonHomeAction = SKAction.scale(to: 1.0, duration: 2.0)
         
         super.init(size: size)
     }
@@ -141,6 +138,7 @@ class MalinKundang_Scene18: SKScene {
     }
     
     func buttonNextScene() {
+        run(clickButton)
         if buttonNext.action(forKey: "Button Next") == nil {
             buttonNext.run(SKAction.repeatForever(buttonNextAction!), withKey: "Button Next")
             let reveal = SKTransition.reveal(with: .left, duration: 1)
@@ -151,6 +149,7 @@ class MalinKundang_Scene18: SKScene {
     }
     
     func buttonPreviousScene() {
+        run(clickButton)
         if buttonPrevious.action(forKey: "Button Previous") == nil {
             buttonPrevious.run(SKAction.repeatForever(buttonPreviousAction!), withKey: "Button Previous")
             let reveal = SKTransition.reveal(with: .right, duration: 1)
@@ -161,11 +160,11 @@ class MalinKundang_Scene18: SKScene {
     }
     
     func buttonHomeScene() {
+        run(clickButton)
         if buttonHome.action(forKey: "Button Home") == nil {
             buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
-//            let prevScene = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
-//            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
-            
+            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
         }
     }
     

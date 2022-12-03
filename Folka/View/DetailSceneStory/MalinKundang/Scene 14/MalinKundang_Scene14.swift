@@ -8,15 +8,10 @@
 import SpriteKit
 import GameplayKit
 
-//struct Dialogue {
-//    var imageName: SKSpriteNode!
-//    var textDialogue: String!
-//}
-
 class MalinKundang_Scene14: SKScene {
     
     let skyBackground = SKSpriteNode(imageNamed: "skyBackgroundZoom")
-    let groundBackground = SKSpriteNode(imageNamed: "groundBackgroundZoom")
+    let groundBackground = SKSpriteNode(imageNamed: "groundBackgroundZoomSea")
     
     let nonCharacterSea = SKSpriteNode(imageNamed: "backgroundSeaZoom")
     
@@ -31,9 +26,6 @@ class MalinKundang_Scene14: SKScene {
     
     let nonCharacterWood = SKSpriteNode(imageNamed: "kayuScene6")
     
-    let nonCharacterTree = SKSpriteNode(imageNamed: "tree1")
-    var animationTree: SKAction?
-    
     let buttonNext = SKSpriteNode(imageNamed: "buttonNext")
     var buttonNextAction: SKAction?
     
@@ -42,24 +34,25 @@ class MalinKundang_Scene14: SKScene {
     
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
     var buttonHomeAction: SKAction?
-
-    let buttonSound = SKSpriteNode(imageNamed: "buttonSound")
     
-    let textLayout = SKSpriteNode(imageNamed: "textLayout")
-    var textStory = SKLabelNode(fontNamed: "McLaren")
-//    var dataIntro: [Dialogue] = []
-//    var state = 0
+    let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
+    var labelTextStory = SKLabelNode(fontNamed: "McLaren")
+
+    var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
     
     override init(size: CGSize){
-        var texturesTree: [SKTexture] = []
-        for index in 1...2 {
-            texturesTree.append(SKTexture(imageNamed: "tree\(index)"))
+        var texturesIbuMalin: [SKTexture] = []
+        for index in 1...3 {
+            texturesIbuMalin.append(SKTexture(imageNamed: "ibuMalinScene14_\(index)"))
         }
+        let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
+        let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
         
-        animationTree = SKAction.animate(with: texturesTree, timePerFrame: 0.5)
-        buttonNextAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
-        buttonPreviousAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
-        buttonHomeAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
+        buttonNextAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        buttonPreviousAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        buttonHomeAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        
+        characterIbuMalinAnimation = SKAction.animate(with: texturesIbuMalin, timePerFrame: 0.5)
         
         super.init(size: size)
     }
@@ -93,14 +86,6 @@ class MalinKundang_Scene14: SKScene {
         nonCharacterSea.run(SKAction.repeatForever(SKAction.follow(path, asOffset: true, orientToPath: false, duration: 4.0)))
         addChild(nonCharacterSea)
         
-        nonCharacterTree.name = "tree"
-        nonCharacterTree.size = CGSize(width: 450, height: 700)
-        nonCharacterTree.position = CGPoint(x: size.width/13.0, y: size.height/2.6)
-        nonCharacterTree.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        nonCharacterTree.zPosition = 1.5
-        nonCharacterTree.zRotation = CGFloat.pi / -23
-        addChild(nonCharacterTree)
-        
         characterMalin.name = "malin"
         characterMalin.size = CGSize(width: 155, height: 550)
         characterMalin.position = CGPoint(x: size.width/1.5, y: size.height/2.1)
@@ -129,58 +114,63 @@ class MalinKundang_Scene14: SKScene {
         addChild(nonCharacterWood)
         
         buttonNext.name = "buttonNext"
-        buttonNext.size = CGSize(width: 170, height: 170)
+        buttonNext.size = CGSize(width: 150, height: 150)
         buttonNext.position = CGPoint(x: size.width/1.07, y: size.height/3.5)
         buttonNext.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         buttonNext.zPosition = 2
         addChild(buttonNext)
         
         buttonPrevious.name = "buttonPrevious"
-        buttonPrevious.size = CGSize(width: 170, height: 170)
+        buttonPrevious.size = CGSize(width: 150, height: 150)
         buttonPrevious.position = CGPoint(x: size.width/17.0, y: size.height/3.5)
         buttonPrevious.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         buttonPrevious.zPosition = 2
         addChild(buttonPrevious)
         
         buttonHome.name = "buttonHome"
-        buttonHome.size = CGSize(width: 170, height: 170)
+        buttonHome.size = CGSize(width: 150, height: 150)
         buttonHome.position = CGPoint(x: size.width/17.0, y: size.height/1.38)
         buttonHome.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         buttonHome.zPosition = 2
         addChild(buttonHome)
         
-        buttonSound.name = "buttonSound"
-        buttonSound.size = CGSize(width: 170, height: 170)
-        buttonSound.position = CGPoint(x: size.width/1.07, y: size.height/1.38)
-        buttonSound.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        buttonSound.zPosition = 2
-        addChild(buttonSound)
+        nonCharacterTextLayout.size = CGSize(width: 1400, height: 230)
+        nonCharacterTextLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
+        nonCharacterTextLayout.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterTextLayout.zPosition = +4
+        addChild(nonCharacterTextLayout)
         
-        textLayout.size = CGSize(width: 1300, height: 200)
-        textLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
-        textLayout.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        textLayout.zPosition = 2
-        addChild(textLayout)
+        labelTextStory.text = "Setelah mereka sampai, Ibu Malin menyambut mereka dengan senang."
+        labelTextStory.fontColor = SKColor.white
+        labelTextStory.fontSize = 42
+        labelTextStory.lineBreakMode = NSLineBreakMode.byWordWrapping
+        labelTextStory.numberOfLines = 0
+        labelTextStory.preferredMaxLayoutWidth = 1300
+        labelTextStory.position = CGPoint(x: size.width/2, y: size.height/4.25)
+        labelTextStory.zPosition = +4.5
+        addChild(labelTextStory)
 
     }
     
-    func startTreeAnimation() {
-        if nonCharacterTree.action(forKey: "Tree Animation") == nil {
-            nonCharacterTree.run(SKAction.repeatForever(animationTree!), withKey: "Tree Animation")
+    func startIbuMalinAnimation() {
+        if characterIbuMalin.action(forKey: "Ibu Malin Animation") == nil {
+            characterIbuMalin.run(SKAction.repeatForever(characterIbuMalinAnimation!), withKey: "Ibu Malin Animation")
         }
     }
     
     func buttonNextScene() {
+        run(clickButton)
         if buttonNext.action(forKey: "Button Next") == nil {
             buttonNext.run(SKAction.repeatForever(buttonNextAction!), withKey: "Button Next")
             let reveal = SKTransition.reveal(with: .left, duration: 1)
-            let newScene = MalinKundang_Tutorial_Games1(size: CGSize(width: 2048, height: 1536))
+            let newScene = MalinKundang_Scene15(size: CGSize(width: 2048, height: 1536))
             newScene.scaleMode = .aspectFill
             scene?.view!.presentScene(newScene, transition: reveal)
         }
     }
     
     func buttonPreviousScene() {
+        run(clickButton)
         if buttonPrevious.action(forKey: "Button Previous") == nil {
             buttonPrevious.run(SKAction.repeatForever(buttonPreviousAction!), withKey: "Button Previous")
             let reveal = SKTransition.reveal(with: .right, duration: 1)
@@ -192,9 +182,10 @@ class MalinKundang_Scene14: SKScene {
     
     func buttonHomeScene() {
         if buttonHome.action(forKey: "Button Home") == nil {
+            run(clickButton)
             buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
-//            let prevScene = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
-//            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             
         }
     }
@@ -226,6 +217,6 @@ class MalinKundang_Scene14: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        startTreeAnimation()
+        startIbuMalinAnimation()
     }
 }
