@@ -1,5 +1,5 @@
 //
-//  MalinKundang_Scene18.swift
+//  MalinKundang_Scene19.swift
 //  Folka
 //
 //  Created by Ferry Julian on 01/12/22.
@@ -8,7 +8,11 @@
 import SpriteKit
 import GameplayKit
 
-class MalinKundang_Scene18: SKScene {
+struct Script19 {
+    var text: String!
+}
+
+class MalinKundang_Scene19: SKScene {
     
     let backgroundEnding = SKSpriteNode(imageNamed: "backgroundEnding")
     
@@ -19,6 +23,9 @@ class MalinKundang_Scene18: SKScene {
     
     let nonCharacterCoconut = SKSpriteNode(imageNamed: "coconut")
     var animationCoconut: SKAction?
+    
+    let characterMalin = SKSpriteNode(imageNamed: "malinScene19_1")
+    var animationMalin: SKAction?
     
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
     var buttonHomeAction: SKAction?
@@ -33,10 +40,17 @@ class MalinKundang_Scene18: SKScene {
     
     let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
     var labelTextStory = SKLabelNode(fontNamed: "McLaren")
-
+    var dataIntro: [Script19] = []
+    var state = 0
+    
     override func didMove(to view: SKView) {
         let rect = CGRect(x: 0, y: 0, width: 100, height: 0)
         let path = CGPath(rect: rect, transform: nil)
+        
+        let data1 = Script19(text: "Ia menangis dan menyesali perbuatannya pada ibunya tadi.")
+        let data2 = Script19(text: "Namun sudah terlambat, Malin kemudian berubah menjadi batu karena perbuatannya.")
+        
+        dataIntro = [data1, data2]
         
         self.backgroundColor = SKColor.white
         
@@ -53,7 +67,6 @@ class MalinKundang_Scene18: SKScene {
         nonCharacterSea.run(SKAction.repeatForever(SKAction.follow(path, asOffset: true, orientToPath: false, duration: 4.0)))
         addChild(nonCharacterSea)
         
-        nonCharacterTree.name = "tree"
         nonCharacterTree.size = CGSize(width: 430, height: 600)
         nonCharacterTree.position = CGPoint(x: size.width/1.25, y: size.height/1.68)
         nonCharacterTree.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -66,6 +79,13 @@ class MalinKundang_Scene18: SKScene {
         nonCharacterCoconut.zPosition = 1.25
         nonCharacterCoconut.isHidden = true
         addChild(nonCharacterCoconut)
+        
+        characterMalin.name = "malin"
+        characterMalin.size = CGSize(width: 450, height: 250)
+        characterMalin.position = CGPoint(x: size.width/2.1, y: size.height/2.4)
+        characterMalin.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        characterMalin.zPosition = 2
+        addChild(characterMalin)
         
         buttonNext.name = "buttonNext"
         buttonNext.size = CGSize(width: 170, height: 170)
@@ -101,16 +121,17 @@ class MalinKundang_Scene18: SKScene {
         nonCharacterTextLayout.zPosition = 3
         addChild(nonCharacterTextLayout)
         
-        labelTextStory.text = "Malin terbawa ombak dan terdampar di suatu pulau."
+        labelTextStory.text = dataIntro[0].text
         labelTextStory.fontColor = SKColor.white
         labelTextStory.fontSize = 42
         labelTextStory.lineBreakMode = NSLineBreakMode.byWordWrapping
         labelTextStory.numberOfLines = 0
         labelTextStory.preferredMaxLayoutWidth = 1235
-        labelTextStory.position = CGPoint(x: size.width/2, y: size.height/3.8)
+        labelTextStory.position = CGPoint(x: size.width/2, y: size.height/4.08)
         labelTextStory.zPosition = 3.5
         addChild(labelTextStory)
         
+        startMalinStoneAnimation()
     }
     
     override init(size: CGSize){
@@ -126,11 +147,21 @@ class MalinKundang_Scene18: SKScene {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func startMalinStoneAnimation() {
+        var texturesMalin: [SKTexture] = []
+        for index in 1...5 {
+            texturesMalin.append(SKTexture(imageNamed: "malinScene19_\(index)"))
+        }
+        if characterMalin.action(forKey: "Malin Animation") == nil {
+            characterMalin.run(SKAction.animate(with: texturesMalin, timePerFrame: 2.0), withKey: "Malin Animation")
+        }
+    }
+    
     func startCoconutAnimation() {
         if nonCharacterTree.action(forKey: "Coconut Animation") == nil {
             nonCharacterTree.run(SKAction.repeatForever(animationTree!), withKey: "Coconut Animation")
             nonCharacterCoconut.isHidden = false
-            nonCharacterCoconut.run(SKAction.move(to: CGPoint(x: size.width/1.24, y: size.height/2.67), duration: 3.0))
+            nonCharacterCoconut.run(SKAction.move(to: CGPoint(x: size.width/1.24, y: size.height/2.68), duration: 3.0))
         }
     }
     
@@ -143,20 +174,37 @@ class MalinKundang_Scene18: SKScene {
     func buttonNextScene() {
         if buttonNext.action(forKey: "Button Next") == nil {
             buttonNext.run(SKAction.repeatForever(buttonNextAction!), withKey: "Button Next")
-            let reveal = SKTransition.reveal(with: .left, duration: 1)
-            let newScene = MalinKundang_Scene19(size: CGSize(width: 2048, height: 1536))
-            newScene.scaleMode = .aspectFill
-            scene?.view!.presentScene(newScene, transition: reveal)
+            state += 1
+            print("masokk", state)
+            if state == 1 {
+                labelTextStory.text = dataIntro[state].text
+            }
+        } else {
+            state += 1
+            print("masokk", state)
+            if state == 2 {
+                print("masokk")
+                let prevScene = ChoiceEndingViewController(nibName: "ChoiceEndingViewController", bundle: nil)
+                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+            }
         }
     }
     
     func buttonPreviousScene() {
         if buttonPrevious.action(forKey: "Button Previous") == nil {
             buttonPrevious.run(SKAction.repeatForever(buttonPreviousAction!), withKey: "Button Previous")
-            let reveal = SKTransition.reveal(with: .right, duration: 1)
-            let prevScene = MalinKundang_Scene17(size: CGSize(width: 2048, height: 1536))
-            prevScene.scaleMode = .aspectFill
-            scene?.view!.presentScene(prevScene, transition: reveal)
+            state -= 1
+            if state == 0 {
+                labelTextStory.text = dataIntro[state].text
+            }
+        } else {
+            state -= 1
+            if state < 0 {
+                let reveal = SKTransition.reveal(with: .left, duration: 1)
+                let newScene = MalinKundang_Scene18(size: CGSize(width: 2048, height: 1536))
+                newScene.scaleMode = .aspectFill
+                scene?.view!.presentScene(newScene, transition: reveal)
+            }
         }
     }
     
@@ -190,6 +238,10 @@ class MalinKundang_Scene18: SKScene {
                     if node.name == "buttonNext" {
                         buttonNextScene()
                     }
+                } else {
+                    if node.name == "buttonNext" {
+                        buttonNextScene()
+                    }
                 }
             }
         }else if atPoint((touch?.location(in: self))!).name == buttonPrevious.name {
@@ -207,5 +259,8 @@ class MalinKundang_Scene18: SKScene {
                 }
             }
         }
+    }
+    override func update(_ currentTime: TimeInterval) {
+       
     }
 }
