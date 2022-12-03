@@ -30,7 +30,8 @@ class MalinKundang_Scene11: SKScene {
     var animationTree: SKAction?
     
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
-    let buttonSound = SKSpriteNode(imageNamed: "buttonSound")
+    var buttonHomeAction: SKAction?
+//    let buttonSound = SKSpriteNode(imageNamed: "buttonSound")
     
     let buttonNext = SKSpriteNode(imageNamed: "buttonNext")
     var buttonNextAction: SKAction?
@@ -43,15 +44,19 @@ class MalinKundang_Scene11: SKScene {
     var dataIntro: [Script11] = []
     var state = 0
     
+    //MARK: SOUND
+    var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    
     override func didMove(to view: SKView) {
         // MARK: Default background white
         let rect = CGRect(x: 0, y: 0, width: 200, height: 0)
         let path = CGPath(rect: rect, transform: nil)
         
-        let data1 = Script11(text: "Dahulu kala seorang ibu bernama Mande Rubayah dan anak laki-lakinya, Malin Kundang.")
-        let data2 = Script11(text: "Mande Rubayah menghidupi Malin seorang diri hingga menjadi anak yang gagah dan tampan.")
+        let data1 = Script11(text: "Tiba-tiba ia didatangi oleh kru kapal yang dulu berlayar dengan Malin.")
+        let data2 = Script11(text: "Ia membawa kabar bahwa Malin akan kembali pulang.")
+        let data3 = Script11(text: "Mande Rubayah sangat senang mendengar kabar itu.")
         
-        dataIntro = [data1, data2]
+        dataIntro = [data1, data2, data3]
         
         self.backgroundColor = SKColor.white
         
@@ -103,12 +108,12 @@ class MalinKundang_Scene11: SKScene {
         buttonHome.zPosition = +4
         addChild(buttonHome)
         
-        buttonSound.name = "buttonSound"
-        buttonSound.size = CGSize(width: 170, height: 170)
-        buttonSound.position = CGPoint(x: size.width/1.07, y: size.height/1.38)
-        buttonSound.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        buttonSound.zPosition = +4
-        addChild(buttonSound)
+//        buttonSound.name = "buttonSound"
+//        buttonSound.size = CGSize(width: 170, height: 170)
+//        buttonSound.position = CGPoint(x: size.width/1.07, y: size.height/1.38)
+//        buttonSound.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+//        buttonSound.zPosition = +4
+//        addChild(buttonSound)
         
         buttonNext.name = "buttonNext"
         buttonNext.size = CGSize(width: 170, height: 170)
@@ -164,11 +169,15 @@ class MalinKundang_Scene11: SKScene {
             textures4.append(SKTexture(imageNamed: "nahkodaScene11_\(index)"))
         }
         
+        let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
+        let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
+        
         animationIbuMalin = SKAction.animate(with: textures, timePerFrame: 0.3)
         animationNahkoda = SKAction.animate(with: textures4, timePerFrame: 0.3)
         animationTree = SKAction.animate(with: textures2, timePerFrame: 0.5)
-        buttonNextAction = SKAction.scale(to: 1.0, duration: 2.0)
-        buttonPreviousAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
+        buttonNextAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        buttonPreviousAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        buttonHomeAction = SKAction.sequence([buttonToSmall, buttonToBig])
         
         super.init(size: size)
     }
@@ -177,18 +186,39 @@ class MalinKundang_Scene11: SKScene {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func buttonHomeScene() {
+        if buttonNext.action(forKey: "Button Next") == nil {
+            buttonHome.run((buttonHomeAction!), withKey: "Button Home")
+            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+        }
+    }
+    
     func buttonNextScene() {
         if buttonNext.action(forKey: "Button Next") == nil {
-            buttonNext.run(SKAction.repeatForever(buttonNextAction!), withKey: "Button Next")
+            buttonNext.run((buttonNextAction!), withKey: "Button Next")
             state += 1
-            if state < dataIntro.count{
+            print("if next", state)
+            
+            if state == 1 {
                 labelTextStory.text = dataIntro[state].text
+            } else if state == 2 {
+                labelTextStory.text = dataIntro[state].text
+            } else if state == 3 {
+                let reveal = SKTransition.reveal(with: .left, duration: 1)
+                let newScene = MalinKundang_Scene12(size: CGSize(width: 2050, height: 1536))
+                newScene.scaleMode = .aspectFill
+                scene?.view!.presentScene(newScene, transition: reveal)
             }
         } else {
             state += 1
+            print("else next", state)
+            
             if state == 2 {
+                labelTextStory.text = dataIntro[state].text
+            } else if state == 3 {
                 let reveal = SKTransition.reveal(with: .left, duration: 1)
-                let newScene = MalinKundang_Scene2(size: CGSize(width: 2050, height: 1536))
+                let newScene = MalinKundang_Scene12(size: CGSize(width: 2050, height: 1536))
                 newScene.scaleMode = .aspectFill
                 scene?.view!.presentScene(newScene, transition: reveal)
             }
@@ -197,11 +227,38 @@ class MalinKundang_Scene11: SKScene {
     
     func buttonPreviousScene() {
         if buttonPrevious.action(forKey: "Button Previous") == nil {
-            buttonPrevious.run(SKAction.repeatForever(buttonPreviousAction!), withKey: "Button Previous")
-            let reveal = SKTransition.reveal(with: .right, duration: 1)
-            let prevScene = MalinKundang_Scene10(size: CGSize(width: 2048, height: 1536))
-            prevScene.scaleMode = .aspectFill
-            scene?.view!.presentScene(prevScene, transition: reveal)
+            buttonPrevious.run((buttonPreviousAction!), withKey: "Button Previous")
+            
+            state -= 1
+            print("if prev", state)
+            if state == 0 {
+                labelTextStory.text = dataIntro[state].text
+            } else if state == 1 {
+                labelTextStory.text = dataIntro[state].text
+            } else if state == 2 {
+                labelTextStory.text = dataIntro[state].text
+            } else if state == -1 {
+                let reveal = SKTransition.reveal(with: .right, duration: 1)
+                let prevScene = MalinKundang_Scene10(size: CGSize(width: 2048, height: 1536))
+                prevScene.scaleMode = .aspectFill
+                scene?.view!.presentScene(prevScene, transition: reveal)
+            }
+        } else {
+            state -= 1
+            print("else prev", state)
+
+            if state == 0 {
+                labelTextStory.text = dataIntro[state].text
+            } else if state == 1 {
+                labelTextStory.text = dataIntro[state].text
+            } else if state == 2 {
+                labelTextStory.text = dataIntro[state].text
+            } else if state == -1 {
+                let reveal = SKTransition.reveal(with: .right, duration: 1)
+                let prevScene = MalinKundang_Scene10(size: CGSize(width: 2048, height: 1536))
+                prevScene.scaleMode = .aspectFill
+                scene?.view!.presentScene(prevScene, transition: reveal)
+            }
         }
     }
     
@@ -234,7 +291,7 @@ class MalinKundang_Scene11: SKScene {
     func stopTreeAnimation() {
         nonCharacterTree.removeAction(forKey: "Tree")
     }
-
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         let touch = touches.first as UITouch?
@@ -245,7 +302,7 @@ class MalinKundang_Scene11: SKScene {
                     if node.name == "ibuMalin" {
                         startIbuMalinAnimation()
                     }
-
+                    
                 } else{
                     if node.name == "ibuMalin" {
                         stopIbuMalinAnimation()
@@ -278,15 +335,33 @@ class MalinKundang_Scene11: SKScene {
             }
         } else if atPoint((touch?.location(in: self))!).name == buttonNext.name {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
-                if node.name == "buttonNext" {
-                    buttonNextScene()
+                if !self.buttonPrevious.hasActions(){
+                    if node.name == "buttonNext" {
+                        run(clickButton)
+                        buttonNextScene()
+                    }
+                } else {
+                    if node.name == "buttonNext" {
+                        run(clickButton)
+                        buttonNextScene()
+                    }
                 }
             }
         } else if atPoint((touch?.location(in: self))!).name == buttonPrevious.name {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if !self.buttonPrevious.hasActions(){
                     if node.name == "buttonPrevious" {
+                        run(clickButton)
                         buttonPreviousScene()
+                    }
+                }
+            }
+        } else if atPoint((touch?.location(in: self))!).name == buttonHome.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if !self.buttonHome.hasActions(){
+                    if node.name == "buttonHome" {
+                        run(clickButton)
+                        buttonHomeScene()
                     }
                 }
             }
