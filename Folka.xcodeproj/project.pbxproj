@@ -55,6 +55,8 @@
 		A01B3DB9293B8DFB00BBDE24 /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01B3DB7293B8DFB00BBDE24 /* HomePageViewController.xib */; };
 		A01B3DBC293B8E1500BBDE24 /* HomePageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01B3DBA293B8E1500BBDE24 /* HomePageCollectionViewCell.swift */; };
 		A01B3DBD293B8E1500BBDE24 /* HomePageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01B3DBB293B8E1500BBDE24 /* HomePageCollectionViewCell.xib */; };
+		A01B3DC2293BB44500BBDE24 /* SoundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01B3DC1293BB44500BBDE24 /* SoundModel.swift */; };
+		A01B3DC4293BB78600BBDE24 /* Coin Prize.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A01B3DC3293BB78600BBDE24 /* Coin Prize.mp3 */; };
 		A01C55B52937240700261695 /* SettingsScreen_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C55B32937240700261695 /* SettingsScreen_ViewController.swift */; };
 		A01C55BA2937247600261695 /* SettingsScreen_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C55B92937247500261695 /* SettingsScreen_ViewController.xib */; };
 		A01C55BD2937251500261695 /* ScenePilihGame_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C55BB2937251500261695 /* ScenePilihGame_ViewController.swift */; };
@@ -135,6 +137,8 @@
 		A01B3DB7293B8DFB00BBDE24 /* HomePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageViewController.xib; sourceTree = "<group>"; };
 		A01B3DBA293B8E1500BBDE24 /* HomePageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A01B3DBB293B8E1500BBDE24 /* HomePageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageCollectionViewCell.xib; sourceTree = "<group>"; };
+		A01B3DC1293BB44500BBDE24 /* SoundModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundModel.swift; sourceTree = "<group>"; };
+		A01B3DC3293BB78600BBDE24 /* Coin Prize.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Coin Prize.mp3"; sourceTree = "<group>"; };
 		A01C55B32937240700261695 /* SettingsScreen_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen_ViewController.swift; sourceTree = "<group>"; };
 		A01C55B92937247500261695 /* SettingsScreen_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsScreen_ViewController.xib; sourceTree = "<group>"; };
 		A01C55BB2937251500261695 /* ScenePilihGame_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePilihGame_ViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +231,7 @@
 		69C55014291A0CC700E1CEF7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A01B3DBE293BB41D00BBDE24 /* Model */,
 				A02213592939043300F40201 /* Onboarding Screen */,
 				A01C55AC2937236400261695 /* Settings Screen */,
 				69C5501F291A0E7D00E1CEF7 /* DetailSceneStory */,
@@ -372,6 +377,7 @@
 		69EADE8B293BA3D7000A31A3 /* Effect */ = {
 			isa = PBXGroup;
 			children = (
+				A01B3DC3293BB78600BBDE24 /* Coin Prize.mp3 */,
 				69EADE8C293BA3FE000A31A3 /* soundClick.wav */,
 			);
 			path = Effect;
@@ -538,6 +544,14 @@
 			path = "Scene 17 - Alternate";
 			sourceTree = "<group>";
 		};
+		A01B3DBE293BB41D00BBDE24 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A01B3DC1293BB44500BBDE24 /* SoundModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A01C55AC2937236400261695 /* Settings Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -640,6 +654,7 @@
 				A08B5DCA291FD06C0021FBAF /* ProfileOnboard_ViewController.xib in Resources */,
 				69C5500C291A0C5D00E1CEF7 /* LaunchScreen.storyboard in Resources */,
 				A022135D2939046500F40201 /* OnboardingViewController.xib in Resources */,
+				A01B3DC4293BB78600BBDE24 /* Coin Prize.mp3 in Resources */,
 				A01411CD291DFF94007EDA8E /* FONTLOG.txt in Resources */,
 				A01C55BA2937247600261695 /* SettingsScreen_ViewController.xib in Resources */,
 				69C55009291A0C5D00E1CEF7 /* Assets.xcassets in Resources */,
@@ -679,6 +694,7 @@
 				A02774F32939FD40005F1ADF /* OnboardingCollectionViewCell.swift in Sources */,
 				98F8DF2C293B79DC00F8D70E /* MalinKundang_Scene17.swift in Sources */,
 				A0FB0EC8293AFF45007C21A0 /* ChoiceEndingViewController.swift in Sources */,
+				A01B3DC2293BB44500BBDE24 /* SoundModel.swift in Sources */,
 				98F8DED82928981E00F8D70E /* MalinKundang_Tutorial_Games1.swift in Sources */,
 				A0202800293790D7004694CD /* DetailPageViewController.swift in Sources */,
 				69D6B1A92934654A002CF007 /* MalinKundang_Scene11.swift in Sources */,

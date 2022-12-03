@@ -12,6 +12,9 @@ class ProfileOnboard_ViewController: UIViewController, UITextFieldDelegate {
   @IBOutlet weak var buttonSelesai: UIButton!
   @IBOutlet weak var textField: UITextField!
   var customButton: UIImage!
+//  var soundURI: URL?
+//  var audioPlayer: AVAudioPlayer?
+
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -43,7 +46,7 @@ class ProfileOnboard_ViewController: UIViewController, UITextFieldDelegate {
   
   @IBAction func buttonSelesai(_ sender: UIButton) {
     UserDefaults.standard.set(textField.text!, forKey: "name")
-    
+    Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
     sender.transform = CGAffineTransform.init(scaleX: 0.6, y: 0.6)
     UIView.animate(withDuration: 0.3, animations: { () -> Void in
       sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
