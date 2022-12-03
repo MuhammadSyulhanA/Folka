@@ -14,12 +14,7 @@ class DetailPageViewController: UIViewController {
   @IBOutlet weak var lblStory: UILabel!
   @IBOutlet weak var buttonMulaiBaca: UIButton!
   @IBOutlet weak var coverMalin: UIImageView!
-  
-//  @IBOutlet weak var lblStory: UILabel!
-//  @IBOutlet weak var lblCeritaAsal: UILabel!
-//  @IBOutlet weak var buttonMulaiBaca: UIButton!
-//  @IBOutlet weak var coverMalin: UIImageView!
-//  @IBOutlet weak var buttonBack: UIButton!
+
   var customButtonBack: UIImage!
   var customButtonMulaiBaca: UIImage!
     
@@ -40,7 +35,6 @@ class DetailPageViewController: UIViewController {
   
   func assignbackground(){
     let background = UIImage(named: "backgroudBookDetail")
-    
     var imageView : UIImageView!
     imageView = UIImageView(frame: view.bounds)
     imageView.contentMode =  UIView.ContentMode.scaleToFill

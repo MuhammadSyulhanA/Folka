@@ -45,6 +45,7 @@ class MalinKundang_Scene4: SKScene {
     
     let textLayout = SKSpriteNode(imageNamed: "textLayout")
     var textStory = SKLabelNode(fontNamed: "McLaren")
+  
     var dataIntro: [Dialogue] = []
     var state = 0
     
@@ -111,28 +112,28 @@ class MalinKundang_Scene4: SKScene {
         addChild(characterIbuMalinSay)
         
         buttonNext.name = "buttonNext"
-        buttonNext.size = CGSize(width: 170, height: 170)
+        buttonNext.size = CGSize(width: 150, height: 150)
         buttonNext.position = CGPoint(x: size.width/1.07, y: size.height/3.5)
         buttonNext.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         buttonNext.zPosition = 4
         addChild(buttonNext)
         
         buttonPrevious.name = "buttonPrevious"
-        buttonPrevious.size = CGSize(width: 170, height: 170)
+        buttonPrevious.size = CGSize(width: 150, height: 150)
         buttonPrevious.position = CGPoint(x: size.width/17.0, y: size.height/3.5)
         buttonPrevious.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         buttonPrevious.zPosition = 4
         addChild(buttonPrevious)
         
         buttonHome.name = "buttonHome"
-        buttonHome.size = CGSize(width: 170, height: 170)
+        buttonHome.size = CGSize(width: 150, height: 150)
         buttonHome.position = CGPoint(x: size.width/17.0, y: size.height/1.38)
         buttonHome.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         buttonHome.zPosition = +4
         addChild(buttonHome)
         
         buttonSound.name = "buttonSound"
-        buttonSound.size = CGSize(width: 170, height: 170)
+        buttonSound.size = CGSize(width: 150, height: 150)
         buttonSound.position = CGPoint(x: size.width/1.07, y: size.height/1.38)
         buttonSound.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         buttonSound.zPosition = +4

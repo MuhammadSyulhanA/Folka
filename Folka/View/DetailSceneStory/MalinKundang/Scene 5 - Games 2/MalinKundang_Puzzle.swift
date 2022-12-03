@@ -123,14 +123,14 @@ class MalinKundang_Puzzle: SKScene{
     outlineKapal.zPosition = 2
     addChild(outlineKapal)
     
-    buttonHome.size = CGSize(width: 130, height: 130)
+    buttonHome.size = CGSize(width: 150, height: 150)
     buttonHome.position = CGPoint(x: size.width/16, y: size.height/1.35)
     buttonHome.name = "buttonHome"
     buttonHome.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     buttonHome.zPosition = 0
     addChild(buttonHome)
     
-    buttonTanya.size = CGSize(width: 120, height: 120)
+    buttonTanya.size = CGSize(width: 150, height: 150)
     buttonTanya.position = CGPoint(x: size.width/16, y: size.height/1.55)
     buttonTanya.name = "buttonTanya"
     buttonTanya.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -467,7 +467,7 @@ class MalinKundang_Puzzle: SKScene{
     if buttonNextStory.action(forKey: "Button Next") == nil {
       buttonNextStory.run(SKAction.repeatForever(buttonNextStoryAction!), withKey: "Button Next")
       let reveal = SKTransition.reveal(with: .left, duration: 1)
-      let newScene = MalinKundang_Scene6(size: CGSize(width: 2050, height: 1536))
+      let newScene = MalinKundang_Scene16(size: CGSize(width: 2050, height: 1536))
       newScene.scaleMode = .aspectFill
       scene?.view!.presentScene(newScene, transition: reveal)
     }
