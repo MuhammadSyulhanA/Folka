@@ -13,8 +13,9 @@ class SettingsScreen_ViewController: UIViewController, UITextFieldDelegate {
   var changeFXSound = true
   var changeFXMusic = true
   
+  @IBOutlet weak var buttonBack: UIImageView!
   @IBOutlet weak var buttonUbahNama: UIButton!
-  @IBOutlet weak var buttonBack: UIButton!
+//  @IBOutlet weak var buttonBack: UIButton!
   @IBOutlet weak var buttonMusic: UIButton!
   @IBOutlet weak var textFieldChangeName: UITextField!
   @IBOutlet weak var buttonSound: UIButton!
@@ -29,14 +30,15 @@ class SettingsScreen_ViewController: UIViewController, UITextFieldDelegate {
     super.viewDidLoad()
     assignbackground()
     
+    let tapNext = UITapGestureRecognizer(target: self, action: #selector(self.nextPage))
+       buttonBack.addGestureRecognizer(tapNext)
+       buttonBack.isUserInteractionEnabled = true
+    
     text = UserDefaults.standard.string(forKey: "name")
     textFieldChangeName.text = text
     textFieldChangeName.delegate = self
     textFieldChangeName.font = UIFont.systemFont(ofSize: 25)
     textFieldChangeName.isUserInteractionEnabled = false
-    buttonBack.setTitle("", for: .normal)
-    customButtonBack = UIImage(named: "buttonBack")
-    buttonBack.setImage(customButtonBack?.withRenderingMode(.alwaysOriginal), for: .normal)
     
     buttonUbahNama.setTitle("", for: .normal)
     customButtonUbahNama = UIImage(named: "buttonUbahNama")
@@ -53,11 +55,13 @@ class SettingsScreen_ViewController: UIViewController, UITextFieldDelegate {
   
   @IBAction func buttonSound(_ sender: UIButton) {
     if changeFXSound{
+      Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
       buttonSound.setTitle("", for: .normal)
       customButtonSound = UIImage(named: "buttonOffSound")
       buttonSound.setImage(customButtonSound?.withRenderingMode(.alwaysOriginal), for: .normal)
       changeFXSound = false
     } else{
+      Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
       buttonSound.setTitle("", for: .normal)
       customButtonSound = UIImage(named: "buttonOnSound")
       buttonSound.setImage(customButtonSound?.withRenderingMode(.alwaysOriginal), for: .normal)
@@ -67,11 +71,13 @@ class SettingsScreen_ViewController: UIViewController, UITextFieldDelegate {
   
   @IBAction func buttonMusic(_ sender: UIButton) {
     if changeFXMusic{
+      Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
       buttonMusic.setTitle("", for: .normal)
       customButtonMusic = UIImage(named: "buttonOffMusic")
       buttonMusic.setImage(customButtonMusic?.withRenderingMode(.alwaysOriginal), for: .normal)
       changeFXMusic = false
     } else{
+      Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
       buttonMusic.setTitle("", for: .normal)
       customButtonMusic = UIImage(named: "buttonOnMusic")
       buttonMusic.setImage(customButtonMusic?.withRenderingMode(.alwaysOriginal), for: .normal)
@@ -91,6 +97,11 @@ class SettingsScreen_ViewController: UIViewController, UITextFieldDelegate {
   @IBAction func buttonUbahNama(_ sender: UIButton) {
 //      textFieldChangeName.isUserInteractionEnabled = is
     if textFieldChangeName.isUserInteractionEnabled {
+      Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
+     sender.transform = CGAffineTransform.init(scaleX: 0.8, y: 0.8)
+             UIView.animate(withDuration: 0.3, animations: { () -> Void in
+               sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+             })
       buttonUbahNama.setTitle("", for: .normal)
       customButtonUbahNama = UIImage(named: "buttonUbahNama")
       buttonUbahNama.setImage(customButtonUbahNama?.withRenderingMode(.alwaysOriginal), for: .normal)
@@ -99,6 +110,11 @@ class SettingsScreen_ViewController: UIViewController, UITextFieldDelegate {
       print(UserDefaults.standard.string(forKey: "name")!)
       textFieldChangeName.isUserInteractionEnabled = false
     } else{
+      Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
+     sender.transform = CGAffineTransform.init(scaleX: 0.8, y: 0.8)
+             UIView.animate(withDuration: 0.3, animations: { () -> Void in
+               sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+             })
       textFieldChangeName.isUserInteractionEnabled = true
       buttonUbahNama.setTitle("", for: .normal)
       customButtonUbahNama = UIImage(named: "buttonSimpan")
@@ -106,16 +122,16 @@ class SettingsScreen_ViewController: UIViewController, UITextFieldDelegate {
     }
   }
   
-  @IBAction func buttonBack(_ sender: UIButton) {
-    sender.transform = CGAffineTransform.init(scaleX: 0.6, y: 0.6)
-    UIView.animate(withDuration: 0.5, animations: { () -> Void in
-      sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
-      
-    })
-    let controller = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-    controller.modalPresentationStyle = .fullScreen
-    present(controller, animated: true, completion: nil)
-  }
+//  @IBAction func buttonBack(_ sender: UIButton) {
+//    sender.transform = CGAffineTransform.init(scaleX: 0.6, y: 0.6)
+//    UIView.animate(withDuration: 0.5, animations: { () -> Void in
+//      sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+//
+//    })
+//    let controller = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+//    controller.modalPresentationStyle = .fullScreen
+//    present(controller, animated: true, completion: nil)
+//  }
   
   func assignbackground(){
     let background = UIImage(named: "backgroundSettings")
@@ -129,4 +145,16 @@ class SettingsScreen_ViewController: UIViewController, UITextFieldDelegate {
     view.addSubview(imageView)
     self.view.sendSubviewToBack(imageView)
   }
+  
+  
+  @objc func nextPage(sender: UITapGestureRecognizer){
+    Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
+    sender.view?.transform = CGAffineTransform.init(scaleX: 0.6, y: 0.6)
+             UIView.animate(withDuration: 0.3, animations: { () -> Void in
+               sender.view?.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+             })
+    let controller = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+    controller.modalPresentationStyle = .fullScreen
+    present(controller, animated: true, completion: nil)
+ }
 }

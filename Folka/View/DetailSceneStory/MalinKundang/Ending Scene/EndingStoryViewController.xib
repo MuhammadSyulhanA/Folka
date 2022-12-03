@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EndingStoryViewController" customModule="Folka" customModuleProvider="target">
             <connections>
+                <outlet property="backToBeranda" destination="eqg-Dp-o5A" id="tVF-Db-4yj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
