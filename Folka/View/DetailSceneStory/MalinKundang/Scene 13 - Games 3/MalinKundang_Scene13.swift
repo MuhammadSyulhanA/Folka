@@ -24,6 +24,7 @@ class MalinKundang_Scene13: SKScene {
     
     //MARK: POP UP HINT
     let wayHintLabirin = SKSpriteNode(imageNamed: "wayHintLabirin")
+    let wayAction: SKAction?
     
     //MARK: BUTTON POPUP
     let buttonMulai = SKSpriteNode(imageNamed: "buttonMulaiIntro")
@@ -88,6 +89,9 @@ class MalinKundang_Scene13: SKScene {
     let backgroundOpacity = SKSpriteNode(imageNamed: "opacityBackground")
     let background = SKSpriteNode(imageNamed: "backgroundPuzzle")
     
+    //MARK: SOUND
+    var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    
     override func didMove(to view: SKView) {
         //MARK: BACKGROUND
         self.backgroundColor = SKColor.white
@@ -130,6 +134,7 @@ class MalinKundang_Scene13: SKScene {
         wayHintLabirin.position = CGPoint(x: size.width/2.0, y: size.height/1.85)
         wayHintLabirin.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         wayHintLabirin.zPosition = 6
+        wayHintLabirin.isHidden = true
         addChild(wayHintLabirin)
         
         //MARK: BUTTON POPUP
@@ -202,16 +207,16 @@ class MalinKundang_Scene13: SKScene {
         let rectsharkKanan1 = CGRect(x: 0, y: 0, width: 200, height: 0)
         let pathsharkKanan1 = CGPath(rect: rectsharkKanan1, transform: nil)
         sharkKanan1.size = CGSize(width: 126, height: 78)
-        sharkKanan1.position = CGPoint(x: size.width/2.9, y: size.height/1.69)
+        sharkKanan1.position = CGPoint(x: size.width/3.2, y: size.height/1.69)
         sharkKanan1.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         sharkKanan1.zPosition = 2
-        sharkKanan1.run(SKAction.repeatForever(SKAction.follow(pathsharkKanan1, asOffset: true, orientToPath: false, duration: 4.0)))
+        sharkKanan1.run(SKAction.repeatForever(SKAction.follow(pathsharkKanan1, asOffset: true, orientToPath: false, duration: 3.0)))
         addChild(sharkKanan1)
         
         let rectsharkKanan2 = CGRect(x: 0, y: 0, width: 400, height: 0)
         let pathsharkKanan2 = CGPath(rect: rectsharkKanan2, transform: nil)
         sharkKanan2.size = CGSize(width: 126, height: 78)
-        sharkKanan2.position = CGPoint(x: size.width/3.7, y: size.height/1.45)
+        sharkKanan2.position = CGPoint(x: size.width/4.2, y: size.height/1.45)
         sharkKanan2.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         sharkKanan2.zPosition = 2
         sharkKanan2.run(SKAction.repeatForever(SKAction.follow(pathsharkKanan2, asOffset: true, orientToPath: false, duration: 4.0)))
@@ -220,7 +225,7 @@ class MalinKundang_Scene13: SKScene {
         let rectsharkKanan3 = CGRect(x: 0, y: 0, width: 400, height: 0)
         let pathsharkKanan3 = CGPath(rect: rectsharkKanan3, transform: nil)
         sharkKanan3.size = CGSize(width: 126, height: 78)
-        sharkKanan3.position = CGPoint(x: size.width/1.6, y: size.height/3.2)
+        sharkKanan3.position = CGPoint(x: size.width/1.7, y: size.height/3.2)
         sharkKanan3.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         sharkKanan3.run(SKAction.repeatForever(SKAction.follow(pathsharkKanan3, asOffset: true, orientToPath: false, duration: 4.0)))
         sharkKanan3.zPosition = 2
@@ -229,9 +234,9 @@ class MalinKundang_Scene13: SKScene {
         let rectsharkKiri = CGRect(x: 0, y: 0, width: 0, height: 200)
         let pathsharkKiri = CGPath(rect: rectsharkKiri, transform: nil)
         sharkKiri.size = CGSize(width: 126, height: 78)
-        sharkKiri.position = CGPoint(x: size.width/1.32, y: size.height/2.1)
+        sharkKiri.position = CGPoint(x: size.width/1.4, y: size.height/2.1)
         sharkKiri.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        sharkKiri.run(SKAction.repeatForever(SKAction.follow(pathsharkKiri, asOffset: true, orientToPath: false, duration: 4.0)))
+        sharkKiri.run(SKAction.repeatForever(SKAction.follow(pathsharkKiri, asOffset: true, orientToPath: false, duration: 3.0)))
         sharkKiri.zPosition = 2
         addChild(sharkKiri)
         
@@ -258,140 +263,140 @@ class MalinKundang_Scene13: SKScene {
         
         //4
         horizonPanjang3Dalam1.size = CGSize(width: 370, height: 20)
-        horizonPanjang3Dalam1.position = CGPoint(x: size.width/3.27, y: size.height/1.56)
+        horizonPanjang3Dalam1.position = CGPoint(x: size.width/3.7, y: size.height/1.56)
         horizonPanjang3Dalam1.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         horizonPanjang3Dalam1.zPosition = 2
         addChild(horizonPanjang3Dalam1)
         
         //5
         verticalPanjang3LuarDalam3.size = CGSize(width: 20, height: 150)
-        verticalPanjang3LuarDalam3.position = CGPoint(x: size.width/3.27, y: size.height/1.69)
+        verticalPanjang3LuarDalam3.position = CGPoint(x: size.width/3.7, y: size.height/1.69)
         verticalPanjang3LuarDalam3.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         verticalPanjang3LuarDalam3.zPosition = 2
         addChild(verticalPanjang3LuarDalam3)
         
         //6
         horizonPanjang4Dalam1.size = CGSize(width: 195, height: 20)
-        horizonPanjang4Dalam1.position = CGPoint(x: size.width/2.85, y: size.height/1.83)
+        horizonPanjang4Dalam1.position = CGPoint(x: size.width/3.2, y: size.height/1.83)
         horizonPanjang4Dalam1.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         horizonPanjang4Dalam1.zPosition = 2
         addChild(horizonPanjang4Dalam1)
         
         //7
         horizonPanjang1Bawah.size = CGSize(width: 1400, height: 20)
-        horizonPanjang1Bawah.position = CGPoint(x: size.width/1.8, y: size.height/3.8)
+        horizonPanjang1Bawah.position = CGPoint(x: size.width/1.93, y: size.height/3.8)
         horizonPanjang1Bawah.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         horizonPanjang1Bawah.zPosition = 2
         addChild(horizonPanjang1Bawah)
         
         //8
         verticalPanjang2LuarDalam1.size = CGSize(width: 20, height: 300)
-        verticalPanjang2LuarDalam1.position = CGPoint(x: size.width/2.52, y: size.height/2.2)
+        verticalPanjang2LuarDalam1.position = CGPoint(x: size.width/2.8, y: size.height/2.2)
         verticalPanjang2LuarDalam1.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         verticalPanjang2LuarDalam1.zPosition = 2
         addChild(verticalPanjang2LuarDalam1)
         
         //9
         horizonPanjang3Dalam2.size = CGSize(width: 400, height: 20)
-        horizonPanjang3Dalam2.position = CGPoint(x: size.width/2.5, y: size.height/2.8)
+        horizonPanjang3Dalam2.position = CGPoint(x: size.width/2.75, y: size.height/2.8)
         horizonPanjang3Dalam2.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         horizonPanjang3Dalam2.zPosition = 2
         addChild(horizonPanjang3Dalam2)
         
         //10
         horizonPanjang4Dalam2.size = CGSize(width: 195, height: 20)
-        horizonPanjang4Dalam2.position = CGPoint(x: size.width/3.8, y: size.height/2.2)
+        horizonPanjang4Dalam2.position = CGPoint(x: size.width/4.45, y: size.height/2.2)
         horizonPanjang4Dalam2.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         horizonPanjang4Dalam2.zPosition = 2
         addChild(horizonPanjang4Dalam2)
         
         //11
         verticalPanjang2LuarDalam2.size = CGSize(width: 20, height: 300)
-        verticalPanjang2LuarDalam2.position = CGPoint(x: size.width/4.55, y: size.height/2.8)
+        verticalPanjang2LuarDalam2.position = CGPoint(x: size.width/5.5, y: size.height/2.8)
         verticalPanjang2LuarDalam2.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         verticalPanjang2LuarDalam2.zPosition = 2
         addChild(verticalPanjang2LuarDalam2)
         
         //12
         verticalPanjang3LuarDalam4.size = CGSize(width: 20, height: 150)
-        verticalPanjang3LuarDalam4.position = CGPoint(x: size.width/4.55, y: size.height/2.0)
+        verticalPanjang3LuarDalam4.position = CGPoint(x: size.width/5.5, y: size.height/2.0)
         verticalPanjang3LuarDalam4.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         verticalPanjang3LuarDalam4.zPosition = 2
         addChild(verticalPanjang3LuarDalam4)
         
         //13
         verticalPanjang3LuarDalam5.size = CGSize(width: 20, height: 150)
-        verticalPanjang3LuarDalam5.position = CGPoint(x: size.width/2.02, y: size.height/2.5)
+        verticalPanjang3LuarDalam5.position = CGPoint(x: size.width/2.18, y: size.height/2.5)
         verticalPanjang3LuarDalam5.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         verticalPanjang3LuarDalam5.zPosition = 2
         addChild(verticalPanjang3LuarDalam5)
         
         //14
         horizonPanjang2Dalam1.size = CGSize(width: 650, height: 20)
-        horizonPanjang2Dalam1.position = CGPoint(x: size.width/1.54, y: size.height/2.25)
+        horizonPanjang2Dalam1.position = CGPoint(x: size.width/1.63, y: size.height/2.25)
         horizonPanjang2Dalam1.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         horizonPanjang2Dalam1.zPosition = 2
         addChild(horizonPanjang2Dalam1)
         
         //15
         verticalPanjang3LuarDalam6.size = CGSize(width: 20, height: 150)
-        verticalPanjang3LuarDalam6.position = CGPoint(x: size.width/1.24, y: size.height/2.5)
+        verticalPanjang3LuarDalam6.position = CGPoint(x: size.width/1.3, y: size.height/2.5)
         verticalPanjang3LuarDalam6.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         verticalPanjang3LuarDalam6.zPosition = 2
         addChild(verticalPanjang3LuarDalam6)
         
         //16
         verticalPanjang1Luar.size = CGSize(width: 20, height: 450)
-        verticalPanjang1Luar.position = CGPoint(x: size.width/1.12, y: size.height/2.45)
+        verticalPanjang1Luar.position = CGPoint(x: size.width/1.17, y: size.height/2.45)
         verticalPanjang1Luar.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         verticalPanjang1Luar.zPosition = 2
         addChild(verticalPanjang1Luar)
         
         //17
         horizonPanjang4Dalam3.size = CGSize(width: 195, height: 20)
-        horizonPanjang4Dalam3.position = CGPoint(x: size.width/1.18, y: size.height/1.83)
+        horizonPanjang4Dalam3.position = CGPoint(x: size.width/1.24, y: size.height/1.83)
         horizonPanjang4Dalam3.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         horizonPanjang4Dalam3.zPosition = 2
         addChild(horizonPanjang4Dalam3)
         
         //18
         verticalPanjang3LuarDalam7.size = CGSize(width: 20, height: 150)
-        verticalPanjang3LuarDalam7.position = CGPoint(x: size.width/1.24, y: size.height/1.69)
+        verticalPanjang3LuarDalam7.position = CGPoint(x: size.width/1.3, y: size.height/1.69)
         verticalPanjang3LuarDalam7.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         verticalPanjang3LuarDalam7.zPosition = 2
         addChild(verticalPanjang3LuarDalam7)
         
         //19
         horizonPanjang2Dalam2.size = CGSize(width: 650, height: 20)
-        horizonPanjang2Dalam2.position = CGPoint(x: size.width/1.54, y: size.height/1.56)
+        horizonPanjang2Dalam2.position = CGPoint(x: size.width/1.63, y: size.height/1.56)
         horizonPanjang2Dalam2.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         horizonPanjang2Dalam2.zPosition = 2
         addChild(horizonPanjang2Dalam2)
         
         //20
         verticalPanjang3LuarDalam8.size = CGSize(width: 20, height: 150)
-        verticalPanjang3LuarDalam8.position = CGPoint(x: size.width/2.03, y: size.height/1.69)
+        verticalPanjang3LuarDalam8.position = CGPoint(x: size.width/2.18, y: size.height/1.69)
         verticalPanjang3LuarDalam8.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         verticalPanjang3LuarDalam8.zPosition = 2
         addChild(verticalPanjang3LuarDalam8)
         
         //21
         horizonPanjang3Dalam3.size = CGSize(width: 400, height: 20)
-        horizonPanjang3Dalam3.position = CGPoint(x: size.width/1.7, y: size.height/1.84)
+        horizonPanjang3Dalam3.position = CGPoint(x: size.width/1.8, y: size.height/1.84)
         horizonPanjang3Dalam3.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         horizonPanjang3Dalam3.zPosition = 2
         addChild(horizonPanjang3Dalam3)
         
         //22
         verticalPanjang3LuarDalam9.size = CGSize(width: 20, height: 150)
-        verticalPanjang3LuarDalam9.position = CGPoint(x: size.width/1.72, y: size.height/3.2)
+        verticalPanjang3LuarDalam9.position = CGPoint(x: size.width/1.85, y: size.height/3.2)
         verticalPanjang3LuarDalam9.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         verticalPanjang3LuarDalam9.zPosition = 2
         addChild(verticalPanjang3LuarDalam9)
         
         //23
         horizonPanjang4Dalam4.size = CGSize(width: 195, height: 20)
-        horizonPanjang4Dalam4.position = CGPoint(x: size.width/1.6, y: size.height/2.8)
+        horizonPanjang4Dalam4.position = CGPoint(x: size.width/1.7, y: size.height/2.8)
         horizonPanjang4Dalam4.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         horizonPanjang4Dalam4.zPosition = 2
         addChild(horizonPanjang4Dalam4)
@@ -512,6 +517,7 @@ class MalinKundang_Scene13: SKScene {
         popUpHint.isHidden = false
         buttonTutupHint.isHidden = false
         wayHintLabirin.isHidden = false
+        wayHintLabirin.run(SKAction.repeatForever((wayAction!)), withKey: "Way Hint")
         backgroundOpacity.isHidden = false
     }
     
@@ -519,16 +525,34 @@ class MalinKundang_Scene13: SKScene {
         popUpHint.isHidden = true
         buttonTutupHint.isHidden = true
         wayHintLabirin.isHidden = true
+        wayHintLabirin.removeAction(forKey: "Way Hint")
         backgroundOpacity.isHidden = true
     }
     
+    func buttonHomeScene() {
+//      if buttonHome.action(forKey: "Button Home") == nil {
+        let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+        self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+//      }
+    }
+    
     override init(size: CGSize){
-        buttonTanyaAction = SKAction.resize(toWidth: 120, height: 130, duration: 2.0)
-        buttonHomeAction = SKAction.resize(toWidth: 120, height: 130, duration: 2.0)
-        buttonMulaiAction = SKAction.resize(toWidth: 550, height: 130, duration: 2.0)
-        buttonTutupHintAction = SKAction.resize(toWidth: 550, height: 130, duration: 2.0)
-        buttonMainLagiAction = SKAction.resize(toWidth: 550, height: 130, duration: 2.0)
-        buttonLanjutkanCeritaAction = SKAction.resize(toWidth: 550, height: 130, duration: 2.0)
+        let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
+        let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
+        
+        let buttonWidthToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
+        let buttonWidthToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
+        
+        let wayToAlpha = SKAction.fadeAlpha(to: 0.1, duration: 1.0)
+        let wayToBright = SKAction.fadeAlpha(to: 1.0, duration: 1.0)
+
+        buttonTanyaAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        buttonHomeAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        buttonMulaiAction = SKAction.sequence([buttonWidthToSmall, buttonWidthToBig])
+        buttonTutupHintAction = SKAction.sequence([buttonWidthToSmall, buttonWidthToBig])
+        buttonMainLagiAction = SKAction.sequence([buttonWidthToSmall, buttonWidthToBig])
+        buttonLanjutkanCeritaAction = SKAction.sequence([buttonWidthToSmall, buttonWidthToBig])
+        wayAction = SKAction.sequence([wayToAlpha, wayToBright])
         
         super.init(size: size)
     }
@@ -554,7 +578,9 @@ class MalinKundang_Scene13: SKScene {
         if atPoint((touch?.location(in: self))!).name == buttonMulai.name {
           enumerateChildNodes(withName: "//*") { [self] (node, stop) in
             if node.name == "buttonMulai" {
-              buttonTutupSceneAksi()
+                buttonMulai.run((buttonMulaiAction!), withKey: "Button Mulai")
+                run(clickButton)
+                buttonTutupSceneAksi()
             }
           }
         }
@@ -562,7 +588,9 @@ class MalinKundang_Scene13: SKScene {
         if atPoint((touch?.location(in: self))!).name == buttonTanya.name {
           enumerateChildNodes(withName: "//*") { [self] (node, stop) in
             if node.name == "buttonTanya" {
-              buttonTanyaAksi()
+                buttonTanya.run((buttonTanyaAction!), withKey: "Button Tanya")
+                run(clickButton)
+                buttonTanyaAksi()
             }
           }
         }
@@ -570,7 +598,9 @@ class MalinKundang_Scene13: SKScene {
         if atPoint((touch?.location(in: self))!).name == buttonTutupHint.name {
           enumerateChildNodes(withName: "//*") { [self] (node, stop) in
             if node.name == "buttonTutupHint" {
-              buttonTutupHintAksi()
+                buttonTutupHint.run((buttonTutupHintAction!), withKey: "Button Tutup")
+                run(clickButton)
+                buttonTutupHintAksi()
             }
           }
         }
@@ -578,7 +608,19 @@ class MalinKundang_Scene13: SKScene {
         if atPoint((touch?.location(in: self))!).name == buttonMainLagi.name {
           enumerateChildNodes(withName: "//*") { [self] (node, stop) in
             if node.name == "buttonMainLagi" {
-              buttonMainLagiAksi()
+                buttonMainLagi.run((buttonMainLagiAction!), withKey: "Button Lagi")
+                run(clickButton)
+                buttonMainLagiAksi()
+            }
+          }
+        }
+        
+        if atPoint((touch?.location(in: self))!).name == buttonHome.name {
+          enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+            if node.name == "buttonHome" {
+                buttonHome.run((buttonHomeAction!), withKey: "Button Home")
+                run(clickButton)
+                buttonHomeScene()
             }
           }
         }

@@ -28,6 +28,7 @@ class MalinKundang_Scene12: SKScene {
     
     var labelTextStory = SKLabelNode(fontNamed: "McLaren")
     
+    //MARK: SOUND
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
     
     override init(size: CGSize) {
@@ -150,7 +151,7 @@ class MalinKundang_Scene12: SKScene {
     func buttonNextScene() {
         run(clickButton)
         if buttonNext.action(forKey: "Button Next") == nil {
-            buttonNext.run(SKAction.repeatForever(buttonNextAction!), withKey: "Button Next")
+            buttonNext.run((buttonNextAction!), withKey: "Button Next")
             let reveal = SKTransition.reveal(with: .left, duration: 1)
             let newScene = MalinKundang_Scene13(size: CGSize(width: 2048, height: 1536))
             newScene.scaleMode = .aspectFill
@@ -161,7 +162,7 @@ class MalinKundang_Scene12: SKScene {
     func buttonPreviousScene() {
         run(clickButton)
         if buttonPrevious.action(forKey: "Button Previous") == nil {
-            buttonPrevious.run(SKAction.repeatForever(buttonPreviousAction!), withKey: "Button Previous")
+            buttonPrevious.run((buttonPreviousAction!), withKey: "Button Previous")
             let reveal = SKTransition.reveal(with: .right, duration: 1)
             let prevScene = MalinKundang_Scene11(size: CGSize(width: 2048, height: 1536))
             prevScene.scaleMode = .aspectFill
@@ -172,7 +173,7 @@ class MalinKundang_Scene12: SKScene {
     func buttonHomeScene() {
         run(clickButton)
         if buttonHome.action(forKey: "Button Home") == nil {
-            buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
+            buttonHome.run((buttonHomeAction!), withKey: "Button Home")
             let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
             self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             
@@ -185,6 +186,7 @@ class MalinKundang_Scene12: SKScene {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if !self.buttonNext.hasActions(){
                     if node.name == "buttonNext" {
+                        run(clickButton)
                         buttonNextScene()
                     }
                 }
@@ -193,6 +195,7 @@ class MalinKundang_Scene12: SKScene {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if !self.buttonPrevious.hasActions(){
                     if node.name == "buttonPrevious" {
+                        run(clickButton)
                         buttonPreviousScene()
                     }
                 }
@@ -200,6 +203,7 @@ class MalinKundang_Scene12: SKScene {
         }else if atPoint((touch?.location(in: self))!).name == buttonHome.name {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if node.name == "buttonHome" {
+                    run(clickButton)
                     buttonHomeScene()
                 }
             }

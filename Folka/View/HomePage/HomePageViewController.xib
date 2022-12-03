@@ -23,25 +23,25 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qc6-a2-oKl">
-                    <rect key="frame" x="20" y="20" width="807" height="60"/>
+                    <rect key="frame" x="20" y="20" width="807" height="48"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageProfile" translatesAutoresizingMaskIntoConstraints="NO" id="slD-xd-QfJ">
-                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                            <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="60" id="AGI-8D-vf4"/>
-                                <constraint firstAttribute="width" constant="60" id="bxX-v6-DcX"/>
+                                <constraint firstAttribute="height" constant="48" id="AGI-8D-vf4"/>
+                                <constraint firstAttribute="width" constant="48" id="bxX-v6-DcX"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8a-RP-xTK">
-                            <rect key="frame" x="70" y="13.333333333333336" width="737" height="33.666666666666664"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                            <rect key="frame" x="58" y="12" width="749" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <color key="textColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                 </stackView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ydl-Hp-hSz">
-                    <rect key="frame" x="0.0" y="80" width="852" height="313"/>
+                    <rect key="frame" x="0.0" y="68" width="852" height="325"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SBz-I6-HA9">
                         <size key="itemSize" width="128" height="128"/>

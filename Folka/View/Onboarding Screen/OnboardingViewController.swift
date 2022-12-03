@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 struct Page{
   let image: String
@@ -47,6 +48,12 @@ class OnboardingViewController: UIViewController, UICollectionViewDataSource, UI
   }
   
   @IBAction func buttonStart(_ sender: UIButton) {
+    sender.transform = CGAffineTransform.init(scaleX: 0.6, y: 0.6)
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+          sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+        })
+    
+    Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
     let nextProfileOnboard = ProfileOnboard_ViewController(nibName: "ProfileOnboard_ViewController", bundle: nil)
     present(nextProfileOnboard, animated: true, completion: nil)
   }
@@ -98,7 +105,5 @@ class OnboardingViewController: UIViewController, UICollectionViewDataSource, UI
     print("\(pageControl.currentPage)")
     pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
   }
-  
-  
   
 }

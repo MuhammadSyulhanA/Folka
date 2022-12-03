@@ -16,7 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsScreen_ViewController" customModule="Folka" customModuleProvider="target">
             <connections>
-                <outlet property="buttonBack" destination="DwV-p9-qS5" id="VHL-j0-5eJ"/>
+                <outlet property="buttonBack" destination="8iR-KT-WbC" id="TEJ-bG-c0V"/>
                 <outlet property="buttonMusic" destination="8Q1-pF-3Bs" id="WbW-pK-qdA"/>
                 <outlet property="buttonSound" destination="U6q-t8-JkG" id="a9b-Zo-Lfi"/>
                 <outlet property="buttonUbahNama" destination="PAH-Ib-bGA" id="46c-fO-q9m"/>
@@ -58,18 +58,6 @@
                         </button>
                     </subviews>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DwV-p9-qS5">
-                    <rect key="frame" x="25" y="20" width="48" height="48"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="48" id="7GF-hX-Qmj"/>
-                        <constraint firstAttribute="width" constant="48" id="eiq-5W-5t0"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                    <connections>
-                        <action selector="buttonBack:" destination="-1" eventType="touchUpInside" id="mze-8w-tPu"/>
-                    </connections>
-                </button>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="135" translatesAutoresizingMaskIntoConstraints="NO" id="nJh-8k-aX6">
                     <rect key="frame" x="85" y="178" width="682" height="60"/>
                     <subviews>
@@ -121,23 +109,31 @@
                         </stackView>
                     </subviews>
                 </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttonBack" translatesAutoresizingMaskIntoConstraints="NO" id="8iR-KT-WbC">
+                    <rect key="frame" x="20" y="20" width="48" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="AAK-h4-0hw"/>
+                        <constraint firstAttribute="width" constant="48" id="Np1-2t-iEb"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="labelColor"/>
             <constraints>
-                <constraint firstItem="DwV-p9-qS5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="3JK-NA-sF4"/>
+                <constraint firstItem="8iR-KT-WbC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="DEv-ll-AII"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="i7n-9x-gB9" secondAttribute="trailing" constant="60" id="Dcj-2J-Lz4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nJh-8k-aX6" secondAttribute="trailing" constant="85" id="ELG-dB-tla"/>
                 <constraint firstItem="i7n-9x-gB9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="See-p7-lnr"/>
                 <constraint firstItem="nJh-8k-aX6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="85" id="dTt-HJ-oYT"/>
-                <constraint firstItem="DwV-p9-qS5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="e3N-iC-baf"/>
                 <constraint firstItem="i7n-9x-gB9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="qcR-6A-Vzs"/>
                 <constraint firstItem="nJh-8k-aX6" firstAttribute="top" secondItem="i7n-9x-gB9" secondAttribute="bottom" constant="60" id="rg1-YO-ovU"/>
+                <constraint firstItem="8iR-KT-WbC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="sjL-3O-RDy"/>
             </constraints>
             <point key="canvasLocation" x="-5.6338028169014089" y="19.083969465648853"/>
         </view>
     </objects>
     <resources>
+        <image name="buttonBack" width="61" height="63"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

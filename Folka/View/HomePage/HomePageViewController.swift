@@ -86,10 +86,12 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
   }
   
   @objc func nextPage(sender: UITapGestureRecognizer){
-    imageProfile.frame.size = CGSize(width: 100, height: 100)
-    UIView.animate(withDuration: 0.5){
-      self.imageProfile.frame.size = CGSize(width: 90, height: 90)
-    }
+    Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
+    sender.view?.transform = CGAffineTransform.init(scaleX: 0.6, y: 0.6)
+              UIView.animate(withDuration: 0.3, animations: { () -> Void in
+                sender.view?.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+              })
+    
     //      Sound.sharedInstance.playButton(file: "Click", fileExtension: "mp3")
     let controller = SettingsScreen_ViewController(nibName: "SettingsScreen_ViewController", bundle: nil)
     controller.modalPresentationStyle = .fullScreen
@@ -145,8 +147,16 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
     let dataHomePage = dataHomePage[indexPath.item]
     if indexPath.item == layout.currentPage{
       if dataHomePage.title == "Malin Kundang" {
+        Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.transform = CGAffineTransform.init(scaleX: 0.6, y: 0.6)
+                UIView.animate(withDuration: 0.3, animations: { () -> Void in
+                  cell?.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+                })
+        
         let nextDetailPage = DetailPageViewController(nibName: "DetailPageViewController", bundle: nil)
         present(nextDetailPage, animated: true, completion: nil)
+        
       }else{
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         layout.currentPage = indexPath.item
