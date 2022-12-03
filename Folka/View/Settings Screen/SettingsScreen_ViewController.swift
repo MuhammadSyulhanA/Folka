@@ -112,9 +112,9 @@ class SettingsScreen_ViewController: UIViewController, UITextFieldDelegate {
       sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
       
     })
-    let controller = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
-    controller.modalPresentationStyle = .fullScreen
-    present(controller, animated: true, completion: nil)
+//    let controller = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
+//    controller.modalPresentationStyle = .fullScreen
+//    present(controller, animated: true, completion: nil)
   }
   
   func assignbackground(){

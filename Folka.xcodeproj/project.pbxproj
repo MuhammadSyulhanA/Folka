@@ -37,6 +37,7 @@
 		98F8DEE8292FA1C200F8D70E /* MalinKundang_Scene9.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8DEE7292FA1C200F8D70E /* MalinKundang_Scene9.swift */; };
 		98F8DEED2931384800F8D70E /* MalinKundang_Scene12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8DEEC2931384800F8D70E /* MalinKundang_Scene12.swift */; };
 		98F8DEF12932202000F8D70E /* MalinKundang_Scene14.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8DEF02932202000F8D70E /* MalinKundang_Scene14.swift */; };
+		98F8DF29293B4DD300F8D70E /* MalinKundang_Scene15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8DF28293B4DD300F8D70E /* MalinKundang_Scene15.swift */; };
 		A0072D96292BCD4F00D32023 /* MalinKundang_Scene6.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0072D95292BCD4E00D32023 /* MalinKundang_Scene6.swift */; };
 		A01411CC291DFF94007EDA8E /* McLaren-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A01411C9291DFF94007EDA8E /* McLaren-Regular.ttf */; };
 		A01411CD291DFF94007EDA8E /* FONTLOG.txt in Resources */ = {isa = PBXBuildFile; fileRef = A01411CA291DFF94007EDA8E /* FONTLOG.txt */; };
@@ -61,8 +62,6 @@
 		A0FB0EC9293AFF45007C21A0 /* ChoiceEndingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0FB0EC7293AFF45007C21A0 /* ChoiceEndingViewController.xib */; };
 		A0FB0ECC293AFF58007C21A0 /* EndingStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB0ECA293AFF58007C21A0 /* EndingStoryViewController.swift */; };
 		A0FB0ECD293AFF58007C21A0 /* EndingStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0FB0ECB293AFF58007C21A0 /* EndingStoryViewController.xib */; };
-		A0FC93262935B37B008502E4 /* DetailPage_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC93242935B37B008502E4 /* DetailPage_ViewController.swift */; };
-		A0FC93272935B37B008502E4 /* DetailPage_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0FC93252935B37B008502E4 /* DetailPage_ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +106,7 @@
 		98F8DEE7292FA1C200F8D70E /* MalinKundang_Scene9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene9.swift; sourceTree = "<group>"; };
 		98F8DEEC2931384800F8D70E /* MalinKundang_Scene12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene12.swift; sourceTree = "<group>"; };
 		98F8DEF02932202000F8D70E /* MalinKundang_Scene14.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene14.swift; sourceTree = "<group>"; };
+		98F8DF28293B4DD300F8D70E /* MalinKundang_Scene15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene15.swift; sourceTree = "<group>"; };
 		A0072D95292BCD4E00D32023 /* MalinKundang_Scene6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene6.swift; sourceTree = "<group>"; };
 		A01411C9291DFF94007EDA8E /* McLaren-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "McLaren-Regular.ttf"; sourceTree = "<group>"; };
 		A01411CA291DFF94007EDA8E /* FONTLOG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FONTLOG.txt; sourceTree = "<group>"; };
@@ -131,8 +131,6 @@
 		A0FB0EC7293AFF45007C21A0 /* ChoiceEndingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChoiceEndingViewController.xib; sourceTree = "<group>"; };
 		A0FB0ECA293AFF58007C21A0 /* EndingStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingStoryViewController.swift; sourceTree = "<group>"; };
 		A0FB0ECB293AFF58007C21A0 /* EndingStoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EndingStoryViewController.xib; sourceTree = "<group>"; };
-		A0FC93242935B37B008502E4 /* DetailPage_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailPage_ViewController.swift; path = ../../../../../Folka/Folka/View/DetailPage/DetailPage_ViewController.swift; sourceTree = "<group>"; };
-		A0FC93252935B37B008502E4 /* DetailPage_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailPage_ViewController.xib; path = ../../../../../Folka/Folka/View/DetailPage/DetailPage_ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,8 +276,9 @@
 				A01B3DAD293B162400BBDE24 /* Scene 17 - Alternate */,
 				A0FB0EC5293AFF10007C21A0 /* Ending Scene */,
 				A07F796B2937BFD6003954F0 /* Scene 16 */,
-				69EADE842938E2D3000A31A3 /* Scene 13 - Games 3 */,
+				98F8DF27293B4D9B00F8D70E /* Scene 15 */,
 				98F8DEEF29321FC600F8D70E /* Scene 14 */,
+				69EADE842938E2D3000A31A3 /* Scene 13 - Games 3 */,
 				98F8DEEB2931321E00F8D70E /* Scene 12 */,
 				98F8DEEA2931321300F8D70E /* Scene 11 */,
 				98F8DEE92931320A00F8D70E /* Scene 10 */,
@@ -402,6 +401,14 @@
 				98F8DEF02932202000F8D70E /* MalinKundang_Scene14.swift */,
 			);
 			path = "Scene 14";
+			sourceTree = "<group>";
+		};
+		98F8DF27293B4D9B00F8D70E /* Scene 15 */ = {
+			isa = PBXGroup;
+			children = (
+				98F8DF28293B4DD300F8D70E /* MalinKundang_Scene15.swift */,
+			);
+			path = "Scene 15";
 			sourceTree = "<group>";
 		};
 		A0072D94292BBAA800D32023 /* Scene 6 */ = {
@@ -543,7 +550,6 @@
 				A08B5DCA291FD06C0021FBAF /* ProfileOnboard_ViewController.xib in Resources */,
 				69C5500C291A0C5D00E1CEF7 /* LaunchScreen.storyboard in Resources */,
 				A022135D2939046500F40201 /* OnboardingViewController.xib in Resources */,
-				A0B202702935B1DD00BD275E /* HomePage_ViewController.xib in Resources */,
 				A01411CD291DFF94007EDA8E /* FONTLOG.txt in Resources */,
 				A01C55BA2937247600261695 /* SettingsScreen_ViewController.xib in Resources */,
 				69C55009291A0C5D00E1CEF7 /* Assets.xcassets in Resources */,
@@ -566,6 +572,7 @@
 			files = (
 				69EADE882938E346000A31A3 /* MalinKundang_Scene13.swift in Sources */,
 				698EB8D02921E24E008C18BA /* GamePadSpace.swift in Sources */,
+				98F8DF29293B4DD300F8D70E /* MalinKundang_Scene15.swift in Sources */,
 				98886769292107240094AAAF /* MalinKundang_Games1.swift in Sources */,
 				69D14818292C84BD0067D1D9 /* CustomScrollView.swift in Sources */,
 				698EB8D62921E24E008C18BA /* GamePadleft.swift in Sources */,
@@ -573,7 +580,6 @@
 				98F8DEE2292DD77400F8D70E /* MalinKundang_Scene7.swift in Sources */,
 				A01C55B52937240700261695 /* SettingsScreen_ViewController.swift in Sources */,
 				A01C55BD2937251500261695 /* ScenePilihGame_ViewController.swift in Sources */,
-				A0B202752935B1DD00BD275E /* CustomLayout.swift in Sources */,
 				A0FB0ECC293AFF58007C21A0 /* EndingStoryViewController.swift in Sources */,
 				A08B5DC9291FD06C0021FBAF /* ProfileOnboard_ViewController.swift in Sources */,
 				A02774F32939FD40005F1ADF /* OnboardingCollectionViewCell.swift in Sources */,
@@ -602,7 +608,6 @@
 				98F8DECF292295D200F8D70E /* CoordinateGames.swift in Sources */,
 				98F8DEF12932202000F8D70E /* MalinKundang_Scene14.swift in Sources */,
 				69C55002291A0C5A00E1CEF7 /* SceneDelegate.swift in Sources */,
-				A0B202742935B1DD00BD275E /* ModelDataCaraousel.swift in Sources */,
 				A07F796D2937C621003954F0 /* MalinKundang_Scene16.swift in Sources */,
 				98F8DEDD292C7BDF00F8D70E /* MalinKundang_Scene4.swift in Sources */,
 				698EB8D32921E24E008C18BA /* GamePadDown.swift in Sources */,

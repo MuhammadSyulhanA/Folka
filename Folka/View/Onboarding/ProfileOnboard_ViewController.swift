@@ -49,12 +49,12 @@ class ProfileOnboard_ViewController: UIViewController, UITextFieldDelegate {
       sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
     })
     
-    let controller = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
+//    let controller = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
 //    let controller2 = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
 //    controller.text = textField.text
 //    controller2.text = textField.text
-    controller.modalPresentationStyle = .fullScreen
-    present(controller, animated: true, completion: nil)
+//    controller.modalPresentationStyle = .fullScreen
+//    present(controller, animated: true, completion: nil)
   }
 }
 
