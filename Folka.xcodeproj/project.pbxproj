@@ -42,12 +42,19 @@
 		98F8DF2C293B79DC00F8D70E /* MalinKundang_Scene17.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8DF2B293B79DB00F8D70E /* MalinKundang_Scene17.swift */; };
 		98F8DF2F293B831200F8D70E /* MalinKundang_Scene18.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8DF2E293B831200F8D70E /* MalinKundang_Scene18.swift */; };
 		98F8DF32293B848300F8D70E /* MalinKundang_Scene19.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8DF31293B848300F8D70E /* MalinKundang_Scene19.swift */; };
+		98F8DF35293B9AA700F8D70E /* MalinKundang_AlternateScene15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8DF34293B9AA600F8D70E /* MalinKundang_AlternateScene15.swift */; };
 		A0072D96292BCD4F00D32023 /* MalinKundang_Scene6.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0072D95292BCD4E00D32023 /* MalinKundang_Scene6.swift */; };
 		A01411CC291DFF94007EDA8E /* McLaren-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A01411C9291DFF94007EDA8E /* McLaren-Regular.ttf */; };
 		A01411CD291DFF94007EDA8E /* FONTLOG.txt in Resources */ = {isa = PBXBuildFile; fileRef = A01411CA291DFF94007EDA8E /* FONTLOG.txt */; };
 		A01411CE291DFF94007EDA8E /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = A01411CB291DFF94007EDA8E /* OFL.txt */; };
 		A018EA09292773BF00FE7451 /* MalinKundang_Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018EA08292773BF00FE7451 /* MalinKundang_Puzzle.swift */; };
 		A01B3DB1293B17CC00BBDE24 /* MalinKundang_AlternateScene17.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01B3DB0293B17CC00BBDE24 /* MalinKundang_AlternateScene17.swift */; };
+		A01B3DB3293B8D5E00BBDE24 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01B3DB2293B8D5E00BBDE24 /* CustomLayout.swift */; };
+		A01B3DB5293B8DA500BBDE24 /* DataModelCaraousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01B3DB4293B8DA500BBDE24 /* DataModelCaraousel.swift */; };
+		A01B3DB8293B8DFB00BBDE24 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01B3DB6293B8DFB00BBDE24 /* HomePageViewController.swift */; };
+		A01B3DB9293B8DFB00BBDE24 /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01B3DB7293B8DFB00BBDE24 /* HomePageViewController.xib */; };
+		A01B3DBC293B8E1500BBDE24 /* HomePageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01B3DBA293B8E1500BBDE24 /* HomePageCollectionViewCell.swift */; };
+		A01B3DBD293B8E1500BBDE24 /* HomePageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01B3DBB293B8E1500BBDE24 /* HomePageCollectionViewCell.xib */; };
 		A01C55B52937240700261695 /* SettingsScreen_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C55B32937240700261695 /* SettingsScreen_ViewController.swift */; };
 		A01C55BA2937247600261695 /* SettingsScreen_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C55B92937247500261695 /* SettingsScreen_ViewController.xib */; };
 		A01C55BD2937251500261695 /* ScenePilihGame_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C55BB2937251500261695 /* ScenePilihGame_ViewController.swift */; };
@@ -115,12 +122,19 @@
 		98F8DF2B293B79DB00F8D70E /* MalinKundang_Scene17.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene17.swift; sourceTree = "<group>"; };
 		98F8DF2E293B831200F8D70E /* MalinKundang_Scene18.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene18.swift; sourceTree = "<group>"; };
 		98F8DF31293B848300F8D70E /* MalinKundang_Scene19.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene19.swift; sourceTree = "<group>"; };
+		98F8DF34293B9AA600F8D70E /* MalinKundang_AlternateScene15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_AlternateScene15.swift; sourceTree = "<group>"; };
 		A0072D95292BCD4E00D32023 /* MalinKundang_Scene6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene6.swift; sourceTree = "<group>"; };
 		A01411C9291DFF94007EDA8E /* McLaren-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "McLaren-Regular.ttf"; sourceTree = "<group>"; };
 		A01411CA291DFF94007EDA8E /* FONTLOG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FONTLOG.txt; sourceTree = "<group>"; };
 		A01411CB291DFF94007EDA8E /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		A018EA08292773BF00FE7451 /* MalinKundang_Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Puzzle.swift; sourceTree = "<group>"; };
 		A01B3DB0293B17CC00BBDE24 /* MalinKundang_AlternateScene17.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_AlternateScene17.swift; sourceTree = "<group>"; };
+		A01B3DB2293B8D5E00BBDE24 /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
+		A01B3DB4293B8DA500BBDE24 /* DataModelCaraousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelCaraousel.swift; sourceTree = "<group>"; };
+		A01B3DB6293B8DFB00BBDE24 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		A01B3DB7293B8DFB00BBDE24 /* HomePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageViewController.xib; sourceTree = "<group>"; };
+		A01B3DBA293B8E1500BBDE24 /* HomePageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageCollectionViewCell.swift; sourceTree = "<group>"; };
+		A01B3DBB293B8E1500BBDE24 /* HomePageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageCollectionViewCell.xib; sourceTree = "<group>"; };
 		A01C55B32937240700261695 /* SettingsScreen_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen_ViewController.swift; sourceTree = "<group>"; };
 		A01C55B92937247500261695 /* SettingsScreen_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsScreen_ViewController.xib; sourceTree = "<group>"; };
 		A01C55BB2937251500261695 /* ScenePilihGame_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePilihGame_ViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +269,12 @@
 			isa = PBXGroup;
 			children = (
 				69C55022291A0F1B00E1CEF7 /* DocsHome.md */,
+				A01B3DB2293B8D5E00BBDE24 /* CustomLayout.swift */,
+				A01B3DB4293B8DA500BBDE24 /* DataModelCaraousel.swift */,
+				A01B3DB6293B8DFB00BBDE24 /* HomePageViewController.swift */,
+				A01B3DB7293B8DFB00BBDE24 /* HomePageViewController.xib */,
+				A01B3DBA293B8E1500BBDE24 /* HomePageCollectionViewCell.swift */,
+				A01B3DBB293B8E1500BBDE24 /* HomePageCollectionViewCell.xib */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -282,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				A01B3DAD293B162400BBDE24 /* Scene 17 - Alternate */,
+				98F8DF33293B9A7100F8D70E /* Scene 15 - Alternate */,
 				A0FB0EC5293AFF10007C21A0 /* Ending Scene */,
 				98F8DF30293B845C00F8D70E /* Scene 19 */,
 				98F8DF2D293B82F200F8D70E /* Scene 18 */,
@@ -471,6 +492,14 @@
 			path = "Scene 19";
 			sourceTree = "<group>";
 		};
+		98F8DF33293B9A7100F8D70E /* Scene 15 - Alternate */ = {
+			isa = PBXGroup;
+			children = (
+				98F8DF34293B9AA600F8D70E /* MalinKundang_AlternateScene15.swift */,
+			);
+			path = "Scene 15 - Alternate";
+			sourceTree = "<group>";
+		};
 		A0072D94292BBAA800D32023 /* Scene 6 */ = {
 			isa = PBXGroup;
 			children = (
@@ -607,6 +636,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A01411CE291DFF94007EDA8E /* OFL.txt in Resources */,
+				A01B3DB9293B8DFB00BBDE24 /* HomePageViewController.xib in Resources */,
 				A08B5DCA291FD06C0021FBAF /* ProfileOnboard_ViewController.xib in Resources */,
 				69C5500C291A0C5D00E1CEF7 /* LaunchScreen.storyboard in Resources */,
 				A022135D2939046500F40201 /* OnboardingViewController.xib in Resources */,
@@ -617,6 +647,7 @@
 				A01C55C02937253000261695 /* ScenePilihGame_ViewController.xib in Resources */,
 				A0202801293790D7004694CD /* DetailPageViewController.xib in Resources */,
 				A01411CC291DFF94007EDA8E /* McLaren-Regular.ttf in Resources */,
+				A01B3DBD293B8E1500BBDE24 /* HomePageCollectionViewCell.xib in Resources */,
 				A0FB0ECD293AFF58007C21A0 /* EndingStoryViewController.xib in Resources */,
 				69EADE8D293BA3FE000A31A3 /* soundClick.wav in Resources */,
 				A0FB0EC9293AFF45007C21A0 /* ChoiceEndingViewController.xib in Resources */,
@@ -631,6 +662,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A01B3DBC293B8E1500BBDE24 /* HomePageCollectionViewCell.swift in Sources */,
 				69EADE882938E346000A31A3 /* MalinKundang_Scene13.swift in Sources */,
 				698EB8D02921E24E008C18BA /* GamePadSpace.swift in Sources */,
 				98F8DF29293B4DD300F8D70E /* MalinKundang_Scene15.swift in Sources */,
@@ -641,6 +673,7 @@
 				98F8DEE2292DD77400F8D70E /* MalinKundang_Scene7.swift in Sources */,
 				A01C55B52937240700261695 /* SettingsScreen_ViewController.swift in Sources */,
 				A01C55BD2937251500261695 /* ScenePilihGame_ViewController.swift in Sources */,
+				A01B3DB8293B8DFB00BBDE24 /* HomePageViewController.swift in Sources */,
 				A0FB0ECC293AFF58007C21A0 /* EndingStoryViewController.swift in Sources */,
 				A08B5DC9291FD06C0021FBAF /* ProfileOnboard_ViewController.swift in Sources */,
 				A02774F32939FD40005F1ADF /* OnboardingCollectionViewCell.swift in Sources */,
@@ -667,12 +700,15 @@
 				69D6B1A729346502002CF007 /* MalinKundang_Scene10.swift in Sources */,
 				98F8DF2F293B831200F8D70E /* MalinKundang_Scene18.swift in Sources */,
 				988867642920FDD40094AAAF /* MalinKundang_Scene1.swift in Sources */,
+				A01B3DB3293B8D5E00BBDE24 /* CustomLayout.swift in Sources */,
 				A0C353BA292A67D30082A071 /* MalinKundang_Puzzle2.swift in Sources */,
 				698EB8D42921E24E008C18BA /* GamePad.swift in Sources */,
 				98F8DECF292295D200F8D70E /* CoordinateGames.swift in Sources */,
 				98F8DEF12932202000F8D70E /* MalinKundang_Scene14.swift in Sources */,
 				69C55002291A0C5A00E1CEF7 /* SceneDelegate.swift in Sources */,
+				98F8DF35293B9AA700F8D70E /* MalinKundang_AlternateScene15.swift in Sources */,
 				A07F796D2937C621003954F0 /* MalinKundang_Scene16.swift in Sources */,
+				A01B3DB5293B8DA500BBDE24 /* DataModelCaraousel.swift in Sources */,
 				98F8DEDD292C7BDF00F8D70E /* MalinKundang_Scene4.swift in Sources */,
 				698EB8D32921E24E008C18BA /* GamePadDown.swift in Sources */,
 			);
