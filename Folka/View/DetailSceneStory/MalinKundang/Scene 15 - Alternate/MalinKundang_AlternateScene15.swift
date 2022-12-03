@@ -16,7 +16,7 @@ struct AlternateScript15 {
 class MalinKundang_AlternateScene15: SKScene {
     
     let backgroundSky = SKSpriteNode(imageNamed: "skyBackground")
-    let backgroundGround = SKSpriteNode(imageNamed: "groundBackgroundZoom")
+    let backgroundGround = SKSpriteNode(imageNamed: "groundBackgroundZoomSea")
     
     let characterMalin = SKSpriteNode(imageNamed: "alternateMalinScene15_1")
     var animationMalin: SKAction?
@@ -46,9 +46,7 @@ class MalinKundang_AlternateScene15: SKScene {
     
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
     var buttonHomeAction: SKAction?
-    
-    let buttonSound = SKSpriteNode(imageNamed: "buttonSound")
-    
+        
     let buttonNext = SKSpriteNode(imageNamed: "buttonNext")
     var buttonNextAction: SKAction?
     
@@ -60,6 +58,8 @@ class MalinKundang_AlternateScene15: SKScene {
 //    var labelTextStory: SKLabelHorizontalAlignmentMode
     var dataIntro: [AlternateScript15] = []
     var state = 0
+    
+    var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
     
     override func didMove(to view: SKView) {
         // MARK: Default background white
@@ -178,13 +178,6 @@ class MalinKundang_AlternateScene15: SKScene {
         buttonHome.zPosition = +4
         addChild(buttonHome)
         
-        buttonSound.name = "buttonSound"
-        buttonSound.size = CGSize(width: 150, height: 150)
-        buttonSound.position = CGPoint(x: size.width/1.07, y: size.height/1.38)
-        buttonSound.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        buttonSound.zPosition = +4
-        addChild(buttonSound)
-        
         nonCharacterTextLayout.size = CGSize(width: 1300, height: 200)
         nonCharacterTextLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
         nonCharacterTextLayout.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -208,10 +201,13 @@ class MalinKundang_AlternateScene15: SKScene {
         for index in 1...2 {
             texturesTree.append(SKTexture(imageNamed: "tree\(index)"))
         }
+        let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
+        let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
+        
         animationTree = SKAction.animate(with: texturesTree, timePerFrame: 0.5)
-        buttonNextAction = SKAction.scale(to: 1.0, duration: 2.0)
-        buttonPreviousAction = SKAction.scale(to: 1.0, duration: 2.0)
-        buttonHomeAction = SKAction.scale(to: 1.0, duration: 2.0)
+        buttonNextAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        buttonPreviousAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        buttonHomeAction = SKAction.sequence([buttonToSmall, buttonToBig])
         
         super.init(size: size)
     }
@@ -228,7 +224,8 @@ class MalinKundang_AlternateScene15: SKScene {
     
     func buttonNextScene() {
         if buttonNext.action(forKey: "Button Next") == nil {
-            buttonNext.run(SKAction.repeatForever(buttonNextAction!), withKey: "Button Next")
+            buttonNext.run((buttonNextAction!), withKey: "Button Next")
+            run(clickButton)
             state += 1
             print(state)
             if state == 6 {
@@ -238,21 +235,20 @@ class MalinKundang_AlternateScene15: SKScene {
             else {
                 if state == 1 {
                     characterMalin.isHidden = false
+                    characterMalinSay.isHidden = true
                     characterIbuMalinSay.isHidden = false
                 } else if state == 2 {
-                    characterMalin.isHidden = true
+                    characterMalin.isHidden = false
                     characterIbuMalinSay.isHidden = false
                 } else if state == 3 {
                     characterIbuMalinSay.isHidden = true
                     characterIstriMalinSay.isHidden = false
                 } else if state == 4 {
-                    print("masook")
                     characterIstriMalinSay.isHidden = true
                     characterIbuMalinSay.isHidden = false
                 } else if state == 5 {
-                    print("test")
                     characterIbuMalinSay.isHidden = true
-                    characterMalin.isHidden = false
+                    characterMalinSay.isHidden = false
                     characterIstriMalinSay.isHidden = false
                 }
                 characterMalinSay = dataIntro[state].imageName
@@ -270,7 +266,6 @@ class MalinKundang_AlternateScene15: SKScene {
                     characterMalin.isHidden = false
                     characterIbuMalinSay.isHidden = false
                 } else if state == 2 {
-                    print("apakek")
                     characterMalin.isHidden = false
                     characterMalinSay.isHidden = true
                     characterIbuMalinSay.isHidden = false
@@ -278,13 +273,10 @@ class MalinKundang_AlternateScene15: SKScene {
                     characterIbuMalinSay.isHidden = true
                     characterIstriMalinSay.isHidden = false
                 } else if state == 4 {
-                    print("masook")
                     characterIstriMalinSay.isHidden = true
                     characterIbuMalinSay.isHidden = false
                 } else if state == 5 {
-                    print("test")
                     characterIbuMalinSay.isHidden = true
-//                    characterMalin.isHidden = true
                     characterMalinSay.isHidden = false
                     characterIstriMalinSay.isHidden = false
                 }
@@ -297,13 +289,12 @@ class MalinKundang_AlternateScene15: SKScene {
     func buttonPreviousScene () {
         if buttonPrevious.action(forKey: "Previous Next") == nil {
             buttonPrevious.run(SKAction.repeatForever(buttonPreviousAction!), withKey: "Button Previous")
+            run(clickButton)
             state -= 1
             print(state)
-            if state < 0 {
-                let reveal = SKTransition.reveal(with: .left, duration: 1)
-                let newScene = MalinKundang_Scene14(size: CGSize(width: 2048, height: 1536))
-                newScene.scaleMode = .aspectFill
-                scene?.view!.presentScene(newScene, transition: reveal)
+            if state == -1 {
+                let prevScene = ChoiceEndingViewController(nibName: "ChoiceEndingViewController", bundle: nil)
+                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             }
             else {
                 if state == 0 {
@@ -329,11 +320,10 @@ class MalinKundang_AlternateScene15: SKScene {
         } else {
             state -= 1
             print(state)
-            if state < 0 {
-                let reveal = SKTransition.reveal(with: .left, duration: 1)
-                let newScene = MalinKundang_Scene14(size: CGSize(width: 2048, height: 1536))
-                newScene.scaleMode = .aspectFill
-                scene?.view!.presentScene(newScene, transition: reveal)
+            if state == -1 {
+                let prevScene = ChoiceEndingViewController(nibName: "ChoiceEndingViewController", bundle: nil)
+                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+            }
             }
             else {
                 if state == 0 {
@@ -362,8 +352,9 @@ class MalinKundang_AlternateScene15: SKScene {
     func buttonHomeScene() {
         if buttonHome.action(forKey: "Button Home") == nil {
             buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
-//            let prevScene = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
-//            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+            run(clickButton)
+            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             
         }
     }

@@ -17,6 +17,7 @@ class MalinKundang_Tutorial_Games1: SKScene {
     let buttonFishing = SKSpriteNode(imageNamed: "buttonMulaiMemancing")
     let buttonFishingAction: SKAction?
     
+    var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
     
     override func didMove(to view: SKView) {
         self.backgroundColor = SKColor.white
@@ -42,7 +43,10 @@ class MalinKundang_Tutorial_Games1: SKScene {
     }
     
     override init(size: CGSize){
-        buttonFishingAction = SKAction.resize(toWidth: 550, height: 130, duration: 2.0)
+        let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
+        let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
+        
+        buttonFishingAction = SKAction.sequence([buttonToSmall, buttonToBig])
         
         super.init(size: size)
     }
@@ -52,6 +56,7 @@ class MalinKundang_Tutorial_Games1: SKScene {
     }
     
     func buttonNextScene() {
+        run(clickButton)
         if buttonFishing.action(forKey: "Button Fishing") == nil {
             buttonFishing.run(SKAction.repeatForever(buttonFishingAction!), withKey: "Button Next")
             let reveal = SKTransition.reveal(with: .up, duration: 1)

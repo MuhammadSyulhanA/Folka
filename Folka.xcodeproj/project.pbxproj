@@ -380,8 +380,8 @@
 		988867672921066D0094AAAF /* Scene 3 - Games 1 */ = {
 			isa = PBXGroup;
 			children = (
-				98F8DED72928981E00F8D70E /* MalinKundang_Tutorial_Games1.swift */,
 				698EB8C82921E24E008C18BA /* GamePad */,
+				98F8DED72928981E00F8D70E /* MalinKundang_Tutorial_Games1.swift */,
 				98886768292107240094AAAF /* MalinKundang_Games1.swift */,
 				98F8DECE292295D200F8D70E /* CoordinateGames.swift */,
 			);
@@ -521,8 +521,8 @@
 		A018EA032927694000FE7451 /* Scene 5 - Games 2 */ = {
 			isa = PBXGroup;
 			children = (
-				A018EA08292773BF00FE7451 /* MalinKundang_Puzzle.swift */,
 				69D14817292C84BD0067D1D9 /* CustomScrollView.swift */,
+				A018EA08292773BF00FE7451 /* MalinKundang_Puzzle.swift */,
 				A0C353B9292A67D30082A071 /* MalinKundang_Puzzle2.swift */,
 				A01C55BB2937251500261695 /* ScenePilihGame_ViewController.swift */,
 				A01C55BF2937253000261695 /* ScenePilihGame_ViewController.xib */,

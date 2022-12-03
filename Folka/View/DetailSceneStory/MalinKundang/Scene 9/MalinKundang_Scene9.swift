@@ -70,12 +70,12 @@ class MalinKundang_Scene9: SKScene {
         nonCharacterTree.zRotation = CGFloat.pi / -23
         addChild(nonCharacterTree)
         
-        //        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5){
-        //            let reveal = SKTransition.reveal(with: .left, duration: 1)
-        //            let newScene = MalinKundang_Scene8(size: CGSize(width: 2048, height: 1536))
-        //            newScene.scaleMode = .aspectFill
-        //            self.scene?.view!.presentScene(newScene, transition: reveal)
-        //        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){
+            let reveal = SKTransition.reveal(with: .left, duration: 1)
+            let newScene = MalinKundang_Scene10(size: CGSize(width: 2048, height: 1536))
+            newScene.scaleMode = .aspectFill
+            self.scene?.view!.presentScene(newScene, transition: reveal)
+        }
     }
     
     override init(size: CGSize){
