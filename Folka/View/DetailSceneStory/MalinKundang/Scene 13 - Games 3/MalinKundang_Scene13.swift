@@ -172,15 +172,15 @@ class MalinKundang_Scene13: SKScene {
         
         
         //MARK: BUTTON
-        buttonHome.size = CGSize(width: 130, height: 130)
+        buttonHome.size = CGSize(width: 150, height: 150)
         buttonHome.position = CGPoint(x: size.width/16, y: size.height/1.35)
         buttonHome.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         buttonHome.zPosition = 0
         buttonHome.name = "buttonHome"
         addChild(buttonHome)
         
-        buttonTanya.size = CGSize(width: 120, height: 120)
-        buttonTanya.position = CGPoint(x: size.width/16, y: size.height/1.55)
+        buttonTanya.size = CGSize(width: 150, height: 150)
+        buttonTanya.position = CGPoint(x: size.width/16, y: size.height/1.6)
         buttonTanya.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         buttonTanya.zPosition = 3
         buttonTanya.name = "buttonTanya"
@@ -536,6 +536,13 @@ class MalinKundang_Scene13: SKScene {
 //      }
     }
     
+    func buttonLanjutScene() {
+        let reveal = SKTransition.reveal(with: .left, duration: 1)
+        let newScene = MalinKundang_Scene14(size: CGSize(width: 2048, height: 1536))
+        newScene.scaleMode = .aspectFill
+        scene?.view!.presentScene(newScene, transition: reveal)
+    }
+    
     override init(size: CGSize){
         let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
         let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
@@ -621,6 +628,16 @@ class MalinKundang_Scene13: SKScene {
                 buttonHome.run((buttonHomeAction!), withKey: "Button Home")
                 run(clickButton)
                 buttonHomeScene()
+            }
+          }
+        }
+        
+        if atPoint((touch?.location(in: self))!).name == buttonLanjutkanCerita.name {
+          enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+            if node.name == "buttonHome" {
+                buttonLanjutkanCerita.run((buttonLanjutkanCeritaAction!), withKey: "Button Home")
+                run(clickButton)
+                buttonLanjutScene()
             }
           }
         }

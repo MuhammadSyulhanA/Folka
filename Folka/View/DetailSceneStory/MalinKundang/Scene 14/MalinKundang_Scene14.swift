@@ -184,7 +184,7 @@ class MalinKundang_Scene14: SKScene {
         if buttonPrevious.action(forKey: "Button Previous") == nil {
             buttonPrevious.run(SKAction.repeatForever(buttonPreviousAction!), withKey: "Button Previous")
             let reveal = SKTransition.reveal(with: .right, duration: 1)
-            let prevScene = MalinKundang_Scene1(size: CGSize(width: 2048, height: 1536))
+            let prevScene = MalinKundang_Scene13(size: CGSize(width: 2048, height: 1536))
             prevScene.scaleMode = .aspectFill
             scene?.view!.presentScene(prevScene, transition: reveal)
         }
