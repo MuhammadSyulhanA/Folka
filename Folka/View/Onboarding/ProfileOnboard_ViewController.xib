@@ -8,8 +8,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="McLaren-Regular.ttf">
-            <string>McLaren-Regular</string>
+        <array key="Nunito-Bold.ttf">
+            <string>Nunito-Bold</string>
+        </array>
+        <array key="Nunito-Italic.ttf">
+            <string>Nunito-Italic</string>
         </array>
     </customFonts>
     <objects>
@@ -26,17 +29,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Siapa nama kamu?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ve-Wz-bw2">
-                    <rect key="frame" x="20" y="65" width="812" height="41.666666666666657"/>
-                    <fontDescription key="fontDescription" name="McLaren-Regular" family="McLaren" pointSize="29"/>
+                    <rect key="frame" x="20" y="65" width="812" height="41"/>
+                    <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="30"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type something" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L1p-6O-LqL">
-                    <rect key="frame" x="150" y="131.66666666666666" width="552" height="55"/>
+                    <rect key="frame" x="150" y="131" width="552" height="55"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="55" id="cnR-AJ-ivX"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="McLaren-Regular" family="McLaren" pointSize="22"/>
+                    <fontDescription key="fontDescription" name="Nunito-Italic" family="Nunito" pointSize="24"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERG-kJ-B4G">

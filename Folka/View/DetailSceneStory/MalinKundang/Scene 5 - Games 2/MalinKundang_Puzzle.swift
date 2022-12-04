@@ -11,14 +11,14 @@ import GameplayKit
 import SpriteKit
 
 class MalinKundang_Puzzle: SKScene{
-  let popUpPuzzle = SKSpriteNode(imageNamed: "popUpPuzzleSatu")
-  let popUpSuksesKapal = SKSpriteNode(imageNamed: "popUpSuksesKapalSatu")
+  let popUpPuzzle = SKSpriteNode(imageNamed: "popUpPuzzleDua")
+  let popUpSuksesKapal = SKSpriteNode(imageNamed: "popUpSuksesKapalDua")
   let backgroundOpacity = SKSpriteNode(imageNamed: "opacityBackground")
   let buttonTutup = SKSpriteNode(imageNamed: "buttonTutup")
   let buttonTutupAction: SKAction?
-  let buttonNextStory = SKSpriteNode(imageNamed: "buttonLanjutkanCerita")
+  let buttonNextStory = SKSpriteNode(imageNamed: "buttonLanjutkanCeritaPuzzle")
   var buttonNextStoryAction: SKAction?
-  let buttonReplayGame = SKSpriteNode(imageNamed: "buttonMainLagi")
+  let buttonReplayGame = SKSpriteNode(imageNamed: "buttonMainLagiPuzzle")
   var buttonReplayAction: SKAction?
   
   let background = SKSpriteNode(imageNamed: "backgroundPuzzle")
@@ -71,7 +71,7 @@ class MalinKundang_Puzzle: SKScene{
     backgroundOpacity.isHidden = false
     addChild(backgroundOpacity)
     
-    popUpPuzzle.size = CGSize(width: 1450, height: 850)
+    popUpPuzzle.size = CGSize(width: 1250, height: 820)
     popUpPuzzle.name = "failed"
     popUpPuzzle.position = CGPoint(x: size.width/2.0, y: size.height/2.0)
     popUpPuzzle.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -79,7 +79,7 @@ class MalinKundang_Puzzle: SKScene{
     popUpPuzzle.isHidden = false
     addChild(popUpPuzzle)
     
-    popUpSuksesKapal.size = CGSize(width: 1450, height: 850)
+    popUpSuksesKapal.size = CGSize(width: 1250, height: 820)
     popUpSuksesKapal.name = "failed"
     popUpSuksesKapal.position = CGPoint(x: size.width/2.0, y: size.height/2.0)
     popUpSuksesKapal.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -87,17 +87,17 @@ class MalinKundang_Puzzle: SKScene{
     popUpSuksesKapal.isHidden = true
     addChild(popUpSuksesKapal)
     
-    buttonNextStory.size = CGSize(width: 580, height: 130)
+    buttonNextStory.size = CGSize(width: 500, height: 130)
     buttonNextStory.name = "nextStory"
-    buttonNextStory.position = CGPoint(x: size.width/1.5, y: size.height/2.9)
+    buttonNextStory.position = CGPoint(x: size.width/1.5, y: size.height/2.8)
     buttonNextStory.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     buttonNextStory.zPosition = 6
     buttonNextStory.isHidden = true
     addChild(buttonNextStory)
     
-    buttonReplayGame.size = CGSize(width: 580, height: 130)
+    buttonReplayGame.size = CGSize(width: 500, height: 130)
     buttonReplayGame.name = "replayGame"
-    buttonReplayGame.position = CGPoint(x: size.width/2.9, y: size.height/2.9)
+    buttonReplayGame.position = CGPoint(x: size.width/2.9, y: size.height/2.8)
     buttonReplayGame.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     buttonReplayGame.zPosition = 6
     buttonReplayGame.isHidden = true
@@ -123,14 +123,14 @@ class MalinKundang_Puzzle: SKScene{
     outlineKapal.zPosition = 2
     addChild(outlineKapal)
     
-    buttonHome.size = CGSize(width: 150, height: 150)
+    buttonHome.size = CGSize(width: 120, height: 120)
     buttonHome.position = CGPoint(x: size.width/16, y: size.height/1.35)
     buttonHome.name = "buttonHome"
     buttonHome.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     buttonHome.zPosition = 0
     addChild(buttonHome)
     
-    buttonTanya.size = CGSize(width: 150, height: 150)
+    buttonTanya.size = CGSize(width: 120, height: 120)
     buttonTanya.position = CGPoint(x: size.width/16, y: size.height/1.55)
     buttonTanya.name = "buttonTanya"
     buttonTanya.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -264,7 +264,7 @@ class MalinKundang_Puzzle: SKScene{
         if puzzleKecilPelampung.position != puzzleBesarPelampung.position{
           puzzleKecilPelampung.position = location
           puzzleKecilPelampung.zPosition = 4
-          puzzleKecilPelampung.inputView?.isMultipleTouchEnabled = true
+          puzzleKecilPelampung.inputView?.isMultipleTouchEnabled = false
           puzzleKecilPelampung.scale(to: CGSize(width: 248, height: 108))
         }
       }
@@ -274,7 +274,7 @@ class MalinKundang_Puzzle: SKScene{
         if puzzleKecilAtapKapal.position != puzzleBesarAtapKapal.position{
           puzzleKecilAtapKapal.position = location
           puzzleKecilAtapKapal.zPosition = 4
-          puzzleKecilAtapKapal.inputView?.isMultipleTouchEnabled = true
+          puzzleKecilAtapKapal.inputView?.isMultipleTouchEnabled = false
           puzzleKecilAtapKapal.scale(to: CGSize(width: 375, height: 94))
         }
       }
@@ -282,7 +282,7 @@ class MalinKundang_Puzzle: SKScene{
       if atPoint((touch.location(in: self))).name == puzzleKecilGarisKuningKapal.name {
         if puzzleKecilGarisKuningKapal.position != puzzleBesarGarisKuningKapal.position{
           puzzleKecilGarisKuningKapal.position = location
-          puzzleKecilGarisKuningKapal.inputView?.isMultipleTouchEnabled = true
+          puzzleKecilGarisKuningKapal.inputView?.isMultipleTouchEnabled = false
           puzzleKecilGarisKuningKapal.zPosition = 3
           puzzleKecilGarisKuningKapal.scale(to: CGSize(width: 1354, height: 227))
         }
@@ -292,7 +292,7 @@ class MalinKundang_Puzzle: SKScene{
       if atPoint((touch.location(in: self))).name == puzzleKecilBadanKapalDepan.name {
         if puzzleKecilBadanKapalDepan.position != puzzleBesarBadanKapalDepan.position{
           puzzleKecilBadanKapalDepan.position = location
-          puzzleKecilBadanKapalDepan.inputView?.isMultipleTouchEnabled = true
+          puzzleKecilBadanKapalDepan.inputView?.isMultipleTouchEnabled = false
           puzzleKecilBadanKapalDepan.zPosition = 3
           puzzleKecilBadanKapalDepan.scale(to: CGSize(width: 446, height: 253))
         }
@@ -301,7 +301,7 @@ class MalinKundang_Puzzle: SKScene{
       if atPoint((touch.location(in: self))).name == puzzleKecilBadanKapalBelakang.name {
         if puzzleKecilBadanKapalBelakang.position != puzzleBesarBadanKapalBelakang.position{
           puzzleKecilBadanKapalBelakang.position = location
-          puzzleKecilBadanKapalBelakang.inputView?.isMultipleTouchEnabled = true
+          puzzleKecilBadanKapalBelakang.inputView?.isMultipleTouchEnabled = false
           puzzleKecilBadanKapalBelakang.zPosition = 3
           puzzleKecilBadanKapalBelakang.scale(to: CGSize(width: 362, height: 135))
         }
@@ -310,7 +310,7 @@ class MalinKundang_Puzzle: SKScene{
       if atPoint((touch.location(in: self))).name == puzzleKecilJendelaKapal.name {
         if puzzleKecilJendelaKapal.position != puzzleBesarJendelaKapal.position{
           puzzleKecilJendelaKapal.position = location
-          puzzleKecilJendelaKapal.inputView?.isMultipleTouchEnabled = true
+          puzzleKecilJendelaKapal.inputView?.isMultipleTouchEnabled = false
           puzzleKecilJendelaKapal.zPosition = 3
           puzzleKecilJendelaKapal.scale(to: CGSize(width: 246, height: 135))
         }
@@ -320,6 +320,7 @@ class MalinKundang_Puzzle: SKScene{
   
   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     if puzzleKecilBadanKapal.frame.intersects(puzzleBesarBadanKapal.frame){
+      Sound.sharedInstance.playButton(file: "soundSucces", fileExtension: "wav")
       puzzleKecilBadanKapal.position = CGPoint(x: size.width/2.3, y: size.height/2.7)
       puzzleKecilBadanKapal.inputView?.isMultipleTouchEnabled = false
     } else{
@@ -328,53 +329,61 @@ class MalinKundang_Puzzle: SKScene{
     }
     
     if puzzleKecilPelampung.frame.intersects(puzzleBesarPelampung.frame){
+      Sound.sharedInstance.playButton(file: "soundSucces", fileExtension: "wav")
       puzzleKecilPelampung.position = CGPoint(x: size.width/1.6, y: size.height/2.4)
-      puzzleKecilPelampung.inputView?.isMultipleTouchEnabled = true
+      puzzleKecilPelampung.inputView?.isMultipleTouchEnabled = false
     } else{
+      //      Sound.sharedInstance.playButton(file: "soundFailed", fileExtension: "wav")
       puzzleKecilPelampung.position = CGPoint(x: size.width/1.13, y: size.height/1.55)
       puzzleKecilPelampung.scale(to: CGSize(width: 230, height: 100))
     }
     
     if puzzleKecilBadanKapalBelakang.frame.intersects(puzzleBesarBadanKapalBelakang.frame){
+      Sound.sharedInstance.playButton(file: "soundSucces", fileExtension: "wav")
       puzzleKecilBadanKapalBelakang.position = CGPoint(x: size.width/1.66, y: size.height/1.98)
-      puzzleKecilBadanKapalBelakang.isUserInteractionEnabled = true
-      puzzleKecilBadanKapalBelakang.inputView?.isMultipleTouchEnabled = true
+      puzzleKecilBadanKapalBelakang.isUserInteractionEnabled = false
     }else{
+      //      Sound.sharedInstance.playButton(file: "soundFailed", fileExtension: "wav")
       puzzleKecilBadanKapalBelakang.position = CGPoint(x: size.width/1.13, y: size.height/1.80)
       puzzleKecilBadanKapalBelakang.scale(to: CGSize(width: 230, height: 90))
     }
     
     if puzzleKecilBadanKapalDepan.frame.intersects(puzzleBesarBadanKapalDepan.frame){
+      Sound.sharedInstance.playButton(file: "soundSucces", fileExtension: "wav")
       puzzleKecilBadanKapalDepan.position = CGPoint(x: size.width/2.85, y: size.height/1.8)
-      puzzleKecilBadanKapalDepan.isUserInteractionEnabled = true
-      puzzleKecilBadanKapalDepan.inputView?.isMultipleTouchEnabled = true
+      puzzleKecilBadanKapalDepan.inputView?.isMultipleTouchEnabled = false
     } else{
-      puzzleKecilBadanKapalDepan.isUserInteractionEnabled = false
+      //      Sound.sharedInstance.playButton(file: "soundFailed", fileExtension: "wav")
       puzzleKecilBadanKapalDepan.position = CGPoint(x: size.width/1.13, y: size.height/2.10)
       puzzleKecilBadanKapalDepan.scale(to: CGSize(width: 230, height: 100))
     }
     
     if puzzleKecilAtapKapal.frame.intersects(puzzleBesarAtapKapal.frame){
+      Sound.sharedInstance.playButton(file: "soundSucces", fileExtension: "wav")
       puzzleKecilAtapKapal.position = CGPoint(x: size.width/2.9, y: size.height/1.6)
-      puzzleKecilAtapKapal.inputView?.isMultipleTouchEnabled = true
+      puzzleKecilAtapKapal.inputView?.isMultipleTouchEnabled = false
     }else{
+      //      Sound.sharedInstance.playButton(file: "soundFailed", fileExtension: "wav")
       puzzleKecilAtapKapal.position = CGPoint(x: size.width/1.13, y: size.height/2.50)
       puzzleKecilAtapKapal.scale(to: CGSize(width: 230, height: 60))
     }
     
     if puzzleKecilJendelaKapal.frame.intersects(puzzleBesarJendelaKapal.frame){
+      Sound.sharedInstance.playButton(file: "soundSucces", fileExtension: "wav")
       puzzleKecilJendelaKapal.position = CGPoint(x: size.width/2.9, y: size.height/1.8)
-      puzzleKecilJendelaKapal.inputView?.isMultipleTouchEnabled = true
+      puzzleKecilJendelaKapal.inputView?.isMultipleTouchEnabled = false
     } else{
+      //      Sound.sharedInstance.playButton(file: "soundFailed", fileExtension: "wav")
       puzzleKecilJendelaKapal.position = CGPoint(x: size.width/1.13, y: size.height/2.95)
       puzzleKecilJendelaKapal.scale(to: CGSize(width: 230, height: 100))
     }
     
     if puzzleKecilGarisKuningKapal.frame.intersects(puzzleBesarGarisKuningKapal.frame){
+      Sound.sharedInstance.playButton(file: "soundSucces", fileExtension: "wav")
       puzzleKecilGarisKuningKapal.position = CGPoint(x: size.width/2.32, y: size.height/2.05)
-      puzzleKecilGarisKuningKapal.isUserInteractionEnabled = true
-      puzzleKecilGarisKuningKapal.inputView?.isMultipleTouchEnabled = true
+      puzzleKecilGarisKuningKapal.inputView?.isMultipleTouchEnabled = false
     } else{
+      //      Sound.sharedInstance.playButton(file: "soundFailed", fileExtension: "wav")
       puzzleKecilGarisKuningKapal.position = CGPoint(x: size.width/1.13, y: size.height/3.65)
       puzzleKecilGarisKuningKapal.scale(to: CGSize(width: 350, height: 70))
     }
@@ -382,6 +391,7 @@ class MalinKundang_Puzzle: SKScene{
     if puzzleKecilBadanKapal.frame.intersects(puzzleBesarBadanKapal.frame) && puzzleKecilPelampung.frame.intersects(puzzleBesarPelampung.frame) && puzzleKecilBadanKapalBelakang.frame.intersects(puzzleBesarBadanKapalBelakang.frame) && puzzleKecilBadanKapalDepan.frame.intersects(puzzleBesarBadanKapalDepan.frame) && puzzleKecilAtapKapal.frame.intersects(puzzleBesarAtapKapal.frame) && puzzleKecilJendelaKapal.frame.intersects(puzzleBesarJendelaKapal.frame) && puzzleKecilGarisKuningKapal.frame.intersects(puzzleBesarGarisKuningKapal.frame) {
       gameFinish()
     } else{
+      //      Sound.sharedInstance.stop()
       print("belum lengkap")
     }
   }
@@ -459,8 +469,8 @@ class MalinKundang_Puzzle: SKScene{
   }
   
   func buttonHomeAksi(){
-//    let nextDetailPage = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
-//    self.view!.window?.rootViewController?.present(nextDetailPage, animated: true, completion: nil)
+    //    let nextDetailPage = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
+    //    self.view!.window?.rootViewController?.present(nextDetailPage, animated: true, completion: nil)
   }
   
   func buttonNextStoryScene() {

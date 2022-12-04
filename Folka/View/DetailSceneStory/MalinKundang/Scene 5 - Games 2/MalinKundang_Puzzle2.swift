@@ -14,14 +14,14 @@ class MalinKundang_Puzzle2: SKScene{
   var scrollView: CustomScrollView!
   let moveableNode = SKNode()
   
-  let popUpPuzzle = SKSpriteNode(imageNamed: "popUpPuzzleDua")
-  let popUpSuksesKapal = SKSpriteNode(imageNamed: "popUpSuksesKapalDua")
+  let popUpPuzzle = SKSpriteNode(imageNamed: "popUpPuzzleSatu")
+  let popUpSuksesKapal = SKSpriteNode(imageNamed: "popUpSuksesKapalSatu")
   let backgroundOpacity = SKSpriteNode(imageNamed: "opacityBackground")
   let buttonTutup = SKSpriteNode(imageNamed: "buttonTutup")
   let buttonTutupAction: SKAction?
-  let buttonNextStory = SKSpriteNode(imageNamed: "buttonLanjutkanCerita")
+  let buttonNextStory = SKSpriteNode(imageNamed: "buttonLanjutkanCeritaPuzzle")
   var buttonNextStoryAction: SKAction?
-  let buttonReplayGame = SKSpriteNode(imageNamed: "buttonMainLagi")
+  let buttonReplayGame = SKSpriteNode(imageNamed: "buttonMainLagiPuzzle")
   var buttonReplayAction: SKAction?
   
   
@@ -104,7 +104,7 @@ class MalinKundang_Puzzle2: SKScene{
     backgroundOpacity.isHidden = false
     addChild(backgroundOpacity)
     
-    popUpPuzzle.size = CGSize(width: 1450, height: 850)
+    popUpPuzzle.size = CGSize(width: 1250, height: 820)
     popUpPuzzle.name = "failed"
     popUpPuzzle.position = CGPoint(x: size.width/2.0, y: size.height/2.0)
     popUpPuzzle.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -112,7 +112,7 @@ class MalinKundang_Puzzle2: SKScene{
     popUpPuzzle.isHidden = false
     addChild(popUpPuzzle)
     
-    popUpSuksesKapal.size = CGSize(width: 1450, height: 850)
+    popUpSuksesKapal.size = CGSize(width: 1250, height: 820)
     popUpSuksesKapal.name = "failed"
     popUpSuksesKapal.position = CGPoint(x: size.width/2.0, y: size.height/2.0)
     popUpSuksesKapal.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -120,17 +120,17 @@ class MalinKundang_Puzzle2: SKScene{
     popUpSuksesKapal.isHidden = true
     addChild(popUpSuksesKapal)
     
-    buttonNextStory.size = CGSize(width: 580, height: 130)
+    buttonNextStory.size = CGSize(width: 500, height: 130)
     buttonNextStory.name = "nextStory"
-    buttonNextStory.position = CGPoint(x: size.width/1.5, y: size.height/2.9)
+    buttonNextStory.position = CGPoint(x: size.width/1.5, y: size.height/2.8)
     buttonNextStory.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     buttonNextStory.zPosition = 6
     buttonNextStory.isHidden = true
     addChild(buttonNextStory)
     
-    buttonReplayGame.size = CGSize(width: 580, height: 130)
+    buttonReplayGame.size = CGSize(width: 500, height: 130)
     buttonReplayGame.name = "replayGame"
-    buttonReplayGame.position = CGPoint(x: size.width/2.9, y: size.height/2.9)
+    buttonReplayGame.position = CGPoint(x: size.width/2.9, y: size.height/2.8)
     buttonReplayGame.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     buttonReplayGame.zPosition = 6
     buttonReplayGame.isHidden = true
@@ -158,14 +158,14 @@ class MalinKundang_Puzzle2: SKScene{
     outlineKapal.zPosition = 2
     addChild(outlineKapal)
     
-    buttonHome.size = CGSize(width: 150, height: 150)
+    buttonHome.size = CGSize(width: 120, height: 120)
     buttonHome.position = CGPoint(x: size.width/16, y: size.height/1.35)
     buttonHome.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     buttonHome.zPosition = 0
     buttonHome.name = "buttonHome"
     addChild(buttonHome)
     
-    buttonTanya.size = CGSize(width: 150, height: 150)
+    buttonTanya.size = CGSize(width: 120, height: 120)
     buttonTanya.position = CGPoint(x: size.width/16, y: size.height/1.55)
     buttonTanya.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     buttonTanya.zPosition = 2
