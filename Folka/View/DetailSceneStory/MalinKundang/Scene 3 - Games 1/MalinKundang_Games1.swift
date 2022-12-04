@@ -63,18 +63,23 @@ class MalinKundang_Games1: SKScene {
     var timeRemaining = 15
     var gameTimer: Timer!
     
+    // sound
+    var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    
     override init(size: CGSize) {
         let maxAspectRatio:CGFloat = 10.0/3.0
         let playableHeight = size.width / maxAspectRatio
         let playableMargin = (size.height - playableHeight)/2.0
         playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: playableHeight)
         
-        buttonHomeAction = SKAction.resize(toWidth: 180, height: 180, duration: 2.0)
-        buttonNoAction = SKAction.resize(toWidth: 350, height: 110, duration: 2.0)
-        buttonYesAction = SKAction.resize(toWidth: 350, height: 110, duration: 2.0)
-        buttonTryAgainAction = SKAction.resize(toWidth: 550, height: 110, duration: 2.0)
-        buttonReplayAction = SKAction.resize(toWidth: 550, height: 110, duration: 2.0)
-        buttonNextStoryAction = SKAction.resize(toWidth: 550, height: 110, duration: 2.0)
+        let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
+        let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
+        buttonHomeAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        buttonNoAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        buttonYesAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        buttonTryAgainAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        buttonReplayAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        buttonNextStoryAction = SKAction.sequence([buttonToSmall, buttonToBig])
         
         super.init(size: size)
     }
@@ -486,6 +491,7 @@ class MalinKundang_Games1: SKScene {
     }
     
     func buttonNextStoryScene() {
+        run(clickButton)
         if buttonNextStory.action(forKey: "Button Next") == nil {
             buttonNextStory.run(SKAction.repeatForever(buttonNextStoryAction!), withKey: "Button Next")
             let reveal = SKTransition.reveal(with: .left, duration: 1)
@@ -496,14 +502,16 @@ class MalinKundang_Games1: SKScene {
     }
     
     func buttonBackToHome() {
+        run(clickButton)
         if buttonYes.action(forKey: "Button Yes") == nil {
             buttonYes.run(SKAction.repeatForever(buttonYesAction!), withKey: "Button Yes")
-//            let prevScene = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
-//            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
         }
     }
     
     func buttonPlayTryAgain() {
+        run(clickButton)
         if buttonTryAgain.action(forKey: "Button Try") == nil {
             buttonTryAgain.run(SKAction.repeatForever(buttonTryAgainAction!), withKey: "Button Try")
             let reveal = SKTransition.reveal(with: .left, duration: 1)
@@ -514,6 +522,7 @@ class MalinKundang_Games1: SKScene {
     }
     
     func buttonbackToHomeScene() {
+        run(clickButton)
         if buttonHome.action(forKey: "Button Home") == nil {
             buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
             backToHome()
@@ -523,6 +532,7 @@ class MalinKundang_Games1: SKScene {
     }
     
     func buttonbackToGame() {
+        run(clickButton)
         if buttonNo.action(forKey: "Button No") == nil {
             buttonNo.run(SKAction.repeatForever(buttonNoAction!), withKey: "Button No")
             backToGame()
