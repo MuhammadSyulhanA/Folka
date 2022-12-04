@@ -18,7 +18,7 @@ class MalinKundang_ViewController: UIViewController {
         
         if let view = self.view as! SKView? {
             // Initialise the scene
-            let scene = MalinKundang_Scene13(size: CGSize(width: 2048, height: 1536))
+            let scene = MalinKundang_Scene4(size: CGSize(width: 2048, height: 1536))
             // <-- IMPORTANT: Initialise your first scene (as you have no .sks)
             
             // Set the scale mode to scale to fit the window
@@ -33,6 +33,11 @@ class MalinKundang_ViewController: UIViewController {
             view.showsFPS = true
             view.showsNodeCount = true
         }
+    }
+    
+    func rizalKeren() {
+        let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+        self.view?.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {

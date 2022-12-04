@@ -39,6 +39,7 @@ class EndingStoryViewController: UIViewController {
                UIView.animate(withDuration: 0.3, animations: { () -> Void in
                  sender.view?.transform = CGAffineTransform.init(scaleX: 1, y: 1)
                })
+//      self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
     let controller = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
     present(controller, animated: true, completion: nil)
  }

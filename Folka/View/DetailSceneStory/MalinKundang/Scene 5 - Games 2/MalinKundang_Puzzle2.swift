@@ -927,9 +927,10 @@ class MalinKundang_Puzzle2: SKScene{
     func buttonHomeAksi(){
       run(clickButton)
       if buttonHome.action(forKey: "Button Home") == nil {
-        buttonHome.run((buttonHomeAction!), withKey: "Button Home")
-        let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-        self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+          buttonHome.run((buttonHomeAction!), withKey: "Button Home")
+          self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
+//        let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+//        self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
       }
     }
     

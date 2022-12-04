@@ -439,24 +439,24 @@ class MalinKundang_Scene13: SKScene {
         setUpFloorPyhisic(lineMaze: verticalPanjang3LuarDalam8)
         setUpFloorPyhisic(lineMaze: verticalPanjang3LuarDalam9)
         
-//        characterIbuMalin.name = "ibuMalin"
-//        characterIbuMalin.size = CGSize(width: 500, height: 800)
-//        characterIbuMalin.position = CGPoint(x: size.width/2.7, y: size.height/1.5)
-//        characterIbuMalin.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-//        characterIbuMalin.zPosition = 2
-//        addChild(characterIbuMalin)
-//
-//        kayuScene6.size = CGSize(width: 1100, height: 270)
-//        kayuScene6.position = CGPoint(x: size.width/2.2, y: size.height/2.0)
-//        kayuScene6.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-//        kayuScene6.zPosition = 2
-//        addChild(kayuScene6)
-//
-//        characterIbuMalin.physicsBody = SKPhysicsBody(circleOfRadius: characterIbuMalin.size.width / 2)
-//        characterIbuMalin.physicsBody!.isDynamic = true
-//        characterIbuMalin.physicsBody?.allowsRotation = false
-//        characterIbuMalin.physicsBody?.affectedByGravity = false
-//
+        //        characterIbuMalin.name = "ibuMalin"
+        //        characterIbuMalin.size = CGSize(width: 500, height: 800)
+        //        characterIbuMalin.position = CGPoint(x: size.width/2.7, y: size.height/1.5)
+        //        characterIbuMalin.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        //        characterIbuMalin.zPosition = 2
+        //        addChild(characterIbuMalin)
+        //
+        //        kayuScene6.size = CGSize(width: 1100, height: 270)
+        //        kayuScene6.position = CGPoint(x: size.width/2.2, y: size.height/2.0)
+        //        kayuScene6.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        //        kayuScene6.zPosition = 2
+        //        addChild(kayuScene6)
+        //
+        //        characterIbuMalin.physicsBody = SKPhysicsBody(circleOfRadius: characterIbuMalin.size.width / 2)
+        //        characterIbuMalin.physicsBody!.isDynamic = true
+        //        characterIbuMalin.physicsBody?.allowsRotation = false
+        //        characterIbuMalin.physicsBody?.affectedByGravity = false
+        //
     }
     
     func setUpShipPyhisic(ship: SKSpriteNode){
@@ -532,10 +532,13 @@ class MalinKundang_Scene13: SKScene {
     }
     
     func buttonHomeScene() {
-//      if buttonHome.action(forKey: "Button Home") == nil {
-        let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-        self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
-//      }
+        print("tes")
+//        if buttonHome.action(forKey: "Button Home") == nil {
+
+        self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
+            //        let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+            //        self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+//        }
     }
     
     func buttonLanjutScene() {
@@ -554,7 +557,7 @@ class MalinKundang_Scene13: SKScene {
         
         let wayToAlpha = SKAction.fadeAlpha(to: 0.1, duration: 1.0)
         let wayToBright = SKAction.fadeAlpha(to: 1.0, duration: 1.0)
-
+        
         buttonTanyaAction = SKAction.sequence([buttonToSmall, buttonToBig])
         buttonHomeAction = SKAction.sequence([buttonToSmall, buttonToBig])
         buttonMulaiAction = SKAction.sequence([buttonWidthToSmall, buttonWidthToBig])
@@ -574,87 +577,87 @@ class MalinKundang_Scene13: SKScene {
         for t in touches {
             let pos : CGPoint = t.location(in: self)
             if atPoint((t.location(in: self))).name == kapalLabirin.name {
-              enumerateChildNodes(withName: "//*") { [self] (node, stop) in
-                if node.name == "kapalLabirin" {
-                    movePlayerToPosition(playerPosition: pos)
+                enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                    if node.name == "kapalLabirin" {
+                        movePlayerToPosition(playerPosition: pos)
+                    }
                 }
-              }
             }
         }
         
         let touch = touches.first as UITouch?
         print(atPoint((touch?.location(in: self))!))
         if atPoint((touch?.location(in: self))!).name == buttonMulai.name {
-          enumerateChildNodes(withName: "//*") { [self] (node, stop) in
-            if node.name == "buttonMulai" {
-                buttonMulai.run((buttonMulaiAction!), withKey: "Button Mulai")
-                if stateMusic {
-                    run(clickButton)
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if node.name == "buttonMulai" {
+                    buttonMulai.run((buttonMulaiAction!), withKey: "Button Mulai")
+                    if stateMusic {
+                        run(clickButton)
+                    }
+                    
+                    buttonTutupSceneAksi()
                 }
-                
-                buttonTutupSceneAksi()
             }
-          }
         }
         
         if atPoint((touch?.location(in: self))!).name == buttonTanya.name {
-          enumerateChildNodes(withName: "//*") { [self] (node, stop) in
-            if node.name == "buttonTanya" {
-                buttonTanya.run((buttonTanyaAction!), withKey: "Button Tanya")
-                if stateMusic {
-                    run(clickButton)
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if node.name == "buttonTanya" {
+                    buttonTanya.run((buttonTanyaAction!), withKey: "Button Tanya")
+                    if stateMusic {
+                        run(clickButton)
+                    }
+                    buttonTanyaAksi()
                 }
-                buttonTanyaAksi()
             }
-          }
         }
         
         if atPoint((touch?.location(in: self))!).name == buttonTutupHint.name {
-          enumerateChildNodes(withName: "//*") { [self] (node, stop) in
-            if node.name == "buttonTutupHint" {
-                buttonTutupHint.run((buttonTutupHintAction!), withKey: "Button Tutup")
-                if stateMusic {
-                    run(clickButton)
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if node.name == "buttonTutupHint" {
+                    buttonTutupHint.run((buttonTutupHintAction!), withKey: "Button Tutup")
+                    if stateMusic {
+                        run(clickButton)
+                    }
+                    buttonTutupHintAksi()
                 }
-                buttonTutupHintAksi()
             }
-          }
         }
         
         if atPoint((touch?.location(in: self))!).name == buttonMainLagi.name {
-          enumerateChildNodes(withName: "//*") { [self] (node, stop) in
-            if node.name == "buttonMainLagi" {
-                buttonMainLagi.run((buttonMainLagiAction!), withKey: "Button Lagi")
-                if stateMusic {
-                    run(clickButton)
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if node.name == "buttonMainLagi" {
+                    buttonMainLagi.run((buttonMainLagiAction!), withKey: "Button Lagi")
+                    if stateMusic {
+                        run(clickButton)
+                    }
+                    buttonMainLagiAksi()
                 }
-                buttonMainLagiAksi()
             }
-          }
         }
         
         if atPoint((touch?.location(in: self))!).name == buttonHome.name {
-          enumerateChildNodes(withName: "//*") { [self] (node, stop) in
-            if node.name == "buttonHome" {
-                buttonHome.run((buttonHomeAction!), withKey: "Button Home")
-                if stateMusic {
-                    run(clickButton)
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if node.name == "buttonHome" {
+                    buttonHome.run((buttonHomeAction!), withKey: "Button Home")
+                    if stateMusic {
+                        run(clickButton)
+                    }
+                    buttonHomeScene()
                 }
-                buttonHomeScene()
             }
-          }
         }
         
         if atPoint((touch?.location(in: self))!).name == buttonLanjutkanCerita.name {
-          enumerateChildNodes(withName: "//*") { [self] (node, stop) in
-            if node.name == "buttonHome" {
-                buttonLanjutkanCerita.run((buttonLanjutkanCeritaAction!), withKey: "Button Home")
-                if stateMusic {
-                    run(clickButton)
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if node.name == "buttonHome" {
+                    buttonLanjutkanCerita.run((buttonLanjutkanCeritaAction!), withKey: "Button Home")
+                    if stateMusic {
+                        run(clickButton)
+                    }
+                    buttonLanjutScene()
                 }
-                buttonLanjutScene()
             }
-          }
         }
     }
     
@@ -662,11 +665,11 @@ class MalinKundang_Scene13: SKScene {
         for t in touches {
             let pos : CGPoint = t.location(in: self)
             if atPoint((t.location(in: self))).name == kapalLabirin.name {
-              enumerateChildNodes(withName: "//*") { [self] (node, stop) in
-                if node.name == "kapalLabirin" {
-                    movePlayerToPosition(playerPosition: pos)
+                enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                    if node.name == "kapalLabirin" {
+                        movePlayerToPosition(playerPosition: pos)
+                    }
                 }
-              }
             }
         }
         

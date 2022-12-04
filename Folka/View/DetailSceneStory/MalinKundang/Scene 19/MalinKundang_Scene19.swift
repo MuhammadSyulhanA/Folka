@@ -180,12 +180,16 @@ class MalinKundang_Scene19: SKScene {
             if state == 1 {
                 labelTextStory.text = dataIntro[state].text
             } else if state == 2 {
+                print("sini")
                 let prevScene = ChoiceEndingViewController(nibName: "ChoiceEndingViewController", bundle: nil)
-                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+//                self.view!.window?.rootViewController?.navigationController?.present(prevScene, animated: true, completion: nil)
+//                self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
+                
             }
         } else {
             state += 1
             if state == 2 {
+                print("sinii")
                 let prevScene = ChoiceEndingViewController(nibName: "ChoiceEndingViewController", bundle: nil)
                 self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             } else if state == 1 {
@@ -231,8 +235,9 @@ class MalinKundang_Scene19: SKScene {
         
         if buttonHome.action(forKey: "Button Home") == nil {
             buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
-            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+            self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
+//            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+//            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             
         }
     }

@@ -378,8 +378,9 @@ class MalinKundang_AlternateScene15: SKScene {
             if stateMusic {
                 run(clickButton)
             }
-            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+            self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
+//            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+//            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             
         }
     }

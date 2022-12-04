@@ -470,6 +470,7 @@ class MalinKundang_Puzzle: SKScene{
   }
   
   func buttonHomeAksi(){
+      self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
     //    let nextDetailPage = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
     //    self.view!.window?.rootViewController?.present(nextDetailPage, animated: true, completion: nil)
   }

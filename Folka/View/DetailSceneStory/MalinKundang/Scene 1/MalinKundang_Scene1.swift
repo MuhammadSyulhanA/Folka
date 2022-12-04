@@ -13,7 +13,7 @@ struct Intro {
 }
 
 class MalinKundang_Scene1: SKScene {
-    
+ 
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
@@ -149,7 +149,7 @@ class MalinKundang_Scene1: SKScene {
         labelTextStory.zPosition = +4.5
         addChild(labelTextStory)
         
-        run(backgroundMusic)
+//        run(backgroundMusic)
         
     }
     
@@ -227,11 +227,10 @@ class MalinKundang_Scene1: SKScene {
             if stateMusic {
                 run(clickButton)
             }
-            
-            print("test")
-            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
-            
+
+//            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+            self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
+//            self.view!.window?.rootViewController?.navigationController?.pushViewController(prevScene, animated: true)
         }
     }
     

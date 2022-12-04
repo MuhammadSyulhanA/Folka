@@ -9,7 +9,12 @@ import UIKit
 import AVFoundation
 import SpriteKit
 
+//protocol presentViewDetail {
+//    func presentDetailPage()
+//}
+
 class DetailPageViewController: UIViewController {
+//    var delegate: presentViewDetail?
     
     @IBOutlet weak var lblCeritaAsal: UILabel!
     
@@ -61,20 +66,26 @@ class DetailPageViewController: UIViewController {
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
             sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
         })
-        view = SKView(frame: view.bounds)
         
-        if let view = self.view as! SKView? {
-          let scene = MalinKundang_Scene1(size: CGSize(width: 2048, height: 1536))
-          scene.scaleMode = .aspectFill
-          view.presentScene(scene)
-          view.showsPhysics = false
-          view.ignoresSiblingOrder = true
-          view.showsFPS = true
-          view.showsNodeCount = true
-        }
+//        view = SKView(frame: view.bounds)
+//
+//        if let view = self.view as! SKView? {
+//          let scene = MalinKundang_Scene1(size: CGSize(width: 2048, height: 1536))
+//          scene.scaleMode = .aspectFill
+//          view.presentScene(scene)
+//          view.showsPhysics = false
+//          view.ignoresSiblingOrder = true
+//          view.showsFPS = true
+//          view.showsNodeCount = true
+//        }
         
-//        let nextMainController = ScenePilihGame_ViewController()
-//        present(nextMainController, animated: true, completion: nil)
+//        self.dismiss(animated: true) {
+//            self.delegate?.presentDetailPage()
+//        }
+        
+//        self.dismiss(animated: false, completion: nil)
+        let nextMainController = MalinKundang_ViewController()
+        present(nextMainController, animated: true, completion: nil)
     }
     
     //  @IBAction func buttonBack(_ sender: UIButton) {
@@ -87,6 +98,11 @@ class DetailPageViewController: UIViewController {
     //        })
     //        self.presentingViewController?.dismiss(animated: true, completion: nil)
     //      }
+    
+//    func presentDetailPage(){
+//        let nextDetailPage = DetailPageViewController(nibName: "DetailPageViewController", bundle: nil)
+//        present(nextDetailPage, animated: true, completion: nil)
+//    }
     
     @objc func previousPage(sender: UITapGestureRecognizer){
         Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")

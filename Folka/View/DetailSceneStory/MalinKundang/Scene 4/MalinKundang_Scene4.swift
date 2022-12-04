@@ -187,6 +187,7 @@ class MalinKundang_Scene4: SKScene {
                 characterMalinSay.isHidden = true
                 textStory.text = dataIntro[state].textDialogue
             } else if state == 3 {
+                print("tes")
                 let prevScene = ScenePilihGame_ViewController(nibName: "ScenePilihGame_ViewController", bundle: nil)
                 self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             }
@@ -194,6 +195,7 @@ class MalinKundang_Scene4: SKScene {
             state += 1
             print(state)
             if state == 3 {
+                print("tess")
                 let prevScene = ScenePilihGame_ViewController(nibName: "ScenePilihGame_ViewController", bundle: nil)
                 self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             }
@@ -247,8 +249,9 @@ class MalinKundang_Scene4: SKScene {
         }
         if buttonHome.action(forKey: "Button Home") == nil {
             buttonHome.run((buttonHomeAction!), withKey: "Button Home")
-            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+            self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
+//            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+//            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             
         }
     }

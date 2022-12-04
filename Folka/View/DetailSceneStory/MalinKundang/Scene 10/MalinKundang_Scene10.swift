@@ -234,9 +234,11 @@ class MalinKundang_Scene10: SKScene {
             run(clickButton)
         }
         if buttonHome.action(forKey: "Button Home") == nil {
+            print("tes")
             buttonHome.run((buttonHomeAction!), withKey: "Button Home")
-            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+            self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
+//            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+//            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             
         }
     }
@@ -305,6 +307,14 @@ class MalinKundang_Scene10: SKScene {
                 if !self.buttonPrevious.hasActions(){
                     if node.name == "buttonPrevious" {
                         buttonPreviousScene()
+                    }
+                }
+            }
+        } else if atPoint((touch?.location(in: self))!).name == buttonHome.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if !self.buttonHome.hasActions(){
+                    if node.name == "buttonHome" {
+                        buttonHomeScene()
                     }
                 }
             }
