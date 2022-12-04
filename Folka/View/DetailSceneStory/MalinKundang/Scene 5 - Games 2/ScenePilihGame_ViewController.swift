@@ -72,7 +72,7 @@ class ScenePilihGame_ViewController: UIViewController {
     if (state == 1){
       view = SKView(frame: view.bounds)
       if let view = self.view as! SKView? {
-        let scene = MalinKundang_Puzzle2(size: CGSize(width: 2048, height: 1536))
+        let scene = MalinKundang_PuzzleBesar(size: CGSize(width: 2048, height: 1536))
         scene.scaleMode = .aspectFill
         view.presentScene(scene)
         view.showsPhysics = false

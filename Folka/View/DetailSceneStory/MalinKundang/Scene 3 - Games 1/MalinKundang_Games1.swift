@@ -133,7 +133,7 @@ class MalinKundang_Games1: SKScene {
     nonCharacterSeaweed2.zPosition = 1
     addChild(nonCharacterSeaweed2)
     
-    nonCharacterBoardTimer.size = CGSize(width: 192, height: 100)
+    nonCharacterBoardTimer.size = CGSize(width: 280, height: 100)
     nonCharacterBoardTimer.position = CGPoint(x: size.width/2.0, y: size.height/1.38)
     nonCharacterBoardTimer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     nonCharacterBoardTimer.zPosition = 1

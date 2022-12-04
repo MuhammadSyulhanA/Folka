@@ -61,32 +61,37 @@ class DetailPageViewController: UIViewController {
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
             sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
         })
-        view = SKView(frame: view.bounds)
-        
-        if let view = self.view as! SKView? {
-          let scene = MalinKundang_Scene1(size: CGSize(width: 2048, height: 1536))
-          scene.scaleMode = .aspectFill
-          view.presentScene(scene)
-          view.showsPhysics = false
-          view.ignoresSiblingOrder = true
-          view.showsFPS = true
-          view.showsNodeCount = true
-        }
+      
+      let controller = MalinKundang_ViewController()
+      present(controller, animated: true, completion: nil)
+//        view = SKView(frame: view.bounds)
+//
+//        if let view = self.view as! SKView? {
+          
+//          let scene = MalinKundang_Scene19(size: CGSize(width: 2048, height: 1536))
+//          scene.scaleMode = .aspectFill
+//          view.presentScene(scene)
+//          view.showsPhysics = false
+//          view.ignoresSiblingOrder = true
+//          view.showsFPS = true
+//          view.showsNodeCount = true
+//        }
         
 //        let nextMainController = ScenePilihGame_ViewController()
 //        present(nextMainController, animated: true, completion: nil)
     }
     
-    //  @IBAction func buttonBack(_ sender: UIButton) {
-    //    //    _ = navigationController?.popViewController(animated: true)
-    //    //    self.dismiss(animated: true, completion: nil)
-    //        sender.transform = CGAffineTransform.init(scaleX: 0.6, y: 0.6)
-    //        UIView.animate(withDuration: 0.5, animations: { () -> Void in
-    //          sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
-    //
-    //        })
-    //        self.presentingViewController?.dismiss(animated: true, completion: nil)
-    //      }
+      @IBAction func buttonBack(_ sender: UIButton) {
+        //    _ = navigationController?.popViewController(animated: true)
+        //    self.dismiss(animated: true, completion: nil)
+            sender.transform = CGAffineTransform.init(scaleX: 0.6, y: 0.6)
+            UIView.animate(withDuration: 0.5, animations: { () -> Void in
+              sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+    
+            })
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
+          }
     
     @objc func previousPage(sender: UITapGestureRecognizer){
         Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")

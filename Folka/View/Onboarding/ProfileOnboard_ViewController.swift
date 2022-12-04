@@ -17,7 +17,8 @@ class ProfileOnboard_ViewController: UIViewController, UITextFieldDelegate {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    self.setupToHideKeyboardOnTapOnView()
+    self.definesPresentationContext = true
     buttonSelesai.setTitle("", for: .normal)
     customButton = UIImage(named: "buttonSelesai")
     buttonSelesai.setImage(customButton?.withRenderingMode(.alwaysOriginal), for: .normal)
@@ -25,11 +26,7 @@ class ProfileOnboard_ViewController: UIViewController, UITextFieldDelegate {
     assignbackground()
     textField.delegate = self
   }
-  
-  @objc func dismissKeyboard() {
-    view.endEditing(true)
-  }
-  
+
   func assignbackground(){
     let background = UIImage(named: "backgroundProfile")
     
@@ -52,9 +49,51 @@ class ProfileOnboard_ViewController: UIViewController, UITextFieldDelegate {
       sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
     })
     
+
     let controller = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+    controller.modalPresentationStyle = .fullScreen
     present(controller, animated: true, completion: nil)
+    self.navigationController?.popViewController(animated: true)
+ 
+    
+    
+    
   }
+}
+
+extension UIViewController
+{
+    func setupToHideKeyboardOnTapOnView()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(UIViewController.dismissKeyboard))
+
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
+}
+
+extension UIApplication {
+class func topViewController(controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+    if let navigationController = controller as? UINavigationController {
+        return topViewController(controller: navigationController.visibleViewController)
+    }
+    if let tabController = controller as? UITabBarController {
+        if let selected = tabController.selectedViewController {
+            return topViewController(controller: selected)
+        }
+    }
+    if let presented = controller?.presentedViewController {
+        return topViewController(controller: presented)
+    }
+    return controller
+}
 }
 
 

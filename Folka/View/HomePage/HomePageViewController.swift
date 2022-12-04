@@ -40,6 +40,7 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     super.viewDidLoad()
     
+    dismiss(animated: false)
     let tapNext = UITapGestureRecognizer(target: self, action: #selector(self.nextPage))
     imageProfile.addGestureRecognizer(tapNext)
     imageProfile.isUserInteractionEnabled = true
@@ -77,7 +78,13 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
     layout.itemSize.width = itemW
     collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
     
+//    DispatchQueue.main.async {
+//      self.definesPresentationContext = true
+//                   }
+
   }
+  
+  
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
@@ -96,6 +103,7 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
     let controller = SettingsScreen_ViewController(nibName: "SettingsScreen_ViewController", bundle: nil)
     controller.modalPresentationStyle = .fullScreen
     present(controller, animated: true, completion: nil)
+
     //        Sound.sharedInstance.stop(file: "onboarding 2", fileExtension: "mp3")
   }
   
@@ -227,8 +235,4 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
     self.view.sendSubviewToBack(imageView)
     print("Sukses")
   }
-  
-  
-
-
 }

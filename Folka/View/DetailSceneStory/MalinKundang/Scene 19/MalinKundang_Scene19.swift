@@ -186,6 +186,7 @@ class MalinKundang_Scene19: SKScene {
         } else {
             state += 1
             if state == 2 {
+                self.removeAllChildren()
                 let prevScene = ChoiceEndingViewController(nibName: "ChoiceEndingViewController", bundle: nil)
                 self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             } else if state == 1 {
