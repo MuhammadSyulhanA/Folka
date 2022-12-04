@@ -7,6 +7,7 @@
 
 import UIKit
 import SpriteKit
+import AVFoundation
 
 class ChoiceEndingViewController: UIViewController {
   @IBOutlet weak var buttonBack: UIImageView!

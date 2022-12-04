@@ -168,15 +168,13 @@ class MalinKundang_Scene11: SKScene {
         for index in 1...2 {
             textures4.append(SKTexture(imageNamed: "nahkodaScene11_\(index)"))
         }
+      
         let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
         let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
         
         buttonNextAction = SKAction.sequence([buttonToSmall, buttonToBig])
         buttonPreviousAction = SKAction.sequence([buttonToSmall, buttonToBig])
         buttonHomeAction = SKAction.sequence([buttonToSmall, buttonToBig])
-        
-        let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
-        let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
         
         animationIbuMalin = SKAction.animate(with: textures, timePerFrame: 0.3)
         animationNahkoda = SKAction.animate(with: textures4, timePerFrame: 0.3)
@@ -270,15 +268,15 @@ class MalinKundang_Scene11: SKScene {
         }
     }
     
-    func buttonHomeScene() {
-        run(clickButton)
-        if buttonHome.action(forKey: "Button Home") == nil {
-            buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
-            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
-            
-        }
-    }
+//    func buttonHomeScene() {
+//        run(clickButton)
+//        if buttonHome.action(forKey: "Button Home") == nil {
+//            buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
+//            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+//            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+//            
+//        }
+//    }
     
     func startIbuMalinAnimation() {
         if characterIbuMalin.action(forKey: "Ibu Malin") == nil {

@@ -396,6 +396,7 @@ class MalinKundang_Puzzle: SKScene{
     }
   }
   
+  
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     let touch = touches.first as UITouch?
     print(atPoint((touch?.location(in: self))!))
