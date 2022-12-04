@@ -15,16 +15,16 @@ class MalinKundang_PilihKapal: SKScene {
     let nonCharacterJudul = SKSpriteNode(imageNamed: "judulPilihPuzzle")
     
     let nonCharacterKayuMilih1 = SKSpriteNode(imageNamed: "backgroundKayuMilih")
-    var nonCharacterKayuMilih1: SKAction?
+    var animateKayuMilih1: SKAction?
     
     let nonCharacterKayuMilih2 = SKSpriteNode(imageNamed: "backgroundKayuMilih")
-    var nonCharacterKayuMilih2: SKAction?
+    var animateKayuMilih2: SKAction?
 
     let nonCharacterKayu1 = SKSpriteNode(imageNamed: "backgroundKayu")
-    var nonCharacterKayu1: SKAction?
+    var animateKayu1: SKAction?
     
     let nonCharacterKayu2 = SKSpriteNode(imageNamed: "backgroundKayu")
-    var nonCharacterKayu2: SKAction?
+    var animateKayu2: SKAction?
 
     let nonCharacterKapalSatu = SKSpriteNode(imageNamed: "objectKapalSatu")
     var animationKapalSatu: SKAction?

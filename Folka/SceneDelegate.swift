@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
       //Open controller when app open first
-      let HomePage = ChoiceEndingViewController()
+      let HomePage = OnboardingViewController()
       let navVc = UINavigationController(rootViewController: HomePage)
       navVc.setNavigationBarHidden(true, animated: false);
       window?.rootViewController = navVc
