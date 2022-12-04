@@ -32,6 +32,7 @@ class MalinKundang_Scene6: SKScene {
     var buttonPreviousAction: SKAction?
     
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    var soundEffect: SKAction = SKAction.playSoundFileNamed("soundKapalBerangkat.wav", waitForCompletion: false)
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
@@ -87,6 +88,8 @@ class MalinKundang_Scene6: SKScene {
         buttonHome.zPosition = 4
         addChild(buttonHome)
         
+        run(soundEffect)
+
 
     }
     

@@ -45,6 +45,9 @@ class MalinKundang_Scene11: SKScene {
     
     //MARK: SOUND
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    var dubbingMalin_1: SKAction = SKAction.playSoundFileNamed("11 1.m4a", waitForCompletion: false)
+    var dubbingMalin_2: SKAction = SKAction.playSoundFileNamed("11 2.m4a", waitForCompletion: false)
+    var dubbingMalin_3: SKAction = SKAction.playSoundFileNamed("11 3.m4a", waitForCompletion: false)
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
@@ -135,10 +138,11 @@ class MalinKundang_Scene11: SKScene {
         labelTextStory.lineBreakMode = NSLineBreakMode.byWordWrapping
         labelTextStory.numberOfLines = 0
         labelTextStory.preferredMaxLayoutWidth = 1320
-        labelTextStory.position = CGPoint(x: size.width/2, y: size.height/4.25)
+        labelTextStory.position = CGPoint(x: size.width/2, y: size.height/4.0)
         labelTextStory.zPosition = +4.5
         addChild(labelTextStory)
         
+        run(dubbingMalin_1)
     }
     
     //MARK: SOURCE CODE ASSET GERAK
@@ -208,8 +212,10 @@ class MalinKundang_Scene11: SKScene {
             print("if next", state)
             
             if state == 1 {
+                run(dubbingMalin_2)
                 labelTextStory.text = dataIntro[state].text
             } else if state == 2 {
+                run(dubbingMalin_3)
                 labelTextStory.text = dataIntro[state].text
             } else if state == 3 {
                 let reveal = SKTransition.reveal(with: .left, duration: 1)

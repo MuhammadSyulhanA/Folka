@@ -10,8 +10,8 @@ import GameplayKit
 import UIKit
 
 struct AlternateScript15 {
-  var imageName: SKSpriteNode!
-  var textDialogue: String!
+    var imageName: SKSpriteNode!
+    var textDialogue: String!
 }
 
 class MalinKundang_AlternateScene15: SKScene {
@@ -61,6 +61,12 @@ class MalinKundang_AlternateScene15: SKScene {
     var state = 0
     
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    var dubbingMalin_1: SKAction = SKAction.playSoundFileNamed("alt 15 1.m4a", waitForCompletion: false)
+//    var dubbingMalin_2: SKAction = SKAction.playSoundFileNamed("15 2.m4a", waitForCompletion: false)
+//    var dubbingMalin_3: SKAction = SKAction.playSoundFileNamed("15 3.m4a", waitForCompletion: false)
+//    var dubbingMalin_4: SKAction = SKAction.playSoundFileNamed("15 4.m4a", waitForCompletion: false)
+//    var dubbingMalin_5: SKAction = SKAction.playSoundFileNamed("15 5.m4a", waitForCompletion: false)
+    var dubbingMalin_6: SKAction = SKAction.playSoundFileNamed("alt 15 6.m4a", waitForCompletion: false)
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
@@ -197,6 +203,8 @@ class MalinKundang_AlternateScene15: SKScene {
         labelTextStory.position = CGPoint(x: size.width/2, y: size.height/3.8)
         labelTextStory.zPosition = 3.5
         addChild(labelTextStory)
+        
+        run(dubbingMalin_1)
     }
     
     override init(size: CGSize){
@@ -218,6 +226,8 @@ class MalinKundang_AlternateScene15: SKScene {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
     
     func startTreeAnimation() {
         if nonCharacterTree.action(forKey: "Tree Animation") == nil {
@@ -252,6 +262,7 @@ class MalinKundang_AlternateScene15: SKScene {
                     characterIstriMalinSay.isHidden = true
                     characterIbuMalinSay.isHidden = false
                 } else if state == 5 {
+                    run(dubbingMalin_6)
                     characterIbuMalinSay.isHidden = true
                     characterMalinSay.isHidden = false
                     characterIstriMalinSay.isHidden = false
@@ -330,8 +341,24 @@ class MalinKundang_AlternateScene15: SKScene {
                 characterMalinSay.isHidden = false
                 characterIstriMalinSay.isHidden = false
             }
-            
-            if state > 0 {
+            else {
+                if state == 0 {
+                    characterMalinSay.isHidden = true
+                } else if state == 1 {
+                    characterMalinSay.isHidden = false
+                } else if state == 2 {
+                    characterMalinSay.isHidden = true
+                    characterIbuMalinSay.isHidden = false
+                } else if state == 3 {
+                    characterIbuMalinSay.isHidden = true
+                    characterIstriMalinSay.isHidden = false
+                } else if state == 4 {
+                    characterMalinSay.isHidden = false
+                    characterIstriMalinSay.isHidden = true
+                } else if state == 5 {
+                    characterMalinSay.isHidden = false
+                    characterIstriMalinSay.isHidden = true
+                }
                 characterMalinSay = dataIntro[state].imageName
                 labelTextStory.text = dataIntro[state].textDialogue
             }

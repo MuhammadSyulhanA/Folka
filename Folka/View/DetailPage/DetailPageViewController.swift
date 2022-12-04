@@ -88,16 +88,17 @@ class DetailPageViewController: UIViewController {
         present(nextMainController, animated: true, completion: nil)
     }
     
-    //  @IBAction func buttonBack(_ sender: UIButton) {
-    //    //    _ = navigationController?.popViewController(animated: true)
-    //    //    self.dismiss(animated: true, completion: nil)
-    //        sender.transform = CGAffineTransform.init(scaleX: 0.6, y: 0.6)
-    //        UIView.animate(withDuration: 0.5, animations: { () -> Void in
-    //          sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
-    //
-    //        })
-    //        self.presentingViewController?.dismiss(animated: true, completion: nil)
-    //      }
+      @IBAction func buttonBack(_ sender: UIButton) {
+        //    _ = navigationController?.popViewController(animated: true)
+        //    self.dismiss(animated: true, completion: nil)
+            sender.transform = CGAffineTransform.init(scaleX: 0.6, y: 0.6)
+            UIView.animate(withDuration: 0.5, animations: { () -> Void in
+              sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+    
+            })
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
+          }
     
 //    func presentDetailPage(){
 //        let nextDetailPage = DetailPageViewController(nibName: "DetailPageViewController", bundle: nil)

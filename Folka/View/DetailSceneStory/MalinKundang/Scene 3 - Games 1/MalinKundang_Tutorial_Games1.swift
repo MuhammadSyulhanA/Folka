@@ -79,6 +79,7 @@ class MalinKundang_Tutorial_Games1: SKScene {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if !self.buttonFishing.hasActions(){
                     if node.name == "buttonNext" {
+                      run(clickButton)
                         buttonNextScene()
                     }
                 }

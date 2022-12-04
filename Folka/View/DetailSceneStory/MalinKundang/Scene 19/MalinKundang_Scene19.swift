@@ -42,6 +42,9 @@ class MalinKundang_Scene19: SKScene {
     var state = 0
     
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    var dubbingMalin_1: SKAction = SKAction.playSoundFileNamed("19 1.m4a", waitForCompletion: false)
+    var dubbingMalin_2: SKAction = SKAction.playSoundFileNamed("19 2.m4a", waitForCompletion: false)
+    var soundEffect: SKAction = SKAction.playSoundFileNamed("soundMalinJadiBatu.mp3", waitForCompletion: false)
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
@@ -127,6 +130,8 @@ class MalinKundang_Scene19: SKScene {
         addChild(labelTextStory)
         
         startMalinStoneAnimation()
+        run(dubbingMalin_1)
+        run(soundEffect)
     }
     
     override init(size: CGSize){
@@ -152,7 +157,7 @@ class MalinKundang_Scene19: SKScene {
             texturesMalin.append(SKTexture(imageNamed: "malinScene19_\(index)"))
         }
         if characterMalin.action(forKey: "Malin Animation") == nil {
-            characterMalin.run(SKAction.animate(with: texturesMalin, timePerFrame: 2.0), withKey: "Malin Animation")
+            characterMalin.run(SKAction.animate(with: texturesMalin, timePerFrame: 3.0), withKey: "Malin Animation")
         }
     }
     
@@ -178,6 +183,7 @@ class MalinKundang_Scene19: SKScene {
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
             state += 1
             if state == 1 {
+                run(dubbingMalin_2)
                 labelTextStory.text = dataIntro[state].text
             } else if state == 2 {
                 print("sini")
@@ -190,6 +196,7 @@ class MalinKundang_Scene19: SKScene {
             state += 1
             if state == 2 {
                 print("sinii")
+                self.removeAllChildren()
                 let prevScene = ChoiceEndingViewController(nibName: "ChoiceEndingViewController", bundle: nil)
                 self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             } else if state == 1 {

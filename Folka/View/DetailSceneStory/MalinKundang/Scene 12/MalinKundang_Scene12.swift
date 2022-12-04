@@ -31,6 +31,8 @@ class MalinKundang_Scene12: SKScene {
     
     //MARK: SOUND
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    var dubbingMalin: SKAction = SKAction.playSoundFileNamed("12 1.m4a", waitForCompletion: false)
+    var soundEffect: SKAction = SKAction.playSoundFileNamed("soundKapalJalan.wav", waitForCompletion: false)
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
@@ -111,12 +113,13 @@ class MalinKundang_Scene12: SKScene {
         labelTextStory.lineBreakMode = NSLineBreakMode.byWordWrapping
         labelTextStory.numberOfLines = 0
         labelTextStory.preferredMaxLayoutWidth = 1300
-        labelTextStory.position = CGPoint(x: size.width/2, y: size.height/4.25)
+        labelTextStory.position = CGPoint(x: size.width/2, y: size.height/4.0)
         labelTextStory.zPosition = +4.5
         addChild(labelTextStory)
         
         run(SKAction.repeatForever(SKAction.sequence([SKAction.run(moveCloud), SKAction.wait(forDuration: 7.5)])))
-
+        run(dubbingMalin)
+        run(soundEffect)
     }
     
     func moveCloud() {

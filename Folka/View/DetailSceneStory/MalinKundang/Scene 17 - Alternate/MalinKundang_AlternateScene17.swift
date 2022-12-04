@@ -48,6 +48,7 @@ class MalinKundang_AlternateScene17: SKScene {
     var state = 0
     
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    var dubbingMalin: SKAction = SKAction.playSoundFileNamed("alt 17 1.m4a", waitForCompletion: false)
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
@@ -148,6 +149,8 @@ class MalinKundang_AlternateScene17: SKScene {
         labelTextStory.position = CGPoint(x: size.width/2, y: size.height/3.8)
         labelTextStory.zPosition = +4.5
         addChild(labelTextStory)
+        
+        run(dubbingMalin)
         
     }
     

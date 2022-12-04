@@ -29,6 +29,8 @@ class SettingsScreen_ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         assignbackground()
+        dismiss(animated: false)
+        self.setupToHideKeyboardOnTapOnView()
         
         let tapNext = UITapGestureRecognizer(target: self, action: #selector(self.nextPage))
         buttonBack.addGestureRecognizer(tapNext)
@@ -94,9 +96,9 @@ class SettingsScreen_ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
+//    @objc func dismissKeyboard() {
+//        view.endEditing(true)
+//    }
     
     @IBAction func buttonUbahNama(_ sender: UIButton) {
         //      textFieldChangeName.isUserInteractionEnabled = is
@@ -160,5 +162,6 @@ class SettingsScreen_ViewController: UIViewController, UITextFieldDelegate {
         let controller = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
+      self.navigationController?.popViewController(animated: true)
     }
 }

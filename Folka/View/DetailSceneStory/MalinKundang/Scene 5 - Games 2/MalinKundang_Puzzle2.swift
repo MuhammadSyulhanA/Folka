@@ -507,250 +507,116 @@ class MalinKundang_Puzzle2: SKScene{
     CustomScrollView.enable()
     
     for touch in touches {
+      
+      
       if puzzleKecilBulatKapal2.frame.intersects(puzzleBesarBulatKapal.frame){
         puzzleKecilBulatKapal2.position = CGPoint(x: size.width/2.9, y: size.height/2.7)
         puzzleKecilBulatKapal2.isUserInteractionEnabled = true
       } else{
         puzzleKecilBulatKapal2.isHidden = true
         puzzleKecilBulatKapal.isHidden = false
-        puzzleKecilBulatKapal.zPosition = 3
-        //    addChild(puzzleKecilBulatKapal)
-        
-        puzzleKecilAtapKapal.name = "puzzleKecilAtapKapal"
-        puzzleKecilAtapKapal.scale(to: CGSize(width: 346, height: 73))
-        puzzleKecilAtapKapal.position = CGPoint(x: size.width/1.13, y: size.height/1.50)
-        puzzleKecilAtapKapal.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        puzzleKecilAtapKapal.zPosition = 3
-        
-        puzzleKecilBenderaKapal.name = "puzzleKecilBenderaKapal"
-        puzzleKecilBenderaKapal.scale(to: CGSize(width: 75, height: 108))
-        puzzleKecilBenderaKapal.position = CGPoint(x: size.width/1.13, y: size.height/1.70)
-        puzzleKecilBenderaKapal.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        puzzleKecilBenderaKapal.zPosition = 3
-        //    addChild(puzzleKecilBenderaKapal)
-        
-        puzzleKecilJendelaKapal.name = "puzzleKecilJendelaKapal"
-        puzzleKecilJendelaKapal.scale(to: CGSize(width: 160, height: 106))
-        puzzleKecilJendelaKapal.position = CGPoint(x: size.width/1.13, y: size.height/2.00)
-        puzzleKecilJendelaKapal.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        puzzleKecilJendelaKapal.zPosition = 3
-        //    addChild(puzzleKecilJendelaKapalAtas)
-        
-        puzzleKecilBadanKapalAtas.name = "puzzleKecilBadanKapalAtas"
-        puzzleKecilBadanKapalAtas.scale(to: CGSize(width: 235, height: 133))
-        puzzleKecilBadanKapalAtas.position = CGPoint(x: size.width/1.13, y: size.height/2.50)
-        puzzleKecilBadanKapalAtas.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        puzzleKecilBadanKapalAtas.zPosition = 3
-        //    addChild(puzzleKecilBadanKapalAtas)
-        
-        puzzleKecilGarisKuningKapal.name = "puzzleKecilGarisKuningKapal"
-        puzzleKecilGarisKuningKapal.scale(to: CGSize(width: 370, height: 106))
-        puzzleKecilGarisKuningKapal.position = CGPoint(x: size.width/1.13, y: size.height/3.25)
-        puzzleKecilGarisKuningKapal.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        puzzleKecilGarisKuningKapal.zPosition = 3
-        //    addChild(puzzleKecilGarisKapal)
-        
-        puzzleKecilBadanKapalTengah.name = "puzzleKecilBadanKapalTengah"
-        puzzleKecilBadanKapalTengah.scale(to: CGSize(width: 346, height: 106))
-        puzzleKecilBadanKapalTengah.position = CGPoint(x: size.width/1.13, y: size.height/4.45)
-        puzzleKecilBadanKapalTengah.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        puzzleKecilBadanKapalTengah.zPosition = 3
-        //    addChild(puzzleKecilBadanKapalBiru)
-        
-        puzzleKecilPelampung.name = "puzzleKecilPelampung"
-        puzzleKecilPelampung.scale(to: CGSize(width: 130, height: 130))
-        puzzleKecilPelampung.position = CGPoint(x: size.width/1.13, y: size.height/5.55)
-        puzzleKecilPelampung.anchorPoint = CGPoint(x: 0.5, y: 1)
-        puzzleKecilPelampung.zPosition = 3
-        puzzleKecilPelampung.isHidden = false
-        //        addChild(puzzleKecilPelampung)
-        
-        puzzleKecilJendelaBanyakKapal.name = "puzzleKecilJendelaBanyakKapal"
-        puzzleKecilJendelaBanyakKapal.scale(to: CGSize(width: 351, height: 106))
-        puzzleKecilJendelaBanyakKapal.position = CGPoint(x: size.width/1.13, y: size.height/5.85)
-        puzzleKecilJendelaBanyakKapal.anchorPoint = CGPoint(x: 0.5, y: 2.5)
-        puzzleKecilJendelaBanyakKapal.zPosition = 3
-        //    addChild(puzzleKecilJendelaBanyakKapal)
-        
-        puzzleKecilBadanKapalBawah.name = "puzzleKecilBadanKapalBawah"
-        puzzleKecilBadanKapalBawah.scale(to: CGSize(width: 350, height: 121))
-        puzzleKecilBadanKapalBawah.position = CGPoint(x: size.width/1.13, y: size.height/6.35)
-        puzzleKecilBadanKapalBawah.anchorPoint = CGPoint(x: 0.5, y: 3.5)
-        puzzleKecilBadanKapalBawah.zPosition = 3
-        //    addChild(puzzleKecilBadanKapalBawah)
-        
-        //MARK: POSISI PUZZLE KECIL KEDUA
-        puzzleKecilBulatKapal2.name = "puzzleKecilBulatKapal2"
         puzzleKecilBulatKapal2.scale(to: CGSize(width: 346, height: 107))
         puzzleKecilBulatKapal2.position = CGPoint(x: size.width/1.13, y: size.height/1.32)
-        puzzleKecilBulatKapal2.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        puzzleKecilBulatKapal2.isHidden = true
-        puzzleKecilBulatKapal2.zPosition = 3
-        addChild(puzzleKecilBulatKapal2)
-        
-        puzzleKecilAtapKapal2.name = "puzzleKecilAtapKapal2"
-        puzzleKecilAtapKapal2.scale(to: CGSize(width: 346, height: 73))
-        puzzleKecilAtapKapal2.position = CGPoint(x: size.width/1.13, y: size.height/1.50)
-        puzzleKecilAtapKapal2.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+      }
+      
+      if puzzleKecilAtapKapal2.frame.intersects(puzzleBesarAtapKapal.frame){
+        puzzleKecilAtapKapal2.position = CGPoint(x: size.width/1.76, y: size.height/1.46)
+        puzzleKecilAtapKapal2.isUserInteractionEnabled = true
+      } else{
         puzzleKecilAtapKapal2.isHidden = true
-        puzzleKecilAtapKapal2.zPosition = 3
-        addChild(puzzleKecilAtapKapal2)
-        
-        puzzleKecilBenderaKapal2.name = "puzzleKecilBenderaKapal2"
+        puzzleKecilAtapKapal.isHidden = false
+        puzzleKecilAtapKapal2.scale(to: CGSize(width: 346, height: 106))
+        puzzleKecilAtapKapal2.position = CGPoint(x: size.width/1.13, y: size.height/1.50)
+      }
+      
+      if puzzleKecilBenderaKapal2.frame.intersects(puzzleBesarBenderaKapal.frame){
+        puzzleKecilBenderaKapal2.position = CGPoint(x: size.width/2.5, y: size.height/1.66)
+        puzzleKecilBenderaKapal2.isUserInteractionEnabled = true
+      } else{
+        puzzleKecilBenderaKapal2.isHidden = true
+        puzzleKecilBenderaKapal.isHidden = false
         puzzleKecilBenderaKapal2.scale(to: CGSize(width: 75, height: 108))
         puzzleKecilBenderaKapal2.position = CGPoint(x: size.width/1.13, y: size.height/1.70)
-        puzzleKecilBenderaKapal2.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        puzzleKecilBenderaKapal2.zPosition = 3
-        puzzleKecilBenderaKapal2.isHidden = true
-        addChild(puzzleKecilBenderaKapal2)
-        
-        puzzleKecilJendelaKapal2.name = "puzzleKecilJendelaKapal2"
-        puzzleKecilJendelaKapal2.scale(to: CGSize(width: 160, height: 106))
-        puzzleKecilJendelaKapal2.position = CGPoint(x: size.width/1.13, y: size.height/2.00)
-        puzzleKecilJendelaKapal2.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        puzzleKecilJendelaKapal2.zPosition = 3
-        puzzleKecilJendelaKapal2.isHidden = true
-        addChild(puzzleKecilJendelaKapal2)
-        
-        puzzleKecilBadanKapalAtas2.name = "puzzleKecilBadanKapalAtas2"
-        puzzleKecilBadanKapalAtas2.scale(to: CGSize(width: 235, height: 133))
-        puzzleKecilBadanKapalAtas2.position = CGPoint(x: size.width/1.13, y: size.height/2.50)
-        puzzleKecilBadanKapalAtas2.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        puzzleKecilBadanKapalAtas2.zPosition = 3
-        puzzleKecilBadanKapalAtas2.isHidden = true
-        addChild(puzzleKecilBadanKapalAtas2)
-        
-        puzzleKecilGarisKuningKapal2.name = "puzzleKecilGarisKuningKapal2"
-        puzzleKecilGarisKuningKapal2.scale(to: CGSize(width: 370, height: 106))
-        puzzleKecilGarisKuningKapal2.position = CGPoint(x: size.width/1.13, y: size.height/3.25)
-        puzzleKecilGarisKuningKapal2.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        puzzleKecilGarisKuningKapal2.zPosition = 3
-        puzzleKecilGarisKuningKapal2.isHidden = true
-        addChild(puzzleKecilGarisKuningKapal2)
-        
-        puzzleKecilBadanKapalTengah2.name = "puzzleKecilBadanKapalTengah2"
-        puzzleKecilBadanKapalTengah2.scale(to: CGSize(width: 346, height: 106))
-        puzzleKecilBadanKapalTengah2.position = CGPoint(x: size.width/1.13, y: size.height/4.45)
-        puzzleKecilBadanKapalTengah2.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        puzzleKecilBadanKapalTengah2.zPosition = 3
-        puzzleKecilBadanKapalTengah2.isHidden = true
-        addChild(puzzleKecilBadanKapalTengah2)
-        
-        puzzleKecilPelampung2.name = "puzzleKecilPelampung2"
-        puzzleKecilPelampung2.scale(to: CGSize(width: 130, height: 130))
-        puzzleKecilPelampung2.position = puzzleKecilPelampung.position
-        puzzleKecilPelampung2.anchorPoint = CGPoint(x: 0.5, y: 1)
-        puzzleKecilPelampung2.zPosition = 3
-        puzzleKecilPelampung2.isHidden = true
-        addChild(puzzleKecilPelampung2)
-        
-        puzzleKecilJendelaBanyakKapal2.name = "puzzleKecilJendelaBanyakKapal2"
-        puzzleKecilJendelaBanyakKapal2.scale(to: CGSize(width: 351, height: 106))
-        puzzleKecilJendelaBanyakKapal2.position = CGPoint(x: size.width/1.13, y: size.height/5.85)
-        puzzleKecilJendelaBanyakKapal2.anchorPoint = CGPoint(x: 0.5, y: 2.5)
-        puzzleKecilJendelaBanyakKapal2.zPosition = 3
-        puzzleKecilJendelaBanyakKapal2.isHidden = true
-        addChild(puzzleKecilJendelaBanyakKapal2)
-        
-        puzzleKecilBadanKapalBawah2.name = "puzzleKecilBadanKapalBawah2"
-        puzzleKecilBadanKapalBawah2.scale(to: CGSize(width: 350, height: 121))
-        puzzleKecilBadanKapalBawah2.position = CGPoint(x: size.width/1.13, y: size.height/6.35)
-        puzzleKecilBadanKapalBawah2.anchorPoint = CGPoint(x: 0.5, y: 3.5)
-        puzzleKecilBadanKapalBawah2.zPosition = 3
-        puzzleKecilBadanKapalBawah2.isHidden = true
-        addChild(puzzleKecilBadanKapalBawah2)
-        
-        //MARK: POSISI PUZZLE BESAR
-        puzzleBesarBadanKapalBawah.scale(to: CGSize(width: 1200, height: 420))
-        puzzleBesarBadanKapalBawah.position = CGPoint(x: size.width/2.35, y: size.height/2.68)
-        puzzleBesarBadanKapalBawah.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        puzzleBesarBadanKapalBawah.alpha = 0
-        puzzleBesarBadanKapalBawah.zPosition = 2
-        addChild(puzzleBesarBadanKapalBawah)
-        
-        puzzleBesarGarisKuningKapal.scale(to: CGSize(width: 1280, height: 200))
-        puzzleBesarGarisKuningKapal.position = CGPoint(x: size.width/2.3, y: size.height/2.1)
-        puzzleBesarGarisKuningKapal.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        puzzleBesarGarisKuningKapal.zPosition = 3
-        puzzleBesarGarisKuningKapal.alpha = 0
-        addChild(puzzleBesarGarisKuningKapal)
-        
-        puzzleBesarBadanKapalTengah.scale(to: CGSize(width: 708, height: 174))
-        puzzleBesarBadanKapalTengah.position = CGPoint(x: size.width/2, y: size.height/2)
-        puzzleBesarBadanKapalTengah.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        puzzleBesarBadanKapalTengah.zPosition = 2
-        puzzleBesarBadanKapalTengah.alpha = 0
-        addChild(puzzleBesarBadanKapalTengah)
-        
-        puzzleBesarJendelaBanyakKapal.scale(to: CGSize(width: 531, height: 135))
-        puzzleBesarJendelaBanyakKapal.position = CGPoint(x: size.width/2, y: size.height/2)
-        puzzleBesarJendelaBanyakKapal.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        puzzleBesarJendelaBanyakKapal.zPosition = 2
-        puzzleBesarJendelaBanyakKapal.alpha = 0
-        addChild(puzzleBesarJendelaBanyakKapal)
-        
-        puzzleBesarPelampung.scale(to: CGSize(width: 178, height: 164))
-        puzzleBesarPelampung.position = CGPoint(x: size.width/1.6, y: size.height/2.5)
-        puzzleBesarPelampung.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        puzzleBesarPelampung.zPosition = 5
-        puzzleBesarPelampung.alpha = 0
-        addChild(puzzleBesarPelampung)
-        
-        puzzleBesarBulatKapal.scale(to: CGSize(width: 578, height: 177))
-        puzzleBesarBulatKapal.position = CGPoint(x: size.width/2.9, y: size.height/2.7)
-        puzzleBesarBulatKapal.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        puzzleBesarBulatKapal.zPosition = 4
-        puzzleBesarBulatKapal.alpha = 0
-        addChild(puzzleBesarBulatKapal)
-        
-        puzzleBesarBenderaKapal.scale(to: CGSize(width: 95, height: 155))
-        puzzleBesarBenderaKapal.position = CGPoint(x: size.width/2.5, y: size.height/1.66)
-        puzzleBesarBenderaKapal.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        puzzleBesarBenderaKapal.zPosition = 3
-        puzzleBesarBenderaKapal.alpha = 0
-        addChild(puzzleBesarBenderaKapal)
-        
-        puzzleBesarBadanKapalAtas.scale(to: CGSize(width: 334, height: 189))
-        puzzleBesarBadanKapalAtas.position = CGPoint(x: size.width/1.76, y: size.height/1.65)
-        puzzleBesarBadanKapalAtas.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        puzzleBesarBadanKapalAtas.zPosition = 2
-        puzzleBesarBadanKapalAtas.alpha = 0
-        addChild(puzzleBesarBadanKapalAtas)
-        
-        puzzleBesarJendelaKapal.scale(to: CGSize(width: 125, height: 83))
-        puzzleBesarJendelaKapal.position = CGPoint(x: size.width/1.80, y: size.height/1.6)
-        puzzleBesarJendelaKapal.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        puzzleBesarJendelaKapal.zPosition = 3
-        puzzleBesarJendelaKapal.alpha = 0
-        addChild(puzzleBesarJendelaKapal)
-        
-        puzzleBesarAtapKapal.scale(to: CGSize(width: 401, height: 73))
-        puzzleBesarAtapKapal.position = CGPoint(x: size.width/1.76, y: size.height/1.46)
-        puzzleBesarAtapKapal.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        puzzleBesarAtapKapal.zPosition = 3
-        puzzleBesarAtapKapal.alpha = 0
-        addChild(puzzleBesarAtapKapal)
-        
-        scrollView = CustomScrollView(frame: CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height), scene: self, moveableNode: moveableNode, scrollDirection: .vertical)
-        scrollView.contentSize = CGSize(width: 0, height: self.frame.size.height * 1.4)
-        view?.addSubview(scrollView)
-        addChild(moveableNode)
-        
-        moveableNode.addChild(puzzleKecilPelampung)
-        moveableNode.addChild(puzzleKecilGarisKuningKapal)
-        moveableNode.addChild(puzzleKecilBenderaKapal)
-        moveableNode.addChild(puzzleKecilBadanKapalAtas)
-        moveableNode.addChild(puzzleKecilBadanKapalTengah)
-        moveableNode.addChild(puzzleKecilAtapKapal)
-        moveableNode.addChild(puzzleKecilBulatKapal)
-        moveableNode.addChild(puzzleKecilJendelaBanyakKapal)
-        moveableNode.addChild(puzzleKecilJendelaKapal)
-        moveableNode.addChild(puzzleKecilBadanKapalBawah)
       }
+      
+      
+          if puzzleKecilJendelaKapal2.frame.intersects(puzzleBesarJendelaKapal.frame){
+            puzzleKecilJendelaKapal2.position = CGPoint(x: size.width/1.80, y: size.height/1.6)
+            puzzleKecilJendelaKapal2.isUserInteractionEnabled = true
+          } else{
+            puzzleKecilJendelaKapal2.isHidden = true
+            puzzleKecilJendelaKapal.isHidden = false
+            puzzleKecilJendelaKapal2.scale(to: CGSize(width: 160, height: 106))
+                puzzleKecilJendelaKapal2.position = CGPoint(x: size.width/1.13, y: size.height/2.00)
+          }
+      
+          if puzzleKecilBadanKapalAtas2.frame.intersects(puzzleBesarBadanKapalAtas.frame){
+            puzzleKecilBadanKapalAtas2.position = CGPoint(x: size.width/1.76, y: size.height/1.65)
+            puzzleKecilBadanKapalAtas2.isUserInteractionEnabled = true
+          } else{
+            puzzleKecilBadanKapalAtas2.isHidden = true
+            puzzleKecilBadanKapalAtas.isHidden = false
+            puzzleKecilBadanKapalAtas2.scale(to: CGSize(width: 235, height: 133))
+                puzzleKecilBadanKapalAtas2.position = CGPoint(x: size.width/1.13, y: size.height/2.50)
+      
+          }
+      
+          if puzzleKecilGarisKuningKapal2.frame.intersects(puzzleBesarGarisKuningKapal.frame){
+            puzzleKecilGarisKuningKapal2.position = CGPoint(x: size.width/2.3, y: size.height/2.1)
+            puzzleKecilGarisKuningKapal2.isUserInteractionEnabled = true
+          } else{
+            puzzleKecilGarisKuningKapal2.isHidden = true
+            puzzleKecilGarisKuningKapal.isHidden = false
+            puzzleKecilGarisKuningKapal2.scale(to: CGSize(width: 370, height: 106))
+                puzzleKecilGarisKuningKapal2.position = CGPoint(x: size.width/1.13, y: size.height/3.25)
+      
+          }
+      
+          if puzzleKecilBadanKapalTengah2.frame.intersects(puzzleBesarBadanKapalTengah.frame){
+            puzzleKecilBadanKapalTengah2.position = CGPoint(x: size.width/2, y: size.height/2)
+            puzzleKecilBadanKapalTengah2.isUserInteractionEnabled = true
+          } else{
+            puzzleKecilBadanKapalTengah2.isHidden = true
+            puzzleKecilBadanKapalTengah.isHidden = false
+            puzzleKecilBadanKapalTengah2.scale(to: CGSize(width: 346, height: 106))
+                puzzleKecilBadanKapalTengah2.position = CGPoint(x: size.width/1.13, y: size.height/4.45)
+      
+          }
+      
+          if puzzleKecilPelampung2.frame.intersects(puzzleBesarPelampung.frame){
+            puzzleKecilPelampung2.position = CGPoint(x: size.width/1.6, y: size.height/2.5)
+            puzzleKecilPelampung2.isUserInteractionEnabled = true
+          } else{
+            puzzleKecilPelampung2.isHidden = true
+            puzzleKecilPelampung.isHidden = false
+            puzzleKecilPelampung2.scale(to: CGSize(width: 130, height: 130))
+                puzzleKecilPelampung2.position = CGPoint(x: size.width/1.13, y: size.height/5.55)
+      
+          }
+      
+          if puzzleKecilJendelaBanyakKapal2.frame.intersects(puzzleBesarJendelaBanyakKapal.frame){
+            puzzleKecilJendelaBanyakKapal2.position = CGPoint(x: size.width/2, y: size.height/2)
+            puzzleKecilJendelaBanyakKapal2.isUserInteractionEnabled = true
+          } else{
+            puzzleKecilJendelaBanyakKapal2.isHidden = true
+            puzzleKecilJendelaBanyakKapal.isHidden = false
+            puzzleKecilJendelaBanyakKapal2.scale(to: CGSize(width: 351, height: 106))
+                puzzleKecilJendelaBanyakKapal2.position = CGPoint(x: size.width/1.13, y: size.height/5.85)
+      
+          }
+      
+          if puzzleKecilBadanKapalBawah2.frame.intersects(puzzleBesarBadanKapalBawah.frame){
+            puzzleKecilBadanKapalBawah2.position = CGPoint(x: size.width/2.35, y: size.height/2.68)
+            puzzleKecilBadanKapalBawah2.isUserInteractionEnabled = true
+          } else{
+            puzzleKecilBadanKapalBawah2.isHidden = true
+            puzzleKecilBadanKapalBawah.isHidden = false
+            puzzleKecilBadanKapalBawah2.scale(to: CGSize(width: 350, height: 121))
+                puzzleKecilBadanKapalBawah2.position = CGPoint(x: size.width/1.13, y: size.height/6.35)
+      
+          }
     }
   }
-    
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       //            puzzleKecilBulatKapal2.isHidden = true
       CustomScrollView.disable()

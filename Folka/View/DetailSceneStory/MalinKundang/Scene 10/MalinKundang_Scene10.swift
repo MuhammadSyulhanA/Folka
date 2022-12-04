@@ -8,10 +8,6 @@
 import SpriteKit
 import GameplayKit
 
-struct Script10 {
-    var text: String!
-}
-
 class MalinKundang_Scene10: SKScene {
     
     //MARK: Library sesuaikan dengan framework
@@ -44,10 +40,9 @@ class MalinKundang_Scene10: SKScene {
     
     let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
     var labelTextStory = SKLabelNode(fontNamed: "Nunito")
-    var dataIntro: [Script10] = []
-    var state = 0
     
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    var dubbingMalin: SKAction = SKAction.playSoundFileNamed("10.m4a", waitForCompletion: false)
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
@@ -55,11 +50,6 @@ class MalinKundang_Scene10: SKScene {
         // MARK: Default background white
         let rect = CGRect(x: 0, y: 0, width: 200, height: 0)
         let path = CGPath(rect: rect, transform: nil)
-        
-        let data1 = Script10(text: "Dahulu kala seorang ibu bernama Mande Rubayah dan anak laki-lakinya, Malin Kundang.")
-        let data2 = Script10(text: "Mande Rubayah menghidupi Malin seorang diri hingga menjadi anak yang gagah dan tampan.")
-        
-        dataIntro = [data1, data2]
         
         self.backgroundColor = SKColor.white
         
@@ -144,7 +134,7 @@ class MalinKundang_Scene10: SKScene {
         nonCharacterTextLayout.zPosition = +4
         addChild(nonCharacterTextLayout)
         
-        labelTextStory.text = dataIntro[0].text
+        labelTextStory.text = "Setiap hari Mande Rubayah selalu menunggu Malin pulang karena merasa kangen."
         labelTextStory.fontColor = SKColor.white
         labelTextStory.fontSize = 42
         labelTextStory.lineBreakMode = NSLineBreakMode.byWordWrapping
@@ -153,6 +143,8 @@ class MalinKundang_Scene10: SKScene {
         labelTextStory.position = CGPoint(x: size.width/2, y: size.height/4.25)
         labelTextStory.zPosition = +4.5
         addChild(labelTextStory)
+        
+        run(dubbingMalin)
         
     }
     
@@ -196,23 +188,10 @@ class MalinKundang_Scene10: SKScene {
         
         if buttonNext.action(forKey: "Button Next") == nil {
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
-            state += 1
-            if state == 1 {
-                labelTextStory.text = dataIntro[state].text
-            } else if state == 2 {
-                let reveal = SKTransition.reveal(with: .left, duration: 1)
-                let newScene = MalinKundang_Scene11(size: CGSize(width: 2050, height: 1536))
-                newScene.scaleMode = .aspectFill
-                scene?.view!.presentScene(newScene, transition: reveal)
-            }
-        } else {
-            state += 1
-            if state == 2 {
-                let reveal = SKTransition.reveal(with: .left, duration: 1)
-                let newScene = MalinKundang_Scene11(size: CGSize(width: 2050, height: 1536))
-                newScene.scaleMode = .aspectFill
-                scene?.view!.presentScene(newScene, transition: reveal)
-            }
+            let reveal = SKTransition.reveal(with: .left, duration: 1)
+            let newScene = MalinKundang_Scene11(size: CGSize(width: 2048, height: 1536))
+            newScene.scaleMode = .aspectFill
+            scene?.view!.presentScene(newScene, transition: reveal)
         }
     }
     

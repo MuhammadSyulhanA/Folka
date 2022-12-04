@@ -42,13 +42,15 @@ class MalinKundang_Scene1: SKScene {
     
     let buttonNext = SKSpriteNode(imageNamed: "buttonNext")
     var buttonNextAction: SKAction?
-        
+    
     let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
     var labelTextStory = SKLabelNode(fontNamed: "Nunito")
     var dataIntro: [Intro] = []
     var state = 0
     
-    var backgroundMusic: SKAction = SKAction.playSoundFileNamed("wave", waitForCompletion: true)
+    var backgroundMusic: SKAction = SKAction.playSoundFileNamed("soundOmbak", waitForCompletion: false)
+    var dubbingMalin_1: SKAction = SKAction.playSoundFileNamed("01 1.m4a", waitForCompletion: false)
+    var dubbingMalin_2: SKAction = SKAction.playSoundFileNamed("01 2.m4a", waitForCompletion: false)
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
     
     override func didMove(to view: SKView) {
@@ -62,8 +64,6 @@ class MalinKundang_Scene1: SKScene {
         dataIntro = [data1, data2]
         
         self.backgroundColor = SKColor.white
-        
-        print(stateSound)
         
         backgroundSky.size = CGSize(width: 2050, height: 1120)
         backgroundSky.position = CGPoint(x: size.width/2, y: size.height/2)
@@ -149,7 +149,8 @@ class MalinKundang_Scene1: SKScene {
         labelTextStory.zPosition = +4.5
         addChild(labelTextStory)
         
-//        run(backgroundMusic)
+        //        run(backgroundMusic)
+        run(dubbingMalin_1)
         
     }
     
@@ -194,25 +195,14 @@ class MalinKundang_Scene1: SKScene {
     }
     
     func buttonNextScene() {
-        if stateMusic {
-            run(clickButton)
-        }
-
+        run(clickButton)
         if buttonNext.action(forKey: "Button Next") == nil {
-            
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
             state += 1
             if state == 1 {
+                run(dubbingMalin_2)
                 labelTextStory.text = dataIntro[state].text
             } else if state == 2 {
-                let reveal = SKTransition.reveal(with: .left, duration: 1)
-                let newScene = MalinKundang_Scene2(size: CGSize(width: 2050, height: 1536))
-                newScene.scaleMode = .aspectFill
-                scene?.view!.presentScene(newScene, transition: reveal)
-            }
-        } else {
-            state += 1
-            if state == 2 {
                 let reveal = SKTransition.reveal(with: .left, duration: 1)
                 let newScene = MalinKundang_Scene2(size: CGSize(width: 2050, height: 1536))
                 newScene.scaleMode = .aspectFill
@@ -222,16 +212,19 @@ class MalinKundang_Scene1: SKScene {
     }
     
     func buttonHomeScene() {
-        if buttonHome.action(forKey: "Button Home") == nil {
-            buttonHome.run((buttonHomeAction!), withKey: "Button Home")
-            if stateMusic {
-                run(clickButton)
-            }
-
-//            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-            self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
-//            self.view!.window?.rootViewController?.navigationController?.pushViewController(prevScene, animated: true)
+        //        if buttonHome.action(forKey: "Button Home") == nil {
+        buttonHome.run((buttonHomeAction!), withKey: "Button Home")
+        //        if stateMusic {
+        run(clickButton)
+        //        }
+        guard let rootViewController =
+                view?.window?.rootViewController else { return }
+        let prevScene2 = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+        if rootViewController.presentedViewController == nil {
+            rootViewController.present(prevScene2, animated: true, completion: nil)
+        } else{
         }
+        print("hahah")
     }
     
     func startMalinAnimation() {

@@ -40,6 +40,7 @@ class MalinKundang_Scene2: SKScene {
     var labelTextStory = SKLabelNode(fontNamed: "Nunito")
     
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    var dubbingMalin_1: SKAction = SKAction.playSoundFileNamed("02 2.m4a", waitForCompletion: false)
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
@@ -127,6 +128,7 @@ class MalinKundang_Scene2: SKScene {
         labelTextStory.zPosition = +4.5
         addChild(labelTextStory)
         
+        run(dubbingMalin_1)
     }
     
     override init(size: CGSize){
