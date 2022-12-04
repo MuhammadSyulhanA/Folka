@@ -56,6 +56,15 @@ class OnboardingViewController: UIViewController, UICollectionViewDataSource, UI
     Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
     let nextProfileOnboard = ProfileOnboard_ViewController(nibName: "ProfileOnboard_ViewController", bundle: nil)
     present(nextProfileOnboard, animated: true, completion: nil)
+    self.navigationController?.popViewController(animated: true)
+//
+//    UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: { [weak self] in
+//                // Get Top Controller With Extension
+//                let topController = UIApplication.topViewController()
+//                // Pressent New Controller over top controller
+//      let nextProfileOnboard = ProfileOnboard_ViewController(nibName: "ProfileOnboard_ViewController", bundle: nil)
+//                topController?.present(nextProfileOnboard, animated: true, completion: nil)
+//            })
   }
   
   func assignbackground(){

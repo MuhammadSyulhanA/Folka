@@ -91,6 +91,8 @@ class MalinKundang_Scene13: SKScene {
     
     //MARK: SOUND
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
+    var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
     override func didMove(to view: SKView) {
         //MARK: BACKGROUND
@@ -586,7 +588,10 @@ class MalinKundang_Scene13: SKScene {
           enumerateChildNodes(withName: "//*") { [self] (node, stop) in
             if node.name == "buttonMulai" {
                 buttonMulai.run((buttonMulaiAction!), withKey: "Button Mulai")
-                run(clickButton)
+                if stateMusic {
+                    run(clickButton)
+                }
+                
                 buttonTutupSceneAksi()
             }
           }
@@ -596,7 +601,9 @@ class MalinKundang_Scene13: SKScene {
           enumerateChildNodes(withName: "//*") { [self] (node, stop) in
             if node.name == "buttonTanya" {
                 buttonTanya.run((buttonTanyaAction!), withKey: "Button Tanya")
-                run(clickButton)
+                if stateMusic {
+                    run(clickButton)
+                }
                 buttonTanyaAksi()
             }
           }
@@ -606,7 +613,9 @@ class MalinKundang_Scene13: SKScene {
           enumerateChildNodes(withName: "//*") { [self] (node, stop) in
             if node.name == "buttonTutupHint" {
                 buttonTutupHint.run((buttonTutupHintAction!), withKey: "Button Tutup")
-                run(clickButton)
+                if stateMusic {
+                    run(clickButton)
+                }
                 buttonTutupHintAksi()
             }
           }
@@ -616,7 +625,9 @@ class MalinKundang_Scene13: SKScene {
           enumerateChildNodes(withName: "//*") { [self] (node, stop) in
             if node.name == "buttonMainLagi" {
                 buttonMainLagi.run((buttonMainLagiAction!), withKey: "Button Lagi")
-                run(clickButton)
+                if stateMusic {
+                    run(clickButton)
+                }
                 buttonMainLagiAksi()
             }
           }
@@ -626,7 +637,9 @@ class MalinKundang_Scene13: SKScene {
           enumerateChildNodes(withName: "//*") { [self] (node, stop) in
             if node.name == "buttonHome" {
                 buttonHome.run((buttonHomeAction!), withKey: "Button Home")
-                run(clickButton)
+                if stateMusic {
+                    run(clickButton)
+                }
                 buttonHomeScene()
             }
           }
@@ -636,7 +649,9 @@ class MalinKundang_Scene13: SKScene {
           enumerateChildNodes(withName: "//*") { [self] (node, stop) in
             if node.name == "buttonHome" {
                 buttonLanjutkanCerita.run((buttonLanjutkanCeritaAction!), withKey: "Button Home")
-                run(clickButton)
+                if stateMusic {
+                    run(clickButton)
+                }
                 buttonLanjutScene()
             }
           }

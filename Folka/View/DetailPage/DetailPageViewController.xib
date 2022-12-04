@@ -74,10 +74,10 @@
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttonHome" translatesAutoresizingMaskIntoConstraints="NO" id="iok-Gx-zgM">
-                    <rect key="frame" x="20" y="20" width="48" height="48"/>
+                    <rect key="frame" x="20" y="20" width="55" height="55"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="48" id="0gW-k7-DoU"/>
-                        <constraint firstAttribute="height" constant="48" id="GSz-LC-i32"/>
+                        <constraint firstAttribute="width" constant="55" id="0gW-k7-DoU"/>
+                        <constraint firstAttribute="height" constant="55" id="GSz-LC-i32"/>
                     </constraints>
                 </imageView>
             </subviews>

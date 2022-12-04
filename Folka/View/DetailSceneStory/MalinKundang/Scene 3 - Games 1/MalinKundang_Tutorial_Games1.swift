@@ -18,6 +18,8 @@ class MalinKundang_Tutorial_Games1: SKScene {
     let buttonFishingAction: SKAction?
     
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
+    var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
     override func didMove(to view: SKView) {
         self.backgroundColor = SKColor.white
@@ -56,9 +58,12 @@ class MalinKundang_Tutorial_Games1: SKScene {
     }
     
     func buttonNextScene() {
-        run(clickButton)
+        if stateMusic {
+            run(clickButton)
+        }
+        
         if buttonFishing.action(forKey: "Button Fishing") == nil {
-            buttonFishing.run(SKAction.repeatForever(buttonFishingAction!), withKey: "Button Next")
+            buttonFishing.run((buttonFishingAction!), withKey: "Button Next")
             let reveal = SKTransition.reveal(with: .up, duration: 1)
             let newScene = MalinKundang_Games1(size: CGSize(width: 2048, height: 1536))
             newScene.scaleMode = .aspectFill
@@ -74,6 +79,7 @@ class MalinKundang_Tutorial_Games1: SKScene {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if !self.buttonFishing.hasActions(){
                     if node.name == "buttonNext" {
+                      run(clickButton)
                         buttonNextScene()
                     }
                 }

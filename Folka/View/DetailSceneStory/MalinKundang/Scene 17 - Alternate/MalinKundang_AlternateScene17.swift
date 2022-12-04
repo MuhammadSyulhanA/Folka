@@ -49,6 +49,8 @@ class MalinKundang_AlternateScene17: SKScene {
     
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
     var dubbingMalin: SKAction = SKAction.playSoundFileNamed("alt 17 1.m4a", waitForCompletion: false)
+    var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
+    var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
     override func didMove(to view: SKView) {
         // MARK: Default background white
@@ -192,7 +194,10 @@ class MalinKundang_AlternateScene17: SKScene {
     }
     
     func buttonNextScene() {
-        run(clickButton)
+        if stateMusic {
+            run(clickButton)
+        }
+        
         if buttonNext.action(forKey: "Button Next") == nil {
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
             state += 1
@@ -220,7 +225,9 @@ class MalinKundang_AlternateScene17: SKScene {
     }
     
     func buttonPreviousScene () {
-        run(clickButton)
+        if stateMusic {
+            run(clickButton)
+        }
         if buttonPrevious.action(forKey: "Previous Next") == nil {
             buttonPrevious.run((buttonPreviousAction!), withKey: "Button Previous")
             state -= 1
@@ -247,7 +254,9 @@ class MalinKundang_AlternateScene17: SKScene {
     }
     
     func buttonHomeScene() {
-        run(clickButton)
+        if stateMusic {
+            run(clickButton)
+        }
         if buttonHome.action(forKey: "Button Home") == nil {
             buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
             let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)

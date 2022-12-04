@@ -45,6 +45,8 @@ class MalinKundang_Scene19: SKScene {
     var dubbingMalin_1: SKAction = SKAction.playSoundFileNamed("19 1.m4a", waitForCompletion: false)
     var dubbingMalin_2: SKAction = SKAction.playSoundFileNamed("19 2.m4a", waitForCompletion: false)
     var soundEffect: SKAction = SKAction.playSoundFileNamed("soundMalinJadiBatu.mp3", waitForCompletion: false)
+    var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
+    var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
     override func didMove(to view: SKView) {
         let rect = CGRect(x: 0, y: 0, width: 100, height: 0)
@@ -174,7 +176,9 @@ class MalinKundang_Scene19: SKScene {
     }
     
     func buttonNextScene() {
-        run(clickButton)
+        if stateMusic {
+            run(clickButton)
+        }
         if buttonNext.action(forKey: "Button Next") == nil {
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
             state += 1
@@ -188,6 +192,7 @@ class MalinKundang_Scene19: SKScene {
         } else {
             state += 1
             if state == 2 {
+                self.removeAllChildren()
                 let prevScene = ChoiceEndingViewController(nibName: "ChoiceEndingViewController", bundle: nil)
                 self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             } else if state == 1 {
@@ -197,7 +202,9 @@ class MalinKundang_Scene19: SKScene {
     }
     
     func buttonPreviousScene() {
-        run(clickButton)
+        if stateMusic {
+            run(clickButton)
+        }
         if buttonPrevious.action(forKey: "Button Previous") == nil {
             buttonPrevious.run((buttonPreviousAction!), withKey: "Button Previous")
             state -= 1
@@ -225,7 +232,10 @@ class MalinKundang_Scene19: SKScene {
     }
     
     func buttonHomeScene() {
-        run(clickButton)
+        if stateMusic {
+            run(clickButton)
+        }
+        
         if buttonHome.action(forKey: "Button Home") == nil {
             buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
             let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)

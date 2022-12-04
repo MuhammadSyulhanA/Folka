@@ -121,6 +121,8 @@
 		A0E8B753293C5B1300C0299E /* NunitoHeavy-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0E8B741293C5B1300C0299E /* NunitoHeavy-Italic.ttf */; };
 		A0E8B758293C665400C0299E /* soundFailed.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0E8B756293C665400C0299E /* soundFailed.wav */; };
 		A0E8B759293C665400C0299E /* soundSucces.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0E8B757293C665400C0299E /* soundSucces.wav */; };
+		A0E8B75B293CF11C00C0299E /* MalinKundang_PuzzleBesar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E8B75A293CF11C00C0299E /* MalinKundang_PuzzleBesar.swift */; };
+		A0E8B75D293D30A300C0299E /* ChoicesEnding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E8B75C293D30A300C0299E /* ChoicesEnding.swift */; };
 		A0FB0EC8293AFF45007C21A0 /* ChoiceEndingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB0EC6293AFF45007C21A0 /* ChoiceEndingViewController.swift */; };
 		A0FB0EC9293AFF45007C21A0 /* ChoiceEndingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0FB0EC7293AFF45007C21A0 /* ChoiceEndingViewController.xib */; };
 		A0FB0ECC293AFF58007C21A0 /* EndingStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB0ECA293AFF58007C21A0 /* EndingStoryViewController.swift */; };
@@ -253,6 +255,8 @@
 		A0E8B741293C5B1300C0299E /* NunitoHeavy-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoHeavy-Italic.ttf"; sourceTree = "<group>"; };
 		A0E8B756293C665400C0299E /* soundFailed.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = soundFailed.wav; sourceTree = "<group>"; };
 		A0E8B757293C665400C0299E /* soundSucces.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = soundSucces.wav; sourceTree = "<group>"; };
+		A0E8B75A293CF11C00C0299E /* MalinKundang_PuzzleBesar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_PuzzleBesar.swift; sourceTree = "<group>"; };
+		A0E8B75C293D30A300C0299E /* ChoicesEnding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoicesEnding.swift; sourceTree = "<group>"; };
 		A0FB0EC6293AFF45007C21A0 /* ChoiceEndingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceEndingViewController.swift; sourceTree = "<group>"; };
 		A0FB0EC7293AFF45007C21A0 /* ChoiceEndingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChoiceEndingViewController.xib; sourceTree = "<group>"; };
 		A0FB0ECA293AFF58007C21A0 /* EndingStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingStoryViewController.swift; sourceTree = "<group>"; };
@@ -698,6 +702,7 @@
 				A0C353B9292A67D30082A071 /* MalinKundang_Puzzle2.swift */,
 				A01C55BB2937251500261695 /* ScenePilihGame_ViewController.swift */,
 				A01C55BF2937253000261695 /* ScenePilihGame_ViewController.xib */,
+				A0E8B75A293CF11C00C0299E /* MalinKundang_PuzzleBesar.swift */,
 			);
 			path = "Scene 5 - Games 2";
 			sourceTree = "<group>";
@@ -753,6 +758,7 @@
 				A0FB0EC7293AFF45007C21A0 /* ChoiceEndingViewController.xib */,
 				A0FB0ECA293AFF58007C21A0 /* EndingStoryViewController.swift */,
 				A0FB0ECB293AFF58007C21A0 /* EndingStoryViewController.xib */,
+				A0E8B75C293D30A300C0299E /* ChoicesEnding.swift */,
 			);
 			path = "Ending Scene";
 			sourceTree = "<group>";
@@ -897,6 +903,8 @@
 				69EADE882938E346000A31A3 /* MalinKundang_Scene13.swift in Sources */,
 				698EB8D02921E24E008C18BA /* GamePadSpace.swift in Sources */,
 				98F8DF29293B4DD300F8D70E /* MalinKundang_Scene15.swift in Sources */,
+				A0E8B75B293CF11C00C0299E /* MalinKundang_PuzzleBesar.swift in Sources */,
+				A0E8B75D293D30A300C0299E /* ChoicesEnding.swift in Sources */,
 				98886769292107240094AAAF /* MalinKundang_Games1.swift in Sources */,
 				69D14818292C84BD0067D1D9 /* CustomScrollView.swift in Sources */,
 				698EB8D62921E24E008C18BA /* GamePadleft.swift in Sources */,
@@ -1089,7 +1097,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 497V89NCL4;
+				DEVELOPMENT_TEAM = AL5KA4YBF7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Folka/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1117,7 +1125,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 497V89NCL4;
+				DEVELOPMENT_TEAM = AL5KA4YBF7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Folka/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

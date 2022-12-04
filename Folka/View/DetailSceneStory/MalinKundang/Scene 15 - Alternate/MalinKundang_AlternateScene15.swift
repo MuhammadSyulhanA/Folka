@@ -67,6 +67,8 @@ class MalinKundang_AlternateScene15: SKScene {
 //    var dubbingMalin_4: SKAction = SKAction.playSoundFileNamed("15 4.m4a", waitForCompletion: false)
 //    var dubbingMalin_5: SKAction = SKAction.playSoundFileNamed("15 5.m4a", waitForCompletion: false)
     var dubbingMalin_6: SKAction = SKAction.playSoundFileNamed("alt 15 6.m4a", waitForCompletion: false)
+    var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
+    var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
     override func didMove(to view: SKView) {
         // MARK: Default background white
@@ -236,7 +238,9 @@ class MalinKundang_AlternateScene15: SKScene {
     func buttonNextScene() {
         if buttonNext.action(forKey: "Button Next") == nil {
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
-            run(clickButton)
+            if stateMusic {
+                run(clickButton)
+            }
             state += 1
             print(state)
             if state == 6 {
@@ -277,6 +281,7 @@ class MalinKundang_AlternateScene15: SKScene {
                 if state == 1 {
                     characterMalin.isHidden = false
                     characterIbuMalinSay.isHidden = false
+                    characterIstriMalinSay.isHidden = true
                 } else if state == 2 {
                     characterMalin.isHidden = false
                     characterMalinSay.isHidden = true
@@ -300,13 +305,41 @@ class MalinKundang_AlternateScene15: SKScene {
     
     func buttonPreviousScene () {
         if buttonPrevious.action(forKey: "Previous Next") == nil {
-            buttonPrevious.run(SKAction.repeatForever(buttonPreviousAction!), withKey: "Button Previous")
-            run(clickButton)
+            buttonPrevious.run((buttonPreviousAction!), withKey: "Button Previous")
+            if stateMusic {
+                run(clickButton)
+            }
+            
             state -= 1
+
             print(state)
+            
             if state == -1 {
+                print("kesini")
                 let prevScene = ChoiceEndingViewController(nibName: "ChoiceEndingViewController", bundle: nil)
                 self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+            } else if state == 0 {
+                characterMalinSay.isHidden = false
+                characterIbuMalinSay.isHidden = true
+                characterIstriMalinSay.isHidden = true
+            } else if state == 1 {
+                characterMalin.isHidden = false
+                characterMalinSay.isHidden = true
+                characterIbuMalinSay.isHidden = false
+            } else if state == 2 {
+                characterMalin.isHidden = false
+                characterIbuMalinSay.isHidden = false
+                characterIstriMalinSay.isHidden = true
+            } else if state == 3 {
+                characterIbuMalinSay.isHidden = true
+                characterIstriMalinSay.isHidden = false
+            } else if state == 4 {
+                characterIstriMalinSay.isHidden = true
+                characterIbuMalinSay.isHidden = false
+            } else if state == 5 {
+                characterIbuMalinSay.isHidden = true
+                characterMalinSay.isHidden = false
+                characterIstriMalinSay.isHidden = false
             }
             else {
                 if state == 0 {
@@ -329,30 +362,37 @@ class MalinKundang_AlternateScene15: SKScene {
                 characterMalinSay = dataIntro[state].imageName
                 labelTextStory.text = dataIntro[state].textDialogue
             }
+            
         } else {
-            state -= 1
-            print(state)
+            print("sini", state)
             if state == -1 {
+                print("kesini")
                 let prevScene = ChoiceEndingViewController(nibName: "ChoiceEndingViewController", bundle: nil)
                 self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
-            }else {
-                if state == 0 {
-                    characterMalinSay.isHidden = true
-                } else if state == 1 {
-                    characterMalinSay.isHidden = false
-                } else if state == 2 {
-                    characterMalinSay.isHidden = true
-                    characterIbuMalinSay.isHidden = false
-                } else if state == 3 {
-                    characterIbuMalinSay.isHidden = true
-                    characterIstriMalinSay.isHidden = false
-                } else if state == 4 {
-                    characterMalinSay.isHidden = false
-                    characterIstriMalinSay.isHidden = true
-                } else if state == 5 {
-                    characterMalinSay.isHidden = false
-                    characterIstriMalinSay.isHidden = true
-                }
+            } else if state == 0 {
+                characterMalinSay.isHidden = false
+                characterIbuMalinSay.isHidden = true
+                characterIstriMalinSay.isHidden = true
+            } else if state == 1 {
+                characterMalin.isHidden = false
+                characterMalinSay.isHidden = true
+                characterIbuMalinSay.isHidden = false
+            } else if state == 2 {
+                characterMalin.isHidden = false
+                characterIbuMalinSay.isHidden = false
+            } else if state == 3 {
+                characterIbuMalinSay.isHidden = true
+                characterIstriMalinSay.isHidden = false
+            } else if state == 4 {
+                characterIstriMalinSay.isHidden = true
+                characterIbuMalinSay.isHidden = false
+            } else if state == 5 {
+                characterIbuMalinSay.isHidden = true
+                characterMalinSay.isHidden = false
+                characterIstriMalinSay.isHidden = false
+            }
+            
+            if state > 0 {
                 characterMalinSay = dataIntro[state].imageName
                 labelTextStory.text = dataIntro[state].textDialogue
             }
@@ -362,7 +402,9 @@ class MalinKundang_AlternateScene15: SKScene {
     func buttonHomeScene() {
         if buttonHome.action(forKey: "Button Home") == nil {
             buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
-            run(clickButton)
+            if stateMusic {
+                run(clickButton)
+            }
             let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
             self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             

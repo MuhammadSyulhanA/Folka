@@ -66,6 +66,8 @@ class MalinKundang_Scene15: SKScene {
 //    var dubbingMalin_4: SKAction = SKAction.playSoundFileNamed("15 4.m4a", waitForCompletion: false)
     var dubbingMalin_5: SKAction = SKAction.playSoundFileNamed("15 5.m4a", waitForCompletion: false)
     var dubbingMalin_6: SKAction = SKAction.playSoundFileNamed("15 6.m4a", waitForCompletion: false)
+    var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
+    var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
     override func didMove(to view: SKView) {
         // MARK: Default background white
@@ -232,7 +234,10 @@ class MalinKundang_Scene15: SKScene {
     }
     
     func buttonNextScene() {
-        run(clickButton)
+        if stateMusic {
+            run(clickButton)
+        }
+        
         if buttonNext.action(forKey: "Button Next") == nil {
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
             state += 1
@@ -307,7 +312,9 @@ class MalinKundang_Scene15: SKScene {
     }
     
     func buttonPreviousScene () {
-        run(clickButton)
+        if stateMusic {
+            run(clickButton)
+        }
         if buttonPrevious.action(forKey: "Previous Next") == nil {
             buttonPrevious.run((buttonPreviousAction!), withKey: "Button Previous")
             state -= 1
@@ -373,9 +380,11 @@ class MalinKundang_Scene15: SKScene {
     }
     
     func buttonHomeScene() {
-        run(clickButton)
+        if stateMusic {
+            run(clickButton)
+        }
         if buttonHome.action(forKey: "Button Home") == nil {
-            buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
+            buttonHome.run((buttonHomeAction!), withKey: "Button Home")
             let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
             self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             
