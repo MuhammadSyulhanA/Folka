@@ -43,6 +43,8 @@
 		98F8DF2F293B831200F8D70E /* MalinKundang_Scene18.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8DF2E293B831200F8D70E /* MalinKundang_Scene18.swift */; };
 		98F8DF32293B848300F8D70E /* MalinKundang_Scene19.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8DF31293B848300F8D70E /* MalinKundang_Scene19.swift */; };
 		98F8DF35293B9AA700F8D70E /* MalinKundang_AlternateScene15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8DF34293B9AA600F8D70E /* MalinKundang_AlternateScene15.swift */; };
+		98F8DF39293CA66F00F8D70E /* wave.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF37293CA66F00F8D70E /* wave.mp3 */; };
+		98F8DF3A293CA67000F8D70E /* rainThunder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF38293CA66F00F8D70E /* rainThunder.mp3 */; };
 		A0072D96292BCD4F00D32023 /* MalinKundang_Scene6.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0072D95292BCD4E00D32023 /* MalinKundang_Scene6.swift */; };
 		A018EA09292773BF00FE7451 /* MalinKundang_Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018EA08292773BF00FE7451 /* MalinKundang_Puzzle.swift */; };
 		A01B3DB1293B17CC00BBDE24 /* MalinKundang_AlternateScene17.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01B3DB0293B17CC00BBDE24 /* MalinKundang_AlternateScene17.swift */; };
@@ -141,6 +143,8 @@
 		98F8DF2E293B831200F8D70E /* MalinKundang_Scene18.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene18.swift; sourceTree = "<group>"; };
 		98F8DF31293B848300F8D70E /* MalinKundang_Scene19.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene19.swift; sourceTree = "<group>"; };
 		98F8DF34293B9AA600F8D70E /* MalinKundang_AlternateScene15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_AlternateScene15.swift; sourceTree = "<group>"; };
+		98F8DF37293CA66F00F8D70E /* wave.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wave.mp3; sourceTree = "<group>"; };
+		98F8DF38293CA66F00F8D70E /* rainThunder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rainThunder.mp3; sourceTree = "<group>"; };
 		A0072D95292BCD4E00D32023 /* MalinKundang_Scene6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene6.swift; sourceTree = "<group>"; };
 		A018EA08292773BF00FE7451 /* MalinKundang_Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Puzzle.swift; sourceTree = "<group>"; };
 		A01B3DB0293B17CC00BBDE24 /* MalinKundang_AlternateScene17.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_AlternateScene17.swift; sourceTree = "<group>"; };
@@ -401,6 +405,7 @@
 		69EADE8A293BA399000A31A3 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				98F8DF36293CA63B00F8D70E /* Background Music */,
 				69EADE8B293BA3D7000A31A3 /* Effect */,
 			);
 			path = Sound;
@@ -537,6 +542,15 @@
 				98F8DF34293B9AA600F8D70E /* MalinKundang_AlternateScene15.swift */,
 			);
 			path = "Scene 15 - Alternate";
+			sourceTree = "<group>";
+		};
+		98F8DF36293CA63B00F8D70E /* Background Music */ = {
+			isa = PBXGroup;
+			children = (
+				98F8DF38293CA66F00F8D70E /* rainThunder.mp3 */,
+				98F8DF37293CA66F00F8D70E /* wave.mp3 */,
+			);
+			path = "Background Music";
 			sourceTree = "<group>";
 		};
 		A0072D94292BBAA800D32023 /* Scene 6 */ = {
@@ -698,11 +712,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A01B3DB9293B8DFB00BBDE24 /* HomePageViewController.xib in Resources */,
+				98F8DF3A293CA67000F8D70E /* rainThunder.mp3 in Resources */,
 				A08B5DCA291FD06C0021FBAF /* ProfileOnboard_ViewController.xib in Resources */,
 				A0E8B751293C5B1300C0299E /* Nunito-Bold.ttf in Resources */,
 				69C5500C291A0C5D00E1CEF7 /* LaunchScreen.storyboard in Resources */,
 				A0E8B759293C665400C0299E /* soundSucces.wav in Resources */,
 				A0E8B744293C5B1300C0299E /* Nunito-ExtraBold.ttf in Resources */,
+				98F8DF39293CA66F00F8D70E /* wave.mp3 in Resources */,
 				A0E8B748293C5B1300C0299E /* Nunito-Light.ttf in Resources */,
 				A0E8B747293C5B1300C0299E /* Nunito-LightItalic.ttf in Resources */,
 				A0E8B74B293C5B1300C0299E /* Nunito-ExtraLightItalic.ttf in Resources */,

@@ -30,7 +30,7 @@ class MalinKundang_Scene18: SKScene {
     var buttonPreviousAction: SKAction?
     
     let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
-    var labelTextStory = SKLabelNode(fontNamed: "McLaren")
+    var labelTextStory = SKLabelNode(fontNamed: "Nunito")
     
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
 

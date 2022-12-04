@@ -56,7 +56,7 @@ class DetailPageViewController: UIViewController {
     UIView.animate(withDuration: 0.3, animations: { () -> Void in
       sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
     })
-      let nextMainController = ScenePilihGame_ViewController()
+      let nextMainController = MalinKundang_ViewController()
       present(nextMainController, animated: true, completion: nil)
   }
     

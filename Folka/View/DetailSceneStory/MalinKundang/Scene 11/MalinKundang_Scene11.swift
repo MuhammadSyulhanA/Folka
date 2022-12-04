@@ -40,7 +40,7 @@ class MalinKundang_Scene11: SKScene {
     var buttonPreviousAction: SKAction?
     
     let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
-    var labelTextStory = SKLabelNode(fontNamed: "McLaren")
+    var labelTextStory = SKLabelNode(fontNamed: "Nunito")
     var dataIntro: [Script11] = []
     var state = 0
     

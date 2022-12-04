@@ -19,7 +19,7 @@ class MalinKundang_Scene9: SKScene {
     let nonCharacterTree = SKSpriteNode(imageNamed: "tree1")
     var animationTree: SKAction?
     
-    var labelTextStory = SKLabelNode(fontNamed: "McLaren")
+    var labelTextStory = SKLabelNode(fontNamed: "Nunito")
     
     override func didMove(to view: SKView) {
         let rect = CGRect(x: 0, y: 0, width: 200, height: 0)

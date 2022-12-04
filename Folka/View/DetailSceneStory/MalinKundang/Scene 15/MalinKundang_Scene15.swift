@@ -54,7 +54,7 @@ class MalinKundang_Scene15: SKScene {
     var buttonPreviousAction: SKAction?
     
     let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
-    var labelTextStory = SKLabelNode(fontNamed: "McLaren")
+    var labelTextStory = SKLabelNode(fontNamed: "Nunito")
 //    var labelTextStory: SKLabelHorizontalAlignmentMode
     var dataIntro: [Script15] = []
     var state = 0
