@@ -8,6 +8,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Nunito-Black.ttf">
+            <string>Nunito-Black</string>
+        </array>
+        <array key="Nunito-SemiBold.ttf">
+            <string>Nunito-SemiBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChoiceEndingViewController" customModule="Folka" customModuleProvider="target">
             <connections>
@@ -23,33 +31,33 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tamat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gj4-qy-rgS">
-                    <rect key="frame" x="78" y="19.999999999999996" width="674" height="33.666666666666657"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                    <rect key="frame" x="78" y="20.000000000000004" width="674" height="38.333333333333343"/>
+                    <fontDescription key="fontDescription" name="Nunito-Black" family="Nunito" pointSize="28"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageAlternatifEnding" translatesAutoresizingMaskIntoConstraints="NO" id="6Pd-iF-CqF">
-                    <rect key="frame" x="301" y="63.666666666666657" width="250" height="160"/>
+                    <rect key="frame" x="301" y="68.333333333333314" width="250" height="160"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="160" id="AgG-sx-gJi"/>
                         <constraint firstAttribute="width" constant="250" id="par-Zt-ZbE"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kalau kamu jadi Malin, apa yang akan kamu lakukan?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2n-XO-0Ld">
-                    <rect key="frame" x="20" y="233.66666666666666" width="812" height="23.999999999999972"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <rect key="frame" x="20" y="238.33333333333334" width="812" height="27.333333333333343"/>
+                    <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="20"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttonMintaMaaf" translatesAutoresizingMaskIntoConstraints="NO" id="MOV-r2-TIc">
-                    <rect key="frame" x="128" y="284" width="250" height="50"/>
+                    <rect key="frame" x="128" y="292" width="250" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="YQw-pC-Dw0"/>
                         <constraint firstAttribute="width" constant="250" id="ixc-t4-a2q"/>
                     </constraints>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttonMenyambut" translatesAutoresizingMaskIntoConstraints="NO" id="AiW-sn-sSR">
-                    <rect key="frame" x="501" y="284" width="250" height="50"/>
+                    <rect key="frame" x="501" y="292" width="250" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="KWs-tq-H7Q"/>
                         <constraint firstAttribute="width" constant="250" id="VG3-3g-xRi"/>

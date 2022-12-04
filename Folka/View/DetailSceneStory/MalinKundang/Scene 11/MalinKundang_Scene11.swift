@@ -31,7 +31,6 @@ class MalinKundang_Scene11: SKScene {
     
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
     var buttonHomeAction: SKAction?
-//    let buttonSound = SKSpriteNode(imageNamed: "buttonSound")
     
     let buttonNext = SKSpriteNode(imageNamed: "buttonNext")
     var buttonNextAction: SKAction?
@@ -40,7 +39,7 @@ class MalinKundang_Scene11: SKScene {
     var buttonPreviousAction: SKAction?
     
     let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
-    var labelTextStory = SKLabelNode(fontNamed: "McLaren")
+    var labelTextStory = SKLabelNode(fontNamed: "Nunito")
     var dataIntro: [Script11] = []
     var state = 0
     
@@ -110,13 +109,6 @@ class MalinKundang_Scene11: SKScene {
         buttonHome.zPosition = +4
         addChild(buttonHome)
         
-//        buttonSound.name = "buttonSound"
-//        buttonSound.size = CGSize(width: 170, height: 170)
-//        buttonSound.position = CGPoint(x: size.width/1.07, y: size.height/1.38)
-//        buttonSound.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-//        buttonSound.zPosition = +4
-//        addChild(buttonSound)
-        
         buttonNext.name = "buttonNext"
         buttonNext.size = CGSize(width: 150, height: 150)
         buttonNext.position = CGPoint(x: size.width/1.07, y: size.height/3.5)
@@ -170,6 +162,7 @@ class MalinKundang_Scene11: SKScene {
         for index in 1...2 {
             textures4.append(SKTexture(imageNamed: "nahkodaScene11_\(index)"))
         }
+      
         let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
         let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
         

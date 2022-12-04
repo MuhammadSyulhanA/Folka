@@ -42,7 +42,7 @@ class MalinKundang_Scene4: SKScene {
     var buttonHomeAction: SKAction?
     
     let textLayout = SKSpriteNode(imageNamed: "textLayout")
-    var textStory = SKLabelNode(fontNamed: "McLaren")
+    var textStory = SKLabelNode(fontNamed: "Nunito")
   
     var dataIntro: [Dialogue] = []
     var state = 0
@@ -177,21 +177,23 @@ class MalinKundang_Scene4: SKScene {
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
             state += 1
             print(state)
-            if state < dataIntro.count{
+            if state == 1 {
                 characterMalinSay = dataIntro[state].imageName
                 characterMalinSay.isHidden = false
                 textStory.text = dataIntro[state].textDialogue
-            }
-        } else {
-            state += 1
-            print(state)
-            if state < dataIntro.count {
+            } else if state == 2 {
                 characterIbuMalinSay = dataIntro[state].imageName
                 characterIbuMalinSay.isHidden = false
                 characterMalinSay.isHidden = true
                 textStory.text = dataIntro[state].textDialogue
+            } else if state == 3 {
+                let prevScene = ScenePilihGame_ViewController(nibName: "ScenePilihGame_ViewController", bundle: nil)
+                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             }
-            else if state == 3 {
+        } else {
+            state += 1
+            print(state)
+            if state == 3 {
                 let prevScene = ScenePilihGame_ViewController(nibName: "ScenePilihGame_ViewController", bundle: nil)
                 self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             }
@@ -259,7 +261,7 @@ class MalinKundang_Scene4: SKScene {
                 if node.name == "buttonNext" {
                     buttonNextScene()
                 }
-            }
+            } 
         }
         if atPoint((touch?.location(in: self))!).name == buttonPrevious.name {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in

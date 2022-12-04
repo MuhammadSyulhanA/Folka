@@ -7,6 +7,7 @@
 
 import UIKit
 import SpriteKit
+import AVFoundation
 
 class ScenePilihGame_ViewController: UIViewController {
   
@@ -15,6 +16,7 @@ class ScenePilihGame_ViewController: UIViewController {
   @IBOutlet weak var objectKapalDua: UIImageView!
   @IBOutlet weak var objectKapalSatu: UIImageView!
   @IBOutlet weak var backgroundKapalSatu: UIImageView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     assignbackground()
@@ -38,35 +40,19 @@ class ScenePilihGame_ViewController: UIViewController {
   }
   
   @objc func tapPilihKapalSatu(sender: UITapGestureRecognizer){
+    Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
     print("Pilih kapal satu")
     state = 1
     backgroundKapalSatu.image = UIImage(named: "backgroundKayuMilih")
     backgroundKapalDua.image = UIImage(named: "backgroundKayu")
-//    objectKapalSatu.frame.size = CGSize(width: 100, height: 100)
-////    UIView.animate(withDuration: 0.5){
-//      self.objectKapalSatu.frame.size = CGSize(width: 90, height: 90)
-////    }
-//    backgroundKapalSatu.frame.size = CGSize(width: 100, height: 100)
-////    UIView.animate(withDuration: 0.5){
-//      self.backgroundKapalSatu.frame.size = CGSize(width: 90, height: 90)
-////    }
-    
   }
   
   @objc func tapPilihKapalDua(sender: UITapGestureRecognizer){
+    Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
     print("Pilih kapal dua")
     state = 2
     backgroundKapalSatu.image = UIImage(named: "backgroundKayu")
     backgroundKapalDua.image = UIImage(named: "backgroundKayuMilih")
-//    objectKapalDua.frame.size = CGSize(width: 100, height: 100)
-////    UIView.animate(withDuration: 0.5){
-//      self.objectKapalDua.frame.size = CGSize(width: 90, height: 90)
-////    }
-//    backgroundKapalDua.frame.size = CGSize(width: 100, height: 100)
-////    UIView.animate(withDuration: 0.5){
-//      self.backgroundKapalDua.frame.size = CGSize(width: 90, height: 90)
-////    }
-    
   }
   
   
@@ -84,10 +70,6 @@ class ScenePilihGame_ViewController: UIViewController {
   
   @IBAction func buttonMulai(_ sender: UIButton) {
     if (state == 1){
-      sender.transform = CGAffineTransform.init(scaleX: 0.6, y: 0.6)
-      UIView.animate(withDuration: 0.3, animations: { () -> Void in
-        sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
-      })
       view = SKView(frame: view.bounds)
       if let view = self.view as! SKView? {
         let scene = MalinKundang_Puzzle2(size: CGSize(width: 2048, height: 1536))
@@ -97,6 +79,11 @@ class ScenePilihGame_ViewController: UIViewController {
         view.ignoresSiblingOrder = true
         view.showsFPS = true
         view.showsNodeCount = true
+        Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
+        sender.transform = CGAffineTransform.init(scaleX: 0.6, y: 0.6)
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+          sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+        })
       }
     } else if (state == 2){
       view = SKView(frame: view.bounds)
@@ -108,6 +95,11 @@ class ScenePilihGame_ViewController: UIViewController {
         view.ignoresSiblingOrder = true
         view.showsFPS = true
         view.showsNodeCount = true
+        Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
+        sender.transform = CGAffineTransform.init(scaleX: 0.6, y: 0.6)
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+          sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+        })
       }
     }
   }

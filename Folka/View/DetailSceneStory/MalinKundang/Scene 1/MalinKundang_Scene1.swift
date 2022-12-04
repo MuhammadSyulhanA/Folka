@@ -44,10 +44,11 @@ class MalinKundang_Scene1: SKScene {
     var buttonNextAction: SKAction?
         
     let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
-    var labelTextStory = SKLabelNode(fontNamed: "McLaren")
+    var labelTextStory = SKLabelNode(fontNamed: "Nunito")
     var dataIntro: [Intro] = []
     var state = 0
     
+    var backgroundMusic: SKAction = SKAction.playSoundFileNamed("wave", waitForCompletion: true)
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
     
     override func didMove(to view: SKView) {
@@ -147,6 +148,8 @@ class MalinKundang_Scene1: SKScene {
         labelTextStory.position = CGPoint(x: size.width/2, y: size.height/4.25)
         labelTextStory.zPosition = +4.5
         addChild(labelTextStory)
+        
+        run(backgroundMusic)
         
     }
     

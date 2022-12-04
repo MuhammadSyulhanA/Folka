@@ -8,8 +8,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="McLaren-Regular.ttf">
-            <string>McLaren-Regular</string>
+        <array key="Nunito-ExtraBold.ttf">
+            <string>Nunito-ExtraBold</string>
+        </array>
+        <array key="Nunito-SemiBold.ttf">
+            <string>Nunito-SemiBold</string>
         </array>
     </customFonts>
     <objects>
@@ -29,29 +32,29 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="f5L-i8-M99">
-                    <rect key="frame" x="59.999999999999986" y="107.00000000000001" width="246.66666666666663" height="57.666666666666671"/>
+                    <rect key="frame" x="60" y="107" width="219" height="55"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Malin Kundang" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPW-Wg-mbW">
-                            <rect key="frame" x="0.0" y="0.0" width="209" height="40.333333333333336"/>
-                            <fontDescription key="fontDescription" name="McLaren-Regular" family="McLaren" pointSize="28"/>
+                            <rect key="frame" x="0.0" y="0.0" width="200.33333333333334" height="38.333333333333336"/>
+                            <fontDescription key="fontDescription" name="Nunito-ExtraBold" family="Nunito" pointSize="28"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cerita ini berasal dari Padang, Indonesia" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0QW-uk-qKo">
-                            <rect key="frame" x="0.0" y="40.333333333333343" width="246.66666666666666" height="17.333333333333329"/>
-                            <fontDescription key="fontDescription" name="McLaren-Regular" family="McLaren" pointSize="12"/>
+                            <rect key="frame" x="0.0" y="38.333333333333343" width="219" height="16.666666666666671"/>
+                            <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="12"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2T-WK-96B">
-                    <rect key="frame" x="60" y="184.66666666666666" width="312" height="114.99999999999997"/>
+                    <rect key="frame" x="60" y="182" width="312" height="115"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="115" id="lrK-dc-NyI"/>
                         <constraint firstAttribute="width" constant="312" id="nNg-p0-ijb"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="McLaren-Regular" family="McLaren" pointSize="14"/>
+                    <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -63,7 +66,7 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTE-fy-hSv">
-                    <rect key="frame" x="50" y="309.66666666666669" width="75" height="34.333333333333314"/>
+                    <rect key="frame" x="50" y="307" width="75" height="34.333333333333314"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
                     <connections>

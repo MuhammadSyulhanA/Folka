@@ -7,10 +7,11 @@
 
 import SpriteKit
 import GameplayKit
+import UIKit
 
 struct AlternateScript15 {
-    var imageName: SKSpriteNode!
-    var textDialogue: String!
+  var imageName: SKSpriteNode!
+  var textDialogue: String!
 }
 
 class MalinKundang_AlternateScene15: SKScene {
@@ -412,3 +413,4 @@ class MalinKundang_AlternateScene15: SKScene {
         startTreeAnimation()
     }
 }
+

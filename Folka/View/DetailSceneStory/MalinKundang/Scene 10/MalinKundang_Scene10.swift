@@ -43,7 +43,7 @@ class MalinKundang_Scene10: SKScene {
     var buttonPreviousAction: SKAction?
     
     let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
-    var labelTextStory = SKLabelNode(fontNamed: "McLaren")
+    var labelTextStory = SKLabelNode(fontNamed: "Nunito")
     var dataIntro: [Script10] = []
     var state = 0
     
@@ -197,8 +197,13 @@ class MalinKundang_Scene10: SKScene {
         if buttonNext.action(forKey: "Button Next") == nil {
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
             state += 1
-            if state < dataIntro.count{
+            if state == 1 {
                 labelTextStory.text = dataIntro[state].text
+            } else if state == 2 {
+                let reveal = SKTransition.reveal(with: .left, duration: 1)
+                let newScene = MalinKundang_Scene11(size: CGSize(width: 2050, height: 1536))
+                newScene.scaleMode = .aspectFill
+                scene?.view!.presentScene(newScene, transition: reveal)
             }
         } else {
             state += 1
@@ -218,7 +223,7 @@ class MalinKundang_Scene10: SKScene {
         if buttonPrevious.action(forKey: "Button Previous") == nil {
             buttonPrevious.run((buttonPreviousAction!), withKey: "Button Previous")
             let reveal = SKTransition.reveal(with: .right, duration: 1)
-            let prevScene = MalinKundang_Scene9(size: CGSize(width: 2048, height: 1536))
+            let prevScene = MalinKundang_Scene8(size: CGSize(width: 2048, height: 1536))
             prevScene.scaleMode = .aspectFill
             scene?.view!.presentScene(prevScene, transition: reveal)
         }

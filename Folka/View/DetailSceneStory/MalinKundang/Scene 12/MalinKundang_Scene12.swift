@@ -25,10 +25,9 @@ class MalinKundang_Scene12: SKScene {
     
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
     var buttonHomeAction: SKAction?
-
-//    let buttonSound = SKSpriteNode(imageNamed: "buttonSound")
     
-    var labelTextStory = SKLabelNode(fontNamed: "McLaren")
+    let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
+    var labelTextStory = SKLabelNode(fontNamed: "Nunito")
     
     //MARK: SOUND
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
@@ -100,14 +99,22 @@ class MalinKundang_Scene12: SKScene {
         buttonHome.zPosition = 2.5
         addChild(buttonHome)
         
-//        buttonSound.name = "buttonSound"
-//        buttonSound.size = CGSize(width: 170, height: 170)
-//        buttonSound.position = CGPoint(x: size.width/1.07, y: size.height/1.38)
-//        buttonSound.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-//        buttonSound.zPosition = 2.5
-//        addChild(buttonSound)
+        nonCharacterTextLayout.size = CGSize(width: 1400, height: 230)
+        nonCharacterTextLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
+        nonCharacterTextLayout.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterTextLayout.zPosition = +4
+        addChild(nonCharacterTextLayout)
         
-//
+        labelTextStory.text = "Keesokan harinya, Malin dan istrinya berlayar ke pulau asal Malin."
+        labelTextStory.fontColor = SKColor.white
+        labelTextStory.fontSize = 42
+        labelTextStory.lineBreakMode = NSLineBreakMode.byWordWrapping
+        labelTextStory.numberOfLines = 0
+        labelTextStory.preferredMaxLayoutWidth = 1300
+        labelTextStory.position = CGPoint(x: size.width/2, y: size.height/4.25)
+        labelTextStory.zPosition = +4.5
+        addChild(labelTextStory)
+        
         run(SKAction.repeatForever(SKAction.sequence([SKAction.run(moveCloud), SKAction.wait(forDuration: 7.5)])))
 
     }

@@ -19,7 +19,7 @@ class ProfileOnboard_ViewController: UIViewController, UITextFieldDelegate {
     super.viewDidLoad()
     
     buttonSelesai.setTitle("", for: .normal)
-    customButton = UIImage(named: "buttonProfile")
+    customButton = UIImage(named: "buttonSelesai")
     buttonSelesai.setImage(customButton?.withRenderingMode(.alwaysOriginal), for: .normal)
     
     assignbackground()
