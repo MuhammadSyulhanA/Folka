@@ -39,6 +39,7 @@ class MalinKundang_Scene14: SKScene {
     var labelTextStory = SKLabelNode(fontNamed: "Nunito")
 
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    var dubbingMalin: SKAction = SKAction.playSoundFileNamed("14.m4a", waitForCompletion: false)
     
     override init(size: CGSize){
         var texturesIbuMalin: [SKTexture] = []
@@ -150,6 +151,7 @@ class MalinKundang_Scene14: SKScene {
         labelTextStory.zPosition = +4.5
         addChild(labelTextStory)
 
+        run(dubbingMalin)
     }
     
     func startIbuMalinAnimation() {

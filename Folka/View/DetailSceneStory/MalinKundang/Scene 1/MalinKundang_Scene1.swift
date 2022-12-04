@@ -45,7 +45,9 @@ class MalinKundang_Scene1: SKScene {
     var dataIntro: [Intro] = []
     var state = 0
     
-    var backgroundMusic: SKAction = SKAction.playSoundFileNamed("wave", waitForCompletion: true)
+    var backgroundMusic: SKAction = SKAction.playSoundFileNamed("soundOmbak", waitForCompletion: false)
+    var dubbingMalin_1: SKAction = SKAction.playSoundFileNamed("01 1.m4a", waitForCompletion: false)
+    var dubbingMalin_2: SKAction = SKAction.playSoundFileNamed("01 2.m4a", waitForCompletion: false)
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
     
     override func didMove(to view: SKView) {
@@ -144,7 +146,8 @@ class MalinKundang_Scene1: SKScene {
         labelTextStory.zPosition = +4.5
         addChild(labelTextStory)
         
-        run(backgroundMusic)
+//        run(backgroundMusic)
+        run(dubbingMalin_1)
         
     }
     
@@ -194,6 +197,7 @@ class MalinKundang_Scene1: SKScene {
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
             state += 1
             if state == 1 {
+                run(dubbingMalin_2)
                 labelTextStory.text = dataIntro[state].text
             } else if state == 2 {
                 let reveal = SKTransition.reveal(with: .left, duration: 1)

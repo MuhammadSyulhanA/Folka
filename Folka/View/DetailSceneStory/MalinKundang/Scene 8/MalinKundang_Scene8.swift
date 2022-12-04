@@ -32,6 +32,7 @@ class MalinKundang_Scene8: SKScene {
     var labelTextStory = SKLabelNode(fontNamed: "Nunito")
     
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    var dubbingMalin: SKAction = SKAction.playSoundFileNamed("08.m4a", waitForCompletion: false)
     
     override init(size: CGSize) {
         let maxAspectRatio:CGFloat = 10.0/3.0
@@ -109,17 +110,18 @@ class MalinKundang_Scene8: SKScene {
         textLayout.zPosition = 2.5
         addChild(textLayout)
         
-        labelTextStory.text = "Di sana ia menjadi pedagang kaya dan menikahi gadis cantik anak saudagar di desa itu."
+        labelTextStory.text = "Malin juga menikahi gadis cantik anak saudagar di desa itu."
         labelTextStory.fontColor = SKColor.white
         labelTextStory.fontSize = 42
         labelTextStory.lineBreakMode = NSLineBreakMode.byWordWrapping
         labelTextStory.numberOfLines = 0
         labelTextStory.preferredMaxLayoutWidth = 1250
-        labelTextStory.position = CGPoint(x: size.width/2, y: size.height/4.25)
+        labelTextStory.position = CGPoint(x: size.width/2, y: size.height/4.0)
         labelTextStory.zPosition = 2.75
         addChild(labelTextStory)
         
         run(SKAction.repeatForever(SKAction.sequence([SKAction.run(flowersPetalsRainy), SKAction.wait(forDuration: 1.0)])))
+        run(dubbingMalin)
 
     }
     

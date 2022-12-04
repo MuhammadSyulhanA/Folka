@@ -32,6 +32,7 @@ class MalinKundang_Scene6: SKScene {
     var buttonPreviousAction: SKAction?
     
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    var soundEffect: SKAction = SKAction.playSoundFileNamed("soundKapalBerangkat.wav", waitForCompletion: false)
     
     override func didMove(to view: SKView) {
         
@@ -85,6 +86,8 @@ class MalinKundang_Scene6: SKScene {
         buttonHome.zPosition = 4
         addChild(buttonHome)
         
+        run(soundEffect)
+
 
     }
     

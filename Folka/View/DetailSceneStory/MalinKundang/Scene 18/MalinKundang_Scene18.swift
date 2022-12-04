@@ -33,6 +33,7 @@ class MalinKundang_Scene18: SKScene {
     var labelTextStory = SKLabelNode(fontNamed: "Nunito")
     
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    var dubbingMalin: SKAction = SKAction.playSoundFileNamed("18.m4a", waitForCompletion: false)
 
     override func didMove(to view: SKView) {
         let rect = CGRect(x: 0, y: 0, width: 100, height: 0)
@@ -103,6 +104,8 @@ class MalinKundang_Scene18: SKScene {
         labelTextStory.position = CGPoint(x: size.width/2, y: size.height/3.8)
         labelTextStory.zPosition = 3.5
         addChild(labelTextStory)
+        
+        run(dubbingMalin)
         
     }
     

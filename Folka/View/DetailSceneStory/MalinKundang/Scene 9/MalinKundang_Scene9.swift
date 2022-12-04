@@ -21,6 +21,8 @@ class MalinKundang_Scene9: SKScene {
     
     var labelTextStory = SKLabelNode(fontNamed: "Nunito")
     
+    var dubbingMalin: SKAction = SKAction.playSoundFileNamed("09.m4a", waitForCompletion: false)
+    
     override func didMove(to view: SKView) {
         let rect = CGRect(x: 0, y: 0, width: 200, height: 0)
         let path = CGPath(rect: rect, transform: nil)
@@ -69,6 +71,8 @@ class MalinKundang_Scene9: SKScene {
         nonCharacterTree.zPosition = 1.5
         nonCharacterTree.zRotation = CGFloat.pi / -23
         addChild(nonCharacterTree)
+        
+        run(dubbingMalin)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){
             let reveal = SKTransition.reveal(with: .left, duration: 1)

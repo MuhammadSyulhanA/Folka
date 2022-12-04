@@ -60,6 +60,12 @@ class MalinKundang_Scene15: SKScene {
     var state = 0
     
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    var dubbingMalin_1: SKAction = SKAction.playSoundFileNamed("15  1.m4a", waitForCompletion: false)
+    var dubbingMalin_2: SKAction = SKAction.playSoundFileNamed("15 2.m4a", waitForCompletion: false)
+//    var dubbingMalin_3: SKAction = SKAction.playSoundFileNamed("15 3.m4a", waitForCompletion: false)
+//    var dubbingMalin_4: SKAction = SKAction.playSoundFileNamed("15 4.m4a", waitForCompletion: false)
+    var dubbingMalin_5: SKAction = SKAction.playSoundFileNamed("15 5.m4a", waitForCompletion: false)
+    var dubbingMalin_6: SKAction = SKAction.playSoundFileNamed("15 6.m4a", waitForCompletion: false)
     
     override func didMove(to view: SKView) {
         // MARK: Default background white
@@ -194,6 +200,8 @@ class MalinKundang_Scene15: SKScene {
         labelTextStory.position = CGPoint(x: size.width/2, y: size.height/3.8)
         labelTextStory.zPosition = 3.5
         addChild(labelTextStory)
+        
+        run(dubbingMalin_1)
     }
     
     override init(size: CGSize){
@@ -237,6 +245,7 @@ class MalinKundang_Scene15: SKScene {
             }
             else {
                 if state == 1 {
+                    run(dubbingMalin_2)
                     characterMalinSay.isHidden = false
                 } else if state == 2 {
                     characterMalinSay.isHidden = true
@@ -245,9 +254,11 @@ class MalinKundang_Scene15: SKScene {
                     characterIbuMalinSay.isHidden = true
                     characterIstriMalinSay.isHidden = false
                 } else if state == 4 {
+                    run(dubbingMalin_5)
                     characterIstriMalinSay.isHidden = true
                     characterMalinSay.isHidden = false
                 } else if state == 5 {
+                    run(dubbingMalin_6)
                     characterMalinSay.isHidden = false
                     characterIstriMalinSay.isHidden = true
                 } else if state == 6 {

@@ -48,6 +48,8 @@ class MalinKundang_Scene4: SKScene {
     var state = 0
     
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    var dubbingMalin_1: SKAction = SKAction.playSoundFileNamed("04 1.m4a", waitForCompletion: false)
+    var dubbingMalin_2: SKAction = SKAction.playSoundFileNamed("04 2.m4a", waitForCompletion: false)
     
     override func didMove(to view: SKView) {
         
@@ -148,6 +150,7 @@ class MalinKundang_Scene4: SKScene {
         textStory.zPosition = 3.5
         addChild(textStory)
         
+        run(dubbingMalin_1)
         
     }
     
@@ -173,6 +176,7 @@ class MalinKundang_Scene4: SKScene {
             state += 1
             print(state)
             if state == 1 {
+                run(dubbingMalin_2)
                 characterMalinSay = dataIntro[state].imageName
                 characterMalinSay.isHidden = false
                 textStory.text = dataIntro[state].textDialogue

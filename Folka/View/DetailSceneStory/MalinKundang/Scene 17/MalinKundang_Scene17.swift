@@ -47,6 +47,8 @@ class MalinKundang_Scene17: SKScene {
     
     var backgroundMusic: SKAction = SKAction.playSoundFileNamed("rainThunder", waitForCompletion: true)
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    var dubbingMalin_1: SKAction = SKAction.playSoundFileNamed("17 1.m4a", waitForCompletion: false)
+    var dubbingMalin_2: SKAction = SKAction.playSoundFileNamed("17 2.m4a", waitForCompletion: false)
     
     override func didMove(to view: SKView) {
         
@@ -131,6 +133,7 @@ class MalinKundang_Scene17: SKScene {
         addChild(labelTextStory)
         
         run(backgroundMusic)
+        run(dubbingMalin_1)
     }
     
     override init(size: CGSize){
@@ -214,6 +217,7 @@ class MalinKundang_Scene17: SKScene {
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
             state += 1
             if state == 1 {
+                run(dubbingMalin_2)
                 labelTextStory.text = dataIntro[state].textDialogue
             } else if state == 2 {
                 let reveal = SKTransition.reveal(with: .left, duration: 1)
