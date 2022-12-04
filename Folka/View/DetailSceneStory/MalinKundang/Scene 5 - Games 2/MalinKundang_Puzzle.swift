@@ -9,10 +9,12 @@ import Foundation
 import UIKit
 import GameplayKit
 import SpriteKit
+import AVFoundation
 
 class MalinKundang_Puzzle: SKScene{
   let popUpPuzzle = SKSpriteNode(imageNamed: "popUpPuzzleDua")
   let popUpSuksesKapal = SKSpriteNode(imageNamed: "popUpSuksesKapalDua")
+  
   let backgroundOpacity = SKSpriteNode(imageNamed: "opacityBackground")
   let buttonTutup = SKSpriteNode(imageNamed: "buttonTutup")
   let buttonTutupAction: SKAction?
@@ -47,12 +49,19 @@ class MalinKundang_Puzzle: SKScene{
   let puzzleBesarJendelaKapal = SKSpriteNode(imageNamed: "jendelaKapal")
   let puzzleBesarPelampung = SKSpriteNode(imageNamed: "pelampungKapal")
   
+  // sound
+  var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+  var soundSucces: SKAction = SKAction.playSoundFileNamed("soundSucces", waitForCompletion: true)
+  var soundFailed: SKAction = SKAction.playSoundFileNamed("soundFailed", waitForCompletion: true)
+  
   override init(size: CGSize){
-    buttonTutupAction = SKAction.resize(toWidth: 550, height: 130, duration: 2.0)
-    buttonTanyaAction = SKAction.resize(toWidth: 120, height: 130, duration: 2.0)
-    buttonHomeAction = SKAction.resize(toWidth: 120, height: 130, duration: 2.0)
-    buttonReplayAction = SKAction.resize(toWidth: 550, height: 110, duration: 2.0)
-    buttonNextStoryAction = SKAction.resize(toWidth: 550, height: 110, duration: 2.0)
+    let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
+    let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
+    buttonTutupAction = SKAction.sequence([buttonToSmall, buttonToBig])
+    buttonTanyaAction = SKAction.sequence([buttonToSmall, buttonToBig])
+    buttonHomeAction = SKAction.sequence([buttonToSmall, buttonToBig])
+    buttonReplayAction = SKAction.sequence([buttonToSmall, buttonToBig])
+    buttonNextStoryAction = SKAction.sequence([buttonToSmall, buttonToBig])
     
     super.init(size: size)
   }
@@ -86,6 +95,7 @@ class MalinKundang_Puzzle: SKScene{
     popUpSuksesKapal.zPosition = 5
     popUpSuksesKapal.isHidden = true
     addChild(popUpSuksesKapal)
+    
     
     buttonNextStory.size = CGSize(width: 500, height: 130)
     buttonNextStory.name = "nextStory"
@@ -333,7 +343,6 @@ class MalinKundang_Puzzle: SKScene{
       puzzleKecilPelampung.position = CGPoint(x: size.width/1.6, y: size.height/2.4)
       puzzleKecilPelampung.inputView?.isMultipleTouchEnabled = false
     } else{
-      //      Sound.sharedInstance.playButton(file: "soundFailed", fileExtension: "wav")
       puzzleKecilPelampung.position = CGPoint(x: size.width/1.13, y: size.height/1.55)
       puzzleKecilPelampung.scale(to: CGSize(width: 230, height: 100))
     }
@@ -343,7 +352,6 @@ class MalinKundang_Puzzle: SKScene{
       puzzleKecilBadanKapalBelakang.position = CGPoint(x: size.width/1.66, y: size.height/1.98)
       puzzleKecilBadanKapalBelakang.isUserInteractionEnabled = false
     }else{
-      //      Sound.sharedInstance.playButton(file: "soundFailed", fileExtension: "wav")
       puzzleKecilBadanKapalBelakang.position = CGPoint(x: size.width/1.13, y: size.height/1.80)
       puzzleKecilBadanKapalBelakang.scale(to: CGSize(width: 230, height: 90))
     }
@@ -353,7 +361,6 @@ class MalinKundang_Puzzle: SKScene{
       puzzleKecilBadanKapalDepan.position = CGPoint(x: size.width/2.85, y: size.height/1.8)
       puzzleKecilBadanKapalDepan.inputView?.isMultipleTouchEnabled = false
     } else{
-      //      Sound.sharedInstance.playButton(file: "soundFailed", fileExtension: "wav")
       puzzleKecilBadanKapalDepan.position = CGPoint(x: size.width/1.13, y: size.height/2.10)
       puzzleKecilBadanKapalDepan.scale(to: CGSize(width: 230, height: 100))
     }
@@ -363,7 +370,6 @@ class MalinKundang_Puzzle: SKScene{
       puzzleKecilAtapKapal.position = CGPoint(x: size.width/2.9, y: size.height/1.6)
       puzzleKecilAtapKapal.inputView?.isMultipleTouchEnabled = false
     }else{
-      //      Sound.sharedInstance.playButton(file: "soundFailed", fileExtension: "wav")
       puzzleKecilAtapKapal.position = CGPoint(x: size.width/1.13, y: size.height/2.50)
       puzzleKecilAtapKapal.scale(to: CGSize(width: 230, height: 60))
     }
@@ -373,7 +379,6 @@ class MalinKundang_Puzzle: SKScene{
       puzzleKecilJendelaKapal.position = CGPoint(x: size.width/2.9, y: size.height/1.8)
       puzzleKecilJendelaKapal.inputView?.isMultipleTouchEnabled = false
     } else{
-      //      Sound.sharedInstance.playButton(file: "soundFailed", fileExtension: "wav")
       puzzleKecilJendelaKapal.position = CGPoint(x: size.width/1.13, y: size.height/2.95)
       puzzleKecilJendelaKapal.scale(to: CGSize(width: 230, height: 100))
     }
@@ -383,7 +388,6 @@ class MalinKundang_Puzzle: SKScene{
       puzzleKecilGarisKuningKapal.position = CGPoint(x: size.width/2.32, y: size.height/2.05)
       puzzleKecilGarisKuningKapal.inputView?.isMultipleTouchEnabled = false
     } else{
-      //      Sound.sharedInstance.playButton(file: "soundFailed", fileExtension: "wav")
       puzzleKecilGarisKuningKapal.position = CGPoint(x: size.width/1.13, y: size.height/3.65)
       puzzleKecilGarisKuningKapal.scale(to: CGSize(width: 350, height: 70))
     }
@@ -391,7 +395,6 @@ class MalinKundang_Puzzle: SKScene{
     if puzzleKecilBadanKapal.frame.intersects(puzzleBesarBadanKapal.frame) && puzzleKecilPelampung.frame.intersects(puzzleBesarPelampung.frame) && puzzleKecilBadanKapalBelakang.frame.intersects(puzzleBesarBadanKapalBelakang.frame) && puzzleKecilBadanKapalDepan.frame.intersects(puzzleBesarBadanKapalDepan.frame) && puzzleKecilAtapKapal.frame.intersects(puzzleBesarAtapKapal.frame) && puzzleKecilJendelaKapal.frame.intersects(puzzleBesarJendelaKapal.frame) && puzzleKecilGarisKuningKapal.frame.intersects(puzzleBesarGarisKuningKapal.frame) {
       gameFinish()
     } else{
-      //      Sound.sharedInstance.stop()
       print("belum lengkap")
     }
   }
@@ -403,6 +406,7 @@ class MalinKundang_Puzzle: SKScene{
     if atPoint((touch?.location(in: self))!).name == buttonTutup.name {
       enumerateChildNodes(withName: "//*") { [self] (node, stop) in
         if node.name == "buttonTutup" {
+          run(clickButton)
           buttonTutupSceneAksi()
         }
       }
@@ -411,8 +415,8 @@ class MalinKundang_Puzzle: SKScene{
     if atPoint((touch?.location(in: self))!).name == buttonTanya.name {
       enumerateChildNodes(withName: "//*") { [self] (node, stop) in
         if node.name == "buttonTanya" {
+          run(clickButton)
           buttonTanyaAksi()
-          print("tanya")
         }
       }
     }
@@ -420,7 +424,8 @@ class MalinKundang_Puzzle: SKScene{
     if atPoint((touch?.location(in: self))!).name == buttonHome.name {
       enumerateChildNodes(withName: "//*") { [self] (node, stop) in
         if node.name == "buttonHome" {
-          buttonHomeAksi()
+          run(clickButton)
+          buttonBackToHome()
         }
       }
     }
@@ -428,6 +433,7 @@ class MalinKundang_Puzzle: SKScene{
     if atPoint((touch?.location(in: self))!).name == buttonReplayGame.name {
       enumerateChildNodes(withName: "//*") { [self] (node, stop) in
         if node.name == "replayGame" {
+          run(clickButton)
           buttonBackToGame()
         }
       }
@@ -436,10 +442,13 @@ class MalinKundang_Puzzle: SKScene{
     if atPoint((touch?.location(in: self))!).name == buttonNextStory.name {
       enumerateChildNodes(withName: "//*") { [self] (node, stop) in
         if node.name == "nextStory" {
+          run(clickButton)
           buttonNextStoryScene()
         }
       }
     }
+    
+    
     
     
   }
@@ -469,16 +478,21 @@ class MalinKundang_Puzzle: SKScene{
     backgroundOpacity.isHidden = false
   }
   
-  func buttonHomeAksi(){
-    //    let nextDetailPage = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
-    //    self.view!.window?.rootViewController?.present(nextDetailPage, animated: true, completion: nil)
+  
+  func buttonBackToHome() {
+    if buttonHome.action(forKey: "Button Yes") == nil {
+      buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Yes")
+      let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+      self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+    }
   }
+  
   
   func buttonNextStoryScene() {
     if buttonNextStory.action(forKey: "Button Next") == nil {
       buttonNextStory.run(SKAction.repeatForever(buttonNextStoryAction!), withKey: "Button Next")
       let reveal = SKTransition.reveal(with: .left, duration: 1)
-      let newScene = MalinKundang_Scene16(size: CGSize(width: 2050, height: 1536))
+      let newScene = MalinKundang_Scene6(size: CGSize(width: 2050, height: 1536))
       newScene.scaleMode = .aspectFill
       scene?.view!.presentScene(newScene, transition: reveal)
     }
@@ -487,6 +501,8 @@ class MalinKundang_Puzzle: SKScene{
   override func update(_ currentTime: TimeInterval) {
     
   }
+  
+  
   
 }
 

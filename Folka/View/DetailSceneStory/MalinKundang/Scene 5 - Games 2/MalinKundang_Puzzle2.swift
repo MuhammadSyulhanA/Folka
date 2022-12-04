@@ -749,8 +749,7 @@ class MalinKundang_Puzzle2: SKScene{
       }
     }
   }
-    
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       //            puzzleKecilBulatKapal2.isHidden = true
       CustomScrollView.disable()
