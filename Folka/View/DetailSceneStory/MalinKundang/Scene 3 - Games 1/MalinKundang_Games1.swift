@@ -65,6 +65,8 @@ class MalinKundang_Games1: SKScene {
     
     // sound
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
+    var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
     override init(size: CGSize) {
         let maxAspectRatio:CGFloat = 10.0/3.0
@@ -491,9 +493,12 @@ class MalinKundang_Games1: SKScene {
     }
     
     func buttonNextStoryScene() {
-        run(clickButton)
+        if stateMusic {
+            run(clickButton)
+        }
+        
         if buttonNextStory.action(forKey: "Button Next") == nil {
-            buttonNextStory.run(SKAction.repeatForever(buttonNextStoryAction!), withKey: "Button Next")
+            buttonNextStory.run((buttonNextStoryAction!), withKey: "Button Next")
             let reveal = SKTransition.reveal(with: .left, duration: 1)
             let newScene = MalinKundang_Scene4(size: CGSize(width: 2050, height: 1536))
             newScene.scaleMode = .aspectFill
@@ -502,18 +507,22 @@ class MalinKundang_Games1: SKScene {
     }
     
     func buttonBackToHome() {
-        run(clickButton)
+        if stateMusic {
+            run(clickButton)
+        }
         if buttonYes.action(forKey: "Button Yes") == nil {
-            buttonYes.run(SKAction.repeatForever(buttonYesAction!), withKey: "Button Yes")
+            buttonYes.run((buttonYesAction!), withKey: "Button Yes")
             let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
             self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
         }
     }
     
     func buttonPlayTryAgain() {
-        run(clickButton)
+        if stateMusic {
+            run(clickButton)
+        }
         if buttonTryAgain.action(forKey: "Button Try") == nil {
-            buttonTryAgain.run(SKAction.repeatForever(buttonTryAgainAction!), withKey: "Button Try")
+            buttonTryAgain.run((buttonTryAgainAction!), withKey: "Button Try")
             let reveal = SKTransition.reveal(with: .left, duration: 1)
             let newScene = MalinKundang_Games1(size: CGSize(width: 2048, height: 1536))
             newScene.scaleMode = .aspectFill
@@ -522,9 +531,11 @@ class MalinKundang_Games1: SKScene {
     }
     
     func buttonbackToHomeScene() {
-        run(clickButton)
+        if stateMusic {
+            run(clickButton)
+        }
         if buttonHome.action(forKey: "Button Home") == nil {
-            buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
+            buttonHome.run((buttonHomeAction!), withKey: "Button Home")
             backToHome()
         } else {
             backToHome()
@@ -532,9 +543,11 @@ class MalinKundang_Games1: SKScene {
     }
     
     func buttonbackToGame() {
-        run(clickButton)
+        if stateMusic {
+            run(clickButton)
+        }
         if buttonNo.action(forKey: "Button No") == nil {
-            buttonNo.run(SKAction.repeatForever(buttonNoAction!), withKey: "Button No")
+            buttonNo.run((buttonNoAction!), withKey: "Button No")
             backToGame()
         } else {
             backToGame()

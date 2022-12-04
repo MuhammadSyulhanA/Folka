@@ -54,7 +54,7 @@ class SettingsScreen_ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func buttonSound(_ sender: UIButton) {
-        if changeFXSound{
+        if changeFXSound {
             Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
             UserDefaults.standard.set(false, forKey: "fxSound")
             buttonSound.setTitle("", for: .normal)
