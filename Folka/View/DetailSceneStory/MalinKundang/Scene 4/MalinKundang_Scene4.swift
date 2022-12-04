@@ -169,24 +169,26 @@ class MalinKundang_Scene4: SKScene {
     func buttonNextScene() {
         run(clickButton)
         if buttonNext.action(forKey: "Button Next") == nil {
-            buttonNext.run(SKAction.repeatForever(buttonNextAction!), withKey: "Button Next")
+            buttonNext.run((buttonNextAction!), withKey: "Button Next")
             state += 1
             print(state)
-            if state < dataIntro.count{
+            if state == 1 {
                 characterMalinSay = dataIntro[state].imageName
                 characterMalinSay.isHidden = false
                 textStory.text = dataIntro[state].textDialogue
-            }
-        } else {
-            state += 1
-            print(state)
-            if state < dataIntro.count {
+            } else if state == 2 {
                 characterIbuMalinSay = dataIntro[state].imageName
                 characterIbuMalinSay.isHidden = false
                 characterMalinSay.isHidden = true
                 textStory.text = dataIntro[state].textDialogue
+            } else if state == 3 {
+                let prevScene = ScenePilihGame_ViewController(nibName: "ScenePilihGame_ViewController", bundle: nil)
+                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             }
-            else if state == 3 {
+        } else {
+            state += 1
+            print(state)
+            if state == 3 {
                 let prevScene = ScenePilihGame_ViewController(nibName: "ScenePilihGame_ViewController", bundle: nil)
                 self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             }
@@ -196,7 +198,7 @@ class MalinKundang_Scene4: SKScene {
     func buttonPreviousScene () {
         run(clickButton)
         if buttonPrevious.action(forKey: "Previous Next") == nil {
-            buttonPrevious.run(SKAction.repeatForever(buttonPreviousAction!), withKey: "Button Previous")
+            buttonPrevious.run((buttonPreviousAction!), withKey: "Button Previous")
             state -= 1
             print(state)
             if state < 0 {
@@ -250,7 +252,7 @@ class MalinKundang_Scene4: SKScene {
                 if node.name == "buttonNext" {
                     buttonNextScene()
                 }
-            }
+            } 
         }
         if atPoint((touch?.location(in: self))!).name == buttonPrevious.name {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in

@@ -168,7 +168,7 @@ class MalinKundang_Scene16: SKScene {
     func buttonNextScene() {
         run(clickButton)
         if buttonNext.action(forKey: "Button Next") == nil {
-            buttonNext.run(SKAction.repeatForever(buttonNextAction!), withKey: "Button Next")
+            buttonNext.run((buttonNextAction!), withKey: "Button Next")
             let reveal = SKTransition.reveal(with: .left, duration: 1)
             let newScene = MalinKundang_Scene17(size: CGSize(width: 2048, height: 1536))
             newScene.scaleMode = .aspectFill
@@ -179,7 +179,7 @@ class MalinKundang_Scene16: SKScene {
     func buttonPreviousScene() {
         run(clickButton)
         if buttonPrevious.action(forKey: "Button Previous") == nil {
-            buttonPrevious.run(SKAction.repeatForever(buttonPreviousAction!), withKey: "Button Previous")
+            buttonPrevious.run((buttonPreviousAction!), withKey: "Button Previous")
             let reveal = SKTransition.reveal(with: .right, duration: 1)
             let prevScene = MalinKundang_Scene15(size: CGSize(width: 2048, height: 1536))
             prevScene.scaleMode = .aspectFill

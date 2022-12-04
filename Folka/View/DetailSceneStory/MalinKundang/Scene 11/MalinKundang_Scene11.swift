@@ -31,7 +31,6 @@ class MalinKundang_Scene11: SKScene {
     
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
     var buttonHomeAction: SKAction?
-//    let buttonSound = SKSpriteNode(imageNamed: "buttonSound")
     
     let buttonNext = SKSpriteNode(imageNamed: "buttonNext")
     var buttonNextAction: SKAction?
@@ -107,13 +106,6 @@ class MalinKundang_Scene11: SKScene {
         buttonHome.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         buttonHome.zPosition = +4
         addChild(buttonHome)
-        
-//        buttonSound.name = "buttonSound"
-//        buttonSound.size = CGSize(width: 170, height: 170)
-//        buttonSound.position = CGPoint(x: size.width/1.07, y: size.height/1.38)
-//        buttonSound.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-//        buttonSound.zPosition = +4
-//        addChild(buttonSound)
         
         buttonNext.name = "buttonNext"
         buttonNext.size = CGSize(width: 150, height: 150)

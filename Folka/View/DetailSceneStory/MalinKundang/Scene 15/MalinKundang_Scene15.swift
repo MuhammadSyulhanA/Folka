@@ -226,7 +226,7 @@ class MalinKundang_Scene15: SKScene {
     func buttonNextScene() {
         run(clickButton)
         if buttonNext.action(forKey: "Button Next") == nil {
-            buttonNext.run(SKAction.repeatForever(buttonNextAction!), withKey: "Button Next")
+            buttonNext.run((buttonNextAction!), withKey: "Button Next")
             state += 1
             print(state)
             if state == 7 {
@@ -298,7 +298,7 @@ class MalinKundang_Scene15: SKScene {
     func buttonPreviousScene () {
         run(clickButton)
         if buttonPrevious.action(forKey: "Previous Next") == nil {
-            buttonPrevious.run(SKAction.repeatForever(buttonPreviousAction!), withKey: "Button Previous")
+            buttonPrevious.run((buttonPreviousAction!), withKey: "Button Previous")
             state -= 1
             print(state)
             if state < 0 {
