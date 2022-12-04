@@ -14,6 +14,9 @@ struct Intro {
 
 class MalinKundang_Scene1: SKScene {
     
+    var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
+    var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
+    
     //MARK: Library sesuaikan dengan framework
     let backgroundSky = SKSpriteNode(imageNamed: "skyBackground")
     let backgroundGround = SKSpriteNode(imageNamed: "groundBackground")
@@ -45,6 +48,7 @@ class MalinKundang_Scene1: SKScene {
     var dataIntro: [Intro] = []
     var state = 0
     
+    var backgroundMusic: SKAction = SKAction.playSoundFileNamed("wave", waitForCompletion: true)
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
     
     override func didMove(to view: SKView) {
@@ -58,6 +62,8 @@ class MalinKundang_Scene1: SKScene {
         dataIntro = [data1, data2]
         
         self.backgroundColor = SKColor.white
+        
+        print(stateSound)
         
         backgroundSky.size = CGSize(width: 2050, height: 1120)
         backgroundSky.position = CGPoint(x: size.width/2, y: size.height/2)
@@ -143,6 +149,8 @@ class MalinKundang_Scene1: SKScene {
         labelTextStory.zPosition = +4.5
         addChild(labelTextStory)
         
+        run(backgroundMusic)
+        
     }
     
     //MARK: SOURCE CODE ASSET GERAK
@@ -186,8 +194,12 @@ class MalinKundang_Scene1: SKScene {
     }
     
     func buttonNextScene() {
-        run(clickButton)
+        if stateMusic {
+            run(clickButton)
+        }
+
         if buttonNext.action(forKey: "Button Next") == nil {
+            
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
             state += 1
             if state == 1 {
@@ -211,8 +223,12 @@ class MalinKundang_Scene1: SKScene {
     
     func buttonHomeScene() {
         if buttonHome.action(forKey: "Button Home") == nil {
-            buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
-            run(clickButton)
+            buttonHome.run((buttonHomeAction!), withKey: "Button Home")
+            if stateMusic {
+                run(clickButton)
+            }
+            
+            print("test")
             let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
             self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             
