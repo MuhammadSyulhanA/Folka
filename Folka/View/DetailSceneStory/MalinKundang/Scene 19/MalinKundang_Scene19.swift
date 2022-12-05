@@ -199,9 +199,11 @@ class MalinKundang_Scene19: SKScene {
             state += 1
             if state == 2 {
                 print("sinii")
-                self.removeAllChildren()
-                let prevScene = ChoiceEndingViewController(nibName: "ChoiceEndingViewController", bundle: nil)
-                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+                print("sini")
+                let reveal = SKTransition.reveal(with: .right, duration: 1)
+                let newScene = ChoicesEnding(size: CGSize(width: 2048, height: 1536))
+                newScene.scaleMode = .aspectFill
+                scene?.view!.presentScene(newScene, transition: reveal)
             } else if state == 1 {
                 labelTextStory.text = dataIntro[state].text
             }

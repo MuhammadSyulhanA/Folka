@@ -207,8 +207,13 @@ class MalinKundang_AlternateScene17: SKScene {
             } else if state == 2 {
                 labelTextStory.text = dataIntro[state].textDialogue
             } else if state == 3 {
-                let prevScene = EndingStoryViewController(nibName: "EndingStoryViewController", bundle: nil)
-                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+                print("sini")
+                let reveal = SKTransition.reveal(with: .right, duration: 1)
+                let newScene = MalinKundang_EndingStory(size: CGSize(width: 2048, height: 1536))
+                newScene.scaleMode = .aspectFill
+                scene?.view!.presentScene(newScene, transition: reveal)
+//                let prevScene = EndingStoryViewController(nibName: "EndingStoryViewController", bundle: nil)
+//                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             }
         } else {
             state += 1
@@ -218,8 +223,13 @@ class MalinKundang_AlternateScene17: SKScene {
             } else if state == 2 {
                 labelTextStory.text = dataIntro[state].textDialogue
             } else if state == 3 {
-                let prevScene = EndingStoryViewController(nibName: "EndingStoryViewController", bundle: nil)
-                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+                print("sini")
+                let reveal = SKTransition.reveal(with: .right, duration: 1)
+                let newScene = MalinKundang_EndingStory(size: CGSize(width: 2048, height: 1536))
+                newScene.scaleMode = .aspectFill
+                scene?.view!.presentScene(newScene, transition: reveal)
+//                let prevScene = EndingStoryViewController(nibName: "EndingStoryViewController", bundle: nil)
+//                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             }
         }
     }
@@ -233,8 +243,13 @@ class MalinKundang_AlternateScene17: SKScene {
             state -= 1
             print(state)
             if state == -1 {
-                let prevScene = ChoiceEndingViewController(nibName: "ChoiceEndingViewController", bundle: nil)
-                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+                print("sini")
+                let reveal = SKTransition.reveal(with: .right, duration: 1)
+                let newScene = ChoicesEnding(size: CGSize(width: 2048, height: 1536))
+                newScene.scaleMode = .aspectFill
+                scene?.view!.presentScene(newScene, transition: reveal)
+//                let prevScene = ChoiceEndingViewController(nibName: "ChoiceEndingViewController", bundle: nil)
+//                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             } else if state == 0 {
                 labelTextStory.text = dataIntro[state].textDialogue
             } else if state == 1 {
@@ -243,8 +258,13 @@ class MalinKundang_AlternateScene17: SKScene {
         }
         else {
             if state == -1 {
-                let prevScene = ChoiceEndingViewController(nibName: "ChoiceEndingViewController", bundle: nil)
-                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+                print("sini")
+                let reveal = SKTransition.reveal(with: .right, duration: 1)
+                let newScene = ChoicesEnding(size: CGSize(width: 2048, height: 1536))
+                newScene.scaleMode = .aspectFill
+                scene?.view!.presentScene(newScene, transition: reveal)
+//                let prevScene = ChoiceEndingViewController(nibName: "ChoiceEndingViewController", bundle: nil)
+//                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             } else if state == 0 {
                 labelTextStory.text = dataIntro[state].textDialogue
             } else if state == 1 {
@@ -259,8 +279,9 @@ class MalinKundang_AlternateScene17: SKScene {
         }
         if buttonHome.action(forKey: "Button Home") == nil {
             buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
-            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+            self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
+//            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+//            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             
         }
     }

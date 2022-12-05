@@ -31,4 +31,43 @@ class MalinKundang_EndingStory: SKScene {
         buttonBeranda.zPosition = 1
         addChild(buttonBeranda)
     }
+    
+    override init(size: CGSize){
+        let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
+        let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
+        
+        buttonBerandaAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func buttonHomeScene() {
+//        if stateMusic {
+//            run(clickButton)
+//        }
+        
+        if buttonBeranda.action(forKey: "Button Beranda") == nil {
+            buttonBeranda.run(SKAction.repeatForever(buttonBerandaAction!), withKey: "Button Beranda")
+            self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
+            
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first as UITouch?
+        print(atPoint((touch?.location(in: self))!))
+        if atPoint((touch?.location(in: self))!).name == buttonBeranda.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if !self.buttonBeranda.hasActions(){
+                    if node.name == "buttonBeranda" {
+                        buttonHomeScene()
+                    }
+                }
+            }
+        }
+    }
 }
