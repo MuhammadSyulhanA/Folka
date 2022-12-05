@@ -393,6 +393,7 @@ class MalinKundang_Scene11: SKScene {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if !self.buttonHome.hasActions(){
                     if node.name == "buttonHome" {
+                        Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
                         run(clickButton)
                         buttonHomeScene()
                     }

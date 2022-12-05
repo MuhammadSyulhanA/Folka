@@ -443,6 +443,7 @@ class MalinKundang_Puzzle: SKScene{
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if node.name == "buttonHome" {
                     run(clickButton)
+                    Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
                     buttonHomeAksi()
                 }
             }
@@ -480,8 +481,10 @@ class MalinKundang_Puzzle: SKScene{
     
     func buttonBackToGame() {
         Sound.sharedInstance.stopBacksound()
-        let prevScene = ScenePilihGame_ViewController(nibName: "ScenePilihGame_ViewController", bundle: nil)
-        self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+        let reveal = SKTransition.reveal(with: .right, duration: 1)
+        let prevScene = MalinKundang_PilihKapal(size: CGSize(width: 2048, height: 1536))
+        prevScene.scaleMode = .aspectFill
+        scene?.view!.presentScene(prevScene, transition: reveal)
     }
     
     func gameFinish(){
