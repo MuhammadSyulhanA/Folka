@@ -26,6 +26,8 @@ class MalinKundang_Scene14: SKScene {
     
     let nonCharacterWood = SKSpriteNode(imageNamed: "kayuScene6")
     
+    let nonCharacterBoat1 = SKSpriteNode(imageNamed: "kapalScene14_1")
+    
     let buttonNext = SKSpriteNode(imageNamed: "buttonNext")
     var buttonNextAction: SKAction?
     
@@ -114,6 +116,13 @@ class MalinKundang_Scene14: SKScene {
         nonCharacterWood.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         nonCharacterWood.zPosition = 1
         addChild(nonCharacterWood)
+        
+        nonCharacterBoat1.name = "kapal1"
+        nonCharacterBoat1.size = CGSize(width: 800, height: 470)
+        nonCharacterBoat1.position = CGPoint(x: size.width/1.02, y: size.height/2.4)
+        nonCharacterBoat1.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterBoat1.zPosition = 0.75
+        addChild(nonCharacterBoat1)
         
         buttonNext.name = "buttonNext"
         buttonNext.size = CGSize(width: 150, height: 150)
