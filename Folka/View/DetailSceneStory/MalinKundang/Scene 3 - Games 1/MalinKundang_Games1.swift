@@ -59,8 +59,8 @@ class MalinKundang_Games1: SKScene {
     
     // timer
     var labelTimer = SKLabelNode(fontNamed: "Nunito")
-    var maxTime = 15
-    var timeRemaining = 15
+    var maxTime = 20
+    var timeRemaining = 20
     var gameTimer: Timer!
     
     // sound
@@ -89,13 +89,6 @@ class MalinKundang_Games1: SKScene {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    //    private lazy var gamePad: GamePad = {
-    //      return GamePad(
-    //        actionButtonBegan:  playerNode.actionButtonBegan,
-    //        actionButtonEnded: playerNode.actionButtonEnded
-    //      )
-    //    }()
     
     override func didMove(to view: SKView) {
         // MARK: Default background white
@@ -252,9 +245,8 @@ class MalinKundang_Games1: SKScene {
         buttonNo.zPosition = 3.0
         buttonNo.isHidden = true
         addChild(buttonNo)
-        //
-        //        print(nonCharacterHook.position.y)
-        //        print(size.height/1.2)
+        
+        Sound.sharedInstance.playBacksound(file: "ikanPuzzle", fileExtension: "wav")
         
         run(SKAction.repeatForever(SKAction.sequence([SKAction.run(swimmingFish), SKAction.wait(forDuration: 4.0)])))
         run(SKAction.repeatForever(SKAction.sequence([SKAction.run(swimmingTrash), SKAction.wait(forDuration: 10.0)])))
@@ -279,6 +271,8 @@ class MalinKundang_Games1: SKScene {
         if timeRemaining < 0 {
             gameTimer.invalidate()
             labelTimer.text = "TIMES UP!"
+            nonCharacterHook.isHidden = true
+            nonCharacterRope.isHidden = true
             //            labelTimer.textColor = .red
             //            clockIcon.image = UIImage(named: "FirstLevel-Castlepart-05-Times-Up")
             //            clockIcon.shake()
@@ -416,6 +410,7 @@ class MalinKundang_Games1: SKScene {
         enumerateChildNodes(withName: "bottle") { [self] node, _ in
             let bottle = node  as! SKSpriteNode
             if bottle.frame.intersects(self.nonCharacterHook.frame) {
+                timeRemaining -= 1
                 run(self.soundFailed)
                 hitBottleTrash.append(bottle)
             }
@@ -429,6 +424,7 @@ class MalinKundang_Games1: SKScene {
         enumerateChildNodes(withName: "apple") { [self]  node, _ in
             let apple = node  as! SKSpriteNode
             if apple.frame.intersects(self.nonCharacterHook.frame) {
+                timeRemaining -= 1
                 run(self.soundFailed)
                 hitAppleTrash.append(apple)
             }
@@ -498,6 +494,7 @@ class MalinKundang_Games1: SKScene {
     }
     
     func buttonNextStoryScene() {
+        Sound.sharedInstance.stopBacksound()
         run(clickButton)
         if buttonNextStory.action(forKey: "Button Next") == nil {
             buttonNextStory.run(SKAction.repeatForever(buttonNextStoryAction!), withKey: "Button Next")
@@ -509,6 +506,7 @@ class MalinKundang_Games1: SKScene {
     }
     
     func buttonBackToHome() {
+        Sound.sharedInstance.stopBacksound()
         run(clickButton)
         if buttonYes.action(forKey: "Button Yes") == nil {
             buttonYes.run(SKAction.repeatForever(buttonYesAction!), withKey: "Button Yes")
@@ -518,6 +516,7 @@ class MalinKundang_Games1: SKScene {
     }
     
     func buttonPlayTryAgain() {
+        Sound.sharedInstance.stopBacksound()
         run(clickButton)
         if buttonTryAgain.action(forKey: "Button Try") == nil {
             buttonTryAgain.run(SKAction.repeatForever(buttonTryAgainAction!), withKey: "Button Try")
@@ -529,6 +528,7 @@ class MalinKundang_Games1: SKScene {
     }
     
     func buttonbackToHomeScene() {
+        Sound.sharedInstance.stopBacksound()
         run(clickButton)
         if buttonHome.action(forKey: "Button Home") == nil {
             buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
@@ -539,6 +539,7 @@ class MalinKundang_Games1: SKScene {
     }
     
     func buttonbackToGame() {
+        Sound.sharedInstance.stopBacksound()
         run(clickButton)
         if buttonNo.action(forKey: "Button No") == nil {
             buttonNo.run(SKAction.repeatForever(buttonNoAction!), withKey: "Button No")
@@ -591,6 +592,7 @@ class MalinKundang_Games1: SKScene {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if !self.buttonYes.hasActions(){
                     if node.name == "buttonYes" {
+                        Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
                         buttonBackToHome()
                     }
                 }

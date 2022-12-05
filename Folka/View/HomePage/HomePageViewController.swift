@@ -36,10 +36,10 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
         return itemW * 0.65
     }
     
+  
     override func viewDidLoad() {
-        
+//        Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
         super.viewDidLoad()
-        
         let tapNext = UITapGestureRecognizer(target: self, action: #selector(self.nextPage))
         imageProfile.addGestureRecognizer(tapNext)
         imageProfile.isUserInteractionEnabled = true
@@ -77,6 +77,8 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
         layout.itemSize.width = itemW
         collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
         
+        UserDefaults.standard.set(true, forKey: "fxMusic")
+        UserDefaults.standard.set(true, forKey: "fxSound")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -236,8 +238,4 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.view.sendSubviewToBack(imageView)
         print("Sukses")
     }
-    
-    
-    
-    
 }

@@ -48,9 +48,6 @@ class MalinKundang_Scene1: SKScene {
     var dataIntro: [Intro] = []
     var state = 0
     
-    var backgroundMusic: SKAction = SKAction.playSoundFileNamed("soundOmbak", waitForCompletion: false)
-    var dubbingMalin_1: SKAction = SKAction.playSoundFileNamed("01 1.m4a", waitForCompletion: false)
-    var dubbingMalin_2: SKAction = SKAction.playSoundFileNamed("01 2.m4a", waitForCompletion: false)
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
     
     override func didMove(to view: SKView) {
@@ -142,6 +139,7 @@ class MalinKundang_Scene1: SKScene {
         labelTextStory.text = dataIntro[0].text
         labelTextStory.fontColor = SKColor.white
         labelTextStory.fontSize = 42
+        labelTextStory.verticalAlignmentMode = SKLabelVerticalAlignmentMode.baseline
         labelTextStory.lineBreakMode = NSLineBreakMode.byWordWrapping
         labelTextStory.numberOfLines = 0
         labelTextStory.preferredMaxLayoutWidth = 1320
@@ -149,8 +147,8 @@ class MalinKundang_Scene1: SKScene {
         labelTextStory.zPosition = +4.5
         addChild(labelTextStory)
         
-        //        run(backgroundMusic)
-        run(dubbingMalin_1)
+        Sound.sharedInstance.playDubbing(file: "01 1", fileExtension: "m4a")
+        Sound.sharedInstance.playBacksound(file: "soundOmbak", fileExtension: "wav")
         
     }
     
@@ -200,9 +198,11 @@ class MalinKundang_Scene1: SKScene {
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
             state += 1
             if state == 1 {
-                run(dubbingMalin_2)
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "01 2", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].text
             } else if state == 2 {
+                Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .left, duration: 1)
                 let newScene = MalinKundang_Scene2(size: CGSize(width: 2050, height: 1536))
                 newScene.scaleMode = .aspectFill
@@ -216,16 +216,11 @@ class MalinKundang_Scene1: SKScene {
         buttonHome.run((buttonHomeAction!), withKey: "Button Home")
         //        if stateMusic {
         run(clickButton)
+        Sound.sharedInstance.stop()
+        Sound.sharedInstance.stopBacksound()
         //        }
         self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
-//        guard let rootViewController =
-//                view?.window?.rootViewController else { return }
-//        let prevScene2 = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-//        if rootViewController.presentedViewController == nil {
-//            rootViewController.present(prevScene2, animated: true, completion: nil)
-//        } else{
-//        }
-//        print("hahah")
+        Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
     }
     
     func startMalinAnimation() {

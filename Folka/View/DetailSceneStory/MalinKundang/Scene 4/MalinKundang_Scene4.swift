@@ -48,8 +48,7 @@ class MalinKundang_Scene4: SKScene {
     var state = 0
     
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
-    var dubbingMalin_1: SKAction = SKAction.playSoundFileNamed("04 1.m4a", waitForCompletion: false)
-    var dubbingMalin_2: SKAction = SKAction.playSoundFileNamed("04 2.m4a", waitForCompletion: false)
+  
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
@@ -60,7 +59,7 @@ class MalinKundang_Scene4: SKScene {
         
         let data1 = Dialogue(imageName: characterMalinSad, textDialogue: "Setelah dewasa, Malin memutuskan untuk pergi berlayar untuk mencari uang.")
         let data2 = Dialogue(imageName: characterMalinSay, textDialogue: "“Ibu, aku pamit ya. Doakan aku agar bisa mendapat banyak uang.”")
-        let data3 = Dialogue(imageName: characterIbuMalinSay, textDialogue: "“Hati-hati ya nak! Jaga diri mu baik-baik di negeri orang nanti..”")
+        let data3 = Dialogue(imageName: characterIbuMalinSay, textDialogue: "“Hati-hati ya nak! Jaga diri mu baik-baik..”")
         
         dataIntro = [data1, data2, data3]
         
@@ -152,8 +151,7 @@ class MalinKundang_Scene4: SKScene {
         textStory.zPosition = 3.5
         addChild(textStory)
         
-        run(dubbingMalin_1)
-        
+        Sound.sharedInstance.playDubbing(file: "04 1", fileExtension: "m4a")
     }
     
     override init(size: CGSize){
@@ -181,29 +179,32 @@ class MalinKundang_Scene4: SKScene {
             state += 1
             print(state)
             if state == 1 {
-                run(dubbingMalin_2)
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "04 2", fileExtension: "m4a")
                 characterMalinSay = dataIntro[state].imageName
                 characterMalinSay.isHidden = false
                 textStory.text = dataIntro[state].textDialogue
             } else if state == 2 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "04 3", fileExtension: "m4a")
                 characterIbuMalinSay = dataIntro[state].imageName
                 characterIbuMalinSay.isHidden = false
                 characterMalinSay.isHidden = true
                 textStory.text = dataIntro[state].textDialogue
             } else if state == 3 {
                 print("tes")
+                Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .left, duration: 1)
                 let newScene = MalinKundang_PilihKapal(size: CGSize(width: 2050, height: 1536))
                 newScene.scaleMode = .aspectFill
                 scene?.view!.presentScene(newScene, transition: reveal)
-//                let prevScene = ScenePilihGame_ViewController(nibName: "ScenePilihGame_ViewController", bundle: nil)
-//                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             }
         } else {
             state += 1
             print(state)
             if state == 3 {
                 print("tess")
+                Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .left, duration: 1)
                 let newScene = MalinKundang_PilihKapal(size: CGSize(width: 2050, height: 1536))
                 newScene.scaleMode = .aspectFill
@@ -221,6 +222,7 @@ class MalinKundang_Scene4: SKScene {
             state -= 1
             print(state)
             if state < 0 {
+                Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .right, duration: 1)
                 let newScene = MalinKundang_Tutorial_Games1(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
@@ -228,9 +230,13 @@ class MalinKundang_Scene4: SKScene {
             }
             else {
                 if state == 1 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "04 2", fileExtension: "m4a")
                     characterMalinSay.isHidden = false
                     characterIbuMalinSay.isHidden = true
                 } else if state == 0 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "04 1", fileExtension: "m4a")
                     characterMalinSay.isHidden = true
                 }
                 characterMalinSay = dataIntro[state].imageName
@@ -240,6 +246,7 @@ class MalinKundang_Scene4: SKScene {
             state -= 1
             print(state)
             if state < 0 {
+                Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .right, duration: 1)
                 let newScene = MalinKundang_Tutorial_Games1(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
@@ -258,11 +265,9 @@ class MalinKundang_Scene4: SKScene {
             run(clickButton)
         }
         if buttonHome.action(forKey: "Button Home") == nil {
+            Sound.sharedInstance.stop()
             buttonHome.run((buttonHomeAction!), withKey: "Button Home")
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
-//            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-//            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
-            
         }
     }
     

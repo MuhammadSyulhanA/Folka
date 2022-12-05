@@ -439,24 +439,8 @@ class MalinKundang_Scene13: SKScene {
         setUpFloorPyhisic(lineMaze: verticalPanjang3LuarDalam8)
         setUpFloorPyhisic(lineMaze: verticalPanjang3LuarDalam9)
         
-        //        characterIbuMalin.name = "ibuMalin"
-        //        characterIbuMalin.size = CGSize(width: 500, height: 800)
-        //        characterIbuMalin.position = CGPoint(x: size.width/2.7, y: size.height/1.5)
-        //        characterIbuMalin.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        //        characterIbuMalin.zPosition = 2
-        //        addChild(characterIbuMalin)
-        //
-        //        kayuScene6.size = CGSize(width: 1100, height: 270)
-        //        kayuScene6.position = CGPoint(x: size.width/2.2, y: size.height/2.0)
-        //        kayuScene6.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        //        kayuScene6.zPosition = 2
-        //        addChild(kayuScene6)
-        //
-        //        characterIbuMalin.physicsBody = SKPhysicsBody(circleOfRadius: characterIbuMalin.size.width / 2)
-        //        characterIbuMalin.physicsBody!.isDynamic = true
-        //        characterIbuMalin.physicsBody?.allowsRotation = false
-        //        characterIbuMalin.physicsBody?.affectedByGravity = false
-        //
+        Sound.sharedInstance.playBacksound(file: "labirin", fileExtension: "wav")
+
     }
     
     func setUpShipPyhisic(ship: SKSpriteNode){
@@ -534,7 +518,7 @@ class MalinKundang_Scene13: SKScene {
     func buttonHomeScene() {
         print("tes")
 //        if buttonHome.action(forKey: "Button Home") == nil {
-
+        Sound.sharedInstance.stopBacksound()
         self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
             //        let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
             //        self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
@@ -542,6 +526,7 @@ class MalinKundang_Scene13: SKScene {
     }
     
     func buttonLanjutScene() {
+        Sound.sharedInstance.stopBacksound()
         let reveal = SKTransition.reveal(with: .left, duration: 1)
         let newScene = MalinKundang_Scene14(size: CGSize(width: 2048, height: 1536))
         newScene.scaleMode = .aspectFill

@@ -32,7 +32,7 @@ class MalinKundang_Scene6: SKScene {
     var buttonPreviousAction: SKAction?
     
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
-    var soundEffect: SKAction = SKAction.playSoundFileNamed("soundKapalBerangkat.wav", waitForCompletion: false)
+   
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
@@ -88,8 +88,7 @@ class MalinKundang_Scene6: SKScene {
         buttonHome.zPosition = 4
         addChild(buttonHome)
         
-        run(soundEffect)
-
+        Sound.sharedInstance.playDubbing(file: "soundKapalBerangkat", fileExtension: "wav")
 
     }
     
@@ -122,6 +121,7 @@ class MalinKundang_Scene6: SKScene {
         }
         
         if buttonNext.action(forKey: "Button Next") == nil {
+            Sound.sharedInstance.stop()
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
             let reveal = SKTransition.reveal(with: .left, duration: 1)
             let newScene = MalinKundang_Scene7(size: CGSize(width: 2048, height: 1536))
@@ -135,6 +135,7 @@ class MalinKundang_Scene6: SKScene {
             run(clickButton)
         }
         if buttonPrevious.action(forKey: "Button Previous") == nil {
+            Sound.sharedInstance.stop()
             buttonPrevious.run((buttonPreviousAction!), withKey: "Button Previous")
             let reveal = SKTransition.reveal(with: .right, duration: 1)
             let prevScene = MalinKundang_Puzzle2(size: CGSize(width: 2048, height: 1536))
@@ -148,10 +149,10 @@ class MalinKundang_Scene6: SKScene {
             run(clickButton)
         }
         if buttonHome.action(forKey: "Button Home") == nil {
+            Sound.sharedInstance.stop()
             buttonHome.run((buttonHomeAction!), withKey: "Button Home")
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
-//            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-//            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+
         }
     }
     

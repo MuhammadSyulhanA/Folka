@@ -48,7 +48,6 @@ class MalinKundang_AlternateScene17: SKScene {
     var state = 0
     
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
-    var dubbingMalin: SKAction = SKAction.playSoundFileNamed("alt 17 1.m4a", waitForCompletion: false)
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
@@ -150,8 +149,7 @@ class MalinKundang_AlternateScene17: SKScene {
         labelTextStory.zPosition = +4.5
         addChild(labelTextStory)
         
-        run(dubbingMalin)
-        
+        Sound.sharedInstance.playDubbing(file: "alt 17 1", fileExtension: "m4a")
     }
     
     //MARK: SOURCE CODE ASSET GERAK
@@ -203,33 +201,38 @@ class MalinKundang_AlternateScene17: SKScene {
             state += 1
             print(state)
             if state == 1 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "alt 17 2", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].textDialogue
             } else if state == 2 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "alt 17 3", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].textDialogue
             } else if state == 3 {
-                print("sini")
+                Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .right, duration: 1)
                 let newScene = MalinKundang_EndingStory(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
                 scene?.view!.presentScene(newScene, transition: reveal)
-//                let prevScene = EndingStoryViewController(nibName: "EndingStoryViewController", bundle: nil)
-//                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             }
         } else {
             state += 1
             print(state)
             if state == 1 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "alt 17 2", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].textDialogue
             } else if state == 2 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "alt 17 3", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].textDialogue
             } else if state == 3 {
-                print("sini")
+                Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .right, duration: 1)
                 let newScene = MalinKundang_EndingStory(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
                 scene?.view!.presentScene(newScene, transition: reveal)
-//                let prevScene = EndingStoryViewController(nibName: "EndingStoryViewController", bundle: nil)
-//                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+
             }
         }
     }
@@ -243,31 +246,36 @@ class MalinKundang_AlternateScene17: SKScene {
             state -= 1
             print(state)
             if state == -1 {
-                print("sini")
+                Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .right, duration: 1)
                 let newScene = ChoicesEnding(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
                 scene?.view!.presentScene(newScene, transition: reveal)
-//                let prevScene = ChoiceEndingViewController(nibName: "ChoiceEndingViewController", bundle: nil)
-//                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             } else if state == 0 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "alt 17 1", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].textDialogue
             } else if state == 1 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "alt 17 2", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].textDialogue
             }
         }
         else {
             if state == -1 {
-                print("sini")
+                Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .right, duration: 1)
                 let newScene = ChoicesEnding(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
                 scene?.view!.presentScene(newScene, transition: reveal)
-//                let prevScene = ChoiceEndingViewController(nibName: "ChoiceEndingViewController", bundle: nil)
-//                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+
             } else if state == 0 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "alt 17 1", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].textDialogue
             } else if state == 1 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "alt 17 2", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].textDialogue
             }
         }
@@ -278,10 +286,9 @@ class MalinKundang_AlternateScene17: SKScene {
             run(clickButton)
         }
         if buttonHome.action(forKey: "Button Home") == nil {
+            Sound.sharedInstance.stop()
             buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
-//            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-//            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             
         }
     }

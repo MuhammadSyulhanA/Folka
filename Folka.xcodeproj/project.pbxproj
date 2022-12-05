@@ -7,14 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		698EB8D02921E24E008C18BA /* GamePadSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698EB8C92921E24E008C18BA /* GamePadSpace.swift */; };
-		698EB8D12921E24E008C18BA /* GamePadRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698EB8CA2921E24E008C18BA /* GamePadRight.swift */; };
-		698EB8D22921E24E008C18BA /* GamePadBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698EB8CB2921E24E008C18BA /* GamePadBase.swift */; };
-		698EB8D32921E24E008C18BA /* GamePadDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698EB8CC2921E24E008C18BA /* GamePadDown.swift */; };
-		698EB8D42921E24E008C18BA /* GamePad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698EB8CD2921E24E008C18BA /* GamePad.swift */; };
-		698EB8D52921E24E008C18BA /* GamePadUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698EB8CE2921E24E008C18BA /* GamePadUp.swift */; };
-		698EB8D62921E24E008C18BA /* GamePadleft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698EB8CF2921E24E008C18BA /* GamePadleft.swift */; };
-		698EB8D82921E2BD008C18BA /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698EB8D72921E2BD008C18BA /* Controller.swift */; };
 		69C55000291A0C5A00E1CEF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C54FFF291A0C5A00E1CEF7 /* AppDelegate.swift */; };
 		69C55002291A0C5A00E1CEF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C55001291A0C5A00E1CEF7 /* SceneDelegate.swift */; };
 		69C55004291A0C5A00E1CEF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C55003291A0C5A00E1CEF7 /* ViewController.swift */; };
@@ -26,6 +18,7 @@
 		69D6B1A92934654A002CF007 /* MalinKundang_Scene11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D6B1A82934654A002CF007 /* MalinKundang_Scene11.swift */; };
 		69EADE882938E346000A31A3 /* MalinKundang_Scene13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EADE872938E346000A31A3 /* MalinKundang_Scene13.swift */; };
 		69EADE8D293BA3FE000A31A3 /* soundClick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 69EADE8C293BA3FE000A31A3 /* soundClick.wav */; };
+		984801EF293E51AE0083DD86 /* chicken.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 984801EE293E51AE0083DD86 /* chicken.mp3 */; };
 		988867622920FD770094AAAF /* MalinKundang_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988867612920FD770094AAAF /* MalinKundang_ViewController.swift */; };
 		988867642920FDD40094AAAF /* MalinKundang_Scene1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988867632920FDD40094AAAF /* MalinKundang_Scene1.swift */; };
 		988867662920FEA00094AAAF /* MalinKundang_Scene2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988867652920FEA00094AAAF /* MalinKundang_Scene2.swift */; };
@@ -79,6 +72,19 @@
 		98F8DF82293D2DF200F8D70E /* soundMalinJadiBatu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF81293D2DF200F8D70E /* soundMalinJadiBatu.mp3 */; };
 		98F8DF88293D425600F8D70E /* MalinKundang_EndingStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8DF87293D425600F8D70E /* MalinKundang_EndingStory.swift */; };
 		98F8DF8A293D42DA00F8D70E /* MalinKundang_PilihKapal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8DF89293D42DA00F8D70E /* MalinKundang_PilihKapal.swift */; };
+		98F8DF8D293DE90B00F8D70E /* alt 15 6i.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF8B293DE90A00F8D70E /* alt 15 6i.m4a */; };
+		98F8DF8E293DE90B00F8D70E /* alt 15 4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF8C293DE90B00F8D70E /* alt 15 4.m4a */; };
+		98F8DF94293DE92100F8D70E /* 04 3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF8F293DE92000F8D70E /* 04 3.m4a */; };
+		98F8DF95293DE92100F8D70E /* 15 4.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF90293DE92000F8D70E /* 15 4.m4a */; };
+		98F8DF96293DE92100F8D70E /* 15 3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF91293DE92000F8D70E /* 15 3.m4a */; };
+		98F8DF97293DE92100F8D70E /* alt 15 2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF92293DE92000F8D70E /* alt 15 2.m4a */; };
+		98F8DF98293DE92100F8D70E /* alt 15 3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF93293DE92000F8D70E /* alt 15 3.m4a */; };
+		98F8DF9C293DEE0F00F8D70E /* 15 7.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF99293DEE0E00F8D70E /* 15 7.m4a */; };
+		98F8DF9D293DEE0F00F8D70E /* alt 15 5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF9A293DEE0F00F8D70E /* alt 15 5.m4a */; };
+		98F8DF9E293DEE0F00F8D70E /* alt 17 3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF9B293DEE0F00F8D70E /* alt 17 3.m4a */; };
+		98F8DFA0293DEE2300F8D70E /* alt 17 2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF9F293DEE2300F8D70E /* alt 17 2.m4a */; };
+		98F8DFA3293E46E700F8D70E /* ikanPuzzle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DFA1293E46E600F8D70E /* ikanPuzzle.wav */; };
+		98F8DFA4293E46E700F8D70E /* labirin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DFA2293E46E700F8D70E /* labirin.wav */; };
 		A0072D96292BCD4F00D32023 /* MalinKundang_Scene6.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0072D95292BCD4E00D32023 /* MalinKundang_Scene6.swift */; };
 		A018EA09292773BF00FE7451 /* MalinKundang_Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018EA08292773BF00FE7451 /* MalinKundang_Puzzle.swift */; };
 		A01B3DB1293B17CC00BBDE24 /* MalinKundang_AlternateScene17.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01B3DB0293B17CC00BBDE24 /* MalinKundang_AlternateScene17.swift */; };
@@ -93,12 +99,15 @@
 		A01C55BA2937247600261695 /* SettingsScreen_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C55B92937247500261695 /* SettingsScreen_ViewController.xib */; };
 		A01C55BD2937251500261695 /* ScenePilihGame_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C55BB2937251500261695 /* ScenePilihGame_ViewController.swift */; };
 		A01C55C02937253000261695 /* ScenePilihGame_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C55BF2937253000261695 /* ScenePilihGame_ViewController.xib */; };
+		A01E17AD293E40740036DCC1 /* awalGame.wav in Resources */ = {isa = PBXBuildFile; fileRef = A01E17AC293E40740036DCC1 /* awalGame.wav */; };
 		A0202800293790D7004694CD /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02027FE293790D7004694CD /* DetailPageViewController.swift */; };
 		A0202801293790D7004694CD /* DetailPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A02027FF293790D7004694CD /* DetailPageViewController.xib */; };
 		A022135C2939046500F40201 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022135A2939046500F40201 /* OnboardingViewController.swift */; };
 		A022135D2939046500F40201 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A022135B2939046500F40201 /* OnboardingViewController.xib */; };
 		A02774F32939FD40005F1ADF /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02774F12939FD40005F1ADF /* OnboardingCollectionViewCell.swift */; };
 		A02774F42939FD40005F1ADF /* OnboardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A02774F22939FD40005F1ADF /* OnboardingCollectionViewCell.xib */; };
+		A032E661293E36B500D09724 /* LauchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032E65F293E36B500D09724 /* LauchScreenViewController.swift */; };
+		A032E662293E36B500D09724 /* LauchScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A032E660293E36B500D09724 /* LauchScreenViewController.xib */; };
 		A07F796D2937C621003954F0 /* MalinKundang_Scene16.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07F796C2937C621003954F0 /* MalinKundang_Scene16.swift */; };
 		A08B5DC9291FD06C0021FBAF /* ProfileOnboard_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08B5DC7291FD06C0021FBAF /* ProfileOnboard_ViewController.swift */; };
 		A08B5DCA291FD06C0021FBAF /* ProfileOnboard_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08B5DC8291FD06C0021FBAF /* ProfileOnboard_ViewController.xib */; };
@@ -132,14 +141,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		698EB8C92921E24E008C18BA /* GamePadSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePadSpace.swift; sourceTree = "<group>"; };
-		698EB8CA2921E24E008C18BA /* GamePadRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePadRight.swift; sourceTree = "<group>"; };
-		698EB8CB2921E24E008C18BA /* GamePadBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePadBase.swift; sourceTree = "<group>"; };
-		698EB8CC2921E24E008C18BA /* GamePadDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePadDown.swift; sourceTree = "<group>"; };
-		698EB8CD2921E24E008C18BA /* GamePad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePad.swift; sourceTree = "<group>"; };
-		698EB8CE2921E24E008C18BA /* GamePadUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePadUp.swift; sourceTree = "<group>"; };
-		698EB8CF2921E24E008C18BA /* GamePadleft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePadleft.swift; sourceTree = "<group>"; };
-		698EB8D72921E2BD008C18BA /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		69C54FFC291A0C5A00E1CEF7 /* Folka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Folka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C54FFF291A0C5A00E1CEF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69C55001291A0C5A00E1CEF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +163,7 @@
 		69D6B1A82934654A002CF007 /* MalinKundang_Scene11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene11.swift; sourceTree = "<group>"; };
 		69EADE872938E346000A31A3 /* MalinKundang_Scene13.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene13.swift; sourceTree = "<group>"; };
 		69EADE8C293BA3FE000A31A3 /* soundClick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = soundClick.wav; sourceTree = "<group>"; };
+		984801EE293E51AE0083DD86 /* chicken.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chicken.mp3; sourceTree = "<group>"; };
 		988867612920FD770094AAAF /* MalinKundang_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_ViewController.swift; sourceTree = "<group>"; };
 		988867632920FDD40094AAAF /* MalinKundang_Scene1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene1.swift; sourceTree = "<group>"; };
 		988867652920FEA00094AAAF /* MalinKundang_Scene2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene2.swift; sourceTree = "<group>"; };
@@ -215,6 +217,19 @@
 		98F8DF81293D2DF200F8D70E /* soundMalinJadiBatu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundMalinJadiBatu.mp3; sourceTree = "<group>"; };
 		98F8DF87293D425600F8D70E /* MalinKundang_EndingStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_EndingStory.swift; sourceTree = "<group>"; };
 		98F8DF89293D42DA00F8D70E /* MalinKundang_PilihKapal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_PilihKapal.swift; sourceTree = "<group>"; };
+		98F8DF8B293DE90A00F8D70E /* alt 15 6i.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "alt 15 6i.m4a"; sourceTree = "<group>"; };
+		98F8DF8C293DE90B00F8D70E /* alt 15 4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "alt 15 4.m4a"; sourceTree = "<group>"; };
+		98F8DF8F293DE92000F8D70E /* 04 3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "04 3.m4a"; sourceTree = "<group>"; };
+		98F8DF90293DE92000F8D70E /* 15 4.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "15 4.m4a"; sourceTree = "<group>"; };
+		98F8DF91293DE92000F8D70E /* 15 3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "15 3.m4a"; sourceTree = "<group>"; };
+		98F8DF92293DE92000F8D70E /* alt 15 2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "alt 15 2.m4a"; sourceTree = "<group>"; };
+		98F8DF93293DE92000F8D70E /* alt 15 3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "alt 15 3.m4a"; sourceTree = "<group>"; };
+		98F8DF99293DEE0E00F8D70E /* 15 7.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "15 7.m4a"; sourceTree = "<group>"; };
+		98F8DF9A293DEE0F00F8D70E /* alt 15 5.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "alt 15 5.m4a"; sourceTree = "<group>"; };
+		98F8DF9B293DEE0F00F8D70E /* alt 17 3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "alt 17 3.m4a"; sourceTree = "<group>"; };
+		98F8DF9F293DEE2300F8D70E /* alt 17 2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "alt 17 2.m4a"; sourceTree = "<group>"; };
+		98F8DFA1293E46E600F8D70E /* ikanPuzzle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ikanPuzzle.wav; sourceTree = "<group>"; };
+		98F8DFA2293E46E700F8D70E /* labirin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = labirin.wav; sourceTree = "<group>"; };
 		A0072D95292BCD4E00D32023 /* MalinKundang_Scene6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene6.swift; sourceTree = "<group>"; };
 		A018EA08292773BF00FE7451 /* MalinKundang_Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Puzzle.swift; sourceTree = "<group>"; };
 		A01B3DB0293B17CC00BBDE24 /* MalinKundang_AlternateScene17.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_AlternateScene17.swift; sourceTree = "<group>"; };
@@ -229,12 +244,15 @@
 		A01C55B92937247500261695 /* SettingsScreen_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsScreen_ViewController.xib; sourceTree = "<group>"; };
 		A01C55BB2937251500261695 /* ScenePilihGame_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePilihGame_ViewController.swift; sourceTree = "<group>"; };
 		A01C55BF2937253000261695 /* ScenePilihGame_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScenePilihGame_ViewController.xib; sourceTree = "<group>"; };
+		A01E17AC293E40740036DCC1 /* awalGame.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = awalGame.wav; sourceTree = "<group>"; };
 		A02027FE293790D7004694CD /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
 		A02027FF293790D7004694CD /* DetailPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPageViewController.xib; sourceTree = "<group>"; };
 		A022135A2939046500F40201 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		A022135B2939046500F40201 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		A02774F12939FD40005F1ADF /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		A02774F22939FD40005F1ADF /* OnboardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCollectionViewCell.xib; sourceTree = "<group>"; };
+		A032E65F293E36B500D09724 /* LauchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauchScreenViewController.swift; sourceTree = "<group>"; };
+		A032E660293E36B500D09724 /* LauchScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LauchScreenViewController.xib; sourceTree = "<group>"; };
 		A07F796C2937C621003954F0 /* MalinKundang_Scene16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene16.swift; sourceTree = "<group>"; };
 		A08B5DC7291FD06C0021FBAF /* ProfileOnboard_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOnboard_ViewController.swift; sourceTree = "<group>"; };
 		A08B5DC8291FD06C0021FBAF /* ProfileOnboard_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileOnboard_ViewController.xib; sourceTree = "<group>"; };
@@ -278,21 +296,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		698EB8C82921E24E008C18BA /* GamePad */ = {
-			isa = PBXGroup;
-			children = (
-				698EB8D72921E2BD008C18BA /* Controller.swift */,
-				698EB8C92921E24E008C18BA /* GamePadSpace.swift */,
-				698EB8CA2921E24E008C18BA /* GamePadRight.swift */,
-				698EB8CB2921E24E008C18BA /* GamePadBase.swift */,
-				698EB8CC2921E24E008C18BA /* GamePadDown.swift */,
-				698EB8CD2921E24E008C18BA /* GamePad.swift */,
-				698EB8CE2921E24E008C18BA /* GamePadUp.swift */,
-				698EB8CF2921E24E008C18BA /* GamePadleft.swift */,
-			);
-			path = GamePad;
-			sourceTree = "<group>";
-		};
 		69C54FF3291A0C5A00E1CEF7 = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +377,8 @@
 			isa = PBXGroup;
 			children = (
 				69C55021291A0EF500E1CEF7 /* DocsLaunch.md */,
+				A032E65F293E36B500D09724 /* LauchScreenViewController.swift */,
+				A032E660293E36B500D09724 /* LauchScreenViewController.xib */,
 			);
 			path = LaunchScreen;
 			sourceTree = "<group>";
@@ -500,7 +505,6 @@
 		988867672921066D0094AAAF /* Scene 3 - Games 1 */ = {
 			isa = PBXGroup;
 			children = (
-				698EB8C82921E24E008C18BA /* GamePad */,
 				98F8DED72928981E00F8D70E /* MalinKundang_Tutorial_Games1.swift */,
 				98886768292107240094AAAF /* MalinKundang_Games1.swift */,
 				98F8DECE292295D200F8D70E /* CoordinateGames.swift */,
@@ -623,6 +627,10 @@
 		98F8DF36293CA63B00F8D70E /* Background Music */ = {
 			isa = PBXGroup;
 			children = (
+				A01E17AC293E40740036DCC1 /* awalGame.wav */,
+				984801EE293E51AE0083DD86 /* chicken.mp3 */,
+				98F8DFA1293E46E600F8D70E /* ikanPuzzle.wav */,
+				98F8DFA2293E46E700F8D70E /* labirin.wav */,
 				98F8DF79293D274200F8D70E /* soundOmbak.wav */,
 				98F8DF77293D270400F8D70E /* rainThunder.mp3 */,
 				98F8DF37293CA66F00F8D70E /* wave.mp3 */,
@@ -633,6 +641,17 @@
 		98F8DF3E293D178200F8D70E /* Dubbing Malin */ = {
 			isa = PBXGroup;
 			children = (
+				98F8DF9F293DEE2300F8D70E /* alt 17 2.m4a */,
+				98F8DF99293DEE0E00F8D70E /* 15 7.m4a */,
+				98F8DF9A293DEE0F00F8D70E /* alt 15 5.m4a */,
+				98F8DF9B293DEE0F00F8D70E /* alt 17 3.m4a */,
+				98F8DF8F293DE92000F8D70E /* 04 3.m4a */,
+				98F8DF91293DE92000F8D70E /* 15 3.m4a */,
+				98F8DF90293DE92000F8D70E /* 15 4.m4a */,
+				98F8DF92293DE92000F8D70E /* alt 15 2.m4a */,
+				98F8DF93293DE92000F8D70E /* alt 15 3.m4a */,
+				98F8DF8C293DE90B00F8D70E /* alt 15 4.m4a */,
+				98F8DF8B293DE90A00F8D70E /* alt 15 6i.m4a */,
 				98F8DF3F293D178200F8D70E /* alt 15 1.m4a */,
 				98F8DF40293D178200F8D70E /* 17 2.m4a */,
 				98F8DF41293D178200F8D70E /* 15 2.m4a */,
@@ -829,6 +848,7 @@
 			files = (
 				A01B3DB9293B8DFB00BBDE24 /* HomePageViewController.xib in Resources */,
 				98F8DF70293D178200F8D70E /* 08.m4a in Resources */,
+				984801EF293E51AE0083DD86 /* chicken.mp3 in Resources */,
 				A08B5DCA291FD06C0021FBAF /* ProfileOnboard_ViewController.xib in Resources */,
 				A0E8B751293C5B1300C0299E /* Nunito-Bold.ttf in Resources */,
 				98F8DF6A293D178200F8D70E /* 12 1.m4a in Resources */,
@@ -849,11 +869,17 @@
 				98F8DF73293D178200F8D70E /* 02 1.m4a in Resources */,
 				98F8DF5F293D178200F8D70E /* 17 1.m4a in Resources */,
 				A0E8B753293C5B1300C0299E /* NunitoHeavy-Italic.ttf in Resources */,
+				98F8DF94293DE92100F8D70E /* 04 3.m4a in Resources */,
+				A01E17AD293E40740036DCC1 /* awalGame.wav in Resources */,
+				98F8DFA3293E46E700F8D70E /* ikanPuzzle.wav in Resources */,
 				98F8DF69293D178200F8D70E /* 16.m4a in Resources */,
 				98F8DF68293D178200F8D70E /* 15  1.m4a in Resources */,
 				98F8DF6E293D178200F8D70E /* 01 2.m4a in Resources */,
+				98F8DF95293DE92100F8D70E /* 15 4.m4a in Resources */,
 				A0E8B74E293C5B1300C0299E /* Nunito-BlackItalic.ttf in Resources */,
+				98F8DF96293DE92100F8D70E /* 15 3.m4a in Resources */,
 				98F8DF65293D178200F8D70E /* 15 5.m4a in Resources */,
+				98F8DF8E293DE90B00F8D70E /* alt 15 4.m4a in Resources */,
 				98F8DF5D293D178200F8D70E /* 15 2.m4a in Resources */,
 				A0E8B746293C5B1300C0299E /* Nunito-SemiBold.ttf in Resources */,
 				A022135D2939046500F40201 /* OnboardingViewController.xib in Resources */,
@@ -861,14 +887,17 @@
 				A0E8B750293C5B1300C0299E /* Nunito-Black.ttf in Resources */,
 				A01C55BA2937247600261695 /* SettingsScreen_ViewController.xib in Resources */,
 				69C55009291A0C5D00E1CEF7 /* Assets.xcassets in Resources */,
+				98F8DF9E293DEE0F00F8D70E /* alt 17 3.m4a in Resources */,
 				98F8DF6B293D178200F8D70E /* 14.m4a in Resources */,
 				98F8DF6C293D178200F8D70E /* 18.m4a in Resources */,
 				98F8DF75293D178200F8D70E /* 02 2.m4a in Resources */,
 				69C55007291A0C5A00E1CEF7 /* Main.storyboard in Resources */,
 				98F8DF5E293D178200F8D70E /* alt 17 1.m4a in Resources */,
+				98F8DF97293DE92100F8D70E /* alt 15 2.m4a in Resources */,
 				98F8DF64293D178200F8D70E /* 11 1.m4a in Resources */,
 				A0E8B742293C5B1300C0299E /* Nunito-Medium.ttf in Resources */,
 				A01C55C02937253000261695 /* ScenePilihGame_ViewController.xib in Resources */,
+				98F8DF98293DE92100F8D70E /* alt 15 3.m4a in Resources */,
 				98F8DF67293D178200F8D70E /* 07.m4a in Resources */,
 				98F8DF7A293D274200F8D70E /* soundOmbak.wav in Resources */,
 				98F8DF5B293D178200F8D70E /* alt 15 1.m4a in Resources */,
@@ -876,14 +905,19 @@
 				A0E8B749293C5B1300C0299E /* Nunito-BoldItalic.ttf in Resources */,
 				98F8DF71293D178200F8D70E /* 04 1.m4a in Resources */,
 				98F8DF6D293D178200F8D70E /* 01 1.m4a in Resources */,
+				98F8DFA0293DEE2300F8D70E /* alt 17 2.m4a in Resources */,
 				A0202801293790D7004694CD /* DetailPageViewController.xib in Resources */,
+				A032E662293E36B500D09724 /* LauchScreenViewController.xib in Resources */,
 				A0E8B745293C5B1300C0299E /* Nunito-SemiBoldItalic.ttf in Resources */,
 				98F8DF62293D178200F8D70E /* 11 2.m4a in Resources */,
+				98F8DF8D293DE90B00F8D70E /* alt 15 6i.m4a in Resources */,
 				A01B3DBD293B8E1500BBDE24 /* HomePageCollectionViewCell.xib in Resources */,
 				98F8DF76293D178200F8D70E /* 19 1.m4a in Resources */,
+				98F8DF9C293DEE0F00F8D70E /* 15 7.m4a in Resources */,
 				98F8DF82293D2DF200F8D70E /* soundMalinJadiBatu.mp3 in Resources */,
 				98F8DF74293D178200F8D70E /* 19 2.m4a in Resources */,
 				A0E8B74D293C5B1300C0299E /* Nunito-Italic.ttf in Resources */,
+				98F8DFA4293E46E700F8D70E /* labirin.wav in Resources */,
 				A0E8B758293C665400C0299E /* soundFailed.wav in Resources */,
 				A0E8B74A293C5B1300C0299E /* Nunito-Regular.ttf in Resources */,
 				A0FB0ECD293AFF58007C21A0 /* EndingStoryViewController.xib in Resources */,
@@ -891,6 +925,7 @@
 				A0FB0EC9293AFF45007C21A0 /* ChoiceEndingViewController.xib in Resources */,
 				A0E8B74C293C5B1300C0299E /* Nunito-ExtraBoldItalic.ttf in Resources */,
 				98F8DF61293D178200F8D70E /* alt 15 6.m4a in Resources */,
+				98F8DF9D293DEE0F00F8D70E /* alt 15 5.m4a in Resources */,
 				A0E8B743293C5B1300C0299E /* Nunito-ExtraLight.ttf in Resources */,
 				A02774F42939FD40005F1ADF /* OnboardingCollectionViewCell.xib in Resources */,
 				98F8DF7C293D275900F8D70E /* soundKapalBerangkat.wav in Resources */,
@@ -907,15 +942,14 @@
 			files = (
 				A01B3DBC293B8E1500BBDE24 /* HomePageCollectionViewCell.swift in Sources */,
 				69EADE882938E346000A31A3 /* MalinKundang_Scene13.swift in Sources */,
-				698EB8D02921E24E008C18BA /* GamePadSpace.swift in Sources */,
 				98F8DF29293B4DD300F8D70E /* MalinKundang_Scene15.swift in Sources */,
 				A0E8B75B293CF11C00C0299E /* MalinKundang_PuzzleBesar.swift in Sources */,
 				A0E8B75D293D30A300C0299E /* ChoicesEnding.swift in Sources */,
 				98886769292107240094AAAF /* MalinKundang_Games1.swift in Sources */,
 				69D14818292C84BD0067D1D9 /* CustomScrollView.swift in Sources */,
-				698EB8D62921E24E008C18BA /* GamePadleft.swift in Sources */,
 				A01B3DB1293B17CC00BBDE24 /* MalinKundang_AlternateScene17.swift in Sources */,
 				98F8DEE2292DD77400F8D70E /* MalinKundang_Scene7.swift in Sources */,
+				A032E661293E36B500D09724 /* LauchScreenViewController.swift in Sources */,
 				A01C55B52937240700261695 /* SettingsScreen_ViewController.swift in Sources */,
 				A01C55BD2937251500261695 /* ScenePilihGame_ViewController.swift in Sources */,
 				A01B3DB8293B8DFB00BBDE24 /* HomePageViewController.swift in Sources */,
@@ -929,14 +963,10 @@
 				98F8DF8A293D42DA00F8D70E /* MalinKundang_PilihKapal.swift in Sources */,
 				A0202800293790D7004694CD /* DetailPageViewController.swift in Sources */,
 				69D6B1A92934654A002CF007 /* MalinKundang_Scene11.swift in Sources */,
-				698EB8D82921E2BD008C18BA /* Controller.swift in Sources */,
 				98F8DEE5292E8D3600F8D70E /* MalinKundang_Scene8.swift in Sources */,
 				69C55004291A0C5A00E1CEF7 /* ViewController.swift in Sources */,
-				698EB8D22921E24E008C18BA /* GamePadBase.swift in Sources */,
-				698EB8D12921E24E008C18BA /* GamePadRight.swift in Sources */,
 				98F8DEED2931384800F8D70E /* MalinKundang_Scene12.swift in Sources */,
 				988867662920FEA00094AAAF /* MalinKundang_Scene2.swift in Sources */,
-				698EB8D52921E24E008C18BA /* GamePadUp.swift in Sources */,
 				A018EA09292773BF00FE7451 /* MalinKundang_Puzzle.swift in Sources */,
 				98F8DEE8292FA1C200F8D70E /* MalinKundang_Scene9.swift in Sources */,
 				A0072D96292BCD4F00D32023 /* MalinKundang_Scene6.swift in Sources */,
@@ -949,7 +979,6 @@
 				988867642920FDD40094AAAF /* MalinKundang_Scene1.swift in Sources */,
 				A01B3DB3293B8D5E00BBDE24 /* CustomLayout.swift in Sources */,
 				A0C353BA292A67D30082A071 /* MalinKundang_Puzzle2.swift in Sources */,
-				698EB8D42921E24E008C18BA /* GamePad.swift in Sources */,
 				98F8DECF292295D200F8D70E /* CoordinateGames.swift in Sources */,
 				98F8DEF12932202000F8D70E /* MalinKundang_Scene14.swift in Sources */,
 				69C55002291A0C5A00E1CEF7 /* SceneDelegate.swift in Sources */,
@@ -958,7 +987,6 @@
 				A01B3DB5293B8DA500BBDE24 /* DataModelCaraousel.swift in Sources */,
 				98F8DEDD292C7BDF00F8D70E /* MalinKundang_Scene4.swift in Sources */,
 				98F8DF88293D425600F8D70E /* MalinKundang_EndingStory.swift in Sources */,
-				698EB8D32921E24E008C18BA /* GamePadDown.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1117,12 +1145,15 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = id.infinitelearningj.Folka;
+				MARKETING_VERSION = 0.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = id.infinitelearning.Folka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1145,12 +1176,15 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = id.infinitelearningj.Folka;
+				MARKETING_VERSION = 0.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = id.infinitelearning.Folka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

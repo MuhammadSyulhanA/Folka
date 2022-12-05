@@ -40,7 +40,7 @@ class MalinKundang_Scene2: SKScene {
     var labelTextStory = SKLabelNode(fontNamed: "Nunito")
     
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
-    var dubbingMalin_1: SKAction = SKAction.playSoundFileNamed("02 2.m4a", waitForCompletion: false)
+   
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
@@ -128,7 +128,8 @@ class MalinKundang_Scene2: SKScene {
         labelTextStory.zPosition = +4.5
         addChild(labelTextStory)
         
-        run(dubbingMalin_1)
+        Sound.sharedInstance.playDubbing(file: "02 1", fileExtension: "m4a")
+        
     }
     
     override init(size: CGSize){
@@ -176,6 +177,8 @@ class MalinKundang_Scene2: SKScene {
         }
         
         if buttonNext.action(forKey: "Button Next") == nil {
+            Sound.sharedInstance.stop()
+            Sound.sharedInstance.stopBacksound()
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
             let reveal = SKTransition.reveal(with: .left, duration: 1)
             let newScene = MalinKundang_Tutorial_Games1(size: CGSize(width: 2048, height: 1536))
@@ -189,6 +192,7 @@ class MalinKundang_Scene2: SKScene {
             run(clickButton)
         }
         if buttonPrevious.action(forKey: "Button Previous") == nil {
+            Sound.sharedInstance.stop()
             buttonPrevious.run((buttonPreviousAction!), withKey: "Button Previous")
             let reveal = SKTransition.reveal(with: .right, duration: 1)
             let prevScene = MalinKundang_Scene1(size: CGSize(width: 2048, height: 1536))
@@ -202,11 +206,12 @@ class MalinKundang_Scene2: SKScene {
             run(clickButton)
         }
         if buttonHome.action(forKey: "Button Home") == nil {
+            Sound.sharedInstance.stop()
+            Sound.sharedInstance.stopBacksound()
             buttonHome.run((buttonHomeAction!), withKey: "Button Home")
 //            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
-//            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
-            
+          Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
         }
     }
     

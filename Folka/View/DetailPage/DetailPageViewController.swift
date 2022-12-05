@@ -30,9 +30,9 @@ class DetailPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         print(stateSound)
         
+//        Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
         let tapNext = UITapGestureRecognizer(target: self, action: #selector(self.previousPage))
         buttonBack.addGestureRecognizer(tapNext)
         buttonBack.isUserInteractionEnabled = true
@@ -61,6 +61,7 @@ class DetailPageViewController: UIViewController {
     }
     
     @IBAction func nextPage(_ sender: UIButton) {
+      Sound.sharedInstance.stopBacksound()
         Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
         sender.transform = CGAffineTransform.init(scaleX: 0.6, y: 0.6)
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
@@ -96,8 +97,8 @@ class DetailPageViewController: UIViewController {
               sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
     
             })
-            self.presentingViewController?.dismiss(animated: true, completion: nil)
-        self.navigationController?.popViewController(animated: true)
+//            self.presentingViewController?.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
           }
     
 //    func presentDetailPage(){

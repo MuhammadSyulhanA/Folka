@@ -45,9 +45,6 @@ class MalinKundang_Scene11: SKScene {
     
     //MARK: SOUND
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
-    var dubbingMalin_1: SKAction = SKAction.playSoundFileNamed("11 1.m4a", waitForCompletion: false)
-    var dubbingMalin_2: SKAction = SKAction.playSoundFileNamed("11 2.m4a", waitForCompletion: false)
-    var dubbingMalin_3: SKAction = SKAction.playSoundFileNamed("11 3.m4a", waitForCompletion: false)
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
@@ -142,7 +139,7 @@ class MalinKundang_Scene11: SKScene {
         labelTextStory.zPosition = +4.5
         addChild(labelTextStory)
         
-        run(dubbingMalin_1)
+        Sound.sharedInstance.playDubbing(file: "11 1", fileExtension: "m4a")
     }
     
     //MARK: SOURCE CODE ASSET GERAK
@@ -196,9 +193,7 @@ class MalinKundang_Scene11: SKScene {
         if buttonHome.action(forKey: "Button Home") == nil {
             buttonHome.run((buttonHomeAction!), withKey: "Button Home")
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
-//            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-//            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
-            
+            Sound.sharedInstance.stop()
         }
     }
     
@@ -212,12 +207,15 @@ class MalinKundang_Scene11: SKScene {
             print("if next", state)
             
             if state == 1 {
-                run(dubbingMalin_2)
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "11 2", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].text
             } else if state == 2 {
-                run(dubbingMalin_3)
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "11 3", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].text
             } else if state == 3 {
+                Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .left, duration: 1)
                 let newScene = MalinKundang_Scene12(size: CGSize(width: 2050, height: 1536))
                 newScene.scaleMode = .aspectFill
@@ -228,8 +226,11 @@ class MalinKundang_Scene11: SKScene {
             print("else next", state)
             
             if state == 2 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "11 3", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].text
             } else if state == 3 {
+                Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .left, duration: 1)
                 let newScene = MalinKundang_Scene12(size: CGSize(width: 2050, height: 1536))
                 newScene.scaleMode = .aspectFill
@@ -248,12 +249,19 @@ class MalinKundang_Scene11: SKScene {
             state -= 1
             print("if prev", state)
             if state == 0 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "11 1", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].text
             } else if state == 1 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "11 2", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].text
             } else if state == 2 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "11 3", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].text
             } else if state == -1 {
+                Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .right, duration: 1)
                 let prevScene = MalinKundang_Scene10(size: CGSize(width: 2048, height: 1536))
                 prevScene.scaleMode = .aspectFill
@@ -264,12 +272,19 @@ class MalinKundang_Scene11: SKScene {
             print("else prev", state)
 
             if state == 0 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "11 1", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].text
             } else if state == 1 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "11 2", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].text
             } else if state == 2 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "11 3", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].text
             } else if state == -1 {
+                Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .right, duration: 1)
                 let prevScene = MalinKundang_Scene10(size: CGSize(width: 2048, height: 1536))
                 prevScene.scaleMode = .aspectFill

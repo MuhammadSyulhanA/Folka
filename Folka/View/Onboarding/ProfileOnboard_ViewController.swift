@@ -17,6 +17,7 @@ class ProfileOnboard_ViewController: UIViewController, UITextFieldDelegate {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+//    Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
     self.setupToHideKeyboardOnTapOnView()
     self.definesPresentationContext = true
     buttonSelesai.setTitle("", for: .normal)
@@ -77,6 +78,8 @@ extension UIViewController
     {
         view.endEditing(true)
     }
+  
+  
 }
 
 extension UIApplication {

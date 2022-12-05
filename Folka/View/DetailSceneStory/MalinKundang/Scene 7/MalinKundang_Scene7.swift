@@ -44,7 +44,6 @@ class MalinKundang_Scene7: SKScene {
     var labelTextStory = SKLabelNode(fontNamed: "Nunito")
     
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
-    var dubbingMalin: SKAction = SKAction.playSoundFileNamed("07.m4a", waitForCompletion: false)
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
@@ -143,8 +142,9 @@ class MalinKundang_Scene7: SKScene {
         labelTextStory.zPosition = 2.5
         addChild(labelTextStory)
         
-        run(dubbingMalin)
+        Sound.sharedInstance.playDubbing(file: "07", fileExtension: "m4a")
         
+        Sound.sharedInstance.playBacksound(file: "chicken", fileExtension: "mp3")
     }
     
     override init(size: CGSize){
@@ -186,11 +186,10 @@ class MalinKundang_Scene7: SKScene {
         }
         
         if buttonHome.action(forKey: "Button Home") == nil {
+            Sound.sharedInstance.stop()
+            Sound.sharedInstance.stopBacksound()
             buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
-//            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-//            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
-            
         }
     }
     
@@ -199,6 +198,8 @@ class MalinKundang_Scene7: SKScene {
             run(clickButton)
         }
         if buttonNext.action(forKey: "Button Next") == nil {
+            Sound.sharedInstance.stop()
+            Sound.sharedInstance.stopBacksound()
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
             let reveal = SKTransition.reveal(with: .left, duration: 1)
             let newScene = MalinKundang_Scene8(size: CGSize(width: 2048, height: 1536))
@@ -212,6 +213,8 @@ class MalinKundang_Scene7: SKScene {
             run(clickButton)
         }
         if buttonPrevious.action(forKey: "Button Previous") == nil {
+            Sound.sharedInstance.stop()
+            Sound.sharedInstance.stopBacksound()
             buttonPrevious.run((buttonPreviousAction!), withKey: "Button Previous")
             let reveal = SKTransition.reveal(with: .right, duration: 1)
             let prevScene = MalinKundang_Scene6(size: CGSize(width: 2048, height: 1536))

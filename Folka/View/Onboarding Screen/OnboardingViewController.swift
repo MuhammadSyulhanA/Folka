@@ -24,10 +24,12 @@ class OnboardingViewController: UIViewController, UICollectionViewDataSource, UI
   let pages: [Page] = [Page(image: "onboardingOne", title: "Baca Dongeng Interaktif", description: "Baca dongeng cerita rakyat Indonesia sambil bermain."),
                        Page(image: "onboardingTwo", title: "Mari Kita Mulai", description: "Siap membaca dan menjelajah dengan Folka.")]
   
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     assignbackground()
     
+    Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
     buttonStart.setTitle("", for: .normal)
     customButtonMulai = UIImage(named: "buttonMulaiBoarding")
     buttonStart.setImage(customButtonMulai?.withRenderingMode(.alwaysOriginal), for: .normal)
