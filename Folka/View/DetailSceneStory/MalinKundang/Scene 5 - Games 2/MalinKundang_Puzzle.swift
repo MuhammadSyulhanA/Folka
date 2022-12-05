@@ -441,7 +441,7 @@ class MalinKundang_Puzzle: SKScene{
       enumerateChildNodes(withName: "//*") { [self] (node, stop) in
         if node.name == "buttonHome" {
           run(clickButton)
-          buttonBackToHome()
+//          buttonBackToHome()
         }
       }
     }

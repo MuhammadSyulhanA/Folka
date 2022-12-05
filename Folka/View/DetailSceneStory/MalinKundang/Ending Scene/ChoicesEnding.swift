@@ -8,7 +8,7 @@ import SpriteKit
 import GameplayKit
 
 class ChoicesEnding: SKScene {
-  let background = SKSpriteNode(imageNamed: "backgroudBookDetail")
+  let background = SKSpriteNode(imageNamed: "backgroundChooseEnding")
   let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
   var buttonHomeAction: SKAction?
   let buttonMintaMaaf = SKSpriteNode(imageNamed: "buttonMintaMaaf")
@@ -38,7 +38,7 @@ class ChoicesEnding: SKScene {
     // MARK: Default background white
     self.backgroundColor = SKColor.white
     
-    background.size = CGSize(width: 2050, height: 1120)
+    background.size = CGSize(width: 2050, height: 1000)
     background.position = CGPoint(x: size.width/2, y: size.height/2)
     background.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     background.zPosition = -1
@@ -52,14 +52,14 @@ class ChoicesEnding: SKScene {
     addChild(buttonHome)
     
     buttonMintaMaaf.name = "buttonMintaMaaf"
-    buttonMintaMaaf.size = CGSize(width: 850, height: 150)
-    buttonMintaMaaf.position = CGPoint(x: size.width/2.7, y: size.height/3.5)
+    buttonMintaMaaf.size = CGSize(width: 650, height: 120)
+    buttonMintaMaaf.position = CGPoint(x: size.width/3.00, y: size.height/3.5)
     buttonMintaMaaf.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     buttonMintaMaaf.zPosition = 1
     addChild(buttonMintaMaaf)
     
     buttonMenyambut.name = "buttonMenyambut"
-    buttonMenyambut.size = CGSize(width: 850, height: 150)
+    buttonMenyambut.size = CGSize(width: 650, height: 120)
     buttonMenyambut.position = CGPoint(x: size.width/1.5, y: size.height/3.5)
     buttonMenyambut.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     buttonMenyambut.zPosition = 1
