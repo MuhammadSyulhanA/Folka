@@ -48,8 +48,6 @@ class MalinKundang_Scene1: SKScene {
     var dataIntro: [Intro] = []
     var state = 0
     
-    var backgroundMusic: SKAction = SKAction.playSoundFileNamed("soundOmbak", waitForCompletion: false)
-    
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
     
     override func didMove(to view: SKView) {
@@ -149,8 +147,8 @@ class MalinKundang_Scene1: SKScene {
         addChild(labelTextStory)
         
         Sound.sharedInstance.playDubbing(file: "01 1", fileExtension: "m4a")
+        Sound.sharedInstance.playBacksound(file: "soundOmbak", fileExtension: "wav")
         
-        //        run(backgroundMusic)
     }
     
     //MARK: SOURCE CODE ASSET GERAK
@@ -218,6 +216,7 @@ class MalinKundang_Scene1: SKScene {
         //        if stateMusic {
         run(clickButton)
         Sound.sharedInstance.stop()
+        Sound.sharedInstance.stopBacksound()
         //        }
         self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
 //        guard let rootViewController =

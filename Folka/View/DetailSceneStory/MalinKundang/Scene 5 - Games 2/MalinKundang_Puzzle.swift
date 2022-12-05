@@ -255,6 +255,8 @@ class MalinKundang_Puzzle: SKScene{
         puzzleBesarJendelaKapal.zPosition = 1
         puzzleBesarJendelaKapal.alpha = 0
         addChild(puzzleBesarJendelaKapal)
+        
+        Sound.sharedInstance.playBacksound(file: "ikanPuzzle", fileExtension: "wav")
     }
     
     
@@ -477,6 +479,7 @@ class MalinKundang_Puzzle: SKScene{
     }
     
     func buttonBackToGame() {
+        Sound.sharedInstance.stopBacksound()
         let prevScene = ScenePilihGame_ViewController(nibName: "ScenePilihGame_ViewController", bundle: nil)
         self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
     }
@@ -495,6 +498,7 @@ class MalinKundang_Puzzle: SKScene{
     }
     
     func buttonHomeAksi(){
+        Sound.sharedInstance.stopBacksound()
         self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
         //    let nextDetailPage = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
         //    self.view!.window?.rootViewController?.present(nextDetailPage, animated: true, completion: nil)
@@ -503,6 +507,7 @@ class MalinKundang_Puzzle: SKScene{
     
     func buttonNextStoryScene() {
         if buttonNextStory.action(forKey: "Button Next") == nil {
+            Sound.sharedInstance.stopBacksound()
             buttonNextStory.run(SKAction.repeatForever(buttonNextStoryAction!), withKey: "Button Next")
             let reveal = SKTransition.reveal(with: .left, duration: 1)
             let newScene = MalinKundang_Scene6(size: CGSize(width: 2050, height: 1536))

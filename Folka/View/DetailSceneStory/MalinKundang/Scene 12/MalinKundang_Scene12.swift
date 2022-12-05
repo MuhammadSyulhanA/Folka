@@ -31,7 +31,7 @@ class MalinKundang_Scene12: SKScene {
     
     //MARK: SOUND
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
-    var soundEffect: SKAction = SKAction.playSoundFileNamed("soundKapalJalan.wav", waitForCompletion: false)
+    
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
@@ -117,9 +117,9 @@ class MalinKundang_Scene12: SKScene {
         addChild(labelTextStory)
         
         Sound.sharedInstance.playDubbing(file: "12 1", fileExtension: "m4a")
-        
+        Sound.sharedInstance.playBacksound(file: "soundKapalJalan", fileExtension: "wav")
+
         run(SKAction.repeatForever(SKAction.sequence([SKAction.run(moveCloud), SKAction.wait(forDuration: 7.5)])))
-        run(soundEffect)
     }
     
     func moveCloud() {
@@ -176,6 +176,7 @@ class MalinKundang_Scene12: SKScene {
         }
         if buttonNext.action(forKey: "Button Next") == nil {
             Sound.sharedInstance.stop()
+            Sound.sharedInstance.stopBacksound()
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
             let reveal = SKTransition.reveal(with: .left, duration: 1)
             let newScene = MalinKundang_Scene13(size: CGSize(width: 2048, height: 1536))
@@ -191,6 +192,7 @@ class MalinKundang_Scene12: SKScene {
         
         if buttonPrevious.action(forKey: "Button Previous") == nil {
             Sound.sharedInstance.stop()
+            Sound.sharedInstance.stopBacksound()
             buttonPrevious.run((buttonPreviousAction!), withKey: "Button Previous")
             let reveal = SKTransition.reveal(with: .right, duration: 1)
             let prevScene = MalinKundang_Scene11(size: CGSize(width: 2048, height: 1536))
@@ -205,6 +207,7 @@ class MalinKundang_Scene12: SKScene {
         }
         if buttonHome.action(forKey: "Button Home") == nil {
             Sound.sharedInstance.stop()
+            Sound.sharedInstance.stopBacksound()
             buttonHome.run((buttonHomeAction!), withKey: "Button Home")
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
         }
