@@ -202,6 +202,7 @@ class MalinKundang_Scene16: SKScene {
             run(clickButton)
         }
         if buttonHome.action(forKey: "Button Home") == nil {
+            Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
             Sound.sharedInstance.stop()
             buttonHome.run((buttonHomeAction!), withKey: "Button Home")
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)

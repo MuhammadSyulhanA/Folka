@@ -256,6 +256,7 @@ class MalinKundang_Scene19: SKScene {
         }
         
         if buttonHome.action(forKey: "Button Home") == nil {
+            Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
             Sound.sharedInstance.stop()
             Sound.sharedInstance.stopBacksound()
             buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")

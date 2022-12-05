@@ -661,6 +661,7 @@ class MalinKundang_Scene13: SKScene {
         if atPoint((touch?.location(in: self))!).name == buttonLanjutkanCerita.name {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if node.name == "buttonHome" {
+                    Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
                     buttonLanjutkanCerita.run((buttonLanjutkanCeritaAction!), withKey: "Button Home")
                     if stateMusic {
                         run(clickButton)

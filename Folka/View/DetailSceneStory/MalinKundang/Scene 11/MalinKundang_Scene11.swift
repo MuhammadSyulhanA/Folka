@@ -26,6 +26,8 @@ class MalinKundang_Scene11: SKScene {
     
     let nonCharacterSea = SKSpriteNode(imageNamed: "sea")
     
+    let nonCharacterHouse = SKSpriteNode(imageNamed: "house1")
+    
     let nonCharacterTree = SKSpriteNode(imageNamed: "tree1")
     var animationTree: SKAction?
     
@@ -86,6 +88,13 @@ class MalinKundang_Scene11: SKScene {
         characterIbuMalin.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         characterIbuMalin.zPosition = 3
         addChild(characterIbuMalin)
+        
+        nonCharacterHouse.name = "house"
+        nonCharacterHouse.size = CGSize(width: 300, height: 250)
+        nonCharacterHouse.position = CGPoint(x: size.width/4.8, y: size.height/1.6)
+        nonCharacterHouse.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterHouse.zPosition = 1.25
+        addChild(nonCharacterHouse)
         
         characterNahkoda.name = "nahkoda"
         characterNahkoda.size = CGSize(width: 1500, height: 2200)
@@ -393,6 +402,7 @@ class MalinKundang_Scene11: SKScene {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if !self.buttonHome.hasActions(){
                     if node.name == "buttonHome" {
+                        Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
                         run(clickButton)
                         buttonHomeScene()
                     }

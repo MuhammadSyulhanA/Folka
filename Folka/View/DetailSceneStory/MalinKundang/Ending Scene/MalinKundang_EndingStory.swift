@@ -51,6 +51,7 @@ class MalinKundang_EndingStory: SKScene {
 //        }
         
         if buttonBeranda.action(forKey: "Button Beranda") == nil {
+            Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
             buttonBeranda.run(SKAction.repeatForever(buttonBerandaAction!), withKey: "Button Beranda")
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
             

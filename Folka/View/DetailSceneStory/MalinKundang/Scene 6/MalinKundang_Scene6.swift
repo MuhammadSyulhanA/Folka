@@ -200,6 +200,7 @@ class MalinKundang_Scene6: SKScene {
         }else if atPoint((touch?.location(in: self))!).name == buttonHome.name {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if node.name == "buttonHome" {
+                  Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
                     buttonHomeScene()
                 }
             }

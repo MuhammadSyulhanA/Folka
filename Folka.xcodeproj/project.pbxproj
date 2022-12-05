@@ -97,8 +97,6 @@
 		A01B3DC2293BB44500BBDE24 /* SoundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01B3DC1293BB44500BBDE24 /* SoundModel.swift */; };
 		A01C55B52937240700261695 /* SettingsScreen_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C55B32937240700261695 /* SettingsScreen_ViewController.swift */; };
 		A01C55BA2937247600261695 /* SettingsScreen_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C55B92937247500261695 /* SettingsScreen_ViewController.xib */; };
-		A01C55BD2937251500261695 /* ScenePilihGame_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C55BB2937251500261695 /* ScenePilihGame_ViewController.swift */; };
-		A01C55C02937253000261695 /* ScenePilihGame_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C55BF2937253000261695 /* ScenePilihGame_ViewController.xib */; };
 		A01E17AD293E40740036DCC1 /* awalGame.wav in Resources */ = {isa = PBXBuildFile; fileRef = A01E17AC293E40740036DCC1 /* awalGame.wav */; };
 		A0202800293790D7004694CD /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02027FE293790D7004694CD /* DetailPageViewController.swift */; };
 		A0202801293790D7004694CD /* DetailPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A02027FF293790D7004694CD /* DetailPageViewController.xib */; };
@@ -134,10 +132,6 @@
 		A0E8B759293C665400C0299E /* soundSucces.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0E8B757293C665400C0299E /* soundSucces.wav */; };
 		A0E8B75B293CF11C00C0299E /* MalinKundang_PuzzleBesar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E8B75A293CF11C00C0299E /* MalinKundang_PuzzleBesar.swift */; };
 		A0E8B75D293D30A300C0299E /* ChoicesEnding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E8B75C293D30A300C0299E /* ChoicesEnding.swift */; };
-		A0FB0EC8293AFF45007C21A0 /* ChoiceEndingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB0EC6293AFF45007C21A0 /* ChoiceEndingViewController.swift */; };
-		A0FB0EC9293AFF45007C21A0 /* ChoiceEndingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0FB0EC7293AFF45007C21A0 /* ChoiceEndingViewController.xib */; };
-		A0FB0ECC293AFF58007C21A0 /* EndingStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB0ECA293AFF58007C21A0 /* EndingStoryViewController.swift */; };
-		A0FB0ECD293AFF58007C21A0 /* EndingStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0FB0ECB293AFF58007C21A0 /* EndingStoryViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -242,8 +236,6 @@
 		A01B3DC1293BB44500BBDE24 /* SoundModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundModel.swift; sourceTree = "<group>"; };
 		A01C55B32937240700261695 /* SettingsScreen_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen_ViewController.swift; sourceTree = "<group>"; };
 		A01C55B92937247500261695 /* SettingsScreen_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsScreen_ViewController.xib; sourceTree = "<group>"; };
-		A01C55BB2937251500261695 /* ScenePilihGame_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePilihGame_ViewController.swift; sourceTree = "<group>"; };
-		A01C55BF2937253000261695 /* ScenePilihGame_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScenePilihGame_ViewController.xib; sourceTree = "<group>"; };
 		A01E17AC293E40740036DCC1 /* awalGame.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = awalGame.wav; sourceTree = "<group>"; };
 		A02027FE293790D7004694CD /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
 		A02027FF293790D7004694CD /* DetailPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPageViewController.xib; sourceTree = "<group>"; };
@@ -279,10 +271,6 @@
 		A0E8B757293C665400C0299E /* soundSucces.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = soundSucces.wav; sourceTree = "<group>"; };
 		A0E8B75A293CF11C00C0299E /* MalinKundang_PuzzleBesar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_PuzzleBesar.swift; sourceTree = "<group>"; };
 		A0E8B75C293D30A300C0299E /* ChoicesEnding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoicesEnding.swift; sourceTree = "<group>"; };
-		A0FB0EC6293AFF45007C21A0 /* ChoiceEndingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceEndingViewController.swift; sourceTree = "<group>"; };
-		A0FB0EC7293AFF45007C21A0 /* ChoiceEndingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChoiceEndingViewController.xib; sourceTree = "<group>"; };
-		A0FB0ECA293AFF58007C21A0 /* EndingStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingStoryViewController.swift; sourceTree = "<group>"; };
-		A0FB0ECB293AFF58007C21A0 /* EndingStoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EndingStoryViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -723,8 +711,6 @@
 				69D14817292C84BD0067D1D9 /* CustomScrollView.swift */,
 				A018EA08292773BF00FE7451 /* MalinKundang_Puzzle.swift */,
 				A0C353B9292A67D30082A071 /* MalinKundang_Puzzle2.swift */,
-				A01C55BB2937251500261695 /* ScenePilihGame_ViewController.swift */,
-				A01C55BF2937253000261695 /* ScenePilihGame_ViewController.xib */,
 				A0E8B75A293CF11C00C0299E /* MalinKundang_PuzzleBesar.swift */,
 				98F8DF89293D42DA00F8D70E /* MalinKundang_PilihKapal.swift */,
 			);
@@ -778,10 +764,6 @@
 		A0FB0EC5293AFF10007C21A0 /* Ending Scene */ = {
 			isa = PBXGroup;
 			children = (
-				A0FB0EC6293AFF45007C21A0 /* ChoiceEndingViewController.swift */,
-				A0FB0EC7293AFF45007C21A0 /* ChoiceEndingViewController.xib */,
-				A0FB0ECA293AFF58007C21A0 /* EndingStoryViewController.swift */,
-				A0FB0ECB293AFF58007C21A0 /* EndingStoryViewController.xib */,
 				A0E8B75C293D30A300C0299E /* ChoicesEnding.swift */,
 				98F8DF87293D425600F8D70E /* MalinKundang_EndingStory.swift */,
 			);
@@ -896,7 +878,6 @@
 				98F8DF97293DE92100F8D70E /* alt 15 2.m4a in Resources */,
 				98F8DF64293D178200F8D70E /* 11 1.m4a in Resources */,
 				A0E8B742293C5B1300C0299E /* Nunito-Medium.ttf in Resources */,
-				A01C55C02937253000261695 /* ScenePilihGame_ViewController.xib in Resources */,
 				98F8DF98293DE92100F8D70E /* alt 15 3.m4a in Resources */,
 				98F8DF67293D178200F8D70E /* 07.m4a in Resources */,
 				98F8DF7A293D274200F8D70E /* soundOmbak.wav in Resources */,
@@ -920,9 +901,7 @@
 				98F8DFA4293E46E700F8D70E /* labirin.wav in Resources */,
 				A0E8B758293C665400C0299E /* soundFailed.wav in Resources */,
 				A0E8B74A293C5B1300C0299E /* Nunito-Regular.ttf in Resources */,
-				A0FB0ECD293AFF58007C21A0 /* EndingStoryViewController.xib in Resources */,
 				69EADE8D293BA3FE000A31A3 /* soundClick.wav in Resources */,
-				A0FB0EC9293AFF45007C21A0 /* ChoiceEndingViewController.xib in Resources */,
 				A0E8B74C293C5B1300C0299E /* Nunito-ExtraBoldItalic.ttf in Resources */,
 				98F8DF61293D178200F8D70E /* alt 15 6.m4a in Resources */,
 				98F8DF9D293DEE0F00F8D70E /* alt 15 5.m4a in Resources */,
@@ -951,13 +930,10 @@
 				98F8DEE2292DD77400F8D70E /* MalinKundang_Scene7.swift in Sources */,
 				A032E661293E36B500D09724 /* LauchScreenViewController.swift in Sources */,
 				A01C55B52937240700261695 /* SettingsScreen_ViewController.swift in Sources */,
-				A01C55BD2937251500261695 /* ScenePilihGame_ViewController.swift in Sources */,
 				A01B3DB8293B8DFB00BBDE24 /* HomePageViewController.swift in Sources */,
-				A0FB0ECC293AFF58007C21A0 /* EndingStoryViewController.swift in Sources */,
 				A08B5DC9291FD06C0021FBAF /* ProfileOnboard_ViewController.swift in Sources */,
 				A02774F32939FD40005F1ADF /* OnboardingCollectionViewCell.swift in Sources */,
 				98F8DF2C293B79DC00F8D70E /* MalinKundang_Scene17.swift in Sources */,
-				A0FB0EC8293AFF45007C21A0 /* ChoiceEndingViewController.swift in Sources */,
 				A01B3DC2293BB44500BBDE24 /* SoundModel.swift in Sources */,
 				98F8DED82928981E00F8D70E /* MalinKundang_Tutorial_Games1.swift in Sources */,
 				98F8DF8A293D42DA00F8D70E /* MalinKundang_PilihKapal.swift in Sources */,
@@ -1133,7 +1109,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B3WXM85Q9P;
+				DEVELOPMENT_TEAM = 497V89NCL4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Folka/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1164,7 +1140,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B3WXM85Q9P;
+				DEVELOPMENT_TEAM = 497V89NCL4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Folka/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

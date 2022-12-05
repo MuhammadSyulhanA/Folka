@@ -573,8 +573,10 @@ class MalinKundang_PuzzleBesar: SKScene{
   
   func buttonBackToGame() {
     run(clickButton)
-    let prevScene = ScenePilihGame_ViewController(nibName: "ScenePilihGame_ViewController", bundle: nil)
-    self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+    let reveal = SKTransition.reveal(with: .right, duration: 1)
+    let prevScene = MalinKundang_PilihKapal(size: CGSize(width: 2048, height: 1536))
+    prevScene.scaleMode = .aspectFill
+    scene?.view!.presentScene(prevScene, transition: reveal)
   }
   
   func gameFinish(){
