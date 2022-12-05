@@ -217,14 +217,15 @@ class MalinKundang_Scene1: SKScene {
         //        if stateMusic {
         run(clickButton)
         //        }
-        guard let rootViewController =
-                view?.window?.rootViewController else { return }
-        let prevScene2 = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-        if rootViewController.presentedViewController == nil {
-            rootViewController.present(prevScene2, animated: true, completion: nil)
-        } else{
-        }
-        print("hahah")
+        self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
+//        guard let rootViewController =
+//                view?.window?.rootViewController else { return }
+//        let prevScene2 = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+//        if rootViewController.presentedViewController == nil {
+//            rootViewController.present(prevScene2, animated: true, completion: nil)
+//        } else{
+//        }
+//        print("hahah")
     }
     
     func startMalinAnimation() {

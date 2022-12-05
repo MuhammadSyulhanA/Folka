@@ -192,16 +192,22 @@ class MalinKundang_Scene4: SKScene {
                 textStory.text = dataIntro[state].textDialogue
             } else if state == 3 {
                 print("tes")
-                let prevScene = ScenePilihGame_ViewController(nibName: "ScenePilihGame_ViewController", bundle: nil)
-                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+                let reveal = SKTransition.reveal(with: .left, duration: 1)
+                let newScene = MalinKundang_PilihKapal(size: CGSize(width: 2050, height: 1536))
+                newScene.scaleMode = .aspectFill
+                scene?.view!.presentScene(newScene, transition: reveal)
+//                let prevScene = ScenePilihGame_ViewController(nibName: "ScenePilihGame_ViewController", bundle: nil)
+//                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             }
         } else {
             state += 1
             print(state)
             if state == 3 {
                 print("tess")
-                let prevScene = ScenePilihGame_ViewController(nibName: "ScenePilihGame_ViewController", bundle: nil)
-                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+                let reveal = SKTransition.reveal(with: .left, duration: 1)
+                let newScene = MalinKundang_PilihKapal(size: CGSize(width: 2050, height: 1536))
+                newScene.scaleMode = .aspectFill
+                scene?.view!.presentScene(newScene, transition: reveal)
             }
         }
     }
