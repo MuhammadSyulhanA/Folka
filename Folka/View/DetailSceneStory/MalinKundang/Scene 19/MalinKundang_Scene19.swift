@@ -187,7 +187,10 @@ class MalinKundang_Scene19: SKScene {
                 labelTextStory.text = dataIntro[state].text
             } else if state == 2 {
                 print("sini")
-                let prevScene = ChoiceEndingViewController(nibName: "ChoiceEndingViewController", bundle: nil)
+                let reveal = SKTransition.reveal(with: .right, duration: 1)
+                let newScene = ChoicesEnding(size: CGSize(width: 2048, height: 1536))
+                newScene.scaleMode = .aspectFill
+                scene?.view!.presentScene(newScene, transition: reveal)
 //                self.view!.window?.rootViewController?.navigationController?.present(prevScene, animated: true, completion: nil)
 //                self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
                 

@@ -34,6 +34,8 @@ class MalinKundang_PilihKapal: SKScene {
     
     let buttonMulai = SKSpriteNode(imageNamed: "buttonMulai")
     var buttonMulaiAction: SKAction?
+    
+    var state = 0
  
     override func didMove(to view: SKView) {
         self.backgroundColor = SKColor.white
@@ -51,12 +53,14 @@ class MalinKundang_PilihKapal: SKScene {
         addChild(nonCharacterJudul)
        
         nonCharacterKayu1.size = CGSize(width: 700, height: 450)
+        nonCharacterKayu1.name = "kayu1"
         nonCharacterKayu1.position = CGPoint(x: size.width/3.8, y: size.height/2.0)
         nonCharacterKayu1.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         nonCharacterKayu1.zPosition = 1
         addChild(nonCharacterKayu1)
         
         nonCharacterKayu2.size = CGSize(width: 700, height: 450)
+        nonCharacterKayu2.name = "kayu2"
         nonCharacterKayu2.position = CGPoint(x: size.width/1.35, y: size.height/2.0)
         nonCharacterKayu2.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         nonCharacterKayu2.zPosition = 1
@@ -66,6 +70,7 @@ class MalinKundang_PilihKapal: SKScene {
         nonCharacterKayuMilih1.position = CGPoint(x: size.width/3.8, y: size.height/2.0)
         nonCharacterKayuMilih1.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         nonCharacterKayuMilih1.zPosition = 1.5
+        nonCharacterKayuMilih1.isHidden = true
         addChild(nonCharacterKayuMilih1)
         
         nonCharacterKayuMilih2.size = CGSize(width: 710, height: 460)
@@ -76,12 +81,14 @@ class MalinKundang_PilihKapal: SKScene {
         addChild(nonCharacterKayuMilih2)
         
         nonCharacterKapalSatu.size = CGSize(width: 450, height: 300)
+        nonCharacterKapalSatu.name = "kapalSatu"
         nonCharacterKapalSatu.position = CGPoint(x: size.width/3.8, y: size.height/2.0)
         nonCharacterKapalSatu.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         nonCharacterKapalSatu.zPosition = 2
         addChild(nonCharacterKapalSatu)
         
         nonCharacterKapalDua.size = CGSize(width: 450, height: 300)
+        nonCharacterKapalDua.name = "kapalDua"
         nonCharacterKapalDua.position = CGPoint(x: size.width/1.35, y: size.height/2.0)
         nonCharacterKapalDua.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         nonCharacterKapalDua.zPosition = 2
@@ -93,5 +100,77 @@ class MalinKundang_PilihKapal: SKScene {
         buttonMulai.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         buttonMulai.zPosition = 2
         addChild(buttonMulai)
+    }
+    
+    override init(size: CGSize){
+        let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
+        let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
+        
+        buttonMulaiAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        animateKayu1 = SKAction.sequence([buttonToSmall, buttonToBig])
+        animateKayu2 = SKAction.sequence([buttonToSmall, buttonToBig])
+        animateKayuMilih1 = SKAction.sequence([buttonToSmall, buttonToBig])
+        animateKayuMilih2 = SKAction.sequence([buttonToSmall, buttonToBig])
+        
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func pickKapal1() {
+        state = 1
+        nonCharacterKayuMilih2.isHidden = true
+        nonCharacterKayuMilih1.isHidden = false
+        print(state)
+    }
+    
+    func pickKapal2() {
+        state = 2
+        nonCharacterKayuMilih1.isHidden = true
+        nonCharacterKayuMilih2.isHidden = false
+        print(state)
+    }
+    
+    func aksiMulai(){
+        if state == 1 {
+            let reveal = SKTransition.reveal(with: .left, duration: 1)
+            let newScene = MalinKundang_PuzzleBesar(size: CGSize(width: 2050, height: 1536))
+            newScene.scaleMode = .aspectFill
+            scene?.view!.presentScene(newScene, transition: reveal)
+        }  else if state == 2 {
+            let reveal = SKTransition.reveal(with: .left, duration: 1)
+            let newScene = MalinKundang_Puzzle(size: CGSize(width: 2050, height: 1536))
+            newScene.scaleMode = .aspectFill
+            scene?.view!.presentScene(newScene, transition: reveal)
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first as UITouch?
+        if atPoint((touch?.location(in: self))!).name == nonCharacterKapalSatu.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if node.name == "kapalSatu" {
+                    pickKapal1()
+                }
+            }
+        }
+        
+        if atPoint((touch?.location(in: self))!).name == nonCharacterKapalDua.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if node.name == "kapalDua" {
+                    pickKapal2()
+                }
+            }
+        }
+        
+        if atPoint((touch?.location(in: self))!).name == buttonMulai.name {
+            enumerateChildNodes(withName: "//*") { [self] (node, stop) in
+                if node.name == "buttonMulai" {
+                    aksiMulai()
+                }
+            }
+        }
     }
 }

@@ -668,11 +668,59 @@ class MalinKundang_Scene13: SKScene {
                 enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                     if node.name == "kapalLabirin" {
                         movePlayerToPosition(playerPosition: pos)
+                        
+                        if kapalLabirin.frame.intersects(sharkKiri.frame) {
+                            kapalLabirin.position = CGPoint(x: size.width/5.5, y: size.height/1.69)
+                        }
+                        
+                        if kapalLabirin.frame.intersects(sharkKanan1.frame) {
+                            kapalLabirin.position = CGPoint(x: size.width/5.5, y: size.height/1.69)
+                        }
+                        
+                        if kapalLabirin.frame.intersects(sharkKanan2.frame) {
+                            kapalLabirin.position = CGPoint(x: size.width/5.5, y: size.height/1.69)
+                        }
+                        
+                        if kapalLabirin.frame.intersects(sharkKanan3.frame) {
+                            kapalLabirin.position = CGPoint(x: size.width/5.5, y: size.height/1.69)
+                        }
+                        
+                        if kapalLabirin.frame.intersects(pulauFinish.frame) {
+                            popUpBerhasil.isHidden = false
+                            buttonMainLagi.isHidden = false
+                            buttonLanjutkanCerita.isHidden = false
+                            backgroundOpacity.isHidden = false
+                        }
                     }
                 }
             }
         }
         
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if kapalLabirin.frame.intersects(sharkKiri.frame) {
+            kapalLabirin.position = CGPoint(x: size.width/5.5, y: size.height/1.69)
+        }
+        
+        if kapalLabirin.frame.intersects(sharkKanan1.frame) {
+            kapalLabirin.position = CGPoint(x: size.width/5.5, y: size.height/1.69)
+        }
+        
+        if kapalLabirin.frame.intersects(sharkKanan2.frame) {
+            kapalLabirin.position = CGPoint(x: size.width/5.5, y: size.height/1.69)
+        }
+        
+        if kapalLabirin.frame.intersects(sharkKanan3.frame) {
+            kapalLabirin.position = CGPoint(x: size.width/5.5, y: size.height/1.69)
+        }
+        
+        if kapalLabirin.frame.intersects(pulauFinish.frame) {
+            popUpBerhasil.isHidden = false
+            buttonMainLagi.isHidden = false
+            buttonLanjutkanCerita.isHidden = false
+            backgroundOpacity.isHidden = false
+        }
     }
     
 }
