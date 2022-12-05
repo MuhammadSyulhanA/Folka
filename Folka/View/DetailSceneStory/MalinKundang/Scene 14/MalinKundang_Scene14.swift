@@ -26,7 +26,7 @@ class MalinKundang_Scene14: SKScene {
     
     let nonCharacterWood = SKSpriteNode(imageNamed: "kayuScene6")
     
-    let nonCharacterBoat1 = SKSpriteNode(imageNamed: "kapalScene14_1")
+    let nonCharacterBoat1 = UserDefaults.standard.string(forKey: "kapalPilih")! == "objectKapalSatu" ? SKSpriteNode(imageNamed: "kapalScene14_1") : SKSpriteNode(imageNamed: "kapalScene14_2")
     
     let buttonNext = SKSpriteNode(imageNamed: "buttonNext")
     var buttonNextAction: SKAction?
