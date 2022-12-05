@@ -14,11 +14,8 @@ class MalinKundang_Scene10: SKScene {
     let backgroundSky = SKSpriteNode(imageNamed: "skyBackground")
     let backgroundGround = SKSpriteNode(imageNamed: "groundBackground")
     
-    let characterMalinBadan = SKSpriteNode(imageNamed: "badanMalinScene10")
-    var animationMalinBadan: SKAction?
-    
-    let characterMalinKepala = SKSpriteNode(imageNamed: "kepalaMalinScene10_1")
-    var animationMalinKepala: SKAction?
+    let characterMalin = SKSpriteNode(imageNamed: "malinScene10_1")
+    var animationMalin: SKAction?
     
     let characterIbuMalin = SKSpriteNode(imageNamed: "ibuMalinScene10")
     
@@ -29,6 +26,8 @@ class MalinKundang_Scene10: SKScene {
     
     let nonCharacterMindBox = SKSpriteNode(imageNamed: "mindPopUpScene10")
     
+    let nonCharacterHouse = SKSpriteNode(imageNamed: "house1")
+
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
     var buttonHomeAction: SKAction?
     
@@ -77,19 +76,19 @@ class MalinKundang_Scene10: SKScene {
         nonCharacterMindBox.zPosition = 1.5
         addChild(nonCharacterMindBox)
         
-        characterMalinBadan.name = "malinBadan"
-        characterMalinBadan.size = CGSize(width: 700, height: 1100)
-        characterMalinBadan.position = CGPoint(x: size.width/1.8, y: size.height/2.08)
-        characterMalinBadan.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        characterMalinBadan.zPosition = 3.5
-        addChild(characterMalinBadan)
+        nonCharacterHouse.name = "house"
+        nonCharacterHouse.size = CGSize(width: 300, height: 250)
+        nonCharacterHouse.position = CGPoint(x: size.width/4.8, y: size.height/1.6)
+        nonCharacterHouse.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterHouse.zPosition = 1.25
+        addChild(nonCharacterHouse)
         
-        characterMalinKepala.name = "malinKepala"
-        characterMalinKepala.size = CGSize(width: 700, height: 1100)
-        characterMalinKepala.position = CGPoint(x: size.width/1.8, y: size.height/2.1)
-        characterMalinKepala.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        characterMalinKepala.zPosition = 2
-        addChild(characterMalinKepala)
+        characterMalin.name = "malin"
+        characterMalin.size = CGSize(width: 200, height: 300)
+        characterMalin.position = CGPoint(x: size.width/1.8, y: size.height/1.55)
+        characterMalin.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        characterMalin.zPosition = 3.5
+        addChild(characterMalin)
         
         characterIbuMalin.name = "ibuMalin"
         characterIbuMalin.size = CGSize(width: 1300, height: 2000)
@@ -150,7 +149,7 @@ class MalinKundang_Scene10: SKScene {
     override init(size: CGSize){
         var textures: [SKTexture] = []
         for index in 1...2 {
-            textures.append(SKTexture(imageNamed: "kepalaMalinScene10_\(index)"))
+            textures.append(SKTexture(imageNamed: "malinScene10_\(index)"))
         }
         
         var textures2: [SKTexture] = []
@@ -169,7 +168,7 @@ class MalinKundang_Scene10: SKScene {
         buttonPreviousAction = SKAction.sequence([buttonToSmall, buttonToBig])
         buttonHomeAction = SKAction.sequence([buttonToSmall, buttonToBig])
         
-        animationMalinKepala = SKAction.animate(with: textures, timePerFrame: 0.3)
+        animationMalin = SKAction.animate(with: textures, timePerFrame: 0.3)
         animationTree = SKAction.animate(with: textures2, timePerFrame: 0.5)
         
         super.init(size: size)
@@ -221,13 +220,13 @@ class MalinKundang_Scene10: SKScene {
     }
     
     func startMalinAnimation() {
-        if characterMalinBadan.action(forKey: "Badan Malin") == nil {
-            characterMalinBadan.run(SKAction.repeatForever(animationMalinKepala!), withKey: "Badan Malin")
+        if characterMalin.action(forKey: "Malin") == nil {
+            characterMalin.run(SKAction.repeatForever(animationMalin!), withKey: "Malin")
         }
     }
 
     func stopMalinAnimation() {
-        characterMalinBadan.removeAction(forKey: "Badan Malin")
+        characterMalin.removeAction(forKey: "Malin")
     }
     
     func stopIbuMalinAnimation() {
@@ -248,15 +247,15 @@ class MalinKundang_Scene10: SKScene {
         
         let touch = touches.first as UITouch?
         print(atPoint((touch?.location(in: self))!))
-        if atPoint((touch?.location(in: self))!).name == characterMalinBadan.name {
+        if atPoint((touch?.location(in: self))!).name == characterMalin.name {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
-                if !self.characterMalinBadan.hasActions(){
-                    if node.name == "malinBadan" {
+                if !self.characterMalin.hasActions(){
+                    if node.name == "malin" {
                         startMalinAnimation()
                     }
 
                 } else{
-                    if node.name == "malinBadan" {
+                    if node.name == "malin" {
                         stopMalinAnimation()
                     }
                 }
