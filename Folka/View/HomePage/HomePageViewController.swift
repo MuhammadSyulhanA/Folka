@@ -77,6 +77,8 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
         layout.itemSize.width = itemW
         collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
         
+        UserDefaults.standard.set(true, forKey: "fxMusic")
+        UserDefaults.standard.set(true, forKey: "fxSound")
     }
     
     override func viewWillAppear(_ animated: Bool) {

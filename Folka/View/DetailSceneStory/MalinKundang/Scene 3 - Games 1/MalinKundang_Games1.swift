@@ -59,8 +59,8 @@ class MalinKundang_Games1: SKScene {
     
     // timer
     var labelTimer = SKLabelNode(fontNamed: "Nunito")
-    var maxTime = 15
-    var timeRemaining = 15
+    var maxTime = 20
+    var timeRemaining = 20
     var gameTimer: Timer!
     
     // sound
@@ -279,6 +279,8 @@ class MalinKundang_Games1: SKScene {
         if timeRemaining < 0 {
             gameTimer.invalidate()
             labelTimer.text = "TIMES UP!"
+            nonCharacterHook.isHidden = true
+            nonCharacterRope.isHidden = true
             //            labelTimer.textColor = .red
             //            clockIcon.image = UIImage(named: "FirstLevel-Castlepart-05-Times-Up")
             //            clockIcon.shake()
@@ -416,6 +418,7 @@ class MalinKundang_Games1: SKScene {
         enumerateChildNodes(withName: "bottle") { [self] node, _ in
             let bottle = node  as! SKSpriteNode
             if bottle.frame.intersects(self.nonCharacterHook.frame) {
+                timeRemaining -= 1
                 run(self.soundFailed)
                 hitBottleTrash.append(bottle)
             }
@@ -429,6 +432,7 @@ class MalinKundang_Games1: SKScene {
         enumerateChildNodes(withName: "apple") { [self]  node, _ in
             let apple = node  as! SKSpriteNode
             if apple.frame.intersects(self.nonCharacterHook.frame) {
+                timeRemaining -= 1
                 run(self.soundFailed)
                 hitAppleTrash.append(apple)
             }

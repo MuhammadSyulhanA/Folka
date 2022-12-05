@@ -42,9 +42,7 @@ class MalinKundang_Scene19: SKScene {
     var state = 0
     
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
-    var dubbingMalin_1: SKAction = SKAction.playSoundFileNamed("19 1.m4a", waitForCompletion: false)
-    var dubbingMalin_2: SKAction = SKAction.playSoundFileNamed("19 2.m4a", waitForCompletion: false)
-    var soundEffect: SKAction = SKAction.playSoundFileNamed("soundMalinJadiBatu.mp3", waitForCompletion: false)
+  
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
@@ -129,9 +127,9 @@ class MalinKundang_Scene19: SKScene {
         labelTextStory.zPosition = 3.5
         addChild(labelTextStory)
         
+        Sound.sharedInstance.playDubbing(file: "19 1", fileExtension: "m4a")
+        Sound.sharedInstance.playBacksound(file: "soundMalinJadiBatu", fileExtension: "mp3")
         startMalinStoneAnimation()
-        run(dubbingMalin_1)
-        run(soundEffect)
     }
     
     override init(size: CGSize){
@@ -183,28 +181,30 @@ class MalinKundang_Scene19: SKScene {
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
             state += 1
             if state == 1 {
-                run(dubbingMalin_2)
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "19 2", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].text
             } else if state == 2 {
-                print("sini")
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.stopBacksound()
                 let reveal = SKTransition.reveal(with: .right, duration: 1)
                 let newScene = ChoicesEnding(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
                 scene?.view!.presentScene(newScene, transition: reveal)
-//                self.view!.window?.rootViewController?.navigationController?.present(prevScene, animated: true, completion: nil)
-//                self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
                 
             }
         } else {
             state += 1
             if state == 2 {
-                print("sinii")
-                print("sini")
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.stopBacksound()
                 let reveal = SKTransition.reveal(with: .right, duration: 1)
                 let newScene = ChoicesEnding(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
                 scene?.view!.presentScene(newScene, transition: reveal)
             } else if state == 1 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "19 2", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].text
             }
         }
@@ -218,10 +218,16 @@ class MalinKundang_Scene19: SKScene {
             buttonPrevious.run((buttonPreviousAction!), withKey: "Button Previous")
             state -= 1
             if state == 0 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "19 1", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].text
             } else if state == 1 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "19 2", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].text
             } else if state == -1 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.stopBacksound()
                 let reveal = SKTransition.reveal(with: .right, duration: 1)
                 let newScene = MalinKundang_Scene18(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
@@ -230,11 +236,15 @@ class MalinKundang_Scene19: SKScene {
         } else {
             state -= 1
             if state == -1 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.stopBacksound()
                 let reveal = SKTransition.reveal(with: .right, duration: 1)
                 let newScene = MalinKundang_Scene18(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
                 scene?.view!.presentScene(newScene, transition: reveal)
             } else if state == 0 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "19 1", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].text
             }
         }
@@ -246,11 +256,10 @@ class MalinKundang_Scene19: SKScene {
         }
         
         if buttonHome.action(forKey: "Button Home") == nil {
+            Sound.sharedInstance.stop()
+            Sound.sharedInstance.stopBacksound()
             buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
-//            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-//            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
-            
         }
     }
     

@@ -49,8 +49,7 @@ class MalinKundang_Scene1: SKScene {
     var state = 0
     
     var backgroundMusic: SKAction = SKAction.playSoundFileNamed("soundOmbak", waitForCompletion: false)
-    var dubbingMalin_1: SKAction = SKAction.playSoundFileNamed("01 1.m4a", waitForCompletion: false)
-    var dubbingMalin_2: SKAction = SKAction.playSoundFileNamed("01 2.m4a", waitForCompletion: false)
+    
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
     
     override func didMove(to view: SKView) {
@@ -149,9 +148,9 @@ class MalinKundang_Scene1: SKScene {
         labelTextStory.zPosition = +4.5
         addChild(labelTextStory)
         
-        //        run(backgroundMusic)
-        run(dubbingMalin_1)
+        Sound.sharedInstance.playDubbing(file: "01 1", fileExtension: "m4a")
         
+        //        run(backgroundMusic)
     }
     
     //MARK: SOURCE CODE ASSET GERAK
@@ -200,9 +199,11 @@ class MalinKundang_Scene1: SKScene {
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
             state += 1
             if state == 1 {
-                run(dubbingMalin_2)
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "01 2", fileExtension: "m4a")
                 labelTextStory.text = dataIntro[state].text
             } else if state == 2 {
+                Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .left, duration: 1)
                 let newScene = MalinKundang_Scene2(size: CGSize(width: 2050, height: 1536))
                 newScene.scaleMode = .aspectFill
@@ -216,6 +217,7 @@ class MalinKundang_Scene1: SKScene {
         buttonHome.run((buttonHomeAction!), withKey: "Button Home")
         //        if stateMusic {
         run(clickButton)
+        Sound.sharedInstance.stop()
         //        }
         self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
 //        guard let rootViewController =

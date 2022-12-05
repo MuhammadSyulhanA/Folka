@@ -60,12 +60,7 @@ class MalinKundang_Scene15: SKScene {
     var state = 0
     
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
-    var dubbingMalin_1: SKAction = SKAction.playSoundFileNamed("15  1.m4a", waitForCompletion: false)
-    var dubbingMalin_2: SKAction = SKAction.playSoundFileNamed("15 2.m4a", waitForCompletion: false)
-//    var dubbingMalin_3: SKAction = SKAction.playSoundFileNamed("15 3.m4a", waitForCompletion: false)
-//    var dubbingMalin_4: SKAction = SKAction.playSoundFileNamed("15 4.m4a", waitForCompletion: false)
-    var dubbingMalin_5: SKAction = SKAction.playSoundFileNamed("15 5.m4a", waitForCompletion: false)
-    var dubbingMalin_6: SKAction = SKAction.playSoundFileNamed("15 6.m4a", waitForCompletion: false)
+
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
@@ -203,7 +198,7 @@ class MalinKundang_Scene15: SKScene {
         labelTextStory.zPosition = 3.5
         addChild(labelTextStory)
         
-        run(dubbingMalin_1)
+        Sound.sharedInstance.playDubbing(file: "15  1", fileExtension: "m4a")
     }
     
     override init(size: CGSize){
@@ -243,6 +238,7 @@ class MalinKundang_Scene15: SKScene {
             state += 1
             print(state)
             if state == 7 {
+                Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .left, duration: 1)
                 let newScene = MalinKundang_Scene16(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
@@ -250,23 +246,32 @@ class MalinKundang_Scene15: SKScene {
             }
             else {
                 if state == 1 {
-                    run(dubbingMalin_2)
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15 2", fileExtension: "m4a")
                     characterMalinSay.isHidden = false
                 } else if state == 2 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15 3", fileExtension: "m4a")
                     characterMalinSay.isHidden = true
                     characterIbuMalinSay.isHidden = false
                 } else if state == 3 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15 4", fileExtension: "m4a")
                     characterIbuMalinSay.isHidden = true
                     characterIstriMalinSay.isHidden = false
                 } else if state == 4 {
-                    run(dubbingMalin_5)
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15 5", fileExtension: "m4a")
                     characterIstriMalinSay.isHidden = true
                     characterMalinSay.isHidden = false
                 } else if state == 5 {
-                    run(dubbingMalin_6)
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15 6", fileExtension: "m4a")
                     characterMalinSay.isHidden = false
                     characterIstriMalinSay.isHidden = true
                 } else if state == 6 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15 7", fileExtension: "m4a")
                     characterMalinSay.isHidden = true
                     characterIbuMalinSay.isHidden = false
                     characterMalin.run(SKAction.move(to: CGPoint(x: size.width/0.8, y: size.height/2.6), duration: 5.0))
@@ -279,6 +284,7 @@ class MalinKundang_Scene15: SKScene {
             state += 1
             print(state)
             if state == 7 {
+                Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .left, duration: 1)
                 let newScene = MalinKundang_Scene16(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
@@ -286,20 +292,32 @@ class MalinKundang_Scene15: SKScene {
             }
             else {
                 if state == 1 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15 2", fileExtension: "m4a")
                     characterMalinSay.isHidden = false
                 } else if state == 2 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15 3", fileExtension: "m4a")
                     characterMalinSay.isHidden = true
                     characterIbuMalinSay.isHidden = false
                 } else if state == 3 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15 4", fileExtension: "m4a")
                     characterIbuMalinSay.isHidden = true
                     characterIstriMalinSay.isHidden = false
                 } else if state == 4 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15 5", fileExtension: "m4a")
                     characterMalinSay.isHidden = false
                     characterIstriMalinSay.isHidden = true
                 } else if state == 5 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15 6", fileExtension: "m4a")
                     characterMalinSay.isHidden = false
                     characterIstriMalinSay.isHidden = true
                 } else if state == 6 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15 7", fileExtension: "m4a")
                     characterMalinSay.isHidden = true
                     characterIbuMalinSay.isHidden = false
                     characterMalin.run(SKAction.move(to: CGPoint(x: size.width/0.8, y: size.height/2.6), duration: 5.0))
@@ -320,26 +338,39 @@ class MalinKundang_Scene15: SKScene {
             state -= 1
             print(state)
             if state < 0 {
-                let reveal = SKTransition.reveal(with: .left, duration: 1)
+                Sound.sharedInstance.stop()
+                let reveal = SKTransition.reveal(with: .right, duration: 1)
                 let newScene = MalinKundang_Scene14(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
                 scene?.view!.presentScene(newScene, transition: reveal)
             }
             else {
                 if state == 0 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15  1", fileExtension: "m4a")
                     characterMalinSay.isHidden = true
                 } else if state == 1 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15 2", fileExtension: "m4a")
                     characterMalinSay.isHidden = false
                 } else if state == 2 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15 3", fileExtension: "m4a")
                     characterMalinSay.isHidden = true
                     characterIbuMalinSay.isHidden = false
                 } else if state == 3 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15 4", fileExtension: "m4a")
                     characterIbuMalinSay.isHidden = true
                     characterIstriMalinSay.isHidden = false
                 } else if state == 4 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15 5", fileExtension: "m4a")
                     characterMalinSay.isHidden = false
                     characterIstriMalinSay.isHidden = true
                 } else if state == 5 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15 6", fileExtension: "m4a")
                     characterMalinSay.isHidden = false
                     characterIstriMalinSay.isHidden = true
                 }
@@ -350,26 +381,39 @@ class MalinKundang_Scene15: SKScene {
             state -= 1
             print(state)
             if state < 0 {
-                let reveal = SKTransition.reveal(with: .left, duration: 1)
+                Sound.sharedInstance.stop()
+                let reveal = SKTransition.reveal(with: .right, duration: 1)
                 let newScene = MalinKundang_Scene14(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
                 scene?.view!.presentScene(newScene, transition: reveal)
             }
             else {
                 if state == 0 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15  1", fileExtension: "m4a")
                     characterMalinSay.isHidden = true
                 } else if state == 1 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15 2", fileExtension: "m4a")
                     characterMalinSay.isHidden = false
                 } else if state == 2 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15 3", fileExtension: "m4a")
                     characterMalinSay.isHidden = true
                     characterIbuMalinSay.isHidden = false
                 } else if state == 3 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15 4", fileExtension: "m4a")
                     characterIbuMalinSay.isHidden = true
                     characterIstriMalinSay.isHidden = false
                 } else if state == 4 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15 5", fileExtension: "m4a")
                     characterMalinSay.isHidden = false
                     characterIstriMalinSay.isHidden = true
                 } else if state == 5 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "15 6", fileExtension: "m4a")
                     characterMalinSay.isHidden = false
                     characterIstriMalinSay.isHidden = true
                 }
@@ -384,11 +428,9 @@ class MalinKundang_Scene15: SKScene {
             run(clickButton)
         }
         if buttonHome.action(forKey: "Button Home") == nil {
+            Sound.sharedInstance.stop()
             buttonHome.run((buttonHomeAction!), withKey: "Button Home")
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
-//            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-//            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
-            
         }
     }
     

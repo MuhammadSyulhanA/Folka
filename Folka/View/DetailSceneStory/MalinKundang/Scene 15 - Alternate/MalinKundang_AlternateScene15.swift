@@ -204,7 +204,8 @@ class MalinKundang_AlternateScene15: SKScene {
         labelTextStory.zPosition = 3.5
         addChild(labelTextStory)
         
-        run(dubbingMalin_1)
+        Sound.sharedInstance.playDubbing(file: "alt 15 1", fileExtension: "m4a")
+        
     }
     
     override init(size: CGSize){
@@ -248,25 +249,34 @@ class MalinKundang_AlternateScene15: SKScene {
                 let newScene = MalinKundang_EndingStory(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
                 scene?.view!.presentScene(newScene, transition: reveal)
-//                let prevScene = EndingStoryViewController(nibName: "EndingStoryViewController", bundle: nil)
-//                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+                Sound.sharedInstance.stop()
             }
             else {
                 if state == 1 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "alt 15 2", fileExtension: "m4a")
                     characterMalin.isHidden = false
                     characterMalinSay.isHidden = true
                     characterIbuMalinSay.isHidden = false
                 } else if state == 2 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "alt 15 3", fileExtension: "m4a")
                     characterMalin.isHidden = false
                     characterIbuMalinSay.isHidden = false
                 } else if state == 3 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "alt 15 4", fileExtension: "m4a")
                     characterIbuMalinSay.isHidden = true
                     characterIstriMalinSay.isHidden = false
                 } else if state == 4 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "alt 15 5", fileExtension: "m4a")
                     characterIstriMalinSay.isHidden = true
                     characterIbuMalinSay.isHidden = false
                 } else if state == 5 {
-                    run(dubbingMalin_6)
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "alt 15 6", fileExtension: "m4a")
+                    Sound.sharedInstance.playDubbing(file: "alt 15 6i", fileExtension: "m4a")
                     characterIbuMalinSay.isHidden = true
                     characterMalinSay.isHidden = false
                     characterIstriMalinSay.isHidden = false
@@ -283,25 +293,34 @@ class MalinKundang_AlternateScene15: SKScene {
                 let newScene = MalinKundang_EndingStory(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
                 scene?.view!.presentScene(newScene, transition: reveal)
-//                let prevScene = EndingStoryViewController(nibName: "EndingStoryViewController", bundle: nil)
-//                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+                Sound.sharedInstance.stop()
             }
             else {
                 if state == 1 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "alt 15 2", fileExtension: "m4a")
                     characterMalin.isHidden = false
                     characterIbuMalinSay.isHidden = false
                     characterIstriMalinSay.isHidden = true
                 } else if state == 2 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "alt 15 3", fileExtension: "m4a")
                     characterMalin.isHidden = false
                     characterMalinSay.isHidden = true
                     characterIbuMalinSay.isHidden = false
                 } else if state == 3 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "alt 15 4", fileExtension: "m4a")
                     characterIbuMalinSay.isHidden = true
                     characterIstriMalinSay.isHidden = false
                 } else if state == 4 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "alt 15 5", fileExtension: "m4a")
                     characterIstriMalinSay.isHidden = true
                     characterIbuMalinSay.isHidden = false
                 } else if state == 5 {
+                    Sound.sharedInstance.stop()
+                    Sound.sharedInstance.playDubbing(file: "alt 15 6", fileExtension: "m4a")
                     characterIbuMalinSay.isHidden = true
                     characterMalinSay.isHidden = false
                     characterIstriMalinSay.isHidden = false
@@ -330,46 +349,69 @@ class MalinKundang_AlternateScene15: SKScene {
                 let newScene = ChoicesEnding(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
                 scene?.view!.presentScene(newScene, transition: reveal)
-//                let prevScene = ChoiceEndingViewController(nibName: "ChoiceEndingViewController", bundle: nil)
-//                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+                Sound.sharedInstance.stop()
             } else if state == 0 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "alt 15 1", fileExtension: "m4a")
+                labelTextStory.text = dataIntro[state].textDialogue
                 characterMalinSay.isHidden = false
                 characterIbuMalinSay.isHidden = true
                 characterIstriMalinSay.isHidden = true
             } else if state == 1 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "alt 15 2", fileExtension: "m4a")
+                labelTextStory.text = dataIntro[state].textDialogue
                 characterMalin.isHidden = false
                 characterMalinSay.isHidden = true
                 characterIbuMalinSay.isHidden = false
             } else if state == 2 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "alt 15 3", fileExtension: "m4a")
+                labelTextStory.text = dataIntro[state].textDialogue
                 characterMalin.isHidden = false
                 characterIbuMalinSay.isHidden = false
                 characterIstriMalinSay.isHidden = true
             } else if state == 3 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "alt 15 4", fileExtension: "m4a")
+                labelTextStory.text = dataIntro[state].textDialogue
                 characterIbuMalinSay.isHidden = true
                 characterIstriMalinSay.isHidden = false
             } else if state == 4 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "alt 15 5", fileExtension: "m4a")
+                labelTextStory.text = dataIntro[state].textDialogue
                 characterIstriMalinSay.isHidden = true
                 characterIbuMalinSay.isHidden = false
             } else if state == 5 {
+                Sound.sharedInstance.stop()
+                Sound.sharedInstance.playDubbing(file: "alt 15 6", fileExtension: "m4a")
+                labelTextStory.text = dataIntro[state].textDialogue
                 characterIbuMalinSay.isHidden = true
                 characterMalinSay.isHidden = false
                 characterIstriMalinSay.isHidden = false
             }
             else {
                 if state == 0 {
+                    labelTextStory.text = dataIntro[state].textDialogue
                     characterMalinSay.isHidden = true
                 } else if state == 1 {
+                    labelTextStory.text = dataIntro[state].textDialogue
                     characterMalinSay.isHidden = false
                 } else if state == 2 {
+                    labelTextStory.text = dataIntro[state].textDialogue
                     characterMalinSay.isHidden = true
                     characterIbuMalinSay.isHidden = false
                 } else if state == 3 {
+                    labelTextStory.text = dataIntro[state].textDialogue
                     characterIbuMalinSay.isHidden = true
                     characterIstriMalinSay.isHidden = false
                 } else if state == 4 {
+                    labelTextStory.text = dataIntro[state].textDialogue
                     characterMalinSay.isHidden = false
                     characterIstriMalinSay.isHidden = true
                 } else if state == 5 {
+                    labelTextStory.text = dataIntro[state].textDialogue
                     characterMalinSay.isHidden = false
                     characterIstriMalinSay.isHidden = true
                 }
@@ -378,16 +420,12 @@ class MalinKundang_AlternateScene15: SKScene {
             }
             
         } else {
-            print("sini", state)
             if state == -1 {
-                print("kesini")
-                print("sini")
+                Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .right, duration: 1)
                 let newScene = ChoicesEnding(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
                 scene?.view!.presentScene(newScene, transition: reveal)
-//                let prevScene = ChoiceEndingViewController(nibName: "ChoiceEndingViewController", bundle: nil)
-//                self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             } else if state == 0 {
                 characterMalinSay.isHidden = false
                 characterIbuMalinSay.isHidden = true
@@ -420,13 +458,12 @@ class MalinKundang_AlternateScene15: SKScene {
     
     func buttonHomeScene() {
         if buttonHome.action(forKey: "Button Home") == nil {
+            Sound.sharedInstance.stop()
             buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
             if stateMusic {
                 run(clickButton)
             }
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
-//            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-//            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
             
         }
     }
