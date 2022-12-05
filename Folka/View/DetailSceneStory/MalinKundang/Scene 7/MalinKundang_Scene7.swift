@@ -143,6 +143,8 @@ class MalinKundang_Scene7: SKScene {
         addChild(labelTextStory)
         
         Sound.sharedInstance.playDubbing(file: "07", fileExtension: "m4a")
+        
+        Sound.sharedInstance.playBacksound(file: "chicken", fileExtension: "mp3")
     }
     
     override init(size: CGSize){
@@ -185,6 +187,7 @@ class MalinKundang_Scene7: SKScene {
         
         if buttonHome.action(forKey: "Button Home") == nil {
             Sound.sharedInstance.stop()
+            Sound.sharedInstance.stopBacksound()
             buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
         }
@@ -196,6 +199,7 @@ class MalinKundang_Scene7: SKScene {
         }
         if buttonNext.action(forKey: "Button Next") == nil {
             Sound.sharedInstance.stop()
+            Sound.sharedInstance.stopBacksound()
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
             let reveal = SKTransition.reveal(with: .left, duration: 1)
             let newScene = MalinKundang_Scene8(size: CGSize(width: 2048, height: 1536))
@@ -210,6 +214,7 @@ class MalinKundang_Scene7: SKScene {
         }
         if buttonPrevious.action(forKey: "Button Previous") == nil {
             Sound.sharedInstance.stop()
+            Sound.sharedInstance.stopBacksound()
             buttonPrevious.run((buttonPreviousAction!), withKey: "Button Previous")
             let reveal = SKTransition.reveal(with: .right, duration: 1)
             let prevScene = MalinKundang_Scene6(size: CGSize(width: 2048, height: 1536))

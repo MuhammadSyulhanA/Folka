@@ -178,6 +178,7 @@ class MalinKundang_Scene2: SKScene {
         
         if buttonNext.action(forKey: "Button Next") == nil {
             Sound.sharedInstance.stop()
+            Sound.sharedInstance.stopBacksound()
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
             let reveal = SKTransition.reveal(with: .left, duration: 1)
             let newScene = MalinKundang_Tutorial_Games1(size: CGSize(width: 2048, height: 1536))
@@ -206,6 +207,7 @@ class MalinKundang_Scene2: SKScene {
         }
         if buttonHome.action(forKey: "Button Home") == nil {
             Sound.sharedInstance.stop()
+            Sound.sharedInstance.stopBacksound()
             buttonHome.run((buttonHomeAction!), withKey: "Button Home")
 //            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
