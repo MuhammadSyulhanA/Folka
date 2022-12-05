@@ -123,6 +123,7 @@ class MalinKundang_PilihKapal: SKScene {
         state = 1
         nonCharacterKayuMilih2.isHidden = true
         nonCharacterKayuMilih1.isHidden = false
+        UserDefaults.standard.set("objectKapalSatu", forKey: "kapalPilih")
         print(state)
     }
     
@@ -130,6 +131,7 @@ class MalinKundang_PilihKapal: SKScene {
         state = 2
         nonCharacterKayuMilih1.isHidden = true
         nonCharacterKayuMilih2.isHidden = false
+        UserDefaults.standard.set("objectKapalDua", forKey: "kapalPilih")
         print(state)
     }
     

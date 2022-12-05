@@ -28,7 +28,8 @@ class MalinKundang_Scene17: SKScene {
     let nonCharacterCloud = SKSpriteNode(imageNamed: "cloudThunder1")
     var animationCloud: SKAction?
     
-    let nonCharacterBoat = SKSpriteNode(imageNamed: "boatScene17_1")
+    let nonCharacterBoat = UserDefaults.standard.string(forKey: "kapalPilih")! == "objectKapalSatu" ? SKSpriteNode(imageNamed: "boatScene17_1") : SKSpriteNode(imageNamed: "boat2Scene17_1")
+//    let nonCharacterBoat = SKSpriteNode(imageNamed: "boatScene17_1")
     var animationBoat: SKAction?
     
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
@@ -159,9 +160,16 @@ class MalinKundang_Scene17: SKScene {
         }
         
         var texturesBoat: [SKTexture] = []
-        for index in 1...2 {
-            texturesBoat.append(SKTexture(imageNamed: "boatScene17_\(index)"))
+        if (UserDefaults.standard.string(forKey: "kapalPilih")! == "objectKapalSatu") {
+            for index in 1...2 {
+                texturesBoat.append(SKTexture(imageNamed: "boatScene17_\(index)"))
+            }
+        } else {
+            for index in 1...2 {
+                texturesBoat.append(SKTexture(imageNamed: "boat2Scene17_\(index)"))
+            }
         }
+        
         let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
         let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
         
