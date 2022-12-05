@@ -59,8 +59,8 @@ class MalinKundang_Games1: SKScene {
     
     // timer
     var labelTimer = SKLabelNode(fontNamed: "Nunito")
-    var maxTime = 20
-    var timeRemaining = 20
+    var maxTime = 25
+    var timeRemaining = 25
     var gameTimer: Timer!
     
     // sound
@@ -273,6 +273,8 @@ class MalinKundang_Games1: SKScene {
             labelTimer.text = "TIMES UP!"
             nonCharacterHook.isHidden = true
             nonCharacterRope.isHidden = true
+            nonCharacterHook.removeFromParent()
+            nonCharacterRope.removeFromParent()
             //            labelTimer.textColor = .red
             //            clockIcon.image = UIImage(named: "FirstLevel-Castlepart-05-Times-Up")
             //            clockIcon.shake()
@@ -372,9 +374,11 @@ class MalinKundang_Games1: SKScene {
         var hitPurpleFish: [SKSpriteNode] = []
         enumerateChildNodes(withName: "purpleFish") { [self] node, _ in
             let purpleFish = node  as! SKSpriteNode
-            if purpleFish.frame.intersects(self.nonCharacterHook.frame) {
-                run(self.soundSucces)
-                hitPurpleFish.append(purpleFish)
+            if timeRemaining > 0 {
+                if purpleFish.frame.intersects(self.nonCharacterHook.frame) {
+                    run(self.soundSucces)
+                    hitPurpleFish.append(purpleFish)
+                }
             }
         }
         for purpleFish in hitPurpleFish {
@@ -384,9 +388,11 @@ class MalinKundang_Games1: SKScene {
         var hitRedFish: [SKSpriteNode] = []
         enumerateChildNodes(withName: "redFish") { [self] node, _ in
             let redFish = node  as! SKSpriteNode
-            if redFish.frame.intersects(self.nonCharacterHook.frame) {
-                run(self.soundSucces)
-                hitRedFish.append(redFish)
+            if timeRemaining > 0 {
+                if redFish.frame.intersects(self.nonCharacterHook.frame) {
+                    run(self.soundSucces)
+                    hitRedFish.append(redFish)
+                }
             }
         }
         for redFish in hitRedFish {
@@ -396,9 +402,11 @@ class MalinKundang_Games1: SKScene {
         var hitZebraFish: [SKSpriteNode] = []
         enumerateChildNodes(withName: "zebraFish") { [self] node, _ in
             let zebraFish = node  as! SKSpriteNode
-            if zebraFish.frame.intersects(self.nonCharacterHook.frame) {
-                run(self.soundSucces)
-                hitZebraFish.append(zebraFish)
+            if timeRemaining > 0 {
+                if zebraFish.frame.intersects(self.nonCharacterHook.frame) {
+                    run(self.soundSucces)
+                    hitZebraFish.append(zebraFish)
+                }
             }
         }
         for zebraFish in hitZebraFish {
@@ -409,10 +417,12 @@ class MalinKundang_Games1: SKScene {
         var hitBottleTrash: [SKSpriteNode] = []
         enumerateChildNodes(withName: "bottle") { [self] node, _ in
             let bottle = node  as! SKSpriteNode
-            if bottle.frame.intersects(self.nonCharacterHook.frame) {
-                timeRemaining -= 1
-                run(self.soundFailed)
-                hitBottleTrash.append(bottle)
+            if timeRemaining > 0 {
+                if bottle.frame.intersects(self.nonCharacterHook.frame) {
+                    timeRemaining -= 1
+                    run(self.soundFailed)
+                    hitBottleTrash.append(bottle)
+                }
             }
         }
         for bottle in hitBottleTrash {
@@ -423,10 +433,12 @@ class MalinKundang_Games1: SKScene {
         var hitAppleTrash: [SKSpriteNode] = []
         enumerateChildNodes(withName: "apple") { [self]  node, _ in
             let apple = node  as! SKSpriteNode
-            if apple.frame.intersects(self.nonCharacterHook.frame) {
-                timeRemaining -= 1
-                run(self.soundFailed)
-                hitAppleTrash.append(apple)
+            if timeRemaining > 0 {
+                if apple.frame.intersects(self.nonCharacterHook.frame) {
+                    timeRemaining -= 1
+                    run(self.soundFailed)
+                    hitAppleTrash.append(apple)
+                }
             }
         }
         for apple in hitAppleTrash {

@@ -76,6 +76,10 @@ class MalinKundang_Scene13: SKScene {
     var verticalPanjang3LuarDalam9 = SKSpriteNode(imageNamed: "verticalPanjang3LuarDalam")
     //MARK: AKHIR TEMBOK LABIRIN
     
+    //MARK: PENGHALANG LABIRIN
+    var penghalangAtas = SKSpriteNode(imageNamed: "penghalangLabirin")
+    var penghalangBawah = SKSpriteNode(imageNamed: "penghalangLabirin")
+    
     //MARK: HIU
     var sharkKiri = SKSpriteNode(imageNamed: "sharkKiri")
     var sharkKanan1 = SKSpriteNode(imageNamed: "sharkKanan")
@@ -83,8 +87,9 @@ class MalinKundang_Scene13: SKScene {
     var sharkKanan3 = SKSpriteNode(imageNamed: "sharkKanan")
     
     //MARK: PULAU DAN KAPAL
+    var kapal = UserDefaults.standard.string(forKey: "kapalPilih")!
     var pulauFinish = SKSpriteNode(imageNamed: "pulauFinish")
-    var kapalLabirin = SKSpriteNode(imageNamed: "kapalLabirin1")
+    var kapalLabirin = SKSpriteNode(imageNamed: UserDefaults.standard.string(forKey: "kapalPilih")!)
     
     let backgroundOpacity = SKSpriteNode(imageNamed: "opacityBackground")
     let background = SKSpriteNode(imageNamed: "backgroundPuzzle")
@@ -195,6 +200,7 @@ class MalinKundang_Scene13: SKScene {
         kapalLabirin.position = CGPoint(x: size.width/7.0, y: size.height/1.69)
         kapalLabirin.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         kapalLabirin.zPosition = 2
+        kapalLabirin.xScale = -1
         addChild(kapalLabirin)
         
         //pulau
@@ -241,6 +247,21 @@ class MalinKundang_Scene13: SKScene {
         sharkKiri.run(SKAction.repeatForever(SKAction.follow(pathsharkKiri, asOffset: true, orientToPath: false, duration: 3.0)))
         sharkKiri.zPosition = 2
         addChild(sharkKiri)
+        
+        //penghalang
+        penghalangAtas.size = CGSize(width: 1400, height: 200)
+        penghalangAtas.position = CGPoint(x: size.width/1.93, y: size.height/1.25)
+        penghalangAtas.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        penghalangAtas.zPosition = 2
+        penghalangAtas.alpha = 0
+        addChild(penghalangAtas)
+        
+        penghalangBawah.size = CGSize(width: 1400, height: 200)
+        penghalangBawah.position = CGPoint(x: size.width/1.93, y: size.height/5.2)
+        penghalangBawah.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        penghalangBawah.zPosition = 2
+        penghalangBawah.alpha = 0
+        addChild(penghalangBawah)
         
         //1
         horizonPanjang1Atas.size = CGSize(width: 1400, height: 20)
@@ -405,6 +426,10 @@ class MalinKundang_Scene13: SKScene {
         
         //MARK: SK PHYSIC KAPAL
         setUpShipPyhisic(ship: kapalLabirin)
+        
+        //MARK: KS PHYSIC PENGHALANG
+        setUpFloorPyhisic(lineMaze: penghalangAtas)
+        setUpFloorPyhisic(lineMaze: penghalangBawah)
         
         //MARK: SK PHYSIC LINE MAZE
         //Horizontal

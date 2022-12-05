@@ -14,7 +14,7 @@ class MalinKundang_Scene12: SKScene {
     let backgroundSky = SKSpriteNode(imageNamed: "backgroundPuzzle")
     let backgroundSea = SKSpriteNode(imageNamed: "backgroundOpenSea")
     
-    let nonCharacterBoat1 = SKSpriteNode(imageNamed: "kapalScene12_1")
+    let nonCharacterBoat1 = UserDefaults.standard.string(forKey: "kapalPilih")! == "objectKapalSatu" ? SKSpriteNode(imageNamed: "kapalScene12_1") : SKSpriteNode(imageNamed: "kapalScene12_2")
     var animationBoat1: SKAction!
     
     let buttonNext = SKSpriteNode(imageNamed: "buttonNext")

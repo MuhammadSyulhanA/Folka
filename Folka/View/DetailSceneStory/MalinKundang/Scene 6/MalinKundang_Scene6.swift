@@ -17,7 +17,7 @@ class MalinKundang_Scene6: SKScene {
     let characterMalin = SKSpriteNode(imageNamed: "malinScene1_1")
     var animationMalin: SKAction?
     
-    let kapalScene6 = SKSpriteNode(imageNamed: "kapalScene6_1")
+    let kapalScene6 = UserDefaults.standard.string(forKey: "kapalPilih")! == "objectKapalSatu" ? SKSpriteNode(imageNamed: "kapalScene6_1") : SKSpriteNode(imageNamed: "kapalScene6_2")
     
     let characterIbuMalin = SKSpriteNode(imageNamed: "ibuMalinScene6_1")
     var animationIbuMalin: SKAction?

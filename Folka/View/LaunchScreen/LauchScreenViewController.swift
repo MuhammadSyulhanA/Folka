@@ -28,7 +28,7 @@ func addBackground() {
   let width = UIScreen.main.bounds.size.width
   let height = UIScreen.main.bounds.size.height
 
-    let imageViewBackground = UIImageView(frame: CGRectMake(0, 0, width, height))
+    let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
     imageViewBackground.image = UIImage(named: "splashScreen")
 
     // you can change the content mode:
