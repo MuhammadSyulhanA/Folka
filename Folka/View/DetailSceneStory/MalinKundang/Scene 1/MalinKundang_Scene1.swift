@@ -141,6 +141,7 @@ class MalinKundang_Scene1: SKScene {
         labelTextStory.text = dataIntro[0].text
         labelTextStory.fontColor = SKColor.white
         labelTextStory.fontSize = 42
+        labelTextStory.verticalAlignmentMode = SKLabelVerticalAlignmentMode.baseline
         labelTextStory.lineBreakMode = NSLineBreakMode.byWordWrapping
         labelTextStory.numberOfLines = 0
         labelTextStory.preferredMaxLayoutWidth = 1320
@@ -220,14 +221,7 @@ class MalinKundang_Scene1: SKScene {
         Sound.sharedInstance.stop()
         //        }
         self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
-//        guard let rootViewController =
-//                view?.window?.rootViewController else { return }
-//        let prevScene2 = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-//        if rootViewController.presentedViewController == nil {
-//            rootViewController.present(prevScene2, animated: true, completion: nil)
-//        } else{
-//        }
-//        print("hahah")
+        Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
     }
     
     func startMalinAnimation() {

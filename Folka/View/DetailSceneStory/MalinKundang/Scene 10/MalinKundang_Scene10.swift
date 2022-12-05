@@ -202,7 +202,7 @@ class MalinKundang_Scene10: SKScene {
             Sound.sharedInstance.stop()
             buttonPrevious.run((buttonPreviousAction!), withKey: "Button Previous")
             let reveal = SKTransition.reveal(with: .right, duration: 1)
-            let prevScene = MalinKundang_Scene8(size: CGSize(width: 2048, height: 1536))
+            let prevScene = MalinKundang_Scene9(size: CGSize(width: 2048, height: 1536))
             prevScene.scaleMode = .aspectFill
             scene?.view!.presentScene(prevScene, transition: reveal)
         }

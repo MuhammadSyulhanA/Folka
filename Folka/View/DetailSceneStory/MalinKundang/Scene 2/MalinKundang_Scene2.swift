@@ -209,6 +209,7 @@ class MalinKundang_Scene2: SKScene {
             buttonHome.run((buttonHomeAction!), withKey: "Button Home")
 //            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
+          Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
         }
     }
     

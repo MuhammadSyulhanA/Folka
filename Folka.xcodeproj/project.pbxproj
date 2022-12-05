@@ -96,12 +96,15 @@
 		A01C55BA2937247600261695 /* SettingsScreen_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C55B92937247500261695 /* SettingsScreen_ViewController.xib */; };
 		A01C55BD2937251500261695 /* ScenePilihGame_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C55BB2937251500261695 /* ScenePilihGame_ViewController.swift */; };
 		A01C55C02937253000261695 /* ScenePilihGame_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C55BF2937253000261695 /* ScenePilihGame_ViewController.xib */; };
+		A01E17AD293E40740036DCC1 /* awalGame.wav in Resources */ = {isa = PBXBuildFile; fileRef = A01E17AC293E40740036DCC1 /* awalGame.wav */; };
 		A0202800293790D7004694CD /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02027FE293790D7004694CD /* DetailPageViewController.swift */; };
 		A0202801293790D7004694CD /* DetailPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A02027FF293790D7004694CD /* DetailPageViewController.xib */; };
 		A022135C2939046500F40201 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022135A2939046500F40201 /* OnboardingViewController.swift */; };
 		A022135D2939046500F40201 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A022135B2939046500F40201 /* OnboardingViewController.xib */; };
 		A02774F32939FD40005F1ADF /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02774F12939FD40005F1ADF /* OnboardingCollectionViewCell.swift */; };
 		A02774F42939FD40005F1ADF /* OnboardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A02774F22939FD40005F1ADF /* OnboardingCollectionViewCell.xib */; };
+		A032E661293E36B500D09724 /* LauchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032E65F293E36B500D09724 /* LauchScreenViewController.swift */; };
+		A032E662293E36B500D09724 /* LauchScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A032E660293E36B500D09724 /* LauchScreenViewController.xib */; };
 		A07F796D2937C621003954F0 /* MalinKundang_Scene16.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07F796C2937C621003954F0 /* MalinKundang_Scene16.swift */; };
 		A08B5DC9291FD06C0021FBAF /* ProfileOnboard_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08B5DC7291FD06C0021FBAF /* ProfileOnboard_ViewController.swift */; };
 		A08B5DCA291FD06C0021FBAF /* ProfileOnboard_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08B5DC8291FD06C0021FBAF /* ProfileOnboard_ViewController.xib */; };
@@ -235,12 +238,15 @@
 		A01C55B92937247500261695 /* SettingsScreen_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsScreen_ViewController.xib; sourceTree = "<group>"; };
 		A01C55BB2937251500261695 /* ScenePilihGame_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePilihGame_ViewController.swift; sourceTree = "<group>"; };
 		A01C55BF2937253000261695 /* ScenePilihGame_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScenePilihGame_ViewController.xib; sourceTree = "<group>"; };
+		A01E17AC293E40740036DCC1 /* awalGame.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = awalGame.wav; sourceTree = "<group>"; };
 		A02027FE293790D7004694CD /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
 		A02027FF293790D7004694CD /* DetailPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPageViewController.xib; sourceTree = "<group>"; };
 		A022135A2939046500F40201 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		A022135B2939046500F40201 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		A02774F12939FD40005F1ADF /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		A02774F22939FD40005F1ADF /* OnboardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCollectionViewCell.xib; sourceTree = "<group>"; };
+		A032E65F293E36B500D09724 /* LauchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauchScreenViewController.swift; sourceTree = "<group>"; };
+		A032E660293E36B500D09724 /* LauchScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LauchScreenViewController.xib; sourceTree = "<group>"; };
 		A07F796C2937C621003954F0 /* MalinKundang_Scene16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene16.swift; sourceTree = "<group>"; };
 		A08B5DC7291FD06C0021FBAF /* ProfileOnboard_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOnboard_ViewController.swift; sourceTree = "<group>"; };
 		A08B5DC8291FD06C0021FBAF /* ProfileOnboard_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileOnboard_ViewController.xib; sourceTree = "<group>"; };
@@ -365,6 +371,8 @@
 			isa = PBXGroup;
 			children = (
 				69C55021291A0EF500E1CEF7 /* DocsLaunch.md */,
+				A032E65F293E36B500D09724 /* LauchScreenViewController.swift */,
+				A032E660293E36B500D09724 /* LauchScreenViewController.xib */,
 			);
 			path = LaunchScreen;
 			sourceTree = "<group>";
@@ -613,6 +621,7 @@
 		98F8DF36293CA63B00F8D70E /* Background Music */ = {
 			isa = PBXGroup;
 			children = (
+				A01E17AC293E40740036DCC1 /* awalGame.wav */,
 				98F8DF79293D274200F8D70E /* soundOmbak.wav */,
 				98F8DF77293D270400F8D70E /* rainThunder.mp3 */,
 				98F8DF37293CA66F00F8D70E /* wave.mp3 */,
@@ -851,6 +860,7 @@
 				98F8DF5F293D178200F8D70E /* 17 1.m4a in Resources */,
 				A0E8B753293C5B1300C0299E /* NunitoHeavy-Italic.ttf in Resources */,
 				98F8DF94293DE92100F8D70E /* 04 3.m4a in Resources */,
+				A01E17AD293E40740036DCC1 /* awalGame.wav in Resources */,
 				98F8DF69293D178200F8D70E /* 16.m4a in Resources */,
 				98F8DF68293D178200F8D70E /* 15  1.m4a in Resources */,
 				98F8DF6E293D178200F8D70E /* 01 2.m4a in Resources */,
@@ -886,6 +896,7 @@
 				98F8DF6D293D178200F8D70E /* 01 1.m4a in Resources */,
 				98F8DFA0293DEE2300F8D70E /* alt 17 2.m4a in Resources */,
 				A0202801293790D7004694CD /* DetailPageViewController.xib in Resources */,
+				A032E662293E36B500D09724 /* LauchScreenViewController.xib in Resources */,
 				A0E8B745293C5B1300C0299E /* Nunito-SemiBoldItalic.ttf in Resources */,
 				98F8DF62293D178200F8D70E /* 11 2.m4a in Resources */,
 				98F8DF8D293DE90B00F8D70E /* alt 15 6i.m4a in Resources */,
@@ -926,6 +937,7 @@
 				69D14818292C84BD0067D1D9 /* CustomScrollView.swift in Sources */,
 				A01B3DB1293B17CC00BBDE24 /* MalinKundang_AlternateScene17.swift in Sources */,
 				98F8DEE2292DD77400F8D70E /* MalinKundang_Scene7.swift in Sources */,
+				A032E661293E36B500D09724 /* LauchScreenViewController.swift in Sources */,
 				A01C55B52937240700261695 /* SettingsScreen_ViewController.swift in Sources */,
 				A01C55BD2937251500261695 /* ScenePilihGame_ViewController.swift in Sources */,
 				A01B3DB8293B8DFB00BBDE24 /* HomePageViewController.swift in Sources */,
