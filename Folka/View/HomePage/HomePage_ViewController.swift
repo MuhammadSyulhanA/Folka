@@ -10,7 +10,7 @@ import UIKit
 let screenWidth = UIScreen.main.bounds.size.width
 let screenHeight = UIScreen.main.bounds.size.height
 
-class HomePageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+class HomePage_ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     //MARK: For showing UI
     @IBOutlet weak var labelTitle: UILabel!
@@ -56,8 +56,8 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
         collectionView.showsVerticalScrollIndicator = false
         collectionView.contentInset = UIEdgeInsets(top: 0.0, left: 50.0, bottom: 0.0, right: 50.0)
         assignbackground()
-        collectionView.register(UINib(nibName: HomePageCollectionViewCell.identifier, bundle: Bundle.main),
-                                forCellWithReuseIdentifier: "HomePageCollectionViewCell")
+        collectionView.register(UINib(nibName: HomePage_CollectionCell.identifier, bundle: Bundle.main),
+                                forCellWithReuseIdentifier: "HomePage_CollectionCell")
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -87,7 +87,7 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
             sender.view?.transform = CGAffineTransform.init(scaleX: 1, y: 1)
         })
         
-        let controller = SettingsScreen_ViewController(nibName: "SettingsScreen_ViewController", bundle: nil)
+        let controller = Settings_Screen(nibName: "Settings_Screen", bundle: nil)
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
     }
@@ -109,8 +109,8 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomePageCollectionViewCell.identifier,
-                                                      for: indexPath) as! HomePageCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomePage_CollectionCell.identifier,
+                                                      for: indexPath) as! HomePage_CollectionCell
         cell.configureCell(HomePage: dataHomePage[indexPath.item])
         return cell
     }

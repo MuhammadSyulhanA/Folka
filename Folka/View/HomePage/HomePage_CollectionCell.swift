@@ -7,11 +7,10 @@
 
 import UIKit
 
-class HomePageCollectionViewCell: UICollectionViewCell {
-  
+class HomePage_CollectionCell: UICollectionViewCell {
   @IBOutlet weak var titleCerita: UILabel!
   @IBOutlet weak var image: UIImageView!
-  static let identifier = "HomePageCollectionViewCell"
+  static let identifier = "HomePage_CollectionCell"
   
   override func awakeFromNib() {
     super.awakeFromNib()

@@ -31,7 +31,7 @@ class Onboarding_InputName: UIViewController, UITextFieldDelegate {
       sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
     })
     if textField.text! != "" {
-      let controller = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+      let controller = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
       controller.modalPresentationStyle = .fullScreen
       present(controller, animated: true, completion: nil)
       self.navigationController?.popViewController(animated: true)

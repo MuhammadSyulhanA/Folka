@@ -37,7 +37,7 @@ class MalinKundang_ViewController: UIViewController {
     }
     
     func rizalKeren() {
-        let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+        let prevScene = HomePage_ViewController(nibName: "HomePageViewController", bundle: nil)
         self.view?.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
     }
     

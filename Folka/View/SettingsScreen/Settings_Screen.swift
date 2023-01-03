@@ -127,7 +127,7 @@ class Settings_Screen: UIViewController, UITextFieldDelegate {
     UIView.animate(withDuration: 0.3, animations: { () -> Void in
       sender.view?.transform = CGAffineTransform.init(scaleX: 1, y: 1)
     })
-    let controller = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+    let controller = HomePage_ViewController(nibName: "HomePage_ViewController", bundle: nil)
     controller.modalPresentationStyle = .fullScreen
     present(controller, animated: true, completion: nil)
     self.navigationController?.popViewController(animated: true)

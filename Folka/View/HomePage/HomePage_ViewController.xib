@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomePageViewController" customModule="Folka" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomePage_ViewController" customModule="Folka" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="Ydl-Hp-hSz" id="2lh-sc-ken"/>
                 <outlet property="imageProfile" destination="slD-xd-QfJ" id="dWB-rk-Hzg"/>
@@ -38,7 +38,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8a-RP-xTK">
-                            <rect key="frame" x="65" y="11" width="742" height="33"/>
+                            <rect key="frame" x="65" y="13.666666666666664" width="742" height="28"/>
                             <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="24"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>

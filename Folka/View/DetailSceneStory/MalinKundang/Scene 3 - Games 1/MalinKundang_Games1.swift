@@ -522,7 +522,7 @@ class MalinKundang_Games1: SKScene {
         run(clickButton)
         if buttonYes.action(forKey: "Button Yes") == nil {
             buttonYes.run(SKAction.repeatForever(buttonYesAction!), withKey: "Button Yes")
-            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+            let prevScene = HomePage_ViewController(nibName: "HomePageViewController", bundle: nil)
             self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
         }
     }
