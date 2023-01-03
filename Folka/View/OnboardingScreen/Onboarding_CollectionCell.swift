@@ -7,19 +7,16 @@
 
 import UIKit
 
-class OnboardingCollectionViewCell: UICollectionViewCell {
+class Onboarding_CollectionCell: UICollectionViewCell {
   @IBOutlet weak var descriptionText: UILabel!
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var imageView: UIImageView!
-  static let identifier = "OnboardingCollectionViewCell"
+  static let identifier = "Onboarding_CollectionCell"
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    // Initialization code
-//    separatorInset = .zero
-        self.preservesSuperviewLayoutMargins = false
-        self.layoutMargins = .zero
-    
+    self.preservesSuperviewLayoutMargins = false
+    self.layoutMargins = .zero
   }
   
   func configureCell(page: Page){

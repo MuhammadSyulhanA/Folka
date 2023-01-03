@@ -95,7 +95,7 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
         })
         
         //      Sound.sharedInstance.playButton(file: "Click", fileExtension: "mp3")
-        let controller = SettingsScreen_ViewController(nibName: "SettingsScreen_ViewController", bundle: nil)
+        let controller = Settings_Screen(nibName: "SettingsScreen_ViewController", bundle: nil)
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
         //        Sound.sharedInstance.stop(file: "onboarding 2", fileExtension: "mp3")

@@ -95,20 +95,23 @@
 		A01B3DBC293B8E1500BBDE24 /* HomePageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01B3DBA293B8E1500BBDE24 /* HomePageCollectionViewCell.swift */; };
 		A01B3DBD293B8E1500BBDE24 /* HomePageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01B3DBB293B8E1500BBDE24 /* HomePageCollectionViewCell.xib */; };
 		A01B3DC2293BB44500BBDE24 /* SoundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01B3DC1293BB44500BBDE24 /* SoundModel.swift */; };
-		A01C55B52937240700261695 /* SettingsScreen_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C55B32937240700261695 /* SettingsScreen_ViewController.swift */; };
-		A01C55BA2937247600261695 /* SettingsScreen_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C55B92937247500261695 /* SettingsScreen_ViewController.xib */; };
+		A01C55B52937240700261695 /* Settings_Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C55B32937240700261695 /* Settings_Screen.swift */; };
+		A01C55BA2937247600261695 /* Settings_Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C55B92937247500261695 /* Settings_Screen.xib */; };
 		A01E17AD293E40740036DCC1 /* awalGame.wav in Resources */ = {isa = PBXBuildFile; fileRef = A01E17AC293E40740036DCC1 /* awalGame.wav */; };
 		A0202800293790D7004694CD /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02027FE293790D7004694CD /* DetailPageViewController.swift */; };
 		A0202801293790D7004694CD /* DetailPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A02027FF293790D7004694CD /* DetailPageViewController.xib */; };
-		A022135C2939046500F40201 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022135A2939046500F40201 /* OnboardingViewController.swift */; };
-		A022135D2939046500F40201 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A022135B2939046500F40201 /* OnboardingViewController.xib */; };
-		A02774F32939FD40005F1ADF /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02774F12939FD40005F1ADF /* OnboardingCollectionViewCell.swift */; };
-		A02774F42939FD40005F1ADF /* OnboardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A02774F22939FD40005F1ADF /* OnboardingCollectionViewCell.xib */; };
-		A032E661293E36B500D09724 /* LauchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032E65F293E36B500D09724 /* LauchScreenViewController.swift */; };
-		A032E662293E36B500D09724 /* LauchScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A032E660293E36B500D09724 /* LauchScreenViewController.xib */; };
+		A022135C2939046500F40201 /* Onboarding_Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022135A2939046500F40201 /* Onboarding_Screen.swift */; };
+		A022135D2939046500F40201 /* Onboarding_Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A022135B2939046500F40201 /* Onboarding_Screen.xib */; };
+		A02774F32939FD40005F1ADF /* Onboarding_CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02774F12939FD40005F1ADF /* Onboarding_CollectionCell.swift */; };
+		A02774F42939FD40005F1ADF /* Onboarding_CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A02774F22939FD40005F1ADF /* Onboarding_CollectionCell.xib */; };
+		A032E661293E36B500D09724 /* Lauch_Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A032E65F293E36B500D09724 /* Lauch_Screen.swift */; };
+		A032E662293E36B500D09724 /* Lauch_Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A032E660293E36B500D09724 /* Lauch_Screen.xib */; };
+		A0711B822963CE1900098941 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0711B812963CE1900098941 /* UIView.swift */; };
+		A0711B842963D08800098941 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0711B832963D08800098941 /* UIApplication.swift */; };
+		A0711B862963D0B000098941 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0711B852963D0B000098941 /* UIViewController.swift */; };
 		A07F796D2937C621003954F0 /* MalinKundang_Scene16.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07F796C2937C621003954F0 /* MalinKundang_Scene16.swift */; };
-		A08B5DC9291FD06C0021FBAF /* ProfileOnboard_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08B5DC7291FD06C0021FBAF /* ProfileOnboard_ViewController.swift */; };
-		A08B5DCA291FD06C0021FBAF /* ProfileOnboard_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08B5DC8291FD06C0021FBAF /* ProfileOnboard_ViewController.xib */; };
+		A08B5DC9291FD06C0021FBAF /* Onboarding_InputName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08B5DC7291FD06C0021FBAF /* Onboarding_InputName.swift */; };
+		A08B5DCA291FD06C0021FBAF /* Onboarding_InputName.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08B5DC8291FD06C0021FBAF /* Onboarding_InputName.xib */; };
 		A0C353BA292A67D30082A071 /* MalinKundang_Puzzle2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C353B9292A67D30082A071 /* MalinKundang_Puzzle2.swift */; };
 		A0E8B742293C5B1300C0299E /* Nunito-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0E8B730293C5B1200C0299E /* Nunito-Medium.ttf */; };
 		A0E8B743293C5B1300C0299E /* Nunito-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0E8B731293C5B1200C0299E /* Nunito-ExtraLight.ttf */; };
@@ -146,8 +149,8 @@
 		69C55016291A0D0200E1CEF7 /* DocsModel.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsModel.md; sourceTree = "<group>"; };
 		69C55017291A0D5400E1CEF7 /* DocsView.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsView.md; sourceTree = "<group>"; };
 		69C55018291A0D8500E1CEF7 /* DocsController.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsController.md; sourceTree = "<group>"; };
-		69C55020291A0E9900E1CEF7 /* DocsOnboard.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsOnboard.md; sourceTree = "<group>"; };
-		69C55021291A0EF500E1CEF7 /* DocsLaunch.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsLaunch.md; sourceTree = "<group>"; };
+		69C55020291A0E9900E1CEF7 /* DocsOnboardingInputName.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsOnboardingInputName.md; sourceTree = "<group>"; };
+		69C55021291A0EF500E1CEF7 /* DocsLaunchScreen.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsLaunchScreen.md; sourceTree = "<group>"; };
 		69C55022291A0F1B00E1CEF7 /* DocsHome.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsHome.md; sourceTree = "<group>"; };
 		69C55023291A0F4400E1CEF7 /* DocsDetail.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsDetail.md; sourceTree = "<group>"; };
 		69C55024291A0F7F00E1CEF7 /* DocsScene.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsScene.md; sourceTree = "<group>"; };
@@ -234,20 +237,25 @@
 		A01B3DBA293B8E1500BBDE24 /* HomePageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A01B3DBB293B8E1500BBDE24 /* HomePageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageCollectionViewCell.xib; sourceTree = "<group>"; };
 		A01B3DC1293BB44500BBDE24 /* SoundModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundModel.swift; sourceTree = "<group>"; };
-		A01C55B32937240700261695 /* SettingsScreen_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen_ViewController.swift; sourceTree = "<group>"; };
-		A01C55B92937247500261695 /* SettingsScreen_ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsScreen_ViewController.xib; sourceTree = "<group>"; };
+		A01C55B32937240700261695 /* Settings_Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings_Screen.swift; sourceTree = "<group>"; };
+		A01C55B92937247500261695 /* Settings_Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Settings_Screen.xib; sourceTree = "<group>"; };
 		A01E17AC293E40740036DCC1 /* awalGame.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = awalGame.wav; sourceTree = "<group>"; };
 		A02027FE293790D7004694CD /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
 		A02027FF293790D7004694CD /* DetailPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPageViewController.xib; sourceTree = "<group>"; };
-		A022135A2939046500F40201 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		A022135B2939046500F40201 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
-		A02774F12939FD40005F1ADF /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
-		A02774F22939FD40005F1ADF /* OnboardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCollectionViewCell.xib; sourceTree = "<group>"; };
-		A032E65F293E36B500D09724 /* LauchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauchScreenViewController.swift; sourceTree = "<group>"; };
-		A032E660293E36B500D09724 /* LauchScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LauchScreenViewController.xib; sourceTree = "<group>"; };
+		A022135A2939046500F40201 /* Onboarding_Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding_Screen.swift; sourceTree = "<group>"; };
+		A022135B2939046500F40201 /* Onboarding_Screen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Onboarding_Screen.xib; sourceTree = "<group>"; };
+		A02774F12939FD40005F1ADF /* Onboarding_CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding_CollectionCell.swift; sourceTree = "<group>"; };
+		A02774F22939FD40005F1ADF /* Onboarding_CollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Onboarding_CollectionCell.xib; sourceTree = "<group>"; };
+		A032E65F293E36B500D09724 /* Lauch_Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lauch_Screen.swift; sourceTree = "<group>"; };
+		A032E660293E36B500D09724 /* Lauch_Screen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Lauch_Screen.xib; sourceTree = "<group>"; };
+		A0711B812963CE1900098941 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		A0711B832963D08800098941 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		A0711B852963D0B000098941 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		A07DF0C12963CB8700A8408F /* DocsOnboardingScreen.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsOnboardingScreen.md; sourceTree = "<group>"; };
+		A07DF0C22963CBB100A8408F /* DocsSettingsScreen.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsSettingsScreen.md; sourceTree = "<group>"; };
 		A07F796C2937C621003954F0 /* MalinKundang_Scene16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene16.swift; sourceTree = "<group>"; };
-		A08B5DC7291FD06C0021FBAF /* ProfileOnboard_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOnboard_ViewController.swift; sourceTree = "<group>"; };
-		A08B5DC8291FD06C0021FBAF /* ProfileOnboard_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileOnboard_ViewController.xib; sourceTree = "<group>"; };
+		A08B5DC7291FD06C0021FBAF /* Onboarding_InputName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding_InputName.swift; sourceTree = "<group>"; };
+		A08B5DC8291FD06C0021FBAF /* Onboarding_InputName.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Onboarding_InputName.xib; sourceTree = "<group>"; };
 		A0C353B9292A67D30082A071 /* MalinKundang_Puzzle2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Puzzle2.swift; sourceTree = "<group>"; };
 		A0E8B730293C5B1200C0299E /* Nunito-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Medium.ttf"; sourceTree = "<group>"; };
 		A0E8B731293C5B1200C0299E /* Nunito-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -304,6 +312,7 @@
 		69C54FFE291A0C5A00E1CEF7 /* Folka */ = {
 			isa = PBXGroup;
 			children = (
+				A0711B802963CDDC00098941 /* Extension */,
 				69EADE89293BA382000A31A3 /* AssetNonImage */,
 				69C55015291A0CCC00E1CEF7 /* Controller */,
 				69C55014291A0CC700E1CEF7 /* View */,
@@ -330,14 +339,14 @@
 		69C55014291A0CC700E1CEF7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A07DF0BF2963CAD200A8408F /* OnboardingInputName */,
 				A01B3DBE293BB41D00BBDE24 /* Model */,
-				A02213592939043300F40201 /* Onboarding Screen */,
-				A01C55AC2937236400261695 /* Settings Screen */,
+				A02213592939043300F40201 /* OnboardingScreen */,
+				A01C55AC2937236400261695 /* SettingsScreen */,
 				69C5501F291A0E7D00E1CEF7 /* DetailSceneStory */,
 				69C5501D291A0E5E00E1CEF7 /* DetailPage */,
 				69C5501C291A0E5600E1CEF7 /* HomePage */,
 				69C5501B291A0E3200E1CEF7 /* LaunchScreen */,
-				69C5501A291A0E1100E1CEF7 /* Onboarding */,
 				69C55017291A0D5400E1CEF7 /* DocsView.md */,
 			);
 			path = View;
@@ -351,22 +360,12 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		69C5501A291A0E1100E1CEF7 /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				69C55020291A0E9900E1CEF7 /* DocsOnboard.md */,
-				A08B5DC7291FD06C0021FBAF /* ProfileOnboard_ViewController.swift */,
-				A08B5DC8291FD06C0021FBAF /* ProfileOnboard_ViewController.xib */,
-			);
-			path = Onboarding;
-			sourceTree = "<group>";
-		};
 		69C5501B291A0E3200E1CEF7 /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
-				69C55021291A0EF500E1CEF7 /* DocsLaunch.md */,
-				A032E65F293E36B500D09724 /* LauchScreenViewController.swift */,
-				A032E660293E36B500D09724 /* LauchScreenViewController.xib */,
+				69C55021291A0EF500E1CEF7 /* DocsLaunchScreen.md */,
+				A032E65F293E36B500D09724 /* Lauch_Screen.swift */,
+				A032E660293E36B500D09724 /* Lauch_Screen.xib */,
 			);
 			path = LaunchScreen;
 			sourceTree = "<group>";
@@ -733,24 +732,46 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		A01C55AC2937236400261695 /* Settings Screen */ = {
+		A01C55AC2937236400261695 /* SettingsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A01C55B32937240700261695 /* SettingsScreen_ViewController.swift */,
-				A01C55B92937247500261695 /* SettingsScreen_ViewController.xib */,
+				A01C55B32937240700261695 /* Settings_Screen.swift */,
+				A01C55B92937247500261695 /* Settings_Screen.xib */,
+				A07DF0C22963CBB100A8408F /* DocsSettingsScreen.md */,
 			);
-			path = "Settings Screen";
+			path = SettingsScreen;
 			sourceTree = "<group>";
 		};
-		A02213592939043300F40201 /* Onboarding Screen */ = {
+		A02213592939043300F40201 /* OnboardingScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A022135A2939046500F40201 /* OnboardingViewController.swift */,
-				A022135B2939046500F40201 /* OnboardingViewController.xib */,
-				A02774F12939FD40005F1ADF /* OnboardingCollectionViewCell.swift */,
-				A02774F22939FD40005F1ADF /* OnboardingCollectionViewCell.xib */,
+				A022135A2939046500F40201 /* Onboarding_Screen.swift */,
+				A022135B2939046500F40201 /* Onboarding_Screen.xib */,
+				A02774F12939FD40005F1ADF /* Onboarding_CollectionCell.swift */,
+				A02774F22939FD40005F1ADF /* Onboarding_CollectionCell.xib */,
+				A07DF0C12963CB8700A8408F /* DocsOnboardingScreen.md */,
 			);
-			path = "Onboarding Screen";
+			path = OnboardingScreen;
+			sourceTree = "<group>";
+		};
+		A0711B802963CDDC00098941 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A0711B812963CE1900098941 /* UIView.swift */,
+				A0711B832963D08800098941 /* UIApplication.swift */,
+				A0711B852963D0B000098941 /* UIViewController.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A07DF0BF2963CAD200A8408F /* OnboardingInputName */ = {
+			isa = PBXGroup;
+			children = (
+				69C55020291A0E9900E1CEF7 /* DocsOnboardingInputName.md */,
+				A08B5DC7291FD06C0021FBAF /* Onboarding_InputName.swift */,
+				A08B5DC8291FD06C0021FBAF /* Onboarding_InputName.xib */,
+			);
+			path = OnboardingInputName;
 			sourceTree = "<group>";
 		};
 		A07F796B2937BFD6003954F0 /* Scene 16 */ = {
@@ -831,7 +852,7 @@
 				A01B3DB9293B8DFB00BBDE24 /* HomePageViewController.xib in Resources */,
 				98F8DF70293D178200F8D70E /* 08.m4a in Resources */,
 				984801EF293E51AE0083DD86 /* chicken.mp3 in Resources */,
-				A08B5DCA291FD06C0021FBAF /* ProfileOnboard_ViewController.xib in Resources */,
+				A08B5DCA291FD06C0021FBAF /* Onboarding_InputName.xib in Resources */,
 				A0E8B751293C5B1300C0299E /* Nunito-Bold.ttf in Resources */,
 				98F8DF6A293D178200F8D70E /* 12 1.m4a in Resources */,
 				98F8DF5C293D178200F8D70E /* 17 2.m4a in Resources */,
@@ -864,10 +885,10 @@
 				98F8DF8E293DE90B00F8D70E /* alt 15 4.m4a in Resources */,
 				98F8DF5D293D178200F8D70E /* 15 2.m4a in Resources */,
 				A0E8B746293C5B1300C0299E /* Nunito-SemiBold.ttf in Resources */,
-				A022135D2939046500F40201 /* OnboardingViewController.xib in Resources */,
+				A022135D2939046500F40201 /* Onboarding_Screen.xib in Resources */,
 				A0E8B752293C5B1300C0299E /* NunitoHeavy-Regular.ttf in Resources */,
 				A0E8B750293C5B1300C0299E /* Nunito-Black.ttf in Resources */,
-				A01C55BA2937247600261695 /* SettingsScreen_ViewController.xib in Resources */,
+				A01C55BA2937247600261695 /* Settings_Screen.xib in Resources */,
 				69C55009291A0C5D00E1CEF7 /* Assets.xcassets in Resources */,
 				98F8DF9E293DEE0F00F8D70E /* alt 17 3.m4a in Resources */,
 				98F8DF6B293D178200F8D70E /* 14.m4a in Resources */,
@@ -888,7 +909,7 @@
 				98F8DF6D293D178200F8D70E /* 01 1.m4a in Resources */,
 				98F8DFA0293DEE2300F8D70E /* alt 17 2.m4a in Resources */,
 				A0202801293790D7004694CD /* DetailPageViewController.xib in Resources */,
-				A032E662293E36B500D09724 /* LauchScreenViewController.xib in Resources */,
+				A032E662293E36B500D09724 /* Lauch_Screen.xib in Resources */,
 				A0E8B745293C5B1300C0299E /* Nunito-SemiBoldItalic.ttf in Resources */,
 				98F8DF62293D178200F8D70E /* 11 2.m4a in Resources */,
 				98F8DF8D293DE90B00F8D70E /* alt 15 6i.m4a in Resources */,
@@ -906,7 +927,7 @@
 				98F8DF61293D178200F8D70E /* alt 15 6.m4a in Resources */,
 				98F8DF9D293DEE0F00F8D70E /* alt 15 5.m4a in Resources */,
 				A0E8B743293C5B1300C0299E /* Nunito-ExtraLight.ttf in Resources */,
-				A02774F42939FD40005F1ADF /* OnboardingCollectionViewCell.xib in Resources */,
+				A02774F42939FD40005F1ADF /* Onboarding_CollectionCell.xib in Resources */,
 				98F8DF7C293D275900F8D70E /* soundKapalBerangkat.wav in Resources */,
 				98F8DF63293D178200F8D70E /* 15 6.m4a in Resources */,
 			);
@@ -919,6 +940,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0711B842963D08800098941 /* UIApplication.swift in Sources */,
 				A01B3DBC293B8E1500BBDE24 /* HomePageCollectionViewCell.swift in Sources */,
 				69EADE882938E346000A31A3 /* MalinKundang_Scene13.swift in Sources */,
 				98F8DF29293B4DD300F8D70E /* MalinKundang_Scene15.swift in Sources */,
@@ -928,11 +950,11 @@
 				69D14818292C84BD0067D1D9 /* CustomScrollView.swift in Sources */,
 				A01B3DB1293B17CC00BBDE24 /* MalinKundang_AlternateScene17.swift in Sources */,
 				98F8DEE2292DD77400F8D70E /* MalinKundang_Scene7.swift in Sources */,
-				A032E661293E36B500D09724 /* LauchScreenViewController.swift in Sources */,
-				A01C55B52937240700261695 /* SettingsScreen_ViewController.swift in Sources */,
+				A032E661293E36B500D09724 /* Lauch_Screen.swift in Sources */,
+				A01C55B52937240700261695 /* Settings_Screen.swift in Sources */,
 				A01B3DB8293B8DFB00BBDE24 /* HomePageViewController.swift in Sources */,
-				A08B5DC9291FD06C0021FBAF /* ProfileOnboard_ViewController.swift in Sources */,
-				A02774F32939FD40005F1ADF /* OnboardingCollectionViewCell.swift in Sources */,
+				A08B5DC9291FD06C0021FBAF /* Onboarding_InputName.swift in Sources */,
+				A02774F32939FD40005F1ADF /* Onboarding_CollectionCell.swift in Sources */,
 				98F8DF2C293B79DC00F8D70E /* MalinKundang_Scene17.swift in Sources */,
 				A01B3DC2293BB44500BBDE24 /* SoundModel.swift in Sources */,
 				98F8DED82928981E00F8D70E /* MalinKundang_Tutorial_Games1.swift in Sources */,
@@ -944,12 +966,14 @@
 				98F8DEED2931384800F8D70E /* MalinKundang_Scene12.swift in Sources */,
 				988867662920FEA00094AAAF /* MalinKundang_Scene2.swift in Sources */,
 				A018EA09292773BF00FE7451 /* MalinKundang_Puzzle.swift in Sources */,
+				A0711B822963CE1900098941 /* UIView.swift in Sources */,
 				98F8DEE8292FA1C200F8D70E /* MalinKundang_Scene9.swift in Sources */,
 				A0072D96292BCD4F00D32023 /* MalinKundang_Scene6.swift in Sources */,
 				98F8DF32293B848300F8D70E /* MalinKundang_Scene19.swift in Sources */,
 				988867622920FD770094AAAF /* MalinKundang_ViewController.swift in Sources */,
+				A0711B862963D0B000098941 /* UIViewController.swift in Sources */,
 				69C55000291A0C5A00E1CEF7 /* AppDelegate.swift in Sources */,
-				A022135C2939046500F40201 /* OnboardingViewController.swift in Sources */,
+				A022135C2939046500F40201 /* Onboarding_Screen.swift in Sources */,
 				69D6B1A729346502002CF007 /* MalinKundang_Scene10.swift in Sources */,
 				98F8DF2F293B831200F8D70E /* MalinKundang_Scene18.swift in Sources */,
 				988867642920FDD40094AAAF /* MalinKundang_Scene1.swift in Sources */,
