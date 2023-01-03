@@ -1,6 +1,6 @@
 //
 //  SoundModel.swift
-//  Meow Hunt
+//  Folka
 //
 //  Created by Ferry Julian on 18/08/22.
 //
