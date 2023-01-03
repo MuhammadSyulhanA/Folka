@@ -94,7 +94,6 @@
 		A01B3DB9293B8DFB00BBDE24 /* HomePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01B3DB7293B8DFB00BBDE24 /* HomePageViewController.xib */; };
 		A01B3DBC293B8E1500BBDE24 /* HomePageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01B3DBA293B8E1500BBDE24 /* HomePageCollectionViewCell.swift */; };
 		A01B3DBD293B8E1500BBDE24 /* HomePageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01B3DBB293B8E1500BBDE24 /* HomePageCollectionViewCell.xib */; };
-		A01B3DC2293BB44500BBDE24 /* SoundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01B3DC1293BB44500BBDE24 /* SoundModel.swift */; };
 		A01C55B52937240700261695 /* Settings_Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C55B32937240700261695 /* Settings_Screen.swift */; };
 		A01C55BA2937247600261695 /* Settings_Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C55B92937247500261695 /* Settings_Screen.xib */; };
 		A01E17AD293E40740036DCC1 /* awalGame.wav in Resources */ = {isa = PBXBuildFile; fileRef = A01E17AC293E40740036DCC1 /* awalGame.wav */; };
@@ -236,7 +235,6 @@
 		A01B3DB7293B8DFB00BBDE24 /* HomePageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageViewController.xib; sourceTree = "<group>"; };
 		A01B3DBA293B8E1500BBDE24 /* HomePageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageCollectionViewCell.swift; sourceTree = "<group>"; };
 		A01B3DBB293B8E1500BBDE24 /* HomePageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageCollectionViewCell.xib; sourceTree = "<group>"; };
-		A01B3DC1293BB44500BBDE24 /* SoundModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundModel.swift; sourceTree = "<group>"; };
 		A01C55B32937240700261695 /* Settings_Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings_Screen.swift; sourceTree = "<group>"; };
 		A01C55B92937247500261695 /* Settings_Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Settings_Screen.xib; sourceTree = "<group>"; };
 		A01E17AC293E40740036DCC1 /* awalGame.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = awalGame.wav; sourceTree = "<group>"; };
@@ -332,7 +330,6 @@
 			isa = PBXGroup;
 			children = (
 				A01B3DB4293B8DA500BBDE24 /* Model_DataCaraousel.swift */,
-				A01B3DC1293BB44500BBDE24 /* SoundModel.swift */,
 				69C55016291A0D0200E1CEF7 /* DocsModel.md */,
 			);
 			path = Model;
@@ -948,7 +945,6 @@
 				A08B5DC9291FD06C0021FBAF /* Onboarding_InputName.swift in Sources */,
 				A02774F32939FD40005F1ADF /* Onboarding_CollectionCell.swift in Sources */,
 				98F8DF2C293B79DC00F8D70E /* MalinKundang_Scene17.swift in Sources */,
-				A01B3DC2293BB44500BBDE24 /* SoundModel.swift in Sources */,
 				98F3542D29632CD500D77C7F /* HomePage_CustomLayout.swift in Sources */,
 				98F8DED82928981E00F8D70E /* MalinKundang_Tutorial_Games1.swift in Sources */,
 				98F8DF8A293D42DA00F8D70E /* MalinKundang_PilihKapal.swift in Sources */,
