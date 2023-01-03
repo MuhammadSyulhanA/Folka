@@ -332,7 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				A01B3DB4293B8DA500BBDE24 /* Model_DataCaraousel.swift */,
-				A01B3DC1293BB44500BBDE24 /* Model_Sound.swift */,
+				A01B3DC1293BB44500BBDE24 /* SoundModel.swift */,
 				69C55016291A0D0200E1CEF7 /* DocsModel.md */,
 			);
 			path = Model;
@@ -342,7 +342,6 @@
 			isa = PBXGroup;
 			children = (
 				A07DF0BF2963CAD200A8408F /* OnboardingInputName */,
-				A01B3DBE293BB41D00BBDE24 /* Model */,
 				A02213592939043300F40201 /* OnboardingScreen */,
 				A01C55AC2937236400261695 /* SettingsScreen */,
 				69C5501F291A0E7D00E1CEF7 /* DetailSceneStory */,
@@ -725,13 +724,6 @@
 			path = "Scene 17 - Alternate";
 			sourceTree = "<group>";
 		};
-		A01B3DBE293BB41D00BBDE24 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		A01C55AC2937236400261695 /* SettingsScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -956,7 +948,7 @@
 				A08B5DC9291FD06C0021FBAF /* Onboarding_InputName.swift in Sources */,
 				A02774F32939FD40005F1ADF /* Onboarding_CollectionCell.swift in Sources */,
 				98F8DF2C293B79DC00F8D70E /* MalinKundang_Scene17.swift in Sources */,
-				A01B3DC2293BB44500BBDE24 /* Model_Sound.swift in Sources */,
+				A01B3DC2293BB44500BBDE24 /* SoundModel.swift in Sources */,
 				98F3542D29632CD500D77C7F /* HomePage_CustomLayout.swift in Sources */,
 				98F8DED82928981E00F8D70E /* MalinKundang_Tutorial_Games1.swift in Sources */,
 				98F8DF8A293D42DA00F8D70E /* MalinKundang_PilihKapal.swift in Sources */,
