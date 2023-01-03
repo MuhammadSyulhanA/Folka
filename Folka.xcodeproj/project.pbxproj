@@ -153,8 +153,8 @@
 		69C55021291A0EF500E1CEF7 /* DocsLaunchScreen.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsLaunchScreen.md; sourceTree = "<group>"; };
 		69C55022291A0F1B00E1CEF7 /* DocsHome.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsHome.md; sourceTree = "<group>"; };
 		69C55023291A0F4400E1CEF7 /* DocsDetail.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsDetail.md; sourceTree = "<group>"; };
-		69C55024291A0F7F00E1CEF7 /* DocsScene.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsScene.md; sourceTree = "<group>"; };
-		69C55027291A0FCD00E1CEF7 /* DocsSceneDet.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsSceneDet.md; sourceTree = "<group>"; };
+		69C55024291A0F7F00E1CEF7 /* DocsSceneStory.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsSceneStory.md; sourceTree = "<group>"; };
+		69C55027291A0FCD00E1CEF7 /* DocsSceneMalinKundang.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DocsSceneMalinKundang.md; sourceTree = "<group>"; };
 		69D14817292C84BD0067D1D9 /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		69D6B1A629346502002CF007 /* MalinKundang_Scene10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene10.swift; sourceTree = "<group>"; };
 		69D6B1A82934654A002CF007 /* MalinKundang_Scene11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene11.swift; sourceTree = "<group>"; };
@@ -397,7 +397,7 @@
 		69C5501F291A0E7D00E1CEF7 /* DetailSceneStory */ = {
 			isa = PBXGroup;
 			children = (
-				69C55024291A0F7F00E1CEF7 /* DocsScene.md */,
+				69C55024291A0F7F00E1CEF7 /* DocsSceneStory.md */,
 				69C55025291A0F9400E1CEF7 /* MalinKundang */,
 			);
 			path = DetailSceneStory;
@@ -429,7 +429,7 @@
 				9888676B292114180094AAAF /* Scene 2 */,
 				69C55026291A0FB600E1CEF7 /* Scene 1 */,
 				988867612920FD770094AAAF /* MalinKundang_ViewController.swift */,
-				69C55027291A0FCD00E1CEF7 /* DocsSceneDet.md */,
+				69C55027291A0FCD00E1CEF7 /* DocsSceneMalinKundang.md */,
 			);
 			path = MalinKundang;
 			sourceTree = "<group>";
