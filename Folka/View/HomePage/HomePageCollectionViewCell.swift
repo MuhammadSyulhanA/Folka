@@ -8,8 +8,6 @@
 import UIKit
 
 class HomePageCollectionViewCell: UICollectionViewCell {
-//  @IBOutlet weak var image: UIImageView!
-//  @IBOutlet weak var titleCerita: UILabel!
   
   @IBOutlet weak var titleCerita: UILabel!
   @IBOutlet weak var image: UIImageView!

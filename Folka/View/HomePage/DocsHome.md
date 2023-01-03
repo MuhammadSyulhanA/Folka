@@ -1,3 +1,4 @@
 #  Docs
 
-1. file naming : Home_FileName.swift
+This page for showing Home Page
+1. file naming : HomePage_FileName.swift

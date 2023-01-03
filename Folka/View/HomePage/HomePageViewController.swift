@@ -12,22 +12,21 @@ let screenHeight = UIScreen.main.bounds.size.height
 
 class HomePageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
-    
+    //MARK: For showing UI
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var imageProfile: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    //MARK: For initializer user default
     var text = UserDefaults.standard.string(forKey: "name")!
-    
     let x = 50
-    
     let dataHomePage: [HomePage] = [
         HomePage(imageCover: "coverBookComingSoon", title: "Akan Datang"),
         HomePage(imageCover: "coverBook", title: "Malin Kundang"),
         HomePage(imageCover: "coverBookComingSoon", title: "Akan Datang")
     ]
     
-    private var layout = CustomLayout()
-    
+    private var layout = HomePage_CustomLayout()
     var itemW: CGFloat{
         return screenWidth * 0.40
     }
@@ -36,18 +35,14 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
         return itemW * 0.65
     }
     
-  
     override func viewDidLoad() {
-//        Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
         super.viewDidLoad()
+        
         let tapNext = UITapGestureRecognizer(target: self, action: #selector(self.nextPage))
         imageProfile.addGestureRecognizer(tapNext)
         imageProfile.isUserInteractionEnabled = true
         
-        //    text = textUser
-        
         let mainString = "Halo " + text + ", mau baca buku apa hari ini?"
-        
         if text != nil{
             let attributedString = NSMutableAttributedString.init(string: mainString)
             let range = NSString(string: mainString).range(of: text, options: String.CompareOptions.caseInsensitive)
@@ -68,7 +63,6 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(collectionView)
         
-        
         collectionView.collectionViewLayout = layout
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 70.0
@@ -83,7 +77,6 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         text = UserDefaults.standard.string(forKey: "name")!
     }
     
@@ -94,11 +87,9 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
             sender.view?.transform = CGAffineTransform.init(scaleX: 1, y: 1)
         })
         
-        //      Sound.sharedInstance.playButton(file: "Click", fileExtension: "mp3")
-        let controller = Settings_Screen(nibName: "SettingsScreen_ViewController", bundle: nil)
+        let controller = SettingsScreen_ViewController(nibName: "SettingsScreen_ViewController", bundle: nil)
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true, completion: nil)
-        //        Sound.sharedInstance.stop(file: "onboarding 2", fileExtension: "mp3")
     }
     
     
@@ -114,38 +105,21 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //    return dataHomePage.count*x
         return dataHomePage.count
     }
-    
-    //  func arrayIndexForRow(_ row : Int)-> Int {
-    //    return row % dataHomePage.count
-    //  }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomePageCollectionViewCell.identifier,
                                                       for: indexPath) as! HomePageCollectionViewCell
-        //    let arrayIndex = arrayIndexForRow(indexPath.item)
         cell.configureCell(HomePage: dataHomePage[indexPath.item])
         return cell
     }
-    
-    //  func scrollToMiddle(atIndex: Int, animated: Bool = true) {
-    //    let middleIndex = atIndex + x*dataHomePage.count/2
-    //    let middleIndex2 = atIndex - x*dataHomePage.count/2
-    //    collectionView.scrollToItem(at: IndexPath(item: middleIndex, section: 0), at: .right, animated: animated)
-    //    collectionView.scrollToItem(at: IndexPath(item: middleIndex2, section: 0), at: .left, animated: animated)
-    //  }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: itemW, height: itemH)
     }
     
-    
-    
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //    let arrayIndex = arrayIndexForRow(indexPath.item)
         let dataHomePage = dataHomePage[indexPath.item]
         if indexPath.item == layout.currentPage{
             if dataHomePage.title == "Malin Kundang" {
@@ -158,8 +132,6 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
                 
                 let nextDetailPage = DetailPageViewController(nibName: "DetailPageViewController", bundle: nil)
                 present(nextDetailPage, animated: true, completion: nil)
-//                dismiss(animated: false)
-                
             } else {
                 collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
                 layout.currentPage = indexPath.item
@@ -168,14 +140,6 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
             }
         }
     }
-    
-//    func presentDetailPage(){
-//        print("masukk")
-//        let nextMainController = MalinKundang_ViewController()
-//        present(nextMainController, animated: true, completion: nil)
-////        let nextDetailPage = DetailPageViewController(nibName: "DetailPageViewController", bundle: nil)
-////        present(nextDetailPage, animated: true, completion: nil)
-//    }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if decelerate{
@@ -186,7 +150,6 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
     private func setupCell(){
         let indexPath = IndexPath(item: layout.currentPage, section: 0)
         if let cell = collectionView.cellForItem(at: indexPath){
-            //      cell.alpha = 0.4
             transformCell(cell)
         }
     }
@@ -195,7 +158,6 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
         for otherCell in collectionView.visibleCells{
             if !isEffect{
                 cell.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-                //        cell.alpha = 0.4
                 return
             }
             
@@ -203,13 +165,10 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
                 cell.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
             }
             if let indexPath = collectionView.indexPath(for: otherCell){
-                
                 if indexPath.item != layout.currentPage{
                     print("\(layout.currentPage)")
                     UIView.animate(withDuration: 0.2){
                         otherCell.transform = .identity
-                        //            otherCell.alpha = 0.4
-                        //            cell.alpha = 1
                         cell.layer.masksToBounds = false
                         cell.layer.shadowColor = UIColor.white.cgColor
                         cell.layer.shadowOffset = CGSize(width: 10, height: 3)
@@ -220,8 +179,6 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
                         otherCell.layer.shadowRadius = 15
                     }
                 }
-                
-                
             }
         }
     }
@@ -236,6 +193,5 @@ class HomePageViewController: UIViewController, UICollectionViewDelegate, UIColl
         imageView.center = view.center
         view.addSubview(imageView)
         self.view.sendSubviewToBack(imageView)
-        print("Sukses")
     }
 }
