@@ -10,52 +10,36 @@ import GameplayKit
 
 class MalinKundang_Scene8: SKScene {
     let playableRect: CGRect
-
+    
+    //MARK: Background
     let backgroundMarried = SKSpriteNode(imageNamed: "backgroundMarried")
     
+    //MARK: Characteer
     let characterMalin = SKSpriteNode(imageNamed: "malinScene8")
-    
     let characterMalinWife = SKSpriteNode(imageNamed: "istriMalinScene8")
     
+    //MARK: Non Characteer
     let nonCharacterFlowers = SKSpriteNode(imageNamed: "marriedFlowers")
     
+    //MARK: Button
     let buttonNext = SKSpriteNode(imageNamed: "buttonNext")
     var buttonNextAction: SKAction?
-    
     let buttonPrevious = SKSpriteNode(imageNamed: "buttonPrevious")
     var buttonPreviousAction: SKAction?
-    
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
     var buttonHomeAction: SKAction?
     
+    //MARK: Text Label
     let textLayout = SKSpriteNode(imageNamed: "textLayout")
     var labelTextStory = SKLabelNode(fontNamed: "Nunito")
     
+    //MARK: Sound
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
-    override init(size: CGSize) {
-        let maxAspectRatio:CGFloat = 10.0/3.0
-        let playableHeight = size.width / maxAspectRatio
-        let playableMargin = (size.height - playableHeight)/2.0
-        playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: playableHeight)
-        
-        let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
-        let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
-        
-        buttonNextAction = SKAction.sequence([buttonToSmall, buttonToBig])
-        buttonPreviousAction = SKAction.sequence([buttonToSmall, buttonToBig])
-        buttonHomeAction = SKAction.sequence([buttonToSmall, buttonToBig])
-        
-        super.init(size: size)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func didMove(to view: SKView) {
+        //MARK: Background
         self.backgroundColor = SKColor.white
         
         backgroundMarried.size = CGSize(width: 2060, height: 1120)
@@ -64,12 +48,14 @@ class MalinKundang_Scene8: SKScene {
         backgroundMarried.zPosition = 0
         addChild(backgroundMarried)
         
+        //MARK: Non Characteer
         nonCharacterFlowers.size = CGSize(width: 2060, height: 400)
         nonCharacterFlowers.position = CGPoint(x: size.width/2.0, y: size.height/1.5)
         nonCharacterFlowers.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         nonCharacterFlowers.zPosition = 1
         addChild(nonCharacterFlowers)
         
+        //MARK: Characteer
         characterMalinWife.name = "malinWife"
         characterMalinWife.size = CGSize(width: 700, height: 800)
         characterMalinWife.position = CGPoint(x: size.width/1.55, y: size.height/2.3)
@@ -84,6 +70,7 @@ class MalinKundang_Scene8: SKScene {
         characterMalin.zPosition = 2
         addChild(characterMalin)
         
+        //MARK: Button
         buttonNext.name = "buttonNext"
         buttonNext.size = CGSize(width: 150, height: 150)
         buttonNext.position = CGPoint(x: size.width/1.07, y: size.height/3.5)
@@ -105,12 +92,14 @@ class MalinKundang_Scene8: SKScene {
         buttonHome.zPosition = 2.5
         addChild(buttonHome)
         
+        //text layout
         textLayout.size = CGSize(width: 1300, height: 200)
         textLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
         textLayout.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         textLayout.zPosition = 2.5
         addChild(textLayout)
         
+        //MARK: Label
         labelTextStory.text = "Malin juga menikahi gadis cantik anak saudagar di desa itu."
         labelTextStory.fontColor = SKColor.white
         labelTextStory.fontSize = 42
@@ -121,8 +110,34 @@ class MalinKundang_Scene8: SKScene {
         labelTextStory.zPosition = 2.75
         addChild(labelTextStory)
         
+        //MARK: Animation
         run(SKAction.repeatForever(SKAction.sequence([SKAction.run(flowersPetalsRainy), SKAction.wait(forDuration: 1.0)])))
+        
+        //MARK: Sound
         Sound.sharedInstance.playDubbing(file: "08", fileExtension: "m4a")
+    }
+    
+    //MARK: SOURCE CODE MOVE ASSET
+    override init(size: CGSize) {
+        //MARK: Actived Rect Size
+        let maxAspectRatio:CGFloat = 10.0/3.0
+        let playableHeight = size.width / maxAspectRatio
+        let playableMargin = (size.height - playableHeight)/2.0
+        playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: playableHeight)
+        
+        //MARK: Action Animation
+        let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
+        let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
+        
+        buttonNextAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        buttonPreviousAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        buttonHomeAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func flowersPetalsRainy() {
@@ -143,7 +158,6 @@ class MalinKundang_Scene8: SKScene {
         if stateMusic {
             run(clickButton)
         }
-        
         if buttonNext.action(forKey: "Button Next") == nil {
             Sound.sharedInstance.stop()
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
@@ -174,7 +188,7 @@ class MalinKundang_Scene8: SKScene {
         }
         if buttonHome.action(forKey: "Button Home") == nil {
             Sound.sharedInstance.stop()
-          Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
+            Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
             buttonHome.run((buttonHomeAction!), withKey: "Button Home")
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
         }

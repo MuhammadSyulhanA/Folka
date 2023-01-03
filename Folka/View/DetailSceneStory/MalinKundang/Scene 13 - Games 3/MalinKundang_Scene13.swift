@@ -9,13 +9,6 @@ import SpriteKit
 import GameplayKit
 
 class MalinKundang_Scene13: SKScene {
-    var player: SKSpriteNode?
-    var someSprite = SKSpriteNode()
-    var floor = SKSpriteNode()
-    
-    let characterIbuMalin = SKSpriteNode(imageNamed: "ibuMalinScene10")
-    
-    var kayuScene6 = SKSpriteNode(imageNamed: "kayuScene6")
     
     //MARK: POP UP
     let popUpIntro = SKSpriteNode(imageNamed: "popUpIntroLabirin")
@@ -114,7 +107,6 @@ class MalinKundang_Scene13: SKScene {
         background.zPosition = -1
         addChild(background)
         
-        
         //MARK: POPUP
         popUpIntro.size = CGSize(width: 1350, height: 750)
         popUpIntro.position = CGPoint(x: size.width/2, y: size.height/2)
@@ -177,7 +169,6 @@ class MalinKundang_Scene13: SKScene {
         buttonLanjutkanCerita.isHidden = true
         addChild(buttonLanjutkanCerita)
         
-        
         //MARK: BUTTON
         buttonHome.size = CGSize(width: 150, height: 150)
         buttonHome.position = CGPoint(x: size.width/16, y: size.height/1.35)
@@ -192,7 +183,6 @@ class MalinKundang_Scene13: SKScene {
         buttonTanya.zPosition = 3
         buttonTanya.name = "buttonTanya"
         addChild(buttonTanya)
-        
         
         //kapal
         kapalLabirin.name = "kapalLabirin"
@@ -465,100 +455,11 @@ class MalinKundang_Scene13: SKScene {
         setUpFloorPyhisic(lineMaze: verticalPanjang3LuarDalam9)
         
         Sound.sharedInstance.playBacksound(file: "labirin", fileExtension: "wav")
-
     }
     
-    func setUpShipPyhisic(ship: SKSpriteNode){
-        ship.physicsBody = SKPhysicsBody(circleOfRadius: ship.size.width / 2)
-        ship.physicsBody!.isDynamic = true
-        ship.physicsBody?.allowsRotation = false
-        ship.physicsBody?.affectedByGravity = false
-    }
-    
-    func setUpFloorPyhisic(lineMaze: SKSpriteNode){
-        lineMaze.physicsBody = SKPhysicsBody(rectangleOf: lineMaze.size)
-        lineMaze.physicsBody?.affectedByGravity = false
-        lineMaze.physicsBody?.isDynamic = false
-        lineMaze.physicsBody?.allowsRotation = false
-    }
-    
-    func movePlayerToPosition(playerPosition: CGPoint){
-        kapalLabirin.position = playerPosition
-        
-        if kapalLabirin.frame.intersects(sharkKiri.frame) {
-            kapalLabirin.position = CGPoint(x: size.width/5.5, y: size.height/1.69)
-        }
-        
-        if kapalLabirin.frame.intersects(sharkKanan1.frame) {
-            kapalLabirin.position = CGPoint(x: size.width/5.5, y: size.height/1.69)
-        }
-        
-        if kapalLabirin.frame.intersects(sharkKanan2.frame) {
-            kapalLabirin.position = CGPoint(x: size.width/5.5, y: size.height/1.69)
-        }
-        
-        if kapalLabirin.frame.intersects(sharkKanan3.frame) {
-            kapalLabirin.position = CGPoint(x: size.width/5.5, y: size.height/1.69)
-        }
-        
-        if kapalLabirin.frame.intersects(pulauFinish.frame) {
-            popUpBerhasil.isHidden = false
-            buttonMainLagi.isHidden = false
-            buttonLanjutkanCerita.isHidden = false
-            backgroundOpacity.isHidden = false
-        }
-    }
-    
-    func buttonMainLagiAksi(){
-        popUpBerhasil.isHidden = true
-        buttonMainLagi.isHidden = true
-        buttonLanjutkanCerita.isHidden = true
-        backgroundOpacity.isHidden = true
-        kapalLabirin.position = CGPoint(x: size.width/5.5, y: size.height/1.69)
-    }
-    
-    func buttonTutupSceneAksi() {
-        popUpIntro.isHidden = true
-        buttonMulai.isHidden = true
-        wayHintLabirin.isHidden = true
-        backgroundOpacity.isHidden = true
-    }
-    
-    func buttonTanyaAksi(){
-        popUpHint.isHidden = false
-        buttonTutupHint.isHidden = false
-        wayHintLabirin.isHidden = false
-        wayHintLabirin.run(SKAction.repeatForever((wayAction!)), withKey: "Way Hint")
-        backgroundOpacity.isHidden = false
-    }
-    
-    func buttonTutupHintAksi(){
-        popUpHint.isHidden = true
-        buttonTutupHint.isHidden = true
-        wayHintLabirin.isHidden = true
-        wayHintLabirin.removeAction(forKey: "Way Hint")
-        backgroundOpacity.isHidden = true
-    }
-    
-    func buttonHomeScene() {
-        print("tes")
-//        if buttonHome.action(forKey: "Button Home") == nil {
-        Sound.sharedInstance.stopBacksound()
-        self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
-            //        let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-            //        self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
-//        }
-    }
-    
-    func buttonLanjutScene() {
-        Sound.sharedInstance.stopBacksound()
-        let reveal = SKTransition.reveal(with: .left, duration: 1)
-        let newScene = MalinKundang_Scene14(size: CGSize(width: 2048, height: 1536))
-        newScene.scaleMode = .aspectFill
-        scene?.view!.presentScene(newScene, transition: reveal)
-    }
-    
+    //MARK: SOURCE CODE MOVE ASSET
     override init(size: CGSize){
+        //MARK: Action Animation
         let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
         let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
         
@@ -706,7 +607,6 @@ class MalinKundang_Scene13: SKScene {
                 }
             }
         }
-        
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -734,4 +634,88 @@ class MalinKundang_Scene13: SKScene {
         }
     }
     
+    func setUpShipPyhisic(ship: SKSpriteNode){
+        ship.physicsBody = SKPhysicsBody(circleOfRadius: ship.size.width / 2)
+        ship.physicsBody!.isDynamic = true
+        ship.physicsBody?.allowsRotation = false
+        ship.physicsBody?.affectedByGravity = false
+    }
+    
+    func setUpFloorPyhisic(lineMaze: SKSpriteNode){
+        lineMaze.physicsBody = SKPhysicsBody(rectangleOf: lineMaze.size)
+        lineMaze.physicsBody?.affectedByGravity = false
+        lineMaze.physicsBody?.isDynamic = false
+        lineMaze.physicsBody?.allowsRotation = false
+    }
+    
+    func movePlayerToPosition(playerPosition: CGPoint){
+        kapalLabirin.position = playerPosition
+        
+        if kapalLabirin.frame.intersects(sharkKiri.frame) {
+            kapalLabirin.position = CGPoint(x: size.width/5.5, y: size.height/1.69)
+        }
+        
+        if kapalLabirin.frame.intersects(sharkKanan1.frame) {
+            kapalLabirin.position = CGPoint(x: size.width/5.5, y: size.height/1.69)
+        }
+        
+        if kapalLabirin.frame.intersects(sharkKanan2.frame) {
+            kapalLabirin.position = CGPoint(x: size.width/5.5, y: size.height/1.69)
+        }
+        
+        if kapalLabirin.frame.intersects(sharkKanan3.frame) {
+            kapalLabirin.position = CGPoint(x: size.width/5.5, y: size.height/1.69)
+        }
+        
+        if kapalLabirin.frame.intersects(pulauFinish.frame) {
+            popUpBerhasil.isHidden = false
+            buttonMainLagi.isHidden = false
+            buttonLanjutkanCerita.isHidden = false
+            backgroundOpacity.isHidden = false
+        }
+    }
+    
+    func buttonMainLagiAksi(){
+        popUpBerhasil.isHidden = true
+        buttonMainLagi.isHidden = true
+        buttonLanjutkanCerita.isHidden = true
+        backgroundOpacity.isHidden = true
+        kapalLabirin.position = CGPoint(x: size.width/5.5, y: size.height/1.69)
+    }
+    
+    func buttonTutupSceneAksi() {
+        popUpIntro.isHidden = true
+        buttonMulai.isHidden = true
+        wayHintLabirin.isHidden = true
+        backgroundOpacity.isHidden = true
+    }
+    
+    func buttonTanyaAksi(){
+        popUpHint.isHidden = false
+        buttonTutupHint.isHidden = false
+        wayHintLabirin.isHidden = false
+        wayHintLabirin.run(SKAction.repeatForever((wayAction!)), withKey: "Way Hint")
+        backgroundOpacity.isHidden = false
+    }
+    
+    func buttonTutupHintAksi(){
+        popUpHint.isHidden = true
+        buttonTutupHint.isHidden = true
+        wayHintLabirin.isHidden = true
+        wayHintLabirin.removeAction(forKey: "Way Hint")
+        backgroundOpacity.isHidden = true
+    }
+    
+    func buttonHomeScene() {
+        Sound.sharedInstance.stopBacksound()
+        self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
+    }
+    
+    func buttonLanjutScene() {
+        Sound.sharedInstance.stopBacksound()
+        let reveal = SKTransition.reveal(with: .left, duration: 1)
+        let newScene = MalinKundang_Scene14(size: CGSize(width: 2048, height: 1536))
+        newScene.scaleMode = .aspectFill
+        scene?.view!.presentScene(newScene, transition: reveal)
+    }
 }

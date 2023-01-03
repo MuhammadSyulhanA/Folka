@@ -10,13 +10,18 @@ import GameplayKit
 
 class MalinKundang_Scene12: SKScene {
     let playableRect: CGRect
-
+    
+    //MARK: Background
     let backgroundSky = SKSpriteNode(imageNamed: "backgroundPuzzle")
     let backgroundSea = SKSpriteNode(imageNamed: "backgroundOpenSea")
     
+    //MARK: Non Character & Actived User Defaults
     let nonCharacterBoat1 = UserDefaults.standard.string(forKey: "kapalPilih")! == "objectKapalSatu" ? SKSpriteNode(imageNamed: "kapalScene12_1") : SKSpriteNode(imageNamed: "kapalScene12_2")
     var animationBoat1: SKAction!
     
+    let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
+    
+    //MARK: Button
     let buttonNext = SKSpriteNode(imageNamed: "buttonNext")
     var buttonNextAction: SKAction?
     
@@ -26,38 +31,19 @@ class MalinKundang_Scene12: SKScene {
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
     var buttonHomeAction: SKAction?
     
-    let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
+    //MARK: Label
     var labelTextStory = SKLabelNode(fontNamed: "Nunito")
     
     //MARK: SOUND
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
-    
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
-    
-    override init(size: CGSize) {
-        let maxAspectRatio:CGFloat = 10.0/3.0
-        let playableHeight = size.width / maxAspectRatio
-        let playableMargin = (size.height - playableHeight)/2.0
-        playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: playableHeight)
-        
-        let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
-        let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
-        
-        buttonNextAction = SKAction.sequence([buttonToSmall, buttonToBig])
-        buttonPreviousAction = SKAction.sequence([buttonToSmall, buttonToBig])
-        buttonHomeAction = SKAction.sequence([buttonToSmall, buttonToBig])
-        
-        super.init(size: size)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func didMove(to view: SKView) {
         let rect = CGRect(x: 0, y: 0, width: 100, height: 30)
         let path = CGPath(rect: rect, transform: nil)
+        
+        //MARK: Background
         self.backgroundColor = SKColor.white
         
         backgroundSky.size = CGSize(width: 2050, height: 1120)
@@ -72,6 +58,7 @@ class MalinKundang_Scene12: SKScene {
         backgroundSea.zPosition = 1
         addChild(backgroundSea)
         
+        //MARK: Non Character
         nonCharacterBoat1.size = CGSize(width: 1000, height: 600)
         nonCharacterBoat1.position = CGPoint(x: size.width/2, y: size.height/2.2)
         nonCharacterBoat1.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -79,6 +66,13 @@ class MalinKundang_Scene12: SKScene {
         nonCharacterBoat1.run(SKAction.repeatForever(SKAction.follow(path, asOffset: true, orientToPath: false, duration: 4.0)))
         addChild(nonCharacterBoat1)
         
+        nonCharacterTextLayout.size = CGSize(width: 1400, height: 230)
+        nonCharacterTextLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
+        nonCharacterTextLayout.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterTextLayout.zPosition = +4
+        addChild(nonCharacterTextLayout)
+        
+        //MARK: Button
         buttonNext.name = "buttonNext"
         buttonNext.size = CGSize(width: 150, height: 150)
         buttonNext.position = CGPoint(x: size.width/1.07, y: size.height/3.5)
@@ -100,12 +94,7 @@ class MalinKundang_Scene12: SKScene {
         buttonHome.zPosition = 2.5
         addChild(buttonHome)
         
-        nonCharacterTextLayout.size = CGSize(width: 1400, height: 230)
-        nonCharacterTextLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
-        nonCharacterTextLayout.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        nonCharacterTextLayout.zPosition = +4
-        addChild(nonCharacterTextLayout)
-        
+        //MARK: Label
         labelTextStory.text = "Keesokan harinya, Malin dan istrinya berlayar ke pulau asal Malin."
         labelTextStory.fontColor = SKColor.white
         labelTextStory.fontSize = 42
@@ -116,10 +105,35 @@ class MalinKundang_Scene12: SKScene {
         labelTextStory.zPosition = +4.5
         addChild(labelTextStory)
         
+        //MARK: Sound
         Sound.sharedInstance.playDubbing(file: "12 1", fileExtension: "m4a")
         Sound.sharedInstance.playBacksound(file: "soundKapalJalan", fileExtension: "wav")
-
+        
+        //MARK: Action Animation
         run(SKAction.repeatForever(SKAction.sequence([SKAction.run(moveCloud), SKAction.wait(forDuration: 7.5)])))
+    }
+    
+    //MARK: SOURCE CODE MOVE ASSET
+    override init(size: CGSize) {
+        //MARK: Actived Rect Size
+        let maxAspectRatio:CGFloat = 10.0/3.0
+        let playableHeight = size.width / maxAspectRatio
+        let playableMargin = (size.height - playableHeight)/2.0
+        playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: playableHeight)
+        
+        //MARK: Action Animation
+        let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
+        let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
+        
+        buttonNextAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        buttonPreviousAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        buttonHomeAction = SKAction.sequence([buttonToSmall, buttonToBig])
+        
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func moveCloud() {
@@ -189,7 +203,6 @@ class MalinKundang_Scene12: SKScene {
         if stateMusic {
             run(clickButton)
         }
-        
         if buttonPrevious.action(forKey: "Button Previous") == nil {
             Sound.sharedInstance.stop()
             Sound.sharedInstance.stopBacksound()

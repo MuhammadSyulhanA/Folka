@@ -15,9 +15,11 @@ struct Script15 {
 
 class MalinKundang_Scene15: SKScene {
     
+    //MARK: Background
     let backgroundSky = SKSpriteNode(imageNamed: "skyBackground")
     let backgroundGround = SKSpriteNode(imageNamed: "groundBackgroundZoomSea")
     
+    //MARK: Character
     let characterMalin = SKSpriteNode(imageNamed: "malinScene15_1")
     var animationMalin: SKAction?
     
@@ -36,6 +38,7 @@ class MalinKundang_Scene15: SKScene {
     var characterIbuMalinSay = SKSpriteNode(imageNamed: "ibuMalinScene15_2")
     var animationIbuMalinSay: SKAction?
     
+    //MARK: Non Character
     let nonCharacterSea = SKSpriteNode(imageNamed: "sea")
     
     let nonCharacterHouse = SKSpriteNode(imageNamed: "house1")
@@ -44,31 +47,33 @@ class MalinKundang_Scene15: SKScene {
     let nonCharacterTree = SKSpriteNode(imageNamed: "tree1")
     var animationTree: SKAction?
     
+    let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
+    
+    //MARK: Button
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
     var buttonHomeAction: SKAction?
-        
+    
     let buttonNext = SKSpriteNode(imageNamed: "buttonNext")
     var buttonNextAction: SKAction?
     
     let buttonPrevious = SKSpriteNode(imageNamed: "buttonPrevious")
     var buttonPreviousAction: SKAction?
     
-    let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
+    //MARK: Label
     var labelTextStory = SKLabelNode(fontNamed: "Nunito")
-//    var labelTextStory: SKLabelHorizontalAlignmentMode
     var dataIntro: [Script15] = []
     var state = 0
     
+    //MARK: Sound
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
-
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
     override func didMove(to view: SKView) {
-        // MARK: Default background white
         let rect = CGRect(x: 0, y: 0, width: 200, height: 0)
         let path = CGPath(rect: rect, transform: nil)
         
+        //MARK: Initializer Array for Data Label
         let data1 = Script15(imageName: characterIbuMalin, textDialogue: "Namun, Malin tidak mengakui bahwa ia adalah ibunya.")
         let data2 = Script15(imageName: characterMalinSay, textDialogue: "“Siapa kau?”")
         let data3 = Script15(imageName: characterIbuMalinSay, textDialogue: "“Malin, apakah engkau tidak mengenaliku, ibumu?”")
@@ -79,6 +84,7 @@ class MalinKundang_Scene15: SKScene {
         
         dataIntro = [data1, data2, data3, data4, data5, data6, data7]
         
+        //MARK: Background
         self.backgroundColor = SKColor.white
         
         backgroundSky.size = CGSize(width: 2050, height: 1120)
@@ -93,13 +99,7 @@ class MalinKundang_Scene15: SKScene {
         backgroundGround.zPosition = -1
         addChild(backgroundGround)
         
-        nonCharacterSea.size = CGSize(width: 2050, height: 1120)
-        nonCharacterSea.position = CGPoint(x: size.width/1.9, y: size.height/2)
-        nonCharacterSea.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        nonCharacterSea.zPosition = 0
-        nonCharacterSea.run(SKAction.repeatForever(SKAction.follow(path, asOffset: true, orientToPath: false, duration: 4.0)))
-        addChild(nonCharacterSea)
-        
+        //MARK: Character
         characterMalin.name = "malin"
         characterMalin.size = CGSize(width: 300, height: 650)
         characterMalin.position = CGPoint(x: size.width/1.9, y: size.height/2.6)
@@ -145,6 +145,14 @@ class MalinKundang_Scene15: SKScene {
         characterIbuMalinSay.isHidden = true
         addChild(characterIbuMalinSay)
         
+        //MARK: Non Character
+        nonCharacterSea.size = CGSize(width: 2050, height: 1120)
+        nonCharacterSea.position = CGPoint(x: size.width/1.9, y: size.height/2)
+        nonCharacterSea.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterSea.zPosition = 0
+        nonCharacterSea.run(SKAction.repeatForever(SKAction.follow(path, asOffset: true, orientToPath: false, duration: 4.0)))
+        addChild(nonCharacterSea)
+        
         nonCharacterHouse.name = "house"
         nonCharacterHouse.size = CGSize(width: 300, height: 250)
         nonCharacterHouse.position = CGPoint(x: size.width/4.8, y: size.height/1.6)
@@ -160,6 +168,13 @@ class MalinKundang_Scene15: SKScene {
         nonCharacterTree.zRotation = CGFloat.pi / -23
         addChild(nonCharacterTree)
         
+        nonCharacterTextLayout.size = CGSize(width: 1300, height: 200)
+        nonCharacterTextLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
+        nonCharacterTextLayout.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterTextLayout.zPosition = 3
+        addChild(nonCharacterTextLayout)
+        
+        //MARK: Button
         buttonNext.name = "buttonNext"
         buttonNext.size = CGSize(width: 150, height: 150)
         buttonNext.position = CGPoint(x: size.width/1.07, y: size.height/3.5)
@@ -181,12 +196,7 @@ class MalinKundang_Scene15: SKScene {
         buttonHome.zPosition = +4
         addChild(buttonHome)
         
-        nonCharacterTextLayout.size = CGSize(width: 1300, height: 200)
-        nonCharacterTextLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
-        nonCharacterTextLayout.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        nonCharacterTextLayout.zPosition = 3
-        addChild(nonCharacterTextLayout)
-        
+        //MARK: Label
         labelTextStory.text = dataIntro[0].textDialogue
         labelTextStory.fontColor = SKColor.white
         labelTextStory.fontSize = 42
@@ -198,21 +208,25 @@ class MalinKundang_Scene15: SKScene {
         labelTextStory.zPosition = 3.5
         addChild(labelTextStory)
         
+        //MARK: Sound
         Sound.sharedInstance.playDubbing(file: "15  1", fileExtension: "m4a")
     }
     
+    //MARK: SOURCE CODE MOVE ASSET
     override init(size: CGSize){
+        //MARK: Actived Textures
         var texturesTree: [SKTexture] = []
         for index in 1...2 {
             texturesTree.append(SKTexture(imageNamed: "tree\(index)"))
         }
+        
+        //MARK: Action Animation
         let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
         let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
         
         buttonNextAction = SKAction.sequence([buttonToSmall, buttonToBig])
         buttonPreviousAction = SKAction.sequence([buttonToSmall, buttonToBig])
         buttonHomeAction = SKAction.sequence([buttonToSmall, buttonToBig])
-        
         animationTree = SKAction.animate(with: texturesTree, timePerFrame: 0.5)
         
         super.init(size: size)
@@ -232,11 +246,9 @@ class MalinKundang_Scene15: SKScene {
         if stateMusic {
             run(clickButton)
         }
-        
         if buttonNext.action(forKey: "Button Next") == nil {
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
             state += 1
-            print(state)
             if state == 7 {
                 Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .left, duration: 1)
@@ -282,7 +294,6 @@ class MalinKundang_Scene15: SKScene {
             }
         } else {
             state += 1
-            print(state)
             if state == 7 {
                 Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .left, duration: 1)
@@ -336,7 +347,6 @@ class MalinKundang_Scene15: SKScene {
         if buttonPrevious.action(forKey: "Previous Next") == nil {
             buttonPrevious.run((buttonPreviousAction!), withKey: "Button Previous")
             state -= 1
-            print(state)
             if state < 0 {
                 Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .right, duration: 1)
@@ -379,7 +389,6 @@ class MalinKundang_Scene15: SKScene {
             }
         } else {
             state -= 1
-            print(state)
             if state < 0 {
                 Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .right, duration: 1)
@@ -436,7 +445,6 @@ class MalinKundang_Scene15: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         let touch = touches.first as UITouch?
         if atPoint((touch?.location(in: self))!).name == buttonNext.name {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
@@ -460,6 +468,7 @@ class MalinKundang_Scene15: SKScene {
             }
         }
     }
+    
     override func update(_ currentTime: TimeInterval) {
         startTreeAnimation()
     }
