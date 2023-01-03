@@ -14,12 +14,11 @@ struct Page{
   let description: String
 }
 
-class OnboardingViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+class Onboarding_Screen: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
   @IBOutlet weak var pageControl: UIPageControl!
   @IBOutlet weak var buttonStart: UIButton!
   @IBOutlet weak var collectionViewImage: UICollectionView!
   var customButtonMulai: UIImage!
-  
   
   let pages: [Page] = [Page(image: "onboardingOne", title: "Baca Dongeng Interaktif", description: "Baca dongeng cerita rakyat Indonesia sambil bermain."),
                        Page(image: "onboardingTwo", title: "Mari Kita Mulai", description: "Siap membaca dan menjelajah dengan Folka.")]
@@ -27,8 +26,7 @@ class OnboardingViewController: UIViewController, UICollectionViewDataSource, UI
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    assignbackground()
-    
+    self.view.addBackground()
     Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
     buttonStart.setTitle("", for: .normal)
     customButtonMulai = UIImage(named: "buttonMulaiBoarding")
@@ -37,8 +35,8 @@ class OnboardingViewController: UIViewController, UICollectionViewDataSource, UI
     collectionViewImage.dataSource = self
     collectionViewImage.delegate = self
     collectionViewImage.clipsToBounds = false
-    collectionViewImage.register(UINib(nibName: OnboardingCollectionViewCell.identifier, bundle: Bundle.main),
-                                 forCellWithReuseIdentifier: "OnboardingCollectionViewCell")
+    collectionViewImage.register(UINib(nibName: Onboarding_CollectionCell.identifier, bundle: Bundle.main),
+                                 forCellWithReuseIdentifier: "Onboarding_CollectionCell")
     pageControl.numberOfPages = self.pages.count
     collectionViewImage.backgroundColor = UIColor.clear.withAlphaComponent(0)
     collectionViewImage.contentInsetAdjustmentBehavior = .never
@@ -51,41 +49,18 @@ class OnboardingViewController: UIViewController, UICollectionViewDataSource, UI
   
   @IBAction func buttonStart(_ sender: UIButton) {
     sender.transform = CGAffineTransform.init(scaleX: 0.6, y: 0.6)
-        UIView.animate(withDuration: 0.3, animations: { () -> Void in
-          sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
-        })
+    UIView.animate(withDuration: 0.3, animations: { () -> Void in
+      sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+    })
     
     Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
-    let nextProfileOnboard = ProfileOnboard_ViewController(nibName: "ProfileOnboard_ViewController", bundle: nil)
+    let nextProfileOnboard = Onboarding_InputName(nibName: "Onboarding_InputName", bundle: nil)
     present(nextProfileOnboard, animated: true, completion: nil)
     self.navigationController?.popViewController(animated: true)
-//
-//    UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: { [weak self] in
-//                // Get Top Controller With Extension
-//                let topController = UIApplication.topViewController()
-//                // Pressent New Controller over top controller
-//      let nextProfileOnboard = ProfileOnboard_ViewController(nibName: "ProfileOnboard_ViewController", bundle: nil)
-//                topController?.present(nextProfileOnboard, animated: true, completion: nil)
-//            })
-  }
-  
-  func assignbackground(){
-    let background = UIImage(named: "backgroundOnboarding")
-    
-    var imageView : UIImageView!
-    imageView = UIImageView(frame: view.bounds)
-    imageView.contentMode =  UIView.ContentMode.scaleAspectFill
-    imageView.clipsToBounds = true
-    imageView.image = background
-    imageView.center = view.center
-    view.addSubview(imageView)
-    self.view.sendSubviewToBack(imageView)
   }
   
   @IBAction func pageChanged(_ sender: Any) {
     let pc = sender as! UIPageControl
-    
-    // scrolling the collectionView to the selected page
     collectionViewImage.scrollToItem(at: IndexPath(item: pc.currentPage, section: 0), at: .centeredHorizontally, animated: true)
   }
   
@@ -94,17 +69,14 @@ class OnboardingViewController: UIViewController, UICollectionViewDataSource, UI
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionViewImage.dequeueReusableCell(withReuseIdentifier: OnboardingCollectionViewCell.identifier,
-                                                       for: indexPath) as! OnboardingCollectionViewCell
-    // function for configuring the cell, defined in the Custom cell class
+    let cell = collectionViewImage.dequeueReusableCell(withReuseIdentifier: Onboarding_CollectionCell.identifier,
+                                                       for: indexPath) as! Onboarding_CollectionCell
     cell.configureCell(page: pages[indexPath.item])
     return cell
   }
   
-  
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
-    
   }
   
   func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -116,5 +88,4 @@ class OnboardingViewController: UIViewController, UICollectionViewDataSource, UI
     print("\(pageControl.currentPage)")
     pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
   }
-  
 }

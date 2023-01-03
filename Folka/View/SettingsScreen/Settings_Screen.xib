@@ -14,12 +14,12 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsScreen_ViewController" customModule="Folka" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Settings_Screen" customModule="Folka" customModuleProvider="target">
             <connections>
                 <outlet property="buttonBack" destination="8iR-KT-WbC" id="TEJ-bG-c0V"/>
+                <outlet property="buttonChangeName" destination="PAH-Ib-bGA" id="46c-fO-q9m"/>
                 <outlet property="buttonMusic" destination="8Q1-pF-3Bs" id="WbW-pK-qdA"/>
                 <outlet property="buttonSound" destination="U6q-t8-JkG" id="a9b-Zo-Lfi"/>
-                <outlet property="buttonUbahNama" destination="PAH-Ib-bGA" id="46c-fO-q9m"/>
                 <outlet property="textFieldChangeName" destination="0IR-l2-moF" id="lON-f8-qmB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
