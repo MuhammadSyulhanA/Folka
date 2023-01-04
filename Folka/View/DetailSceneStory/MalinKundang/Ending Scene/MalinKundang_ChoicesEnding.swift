@@ -7,8 +7,11 @@
 import SpriteKit
 import GameplayKit
 
-class ChoicesEnding: SKScene {
+class MalingKundang_ChoicesEnding: SKScene {
+    //MARK: BACKGROUND
     let background = SKSpriteNode(imageNamed: "backgroundChooseEnding")
+    
+    //MARK: BUTTON
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
     var buttonHomeAction: SKAction?
     let buttonMintaMaaf = SKSpriteNode(imageNamed: "buttonMintaMaaf")
@@ -16,12 +19,14 @@ class ChoicesEnding: SKScene {
     let buttonMenyambut = SKSpriteNode(imageNamed: "buttonMenyambut")
     var buttonMenyambutAction: SKAction?
     
-    // sound
+    //MARK: SOUND/MUSIC
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
     
     override init(size: CGSize) {
+        //MARK: SK ACTION BUTTON
         let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
         let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
+        
         buttonHomeAction = SKAction.sequence([buttonToSmall, buttonToBig])
         buttonMintaMaafAction = SKAction.sequence([buttonToSmall, buttonToBig])
         buttonHomeAction = SKAction.sequence([buttonToSmall, buttonToBig])
@@ -35,7 +40,7 @@ class ChoicesEnding: SKScene {
     
     
     override func didMove(to view: SKView) {
-        // MARK: Default background white
+        //MARK: INIZIALITATION BACKGROUND
         self.backgroundColor = SKColor.white
         
         background.size = CGSize(width: 2050, height: 1000)
@@ -44,6 +49,7 @@ class ChoicesEnding: SKScene {
         background.zPosition = -1
         addChild(background)
         
+        //MARK: INIZIALITATION BUTTON
         buttonHome.size = CGSize(width: 150, height: 150)
         buttonHome.name = "buttonHome"
         buttonHome.position = CGPoint(x: size.width/17.0, y: size.height/1.38)
@@ -66,30 +72,24 @@ class ChoicesEnding: SKScene {
         addChild(buttonMenyambut)
     }
     
+    //MARK: FUNCTION BUTTON HOME
     func buttonHomeScene() {
-//        if stateMusic {
-//            run(clickButton)
-//        }
         if buttonHome.action(forKey: "Button Home") == nil {
             buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
         }
     }
     
+    //MARK: FUNCTION BUTTON MAAF
     func buttonMintaMaafScene() {
-//        if stateMusic {
-//            run(clickButton)
-//        }
         let reveal = SKTransition.reveal(with: .right, duration: 1)
         let newScene = MalinKundang_AlternateScene17(size: CGSize(width: 2048, height: 1536))
         newScene.scaleMode = .aspectFill
         scene?.view!.presentScene(newScene, transition: reveal)
     }
     
+    //MARK: FUNCTION BUTTON MENYAMBUT
     func buttonMenyambutScene() {
-//        if stateMusic {
-//            run(clickButton)
-//        }
         let reveal = SKTransition.reveal(with: .right, duration: 1)
         let newScene = MalinKundang_AlternateScene15(size: CGSize(width: 2048, height: 1536))
         newScene.scaleMode = .aspectFill

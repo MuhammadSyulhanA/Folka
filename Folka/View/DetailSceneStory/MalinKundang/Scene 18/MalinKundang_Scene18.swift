@@ -9,9 +9,10 @@ import SpriteKit
 import GameplayKit
 
 class MalinKundang_Scene18: SKScene {
-    
+    //MARK: BACKGROUND
     let backgroundEnding = SKSpriteNode(imageNamed: "backgroundEnding")
     
+    //MARK: NON CHARACTER
     let nonCharacterSea = SKSpriteNode(imageNamed: "seaEnding")
     
     let nonCharacterTree = SKSpriteNode(imageNamed: "coconutTree")
@@ -20,6 +21,10 @@ class MalinKundang_Scene18: SKScene {
     let nonCharacterCoconut = SKSpriteNode(imageNamed: "coconut")
     var animationCoconut: SKAction?
     
+    let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
+    var labelTextStory = SKLabelNode(fontNamed: "Nunito")
+    
+    //MARK: BUTTON
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
     var buttonHomeAction: SKAction?
         
@@ -29,14 +34,13 @@ class MalinKundang_Scene18: SKScene {
     let buttonPrevious = SKSpriteNode(imageNamed: "buttonPrevious")
     var buttonPreviousAction: SKAction?
     
-    let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
-    var labelTextStory = SKLabelNode(fontNamed: "Nunito")
-    
+    //MARK: SOUND/MUSIC
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
 
     override func didMove(to view: SKView) {
+        //MARK: INIZIALITATION BACKGROUND
         let rect = CGRect(x: 0, y: 0, width: 100, height: 0)
         let path = CGPath(rect: rect, transform: nil)
         
@@ -48,6 +52,7 @@ class MalinKundang_Scene18: SKScene {
         backgroundEnding.zPosition = 0
         addChild(backgroundEnding)
         
+        //MARK: INIZIALITATION NON CHARACTER
         nonCharacterSea.size = CGSize(width: 600, height: 490)
         nonCharacterSea.position = CGPoint(x: size.width/12.0, y: size.height/3.4)
         nonCharacterSea.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -69,6 +74,13 @@ class MalinKundang_Scene18: SKScene {
         nonCharacterCoconut.isHidden = true
         addChild(nonCharacterCoconut)
         
+        nonCharacterTextLayout.size = CGSize(width: 1300, height: 200)
+        nonCharacterTextLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
+        nonCharacterTextLayout.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterTextLayout.zPosition = 3
+        addChild(nonCharacterTextLayout)
+        
+        //MARK: INIZIALITATION BUTTON
         buttonNext.name = "buttonNext"
         buttonNext.size = CGSize(width: 150, height: 150)
         buttonNext.position = CGPoint(x: size.width/1.07, y: size.height/3.5)
@@ -90,12 +102,7 @@ class MalinKundang_Scene18: SKScene {
         buttonHome.zPosition = +4
         addChild(buttonHome)
         
-        nonCharacterTextLayout.size = CGSize(width: 1300, height: 200)
-        nonCharacterTextLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
-        nonCharacterTextLayout.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        nonCharacterTextLayout.zPosition = 3
-        addChild(nonCharacterTextLayout)
-        
+        //MARK: INITIALIZATION TEXT
         labelTextStory.text = "Malin terbawa ombak dan terdampar di suatu pulau."
         labelTextStory.fontColor = SKColor.white
         labelTextStory.fontSize = 42
@@ -106,10 +113,12 @@ class MalinKundang_Scene18: SKScene {
         labelTextStory.zPosition = 3.5
         addChild(labelTextStory)
         
+        //MARK: INIZIALITATION SOUND AND MUSIC
         Sound.sharedInstance.playDubbing(file: "18", fileExtension: "m4a")
     }
     
     override init(size: CGSize){
+        //MARK: SK ACTION BUTTON
         let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
         let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
         
@@ -117,6 +126,7 @@ class MalinKundang_Scene18: SKScene {
         buttonPreviousAction = SKAction.sequence([buttonToSmall, buttonToBig])
         buttonHomeAction = SKAction.sequence([buttonToSmall, buttonToBig])
         
+        //MARK: SK ACTION NON CHARACTER
         animationTree = SKAction.scale(to: 1.0, duration: 2.0)
         
         super.init(size: size)
@@ -126,6 +136,7 @@ class MalinKundang_Scene18: SKScene {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: FUNCTION FOR ANIMATION NON CHARACTER
     func startCoconutAnimation() {
         if nonCharacterTree.action(forKey: "Coconut Animation") == nil {
             nonCharacterTree.run(SKAction.repeatForever(animationTree!), withKey: "Coconut Animation")
@@ -140,6 +151,7 @@ class MalinKundang_Scene18: SKScene {
         nonCharacterTree.removeAction(forKey: "Coconut Animation")
     }
     
+    //MARK: FUNCTION BUTTON NEXT
     func buttonNextScene() {
         if stateMusic {
             run(clickButton)
@@ -155,6 +167,7 @@ class MalinKundang_Scene18: SKScene {
         }
     }
     
+    //MARK: FUNCTION BUTTON PREVIOUS
     func buttonPreviousScene() {
         if stateMusic {
             run(clickButton)
@@ -169,6 +182,7 @@ class MalinKundang_Scene18: SKScene {
         }
     }
     
+    //MARK: FUNCTION BUTTON HOME
     func buttonHomeScene() {
         if stateMusic {
             run(clickButton)

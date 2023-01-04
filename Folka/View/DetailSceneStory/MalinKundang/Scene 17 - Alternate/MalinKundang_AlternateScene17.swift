@@ -9,21 +9,23 @@
 import SpriteKit
 import GameplayKit
 
+//MARK: STRUCT FOR TEXT SCENE
 struct DialogueScene {
     var textDialogue: String!
 }
 
 class MalinKundang_AlternateScene17: SKScene {
-    
-    //MARK: Library sesuaikan dengan framework
+    //MARK: BACKGROUND
     let backgroundSky = SKSpriteNode(imageNamed: "skyBackground")
     let backgroundGround = SKSpriteNode(imageNamed: "groundBackground")
     
+    //MARK: CHARACTER
     let characterIbuMalin = SKSpriteNode(imageNamed: "ibuMalinScene16_1")
     var animationIbuMalin: SKAction?
     
     let characterMalin = SKSpriteNode(imageNamed: "malinAlternate_scene17")
     
+    //MARK: NON CHARACTER
     let nonCharacterSea = SKSpriteNode(imageNamed: "sea")
     
     let nonCharacterHouse = SKSpriteNode(imageNamed: "house1")
@@ -32,6 +34,13 @@ class MalinKundang_AlternateScene17: SKScene {
     let nonCharacterTree = SKSpriteNode(imageNamed: "tree1")
     var animationTree: SKAction?
     
+    let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
+    var labelTextStory = SKLabelNode(fontNamed: "Nunito")
+    
+    var dataIntro: [DialogueScene] = []
+    var state = 0
+    
+    //MARK: BUTTON
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
     var buttonHomeAction: SKAction?
     
@@ -41,27 +50,17 @@ class MalinKundang_AlternateScene17: SKScene {
     let buttonNext = SKSpriteNode(imageNamed: "buttonNext")
     var buttonNextAction: SKAction?
     
-    let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
-    var labelTextStory = SKLabelNode(fontNamed: "Nunito")
-    
-    var dataIntro: [DialogueScene] = []
-    var state = 0
-    
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    
+    //MARK: SOUND/MUSIC
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
     override func didMove(to view: SKView) {
-        // MARK: Default background white
+        //MARK: INIZIALITATION BACKGROUND
         let rect = CGRect(x: 0, y: 0, width: 200, height: 0)
         let path = CGPath(rect: rect, transform: nil)
         self.backgroundColor = SKColor.white
-        
-        let data1 = DialogueScene(textDialogue: "“Ibu, maafkan perbuatanku.”")
-        let data2 = DialogueScene(textDialogue: "“Iya tidak apa-apa nak.”")
-        let data3 = DialogueScene(textDialogue: "“Ibu sudah memaafkanmu.”")
-        
-        dataIntro = [data1, data2, data3]
         
         backgroundSky.size = CGSize(width: 2050, height: 1120)
         backgroundSky.position = CGPoint(x: size.width/2, y: size.height/2)
@@ -75,13 +74,7 @@ class MalinKundang_AlternateScene17: SKScene {
         backgroundGround.zPosition = -1
         addChild(backgroundGround)
         
-        nonCharacterSea.size = CGSize(width: 2050, height: 1120)
-        nonCharacterSea.position = CGPoint(x: size.width/1.9, y: size.height/2)
-        nonCharacterSea.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        nonCharacterSea.zPosition = 0
-        nonCharacterSea.run(SKAction.repeatForever(SKAction.follow(path, asOffset: true, orientToPath: false, duration: 4.0)))
-        addChild(nonCharacterSea)
-        
+        //MARK: INIZIALITATION CHARACTER
         characterIbuMalin.name = "ibuMalin"
         characterIbuMalin.size = CGSize(width: 950, height: 1200)
         characterIbuMalin.position = CGPoint(x: size.width/2.8, y: size.height/2.4)
@@ -96,12 +89,20 @@ class MalinKundang_AlternateScene17: SKScene {
         characterMalin.zPosition = 2
         addChild(characterMalin)
         
+        //MARK: INIZIALITATION NON CHARACTER
         nonCharacterHouse.name = "house"
         nonCharacterHouse.size = CGSize(width: 300, height: 250)
         nonCharacterHouse.position = CGPoint(x: size.width/4.8, y: size.height/1.6)
         nonCharacterHouse.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         nonCharacterHouse.zPosition = 3
         addChild(nonCharacterHouse)
+        
+        nonCharacterSea.size = CGSize(width: 2050, height: 1120)
+        nonCharacterSea.position = CGPoint(x: size.width/1.9, y: size.height/2)
+        nonCharacterSea.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterSea.zPosition = 0
+        nonCharacterSea.run(SKAction.repeatForever(SKAction.follow(path, asOffset: true, orientToPath: false, duration: 4.0)))
+        addChild(nonCharacterSea)
         
         nonCharacterTree.name = "tree"
         nonCharacterTree.size = CGSize(width: 450, height: 700)
@@ -111,6 +112,13 @@ class MalinKundang_AlternateScene17: SKScene {
         nonCharacterTree.zRotation = CGFloat.pi / -23
         addChild(nonCharacterTree)
         
+        nonCharacterTextLayout.size = CGSize(width: 1400, height: 230)
+        nonCharacterTextLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
+        nonCharacterTextLayout.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterTextLayout.zPosition = +4
+        addChild(nonCharacterTextLayout)
+        
+        //MARK: INIZIALITATION BUTTON
         buttonHome.name = "buttonHome"
         buttonHome.size = CGSize(width: 150, height: 150)
         buttonHome.position = CGPoint(x: size.width/17.0, y: size.height/1.38)
@@ -125,7 +133,6 @@ class MalinKundang_AlternateScene17: SKScene {
         buttonPrevious.zPosition = 4
         addChild(buttonPrevious)
         
-        
         buttonNext.name = "buttonNext"
         buttonNext.size = CGSize(width: 150, height: 150)
         buttonNext.position = CGPoint(x: size.width/1.07, y: size.height/3.5)
@@ -133,12 +140,7 @@ class MalinKundang_AlternateScene17: SKScene {
         buttonNext.zPosition = 4
         addChild(buttonNext)
         
-        nonCharacterTextLayout.size = CGSize(width: 1400, height: 230)
-        nonCharacterTextLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
-        nonCharacterTextLayout.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        nonCharacterTextLayout.zPosition = +4
-        addChild(nonCharacterTextLayout)
-        
+        //MARK: INITIALIZATION TEXT
         labelTextStory.text = dataIntro[0].textDialogue
         labelTextStory.fontColor = SKColor.white
         labelTextStory.fontSize = 42
@@ -149,30 +151,43 @@ class MalinKundang_AlternateScene17: SKScene {
         labelTextStory.zPosition = +4.5
         addChild(labelTextStory)
         
+        let data1 = DialogueScene(textDialogue: "“Ibu, maafkan perbuatanku.”")
+        let data2 = DialogueScene(textDialogue: "“Iya tidak apa-apa nak.”")
+        let data3 = DialogueScene(textDialogue: "“Ibu sudah memaafkanmu.”")
+        
+        dataIntro = [data1, data2, data3]
+        
+        //MARK: INIZIALITATION SOUND AND MUSIC
         Sound.sharedInstance.playDubbing(file: "alt 17 1", fileExtension: "m4a")
     }
     
     //MARK: SOURCE CODE ASSET GERAK
     override init(size: CGSize){
+        //MARK: TEXTURE FOR MALIN
         var textures: [SKTexture] = []
         for index in 1...3 {
             textures.append(SKTexture(imageNamed: "malinScene1_\(index)"))
         }
         
+        //MARK: TEXTURE FOR MALIN MOM
         var textures1: [SKTexture] = []
         for index in 1...2 {
             textures1.append(SKTexture(imageNamed: "ibuMalinScene16_\(index)"))
         }
         
+        //MARK: TEXTURE FOR TREE
         var textures2: [SKTexture] = []
         for index in 1...2 {
             textures2.append(SKTexture(imageNamed: "tree\(index)"))
         }
         
+        //MARK: TEXTURE FOR HOUSE
         var textures3: [SKTexture] = []
         for index in 1...2 {
             textures3.append(SKTexture(imageNamed: "house\(index)"))
         }
+        
+        //MARK: SK ACTION BUTTON
         let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
         let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
         
@@ -180,7 +195,10 @@ class MalinKundang_AlternateScene17: SKScene {
         buttonPreviousAction = SKAction.sequence([buttonToSmall, buttonToBig])
         buttonHomeAction = SKAction.sequence([buttonToSmall, buttonToBig])
         
+        //MARK: SK ACTION CHARACTER
         animationIbuMalin = SKAction.animate(with: textures1, timePerFrame: 0.3)
+        
+        //MARK: SK ACTION NON CHARACTER
         animationTree = SKAction.animate(with: textures2, timePerFrame: 0.5)
         animationHouse = SKAction.animate(with: textures3, timePerFrame: 0.5)
         
@@ -191,6 +209,7 @@ class MalinKundang_AlternateScene17: SKScene {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: FUNCTION BUTTON NEXT
     func buttonNextScene() {
         if stateMusic {
             run(clickButton)
@@ -237,6 +256,7 @@ class MalinKundang_AlternateScene17: SKScene {
         }
     }
     
+    //MARK: FUNCTION BUTTON PREVIOUS
     func buttonPreviousScene () {
         if stateMusic {
             run(clickButton)
@@ -248,7 +268,7 @@ class MalinKundang_AlternateScene17: SKScene {
             if state == -1 {
                 Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .right, duration: 1)
-                let newScene = ChoicesEnding(size: CGSize(width: 2048, height: 1536))
+                let newScene = MalingKundang_ChoicesEnding(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
                 scene?.view!.presentScene(newScene, transition: reveal)
             } else if state == 0 {
@@ -265,7 +285,7 @@ class MalinKundang_AlternateScene17: SKScene {
             if state == -1 {
                 Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .right, duration: 1)
-                let newScene = ChoicesEnding(size: CGSize(width: 2048, height: 1536))
+                let newScene = MalingKundang_ChoicesEnding(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
                 scene?.view!.presentScene(newScene, transition: reveal)
 
@@ -281,6 +301,7 @@ class MalinKundang_AlternateScene17: SKScene {
         }
     }
     
+    //MARK: FUNCTION BUTTON HOME
     func buttonHomeScene() {
         if stateMusic {
             run(clickButton)
@@ -293,7 +314,7 @@ class MalinKundang_AlternateScene17: SKScene {
         }
     }
     
-    
+    //MARK: FUNCTION CHARACTER FOR MALIN MOM
     func startIbuMalinAnimation() {
         if characterIbuMalin.action(forKey: "Ibu Malin Scene1") == nil {
             characterIbuMalin.run(SKAction.repeatForever(animationIbuMalin!), withKey: "Ibu Malin Scene1")
@@ -304,6 +325,7 @@ class MalinKundang_AlternateScene17: SKScene {
         characterIbuMalin.removeAction(forKey: "Ibu Malin Scene1")
     }
     
+    //MARK: FUNCTION NON CHARACTER FOR TREE
     func startTreeAnimation() {
         if nonCharacterTree.action(forKey: "Tree") == nil {
             nonCharacterTree.run(SKAction.repeatForever(animationTree!), withKey: "Tree")
@@ -314,6 +336,7 @@ class MalinKundang_AlternateScene17: SKScene {
         nonCharacterTree.removeAction(forKey: "Tree")
     }
     
+    //MARK: FUNCTION NON CHARACTER FOR HOUSE
     func startHouseAnimation() {
         if nonCharacterHouse.action(forKey: "House") == nil {
             nonCharacterHouse.run(SKAction.repeatForever(animationHouse!), withKey: "House")

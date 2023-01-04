@@ -8,12 +8,13 @@
 import SpriteKit
 import GameplayKit
 
+//MARK: STRUCT FOR TEXT SCENE
 struct Script17 {
     var textDialogue: String!
 }
 
 class MalinKundang_Scene17: SKScene {
-    
+    //MARK: BACKGROUND
     let backgroundSky = SKSpriteNode(imageNamed: "darkSkyBackground")
     
     let backgroundWaveGround = SKSpriteNode(imageNamed: "waveGroundBackground1")
@@ -25,13 +26,19 @@ class MalinKundang_Scene17: SKScene {
     let backgroundWaveTop = SKSpriteNode(imageNamed: "waveTopBackground1")
     var animationWaveTop: SKAction?
     
+    //MARK: NON CHARACTER
     let nonCharacterCloud = SKSpriteNode(imageNamed: "cloudThunder1")
     var animationCloud: SKAction?
     
     let nonCharacterBoat = UserDefaults.standard.string(forKey: "kapalPilih")! == "objectKapalSatu" ? SKSpriteNode(imageNamed: "boatScene17_1") : SKSpriteNode(imageNamed: "boat2Scene17_1")
-//    let nonCharacterBoat = SKSpriteNode(imageNamed: "boatScene17_1")
     var animationBoat: SKAction?
     
+    let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
+    var labelTextStory = SKLabelNode(fontNamed: "Nunito")
+    var dataIntro: [Script17] = []
+    var state = 0
+    
+    //MARK: BUTTON
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
     var buttonHomeAction: SKAction?
         
@@ -41,23 +48,14 @@ class MalinKundang_Scene17: SKScene {
     let buttonPrevious = SKSpriteNode(imageNamed: "buttonPrevious")
     var buttonPreviousAction: SKAction?
     
-    let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
-    var labelTextStory = SKLabelNode(fontNamed: "Nunito")
-    var dataIntro: [Script17] = []
-    var state = 0
-    
     var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
 
+    //MARK: SOUND/MUSIC
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     var stateMusic = UserDefaults.standard.bool(forKey: "fxMusic")
     
     override func didMove(to view: SKView) {
-        
-        let data1 = Script17(textDialogue: "Seketika badai datang dan kapal Malin terombang-ambing.")
-        let data2 = Script17(textDialogue: "Kapal Malin kemudian menabrak batu hingga hancur.")
-        
-        dataIntro = [data1, data2]
-        
+        //MARK: INIZIALITATION BACKGROUND
         self.backgroundColor = SKColor.white
         
         backgroundSky.size = CGSize(width: 2050, height: 1120)
@@ -84,6 +82,7 @@ class MalinKundang_Scene17: SKScene {
         backgroundWaveTop.zPosition = 1.0
         addChild(backgroundWaveTop)
         
+        //MARK: INIZIALITATION NON CHARACTER
         nonCharacterCloud.size = CGSize(width: 2030, height: 1020)
         nonCharacterCloud.position = CGPoint(x: size.width/2, y: size.height/1.9)
         nonCharacterCloud.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -96,6 +95,29 @@ class MalinKundang_Scene17: SKScene {
         nonCharacterBoat.zPosition = 1.7
         addChild(nonCharacterBoat)
         
+        nonCharacterTextLayout.size = CGSize(width: 1300, height: 200)
+        nonCharacterTextLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
+        nonCharacterTextLayout.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        nonCharacterTextLayout.zPosition = 3
+        addChild(nonCharacterTextLayout)
+        
+        //MARK: INITIALIZATION TEXT
+        let data1 = Script17(textDialogue: "Seketika badai datang dan kapal Malin terombang-ambing.")
+        let data2 = Script17(textDialogue: "Kapal Malin kemudian menabrak batu hingga hancur.")
+        
+        dataIntro = [data1, data2]
+        
+        labelTextStory.text = dataIntro[0].textDialogue
+        labelTextStory.fontColor = SKColor.white
+        labelTextStory.fontSize = 42
+        labelTextStory.lineBreakMode = NSLineBreakMode.byWordWrapping
+        labelTextStory.numberOfLines = 0
+        labelTextStory.preferredMaxLayoutWidth = 1235
+        labelTextStory.position = CGPoint(x: size.width/2, y: size.height/3.8)
+        labelTextStory.zPosition = 3.5
+        addChild(labelTextStory)
+        
+        //MARK: INIZIALITATION BUTTON
         buttonNext.name = "buttonNext"
         buttonNext.size = CGSize(width: 150, height: 150)
         buttonNext.position = CGPoint(x: size.width/1.07, y: size.height/3.5)
@@ -117,28 +139,13 @@ class MalinKundang_Scene17: SKScene {
         buttonHome.zPosition = +4
         addChild(buttonHome)
         
-        nonCharacterTextLayout.size = CGSize(width: 1300, height: 200)
-        nonCharacterTextLayout.position = CGPoint(x: size.width/2.0, y: size.height/3.6)
-        nonCharacterTextLayout.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        nonCharacterTextLayout.zPosition = 3
-        addChild(nonCharacterTextLayout)
-        
-        labelTextStory.text = dataIntro[0].textDialogue
-        labelTextStory.fontColor = SKColor.white
-        labelTextStory.fontSize = 42
-        labelTextStory.lineBreakMode = NSLineBreakMode.byWordWrapping
-        labelTextStory.numberOfLines = 0
-        labelTextStory.preferredMaxLayoutWidth = 1235
-        labelTextStory.position = CGPoint(x: size.width/2, y: size.height/3.8)
-        labelTextStory.zPosition = 3.5
-        addChild(labelTextStory)
-        
+        //MARK: INIZIALITATION SOUND AND MUSIC
         Sound.sharedInstance.playBacksound(file: "rainThunder", fileExtension: "mp3")
         Sound.sharedInstance.playDubbing(file: "17 1", fileExtension: "m4a")
-        
     }
     
     override init(size: CGSize){
+        //MARK: TEXTURE FOR SEA WAVE
         var texturesWaveTop: [SKTexture] = []
         for index in 1...2 {
             texturesWaveTop.append(SKTexture(imageNamed: "waveTopBackground\(index)"))
@@ -154,11 +161,13 @@ class MalinKundang_Scene17: SKScene {
             texturesWaveGround.append(SKTexture(imageNamed: "waveGroundBackground\(index)"))
         }
         
+        //MARK: TEXTURE FOR CLOUD
         var texturesCloud: [SKTexture] = []
         for index in 1...2 {
             texturesCloud.append(SKTexture(imageNamed: "cloudThunder\(index)"))
         }
         
+        //MARK: TEXTURE FOR BOAT
         var texturesBoat: [SKTexture] = []
         if (UserDefaults.standard.string(forKey: "kapalPilih")! == "objectKapalSatu") {
             for index in 1...2 {
@@ -170,6 +179,7 @@ class MalinKundang_Scene17: SKScene {
             }
         }
         
+        //MARK: SK ACTION BUTTON
         let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
         let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
         
@@ -177,6 +187,7 @@ class MalinKundang_Scene17: SKScene {
         buttonPreviousAction = SKAction.sequence([buttonToSmall, buttonToBig])
         buttonHomeAction = SKAction.sequence([buttonToSmall, buttonToBig])
         
+        //MARK: SK ACTION BACKGROUND
         animationWaveTop = SKAction.animate(with: texturesWaveTop, timePerFrame: 0.7)
         animationWaveMiddle = SKAction.animate(with: texturesWaveMiddle, timePerFrame: 0.7)
         animationWaveGround = SKAction.animate(with: texturesWaveGround, timePerFrame: 0.7)
@@ -190,6 +201,7 @@ class MalinKundang_Scene17: SKScene {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: FUNCTION FOR ANIMATION BACKGROUND
     func startCloudAnimation() {
         if nonCharacterCloud.action(forKey: "Cloud Animation") == nil {
             nonCharacterCloud.run(SKAction.repeatForever(animationCloud!), withKey: "Cloud Animation")
@@ -214,12 +226,14 @@ class MalinKundang_Scene17: SKScene {
         }
     }
     
+    //MARK: FUNCTION FOR ANIMATION BOAT
     func startBoatAnimation() {
         if nonCharacterBoat.action(forKey: "Boat Animation") == nil {
             nonCharacterBoat.run(SKAction.repeatForever(animationBoat!), withKey: "Boat Animation")
         }
     }
     
+    //MARK: FUNCTION BUTTON NEXT
     func buttonNextScene() {
         if stateMusic {
             run(clickButton)
@@ -252,6 +266,7 @@ class MalinKundang_Scene17: SKScene {
         }
     }
     
+    //MARK: FUNCTION BUTTON HOME
     func buttonHomeScene() {
         if stateMusic {
             run(clickButton)
@@ -266,6 +281,7 @@ class MalinKundang_Scene17: SKScene {
         }
     }
     
+    //MARK: FUNCTION BUTTON PREVIOUS
     func buttonPreviousScene () {
         if stateMusic {
             run(clickButton)

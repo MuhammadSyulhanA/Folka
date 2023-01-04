@@ -132,7 +132,7 @@
 		A0E8B758293C665400C0299E /* soundFailed.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0E8B756293C665400C0299E /* soundFailed.wav */; };
 		A0E8B759293C665400C0299E /* soundSucces.wav in Resources */ = {isa = PBXBuildFile; fileRef = A0E8B757293C665400C0299E /* soundSucces.wav */; };
 		A0E8B75B293CF11C00C0299E /* MalinKundang_Puzzle1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E8B75A293CF11C00C0299E /* MalinKundang_Puzzle1.swift */; };
-		A0E8B75D293D30A300C0299E /* ChoicesEnding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E8B75C293D30A300C0299E /* ChoicesEnding.swift */; };
+		A0E8B75D293D30A300C0299E /* MalinKundang_ChoicesEnding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E8B75C293D30A300C0299E /* MalinKundang_ChoicesEnding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -274,7 +274,7 @@
 		A0E8B756293C665400C0299E /* soundFailed.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = soundFailed.wav; sourceTree = "<group>"; };
 		A0E8B757293C665400C0299E /* soundSucces.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = soundSucces.wav; sourceTree = "<group>"; };
 		A0E8B75A293CF11C00C0299E /* MalinKundang_Puzzle1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Puzzle1.swift; sourceTree = "<group>"; };
-		A0E8B75C293D30A300C0299E /* ChoicesEnding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoicesEnding.swift; sourceTree = "<group>"; };
+		A0E8B75C293D30A300C0299E /* MalinKundang_ChoicesEnding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_ChoicesEnding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -779,7 +779,7 @@
 		A0FB0EC5293AFF10007C21A0 /* Ending Scene */ = {
 			isa = PBXGroup;
 			children = (
-				A0E8B75C293D30A300C0299E /* ChoicesEnding.swift */,
+				A0E8B75C293D30A300C0299E /* MalinKundang_ChoicesEnding.swift */,
 				98F8DF87293D425600F8D70E /* MalinKundang_EndingStory.swift */,
 			);
 			path = "Ending Scene";
@@ -939,7 +939,7 @@
 				69EADE882938E346000A31A3 /* MalinKundang_Scene13.swift in Sources */,
 				98F8DF29293B4DD300F8D70E /* MalinKundang_Scene15.swift in Sources */,
 				A0E8B75B293CF11C00C0299E /* MalinKundang_Puzzle1.swift in Sources */,
-				A0E8B75D293D30A300C0299E /* ChoicesEnding.swift in Sources */,
+				A0E8B75D293D30A300C0299E /* MalinKundang_ChoicesEnding.swift in Sources */,
 				98886769292107240094AAAF /* MalinKundang_Games1.swift in Sources */,
 				A01B3DB1293B17CC00BBDE24 /* MalinKundang_AlternateScene17.swift in Sources */,
 				98F8DEE2292DD77400F8D70E /* MalinKundang_Scene7.swift in Sources */,

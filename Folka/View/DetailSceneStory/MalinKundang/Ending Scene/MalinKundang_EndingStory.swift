@@ -9,13 +9,15 @@ import SpriteKit
 import GameplayKit
 
 class MalinKundang_EndingStory: SKScene {
-    
+    //MARK: BACKGROUND
     let backgroundEnding = SKSpriteNode(imageNamed: "backgroundEndingStory")
     
+    //MARK: BUTTON
     let buttonBeranda = SKSpriteNode(imageNamed: "buttonBackToBeranda")
     var buttonBerandaAction: SKAction?
     
     override func didMove(to view: SKView) {
+        //MARK: INIZIALITATION BACKGROUND
         self.backgroundColor = SKColor.white
         
         backgroundEnding.size = CGSize(width: 2050, height: 1050)
@@ -24,6 +26,7 @@ class MalinKundang_EndingStory: SKScene {
         backgroundEnding.zPosition = 0
         addChild(backgroundEnding)
         
+        //MARK: INIZIALITATION BUTTON
         buttonBeranda.name = "buttonBeranda"
         buttonBeranda.size = CGSize(width: 800, height: 150)
         buttonBeranda.position = CGPoint(x: size.width/2.0, y: size.height/3.5)
@@ -33,6 +36,7 @@ class MalinKundang_EndingStory: SKScene {
     }
     
     override init(size: CGSize){
+        //MARK: SK ACTION BUTTON
         let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
         let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
         
@@ -45,11 +49,8 @@ class MalinKundang_EndingStory: SKScene {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: FUNCTION BUTTON HOME
     func buttonHomeScene() {
-//        if stateMusic {
-//            run(clickButton)
-//        }
-        
         if buttonBeranda.action(forKey: "Button Beranda") == nil {
             Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
             buttonBeranda.run(SKAction.repeatForever(buttonBerandaAction!), withKey: "Button Beranda")
