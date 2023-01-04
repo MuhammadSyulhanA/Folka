@@ -154,7 +154,7 @@ class MalinKundang_ChooseShip: SKScene {
     let touch = touches.first as UITouch?
     if atPoint((touch?.location(in: self))!).name == nonCharacterOneShip.name {
       enumerateChildNodes(withName: "//*") { [self] (node, stop) in
-        if node.name == "kapalSatu" {
+        if node.name == "OneShip" {
           chooseOneShip()
         }
       }
@@ -162,7 +162,7 @@ class MalinKundang_ChooseShip: SKScene {
     
     if atPoint((touch?.location(in: self))!).name == nonCharacterTwoShip.name {
       enumerateChildNodes(withName: "//*") { [self] (node, stop) in
-        if node.name == "kapalDua" {
+        if node.name == "TwoShip" {
           chooseTwoShip()
         }
       }
@@ -170,7 +170,7 @@ class MalinKundang_ChooseShip: SKScene {
     
     if atPoint((touch?.location(in: self))!).name == buttonStart.name {
       enumerateChildNodes(withName: "//*") { [self] (node, stop) in
-        if node.name == "buttonMulai" {
+        if node.name == "buttonStart" {
           startAction()
         }
       }
