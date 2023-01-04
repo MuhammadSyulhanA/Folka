@@ -97,8 +97,8 @@
 		A01C55B52937240700261695 /* Settings_Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C55B32937240700261695 /* Settings_Screen.swift */; };
 		A01C55BA2937247600261695 /* Settings_Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C55B92937247500261695 /* Settings_Screen.xib */; };
 		A01E17AD293E40740036DCC1 /* awalGame.wav in Resources */ = {isa = PBXBuildFile; fileRef = A01E17AC293E40740036DCC1 /* awalGame.wav */; };
-		A0202800293790D7004694CD /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02027FE293790D7004694CD /* DetailPageViewController.swift */; };
-		A0202801293790D7004694CD /* DetailPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A02027FF293790D7004694CD /* DetailPageViewController.xib */; };
+		A0202800293790D7004694CD /* DetailPage_MalinKundang.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02027FE293790D7004694CD /* DetailPage_MalinKundang.swift */; };
+		A0202801293790D7004694CD /* DetailPage_MalinKundang.xib in Resources */ = {isa = PBXBuildFile; fileRef = A02027FF293790D7004694CD /* DetailPage_MalinKundang.xib */; };
 		A022135C2939046500F40201 /* Onboarding_Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022135A2939046500F40201 /* Onboarding_Screen.swift */; };
 		A022135D2939046500F40201 /* Onboarding_Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A022135B2939046500F40201 /* Onboarding_Screen.xib */; };
 		A02774F32939FD40005F1ADF /* Onboarding_CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02774F12939FD40005F1ADF /* Onboarding_CollectionCell.swift */; };
@@ -237,8 +237,8 @@
 		A01C55B32937240700261695 /* Settings_Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings_Screen.swift; sourceTree = "<group>"; };
 		A01C55B92937247500261695 /* Settings_Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Settings_Screen.xib; sourceTree = "<group>"; };
 		A01E17AC293E40740036DCC1 /* awalGame.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = awalGame.wav; sourceTree = "<group>"; };
-		A02027FE293790D7004694CD /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
-		A02027FF293790D7004694CD /* DetailPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPageViewController.xib; sourceTree = "<group>"; };
+		A02027FE293790D7004694CD /* DetailPage_MalinKundang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage_MalinKundang.swift; sourceTree = "<group>"; };
+		A02027FF293790D7004694CD /* DetailPage_MalinKundang.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPage_MalinKundang.xib; sourceTree = "<group>"; };
 		A022135A2939046500F40201 /* Onboarding_Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding_Screen.swift; sourceTree = "<group>"; };
 		A022135B2939046500F40201 /* Onboarding_Screen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Onboarding_Screen.xib; sourceTree = "<group>"; };
 		A02774F12939FD40005F1ADF /* Onboarding_CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding_CollectionCell.swift; sourceTree = "<group>"; };
@@ -288,6 +288,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6966489F2965C2BC0078E351 /* MalinKundang */ = {
+			isa = PBXGroup;
+			children = (
+				A02027FE293790D7004694CD /* DetailPage_MalinKundang.swift */,
+				A02027FF293790D7004694CD /* DetailPage_MalinKundang.xib */,
+			);
+			path = MalinKundang;
+			sourceTree = "<group>";
+		};
 		69C54FF3291A0C5A00E1CEF7 = {
 			isa = PBXGroup;
 			children = (
@@ -383,9 +392,8 @@
 		69C5501D291A0E5E00E1CEF7 /* DetailPage */ = {
 			isa = PBXGroup;
 			children = (
+				6966489F2965C2BC0078E351 /* MalinKundang */,
 				69C55023291A0F4400E1CEF7 /* DocsDetail.md */,
-				A02027FE293790D7004694CD /* DetailPageViewController.swift */,
-				A02027FF293790D7004694CD /* DetailPageViewController.xib */,
 			);
 			path = DetailPage;
 			sourceTree = "<group>";
@@ -894,7 +902,7 @@
 				98F8DF71293D178200F8D70E /* 04 1.m4a in Resources */,
 				98F8DF6D293D178200F8D70E /* 01 1.m4a in Resources */,
 				98F8DFA0293DEE2300F8D70E /* alt 17 2.m4a in Resources */,
-				A0202801293790D7004694CD /* DetailPageViewController.xib in Resources */,
+				A0202801293790D7004694CD /* DetailPage_MalinKundang.xib in Resources */,
 				A032E662293E36B500D09724 /* Lauch_Screen.xib in Resources */,
 				A0E8B745293C5B1300C0299E /* Nunito-SemiBoldItalic.ttf in Resources */,
 				98F8DF62293D178200F8D70E /* 11 2.m4a in Resources */,
@@ -944,7 +952,7 @@
 				98F3542D29632CD500D77C7F /* HomePage_CustomLayout.swift in Sources */,
 				98F8DED82928981E00F8D70E /* MalinKundang_Tutorial_Games1.swift in Sources */,
 				98F8DF8A293D42DA00F8D70E /* MalinKundang_ChooseShip.swift in Sources */,
-				A0202800293790D7004694CD /* DetailPageViewController.swift in Sources */,
+				A0202800293790D7004694CD /* DetailPage_MalinKundang.swift in Sources */,
 				69D6B1A92934654A002CF007 /* MalinKundang_Scene11.swift in Sources */,
 				98F8DEE5292E8D3600F8D70E /* MalinKundang_Scene8.swift in Sources */,
 				69C55004291A0C5A00E1CEF7 /* ViewController.swift in Sources */,

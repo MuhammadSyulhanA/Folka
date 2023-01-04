@@ -9,20 +9,15 @@ import UIKit
 import AVFoundation
 import SpriteKit
 
-//protocol presentViewDetail {
-//    func presentDetailPage()
-//}
-
-class DetailPageViewController: UIViewController {
-//    var delegate: presentViewDetail?
+class DetailPage_MalinKundang: UIViewController {
     
     @IBOutlet weak var lblCeritaAsal: UILabel!
-    
-    @IBOutlet weak var buttonBack: UIImageView!
     @IBOutlet weak var lblStory: UILabel!
-    @IBOutlet weak var buttonMulaiBaca: UIButton!
+    
     @IBOutlet weak var coverMalin: UIImageView!
     
+    @IBOutlet weak var buttonBack: UIImageView!
+    @IBOutlet weak var buttonMulaiBaca: UIButton!
     var customButtonBack: UIImage!
     var customButtonMulaiBaca: UIImage!
     
@@ -30,14 +25,13 @@ class DetailPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(stateSound)
         
-//        Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
         let tapNext = UITapGestureRecognizer(target: self, action: #selector(self.previousPage))
         buttonBack.addGestureRecognizer(tapNext)
         buttonBack.isUserInteractionEnabled = true
         
         addBackground()
+        
         lblStory.text = "Malin Kundang hidup hanya berdua dengan ibunya, Mande Rubayah. Suatu hari ia memutuskan untuk pergi berlayar dan mencari uang. Setelah menjadi orang kaya ia kembali namun tidak mengakui ibunya."
         coverMalin.layer.cornerRadius = 20
         
@@ -61,50 +55,25 @@ class DetailPageViewController: UIViewController {
     }
     
     @IBAction func nextPage(_ sender: UIButton) {
-      Sound.sharedInstance.stopBacksound()
+        Sound.sharedInstance.stopBacksound()
         Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
         sender.transform = CGAffineTransform.init(scaleX: 0.6, y: 0.6)
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
             sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
         })
         
-//        view = SKView(frame: view.bounds)
-//
-//        if let view = self.view as! SKView? {
-//          let scene = MalinKundang_Scene1(size: CGSize(width: 2048, height: 1536))
-//          scene.scaleMode = .aspectFill
-//          view.presentScene(scene)
-//          view.showsPhysics = false
-//          view.ignoresSiblingOrder = true
-//          view.showsFPS = true
-//          view.showsNodeCount = true
-//        }
-        
-//        self.dismiss(animated: true) {
-//            self.delegate?.presentDetailPage()
-//        }
-        
-//        self.dismiss(animated: false, completion: nil)
         let nextMainController = MalinKundang_ViewController()
         present(nextMainController, animated: true, completion: nil)
     }
     
-      @IBAction func buttonBack(_ sender: UIButton) {
-        //    _ = navigationController?.popViewController(animated: true)
-        //    self.dismiss(animated: true, completion: nil)
-            sender.transform = CGAffineTransform.init(scaleX: 0.6, y: 0.6)
-            UIView.animate(withDuration: 0.5, animations: { () -> Void in
-              sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
-    
-            })
-//            self.presentingViewController?.dismiss(animated: true, completion: nil)
-            self.navigationController?.popViewController(animated: true)
-          }
-    
-//    func presentDetailPage(){
-//        let nextDetailPage = DetailPageViewController(nibName: "DetailPageViewController", bundle: nil)
-//        present(nextDetailPage, animated: true, completion: nil)
-//    }
+    @IBAction func buttonBack(_ sender: UIButton) {
+        sender.transform = CGAffineTransform.init(scaleX: 0.6, y: 0.6)
+        UIView.animate(withDuration: 0.5, animations: { () -> Void in
+            sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+            
+        })
+        self.navigationController?.popViewController(animated: true)
+    }
     
     @objc func previousPage(sender: UITapGestureRecognizer){
         Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")

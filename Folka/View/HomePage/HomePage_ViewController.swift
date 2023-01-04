@@ -130,7 +130,7 @@ class HomePage_ViewController: UIViewController, UICollectionViewDelegate, UICol
                     cell?.transform = CGAffineTransform.init(scaleX: 1, y: 1)
                 })
                 
-                let nextDetailPage = DetailPageViewController(nibName: "DetailPageViewController", bundle: nil)
+                let nextDetailPage = DetailPage_MalinKundang(nibName: "DetailPage_MalinKundang", bundle: nil)
                 present(nextDetailPage, animated: true, completion: nil)
             } else {
                 collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
