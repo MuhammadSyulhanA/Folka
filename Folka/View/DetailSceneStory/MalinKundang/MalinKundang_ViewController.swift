@@ -36,11 +36,6 @@ class MalinKundang_ViewController: UIViewController {
         }
     }
     
-    func rizalKeren() {
-        let prevScene = HomePage_ViewController(nibName: "HomePageViewController", bundle: nil)
-        self.view?.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
-    }
-    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
             return .landscapeLeft
