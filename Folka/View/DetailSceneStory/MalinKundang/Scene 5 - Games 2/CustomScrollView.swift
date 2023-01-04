@@ -7,171 +7,121 @@
 
 import SpriteKit
 
-/// Scroll direction
 enum ScrollDirection {
-    case vertical // cases start with small letters as I am following Swift 3 guildlines.
-    case horizontal
+  case vertical
+  case horizontal
 }
 
 class CustomScrollView: UIScrollView {
+  
+  //MARK: Static Properties
+  static var disabledTouches = false
+  private static var scrollView: UIScrollView!
+  
+  //MARK: Properties
+  private let currentScene: SKScene
+  private let moveableNode: SKNode
+  private let scrollDirection: ScrollDirection
+  private var nodesTouched = [AnyObject]()
+  
+  //MARK: Init
+  init(frame: CGRect, scene: SKScene, moveableNode: SKNode, scrollDirection: ScrollDirection) {
+    self.currentScene = scene
+    self.moveableNode = moveableNode
+    self.scrollDirection = scrollDirection
+    super.init(frame: frame)
     
-    // MARK: - Static Properties
-    
-    /// Touches allowed
-    static var disabledTouches = false
-    
-    /// Scroll view
-    private static var scrollView: UIScrollView!
-    
-    // MARK: - Properties
-    
-    /// Current scene
-    private let currentScene: SKScene
-    
-    /// Moveable node
-    private let moveableNode: SKNode
-    
-    /// Scroll direction
-    private let scrollDirection: ScrollDirection
-    
-    /// Touched nodes
-    private var nodesTouched = [AnyObject]()
-    
-    // MARK: - Init
-    init(frame: CGRect, scene: SKScene, moveableNode: SKNode, scrollDirection: ScrollDirection) {
-        self.currentScene = scene
-        self.moveableNode = moveableNode
-        self.scrollDirection = scrollDirection
-        super.init(frame: frame)
-        
-        CustomScrollView.scrollView = self
-        self.frame = frame
-        delegate = self
-        indicatorStyle = .white
-        isScrollEnabled = true
-        isUserInteractionEnabled = true
-        showsVerticalScrollIndicator = false
-        showsHorizontalScrollIndicator = false
-        //canCancelContentTouches = false
-        //self.minimumZoomScale = 1
-        //self.maximumZoomScale = 3
-        
-        if scrollDirection == .horizontal {
-            let flip = CGAffineTransform(scaleX: -1,y: -1)
-            transform = flip
-        }
+    CustomScrollView.scrollView = self
+    self.frame = frame
+    delegate = self
+    indicatorStyle = .white
+    isScrollEnabled = true
+    isUserInteractionEnabled = true
+    showsVerticalScrollIndicator = false
+    showsHorizontalScrollIndicator = false
+    if scrollDirection == .horizontal {
+      let flip = CGAffineTransform(scaleX: -1,y: -1)
+      transform = flip
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
 }
 
-// MARK: - Touches
+//MARK: Touches
 extension CustomScrollView {
-    
-    /// Began
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        for touch in touches {
-            let location = touch.location(in: currentScene)
-            
-            guard !CustomScrollView.disabledTouches else { return }
-            
-            /// Call touches began in current scene
-            currentScene.touchesBegan(touches, with: event)
-            
-            /// Call touches began in all touched nodes in the current scene
-            nodesTouched = currentScene.nodes(at: location)
-            for node in nodesTouched {
-                node.touchesBegan(touches, with: event)
-            }
-        }
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    for touch in touches {
+      let location = touch.location(in: currentScene)
+      guard !CustomScrollView.disabledTouches else { return }
+      currentScene.touchesBegan(touches, with: event)
+      nodesTouched = currentScene.nodes(at: location)
+      for node in nodesTouched {
+        node.touchesBegan(touches, with: event)
+      }
     }
-    
-    /// Moved
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        for touch in touches {
-            let location = touch.location(in: currentScene)
-            
-            guard !CustomScrollView.disabledTouches else { return }
-            
-            /// Call touches moved in current scene
-            currentScene.touchesMoved(touches, with: event)
-            
-            /// Call touches moved in all touched nodes in the current scene
-            nodesTouched = currentScene.nodes(at: location)
-            for node in nodesTouched {
-                node.touchesMoved(touches, with: event)
-            }
-        }
+  }
+  
+  override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    for touch in touches {
+      let location = touch.location(in: currentScene)
+      guard !CustomScrollView.disabledTouches else { return }
+      currentScene.touchesMoved(touches, with: event)
+      nodesTouched = currentScene.nodes(at: location)
+      for node in nodesTouched {
+        node.touchesMoved(touches, with: event)
+      }
     }
-    
-    /// Ended
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        for touch in touches {
-            let location = touch.location(in: currentScene)
-            
-            guard !CustomScrollView.disabledTouches else { return }
-            
-            /// Call touches ended in current scene
-            currentScene.touchesEnded(touches, with: event)
-            
-            /// Call touches ended in all touched nodes in the current scene
-            nodesTouched = currentScene.nodes(at: location)
-            for node in nodesTouched {
-                node.touchesEnded(touches, with: event)
-            }
-        }
+  }
+  
+  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    for touch in touches {
+      let location = touch.location(in: currentScene)
+      guard !CustomScrollView.disabledTouches else { return }
+      currentScene.touchesEnded(touches, with: event)
+      nodesTouched = currentScene.nodes(at: location)
+      for node in nodesTouched {
+        node.touchesEnded(touches, with: event)
+      }
     }
-    
-    /// Cancelled
-    override func touchesCancelled(_ touches: Set<UITouch>?, with event: UIEvent?) {
-        
-        for touch in touches! {
-            let location = touch.location(in: currentScene)
-            
-            guard !CustomScrollView.disabledTouches else { return }
-            
-            /// Call touches cancelled in current scene
-            currentScene.touchesCancelled(touches!, with: event)
-            
-            /// Call touches cancelled in all touched nodes in the current scene
-            nodesTouched = currentScene.nodes(at: location)
-            for node in nodesTouched {
-                node.touchesCancelled(touches!, with: event)
-            }
-        }
+  }
+  
+
+  override func touchesCancelled(_ touches: Set<UITouch>?, with event: UIEvent?) {
+    for touch in touches! {
+      let location = touch.location(in: currentScene)
+      guard !CustomScrollView.disabledTouches else { return }
+      currentScene.touchesCancelled(touches!, with: event)
+      nodesTouched = currentScene.nodes(at: location)
+      for node in nodesTouched {
+        node.touchesCancelled(touches!, with: event)
+      }
     }
+  }
 }
 
-// MARK: - Touch Controls
+//MARK: Touch Controls
 extension CustomScrollView {
-    
-    /// Disable
-    class func disable() {
-        CustomScrollView.scrollView?.isUserInteractionEnabled = false
-        CustomScrollView.disabledTouches = true
-    }
-    
-    /// Enable
-    class func enable() {
-        CustomScrollView.scrollView?.isUserInteractionEnabled = true
-        CustomScrollView.disabledTouches = false
-    }
+  class func disable() {
+    CustomScrollView.scrollView?.isUserInteractionEnabled = false
+    CustomScrollView.disabledTouches = true
+  }
+  
+  class func enable() {
+    CustomScrollView.scrollView?.isUserInteractionEnabled = true
+    CustomScrollView.disabledTouches = false
+  }
 }
 
-// MARK: - Delegates
+//MARK: Delegates
 extension CustomScrollView: UIScrollViewDelegate {
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-
-        if scrollDirection == .horizontal {
-            moveableNode.position.x = scrollView.contentOffset.x
-        } else {
-          moveableNode.position.y = scrollView.contentOffset.y 
-        }
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    if scrollDirection == .horizontal {
+      moveableNode.position.x = scrollView.contentOffset.x
+    } else {
+      moveableNode.position.y = scrollView.contentOffset.y
     }
+  }
 }
