@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="landscape" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +32,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="f5L-i8-M99">
-                    <rect key="frame" x="104" y="60" width="219" height="55"/>
+                    <rect key="frame" x="70" y="117" width="219" height="55"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Malin Kundang" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPW-Wg-mbW">
                             <rect key="frame" x="0.0" y="0.0" width="200.33333333333334" height="38.333333333333336"/>
@@ -40,7 +41,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cerita ini berasal dari Padang, Indonesia" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0QW-uk-qKo">
-                            <rect key="frame" x="0.0" y="38.333333333333329" width="219" height="16.666666666666671"/>
+                            <rect key="frame" x="0.0" y="38.333333333333343" width="219" height="16.666666666666671"/>
                             <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="12"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -48,24 +49,24 @@
                     </subviews>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2T-WK-96B">
-                    <rect key="frame" x="104" y="135" width="312" height="115"/>
+                    <rect key="frame" x="70" y="192" width="270" height="115"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="115" id="lrK-dc-NyI"/>
-                        <constraint firstAttribute="width" constant="312" id="nNg-p0-ijb"/>
+                        <constraint firstAttribute="width" constant="270" id="nNg-p0-ijb"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coverBook" translatesAutoresizingMaskIntoConstraints="NO" id="B5A-cW-x3D">
-                    <rect key="frame" x="415" y="50" width="377" height="273"/>
+                    <rect key="frame" x="380" y="50" width="377" height="273"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="377" id="WQU-ye-5jd"/>
+                        <constraint firstAttribute="width" constant="273" id="WQU-ye-5jd"/>
                         <constraint firstAttribute="height" constant="273" id="XLN-Ez-kVM"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTE-fy-hSv">
-                    <rect key="frame" x="94" y="260" width="67" height="31"/>
+                    <rect key="frame" x="60" y="327" width="75" height="34.333333333333314"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
                     <connections>
@@ -82,17 +83,18 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="gej-8a-XA9"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="B5A-cW-x3D" secondAttribute="trailing" constant="20" id="080-eK-oQC"/>
                 <constraint firstItem="iok-Gx-zgM" firstAttribute="top" secondItem="UIf-ke-QMh" secondAttribute="top" constant="20" id="27O-hi-8Tb"/>
                 <constraint firstItem="iok-Gx-zgM" firstAttribute="leading" secondItem="UIf-ke-QMh" secondAttribute="leading" constant="20" id="7dj-k5-rbL"/>
-                <constraint firstItem="jTE-fy-hSv" firstAttribute="top" secondItem="r2T-WK-96B" secondAttribute="bottom" constant="10" id="DAH-FT-XJ8"/>
-                <constraint firstItem="jTE-fy-hSv" firstAttribute="leading" secondItem="gej-8a-XA9" secondAttribute="leading" constant="50" id="HOL-a2-NYU"/>
+                <constraint firstItem="jTE-fy-hSv" firstAttribute="top" secondItem="r2T-WK-96B" secondAttribute="bottom" constant="20" id="DAH-FT-XJ8"/>
+                <constraint firstItem="jTE-fy-hSv" firstAttribute="leading" secondItem="gej-8a-XA9" secondAttribute="leading" constant="60" id="HOL-a2-NYU"/>
                 <constraint firstItem="r2T-WK-96B" firstAttribute="top" secondItem="f5L-i8-M99" secondAttribute="bottom" constant="20" id="JVS-D1-CQa"/>
+                <constraint firstItem="B5A-cW-x3D" firstAttribute="leading" secondItem="r2T-WK-96B" secondAttribute="trailing" constant="40" id="Sgg-xF-3CN"/>
                 <constraint firstItem="f5L-i8-M99" firstAttribute="leading" secondItem="r2T-WK-96B" secondAttribute="leading" id="TTY-q1-QYW"/>
-                <constraint firstItem="f5L-i8-M99" firstAttribute="top" secondItem="gej-8a-XA9" secondAttribute="top" constant="60" id="TXu-Oa-i5o"/>
-                <constraint firstItem="r2T-WK-96B" firstAttribute="leading" secondItem="gej-8a-XA9" secondAttribute="leading" constant="60" id="biM-2d-eYQ"/>
+                <constraint firstItem="f5L-i8-M99" firstAttribute="top" secondItem="gej-8a-XA9" secondAttribute="top" constant="70" id="TXu-Oa-i5o"/>
+                <constraint firstItem="gej-8a-XA9" firstAttribute="trailing" secondItem="B5A-cW-x3D" secondAttribute="trailing" constant="20" id="Yta-sX-YJ2"/>
+                <constraint firstItem="r2T-WK-96B" firstAttribute="leading" secondItem="gej-8a-XA9" secondAttribute="leading" constant="70" id="biM-2d-eYQ"/>
                 <constraint firstItem="B5A-cW-x3D" firstAttribute="top" secondItem="UIf-ke-QMh" secondAttribute="top" constant="50" id="j0s-ht-1gV"/>
-                <constraint firstItem="r2T-WK-96B" firstAttribute="leading" secondItem="gej-8a-XA9" secondAttribute="leading" constant="60" id="tZo-1b-8H1"/>
+                <constraint firstItem="r2T-WK-96B" firstAttribute="leading" secondItem="gej-8a-XA9" secondAttribute="leading" constant="70" id="tZo-1b-8H1"/>
             </constraints>
             <point key="canvasLocation" x="41.517857142857139" y="20.289855072463769"/>
         </view>

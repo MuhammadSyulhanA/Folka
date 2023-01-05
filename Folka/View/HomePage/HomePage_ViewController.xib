@@ -38,7 +38,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8a-RP-xTK">
-                            <rect key="frame" x="65" y="13.666666666666664" width="742" height="28"/>
+                            <rect key="frame" x="65" y="11" width="742" height="33"/>
                             <fontDescription key="fontDescription" name="Nunito-SemiBold" family="Nunito" pointSize="24"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -46,7 +46,7 @@
                     </subviews>
                 </stackView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ydl-Hp-hSz">
-                    <rect key="frame" x="0.0" y="75" width="852" height="318"/>
+                    <rect key="frame" x="0.0" y="58" width="852" height="335"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SBz-I6-HA9">
                         <size key="itemSize" width="128" height="128"/>
@@ -63,7 +63,7 @@
                 <constraint firstItem="qc6-a2-oKl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="5Uo-OX-m8U"/>
                 <constraint firstItem="Ydl-Hp-hSz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SWI-Va-4ld"/>
                 <constraint firstAttribute="bottom" secondItem="Ydl-Hp-hSz" secondAttribute="bottom" id="TMB-RU-sbD"/>
-                <constraint firstItem="Ydl-Hp-hSz" firstAttribute="top" secondItem="qc6-a2-oKl" secondAttribute="bottom" id="eg6-ms-lYI"/>
+                <constraint firstItem="Ydl-Hp-hSz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="bottom" constant="-335" id="eg6-ms-lYI"/>
                 <constraint firstAttribute="trailing" secondItem="Ydl-Hp-hSz" secondAttribute="trailing" id="kK0-3k-KzS"/>
                 <constraint firstItem="qc6-a2-oKl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="nZc-4x-nuN"/>
             </constraints>
