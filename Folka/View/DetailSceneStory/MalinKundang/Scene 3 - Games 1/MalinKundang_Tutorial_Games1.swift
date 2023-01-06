@@ -16,7 +16,7 @@ class MalinKundang_Tutorial_Games1: SKScene {
   let nonCharacterPopUp = SKSpriteNode(imageNamed: "tutorialPopUp")
   
   //MARK: Button
-  let buttonFishing = SKSpriteNode(imageNamed: "buttonMulaiMemancing")
+  let buttonFishing = SKSpriteNode(imageNamed: "buttonStartFishing")
   let buttonFishingAction: SKAction?
   
   //MARK: Sound and Music
@@ -50,7 +50,6 @@ class MalinKundang_Tutorial_Games1: SKScene {
   }
   
   //MARK: Animation
-  
   override init(size: CGSize){
     let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
     let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
@@ -77,7 +76,6 @@ class MalinKundang_Tutorial_Games1: SKScene {
   }
   
   //MARK: Touches
-  
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     let touch = touches.first as UITouch?
     print(atPoint((touch?.location(in: self))!))

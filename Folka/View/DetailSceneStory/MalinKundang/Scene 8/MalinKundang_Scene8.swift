@@ -16,7 +16,7 @@ class MalinKundang_Scene8: SKScene {
     
     //MARK: Characteer
     let characterMalin = SKSpriteNode(imageNamed: "malinScene8")
-    let characterMalinWife = SKSpriteNode(imageNamed: "istriMalinScene8")
+    let characterMalinWife = SKSpriteNode(imageNamed: "malinWifeScene8")
     
     //MARK: Non Characteer
     let nonCharacterFlowers = SKSpriteNode(imageNamed: "marriedFlowers")
@@ -41,7 +41,6 @@ class MalinKundang_Scene8: SKScene {
     override func didMove(to view: SKView) {
         //MARK: Background
         self.backgroundColor = SKColor.white
-        
         backgroundMarried.size = CGSize(width: 2060, height: 1120)
         backgroundMarried.position = CGPoint(x: size.width/2, y: size.height/2)
         backgroundMarried.anchorPoint = CGPoint(x: 0.5, y: 0.5)

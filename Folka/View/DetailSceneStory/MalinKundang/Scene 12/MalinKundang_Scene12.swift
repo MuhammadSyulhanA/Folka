@@ -16,7 +16,7 @@ class MalinKundang_Scene12: SKScene {
     let backgroundSea = SKSpriteNode(imageNamed: "backgroundOpenSea")
     
     //MARK: Non Character & Actived User Defaults
-    let nonCharacterBoat1 = UserDefaults.standard.string(forKey: "kapalPilih")! == "objectKapalSatu" ? SKSpriteNode(imageNamed: "kapalScene12_1") : SKSpriteNode(imageNamed: "kapalScene12_2")
+    let nonCharacterBoat1 = UserDefaults.standard.string(forKey: "kapalPilih")! == "objectKapalSatu" ? SKSpriteNode(imageNamed: "shipScene12_1") : SKSpriteNode(imageNamed: "shipScene12_2")
     var animationBoat1: SKAction!
     
     let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")

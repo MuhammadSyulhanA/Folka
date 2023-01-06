@@ -18,7 +18,7 @@ class MalinKundang_Scene10: SKScene {
     let characterMalin = SKSpriteNode(imageNamed: "malinScene10_1")
     var animationMalin: SKAction?
     
-    let characterIbuMalin = SKSpriteNode(imageNamed: "ibuMalinScene10")
+    let characterIbuMalin = SKSpriteNode(imageNamed: "malinMomScene10")
     
     //MARK: Non Character
     let nonCharacterSea = SKSpriteNode(imageNamed: "sea")

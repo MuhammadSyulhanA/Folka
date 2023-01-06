@@ -16,18 +16,18 @@ class MalinKundang_Scene14: SKScene {
     
     //MARK: Non Character
     let nonCharacterSea = SKSpriteNode(imageNamed: "backgroundSeaZoom")
-    let nonCharacterWood = SKSpriteNode(imageNamed: "kayuScene6")
-    let nonCharacterBoat1 = UserDefaults.standard.string(forKey: "kapalPilih")! == "objectKapalSatu" ? SKSpriteNode(imageNamed: "kapalScene14_1") : SKSpriteNode(imageNamed: "kapalScene14_2")
+    let nonCharacterWood = SKSpriteNode(imageNamed: "woodScene6")
+    let nonCharacterBoat1 = UserDefaults.standard.string(forKey: "kapalPilih")! == "objectKapalSatu" ? SKSpriteNode(imageNamed: "shipScene14_1") : SKSpriteNode(imageNamed: "shipScene14_2")
     let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
     
     //MARK: Character
     let characterMalin = SKSpriteNode(imageNamed: "malinScene14_1")
     var characterMalinAnimation: SKAction?
     
-    var characterIstriMalin = SKSpriteNode(imageNamed: "istriMalinScene14_1")
+    var characterIstriMalin = SKSpriteNode(imageNamed: "malinWifeScene14_1")
     var characterIstriMalinAnimation: SKAction?
     
-    let characterIbuMalin = SKSpriteNode(imageNamed: "ibuMalinScene14_1")
+    let characterIbuMalin = SKSpriteNode(imageNamed: "malinMomScene14_1")
     var characterIbuMalinAnimation: SKAction?
     
     //MARK: Button
@@ -158,7 +158,7 @@ class MalinKundang_Scene14: SKScene {
         //MARK: Actived Textures
         var texturesIbuMalin: [SKTexture] = []
         for index in 1...3 {
-            texturesIbuMalin.append(SKTexture(imageNamed: "ibuMalinScene14_\(index)"))
+            texturesIbuMalin.append(SKTexture(imageNamed: "malinMomScene14_\(index)"))
         }
         
         //MARK: Action Animation

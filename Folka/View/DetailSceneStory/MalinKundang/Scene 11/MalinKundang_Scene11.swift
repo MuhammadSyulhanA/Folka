@@ -19,10 +19,10 @@ class MalinKundang_Scene11: SKScene {
     let backgroundGround = SKSpriteNode(imageNamed: "groundBackground")
     
     //MARK: Character
-    let characterIbuMalin = SKSpriteNode(imageNamed: "ibuMalinScene11_1")
+    let characterIbuMalin = SKSpriteNode(imageNamed: "malinMomScene11_1")
     var animationIbuMalin: SKAction?
     
-    let characterNahkoda = SKSpriteNode(imageNamed: "nahkodaScene11_1")
+    let characterNahkoda = SKSpriteNode(imageNamed: "sailorScene11_1")
     var animationNahkoda: SKAction?
     
     //MARK: Non Character
@@ -167,7 +167,7 @@ class MalinKundang_Scene11: SKScene {
         //MARK: Actived Texture
         var textures: [SKTexture] = []
         for index in 1...2 {
-            textures.append(SKTexture(imageNamed: "ibuMalinScene11_\(index)"))
+            textures.append(SKTexture(imageNamed: "malinMomScene11_\(index)"))
         }
         
         var textures2: [SKTexture] = []
@@ -182,7 +182,7 @@ class MalinKundang_Scene11: SKScene {
         
         var textures4: [SKTexture] = []
         for index in 1...2 {
-            textures4.append(SKTexture(imageNamed: "nahkodaScene11_\(index)"))
+            textures4.append(SKTexture(imageNamed: "sailorScene11_\(index)"))
         }
         
         //MARK: Action Animation

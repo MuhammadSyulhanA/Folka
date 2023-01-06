@@ -15,7 +15,7 @@ class MalinKundang_Scene16: SKScene {
     let backgroundGround = SKSpriteNode(imageNamed: "groundBackground")
     
     //MARK: Character
-    let characterIbuMalin = SKSpriteNode(imageNamed: "ibuMalinScene16_1")
+    let characterIbuMalin = SKSpriteNode(imageNamed: "malinMomScene16_1")
     var animationIbuMalin: SKAction?
     
     //MARK: Non Character
@@ -150,7 +150,7 @@ class MalinKundang_Scene16: SKScene {
         
         var textures1: [SKTexture] = []
         for index in 1...2 {
-            textures1.append(SKTexture(imageNamed: "ibuMalinScene16_\(index)"))
+            textures1.append(SKTexture(imageNamed: "malinMomScene16_\(index)"))
         }
         
         var textures2: [SKTexture] = []
