@@ -14,7 +14,7 @@ class Onboarding_InputName: UIViewController, UITextFieldDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.view.addBackground()
+    assignbackground()
     self.setupToHideKeyboardOnTapOnView()
     self.definesPresentationContext = true
     buttonFinish.setTitle("", for: .normal)
@@ -36,6 +36,18 @@ class Onboarding_InputName: UIViewController, UITextFieldDelegate {
       present(controller, animated: true, completion: nil)
       self.navigationController?.popViewController(animated: true)
     }
+  }
+  
+  func assignbackground(){
+      let background = UIImage(named: "backgroundProfile")
+      var imageView : UIImageView!
+      imageView = UIImageView(frame: view.bounds)
+      imageView.contentMode =  UIView.ContentMode.scaleAspectFill
+      imageView.clipsToBounds = true
+      imageView.image = background
+      imageView.center = view.center
+      view.addSubview(imageView)
+      self.view.sendSubviewToBack(imageView)
   }
 }
 

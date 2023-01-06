@@ -37,6 +37,7 @@ class HomePage_ViewController: UIViewController, UICollectionViewDelegate, UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        assignbackground()
         
         let tapNext = UITapGestureRecognizer(target: self, action: #selector(self.nextPage))
         imageProfile.addGestureRecognizer(tapNext)
@@ -55,7 +56,6 @@ class HomePage_ViewController: UIViewController, UICollectionViewDelegate, UICol
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
         collectionView.contentInset = UIEdgeInsets(top: 0.0, left: 50.0, bottom: 0.0, right: 50.0)
-        assignbackground()
         collectionView.register(UINib(nibName: HomePage_CollectionCell.identifier, bundle: Bundle.main),
                                 forCellWithReuseIdentifier: "HomePage_CollectionCell")
         collectionView.dataSource = self

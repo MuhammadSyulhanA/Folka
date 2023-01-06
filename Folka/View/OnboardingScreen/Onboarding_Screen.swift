@@ -26,7 +26,7 @@ class Onboarding_Screen: UIViewController, UICollectionViewDataSource, UICollect
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.view.addBackground()
+    assignbackground()
     Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
     buttonStart.setTitle("", for: .normal)
     customButtonMulai = UIImage(named: "buttonMulaiBoarding")
@@ -87,5 +87,17 @@ class Onboarding_Screen: UIViewController, UICollectionViewDataSource, UICollect
     }
     print("\(pageControl.currentPage)")
     pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+  }
+  
+  func assignbackground(){
+      let background = UIImage(named: "backgroundOnboarding")
+      var imageView : UIImageView!
+      imageView = UIImageView(frame: view.bounds)
+      imageView.contentMode =  UIView.ContentMode.scaleAspectFill
+      imageView.clipsToBounds = true
+      imageView.image = background
+      imageView.center = view.center
+      view.addSubview(imageView)
+      self.view.sendSubviewToBack(imageView)
   }
 }
