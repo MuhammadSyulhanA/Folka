@@ -22,7 +22,7 @@ class MalinKundang_Puzzle1: SKScene{
   let background = SKSpriteNode(imageNamed: "backgroundPuzzle")
   
   //MARK: Button
-  let buttonClose = SKSpriteNode(imageNamed: "buttonClose")
+  let buttonClose = SKSpriteNode(imageNamed: "buttonTutup")
   let buttonCloseAction: SKAction?
   let buttonNextStory = SKSpriteNode(imageNamed: "buttonLanjutkanCeritaPuzzle")
   var buttonNextStoryAction: SKAction?
@@ -30,8 +30,8 @@ class MalinKundang_Puzzle1: SKScene{
   var buttonReplayAction: SKAction?
   let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
   let buttonHomeAction: SKAction?
-  let buttonTanya = SKSpriteNode(imageNamed: "buttonTanya")
-  let buttonTanyaAction: SKAction?
+  let buttonQuestion = SKSpriteNode(imageNamed: "buttonTanya")
+  let buttonQuestionAction: SKAction?
   
   //MARK: Non Character
   let nonCharacterWoodPuzzle  = SKSpriteNode(imageNamed: "kayuPuzzle")
@@ -71,7 +71,7 @@ class MalinKundang_Puzzle1: SKScene{
     let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
     let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
     buttonCloseAction = SKAction.sequence([buttonToSmall, buttonToBig])
-    buttonTanyaAction = SKAction.sequence([buttonToSmall, buttonToBig])
+    buttonQuestionAction = SKAction.sequence([buttonToSmall, buttonToBig])
     buttonHomeAction = SKAction.sequence([buttonToSmall, buttonToBig])
     buttonReplayAction = SKAction.sequence([buttonToSmall, buttonToBig])
     buttonNextStoryAction = SKAction.sequence([buttonToSmall, buttonToBig])
@@ -140,19 +140,19 @@ class MalinKundang_Puzzle1: SKScene{
     buttonClose.isHidden = false
     addChild( buttonClose)
     
-    buttonHome.size = CGSize(width: 130, height: 130)
-    buttonHome.position = CGPoint(x: size.width/16, y: size.height/1.35)
+    buttonHome.size = CGSize(width: 150, height: 150)
+    buttonHome.position = CGPoint(x: size.width/17, y: size.height/1.38)
     buttonHome.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     buttonHome.zPosition = 0
     buttonHome.name = "buttonHome"
     addChild(buttonHome)
     
-    buttonTanya.size = CGSize(width: 130, height: 130)
-    buttonTanya.position = CGPoint(x: size.width/16, y: size.height/1.55)
-    buttonTanya.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-    buttonTanya.zPosition = 2
-    buttonTanya.name = "buttonTanya"
-    addChild(buttonTanya)
+    buttonQuestion.size = CGSize(width: 150, height: 150)
+    buttonQuestion.position = CGPoint(x: size.width/17, y: size.height/1.58)
+    buttonQuestion.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+    buttonQuestion.zPosition = 2
+    buttonQuestion.name = "buttonTanya"
+    addChild(buttonQuestion)
     
     //MARK: Non Character
     nonCharacterOutlineShip.size = CGSize(width: 1283, height: 719)
@@ -533,7 +533,7 @@ class MalinKundang_Puzzle1: SKScene{
         }
       }
       
-      if atPoint((touch?.location(in: self))!).name == buttonTanya.name {
+      if atPoint((touch?.location(in: self))!).name == buttonQuestion.name {
         enumerateChildNodes(withName: "//*") { [self] (node, stop) in
           if node.name == "buttonTanya" {
             buttonTanyaAksi()

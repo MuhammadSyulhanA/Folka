@@ -49,12 +49,12 @@ class MalinKundang_ChooseShip: SKScene {
     nonCharacterTitle.zPosition = 1
     addChild(nonCharacterTitle)
     
-    nonCharacterWoodChoose1.size = CGSize(width: 700, height: 450)
-    nonCharacterWoodChoose1.name = "WoodChoose1"
-    nonCharacterWoodChoose1.position = CGPoint(x: size.width/3.8, y: size.height/2.0)
-    nonCharacterWoodChoose1.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-    nonCharacterWoodChoose1.zPosition = 1
-    addChild(nonCharacterWoodChoose1)
+    nonCharacterWood1.size = CGSize(width: 700, height: 450)
+    nonCharacterWood1.name = "WoodChoose1"
+    nonCharacterWood1.position = CGPoint(x: size.width/3.8, y: size.height/2.0)
+    nonCharacterWood1.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+    nonCharacterWood1.zPosition = 1
+    addChild(nonCharacterWood1)
     
     nonCharacterWood2.size = CGSize(width: 700, height: 450)
     nonCharacterWood2.name = "WoodChoose2"

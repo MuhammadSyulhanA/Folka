@@ -135,18 +135,18 @@ class MalinKundang_Puzzle2: SKScene{
     buttonClose.isHidden = false
     addChild( buttonClose)
     
-    buttonHome.size = CGSize(width: 130, height: 130)
-    buttonHome.position = CGPoint(x: size.width/16, y: size.height/1.35)
-    buttonHome.name = "buttonHome"
+    buttonHome.size = CGSize(width: 150, height: 150)
+    buttonHome.position = CGPoint(x: size.width/17, y: size.height/1.28)
     buttonHome.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     buttonHome.zPosition = 0
+    buttonHome.name = "buttonHome"
     addChild(buttonHome)
     
-    buttonQuestion.size = CGSize(width: 130, height: 130)
-    buttonQuestion.position = CGPoint(x: size.width/16, y: size.height/1.55)
-    buttonQuestion.name = "buttonTanya"
+    buttonQuestion.size = CGSize(width: 150, height: 150)
+    buttonQuestion.position = CGPoint(x: size.width/17, y: size.height/1.48)
     buttonQuestion.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     buttonQuestion.zPosition = 2
+    buttonQuestion.name = "buttonTanya"
     addChild(buttonQuestion)
     
     //MARK: Non Character

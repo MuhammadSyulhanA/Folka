@@ -14,7 +14,7 @@ class MalinKundang_Scene6: SKScene {
   
   //MARK: Non Character
   let nonCharacterWood = SKSpriteNode(imageNamed: "kayuScene6")
-  let nonCharacterShip = UserDefaults.standard.string(forKey: "kapalPilih")! == "objectKapalSatu" ? SKSpriteNode(imageNamed: "kapalScene6_1") : SKSpriteNode(imageNamed: "kapalScene6_2")
+  let nonCharacterShip = UserDefaults.standard.string(forKey: "pickShip")! == "objectOneShip" ? SKSpriteNode(imageNamed: "kapalScene6_1") : SKSpriteNode(imageNamed: "kapalScene6_2")
   
   //MARK: Character
   let characterMalin = SKSpriteNode(imageNamed: "malinScene1_1")
