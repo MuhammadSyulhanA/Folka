@@ -141,6 +141,12 @@ class MalinKundang_AlternateScene17: SKScene {
         addChild(buttonNext)
         
         //MARK: INITIALIZATION TEXT
+        let data1 = DialogueScene(textDialogue: "“Ibu, maafkan perbuatanku.”")
+        let data2 = DialogueScene(textDialogue: "“Iya tidak apa-apa nak.”")
+        let data3 = DialogueScene(textDialogue: "“Ibu sudah memaafkanmu.”")
+        
+        dataIntro = [data1, data2, data3]
+        
         labelTextStory.text = dataIntro[0].textDialogue
         labelTextStory.fontColor = SKColor.white
         labelTextStory.fontSize = 42
@@ -150,12 +156,6 @@ class MalinKundang_AlternateScene17: SKScene {
         labelTextStory.position = CGPoint(x: size.width/2, y: size.height/3.8)
         labelTextStory.zPosition = +4.5
         addChild(labelTextStory)
-        
-        let data1 = DialogueScene(textDialogue: "“Ibu, maafkan perbuatanku.”")
-        let data2 = DialogueScene(textDialogue: "“Iya tidak apa-apa nak.”")
-        let data3 = DialogueScene(textDialogue: "“Ibu sudah memaafkanmu.”")
-        
-        dataIntro = [data1, data2, data3]
         
         //MARK: INIZIALITATION SOUND AND MUSIC
         Sound.sharedInstance.playDubbing(file: "alt 17 1", fileExtension: "m4a")
