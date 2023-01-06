@@ -10,17 +10,14 @@ import AVFoundation
 import SpriteKit
 
 class DetailPage_MalinKundang: UIViewController {
-    
+
     @IBOutlet weak var lblCeritaAsal: UILabel!
     @IBOutlet weak var lblStory: UILabel!
-    
     @IBOutlet weak var coverMalin: UIImageView!
-    
     @IBOutlet weak var buttonBack: UIImageView!
     @IBOutlet weak var buttonMulaiBaca: UIButton!
     var customButtonBack: UIImage!
     var customButtonMulaiBaca: UIImage!
-    
     var stateSound = UserDefaults.standard.bool(forKey: "fxSound")
     
     override func viewDidLoad() {
@@ -29,9 +26,7 @@ class DetailPage_MalinKundang: UIViewController {
         let tapNext = UITapGestureRecognizer(target: self, action: #selector(self.previousPage))
         buttonBack.addGestureRecognizer(tapNext)
         buttonBack.isUserInteractionEnabled = true
-        
         addBackground()
-        
         lblStory.text = "Malin Kundang hidup hanya berdua dengan ibunya, Mande Rubayah. Suatu hari ia memutuskan untuk pergi berlayar dan mencari uang. Setelah menjadi orang kaya ia kembali namun tidak mengakui ibunya."
         coverMalin.layer.cornerRadius = 20
         
@@ -43,13 +38,9 @@ class DetailPage_MalinKundang: UIViewController {
     func addBackground() {
         let width = UIScreen.main.bounds.size.width
         let height = UIScreen.main.bounds.size.height
-        
         let imageViewBackground = UIImageView(frame: CGRect(x:0, y:0, width: width, height: height))
         imageViewBackground.image = UIImage(named: "backgroudBookDetail")
-        
-        // you can change the content mode:
         imageViewBackground.contentMode = UIView.ContentMode.scaleAspectFill
-        
         self.view.addSubview(imageViewBackground)
         self.view.sendSubviewToBack(imageViewBackground)
     }
