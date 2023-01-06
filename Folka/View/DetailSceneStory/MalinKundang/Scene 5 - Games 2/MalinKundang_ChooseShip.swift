@@ -130,7 +130,7 @@ class MalinKundang_ChooseShip: SKScene {
     state = 2
     nonCharacterWoodChoose1.isHidden = true
     nonCharacterWoodChoose2.isHidden = false
-    UserDefaults.standard.set("objecTwoShip", forKey: "pickTwo")
+    UserDefaults.standard.set("objecTwoShip", forKey: "pickShip")
     print(state)
   }
   
