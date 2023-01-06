@@ -1,4 +1,4 @@
-# Equip Order
+# Equip Order Tes
 
 React Native App for waiter to take orders
 
