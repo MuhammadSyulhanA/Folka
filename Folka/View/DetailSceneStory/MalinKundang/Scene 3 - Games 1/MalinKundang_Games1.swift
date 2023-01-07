@@ -36,7 +36,7 @@ class MalinKundang_Games1: SKScene {
     //MARK: Button
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
     var buttonHomeAction: SKAction?
-    let buttonNextStory = SKSpriteNode(imageNamed: "buttonnextStoryPuzzle")
+    let buttonNextStory = SKSpriteNode(imageNamed: "buttonNextStoryPuzzle")
     var buttonNextStoryAction: SKAction?
     let buttonReplayGame = SKSpriteNode(imageNamed: "buttonPlayAgainPuzzle")
     var buttonReplayAction: SKAction?
@@ -232,7 +232,7 @@ class MalinKundang_Games1: SKScene {
         addChild(popUpExit)
         
         //MARK: Sound
-        Sound.sharedInstance.playBacksound(file: "ikanPuzzle", fileExtension: "wav")
+        Sound.sharedInstance.playBacksound(file: "fishPuzzle", fileExtension: "wav")
         
         //MARK: Action Animation
         run(SKAction.repeatForever(SKAction.sequence([SKAction.run(swimmingFish), SKAction.wait(forDuration: 4.0)])))

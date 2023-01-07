@@ -58,7 +58,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coverBook" translatesAutoresizingMaskIntoConstraints="NO" id="B5A-cW-x3D">
-                    <rect key="frame" x="380" y="50" width="442" height="286"/>
+                    <rect key="frame" x="380" y="50" width="382" height="286"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTE-fy-hSv">
                     <rect key="frame" x="60" y="327" width="75" height="34.333333333333314"/>
@@ -84,10 +84,10 @@
                 <constraint firstItem="jTE-fy-hSv" firstAttribute="top" secondItem="r2T-WK-96B" secondAttribute="bottom" constant="20" id="DAH-FT-XJ8"/>
                 <constraint firstItem="jTE-fy-hSv" firstAttribute="leading" secondItem="gej-8a-XA9" secondAttribute="leading" constant="60" id="HOL-a2-NYU"/>
                 <constraint firstItem="r2T-WK-96B" firstAttribute="top" secondItem="f5L-i8-M99" secondAttribute="bottom" constant="20" id="JVS-D1-CQa"/>
+                <constraint firstAttribute="trailing" secondItem="B5A-cW-x3D" secondAttribute="trailing" constant="50" id="Q1e-ii-lzE"/>
                 <constraint firstItem="f5L-i8-M99" firstAttribute="leading" secondItem="r2T-WK-96B" secondAttribute="leading" id="TTY-q1-QYW"/>
                 <constraint firstItem="f5L-i8-M99" firstAttribute="top" secondItem="gej-8a-XA9" secondAttribute="top" constant="70" id="TXu-Oa-i5o"/>
                 <constraint firstItem="r2T-WK-96B" firstAttribute="leading" secondItem="gej-8a-XA9" secondAttribute="leading" constant="70" id="biM-2d-eYQ"/>
-                <constraint firstItem="B5A-cW-x3D" firstAttribute="trailing" secondItem="UIf-ke-QMh" secondAttribute="trailingMargin" constant="30" id="bpc-C1-U3y"/>
                 <constraint firstItem="B5A-cW-x3D" firstAttribute="top" secondItem="gej-8a-XA9" secondAttribute="top" constant="3" id="eBx-hy-d9x"/>
                 <constraint firstItem="B5A-cW-x3D" firstAttribute="leading" secondItem="r2T-WK-96B" secondAttribute="trailing" constant="40" id="gOv-sc-43g"/>
                 <constraint firstItem="r2T-WK-96B" firstAttribute="leading" secondItem="gej-8a-XA9" secondAttribute="leading" constant="70" id="tZo-1b-8H1"/>

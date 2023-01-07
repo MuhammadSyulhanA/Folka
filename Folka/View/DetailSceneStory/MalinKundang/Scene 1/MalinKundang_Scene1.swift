@@ -21,7 +21,7 @@ class MalinKundang_Scene1: SKScene {
   let characterMalin = SKSpriteNode(imageNamed: "malinScene1_1")
   var animationMalin: SKAction?
   let characterMalinMom = SKSpriteNode(imageNamed: "malinMomScene1_1")
-  var animationIbuMalin: SKAction?
+  var animationMalinMom: SKAction?
   
   //MARK: Non Character
   let nonCharacterSea = SKSpriteNode(imageNamed: "sea")
@@ -211,7 +211,7 @@ class MalinKundang_Scene1: SKScene {
     buttonNextAction = SKAction.sequence([buttonToSmall, buttonToBig])
     buttonHomeAction = SKAction.sequence([buttonToSmall, buttonToBig])
     animationMalin = SKAction.animate(with: textures, timePerFrame: 0.3)
-    animationIbuMalin = SKAction.animate(with: textures1, timePerFrame: 0.3)
+    animationMalinMom = SKAction.animate(with: textures1, timePerFrame: 0.3)
     animationTree = SKAction.animate(with: textures2, timePerFrame: 0.5)
     animationHouse = SKAction.animate(with: textures3, timePerFrame: 0.5)
     super.init(size: size)
@@ -233,7 +233,7 @@ class MalinKundang_Scene1: SKScene {
   
   func startIbuMalinAnimation() {
     if characterMalinMom.action(forKey: "Malin Mom Scene1") == nil {
-      characterMalinMom.run(SKAction.repeatForever(animationIbuMalin!), withKey: "Malin Mom Scene1")
+      characterMalinMom.run(SKAction.repeatForever(animationMalinMom!), withKey: "Malin Mom Scene1")
     }
   }
   
