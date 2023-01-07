@@ -27,16 +27,16 @@ class MalinKundang_AlternateScene15: SKScene {
     var characterMalinSay = SKSpriteNode(imageNamed: "alternateMalinScene15_3")
     var animationMalinSay: SKAction?
     
-    let characterIstriMalin = SKSpriteNode(imageNamed: "alternateIstriMalinScene15_1")
+    let characterIstriMalin = SKSpriteNode(imageNamed: "alternateMalinWifeScene15_1")
     var animationIstriMalin: SKAction?
     
-    var characterIstriMalinSay = SKSpriteNode(imageNamed: "istriMalinScene15_2")
+    var characterIstriMalinSay = SKSpriteNode(imageNamed: "malinWifeScene15_2")
     var animationIstriMalinSay: SKAction?
     
-    let characterIbuMalin = SKSpriteNode(imageNamed: "alternateIbuMalinScene15_1")
+    let characterIbuMalin = SKSpriteNode(imageNamed: "alternateMalinMomScene15_1")
     var animationIbuMalin: SKAction?
     
-    var characterIbuMalinSay = SKSpriteNode(imageNamed: "ibuMalinScene15_2")
+    var characterIbuMalinSay = SKSpriteNode(imageNamed: "malinMomScene15_2")
     var animationIbuMalinSay: SKAction?
     
     //MARK: NON CHARACTER

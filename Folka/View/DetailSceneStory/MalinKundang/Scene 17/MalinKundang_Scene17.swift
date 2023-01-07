@@ -30,7 +30,7 @@ class MalinKundang_Scene17: SKScene {
     let nonCharacterCloud = SKSpriteNode(imageNamed: "cloudThunder1")
     var animationCloud: SKAction?
     
-    let nonCharacterBoat = UserDefaults.standard.string(forKey: "kapalPilih")! == "objectKapalSatu" ? SKSpriteNode(imageNamed: "boatScene17_1") : SKSpriteNode(imageNamed: "boat2Scene17_1")
+    let nonCharacterBoat = UserDefaults.standard.string(forKey: "pickShip")! == "objectOneShip" ? SKSpriteNode(imageNamed: "boatScene17_1") : SKSpriteNode(imageNamed: "boat2Scene17_1")
     var animationBoat: SKAction?
     
     let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
@@ -169,7 +169,7 @@ class MalinKundang_Scene17: SKScene {
         
         //MARK: TEXTURE FOR BOAT
         var texturesBoat: [SKTexture] = []
-        if (UserDefaults.standard.string(forKey: "kapalPilih")! == "objectKapalSatu") {
+        if (UserDefaults.standard.string(forKey: "pickShip")! == "objectOneShip") {
             for index in 1...2 {
                 texturesBoat.append(SKTexture(imageNamed: "boatScene17_\(index)"))
             }
@@ -274,7 +274,7 @@ class MalinKundang_Scene17: SKScene {
         
         if buttonHome.action(forKey: "Button Home") == nil {
             Sound.sharedInstance.stop()
-            Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
+            Sound.sharedInstance.playBacksound(file: "startGame", fileExtension: "wav")
             Sound.sharedInstance.stopBacksound()
             buttonHome.run((buttonHomeAction!), withKey: "Button Home")
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)

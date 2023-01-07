@@ -139,7 +139,7 @@ class MalinKundang_Scene19: SKScene {
         
         //MARK: INIZIALITATION SOUND AND MUSIC
         Sound.sharedInstance.playDubbing(file: "19 1", fileExtension: "m4a")
-        Sound.sharedInstance.playBacksound(file: "soundMalinJadiBatu", fileExtension: "mp3")
+        Sound.sharedInstance.playBacksound(file: "soundMalinBecomesStone", fileExtension: "mp3")
         startMalinStoneAnimation()
     }
     
@@ -274,7 +274,7 @@ class MalinKundang_Scene19: SKScene {
         }
         
         if buttonHome.action(forKey: "Button Home") == nil {
-            Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
+            Sound.sharedInstance.playBacksound(file: "startGame", fileExtension: "wav")
             Sound.sharedInstance.stop()
             Sound.sharedInstance.stopBacksound()
             buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")

@@ -14,9 +14,9 @@ class MalingKundang_ChoicesEnding: SKScene {
     //MARK: BUTTON
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
     var buttonHomeAction: SKAction?
-    let buttonMintaMaaf = SKSpriteNode(imageNamed: "buttonMintaMaaf")
+    let buttonMintaMaaf = SKSpriteNode(imageNamed: "buttonApologize")
     var buttonMintaMaafAction: SKAction?
-    let buttonMenyambut = SKSpriteNode(imageNamed: "buttonMenyambut")
+    let buttonMenyambut = SKSpriteNode(imageNamed: "buttonWelcome")
     var buttonMenyambutAction: SKAction?
     
     //MARK: SOUND/MUSIC

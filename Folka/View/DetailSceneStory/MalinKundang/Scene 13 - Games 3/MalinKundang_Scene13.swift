@@ -13,76 +13,76 @@ class MalinKundang_Scene13: SKScene {
     //MARK: POP UP
     let popUpIntro = SKSpriteNode(imageNamed: "popUpIntroLabirin")
     let popUpHint = SKSpriteNode(imageNamed: "popUpHintLabirin")
-    let popUpBerhasil = SKSpriteNode(imageNamed: "popUpBerhasilLabirin")
+    let popUpBerhasil = SKSpriteNode(imageNamed: "popUpMazeSuccess")
     
     //MARK: POP UP HINT
     let wayHintLabirin = SKSpriteNode(imageNamed: "wayHintLabirin")
     let wayAction: SKAction?
     
     //MARK: BUTTON POPUP
-    let buttonMulai = SKSpriteNode(imageNamed: "buttonMulaiIntro")
+    let buttonMulai = SKSpriteNode(imageNamed: "buttonStartIntro")
     let buttonMulaiAction: SKAction?
-    let buttonTutupHint = SKSpriteNode(imageNamed: "buttonMulaiIntro")
+    let buttonTutupHint = SKSpriteNode(imageNamed: "buttonStartIntro")
     let buttonTutupHintAction: SKAction?
-    let buttonMainLagi = SKSpriteNode(imageNamed: "buttonMainLagiLabirin")
+    let buttonMainLagi = SKSpriteNode(imageNamed: "buttonPlayAgainMaze")
     let buttonMainLagiAction: SKAction?
-    let buttonLanjutkanCerita = SKSpriteNode(imageNamed: "buttonLanjutkanCeritaLabirin")
+    let buttonLanjutkanCerita = SKSpriteNode(imageNamed: "buttonNextStoryMaze")
     let buttonLanjutkanCeritaAction: SKAction?
     
     //MARK: BUTTON
     let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
     let buttonHomeAction: SKAction?
-    let buttonTanya = SKSpriteNode(imageNamed: "buttonTanya")
+    let buttonTanya = SKSpriteNode(imageNamed: "buttonAsk")
     let buttonTanyaAction: SKAction?
     
     //MARK: TEMBOK LABIRIN
     //Horizontal
-    var horizonPanjang1Atas = SKSpriteNode(imageNamed: "horizonPanjang1AtasBawah")
-    var horizonPanjang1Bawah = SKSpriteNode(imageNamed: "horizonPanjang1AtasBawah")
+    var horizonPanjang1Atas = SKSpriteNode(imageNamed: "longHorizon1UpDown")
+    var horizonPanjang1Bawah = SKSpriteNode(imageNamed: "longHorizon1UpDown")
     
-    var horizonPanjang2Dalam1 = SKSpriteNode(imageNamed: "horizonPanjang2Dalam")
-    var horizonPanjang2Dalam2 = SKSpriteNode(imageNamed: "horizonPanjang2Dalam")
+    var horizonPanjang2Dalam1 = SKSpriteNode(imageNamed: "longHorizon2Inside")
+    var horizonPanjang2Dalam2 = SKSpriteNode(imageNamed: "longHorizon2Inside")
     
-    var horizonPanjang3Dalam1 = SKSpriteNode(imageNamed: "horizonPanjang3Dalam")
-    var horizonPanjang3Dalam2 = SKSpriteNode(imageNamed: "horizonPanjang3Dalam")
-    var horizonPanjang3Dalam3 = SKSpriteNode(imageNamed: "horizonPanjang3Dalam")
+    var horizonPanjang3Dalam1 = SKSpriteNode(imageNamed: "longHorizon3Inside")
+    var horizonPanjang3Dalam2 = SKSpriteNode(imageNamed: "longHorizon3Inside")
+    var horizonPanjang3Dalam3 = SKSpriteNode(imageNamed: "longHorizon3Inside")
     
-    var horizonPanjang4Dalam1 = SKSpriteNode(imageNamed: "horizonPanjang4Dalam")
-    var horizonPanjang4Dalam2 = SKSpriteNode(imageNamed: "horizonPanjang4Dalam")
-    var horizonPanjang4Dalam3 = SKSpriteNode(imageNamed: "horizonPanjang4Dalam")
-    var horizonPanjang4Dalam4 = SKSpriteNode(imageNamed: "horizonPanjang4Dalam")
+    var horizonPanjang4Dalam1 = SKSpriteNode(imageNamed: "longHorizon4Inside")
+    var horizonPanjang4Dalam2 = SKSpriteNode(imageNamed: "longHorizon4Inside")
+    var horizonPanjang4Dalam3 = SKSpriteNode(imageNamed: "longHorizon4Inside")
+    var horizonPanjang4Dalam4 = SKSpriteNode(imageNamed: "longHorizon4Inside")
     
     //Vertical
-    var verticalPanjang1Luar = SKSpriteNode(imageNamed: "verticalPanjang1Luar")
+    var verticalPanjang1Luar = SKSpriteNode(imageNamed: "longVertical1Outside")
     
-    var verticalPanjang2LuarDalam1 = SKSpriteNode(imageNamed: "verticalPanjang2LuarDalam")
-    var verticalPanjang2LuarDalam2 = SKSpriteNode(imageNamed: "verticalPanjang2LuarDalam")
+    var verticalPanjang2LuarDalam1 = SKSpriteNode(imageNamed: "longVertical2OutsideInside")
+    var verticalPanjang2LuarDalam2 = SKSpriteNode(imageNamed: "longVertical2OutsideInside")
     
-    var verticalPanjang3LuarDalam1 = SKSpriteNode(imageNamed: "verticalPanjang3LuarDalam")
-    var verticalPanjang3LuarDalam2 = SKSpriteNode(imageNamed: "verticalPanjang3LuarDalam")
-    var verticalPanjang3LuarDalam3 = SKSpriteNode(imageNamed: "verticalPanjang3LuarDalam")
-    var verticalPanjang3LuarDalam4 = SKSpriteNode(imageNamed: "verticalPanjang3LuarDalam")
-    var verticalPanjang3LuarDalam5 = SKSpriteNode(imageNamed: "verticalPanjang3LuarDalam")
-    var verticalPanjang3LuarDalam6 = SKSpriteNode(imageNamed: "verticalPanjang3LuarDalam")
-    var verticalPanjang3LuarDalam7 = SKSpriteNode(imageNamed: "verticalPanjang3LuarDalam")
-    var verticalPanjang3LuarDalam8 = SKSpriteNode(imageNamed: "verticalPanjang3LuarDalam")
-    var verticalPanjang3LuarDalam9 = SKSpriteNode(imageNamed: "verticalPanjang3LuarDalam")
+    var verticalPanjang3LuarDalam1 = SKSpriteNode(imageNamed: "longVertical3OutsideInside")
+    var verticalPanjang3LuarDalam2 = SKSpriteNode(imageNamed: "longVertical3OutsideInside")
+    var verticalPanjang3LuarDalam3 = SKSpriteNode(imageNamed: "longVertical3OutsideInside")
+    var verticalPanjang3LuarDalam4 = SKSpriteNode(imageNamed: "longVertical3OutsideInside")
+    var verticalPanjang3LuarDalam5 = SKSpriteNode(imageNamed: "longVertical3OutsideInside")
+    var verticalPanjang3LuarDalam6 = SKSpriteNode(imageNamed: "longVertical3OutsideInside")
+    var verticalPanjang3LuarDalam7 = SKSpriteNode(imageNamed: "longVertical3OutsideInside")
+    var verticalPanjang3LuarDalam8 = SKSpriteNode(imageNamed: "longVertical3OutsideInside")
+    var verticalPanjang3LuarDalam9 = SKSpriteNode(imageNamed: "longVertical3OutsideInside")
     //MARK: AKHIR TEMBOK LABIRIN
     
     //MARK: PENGHALANG LABIRIN
-    var penghalangAtas = SKSpriteNode(imageNamed: "penghalangLabirin")
-    var penghalangBawah = SKSpriteNode(imageNamed: "penghalangLabirin")
+    var penghalangAtas = SKSpriteNode(imageNamed: "mazeBarrier")
+    var penghalangBawah = SKSpriteNode(imageNamed: "mazeBarrier")
     
     //MARK: HIU
-    var sharkKiri = SKSpriteNode(imageNamed: "sharkKiri")
-    var sharkKanan1 = SKSpriteNode(imageNamed: "sharkKanan")
-    var sharkKanan2 = SKSpriteNode(imageNamed: "sharkKanan")
-    var sharkKanan3 = SKSpriteNode(imageNamed: "sharkKanan")
+    var sharkKiri = SKSpriteNode(imageNamed: "leftShark")
+    var sharkKanan1 = SKSpriteNode(imageNamed: "rightShark")
+    var sharkKanan2 = SKSpriteNode(imageNamed: "rightShark")
+    var sharkKanan3 = SKSpriteNode(imageNamed: "rightShark")
     
     //MARK: PULAU DAN KAPAL
-    var kapal = UserDefaults.standard.string(forKey: "kapalPilih")!
-    var pulauFinish = SKSpriteNode(imageNamed: "pulauFinish")
-    var kapalLabirin = SKSpriteNode(imageNamed: UserDefaults.standard.string(forKey: "kapalPilih")!)
+    var kapal = UserDefaults.standard.string(forKey: "pickShip")!
+    var pulauFinish = SKSpriteNode(imageNamed: "finishIsland")
+    var kapalLabirin = SKSpriteNode(imageNamed: UserDefaults.standard.string(forKey: "pickShip")!)
     
     let backgroundOpacity = SKSpriteNode(imageNamed: "opacityBackground")
     let background = SKSpriteNode(imageNamed: "backgroundPuzzle")
@@ -454,7 +454,7 @@ class MalinKundang_Scene13: SKScene {
         setUpFloorPyhisic(lineMaze: verticalPanjang3LuarDalam8)
         setUpFloorPyhisic(lineMaze: verticalPanjang3LuarDalam9)
         
-        Sound.sharedInstance.playBacksound(file: "labirin", fileExtension: "wav")
+        Sound.sharedInstance.playBacksound(file: "maze", fileExtension: "wav")
     }
     
     //MARK: SOURCE CODE MOVE ASSET
