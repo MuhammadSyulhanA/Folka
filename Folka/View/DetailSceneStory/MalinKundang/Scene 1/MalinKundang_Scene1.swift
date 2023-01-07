@@ -193,7 +193,7 @@ class MalinKundang_Scene1: SKScene {
     
     var textures1: [SKTexture] = []
     for index in 1...2 {
-      textures1.append(SKTexture(imageNamed: "ibuMalinScene1_\(index)"))
+      textures1.append(SKTexture(imageNamed: "malinMomScene1_\(index)"))
     }
     
     var textures2: [SKTexture] = []
@@ -231,13 +231,13 @@ class MalinKundang_Scene1: SKScene {
     characterMalin.removeAction(forKey: "Malin Scene1")
   }
   
-  func startIbuMalinAnimation() {
+  func startMalinMomAnimation() {
     if characterMalinMom.action(forKey: "Malin Mom Scene1") == nil {
       characterMalinMom.run(SKAction.repeatForever(animationMalinMom!), withKey: "Malin Mom Scene1")
     }
   }
   
-  func stopIbuMalinAnimation() {
+  func stopMalinMomAnimation() {
     characterMalinMom.removeAction(forKey: "Ibu Malin Scene1")
   }
   
@@ -283,11 +283,11 @@ class MalinKundang_Scene1: SKScene {
       enumerateChildNodes(withName: "//*") { [self] (node, stop) in
         if !self.characterMalinMom.hasActions(){
           if node.name == "malinMom" {
-            startIbuMalinAnimation()
+            startMalinMomAnimation()
           }
         }else{
           if node.name == "malinMom" {
-            stopIbuMalinAnimation()
+            stopMalinMomAnimation()
           }
         }
       }

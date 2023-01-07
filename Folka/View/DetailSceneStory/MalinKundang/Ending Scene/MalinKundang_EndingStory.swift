@@ -13,7 +13,7 @@ class MalinKundang_EndingStory: SKScene {
     let backgroundEnding = SKSpriteNode(imageNamed: "backgroundEndingStory")
     
     //MARK: BUTTON
-    let buttonBeranda = SKSpriteNode(imageNamed: "buttonBackToBeranda")
+    let buttonBeranda = SKSpriteNode(imageNamed: "buttonBackToHome")
     var buttonBerandaAction: SKAction?
     
     override func didMove(to view: SKView) {

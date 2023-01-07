@@ -11,8 +11,8 @@ import GameplayKit
 class MalinKundang_Scene13: SKScene {
     
     //MARK: POP UP
-    let popUpIntro = SKSpriteNode(imageNamed: "popUpIntroLabirin")
-    let popUpHint = SKSpriteNode(imageNamed: "popUpHintLabirin")
+    let popUpIntro = SKSpriteNode(imageNamed: "popUpMazeIntro")
+    let popUpHint = SKSpriteNode(imageNamed: "popUpMazeHint")
     let popUpBerhasil = SKSpriteNode(imageNamed: "popUpMazeSuccess")
     
     //MARK: POP UP HINT

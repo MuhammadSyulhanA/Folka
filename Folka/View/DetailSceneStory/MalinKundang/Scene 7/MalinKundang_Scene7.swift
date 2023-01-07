@@ -19,9 +19,9 @@ class MalinKundang_Scene7: SKScene {
   //MARK: Non Character
   let nonCharacterHome = SKSpriteNode(imageNamed: "homeMalin1")
   var animationHome: SKAction?
-  let nonCharacterBabyChick = SKSpriteNode(imageNamed: "babyChicken")
+  let nonCharacterBabyChick = SKSpriteNode(imageNamed: "chicks")
   var animationBabyChick: SKAction?
-  let nonCharacterMomChick = SKSpriteNode(imageNamed: "mommyChicken")
+  let nonCharacterMomChick = SKSpriteNode(imageNamed: "hen")
   var animationMomChick: SKAction?
   let nonCharacterHomeChick = SKSpriteNode(imageNamed: "homeChicken")
   let nonCharacterChickFeed = SKSpriteNode(imageNamed: "chickenFeed")
