@@ -425,7 +425,6 @@ class MalinKundang_Games1: SKScene {
             }
         }
         for bottle in hitBottleTrash {
-            print("hit bottle")
             hookHitBottle(bottle: bottle)
         }
         
@@ -441,7 +440,6 @@ class MalinKundang_Games1: SKScene {
             }
         }
         for apple in hitAppleTrash {
-            print("hit apple")
             hookHitApple(apple: apple)
         }
     }
@@ -449,19 +447,16 @@ class MalinKundang_Games1: SKScene {
     func hookHitPurpleFish(purpleFish: SKSpriteNode) {
         purpleFish.removeFromParent()
         totalFishCatched += 1
-        print(totalFishCatched)
     }
     
     func hookHitRedFish(redFish: SKSpriteNode) {
         redFish.removeFromParent()
         totalFishCatched += 1
-        print(totalFishCatched)
     }
     
     func hookHitZebraFish(zebraFish: SKSpriteNode) {
         zebraFish.removeFromParent()
         totalFishCatched += 1
-        print(totalFishCatched)
     }
     
     func hookHitBottle(bottle: SKSpriteNode) {
@@ -516,8 +511,7 @@ class MalinKundang_Games1: SKScene {
         run(clickButton)
         if buttonYes.action(forKey: "Button Yes") == nil {
             buttonYes.run(SKAction.repeatForever(buttonYesAction!), withKey: "Button Yes")
-            let prevScene = HomePage_ViewController(nibName: "HomePageViewController", bundle: nil)
-            self.view!.window?.rootViewController?.present(prevScene, animated: true, completion: nil)
+            self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
         }
     }
     

@@ -82,7 +82,7 @@ class MalinKundang_Scene13: SKScene {
     //MARK: PULAU DAN KAPAL
     var kapal = UserDefaults.standard.string(forKey: "pickShip") == nil ? "mazeShip1" : UserDefaults.standard.string(forKey: "pickShip")
     var pulauFinish = SKSpriteNode(imageNamed: "finishIsland")
-    var kapalLabirin = SKSpriteNode(imageNamed: (UserDefaults.standard.string(forKey: "pickShip") == nil ? "mazeShip1" : UserDefaults.standard.string(forKey: "pickShip"))!)
+    var kapalLabirin = UserDefaults.standard.string(forKey: "pickShip")! == "objectOneShip" ? SKSpriteNode(imageNamed: "shipScene6_1") : SKSpriteNode(imageNamed: "shipScene6_2")
     
     let backgroundOpacity = SKSpriteNode(imageNamed: "opacityBackground")
     let background = SKSpriteNode(imageNamed: "backgroundPuzzle")
