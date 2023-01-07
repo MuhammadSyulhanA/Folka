@@ -16,7 +16,7 @@ class MalinKundang_Scene13: SKScene {
     let popUpBerhasil = SKSpriteNode(imageNamed: "popUpMazeSuccess")
     
     //MARK: POP UP HINT
-    let wayHintLabirin = SKSpriteNode(imageNamed: "wayHintLabirin")
+    let wayHintLabirin = SKSpriteNode(imageNamed: "wayMazeHint")
     let wayAction: SKAction?
     
     //MARK: BUTTON POPUP
@@ -80,9 +80,9 @@ class MalinKundang_Scene13: SKScene {
     var sharkKanan3 = SKSpriteNode(imageNamed: "rightShark")
     
     //MARK: PULAU DAN KAPAL
-    var kapal = UserDefaults.standard.string(forKey: "pickShip")!
+    var kapal = UserDefaults.standard.string(forKey: "pickShip") == nil ? "mazeShip1" : UserDefaults.standard.string(forKey: "pickShip")
     var pulauFinish = SKSpriteNode(imageNamed: "finishIsland")
-    var kapalLabirin = SKSpriteNode(imageNamed: UserDefaults.standard.string(forKey: "pickShip")!)
+    var kapalLabirin = SKSpriteNode(imageNamed: (UserDefaults.standard.string(forKey: "pickShip") == nil ? "mazeShip1" : UserDefaults.standard.string(forKey: "pickShip"))!)
     
     let backgroundOpacity = SKSpriteNode(imageNamed: "opacityBackground")
     let background = SKSpriteNode(imageNamed: "backgroundPuzzle")

@@ -13,13 +13,13 @@ class MalinKundang_ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
+    Sound.sharedInstance.playBacksound(file: "startGame", fileExtension: "wav")
     view.backgroundColor = .white
     view = SKView(frame: view.bounds)
     
     if let view = self.view as! SKView? {
       // Initialise the scene
-      let scene = MalinKundang_Scene1(size: CGSize(width: 2048, height: 1536))
+      let scene = MalinKundang_Scene13(size: CGSize(width: 2048, height: 1536))
       scene.scaleMode = .aspectFill
       view.presentScene(scene)
       view.showsPhysics = false
