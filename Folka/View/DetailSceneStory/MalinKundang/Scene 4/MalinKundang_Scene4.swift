@@ -26,9 +26,9 @@ class MalinKundang_Scene4: SKScene {
   var characterMalinSadAnimation: SKAction?
   var characterMalinSay = SKSpriteNode(imageNamed: "malinScene4_2")
   var characterMalinSayAnimation: SKAction?
-  let characterMotherMalinSad = SKSpriteNode(imageNamed: "ibuMalinScene4_1")
+  let characterMotherMalinSad = SKSpriteNode(imageNamed: "malinMomScene4_1")
   var characterMotherMalinSadAnimation: SKAction?
-  var characterMotherMalinSay = SKSpriteNode(imageNamed: "ibuMalinScene4_2")
+  var characterMotherMalinSay = SKSpriteNode(imageNamed: "malinMomScene4_2")
   var characterMotherMalinSayAnimation: SKAction?
   
   //MARK: Button
@@ -92,14 +92,14 @@ class MalinKundang_Scene4: SKScene {
     characterMalinSay.isHidden = true
     addChild(characterMalinSay)
     
-    characterMotherMalinSad.name = "ibuMalinSad"
+    characterMotherMalinSad.name = "malinMomSad"
     characterMotherMalinSad.size = CGSize(width: 1000, height: 1400)
     characterMotherMalinSad.position = CGPoint(x: size.width/3.0, y: size.height/3.1)
     characterMotherMalinSad.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     characterMotherMalinSad.zPosition = 2
     addChild(characterMotherMalinSad)
     
-    characterMotherMalinSay.name = "ibuMalinSay"
+    characterMotherMalinSay.name = "malinMomSay"
     characterMotherMalinSay.size = CGSize(width: 1000, height: 1400)
     characterMotherMalinSay.position = CGPoint(x: size.width/3.0, y: size.height/3.1)
     characterMotherMalinSay.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -194,7 +194,6 @@ class MalinKundang_Scene4: SKScene {
         characterMalinSay.isHidden = true
         textStory.text = dataText[state].textDialogue
       } else if state == 3 {
-        print("tes")
         Sound.sharedInstance.stop()
         let reveal = SKTransition.reveal(with: .left, duration: 1)
         let newScene = MalinKundang_ChooseShip(size: CGSize(width: 2050, height: 1536))
@@ -205,7 +204,6 @@ class MalinKundang_Scene4: SKScene {
       state += 1
       print(state)
       if state == 3 {
-        print("tess")
         Sound.sharedInstance.stop()
         let reveal = SKTransition.reveal(with: .left, duration: 1)
         let newScene = MalinKundang_ChooseShip(size: CGSize(width: 2050, height: 1536))

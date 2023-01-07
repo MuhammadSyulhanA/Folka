@@ -67,10 +67,10 @@
 		98F8DF75293D178200F8D70E /* 02 2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF59293D178200F8D70E /* 02 2.m4a */; };
 		98F8DF76293D178200F8D70E /* 19 1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF5A293D178200F8D70E /* 19 1.m4a */; };
 		98F8DF78293D270400F8D70E /* rainThunder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF77293D270400F8D70E /* rainThunder.mp3 */; };
-		98F8DF7A293D274200F8D70E /* soundOmbak.wav in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF79293D274200F8D70E /* soundOmbak.wav */; };
-		98F8DF7C293D275900F8D70E /* soundKapalBerangkat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF7B293D275900F8D70E /* soundKapalBerangkat.wav */; };
-		98F8DF80293D277F00F8D70E /* soundKapalJalan.wav in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF7F293D277F00F8D70E /* soundKapalJalan.wav */; };
-		98F8DF82293D2DF200F8D70E /* soundMalinJadiBatu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF81293D2DF200F8D70E /* soundMalinJadiBatu.mp3 */; };
+		98F8DF7A293D274200F8D70E /* soundWave.wav in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF79293D274200F8D70E /* soundWave.wav */; };
+		98F8DF7C293D275900F8D70E /* soundShipDeparting.wav in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF7B293D275900F8D70E /* soundShipDeparting.wav */; };
+		98F8DF80293D277F00F8D70E /* soundShipRoad.wav in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF7F293D277F00F8D70E /* soundShipRoad.wav */; };
+		98F8DF82293D2DF200F8D70E /* soundMalinBecomesStone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF81293D2DF200F8D70E /* soundMalinBecomesStone.mp3 */; };
 		98F8DF88293D425600F8D70E /* MalinKundang_EndingStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8DF87293D425600F8D70E /* MalinKundang_EndingStory.swift */; };
 		98F8DF8A293D42DA00F8D70E /* MalinKundang_ChooseShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8DF89293D42DA00F8D70E /* MalinKundang_ChooseShip.swift */; };
 		98F8DF8D293DE90B00F8D70E /* alt 15 6i.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF8B293DE90A00F8D70E /* alt 15 6i.m4a */; };
@@ -84,7 +84,7 @@
 		98F8DF9D293DEE0F00F8D70E /* alt 15 5.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF9A293DEE0F00F8D70E /* alt 15 5.m4a */; };
 		98F8DF9E293DEE0F00F8D70E /* alt 17 3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF9B293DEE0F00F8D70E /* alt 17 3.m4a */; };
 		98F8DFA0293DEE2300F8D70E /* alt 17 2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DF9F293DEE2300F8D70E /* alt 17 2.m4a */; };
-		98F8DFA3293E46E700F8D70E /* ikanPuzzle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DFA1293E46E600F8D70E /* ikanPuzzle.wav */; };
+		98F8DFA3293E46E700F8D70E /* fishPuzzle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DFA1293E46E600F8D70E /* fishPuzzle.wav */; };
 		98F8DFA4293E46E700F8D70E /* labirin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 98F8DFA2293E46E700F8D70E /* labirin.wav */; };
 		A0072D96292BCD4F00D32023 /* MalinKundang_Scene6.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0072D95292BCD4E00D32023 /* MalinKundang_Scene6.swift */; };
 		A018EA09292773BF00FE7451 /* MalinKundang_Puzzle2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018EA08292773BF00FE7451 /* MalinKundang_Puzzle2.swift */; };
@@ -96,7 +96,7 @@
 		A01B3DBD293B8E1500BBDE24 /* HomePage_CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01B3DBB293B8E1500BBDE24 /* HomePage_CollectionCell.xib */; };
 		A01C55B52937240700261695 /* Settings_Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C55B32937240700261695 /* Settings_Screen.swift */; };
 		A01C55BA2937247600261695 /* Settings_Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A01C55B92937247500261695 /* Settings_Screen.xib */; };
-		A01E17AD293E40740036DCC1 /* awalGame.wav in Resources */ = {isa = PBXBuildFile; fileRef = A01E17AC293E40740036DCC1 /* awalGame.wav */; };
+		A01E17AD293E40740036DCC1 /* startGame.wav in Resources */ = {isa = PBXBuildFile; fileRef = A01E17AC293E40740036DCC1 /* startGame.wav */; };
 		A0202800293790D7004694CD /* DetailPage_MalinKundang.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02027FE293790D7004694CD /* DetailPage_MalinKundang.swift */; };
 		A0202801293790D7004694CD /* DetailPage_MalinKundang.xib in Resources */ = {isa = PBXBuildFile; fileRef = A02027FF293790D7004694CD /* DetailPage_MalinKundang.xib */; };
 		A022135C2939046500F40201 /* Onboarding_Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022135A2939046500F40201 /* Onboarding_Screen.swift */; };
@@ -207,10 +207,10 @@
 		98F8DF59293D178200F8D70E /* 02 2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "02 2.m4a"; sourceTree = "<group>"; };
 		98F8DF5A293D178200F8D70E /* 19 1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "19 1.m4a"; sourceTree = "<group>"; };
 		98F8DF77293D270400F8D70E /* rainThunder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rainThunder.mp3; sourceTree = "<group>"; };
-		98F8DF79293D274200F8D70E /* soundOmbak.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = soundOmbak.wav; sourceTree = "<group>"; };
-		98F8DF7B293D275900F8D70E /* soundKapalBerangkat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = soundKapalBerangkat.wav; sourceTree = "<group>"; };
-		98F8DF7F293D277F00F8D70E /* soundKapalJalan.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = soundKapalJalan.wav; sourceTree = "<group>"; };
-		98F8DF81293D2DF200F8D70E /* soundMalinJadiBatu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundMalinJadiBatu.mp3; sourceTree = "<group>"; };
+		98F8DF79293D274200F8D70E /* soundWave.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = soundWave.wav; sourceTree = "<group>"; };
+		98F8DF7B293D275900F8D70E /* soundShipDeparting.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = soundShipDeparting.wav; sourceTree = "<group>"; };
+		98F8DF7F293D277F00F8D70E /* soundShipRoad.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = soundShipRoad.wav; sourceTree = "<group>"; };
+		98F8DF81293D2DF200F8D70E /* soundMalinBecomesStone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundMalinBecomesStone.mp3; sourceTree = "<group>"; };
 		98F8DF87293D425600F8D70E /* MalinKundang_EndingStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_EndingStory.swift; sourceTree = "<group>"; };
 		98F8DF89293D42DA00F8D70E /* MalinKundang_ChooseShip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_ChooseShip.swift; sourceTree = "<group>"; };
 		98F8DF8B293DE90A00F8D70E /* alt 15 6i.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "alt 15 6i.m4a"; sourceTree = "<group>"; };
@@ -224,7 +224,7 @@
 		98F8DF9A293DEE0F00F8D70E /* alt 15 5.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "alt 15 5.m4a"; sourceTree = "<group>"; };
 		98F8DF9B293DEE0F00F8D70E /* alt 17 3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "alt 17 3.m4a"; sourceTree = "<group>"; };
 		98F8DF9F293DEE2300F8D70E /* alt 17 2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "alt 17 2.m4a"; sourceTree = "<group>"; };
-		98F8DFA1293E46E600F8D70E /* ikanPuzzle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ikanPuzzle.wav; sourceTree = "<group>"; };
+		98F8DFA1293E46E600F8D70E /* fishPuzzle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fishPuzzle.wav; sourceTree = "<group>"; };
 		98F8DFA2293E46E700F8D70E /* labirin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = labirin.wav; sourceTree = "<group>"; };
 		A0072D95292BCD4E00D32023 /* MalinKundang_Scene6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Scene6.swift; sourceTree = "<group>"; };
 		A018EA08292773BF00FE7451 /* MalinKundang_Puzzle2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MalinKundang_Puzzle2.swift; sourceTree = "<group>"; };
@@ -236,7 +236,7 @@
 		A01B3DBB293B8E1500BBDE24 /* HomePage_CollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePage_CollectionCell.xib; sourceTree = "<group>"; };
 		A01C55B32937240700261695 /* Settings_Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings_Screen.swift; sourceTree = "<group>"; };
 		A01C55B92937247500261695 /* Settings_Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Settings_Screen.xib; sourceTree = "<group>"; };
-		A01E17AC293E40740036DCC1 /* awalGame.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = awalGame.wav; sourceTree = "<group>"; };
+		A01E17AC293E40740036DCC1 /* startGame.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = startGame.wav; sourceTree = "<group>"; };
 		A02027FE293790D7004694CD /* DetailPage_MalinKundang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage_MalinKundang.swift; sourceTree = "<group>"; };
 		A02027FF293790D7004694CD /* DetailPage_MalinKundang.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPage_MalinKundang.xib; sourceTree = "<group>"; };
 		A022135A2939046500F40201 /* Onboarding_Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding_Screen.swift; sourceTree = "<group>"; };
@@ -483,9 +483,9 @@
 		69EADE8B293BA3D7000A31A3 /* Effect */ = {
 			isa = PBXGroup;
 			children = (
-				98F8DF81293D2DF200F8D70E /* soundMalinJadiBatu.mp3 */,
-				98F8DF7F293D277F00F8D70E /* soundKapalJalan.wav */,
-				98F8DF7B293D275900F8D70E /* soundKapalBerangkat.wav */,
+				98F8DF81293D2DF200F8D70E /* soundMalinBecomesStone.mp3 */,
+				98F8DF7F293D277F00F8D70E /* soundShipRoad.wav */,
+				98F8DF7B293D275900F8D70E /* soundShipDeparting.wav */,
 				A0E8B756293C665400C0299E /* soundFailed.wav */,
 				A0E8B757293C665400C0299E /* soundSucces.wav */,
 				69EADE8C293BA3FE000A31A3 /* soundClick.wav */,
@@ -618,11 +618,11 @@
 		98F8DF36293CA63B00F8D70E /* Background Music */ = {
 			isa = PBXGroup;
 			children = (
-				A01E17AC293E40740036DCC1 /* awalGame.wav */,
+				A01E17AC293E40740036DCC1 /* startGame.wav */,
 				984801EE293E51AE0083DD86 /* chicken.mp3 */,
-				98F8DFA1293E46E600F8D70E /* ikanPuzzle.wav */,
+				98F8DFA1293E46E600F8D70E /* fishPuzzle.wav */,
 				98F8DFA2293E46E700F8D70E /* labirin.wav */,
-				98F8DF79293D274200F8D70E /* soundOmbak.wav */,
+				98F8DF79293D274200F8D70E /* soundWave.wav */,
 				98F8DF77293D270400F8D70E /* rainThunder.mp3 */,
 				98F8DF37293CA66F00F8D70E /* wave.mp3 */,
 			);
@@ -851,7 +851,7 @@
 				98F8DF6A293D178200F8D70E /* 12 1.m4a in Resources */,
 				98F8DF5C293D178200F8D70E /* 17 2.m4a in Resources */,
 				98F8DF6F293D178200F8D70E /* 09.m4a in Resources */,
-				98F8DF80293D277F00F8D70E /* soundKapalJalan.wav in Resources */,
+				98F8DF80293D277F00F8D70E /* soundShipRoad.wav in Resources */,
 				98F8DF60293D178200F8D70E /* 11 3.m4a in Resources */,
 				69C5500C291A0C5D00E1CEF7 /* LaunchScreen.storyboard in Resources */,
 				98F8DF66293D178200F8D70E /* 10.m4a in Resources */,
@@ -867,8 +867,8 @@
 				98F8DF5F293D178200F8D70E /* 17 1.m4a in Resources */,
 				A0E8B753293C5B1300C0299E /* NunitoHeavy-Italic.ttf in Resources */,
 				98F8DF94293DE92100F8D70E /* 04 3.m4a in Resources */,
-				A01E17AD293E40740036DCC1 /* awalGame.wav in Resources */,
-				98F8DFA3293E46E700F8D70E /* ikanPuzzle.wav in Resources */,
+				A01E17AD293E40740036DCC1 /* startGame.wav in Resources */,
+				98F8DFA3293E46E700F8D70E /* fishPuzzle.wav in Resources */,
 				98F8DF69293D178200F8D70E /* 16.m4a in Resources */,
 				98F8DF68293D178200F8D70E /* 15  1.m4a in Resources */,
 				98F8DF6E293D178200F8D70E /* 01 2.m4a in Resources */,
@@ -895,7 +895,7 @@
 				A0E8B742293C5B1300C0299E /* Nunito-Medium.ttf in Resources */,
 				98F8DF98293DE92100F8D70E /* alt 15 3.m4a in Resources */,
 				98F8DF67293D178200F8D70E /* 07.m4a in Resources */,
-				98F8DF7A293D274200F8D70E /* soundOmbak.wav in Resources */,
+				98F8DF7A293D274200F8D70E /* soundWave.wav in Resources */,
 				98F8DF5B293D178200F8D70E /* alt 15 1.m4a in Resources */,
 				A0E8B74F293C5B1300C0299E /* SIL Open Font License.txt in Resources */,
 				A0E8B749293C5B1300C0299E /* Nunito-BoldItalic.ttf in Resources */,
@@ -910,7 +910,7 @@
 				A01B3DBD293B8E1500BBDE24 /* HomePage_CollectionCell.xib in Resources */,
 				98F8DF76293D178200F8D70E /* 19 1.m4a in Resources */,
 				98F8DF9C293DEE0F00F8D70E /* 15 7.m4a in Resources */,
-				98F8DF82293D2DF200F8D70E /* soundMalinJadiBatu.mp3 in Resources */,
+				98F8DF82293D2DF200F8D70E /* soundMalinBecomesStone.mp3 in Resources */,
 				98F8DF74293D178200F8D70E /* 19 2.m4a in Resources */,
 				A0E8B74D293C5B1300C0299E /* Nunito-Italic.ttf in Resources */,
 				98F8DFA4293E46E700F8D70E /* labirin.wav in Resources */,
@@ -922,7 +922,7 @@
 				98F8DF9D293DEE0F00F8D70E /* alt 15 5.m4a in Resources */,
 				A0E8B743293C5B1300C0299E /* Nunito-ExtraLight.ttf in Resources */,
 				A02774F42939FD40005F1ADF /* Onboarding_CollectionCell.xib in Resources */,
-				98F8DF7C293D275900F8D70E /* soundKapalBerangkat.wav in Resources */,
+				98F8DF7C293D275900F8D70E /* soundShipDeparting.wav in Resources */,
 				98F8DF63293D178200F8D70E /* 15 6.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

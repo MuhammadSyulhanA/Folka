@@ -42,7 +42,7 @@ class Settings_Screen: UIViewController, UITextFieldDelegate {
     textFieldChangeName.isUserInteractionEnabled = false
     
     buttonChangeName.setTitle("", for: .normal)
-    customButtonChangeNama = UIImage(named: "buttonUbahNama")
+    customButtonChangeNama = UIImage(named: "buttonChangeName")
     buttonChangeName.setImage(customButtonChangeNama?.withRenderingMode(.alwaysOriginal), for: .normal)
     
     buttonSound.setTitle("", for: .normal)
@@ -102,7 +102,7 @@ class Settings_Screen: UIViewController, UITextFieldDelegate {
         sender.transform = CGAffineTransform.init(scaleX: 1, y: 1)
       })
       buttonChangeName.setTitle("", for: .normal)
-      customButtonChangeNama = UIImage(named: "buttonUbahNama")
+      customButtonChangeNama = UIImage(named: "buttonChangeName")
       buttonChangeName.setImage(customButtonChangeNama?.withRenderingMode(.alwaysOriginal), for: .normal)
       UserDefaults.standard.set(textFieldChangeName.text!, forKey: "name")
       UserDefaults.standard.synchronize()
@@ -116,7 +116,7 @@ class Settings_Screen: UIViewController, UITextFieldDelegate {
       })
       textFieldChangeName.isUserInteractionEnabled = true
       buttonChangeName.setTitle("", for: .normal)
-      customButtonChangeNama = UIImage(named: "buttonSimpan")
+      customButtonChangeNama = UIImage(named: "buttonSave")
       buttonChangeName.setImage(customButtonChangeNama?.withRenderingMode(.alwaysOriginal), for: .normal)
     }
   }

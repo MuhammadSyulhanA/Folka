@@ -27,9 +27,9 @@ class Onboarding_Screen: UIViewController, UICollectionViewDataSource, UICollect
   override func viewDidLoad() {
     super.viewDidLoad()
     assignbackground()
-    Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
+    Sound.sharedInstance.playBacksound(file: "startGame", fileExtension: "wav")
     buttonStart.setTitle("", for: .normal)
-    customButtonMulai = UIImage(named: "buttonMulaiBoarding")
+    customButtonMulai = UIImage(named: "buttonStartBoarding")
     buttonStart.setImage(customButtonMulai?.withRenderingMode(.alwaysOriginal), for: .normal)
     buttonStart.isHidden = true
     collectionViewImage.dataSource = self

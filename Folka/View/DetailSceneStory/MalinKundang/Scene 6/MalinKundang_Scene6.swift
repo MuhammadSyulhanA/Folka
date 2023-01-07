@@ -13,13 +13,13 @@ class MalinKundang_Scene6: SKScene {
   let backgroundScene6 = SKSpriteNode(imageNamed: "backgroundScene6")
   
   //MARK: Non Character
-  let nonCharacterWood = SKSpriteNode(imageNamed: "kayuScene6")
-  let nonCharacterShip = UserDefaults.standard.string(forKey: "pickShip")! == "objectOneShip" ? SKSpriteNode(imageNamed: "kapalScene6_1") : SKSpriteNode(imageNamed: "kapalScene6_2")
+  let nonCharacterWood = SKSpriteNode(imageNamed: "woodScene6")
+  let nonCharacterShip = UserDefaults.standard.string(forKey: "pickShip")! == "objectOneShip" ? SKSpriteNode(imageNamed: "shipScene6_1") : SKSpriteNode(imageNamed: "shipScene6_2")
   
   //MARK: Character
   let characterMalin = SKSpriteNode(imageNamed: "malinScene1_1")
   var animationMalin: SKAction?
-  let characterMalinMother = SKSpriteNode(imageNamed: "ibuMalinScene6_1")
+  let characterMalinMother = SKSpriteNode(imageNamed: "malinMomScene6_1")
   var animationMalinMother: SKAction?
   
   //MARK: Button
@@ -46,7 +46,7 @@ class MalinKundang_Scene6: SKScene {
     addChild(backgroundScene6)
     
     //MARK: Non Character
-    nonCharacterShip.name = "kapalScene6"
+    nonCharacterShip.name = "shipScene6"
     nonCharacterShip.size = CGSize(width: 1200, height: 650)
     nonCharacterShip.position = CGPoint(x: size.width/1.7, y: size.height/1.9)
     nonCharacterShip.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -60,7 +60,7 @@ class MalinKundang_Scene6: SKScene {
     addChild(nonCharacterWood)
     
     //MARK: Character
-    characterMalinMother.name = "ibuMalin"
+    characterMalinMother.name = "malinMom"
     characterMalinMother.size = CGSize(width: 450, height: 600)
     characterMalinMother.position = CGPoint(x: size.width/7, y: size.height/2.5)
     characterMalinMother.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -90,7 +90,7 @@ class MalinKundang_Scene6: SKScene {
     addChild(buttonHome)
     
     //MARK: Sound
-    Sound.sharedInstance.playDubbing(file: "soundKapalBerangkat", fileExtension: "wav")
+    Sound.sharedInstance.playDubbing(file: "soundShipDeparting", fileExtension: "wav")
     
   }
   
@@ -99,7 +99,7 @@ class MalinKundang_Scene6: SKScene {
   override init(size: CGSize){
     var textures1: [SKTexture] = []
     for index in 1...2 {
-      textures1.append(SKTexture(imageNamed: "ibuMalinScene6_\(index)"))
+      textures1.append(SKTexture(imageNamed: "malinMomScene6_\(index)"))
     }
     let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
     let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
@@ -167,13 +167,13 @@ class MalinKundang_Scene6: SKScene {
   }
   
   func startMalinMotherAnimation() {
-    if characterMalinMother.action(forKey: "Ibu Malin Scene1") == nil {
+    if characterMalinMother.action(forKey: "Malin Mom Scene1") == nil {
       characterMalinMother.run(SKAction.repeatForever(animationMalinMother!), withKey: "Ibu Malin Scene1")
     }
   }
   
   func stopMalinMotherAnimation() {
-    characterMalinMother.removeAction(forKey: "Ibu Malin Scene1")
+    characterMalinMother.removeAction(forKey: "Malin Mom Scene1")
   }
   
   
@@ -200,7 +200,7 @@ class MalinKundang_Scene6: SKScene {
     }else if atPoint((touch?.location(in: self))!).name == buttonHome.name {
       enumerateChildNodes(withName: "//*") { [self] (node, stop) in
         if node.name == "buttonHome" {
-          Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
+          Sound.sharedInstance.playBacksound(file: "startGame", fileExtension: "wav")
           buttonHomeScene()
         }
       }

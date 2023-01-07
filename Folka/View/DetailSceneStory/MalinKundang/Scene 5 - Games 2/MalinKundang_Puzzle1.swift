@@ -14,52 +14,52 @@ class MalinKundang_Puzzle1: SKScene{
   let moveableNode = SKNode()
   
   //MARK: Pop Up
-  let popUpStart = SKSpriteNode(imageNamed: "popUpPuzzleSatu")
-  let popUpFinish = SKSpriteNode(imageNamed: "popUpSuksesKapalSatu")
+  let popUpStart = SKSpriteNode(imageNamed: "popUpPuzzleFirst")
+  let popUpFinish = SKSpriteNode(imageNamed: "popUpSuccesShipFirst")
   
   //MARK: Background
   let backgroundOpacity = SKSpriteNode(imageNamed: "opacityBackground")
   let background = SKSpriteNode(imageNamed: "backgroundPuzzle")
   
   //MARK: Button
-  let buttonClose = SKSpriteNode(imageNamed: "buttonTutup")
+  let buttonClose = SKSpriteNode(imageNamed: "buttonClose")
   let buttonCloseAction: SKAction?
-  let buttonNextStory = SKSpriteNode(imageNamed: "buttonLanjutkanCeritaPuzzle")
+  let buttonNextStory = SKSpriteNode(imageNamed: "buttonNextStoryPuzzle")
   var buttonNextStoryAction: SKAction?
-  let buttonReplayGame = SKSpriteNode(imageNamed: "buttonMainLagiPuzzle")
+  let buttonReplayGame = SKSpriteNode(imageNamed: "buttonPlayAgainPuzzle")
   var buttonReplayAction: SKAction?
   let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
   let buttonHomeAction: SKAction?
-  let buttonQuestion = SKSpriteNode(imageNamed: "buttonTanya")
+  let buttonQuestion = SKSpriteNode(imageNamed: "buttonAsk")
   let buttonQuestionAction: SKAction?
   
   //MARK: Non Character
-  let nonCharacterWoodPuzzle  = SKSpriteNode(imageNamed: "kayuPuzzle")
-  let nonCharacterOutlineShip = SKSpriteNode(imageNamed: "outlineKapalPuzzleDua")
+  let nonCharacterWoodPuzzle  = SKSpriteNode(imageNamed: "woodPuzzle")
+  let nonCharacterOutlineShip = SKSpriteNode(imageNamed: "outlineShipFirst")
   
   //MARK: Small Puzzles
-  let smallUpperHullPuzzle = SKSpriteNode(imageNamed: "badanKapalAtas")
-  let smallLowerHullPuzzle = SKSpriteNode(imageNamed: "badanKapalBawah")
-  let smallMindshipHullPuzzle = SKSpriteNode(imageNamed: "badanKapalTengah")
-  let smallShipRoundPuzzle = SKSpriteNode(imageNamed: "bulatTigaKapal")
-  let smallShipYellowLinePuzzle = SKSpriteNode(imageNamed: "garisKuningKapal")
-  let smallShipRoofPuzzle = SKSpriteNode(imageNamed: "atapKapalDua")
-  let smallShipManyWindowsPuzzle = SKSpriteNode(imageNamed: "jendelaBanyakKapal")
-  let smallShipWindowPuzzle = SKSpriteNode(imageNamed: "jendelaKapalDua")
-  let smallShipFlagPuzzle = SKSpriteNode(imageNamed: "benderaKapal")
-  let smallLifebuoyPuzzle = SKSpriteNode(imageNamed: "pelampungKapalDua")
+  let smallUpperHullPuzzle = SKSpriteNode(imageNamed: "upperHullFirst")
+  let smallLowerHullPuzzle = SKSpriteNode(imageNamed: "lowerHullFirst")
+  let smallMindshipHullPuzzle = SKSpriteNode(imageNamed: "mindshipHullFirst")
+  let smallShipRoundPuzzle = SKSpriteNode(imageNamed: "roundShipFirst")
+  let smallShipYellowLinePuzzle = SKSpriteNode(imageNamed: "yellowLineShipFirst")
+  let smallShipRoofPuzzle = SKSpriteNode(imageNamed: "roofShipFirst")
+  let smallShipManyWindowsPuzzle = SKSpriteNode(imageNamed: "manyWindowsShipFirst")
+  let smallShipWindowPuzzle = SKSpriteNode(imageNamed: "windowShipFirst")
+  let smallShipFlagPuzzle = SKSpriteNode(imageNamed: "flagShipFirst")
+  let smallLifebuoyPuzzle = SKSpriteNode(imageNamed: "lifebouyShipFirst")
   
   //MARK: Big Puzzles
-  let bigUpperHullPuzzle = SKSpriteNode(imageNamed: "badanKapalAtas")
-  let bigLowerHullPuzzle = SKSpriteNode(imageNamed: "badanKapalBawah")
-  let bigMindshipHullPuzzle = SKSpriteNode(imageNamed: "badanKapalTengah")
-  let bigShipRoundPuzzle = SKSpriteNode(imageNamed: "bulatTigaKapal")
-  let bigShipYellowLinePuzzle = SKSpriteNode(imageNamed: "garisKuningKapal")
-  let bigShipRoofPuzzle = SKSpriteNode(imageNamed: "atapKapalDua")
-  let bigShipManyWindowsPuzzle = SKSpriteNode(imageNamed: "jendelaBanyakKapal")
-  let bigShipWindowPuzzle = SKSpriteNode(imageNamed: "jendelaKapalDua")
-  let bigShipFlagPuzzle = SKSpriteNode(imageNamed: "benderaKapal")
-  let bigLifebuoyPuzzle = SKSpriteNode(imageNamed: "pelampungKapalDua")
+  let bigUpperHullPuzzle = SKSpriteNode(imageNamed: "upperHullFirst")
+  let bigLowerHullPuzzle = SKSpriteNode(imageNamed: "lowerHullFirst")
+  let bigMindshipHullPuzzle = SKSpriteNode(imageNamed: "mindshipHullFirst")
+  let bigShipRoundPuzzle = SKSpriteNode(imageNamed: "roundShipFirst")
+  let bigShipYellowLinePuzzle = SKSpriteNode(imageNamed: "yellowLineShipFirst")
+  let bigShipRoofPuzzle = SKSpriteNode(imageNamed: "roofShipFirst")
+  let bigShipManyWindowsPuzzle = SKSpriteNode(imageNamed: "manyWindowsShipFirst")
+  let bigShipWindowPuzzle = SKSpriteNode(imageNamed: "windowShipFirst")
+  let bigShipFlagPuzzle = SKSpriteNode(imageNamed: "flagShipFirst")
+  let bigLifebuoyPuzzle = SKSpriteNode(imageNamed: "lifebouyShipFirst")
   
   //MARK: Sound and Music
   var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
@@ -148,7 +148,7 @@ class MalinKundang_Puzzle1: SKScene{
     addChild(buttonHome)
     
     buttonQuestion.size = CGSize(width: 150, height: 150)
-    buttonQuestion.position = CGPoint(x: size.width/17, y: size.height/1.58)
+    buttonQuestion.position = CGPoint(x: size.width/17, y: size.height/1.68)
     buttonQuestion.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     buttonQuestion.zPosition = 2
     buttonQuestion.name = "buttonTanya"
@@ -309,6 +309,8 @@ class MalinKundang_Puzzle1: SKScene{
     bigShipRoofPuzzle.zPosition = 3
     bigShipRoofPuzzle.alpha = 0
     addChild(bigShipRoofPuzzle)
+    
+    Sound.sharedInstance.playBacksound(file: "fishPuzzle", fileExtension: "wav")
   }
   
   //MARK: Touches

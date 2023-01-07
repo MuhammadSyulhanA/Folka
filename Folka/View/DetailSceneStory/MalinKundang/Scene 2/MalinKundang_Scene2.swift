@@ -177,9 +177,8 @@ class MalinKundang_Scene2: SKScene {
       Sound.sharedInstance.stop()
       Sound.sharedInstance.stopBacksound()
       buttonHome.run((buttonHomeAction!), withKey: "Button Home")
-      //            let prevScene = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
       self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
-      Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
+      Sound.sharedInstance.playBacksound(file: "startGame", fileExtension: "wav")
     }
   }
   

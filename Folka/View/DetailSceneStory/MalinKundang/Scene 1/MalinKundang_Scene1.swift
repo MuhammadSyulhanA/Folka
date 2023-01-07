@@ -20,7 +20,7 @@ class MalinKundang_Scene1: SKScene {
   //MARK: Character
   let characterMalin = SKSpriteNode(imageNamed: "malinScene1_1")
   var animationMalin: SKAction?
-  let characterIbuMalin = SKSpriteNode(imageNamed: "ibuMalinScene1_1")
+  let characterMalinMom = SKSpriteNode(imageNamed: "malinMomScene1_1")
   var animationIbuMalin: SKAction?
   
   //MARK: Non Character
@@ -141,15 +141,15 @@ class MalinKundang_Scene1: SKScene {
     characterMalin.zPosition = 2
     addChild(characterMalin)
     
-    characterIbuMalin.name = "ibuMalin"
-    characterIbuMalin.size = CGSize(width: 450, height: 600)
-    characterIbuMalin.position = CGPoint(x: size.width/3.0, y: size.height/1.9)
-    characterIbuMalin.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-    characterIbuMalin.zPosition = 2
-    addChild(characterIbuMalin)
+    characterMalinMom.name = "malinMom"
+    characterMalinMom.size = CGSize(width: 450, height: 600)
+    characterMalinMom.position = CGPoint(x: size.width/3.0, y: size.height/1.9)
+    characterMalinMom.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+    characterMalinMom.zPosition = 2
+    addChild(characterMalinMom)
     
     Sound.sharedInstance.playDubbing(file: "01 1", fileExtension: "m4a")
-    Sound.sharedInstance.playBacksound(file: "soundOmbak", fileExtension: "wav")
+    Sound.sharedInstance.playBacksound(file: "soundWave", fileExtension: "wav")
     
   }
   
@@ -180,7 +180,7 @@ class MalinKundang_Scene1: SKScene {
     Sound.sharedInstance.stop()
     Sound.sharedInstance.stopBacksound()
     self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
-    Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
+    Sound.sharedInstance.playBacksound(file: "startGame", fileExtension: "wav")
   }
   
   //MARK: Animation
@@ -232,13 +232,13 @@ class MalinKundang_Scene1: SKScene {
   }
   
   func startIbuMalinAnimation() {
-    if characterIbuMalin.action(forKey: "Ibu Malin Scene1") == nil {
-      characterIbuMalin.run(SKAction.repeatForever(animationIbuMalin!), withKey: "Ibu Malin Scene1")
+    if characterMalinMom.action(forKey: "Malin Mom Scene1") == nil {
+      characterMalinMom.run(SKAction.repeatForever(animationIbuMalin!), withKey: "Malin Mom Scene1")
     }
   }
   
   func stopIbuMalinAnimation() {
-    characterIbuMalin.removeAction(forKey: "Ibu Malin Scene1")
+    characterMalinMom.removeAction(forKey: "Ibu Malin Scene1")
   }
   
   func startTreeAnimation() {
@@ -279,14 +279,14 @@ class MalinKundang_Scene1: SKScene {
           }
         }
       }
-    }else if atPoint((touch?.location(in: self))!).name == characterIbuMalin.name {
+    }else if atPoint((touch?.location(in: self))!).name == characterMalinMom.name {
       enumerateChildNodes(withName: "//*") { [self] (node, stop) in
-        if !self.characterIbuMalin.hasActions(){
-          if node.name == "ibuMalin" {
+        if !self.characterMalinMom.hasActions(){
+          if node.name == "malinMom" {
             startIbuMalinAnimation()
           }
         }else{
-          if node.name == "ibuMalin" {
+          if node.name == "malinMom" {
             stopIbuMalinAnimation()
           }
         }

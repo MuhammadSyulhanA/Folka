@@ -13,22 +13,22 @@ class MalinKundang_ChooseShip: SKScene {
   let backgroundPuzzle = SKSpriteNode(imageNamed: "backgroundPuzzle")
   
   //MARK: Non Character
-  let nonCharacterTitle = SKSpriteNode(imageNamed: "judulPilihPuzzle")
-  let nonCharacterWoodChoose1 = SKSpriteNode(imageNamed: "backgroundKayuMilih")
+  let nonCharacterTitle = SKSpriteNode(imageNamed: "titleChoosePuzzle")
+  let nonCharacterWoodChoose1 = SKSpriteNode(imageNamed: "rectangleChooseWood")
   var animateWoodChoose1: SKAction?
-  let nonCharacterWoodChoose2 = SKSpriteNode(imageNamed: "backgroundKayuMilih")
+  let nonCharacterWoodChoose2 = SKSpriteNode(imageNamed: "rectangleChooseWood")
   var animateWoodChoose2: SKAction?
-  let nonCharacterWood1 = SKSpriteNode(imageNamed: "backgroundKayu")
+  let nonCharacterWood1 = SKSpriteNode(imageNamed: "rectangleWood")
   var animateWood1: SKAction?
-  let nonCharacterWood2 = SKSpriteNode(imageNamed: "backgroundKayu")
+  let nonCharacterWood2 = SKSpriteNode(imageNamed: "rectangleWood")
   var animateWood2: SKAction?
-  let nonCharacterOneShip = SKSpriteNode(imageNamed: "objectKapalSatu")
+  let nonCharacterOneShip = SKSpriteNode(imageNamed: "shipOne")
   var animationOneShip: SKAction?
-  let nonCharacterTwoShip = SKSpriteNode(imageNamed: "objectKapalDua")
+  let nonCharacterTwoShip = SKSpriteNode(imageNamed: "shipSecond")
   var animationTwoShip: SKAction?
   
   //MARK: Button
-  let buttonStart = SKSpriteNode(imageNamed: "buttonMulai")
+  let buttonStart = SKSpriteNode(imageNamed: "buttonStart")
   var buttonStartAction: SKAction?
   var state = 0
   

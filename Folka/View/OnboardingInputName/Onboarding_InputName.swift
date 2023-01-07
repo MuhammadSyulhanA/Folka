@@ -18,7 +18,7 @@ class Onboarding_InputName: UIViewController, UITextFieldDelegate {
     self.setupToHideKeyboardOnTapOnView()
     self.definesPresentationContext = true
     buttonFinish.setTitle("", for: .normal)
-    customButton = UIImage(named: "buttonSelesai")
+    customButton = UIImage(named: "buttonEnd")
     buttonFinish.setImage(customButton?.withRenderingMode(.alwaysOriginal), for: .normal)
     textField.delegate = self
   }

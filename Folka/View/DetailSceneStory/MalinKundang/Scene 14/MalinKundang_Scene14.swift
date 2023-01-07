@@ -17,7 +17,7 @@ class MalinKundang_Scene14: SKScene {
     //MARK: Non Character
     let nonCharacterSea = SKSpriteNode(imageNamed: "backgroundSeaZoom")
     let nonCharacterWood = SKSpriteNode(imageNamed: "woodScene6")
-    let nonCharacterBoat1 = UserDefaults.standard.string(forKey: "kapalPilih")! == "objectKapalSatu" ? SKSpriteNode(imageNamed: "shipScene14_1") : SKSpriteNode(imageNamed: "shipScene14_2")
+    let nonCharacterBoat1 = UserDefaults.standard.string(forKey: "pickShip")! == "objectOneShip" ? SKSpriteNode(imageNamed: "shipScene14_1") : SKSpriteNode(imageNamed: "shipScene14_2")
     let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
     
     //MARK: Character

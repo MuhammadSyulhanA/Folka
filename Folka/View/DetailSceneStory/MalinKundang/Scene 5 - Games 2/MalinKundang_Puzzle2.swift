@@ -13,46 +13,46 @@ import AVFoundation
 
 class MalinKundang_Puzzle2: SKScene{
   //MARK: Pop Up
-  let popUpStart = SKSpriteNode(imageNamed: "popUpPuzzleDua")
-  let popUpFinish = SKSpriteNode(imageNamed: "popUpSuksesKapalDua")
+  let popUpStart = SKSpriteNode(imageNamed: "popUpPuzzleSecond")
+  let popUpFinish = SKSpriteNode(imageNamed: "popUpSuccesShipSecond")
   
   //MARK: Background
   let backgroundOpacity = SKSpriteNode(imageNamed: "opacityBackground")
   let background = SKSpriteNode(imageNamed: "backgroundPuzzle")
   
   //MARK: Button
-  let buttonClose = SKSpriteNode(imageNamed: "buttonTutup")
+  let buttonClose = SKSpriteNode(imageNamed: "buttonClose")
   let buttonCloseAction: SKAction?
-  let buttonNextStory = SKSpriteNode(imageNamed: "buttonLanjutkanCeritaPuzzle")
+  let buttonNextStory = SKSpriteNode(imageNamed: "buttonNextStoryPuzzle")
   var buttonNextStoryAction: SKAction?
-  let buttonReplayGame = SKSpriteNode(imageNamed: "buttonMainLagiPuzzle")
+  let buttonReplayGame = SKSpriteNode(imageNamed: "buttonPlayAgainPuzzle")
   var buttonReplayAction: SKAction?
   let buttonHome = SKSpriteNode(imageNamed: "buttonHome")
   let buttonHomeAction: SKAction?
-  let buttonQuestion = SKSpriteNode(imageNamed: "buttonTanya")
+  let buttonQuestion = SKSpriteNode(imageNamed: "buttonAsk")
   let buttonQuestionAction: SKAction?
   
   //MARK: Non Character
-  let nonCharacterWoodPuzzle = SKSpriteNode(imageNamed: "kayuPuzzle")
-  let nonCharacterOutlineShip = SKSpriteNode(imageNamed: "outlineKapalPuzzleSatu")
+  let nonCharacterWoodPuzzle = SKSpriteNode(imageNamed: "woodPuzzle")
+  let nonCharacterOutlineShip = SKSpriteNode(imageNamed: "outlineShipSecond")
   
   //MARK: Small Puzzles
-  let smallHullPuzzle = SKSpriteNode(imageNamed: "badanKapal")
-  let smallShipRoofPuzzle = SKSpriteNode(imageNamed: "atapKapalMerah")
-  let smallFrontHullPuzzle = SKSpriteNode(imageNamed: "badanKapalDepan")
-  let smallRearHullPuzzle = SKSpriteNode(imageNamed: "badanKapalBelakang")
-  let smallShipYellowLinePuzzle = SKSpriteNode(imageNamed: "garisKuningKapal")
-  let smallShipWindowPuzzle = SKSpriteNode(imageNamed: "jendelaKapal")
-  let smallLifebuoyPuzzle = SKSpriteNode(imageNamed: "pelampungKapal")
+  let smallHullPuzzle = SKSpriteNode(imageNamed: "hullShipSecond")
+  let smallShipRoofPuzzle = SKSpriteNode(imageNamed: "roofShipSecond")
+  let smallFrontHullPuzzle = SKSpriteNode(imageNamed: "frontHullSecond")
+  let smallRearHullPuzzle = SKSpriteNode(imageNamed: "rearHullSecond")
+  let smallShipYellowLinePuzzle = SKSpriteNode(imageNamed: "yellowLineShipSecond")
+  let smallShipWindowPuzzle = SKSpriteNode(imageNamed: "windowShipSecond")
+  let smallLifebuoyPuzzle = SKSpriteNode(imageNamed: "lifebouyShipSecond")
   
   //MARK: Big Puzzles
-  let bigHullPuzzle = SKSpriteNode(imageNamed: "badanKapal")
-  let bigShipRoofPuzzle = SKSpriteNode(imageNamed: "atapKapalMerah")
-  let bigFrontHullPuzzle = SKSpriteNode(imageNamed: "badanKapalDepan")
-  let bigRearHullPuzzle = SKSpriteNode(imageNamed: "badanKapalBelakang")
-  let bigShipYellowLinePuzzle = SKSpriteNode(imageNamed: "garisKuningKapal")
-  let bigShipWindowPuzzle = SKSpriteNode(imageNamed: "jendelaKapal")
-  let bigLifebuoyPuzzle = SKSpriteNode(imageNamed: "pelampungKapal")
+  let bigHullPuzzle = SKSpriteNode(imageNamed: "hullShipSecond")
+  let bigShipRoofPuzzle = SKSpriteNode(imageNamed: "roofShipSecond")
+  let bigFrontHullPuzzle = SKSpriteNode(imageNamed: "frontHullSecond")
+  let bigRearHullPuzzle = SKSpriteNode(imageNamed: "rearHullSecond")
+  let bigShipYellowLinePuzzle = SKSpriteNode(imageNamed: "yellowLineShipSecond")
+  let bigShipWindowPuzzle = SKSpriteNode(imageNamed: "windowShipSecond")
+  let bigLifebuoyPuzzle = SKSpriteNode(imageNamed: "lifebouyShipSecond")
   
   //MARK: Sound and Music
   var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
@@ -128,7 +128,7 @@ class MalinKundang_Puzzle2: SKScene{
     addChild(buttonReplayGame)
     
     buttonClose.size = CGSize(width: 580, height: 130)
-    buttonClose.name = "buttonTutup"
+    buttonClose.name = "buttonClose"
     buttonClose.position = CGPoint(x: size.width/2, y: size.height/3.4)
     buttonClose.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     buttonClose.zPosition = 6
@@ -136,17 +136,17 @@ class MalinKundang_Puzzle2: SKScene{
     addChild( buttonClose)
     
     buttonHome.size = CGSize(width: 150, height: 150)
-    buttonHome.position = CGPoint(x: size.width/17, y: size.height/1.28)
+    buttonHome.position = CGPoint(x: size.width/17, y: size.height/1.38)
     buttonHome.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     buttonHome.zPosition = 0
     buttonHome.name = "buttonHome"
     addChild(buttonHome)
     
     buttonQuestion.size = CGSize(width: 150, height: 150)
-    buttonQuestion.position = CGPoint(x: size.width/17, y: size.height/1.48)
+    buttonQuestion.position = CGPoint(x: size.width/17, y: size.height/1.68)
     buttonQuestion.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     buttonQuestion.zPosition = 2
-    buttonQuestion.name = "buttonTanya"
+    buttonQuestion.name = "buttonAsk"
     addChild(buttonQuestion)
     
     //MARK: Non Character
@@ -163,7 +163,7 @@ class MalinKundang_Puzzle2: SKScene{
     addChild(nonCharacterWoodPuzzle)
     
     //MARK: Small Puzzles Position
-    smallHullPuzzle.name = "puzzleKecilBadanKapal"
+    smallHullPuzzle.name = "smallHullPuzzle"
     smallHullPuzzle.scale(to: CGSize(width: 320, height: 100))
     smallHullPuzzle.position = CGPoint(x: size.width/1.13, y: size.height/1.35)
     smallHullPuzzle.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -171,42 +171,42 @@ class MalinKundang_Puzzle2: SKScene{
     smallHullPuzzle.zPosition = 3
     addChild(smallHullPuzzle)
     
-    smallLifebuoyPuzzle.name = "puzzleKecilPelampung"
+    smallLifebuoyPuzzle.name = "smallLifebuoyPuzzle"
     smallLifebuoyPuzzle.scale(to: CGSize(width: 230, height: 100))
     smallLifebuoyPuzzle.position = CGPoint(x: size.width/1.13, y: size.height/1.55)
     smallLifebuoyPuzzle.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     smallLifebuoyPuzzle.zPosition = 3
     addChild(smallLifebuoyPuzzle)
     
-    smallRearHullPuzzle.name = "puzzleKecilBadanAtasKapal2"
+    smallRearHullPuzzle.name = "smallRearHullPuzzle"
     smallRearHullPuzzle.scale(to: CGSize(width: 230, height: 90))
     smallRearHullPuzzle.position = CGPoint(x: size.width/1.13, y: size.height/1.80)
     smallRearHullPuzzle.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     smallRearHullPuzzle.zPosition = 3
     addChild(smallRearHullPuzzle)
     
-    smallFrontHullPuzzle.name = "puzzleKecilBadanAtasKapal1"
+    smallFrontHullPuzzle.name = "smallFrontHullPuzzle"
     smallFrontHullPuzzle.scale(to: CGSize(width: 230, height: 100))
     smallFrontHullPuzzle.position = CGPoint(x: size.width/1.13, y: size.height/2.10)
     smallFrontHullPuzzle.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     smallFrontHullPuzzle.zPosition = 3
     addChild(smallFrontHullPuzzle)
     
-    smallShipRoofPuzzle.name = "puzzleKecilAtapKapal"
+    smallShipRoofPuzzle.name = "smallShipRoofPuzzle"
     smallShipRoofPuzzle.scale(to: CGSize(width: 230, height: 60))
     smallShipRoofPuzzle.position = CGPoint(x: size.width/1.13, y: size.height/2.50)
     smallShipRoofPuzzle.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     smallShipRoofPuzzle.zPosition = 3
     addChild(smallShipRoofPuzzle)
     
-    smallShipWindowPuzzle.name = "puzzleKecilJendelaKapal"
+    smallShipWindowPuzzle.name = "smallShipWindowPuzzle"
     smallShipWindowPuzzle.scale(to: CGSize(width: 230, height: 100))
     smallShipWindowPuzzle.position = CGPoint(x: size.width/1.13, y: size.height/2.95)
     smallShipWindowPuzzle.anchorPoint = CGPoint(x: 0.5, y: 0.5)
     smallShipWindowPuzzle.zPosition = 3
     addChild(smallShipWindowPuzzle)
     
-    smallShipYellowLinePuzzle.name = "puzzleKecilGarisKapal"
+    smallShipYellowLinePuzzle.name = "smallShipYellowLinePuzzle"
     smallShipYellowLinePuzzle.scale(to: CGSize(width: 350, height: 70))
     smallShipYellowLinePuzzle.position = CGPoint(x: size.width/1.13, y: size.height/3.65)
     smallShipYellowLinePuzzle.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -264,7 +264,7 @@ class MalinKundang_Puzzle2: SKScene{
     addChild(bigShipWindowPuzzle)
     
     //MARK: Sound
-    Sound.sharedInstance.playBacksound(file: "ikanPuzzle", fileExtension: "wav")
+    Sound.sharedInstance.playBacksound(file: "fishPuzzle", fileExtension: "wav")
   }
   
   //MARK: Touches
@@ -420,7 +420,7 @@ class MalinKundang_Puzzle2: SKScene{
       if smallHullPuzzle.frame.intersects(bigHullPuzzle.frame) && smallLifebuoyPuzzle.frame.intersects(bigLifebuoyPuzzle.frame) && smallRearHullPuzzle.frame.intersects(bigRearHullPuzzle.frame) && smallFrontHullPuzzle.frame.intersects(bigFrontHullPuzzle.frame) && smallShipRoofPuzzle.frame.intersects(bigShipRoofPuzzle.frame) && smallShipWindowPuzzle.frame.intersects(bigShipWindowPuzzle.frame) && smallShipYellowLinePuzzle.frame.intersects(bigShipYellowLinePuzzle.frame) {
         gameFinish()
       } else{
-        print("belum lengkap")
+        print("not complete")
       }
     }
   }
@@ -431,7 +431,7 @@ class MalinKundang_Puzzle2: SKScene{
     print(atPoint((touch?.location(in: self))!))
     if atPoint((touch?.location(in: self))!).name == buttonClose.name {
       enumerateChildNodes(withName: "//*") { [self] (node, stop) in
-        if node.name == "buttonTutup" {
+        if node.name == "buttonClose" {
           run(clickButton)
           buttonTutupSceneAksi()
         }
@@ -440,7 +440,7 @@ class MalinKundang_Puzzle2: SKScene{
     
     if atPoint((touch?.location(in: self))!).name == buttonQuestion.name {
       enumerateChildNodes(withName: "//*") { [self] (node, stop) in
-        if node.name == "buttonTanya" {
+        if node.name == "buttonAsk" {
           run(clickButton)
           buttonTanyaAksi()
         }
@@ -451,7 +451,7 @@ class MalinKundang_Puzzle2: SKScene{
       enumerateChildNodes(withName: "//*") { [self] (node, stop) in
         if node.name == "buttonHome" {
           run(clickButton)
-          Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
+          Sound.sharedInstance.playBacksound(file: "startGame", fileExtension: "wav")
           buttonHomeAksi()
         }
       }
