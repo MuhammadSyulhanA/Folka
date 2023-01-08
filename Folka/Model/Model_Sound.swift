@@ -114,6 +114,10 @@ class Sound {
         soundBacksound?.pause()
     }
     
+    func resumeBacksound() {
+        soundBacksound?.play()
+    }
+    
     func resume(){
         playerBack?.play()
         player?.play()

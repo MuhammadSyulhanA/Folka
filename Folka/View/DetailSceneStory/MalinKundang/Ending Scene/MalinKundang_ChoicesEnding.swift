@@ -74,6 +74,9 @@ class MalingKundang_ChoicesEnding: SKScene {
     
     //MARK: FUNCTION BUTTON HOME
     func buttonHomeScene() {
+        if UserDefaults.standard.bool(forKey: "fxSound") {
+            run(clickButton)
+        }
         if buttonHome.action(forKey: "Button Home") == nil {
             buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
@@ -82,6 +85,9 @@ class MalingKundang_ChoicesEnding: SKScene {
     
     //MARK: FUNCTION BUTTON MAAF
     func buttonMintaMaafScene() {
+        if UserDefaults.standard.bool(forKey: "fxSound") {
+            run(clickButton)
+        }
         let reveal = SKTransition.reveal(with: .right, duration: 1)
         let newScene = MalinKundang_AlternateScene17(size: CGSize(width: 2048, height: 1536))
         newScene.scaleMode = .aspectFill
@@ -90,6 +96,9 @@ class MalingKundang_ChoicesEnding: SKScene {
     
     //MARK: FUNCTION BUTTON MENYAMBUT
     func buttonMenyambutScene() {
+        if UserDefaults.standard.bool(forKey: "fxSound") {
+            run(clickButton)
+        }
         let reveal = SKTransition.reveal(with: .right, duration: 1)
         let newScene = MalinKundang_AlternateScene15(size: CGSize(width: 2048, height: 1536))
         newScene.scaleMode = .aspectFill

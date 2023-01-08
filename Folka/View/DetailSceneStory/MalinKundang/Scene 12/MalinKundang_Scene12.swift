@@ -107,7 +107,9 @@ class MalinKundang_Scene12: SKScene {
         
         //MARK: Sound
         Sound.sharedInstance.playDubbing(file: "12 1", fileExtension: "m4a")
-        Sound.sharedInstance.playBacksound(file: "soundKapalJalan", fileExtension: "wav")
+        if UserDefaults.standard.bool(forKey: "fxMusic") {
+            Sound.sharedInstance.playBacksound(file: "soundKapalJalan", fileExtension: "wav")
+        }
         
         //MARK: Action Animation
         run(SKAction.repeatForever(SKAction.sequence([SKAction.run(moveCloud), SKAction.wait(forDuration: 7.5)])))
@@ -185,7 +187,7 @@ class MalinKundang_Scene12: SKScene {
     }
     
     func buttonNextScene() {
-        if stateMusic {
+        if UserDefaults.standard.bool(forKey: "fxSound") {
             run(clickButton)
         }
         if buttonNext.action(forKey: "Button Next") == nil {
@@ -200,7 +202,7 @@ class MalinKundang_Scene12: SKScene {
     }
     
     func buttonPreviousScene() {
-        if stateMusic {
+        if UserDefaults.standard.bool(forKey: "fxSound") {
             run(clickButton)
         }
         if buttonPrevious.action(forKey: "Button Previous") == nil {
@@ -215,13 +217,15 @@ class MalinKundang_Scene12: SKScene {
     }
     
     func buttonHomeScene() {
-        if stateMusic {
+        if UserDefaults.standard.bool(forKey: "fxSound") {
             run(clickButton)
         }
         if buttonHome.action(forKey: "Button Home") == nil {
             Sound.sharedInstance.stop()
             Sound.sharedInstance.stopBacksound()
-            Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
+            if UserDefaults.standard.bool(forKey: "fxMusic") {
+                Sound.sharedInstance.playBacksound(file: "startGame", fileExtension: "wav")
+            }
             buttonHome.run((buttonHomeAction!), withKey: "Button Home")
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
         }
@@ -233,7 +237,9 @@ class MalinKundang_Scene12: SKScene {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if !self.buttonNext.hasActions(){
                     if node.name == "buttonNext" {
-                        run(clickButton)
+                        if UserDefaults.standard.bool(forKey: "fxSound") {
+                            run(clickButton)
+                        }
                         buttonNextScene()
                     }
                 }
@@ -242,7 +248,9 @@ class MalinKundang_Scene12: SKScene {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if !self.buttonPrevious.hasActions(){
                     if node.name == "buttonPrevious" {
-                        run(clickButton)
+                        if UserDefaults.standard.bool(forKey: "fxSound") {
+                            run(clickButton)
+                        }
                         buttonPreviousScene()
                     }
                 }
@@ -250,7 +258,9 @@ class MalinKundang_Scene12: SKScene {
         }else if atPoint((touch?.location(in: self))!).name == buttonHome.name {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if node.name == "buttonHome" {
-                    run(clickButton)
+                    if UserDefaults.standard.bool(forKey: "fxSound") {
+                        run(clickButton)
+                    }
                     buttonHomeScene()
                 }
             }

@@ -232,7 +232,9 @@ class MalinKundang_Games1: SKScene {
         addChild(popUpExit)
         
         //MARK: Sound
-        Sound.sharedInstance.playBacksound(file: "fishPuzzle", fileExtension: "wav")
+        if UserDefaults.standard.bool(forKey: "fxMusic") {
+            Sound.sharedInstance.playBacksound(file: "fishPuzzle", fileExtension: "wav")
+        }
         
         //MARK: Action Animation
         run(SKAction.repeatForever(SKAction.sequence([SKAction.run(swimmingFish), SKAction.wait(forDuration: 4.0)])))
@@ -376,7 +378,10 @@ class MalinKundang_Games1: SKScene {
             let purpleFish = node  as! SKSpriteNode
             if timeRemaining > 0 {
                 if purpleFish.frame.intersects(self.nonCharacterHook.frame) {
-                    run(self.soundSucces)
+                    if UserDefaults.standard.bool(forKey: "fxSound") {
+                        run(self.soundSucces)
+                    }
+                    
                     hitPurpleFish.append(purpleFish)
                 }
             }
@@ -390,7 +395,9 @@ class MalinKundang_Games1: SKScene {
             let redFish = node  as! SKSpriteNode
             if timeRemaining > 0 {
                 if redFish.frame.intersects(self.nonCharacterHook.frame) {
-                    run(self.soundSucces)
+                    if UserDefaults.standard.bool(forKey: "fxSound") {
+                        run(self.soundSucces)
+                    }
                     hitRedFish.append(redFish)
                 }
             }
@@ -404,7 +411,9 @@ class MalinKundang_Games1: SKScene {
             let zebraFish = node  as! SKSpriteNode
             if timeRemaining > 0 {
                 if zebraFish.frame.intersects(self.nonCharacterHook.frame) {
-                    run(self.soundSucces)
+                    if UserDefaults.standard.bool(forKey: "fxSound") {
+                        run(self.soundSucces)
+                    }
                     hitZebraFish.append(zebraFish)
                 }
             }
@@ -419,7 +428,10 @@ class MalinKundang_Games1: SKScene {
             if timeRemaining > 0 {
                 if bottle.frame.intersects(self.nonCharacterHook.frame) {
                     timeRemaining -= 1
-                    run(self.soundFailed)
+                    if UserDefaults.standard.bool(forKey: "fxSound") {
+                        run(self.soundFailed)
+                    }
+                    
                     hitBottleTrash.append(bottle)
                 }
             }
@@ -434,7 +446,9 @@ class MalinKundang_Games1: SKScene {
             if timeRemaining > 0 {
                 if apple.frame.intersects(self.nonCharacterHook.frame) {
                     timeRemaining -= 1
-                    run(self.soundFailed)
+                    if UserDefaults.standard.bool(forKey: "fxSound") {
+                        run(self.soundFailed)
+                    }
                     hitAppleTrash.append(apple)
                 }
             }
@@ -496,7 +510,9 @@ class MalinKundang_Games1: SKScene {
     
     func buttonNextStoryScene() {
         Sound.sharedInstance.stopBacksound()
-        run(clickButton)
+        if UserDefaults.standard.bool(forKey: "fxSound") {
+            run(clickButton)
+        }
         if buttonNextStory.action(forKey: "Button Next") == nil {
             buttonNextStory.run(SKAction.repeatForever(buttonNextStoryAction!), withKey: "Button Next")
             let reveal = SKTransition.reveal(with: .left, duration: 1)
@@ -508,7 +524,9 @@ class MalinKundang_Games1: SKScene {
     
     func buttonBackToHome() {
         Sound.sharedInstance.stopBacksound()
-        run(clickButton)
+        if UserDefaults.standard.bool(forKey: "fxSound") {
+            run(clickButton)
+        }
         if buttonYes.action(forKey: "Button Yes") == nil {
             buttonYes.run(SKAction.repeatForever(buttonYesAction!), withKey: "Button Yes")
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
@@ -517,7 +535,9 @@ class MalinKundang_Games1: SKScene {
     
     func buttonPlayTryAgain() {
         Sound.sharedInstance.stopBacksound()
-        run(clickButton)
+        if UserDefaults.standard.bool(forKey: "fxSound") {
+            run(clickButton)
+        }
         if buttonTryAgain.action(forKey: "Button Try") == nil {
             buttonTryAgain.run(SKAction.repeatForever(buttonTryAgainAction!), withKey: "Button Try")
             let reveal = SKTransition.reveal(with: .left, duration: 1)
@@ -529,7 +549,10 @@ class MalinKundang_Games1: SKScene {
     
     func buttonbackToHomeScene() {
         Sound.sharedInstance.stopBacksound()
-        run(clickButton)
+        if UserDefaults.standard.bool(forKey: "fxSound") {
+            run(clickButton)
+        }
+        
         if buttonHome.action(forKey: "Button Home") == nil {
             buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
             backToHome()
@@ -540,7 +563,10 @@ class MalinKundang_Games1: SKScene {
     
     func buttonbackToGame() {
         Sound.sharedInstance.stopBacksound()
-        run(clickButton)
+        if UserDefaults.standard.bool(forKey: "fxSound") {
+            run(clickButton)
+        }
+        
         if buttonNo.action(forKey: "Button No") == nil {
             buttonNo.run(SKAction.repeatForever(buttonNoAction!), withKey: "Button No")
             backToGame()
@@ -588,7 +614,9 @@ class MalinKundang_Games1: SKScene {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if !self.buttonYes.hasActions(){
                     if node.name == "buttonYes" {
-                        Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
+                        if UserDefaults.standard.bool(forKey: "fxMusic") {
+                            Sound.sharedInstance.playBacksound(file: "startGame", fileExtension: "wav")
+                        }
                         buttonBackToHome()
                     }
                 }
