@@ -71,8 +71,6 @@ class HomePage_ViewController: UIViewController, UICollectionViewDelegate, UICol
         layout.itemSize.width = itemW
         collectionView.backgroundColor = UIColor.clear.withAlphaComponent(0)
         
-        UserDefaults.standard.set(true, forKey: "fxMusic")
-        UserDefaults.standard.set(true, forKey: "fxSound")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,7 +79,10 @@ class HomePage_ViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     @objc func nextPage(sender: UITapGestureRecognizer){
-        Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
+        if UserDefaults.standard.bool(forKey: "fxSound") {
+            Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
+        }
+        
         sender.view?.transform = CGAffineTransform.init(scaleX: 0.6, y: 0.6)
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
             sender.view?.transform = CGAffineTransform.init(scaleX: 1, y: 1)
@@ -123,7 +124,10 @@ class HomePage_ViewController: UIViewController, UICollectionViewDelegate, UICol
         let dataHomePage = dataHomePage[indexPath.item]
         if indexPath.item == layout.currentPage{
             if dataHomePage.title == "Malin Kundang" {
-                Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
+                if UserDefaults.standard.bool(forKey: "fxSound") {
+                    Sound.sharedInstance.playButton(file: "soundClick", fileExtension: "wav")
+                }
+
                 let cell = collectionView.cellForItem(at: indexPath)
                 cell?.transform = CGAffineTransform.init(scaleX: 0.6, y: 0.6)
                 UIView.animate(withDuration: 0.3, animations: { () -> Void in
