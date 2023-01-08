@@ -139,7 +139,10 @@ class MalinKundang_Scene19: SKScene {
         
         //MARK: INIZIALITATION SOUND AND MUSIC
         Sound.sharedInstance.playDubbing(file: "19 1", fileExtension: "m4a")
-        Sound.sharedInstance.playBacksound(file: "soundMalinBecomesStone", fileExtension: "mp3")
+        if UserDefaults.standard.bool(forKey: "fxMusic") {
+            Sound.sharedInstance.playBacksound(file: "soundMalinBecomesStone", fileExtension: "mp3")
+        }
+        
         startMalinStoneAnimation()
     }
     
@@ -190,7 +193,7 @@ class MalinKundang_Scene19: SKScene {
     
     //MARK: FUNCTION BUTTON NEXT
     func buttonNextScene() {
-        if stateMusic {
+        if UserDefaults.standard.bool(forKey: "fxSound") {
             run(clickButton)
         }
         if buttonNext.action(forKey: "Button Next") == nil {
@@ -228,7 +231,7 @@ class MalinKundang_Scene19: SKScene {
     
     //MARK: FUNCTION BUTTON PREVIOUS
     func buttonPreviousScene() {
-        if stateMusic {
+        if UserDefaults.standard.bool(forKey: "fxSound") {
             run(clickButton)
         }
         if buttonPrevious.action(forKey: "Button Previous") == nil {
@@ -269,14 +272,16 @@ class MalinKundang_Scene19: SKScene {
     
     //MARK: FUNCTION BUTTON HOME
     func buttonHomeScene() {
-        if stateMusic {
+        if UserDefaults.standard.bool(forKey: "fxSound") {
             run(clickButton)
         }
         
         if buttonHome.action(forKey: "Button Home") == nil {
-            Sound.sharedInstance.playBacksound(file: "startGame", fileExtension: "wav")
             Sound.sharedInstance.stop()
             Sound.sharedInstance.stopBacksound()
+            if UserDefaults.standard.bool(forKey: "fxMusic") {
+                Sound.sharedInstance.playBacksound(file: "startGame", fileExtension: "wav")
+            }
             buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
         }

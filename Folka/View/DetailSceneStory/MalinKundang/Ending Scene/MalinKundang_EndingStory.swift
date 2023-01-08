@@ -16,6 +16,9 @@ class MalinKundang_EndingStory: SKScene {
     let buttonBeranda = SKSpriteNode(imageNamed: "buttonBackToHome")
     var buttonBerandaAction: SKAction?
     
+    //MARK: SOUND/MUSIC
+    var clickButton: SKAction = SKAction.playSoundFileNamed("soundClick", waitForCompletion: true)
+    
     override func didMove(to view: SKView) {
         //MARK: INIZIALITATION BACKGROUND
         self.backgroundColor = SKColor.white
@@ -51,6 +54,9 @@ class MalinKundang_EndingStory: SKScene {
     
     //MARK: FUNCTION BUTTON HOME
     func buttonHomeScene() {
+        if UserDefaults.standard.bool(forKey: "fxSound") {
+            run(clickButton)
+        }
         if buttonBeranda.action(forKey: "Button Beranda") == nil {
             Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
             buttonBeranda.run(SKAction.repeatForever(buttonBerandaAction!), withKey: "Button Beranda")

@@ -211,7 +211,7 @@ class MalinKundang_AlternateScene17: SKScene {
     
     //MARK: FUNCTION BUTTON NEXT
     func buttonNextScene() {
-        if stateMusic {
+        if UserDefaults.standard.bool(forKey: "fxSound") {
             run(clickButton)
         }
         
@@ -258,7 +258,7 @@ class MalinKundang_AlternateScene17: SKScene {
     
     //MARK: FUNCTION BUTTON PREVIOUS
     func buttonPreviousScene () {
-        if stateMusic {
+        if UserDefaults.standard.bool(forKey: "fxSound") {
             run(clickButton)
         }
         if buttonPrevious.action(forKey: "Previous Next") == nil {
@@ -303,7 +303,7 @@ class MalinKundang_AlternateScene17: SKScene {
     
     //MARK: FUNCTION BUTTON HOME
     func buttonHomeScene() {
-        if stateMusic {
+        if UserDefaults.standard.bool(forKey: "fxSound") {
             run(clickButton)
         }
         if buttonHome.action(forKey: "Button Home") == nil {

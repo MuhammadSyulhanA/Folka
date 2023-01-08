@@ -249,7 +249,7 @@ class MalinKundang_AlternateScene15: SKScene {
     func buttonNextScene() {
         if buttonNext.action(forKey: "Button Next") == nil {
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
-            if stateMusic {
+            if UserDefaults.standard.bool(forKey: "fxSound") {
                 run(clickButton)
             }
             state += 1
@@ -345,7 +345,7 @@ class MalinKundang_AlternateScene15: SKScene {
     func buttonPreviousScene () {
         if buttonPrevious.action(forKey: "Previous Next") == nil {
             buttonPrevious.run((buttonPreviousAction!), withKey: "Button Previous")
-            if stateMusic {
+            if UserDefaults.standard.bool(forKey: "fxSound") {
                 run(clickButton)
             }
             
@@ -472,7 +472,7 @@ class MalinKundang_AlternateScene15: SKScene {
         if buttonHome.action(forKey: "Button Home") == nil {
             Sound.sharedInstance.stop()
             buttonHome.run(SKAction.repeatForever(buttonHomeAction!), withKey: "Button Home")
-            if stateMusic {
+            if UserDefaults.standard.bool(forKey: "fxSound") {
                 run(clickButton)
             }
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
