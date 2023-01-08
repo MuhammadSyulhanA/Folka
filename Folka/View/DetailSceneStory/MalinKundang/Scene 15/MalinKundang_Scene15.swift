@@ -243,7 +243,7 @@ class MalinKundang_Scene15: SKScene {
     }
     
     func buttonNextScene() {
-        if stateMusic {
+        if UserDefaults.standard.bool(forKey: "fxSound") {
             run(clickButton)
         }
         if buttonNext.action(forKey: "Button Next") == nil {
@@ -341,7 +341,7 @@ class MalinKundang_Scene15: SKScene {
     }
     
     func buttonPreviousScene () {
-        if stateMusic {
+        if UserDefaults.standard.bool(forKey: "fxSound") {
             run(clickButton)
         }
         if buttonPrevious.action(forKey: "Previous Next") == nil {
@@ -433,12 +433,14 @@ class MalinKundang_Scene15: SKScene {
     }
     
     func buttonHomeScene() {
-        if stateMusic {
+        if UserDefaults.standard.bool(forKey: "fxSound") {
             run(clickButton)
         }
         if buttonHome.action(forKey: "Button Home") == nil {
             Sound.sharedInstance.stop()
-            Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
+            if UserDefaults.standard.bool(forKey: "fxMusic") {
+                Sound.sharedInstance.playBacksound(file: "startGame", fileExtension: "wav")
+            }
             buttonHome.run((buttonHomeAction!), withKey: "Button Home")
             self.view!.window?.rootViewController?.presentedViewController?.presentedViewController?.dismiss(animated: true)
         }

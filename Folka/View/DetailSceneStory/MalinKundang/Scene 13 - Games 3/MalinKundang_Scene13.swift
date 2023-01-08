@@ -454,7 +454,10 @@ class MalinKundang_Scene13: SKScene {
         setUpFloorPyhisic(lineMaze: verticalPanjang3LuarDalam8)
         setUpFloorPyhisic(lineMaze: verticalPanjang3LuarDalam9)
         
-        Sound.sharedInstance.playBacksound(file: "maze", fileExtension: "wav")
+        if UserDefaults.standard.bool(forKey: "fxMusic") {
+            Sound.sharedInstance.playBacksound(file: "maze", fileExtension: "wav")
+        }
+        
     }
     
     //MARK: SOURCE CODE MOVE ASSET
@@ -502,7 +505,7 @@ class MalinKundang_Scene13: SKScene {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if node.name == "buttonMulai" {
                     buttonMulai.run((buttonMulaiAction!), withKey: "Button Mulai")
-                    if stateMusic {
+                    if UserDefaults.standard.bool(forKey: "fxSound") {
                         run(clickButton)
                     }
                     
@@ -515,9 +518,10 @@ class MalinKundang_Scene13: SKScene {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if node.name == "buttonTanya" {
                     buttonTanya.run((buttonTanyaAction!), withKey: "Button Tanya")
-                    if stateMusic {
+                    if UserDefaults.standard.bool(forKey: "fxSound") {
                         run(clickButton)
                     }
+                    
                     buttonTanyaAksi()
                 }
             }
@@ -527,9 +531,10 @@ class MalinKundang_Scene13: SKScene {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if node.name == "buttonTutupHint" {
                     buttonTutupHint.run((buttonTutupHintAction!), withKey: "Button Tutup")
-                    if stateMusic {
+                    if UserDefaults.standard.bool(forKey: "fxSound") {
                         run(clickButton)
                     }
+                    
                     buttonTutupHintAksi()
                 }
             }
@@ -539,9 +544,10 @@ class MalinKundang_Scene13: SKScene {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if node.name == "buttonMainLagi" {
                     buttonMainLagi.run((buttonMainLagiAction!), withKey: "Button Lagi")
-                    if stateMusic {
+                    if UserDefaults.standard.bool(forKey: "fxSound") {
                         run(clickButton)
                     }
+                    
                     buttonMainLagiAksi()
                 }
             }
@@ -551,9 +557,10 @@ class MalinKundang_Scene13: SKScene {
             enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                 if node.name == "buttonHome" {
                     buttonHome.run((buttonHomeAction!), withKey: "Button Home")
-                    if stateMusic {
+                    if UserDefaults.standard.bool(forKey: "fxSound") {
                         run(clickButton)
                     }
+                    
                     buttonHomeScene()
                 }
             }
@@ -564,9 +571,10 @@ class MalinKundang_Scene13: SKScene {
                 if node.name == "buttonHome" {
                     Sound.sharedInstance.playBacksound(file: "awalGame", fileExtension: "wav")
                     buttonLanjutkanCerita.run((buttonLanjutkanCeritaAction!), withKey: "Button Home")
-                    if stateMusic {
+                    if UserDefaults.standard.bool(forKey: "fxSound") {
                         run(clickButton)
                     }
+                    
                     buttonLanjutScene()
                 }
             }
