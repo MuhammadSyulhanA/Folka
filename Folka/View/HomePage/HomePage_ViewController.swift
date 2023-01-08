@@ -170,7 +170,6 @@ class HomePage_ViewController: UIViewController, UICollectionViewDelegate, UICol
             }
             if let indexPath = collectionView.indexPath(for: otherCell){
                 if indexPath.item != layout.currentPage{
-                    print("\(layout.currentPage)")
                     UIView.animate(withDuration: 0.2){
                         otherCell.transform = .identity
                         cell.layer.masksToBounds = false

@@ -156,7 +156,6 @@ class MalinKundang_Scene4: SKScene {
     }
     
     //MARK: Animation
-    
     override init(size: CGSize){
         let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
         let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
@@ -179,7 +178,6 @@ class MalinKundang_Scene4: SKScene {
         if buttonNext.action(forKey: "Button Next") == nil {
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
             state += 1
-            print(state)
             if state == 1 {
                 Sound.sharedInstance.stop()
                 Sound.sharedInstance.playDubbing(file: "04 2", fileExtension: "m4a")
@@ -202,7 +200,6 @@ class MalinKundang_Scene4: SKScene {
             }
         } else {
             state += 1
-            print(state)
             if state == 3 {
                 Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .left, duration: 1)
@@ -220,7 +217,6 @@ class MalinKundang_Scene4: SKScene {
         if buttonPrevious.action(forKey: "Previous Next") == nil {
             buttonPrevious.run((buttonPreviousAction!), withKey: "Button Previous")
             state -= 1
-            print(state)
             if state < 0 {
                 Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .right, duration: 1)
@@ -244,7 +240,6 @@ class MalinKundang_Scene4: SKScene {
             }
         } else {
             state -= 1
-            print(state)
             if state < 0 {
                 Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .right, duration: 1)

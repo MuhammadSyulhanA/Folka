@@ -321,7 +321,6 @@ class MalinKundang_Puzzle1: SKScene{
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)
-            print("\(atPoint(location))")
             if atPoint(touch.location(in: self)).name == smallShipRoundPuzzle.name {
                 if smallShipRoundPuzzle.position != bigShipRoundPuzzle.position{
                     smallShipRoundPuzzle.position = location
@@ -542,7 +541,6 @@ class MalinKundang_Puzzle1: SKScene{
             if smallUpperHullPuzzle.frame.intersects(bigUpperHullPuzzle.frame) && smallLowerHullPuzzle.frame.intersects(bigLowerHullPuzzle.frame) && smallMindshipHullPuzzle.frame.intersects(bigMindshipHullPuzzle.frame) && smallShipRoundPuzzle.frame.intersects(bigShipRoundPuzzle.frame) && bigShipYellowLinePuzzle.frame.intersects(bigShipYellowLinePuzzle.frame) && smallShipRoofPuzzle.frame.intersects(bigShipRoofPuzzle.frame) && smallShipWindowPuzzle.frame.intersects(bigShipWindowPuzzle.frame) && smallShipManyWindowsPuzzle.frame.intersects(bigShipManyWindowsPuzzle.frame) && smallShipFlagPuzzle.frame.intersects(bigShipFlagPuzzle.frame) && smallLifebuoyPuzzle.frame.intersects(bigLifebuoyPuzzle.frame){
                 gameFinish()
             } else{
-                print("Belum Lengkap")
             }
         }
     }
@@ -550,7 +548,6 @@ class MalinKundang_Puzzle1: SKScene{
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let touch = touches.first as UITouch?
-            print(atPoint((touch?.location(in: self))!))
             if atPoint((touch?.location(in: self))!).name == buttonClose.name {
                 enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                     if node.name == "buttonClose" {
@@ -563,7 +560,6 @@ class MalinKundang_Puzzle1: SKScene{
                 enumerateChildNodes(withName: "//*") { [self] (node, stop) in
                     if node.name == "buttonTanya" {
                         buttonTanyaAksi()
-                        print("tanya")
                     }
                 }
             }

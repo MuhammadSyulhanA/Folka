@@ -218,7 +218,6 @@ class MalinKundang_AlternateScene17: SKScene {
         if buttonNext.action(forKey: "Button Next") == nil {
             buttonNext.run((buttonNextAction!), withKey: "Button Next")
             state += 1
-            print(state)
             if state == 1 {
                 Sound.sharedInstance.stop()
                 Sound.sharedInstance.playDubbing(file: "alt 17 2", fileExtension: "m4a")
@@ -236,7 +235,6 @@ class MalinKundang_AlternateScene17: SKScene {
             }
         } else {
             state += 1
-            print(state)
             if state == 1 {
                 Sound.sharedInstance.stop()
                 Sound.sharedInstance.playDubbing(file: "alt 17 2", fileExtension: "m4a")
@@ -264,7 +262,6 @@ class MalinKundang_AlternateScene17: SKScene {
         if buttonPrevious.action(forKey: "Previous Next") == nil {
             buttonPrevious.run((buttonPreviousAction!), withKey: "Button Previous")
             state -= 1
-            print(state)
             if state == -1 {
                 Sound.sharedInstance.stop()
                 let reveal = SKTransition.reveal(with: .right, duration: 1)
@@ -348,7 +345,6 @@ class MalinKundang_AlternateScene17: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         let touch = touches.first as UITouch?
         print(atPoint((touch?.location(in: self))!))
         if atPoint((touch?.location(in: self))!).name == characterIbuMalin.name {

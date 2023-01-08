@@ -102,7 +102,6 @@ class MalinKundang_ChooseShip: SKScene {
     }
     
     //MARK: Animation
-    
     override init(size: CGSize){
         let buttonToSmall = SKAction.scaleX(to: 0.9, y: 0.9, duration: 0.3)
         let buttonToBig = SKAction.scaleX(to: 1.0, y: 1.0, duration: 0.3)
@@ -127,7 +126,6 @@ class MalinKundang_ChooseShip: SKScene {
         nonCharacterWoodChoose2.isHidden = true
         nonCharacterWoodChoose1.isHidden = false
         UserDefaults.standard.set("objectOneShip", forKey: "pickShip")
-        print(state)
     }
     
     func chooseTwoShip() {
@@ -138,7 +136,6 @@ class MalinKundang_ChooseShip: SKScene {
         nonCharacterWoodChoose1.isHidden = true
         nonCharacterWoodChoose2.isHidden = false
         UserDefaults.standard.set("objecTwoShip", forKey: "pickShip")
-        print(state)
     }
     
     func startAction(){

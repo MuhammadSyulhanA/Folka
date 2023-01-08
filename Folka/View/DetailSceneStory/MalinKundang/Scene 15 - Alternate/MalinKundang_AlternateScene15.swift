@@ -49,7 +49,7 @@ class MalinKundang_AlternateScene15: SKScene {
     var animationTree: SKAction?
     
     let nonCharacterTextLayout = SKSpriteNode(imageNamed: "textLayout")
-    var labelTextStory = SKLabelNode(fontNamed: "McLaren")
+    var labelTextStory = SKLabelNode(fontNamed: "Nunito")
     var dataIntro: [AlternateScript15] = []
     var state = 0
     
@@ -253,7 +253,6 @@ class MalinKundang_AlternateScene15: SKScene {
                 run(clickButton)
             }
             state += 1
-            print(state)
             if state == 6 {
                 let reveal = SKTransition.reveal(with: .right, duration: 1)
                 let newScene = MalinKundang_EndingStory(size: CGSize(width: 2048, height: 1536))
@@ -296,9 +295,7 @@ class MalinKundang_AlternateScene15: SKScene {
             }
         } else {
             state += 1
-            print(state)
             if state == 6 {
-                print("sini")
                 let reveal = SKTransition.reveal(with: .right, duration: 1)
                 let newScene = MalinKundang_EndingStory(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
@@ -350,12 +347,7 @@ class MalinKundang_AlternateScene15: SKScene {
             }
             
             state -= 1
-
-            print(state)
-            
             if state == -1 {
-                print("kesini")
-                print("sini")
                 let reveal = SKTransition.reveal(with: .right, duration: 1)
                 let newScene = MalingKundang_ChoicesEnding(size: CGSize(width: 2048, height: 1536))
                 newScene.scaleMode = .aspectFill
