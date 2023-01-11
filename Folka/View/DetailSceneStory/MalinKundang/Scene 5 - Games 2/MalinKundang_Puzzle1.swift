@@ -446,7 +446,7 @@ class MalinKundang_Puzzle1: SKScene{
                     if UserDefaults.standard.bool(forKey: "fxSound") {
                         run(soundSucces)
                     }
-                  smallShipYellowLinePuzzle.zPosition = 1
+                  smallShipYellowLinePuzzle.zPosition = 2
                     smallShipYellowLinePuzzle.position = CGPoint(x: size.width/2.3, y: size.height/2.1)
                     smallShipYellowLinePuzzle.inputView?.isMultipleTouchEnabled = false
                 } else{
@@ -489,7 +489,7 @@ class MalinKundang_Puzzle1: SKScene{
                     if UserDefaults.standard.bool(forKey: "fxSound") {
                         run(soundSucces)
                     }
-                  smallShipManyWindowsPuzzle.zPosition = 2
+                  smallShipManyWindowsPuzzle.zPosition = 1
                     smallShipManyWindowsPuzzle.position = CGPoint(x: size.width/2, y: size.height/2)
                     smallShipManyWindowsPuzzle.inputView?.isMultipleTouchEnabled = false
                 } else{
