@@ -216,50 +216,36 @@ class MalinKundang_Puzzle2: SKScene{
         //MARK: Big Puzzles Position
         bigHullPuzzle.scale(to: CGSize(width: 1213, height: 391))
         bigHullPuzzle.position = CGPoint(x: size.width/2.3, y: size.height/2.7)
-        bigHullPuzzle.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         bigHullPuzzle.alpha = 0
-        bigHullPuzzle.zPosition = 2
         addChild(bigHullPuzzle)
         
         bigShipYellowLinePuzzle.scale(to: CGSize(width: 1354, height: 227))
         bigShipYellowLinePuzzle.position = CGPoint(x: size.width/2.3, y: size.height/2.08)
-        bigShipYellowLinePuzzle.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        bigShipYellowLinePuzzle.zPosition = 2
         bigShipYellowLinePuzzle.alpha = 0
         addChild(bigShipYellowLinePuzzle)
         
         bigLifebuoyPuzzle.scale(to: CGSize(width: 248, height: 108))
         bigLifebuoyPuzzle.position = CGPoint(x: size.width/1.6, y: size.height/2.4)
-        bigLifebuoyPuzzle.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        bigLifebuoyPuzzle.zPosition = 4
         bigLifebuoyPuzzle.alpha = 0
         addChild(bigLifebuoyPuzzle)
         
         bigRearHullPuzzle.scale(to: CGSize(width: 362, height: 135))
         bigRearHullPuzzle.position = CGPoint(x: size.width/1.65, y: size.height/1.98)
-        bigRearHullPuzzle.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        bigRearHullPuzzle.zPosition = 2
         bigRearHullPuzzle.alpha = 0
         addChild(bigRearHullPuzzle)
         
         bigFrontHullPuzzle.scale(to: CGSize(width: 446, height: 253))
         bigFrontHullPuzzle.position = CGPoint(x: size.width/2.8, y: size.height/1.8)
-        bigFrontHullPuzzle.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        bigFrontHullPuzzle.zPosition = 2
         bigFrontHullPuzzle.alpha = 0
         addChild(bigFrontHullPuzzle)
         
         bigShipRoofPuzzle.scale(to: CGSize(width: 375, height: 94))
         bigShipRoofPuzzle.position = CGPoint(x: size.width/2.9, y: size.height/1.6)
-        bigShipRoofPuzzle.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        bigShipRoofPuzzle.zPosition = 3
         bigShipRoofPuzzle.alpha = 0
         addChild(bigShipRoofPuzzle)
         
         bigShipWindowPuzzle.scale(to: CGSize(width: 246, height: 135))
         bigShipWindowPuzzle.position = CGPoint(x: size.width/2.9, y: size.height/1.8)
-        bigShipWindowPuzzle.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        bigShipWindowPuzzle.zPosition = 1
         bigShipWindowPuzzle.alpha = 0
         addChild(bigShipWindowPuzzle)
         
@@ -271,73 +257,53 @@ class MalinKundang_Puzzle2: SKScene{
     }
     
     //MARK: Touches
+  
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)
             if atPoint((touch.location(in: self))).name == smallHullPuzzle.name {
                 if smallHullPuzzle.position != bigHullPuzzle.position{
                     smallHullPuzzle.position = location
-                    smallHullPuzzle.inputView?.isMultipleTouchEnabled = false
                     smallHullPuzzle.zPosition = 2
                     smallHullPuzzle.scale(to: CGSize(width: 1213, height: 391))
                 }
-            }
-            
-            if atPoint((touch.location(in: self))).name == smallLifebuoyPuzzle.name {
+            }else if atPoint((touch.location(in: self))).name == smallLifebuoyPuzzle.name {
                 if smallLifebuoyPuzzle.position != bigLifebuoyPuzzle.position{
                     smallLifebuoyPuzzle.position = location
                     smallLifebuoyPuzzle.zPosition = 4
-                    smallLifebuoyPuzzle.inputView?.isMultipleTouchEnabled = false
                     smallLifebuoyPuzzle.scale(to: CGSize(width: 248, height: 108))
                 }
-            }
-            
-            
-            if atPoint((touch.location(in: self))).name == smallShipRoofPuzzle.name {
+            }else if atPoint((touch.location(in: self))).name == smallShipRoofPuzzle.name {
                 if smallShipRoofPuzzle.position != bigShipRoofPuzzle.position{
                     smallShipRoofPuzzle.position = location
                     smallShipRoofPuzzle.zPosition = 4
-                    smallShipRoofPuzzle.inputView?.isMultipleTouchEnabled = false
                     smallShipRoofPuzzle.scale(to: CGSize(width: 375, height: 94))
                 }
-            }
-            
-            if atPoint((touch.location(in: self))).name == smallShipYellowLinePuzzle.name {
+            }else if atPoint((touch.location(in: self))).name == smallShipYellowLinePuzzle.name {
                 if smallShipYellowLinePuzzle.position != bigShipYellowLinePuzzle.position{
                     smallShipYellowLinePuzzle.position = location
-                    smallShipYellowLinePuzzle.inputView?.isMultipleTouchEnabled = false
                     smallShipYellowLinePuzzle.zPosition = 3
                     smallShipYellowLinePuzzle.scale(to: CGSize(width: 1354, height: 227))
                 }
-            }
-            
-            
-            if atPoint((touch.location(in: self))).name == smallFrontHullPuzzle.name {
+            }else if atPoint((touch.location(in: self))).name == smallFrontHullPuzzle.name {
                 if smallFrontHullPuzzle.position != bigFrontHullPuzzle.position{
                     smallFrontHullPuzzle.position = location
-                    smallFrontHullPuzzle.inputView?.isMultipleTouchEnabled = false
                     smallFrontHullPuzzle.zPosition = 3
                     smallFrontHullPuzzle.scale(to: CGSize(width: 446, height: 253))
                 }
-            }
-            
-            if atPoint((touch.location(in: self))).name == smallRearHullPuzzle.name {
+            }else if atPoint((touch.location(in: self))).name == smallRearHullPuzzle.name {
                 if smallRearHullPuzzle.position != bigRearHullPuzzle.position{
                     smallRearHullPuzzle.position = location
-                    smallRearHullPuzzle.inputView?.isMultipleTouchEnabled = false
                     smallRearHullPuzzle.zPosition = 3
                     smallRearHullPuzzle.scale(to: CGSize(width: 362, height: 135))
                 }
-            }
-            
-            if atPoint((touch.location(in: self))).name == smallShipWindowPuzzle.name {
+            }else if atPoint((touch.location(in: self))).name == smallShipWindowPuzzle.name {
                 if smallShipWindowPuzzle.position != bigShipWindowPuzzle.position{
                     smallShipWindowPuzzle.position = location
-                    smallShipWindowPuzzle.inputView?.isMultipleTouchEnabled = false
                     smallShipWindowPuzzle.zPosition = 3
                     smallShipWindowPuzzle.scale(to: CGSize(width: 246, height: 135))
                 }
-            }
+            } else{}
         }
     }
     
@@ -349,7 +315,7 @@ class MalinKundang_Puzzle2: SKScene{
                         run(soundSucces)
                     }
                     smallHullPuzzle.position = CGPoint(x: size.width/2.3, y: size.height/2.7)
-                    smallHullPuzzle.inputView?.isMultipleTouchEnabled = false
+                  smallHullPuzzle.inputView?.isMultipleTouchEnabled = false
                 } else{
                     smallHullPuzzle.scale(to: CGSize(width: 320, height: 100))
                     smallHullPuzzle.position = CGPoint(x: size.width/1.13, y: size.height/1.35)
@@ -362,7 +328,7 @@ class MalinKundang_Puzzle2: SKScene{
                         run(soundSucces)
                     }
                     smallLifebuoyPuzzle.position = CGPoint(x: size.width/1.6, y: size.height/2.4)
-                    smallLifebuoyPuzzle.inputView?.isMultipleTouchEnabled = false
+                  smallLifebuoyPuzzle.inputView?.isMultipleTouchEnabled = false
                 } else{
                     smallLifebuoyPuzzle.position = CGPoint(x: size.width/1.13, y: size.height/1.55)
                     smallLifebuoyPuzzle.scale(to: CGSize(width: 230, height: 100))
@@ -374,8 +340,8 @@ class MalinKundang_Puzzle2: SKScene{
                     if UserDefaults.standard.bool(forKey: "fxSound") {
                         run(soundSucces)
                     }
+                  smallRearHullPuzzle.inputView?.isMultipleTouchEnabled = false
                     smallRearHullPuzzle.position = CGPoint(x: size.width/1.66, y: size.height/1.98)
-                    smallRearHullPuzzle.isUserInteractionEnabled = false
                 }else{
                     smallRearHullPuzzle.position = CGPoint(x: size.width/1.13, y: size.height/1.80)
                     smallRearHullPuzzle.scale(to: CGSize(width: 230, height: 90))
@@ -387,8 +353,8 @@ class MalinKundang_Puzzle2: SKScene{
                     if UserDefaults.standard.bool(forKey: "fxSound") {
                         run(soundSucces)
                     }
+                  smallFrontHullPuzzle.inputView?.isMultipleTouchEnabled = false
                     smallFrontHullPuzzle.position = CGPoint(x: size.width/2.85, y: size.height/1.8)
-                    smallFrontHullPuzzle.inputView?.isMultipleTouchEnabled = false
                 } else{
                     smallFrontHullPuzzle.position = CGPoint(x: size.width/1.13, y: size.height/2.10)
                     smallFrontHullPuzzle.scale(to: CGSize(width: 230, height: 100))
@@ -401,7 +367,6 @@ class MalinKundang_Puzzle2: SKScene{
                         run(soundSucces)
                     }
                     smallShipRoofPuzzle.position = CGPoint(x: size.width/2.9, y: size.height/1.6)
-                    smallShipRoofPuzzle.inputView?.isMultipleTouchEnabled = false
                 }else{
                     smallShipRoofPuzzle.position = CGPoint(x: size.width/1.13, y: size.height/2.50)
                     smallShipRoofPuzzle.scale(to: CGSize(width: 230, height: 60))
@@ -414,7 +379,6 @@ class MalinKundang_Puzzle2: SKScene{
                         run(soundSucces)
                     }
                     smallShipWindowPuzzle.position = CGPoint(x: size.width/2.9, y: size.height/1.8)
-                    smallShipWindowPuzzle.inputView?.isMultipleTouchEnabled = false
                 } else{
                     smallShipWindowPuzzle.position = CGPoint(x: size.width/1.13, y: size.height/2.95)
                     smallShipWindowPuzzle.scale(to: CGSize(width: 230, height: 100))
@@ -427,7 +391,6 @@ class MalinKundang_Puzzle2: SKScene{
                         run(soundSucces)
                     }
                     smallShipYellowLinePuzzle.position = CGPoint(x: size.width/2.32, y: size.height/2.05)
-                    smallShipYellowLinePuzzle.inputView?.isMultipleTouchEnabled = false
                 } else{
                     smallShipYellowLinePuzzle.position = CGPoint(x: size.width/1.13, y: size.height/3.65)
                     smallShipYellowLinePuzzle.scale(to: CGSize(width: 350, height: 70))
