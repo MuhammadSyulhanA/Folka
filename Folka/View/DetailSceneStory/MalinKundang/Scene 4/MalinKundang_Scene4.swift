@@ -144,10 +144,11 @@ class MalinKundang_Scene4: SKScene {
         textStory.text = dataText[0].textDialogue
         textStory.fontColor = SKColor.white
         textStory.fontSize = 42
+        textStory.verticalAlignmentMode = .center
         textStory.lineBreakMode = NSLineBreakMode.byWordWrapping
         textStory.numberOfLines = 0
         textStory.preferredMaxLayoutWidth = 1235
-        textStory.position = CGPoint(x: size.width/2, y: size.height/4.2)
+        textStory.position = CGPoint(x: size.width/2, y: size.height/3.5)
         textStory.zPosition = 3.5
         addChild(textStory)
         

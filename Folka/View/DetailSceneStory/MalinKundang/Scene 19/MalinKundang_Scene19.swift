@@ -110,8 +110,9 @@ class MalinKundang_Scene19: SKScene {
         labelTextStory.fontSize = 42
         labelTextStory.lineBreakMode = NSLineBreakMode.byWordWrapping
         labelTextStory.numberOfLines = 0
+        labelTextStory.verticalAlignmentMode = .center
         labelTextStory.preferredMaxLayoutWidth = 1235
-        labelTextStory.position = CGPoint(x: size.width/2, y: size.height/4.08)
+        labelTextStory.position = CGPoint(x: size.width/2, y: size.height/3.5)
         labelTextStory.zPosition = 3.5
         addChild(labelTextStory)
         
