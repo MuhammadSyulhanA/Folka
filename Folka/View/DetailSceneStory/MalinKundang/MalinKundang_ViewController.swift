@@ -21,7 +21,7 @@ class MalinKundang_ViewController: UIViewController {
         
         if let view = self.view as! SKView? {
             // Initialise the scene
-            let scene = MalinKundang_Scene19(size: CGSize(width: 2048, height: 1536))
+            let scene = MalinKundang_Scene1(size: CGSize(width: 2048, height: 1536))
             scene.scaleMode = .aspectFill
             view.presentScene(scene)
             view.showsPhysics = false
